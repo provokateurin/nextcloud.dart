@@ -1,0 +1,5 @@
+/lib/src/api/**/patches/
+*.openapi.json
+/packages/
+/scripts
+/external
