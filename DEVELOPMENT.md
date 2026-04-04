@@ -3,6 +3,17 @@
 Except for WebDAV all client code is generated using OpenAPI specifications which can be found in the `lib/src/api/` folder.  
 These OpenAPI specifications are [generated](https://github.com/nextcloud/openapi-extractor) from the PHP source code.
 
+## Dependencies
+
+Besides Dart, you need to have the following dependencies installed on your system:
+- [yq](https://github.com/kislyuk/yq)
+- [jsonpatch](https://pypi.org/project/jsonpatch)
+- [PHP](https://www.php.net)
+- [composer](https://getcomposer.org)
+
+Make sure to initialize the git submodules by running `git submodule update --init --recursive`.
+This will add our external dependencies to `external/` so scripts can use them for generation.
+
 ## Checking test do not interfere with each other
 
 All tests should be standalone and never affect any other tests.
@@ -11,6 +22,13 @@ With enough caution this is feasible to implement, but to verify the tests do no
 ```sh
 for i in {0..4}; do flutter test --test-randomize-ordering-seed $i; done
 ```
+
+## Run a test instance
+
+For running a development Nextcloud instance:
+- Install [docker](https://www.docker.com/get-started)
+- Run the `./scripts/run-container.sh` script to start the server
+- Development instance runs on http://localhost. To access it in an Android Emulator use http://10.0.2.2
 
 ## Testing against development versions
 
