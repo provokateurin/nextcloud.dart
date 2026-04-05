@@ -32252,13 +32252,13 @@ abstract class SignalingSettings_Turnservers
 @BuiltValue(instantiable: false)
 sealed class $SignalingSettingsInterface {
   SignalingSettings_Federation? get federation;
-  SignalingSettings_HelloAuthParams get helloAuthParams;
+  SignalingSettings_HelloAuthParams? get helloAuthParams;
   bool get hideWarning;
   String get server;
   String get signalingMode;
   String get sipDialinInfo;
   BuiltList<SignalingSettings_Stunservers> get stunservers;
-  String get ticket;
+  String? get ticket;
   BuiltList<SignalingSettings_Turnservers> get turnservers;
   String? get userId;
 

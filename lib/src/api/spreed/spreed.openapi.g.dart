@@ -12761,8 +12761,6 @@ class _$SignalingSettingsSerializer implements StructuredSerializer<SignalingSet
   Iterable<Object?> serialize(Serializers serializers, SignalingSettings object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
-      'helloAuthParams',
-      serializers.serialize(object.helloAuthParams, specifiedType: const FullType(SignalingSettings_HelloAuthParams)),
       'hideWarning',
       serializers.serialize(object.hideWarning, specifiedType: const FullType(bool)),
       'server',
@@ -12774,8 +12772,6 @@ class _$SignalingSettingsSerializer implements StructuredSerializer<SignalingSet
       'stunservers',
       serializers.serialize(object.stunservers,
           specifiedType: const FullType(BuiltList, const [const FullType(SignalingSettings_Stunservers)])),
-      'ticket',
-      serializers.serialize(object.ticket, specifiedType: const FullType(String)),
       'turnservers',
       serializers.serialize(object.turnservers,
           specifiedType: const FullType(BuiltList, const [const FullType(SignalingSettings_Turnservers)])),
@@ -12786,6 +12782,18 @@ class _$SignalingSettingsSerializer implements StructuredSerializer<SignalingSet
       result
         ..add('federation')
         ..add(serializers.serialize(value, specifiedType: const FullType(SignalingSettings_Federation)));
+    }
+    value = object.helloAuthParams;
+    if (value != null) {
+      result
+        ..add('helloAuthParams')
+        ..add(serializers.serialize(value, specifiedType: const FullType(SignalingSettings_HelloAuthParams)));
+    }
+    value = object.ticket;
+    if (value != null) {
+      result
+        ..add('ticket')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.userId;
     if (value != null) {
@@ -12833,7 +12841,7 @@ class _$SignalingSettingsSerializer implements StructuredSerializer<SignalingSet
               as BuiltList<Object?>);
           break;
         case 'ticket':
-          result.ticket = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.ticket = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'turnservers':
           result.turnservers.replace(serializers.deserialize(value,
@@ -46731,7 +46739,7 @@ class _$SignalingSettings extends SignalingSettings {
   @override
   final SignalingSettings_Federation? federation;
   @override
-  final SignalingSettings_HelloAuthParams helloAuthParams;
+  final SignalingSettings_HelloAuthParams? helloAuthParams;
   @override
   final bool hideWarning;
   @override
@@ -46743,7 +46751,7 @@ class _$SignalingSettings extends SignalingSettings {
   @override
   final BuiltList<SignalingSettings_Stunservers> stunservers;
   @override
-  final String ticket;
+  final String? ticket;
   @override
   final BuiltList<SignalingSettings_Turnservers> turnservers;
   @override
@@ -46754,13 +46762,13 @@ class _$SignalingSettings extends SignalingSettings {
 
   _$SignalingSettings._(
       {this.federation,
-      required this.helloAuthParams,
+      this.helloAuthParams,
       required this.hideWarning,
       required this.server,
       required this.signalingMode,
       required this.sipDialinInfo,
       required this.stunservers,
-      required this.ticket,
+      this.ticket,
       required this.turnservers,
       this.userId})
       : super._();
@@ -46879,7 +46887,7 @@ class SignalingSettingsBuilder
     final $v = _$v;
     if ($v != null) {
       _federation = $v.federation;
-      _helloAuthParams = $v.helloAuthParams.toBuilder();
+      _helloAuthParams = $v.helloAuthParams?.toBuilder();
       _hideWarning = $v.hideWarning;
       _server = $v.server;
       _signalingMode = $v.signalingMode;
@@ -46913,13 +46921,13 @@ class SignalingSettingsBuilder
       _$result = _$v ??
           _$SignalingSettings._(
             federation: federation,
-            helloAuthParams: helloAuthParams.build(),
+            helloAuthParams: _helloAuthParams?.build(),
             hideWarning: BuiltValueNullFieldError.checkNotNull(hideWarning, r'SignalingSettings', 'hideWarning'),
             server: BuiltValueNullFieldError.checkNotNull(server, r'SignalingSettings', 'server'),
             signalingMode: BuiltValueNullFieldError.checkNotNull(signalingMode, r'SignalingSettings', 'signalingMode'),
             sipDialinInfo: BuiltValueNullFieldError.checkNotNull(sipDialinInfo, r'SignalingSettings', 'sipDialinInfo'),
             stunservers: stunservers.build(),
-            ticket: BuiltValueNullFieldError.checkNotNull(ticket, r'SignalingSettings', 'ticket'),
+            ticket: ticket,
             turnservers: turnservers.build(),
             userId: userId,
           );
@@ -46927,7 +46935,7 @@ class SignalingSettingsBuilder
       late String _$failedField;
       try {
         _$failedField = 'helloAuthParams';
-        helloAuthParams.build();
+        _helloAuthParams?.build();
 
         _$failedField = 'stunservers';
         stunservers.build();
