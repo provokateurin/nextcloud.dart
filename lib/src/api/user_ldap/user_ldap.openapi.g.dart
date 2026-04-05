@@ -6,26 +6,6 @@ part of 'user_ldap.openapi.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ConfigapiShowShowPassword _$configapiShowShowPassword$0 = const ConfigapiShowShowPassword._('\$0');
-const ConfigapiShowShowPassword _$configapiShowShowPassword$1 = const ConfigapiShowShowPassword._('\$1');
-
-ConfigapiShowShowPassword _$valueOfConfigapiShowShowPassword(String name) {
-  switch (name) {
-    case '\$0':
-      return _$configapiShowShowPassword$0;
-    case '\$1':
-      return _$configapiShowShowPassword$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ConfigapiShowShowPassword> _$configapiShowShowPasswordValues =
-    BuiltSet<ConfigapiShowShowPassword>(const <ConfigapiShowShowPassword>[
-  _$configapiShowShowPassword$0,
-  _$configapiShowShowPassword$1,
-]);
-
 Serializer<OCSMeta> _$oCSMetaSerializer = _$OCSMetaSerializer();
 Serializer<ConfigapiCreateResponseApplicationJson_Ocs_Data> _$configapiCreateResponseApplicationJsonOcsDataSerializer =
     _$ConfigapiCreateResponseApplicationJson_Ocs_DataSerializer();

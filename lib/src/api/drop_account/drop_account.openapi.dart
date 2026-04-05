@@ -51,7 +51,7 @@ class $ApiClient {
         bodyType: const FullType(ApiDeleteResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {201, 401, 400, 500},
+        validStatuses: const {201, 400, 500},
       );
 
   /// Trigger the deletion of the current user account.

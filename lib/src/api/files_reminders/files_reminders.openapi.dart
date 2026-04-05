@@ -147,7 +147,7 @@ class $ApiClient {
         bodyType: const FullType(ApiSetResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 201, 400, 401, 404},
+        validStatuses: const {200, 201, 400, 404},
       );
 
   /// Set a reminder.
@@ -255,7 +255,7 @@ class $ApiClient {
         bodyType: const FullType(ApiRemoveResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 401, 404},
+        validStatuses: const {200, 404},
       );
 
   /// Remove a reminder.

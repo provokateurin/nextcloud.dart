@@ -68,6 +68,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Weather status mode updated
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setMode] for a method executing this request and parsing the response.
@@ -114,6 +115,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Weather status mode updated
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setMode_Request] for the request send by this method.
@@ -150,6 +152,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Address updated
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [usePersonalAddress] for a method executing this request and parsing the response.
@@ -192,6 +195,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Address updated
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$usePersonalAddress_Request] for the request send by this method.
@@ -229,6 +233,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Location returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getLocation] for a method executing this request and parsing the response.
@@ -271,6 +276,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Location returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getLocation_Request] for the request send by this method.
@@ -306,6 +312,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Location updated
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setLocation] for a method executing this request and parsing the response.
@@ -362,6 +369,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Location updated
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setLocation_Request] for the request send by this method.
@@ -399,6 +407,7 @@ class $WeatherStatusClient {
   /// Status codes:
   ///   * 200: Forecast returned
   ///   * 404: Forecast not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getForecast] for a method executing this request and parsing the response.
@@ -442,6 +451,7 @@ class $WeatherStatusClient {
   /// Status codes:
   ///   * 200: Forecast returned
   ///   * 404: Forecast not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getForecast_Request] for the request send by this method.
@@ -477,6 +487,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Favorites returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getFavorites] for a method executing this request and parsing the response.
@@ -519,6 +530,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Favorites returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getFavorites_Request] for the request send by this method.
@@ -556,6 +568,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Favorites updated
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setFavorites] for a method executing this request and parsing the response.
@@ -608,6 +621,7 @@ class $WeatherStatusClient {
   ///
   /// Status codes:
   ///   * 200: Favorites updated
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setFavorites_Request] for the request send by this method.

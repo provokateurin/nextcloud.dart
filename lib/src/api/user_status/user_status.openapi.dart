@@ -79,6 +79,7 @@ class $HeartbeatClient {
   ///   * 400: Invalid status to update
   ///   * 500
   ///   * 204: User has no status to keep alive
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [heartbeat] for a method executing this request and parsing the response.
@@ -128,6 +129,7 @@ class $HeartbeatClient {
   ///   * 400: Invalid status to update
   ///   * 500
   ///   * 204: User has no status to keep alive
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$heartbeat_Request] for the request send by this method.
@@ -171,6 +173,7 @@ class $PredefinedStatusClient {
   ///
   /// Status codes:
   ///   * 200: Predefined statuses returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [findAll] for a method executing this request and parsing the response.
@@ -213,6 +216,7 @@ class $PredefinedStatusClient {
   ///
   /// Status codes:
   ///   * 200: Predefined statuses returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$findAll_Request] for the request send by this method.
@@ -256,6 +260,7 @@ class $StatusesClient {
   ///
   /// Status codes:
   ///   * 200: Statuses returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [findAll] for a method executing this request and parsing the response.
@@ -308,6 +313,7 @@ class $StatusesClient {
   ///
   /// Status codes:
   ///   * 200: Statuses returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$findAll_Request] for the request send by this method.
@@ -346,6 +352,7 @@ class $StatusesClient {
   /// Status codes:
   ///   * 200: Status returned
   ///   * 404: The user was not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [find] for a method executing this request and parsing the response.
@@ -394,6 +401,7 @@ class $StatusesClient {
   /// Status codes:
   ///   * 200: Status returned
   ///   * 404: The user was not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$find_Request] for the request send by this method.
@@ -438,6 +446,7 @@ class $UserStatusClient {
   /// Status codes:
   ///   * 200: The status was found successfully
   ///   * 404: The user was not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getStatus] for a method executing this request and parsing the response.
@@ -481,6 +490,7 @@ class $UserStatusClient {
   /// Status codes:
   ///   * 200: The status was found successfully
   ///   * 404: The user was not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getStatus_Request] for the request send by this method.
@@ -517,6 +527,7 @@ class $UserStatusClient {
   /// Status codes:
   ///   * 200: The status was updated successfully
   ///   * 400: The status type is invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setStatus] for a method executing this request and parsing the response.
@@ -564,6 +575,7 @@ class $UserStatusClient {
   /// Status codes:
   ///   * 200: The status was updated successfully
   ///   * 400: The status type is invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setStatus_Request] for the request send by this method.
@@ -601,6 +613,7 @@ class $UserStatusClient {
   /// Status codes:
   ///   * 200: The message was updated successfully
   ///   * 400: The clearAt or message-id is invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setPredefinedMessage] for a method executing this request and parsing the response.
@@ -654,6 +667,7 @@ class $UserStatusClient {
   /// Status codes:
   ///   * 200: The message was updated successfully
   ///   * 400: The clearAt or message-id is invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setPredefinedMessage_Request] for the request send by this method.
@@ -694,6 +708,7 @@ class $UserStatusClient {
   ///   * 200: The message was updated successfully
   ///   * 400: The clearAt or icon is invalid or the message is too long
   ///   * 404: No status for the current user
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setCustomMessage] for a method executing this request and parsing the response.
@@ -755,6 +770,7 @@ class $UserStatusClient {
   ///   * 200: The message was updated successfully
   ///   * 400: The clearAt or icon is invalid or the message is too long
   ///   * 404: No status for the current user
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setCustomMessage_Request] for the request send by this method.
@@ -780,7 +796,7 @@ class $UserStatusClient {
         bodyType: const FullType(UserStatusClearMessageResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Clear the message of the current user.
@@ -793,6 +809,7 @@ class $UserStatusClient {
   ///
   /// Status codes:
   ///   * 200: Message cleared successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [clearMessage] for a method executing this request and parsing the response.
@@ -835,6 +852,7 @@ class $UserStatusClient {
   ///
   /// Status codes:
   ///   * 200: Message cleared successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$clearMessage_Request] for the request send by this method.
@@ -871,6 +889,7 @@ class $UserStatusClient {
   ///
   /// Status codes:
   ///   * 200: Status reverted
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [revertStatus] for a method executing this request and parsing the response.
@@ -920,6 +939,7 @@ class $UserStatusClient {
   ///
   /// Status codes:
   ///   * 200: Status reverted
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$revertStatus_Request] for the request send by this method.
@@ -1555,11 +1575,72 @@ abstract class ClearAt implements $ClearAtInterface, Built<ClearAt, ClearAtBuild
 }
 
 @BuiltValue(instantiable: false)
+sealed class $Predefined_ClearAtInterface implements $ClearAtInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$Predefined_ClearAtInterfaceBuilder].
+  @override
+  $Predefined_ClearAtInterface rebuild(void Function($Predefined_ClearAtInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$Predefined_ClearAtInterfaceBuilder].
+  @override
+  $Predefined_ClearAtInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($Predefined_ClearAtInterfaceBuilder b) {
+    $ClearAtInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($Predefined_ClearAtInterfaceBuilder b) {
+    $ClearAtInterface._validate(b);
+  }
+}
+
+abstract class Predefined_ClearAt
+    implements $Predefined_ClearAtInterface, Built<Predefined_ClearAt, Predefined_ClearAtBuilder> {
+  /// Creates a new Predefined_ClearAt object using the builder pattern.
+  factory Predefined_ClearAt([void Function(Predefined_ClearAtBuilder)? b]) = _$Predefined_ClearAt;
+
+  // coverage:ignore-start
+  const Predefined_ClearAt._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory Predefined_ClearAt.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for Predefined_ClearAt.
+  static Serializer<Predefined_ClearAt> get serializer => _$predefinedClearAtSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(Predefined_ClearAtBuilder b) {
+    $Predefined_ClearAtInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(Predefined_ClearAtBuilder b) {
+    $Predefined_ClearAtInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $PredefinedInterface {
   String get id;
   String get icon;
   String get message;
-  ClearAt? get clearAt;
+  Predefined_ClearAt? get clearAt;
 
   /// Rebuilds the instance.
   ///
@@ -2971,6 +3052,8 @@ sealed class $Capabilities_UserStatusInterface {
   bool get restore;
   @BuiltValueField(wireName: 'supports_emoji')
   bool get supportsEmoji;
+  @BuiltValueField(wireName: 'supports_busy')
+  bool get supportsBusy;
 
   /// Rebuilds the instance.
   ///
@@ -3296,6 +3379,8 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..add(PredefinedStatusFindAllResponseApplicationJson_Ocs.serializer)
       ..addBuilderFactory(const FullType(Predefined), PredefinedBuilder.new)
       ..add(Predefined.serializer)
+      ..addBuilderFactory(const FullType(Predefined_ClearAt), Predefined_ClearAtBuilder.new)
+      ..add(Predefined_ClearAt.serializer)
       ..addBuilderFactory(const FullType(ClearAt), ClearAtBuilder.new)
       ..add(ClearAt.serializer)
       ..add(ClearAt_Type.serializer)

@@ -63,6 +63,7 @@ class $ApiClient {
 
   /// Builds a serializer to parse the response of [$getThumbnail_Request].
   @_i2.experimental
+  @Deprecated('')
   _i1.DynamiteSerializer<Uint8List, void> $getThumbnail_Serializer() => _i1.DynamiteSerializer(
         bodyType: const FullType(Uint8List),
         headersType: null,
@@ -84,11 +85,13 @@ class $ApiClient {
   ///   * 200: Thumbnail returned
   ///   * 400: Getting thumbnail is not possible
   ///   * 404: File not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getThumbnail] for a method executing this request and parsing the response.
   ///  * [$getThumbnail_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
+  @Deprecated('')
   _i3.Request $getThumbnail_Request({required int x, required int y, required String file}) {
     final _parameters = <String, Object?>{};
     final __x = _$jsonSerializers.serialize(x, specifiedType: const FullType(int));
@@ -137,10 +140,12 @@ class $ApiClient {
   ///   * 200: Thumbnail returned
   ///   * 400: Getting thumbnail is not possible
   ///   * 404: File not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getThumbnail_Request] for the request send by this method.
   ///  * [$getThumbnail_Serializer] for a converter to parse the `Response` from an executed request.
+  @Deprecated('')
   Future<_i1.DynamiteResponse<Uint8List, void>> getThumbnail({
     required int x,
     required int y,
@@ -279,6 +284,7 @@ class $ConversionApiClient {
   /// Status codes:
   ///   * 201: File was converted and written to the destination or temporary file
   ///   * 404: The file to be converted was not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [convert] for a method executing this request and parsing the response.
@@ -326,6 +332,7 @@ class $ConversionApiClient {
   /// Status codes:
   ///   * 201: File was converted and written to the destination or temporary file
   ///   * 404: The file to be converted was not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$convert_Request] for the request send by this method.
@@ -368,6 +375,7 @@ class $DirectEditingClient {
   ///
   /// Status codes:
   ///   * 200: Direct editing capabilities returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [info] for a method executing this request and parsing the response.
@@ -410,6 +418,7 @@ class $DirectEditingClient {
   ///
   /// Status codes:
   ///   * 200: Direct editing capabilities returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$info_Request] for the request send by this method.
@@ -446,6 +455,7 @@ class $DirectEditingClient {
   /// Status codes:
   ///   * 200: Templates returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [templates] for a method executing this request and parsing the response.
@@ -500,6 +510,7 @@ class $DirectEditingClient {
   /// Status codes:
   ///   * 200: Templates returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$templates_Request] for the request send by this method.
@@ -538,6 +549,7 @@ class $DirectEditingClient {
   ///   * 200: URL for direct editing returned
   ///   * 403: Opening file is not allowed
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [open] for a method executing this request and parsing the response.
@@ -586,6 +598,7 @@ class $DirectEditingClient {
   ///   * 200: URL for direct editing returned
   ///   * 403: Opening file is not allowed
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$open_Request] for the request send by this method.
@@ -624,6 +637,7 @@ class $DirectEditingClient {
   ///   * 200: URL for direct editing returned
   ///   * 403: Opening file is not allowed
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [create] for a method executing this request and parsing the response.
@@ -672,6 +686,7 @@ class $DirectEditingClient {
   ///   * 200: URL for direct editing returned
   ///   * 403: Opening file is not allowed
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$create_Request] for the request send by this method.
@@ -716,6 +731,7 @@ class $OpenLocalEditorClient {
   /// Status codes:
   ///   * 200: Local editor returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [create] for a method executing this request and parsing the response.
@@ -763,6 +779,7 @@ class $OpenLocalEditorClient {
   /// Status codes:
   ///   * 200: Local editor returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$create_Request] for the request send by this method.
@@ -801,6 +818,7 @@ class $OpenLocalEditorClient {
   /// Status codes:
   ///   * 200: Local editor validated successfully
   ///   * 404: Local editor not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [validate] for a method executing this request and parsing the response.
@@ -857,6 +875,7 @@ class $OpenLocalEditorClient {
   /// Status codes:
   ///   * 200: Local editor validated successfully
   ///   * 404: Local editor not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$validate_Request] for the request send by this method.
@@ -900,6 +919,7 @@ class $TemplateClient {
   ///
   /// Status codes:
   ///   * 200: Available templates returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [list] for a method executing this request and parsing the response.
@@ -942,6 +962,7 @@ class $TemplateClient {
   ///
   /// Status codes:
   ///   * 200: Available templates returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$list_Request] for the request send by this method.
@@ -976,6 +997,7 @@ class $TemplateClient {
   ///
   /// Status codes:
   ///   * 200: Fields returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [listTemplateFields] for a method executing this request and parsing the response.
@@ -1023,6 +1045,7 @@ class $TemplateClient {
   ///
   /// Status codes:
   ///   * 200: Fields returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$listTemplateFields_Request] for the request send by this method.
@@ -1061,6 +1084,7 @@ class $TemplateClient {
   /// Status codes:
   ///   * 200: Template created successfully
   ///   * 403: Creating template is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [create] for a method executing this request and parsing the response.
@@ -1108,6 +1132,7 @@ class $TemplateClient {
   /// Status codes:
   ///   * 200: Template created successfully
   ///   * 403: Creating template is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$create_Request] for the request send by this method.
@@ -1144,6 +1169,7 @@ class $TemplateClient {
   /// Status codes:
   ///   * 200: Template directory initialized successfully
   ///   * 403: Initializing the template directory is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [path] for a method executing this request and parsing the response.
@@ -1198,6 +1224,7 @@ class $TemplateClient {
   /// Status codes:
   ///   * 200: Template directory initialized successfully
   ///   * 403: Initializing the template directory is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$path_Request] for the request send by this method.
@@ -1228,7 +1255,7 @@ class $TransferOwnershipClient {
         bodyType: const FullType(TransferOwnershipTransferResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 400, 403},
+        validStatuses: const {200, 400, 403, 401},
       );
 
   /// Transfer the ownership to another user.
@@ -1243,6 +1270,7 @@ class $TransferOwnershipClient {
   ///   * 200: Ownership transferred successfully
   ///   * 400: Transferring ownership is not possible
   ///   * 403: Transferring ownership is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [transfer] for a method executing this request and parsing the response.
@@ -1294,6 +1322,7 @@ class $TransferOwnershipClient {
   ///   * 200: Ownership transferred successfully
   ///   * 400: Transferring ownership is not possible
   ///   * 403: Transferring ownership is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$transfer_Request] for the request send by this method.
@@ -1319,7 +1348,7 @@ class $TransferOwnershipClient {
         bodyType: const FullType(TransferOwnershipAcceptResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 403, 404},
+        validStatuses: const {200, 403, 404, 401},
       );
 
   /// Accept an ownership transfer.
@@ -1335,6 +1364,7 @@ class $TransferOwnershipClient {
   ///   * 200: Ownership transfer accepted successfully
   ///   * 403: Accepting ownership transfer is not allowed
   ///   * 404: Ownership transfer not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [accept] for a method executing this request and parsing the response.
@@ -1384,6 +1414,7 @@ class $TransferOwnershipClient {
   ///   * 200: Ownership transfer accepted successfully
   ///   * 403: Accepting ownership transfer is not allowed
   ///   * 404: Ownership transfer not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$accept_Request] for the request send by this method.
@@ -1407,7 +1438,7 @@ class $TransferOwnershipClient {
         bodyType: const FullType(TransferOwnershipRejectResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 403, 404},
+        validStatuses: const {200, 403, 404, 401},
       );
 
   /// Reject an ownership transfer.
@@ -1423,6 +1454,7 @@ class $TransferOwnershipClient {
   ///   * 200: Ownership transfer rejected successfully
   ///   * 403: Rejecting ownership transfer is not allowed
   ///   * 404: Ownership transfer not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [reject] for a method executing this request and parsing the response.
@@ -1472,6 +1504,7 @@ class $TransferOwnershipClient {
   ///   * 200: Ownership transfer rejected successfully
   ///   * 403: Rejecting ownership transfer is not allowed
   ///   * 404: Ownership transfer not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$reject_Request] for the request send by this method.
@@ -5195,6 +5228,8 @@ abstract class Capabilities_Files_DirectEditing
 
 @BuiltValue(instantiable: false)
 sealed class $Capabilities_FilesInterface {
+  @BuiltValueField(wireName: 'windows_compatible_filenames')
+  bool? get windowsCompatibleFilenames;
   @BuiltValueField(wireName: r'$comment')
   String? get comment;
   bool get bigfilechunking;

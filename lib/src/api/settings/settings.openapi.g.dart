@@ -117,6 +117,15 @@ Serializer<DeclarativeSettingsSetValueResponseApplicationJson_Ocs>
 Serializer<DeclarativeSettingsSetValueResponseApplicationJson>
     _$declarativeSettingsSetValueResponseApplicationJsonSerializer =
     _$DeclarativeSettingsSetValueResponseApplicationJsonSerializer();
+Serializer<DeclarativeSettingsSetSensitiveValueRequestApplicationJson>
+    _$declarativeSettingsSetSensitiveValueRequestApplicationJsonSerializer =
+    _$DeclarativeSettingsSetSensitiveValueRequestApplicationJsonSerializer();
+Serializer<DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs>
+    _$declarativeSettingsSetSensitiveValueResponseApplicationJsonOcsSerializer =
+    _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsSerializer();
+Serializer<DeclarativeSettingsSetSensitiveValueResponseApplicationJson>
+    _$declarativeSettingsSetSensitiveValueResponseApplicationJsonSerializer =
+    _$DeclarativeSettingsSetSensitiveValueResponseApplicationJsonSerializer();
 Serializer<DeclarativeFormField_Options1> _$declarativeFormFieldOptions1Serializer =
     _$DeclarativeFormField_Options1Serializer();
 Serializer<DeclarativeFormField> _$declarativeFormFieldSerializer = _$DeclarativeFormFieldSerializer();
@@ -354,6 +363,165 @@ class _$DeclarativeSettingsSetValueResponseApplicationJsonSerializer
   }
 }
 
+class _$DeclarativeSettingsSetSensitiveValueRequestApplicationJsonSerializer
+    implements StructuredSerializer<DeclarativeSettingsSetSensitiveValueRequestApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    DeclarativeSettingsSetSensitiveValueRequestApplicationJson,
+    _$DeclarativeSettingsSetSensitiveValueRequestApplicationJson
+  ];
+  @override
+  final String wireName = 'DeclarativeSettingsSetSensitiveValueRequestApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, DeclarativeSettingsSetSensitiveValueRequestApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'app',
+      serializers.serialize(object.app, specifiedType: const FullType(String)),
+      'formId',
+      serializers.serialize(object.formId, specifiedType: const FullType(String)),
+      'fieldId',
+      serializers.serialize(object.fieldId, specifiedType: const FullType(String)),
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(JsonObject)),
+    ];
+
+    return result;
+  }
+
+  @override
+  DeclarativeSettingsSetSensitiveValueRequestApplicationJson deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'app':
+          result.app = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'formId':
+          result.formId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'fieldId':
+          result.fieldId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(JsonObject))! as JsonObject;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs,
+    _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+    ];
+    Object? value;
+    value = object.data;
+    if (value != null) {
+      result
+        ..add('data')
+        ..add(serializers.serialize(value, specifiedType: const FullType(JsonObject)));
+    }
+    return result;
+  }
+
+  @override
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data = serializers.deserialize(value, specifiedType: const FullType(JsonObject)) as JsonObject?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$DeclarativeSettingsSetSensitiveValueResponseApplicationJsonSerializer
+    implements StructuredSerializer<DeclarativeSettingsSetSensitiveValueResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    DeclarativeSettingsSetSensitiveValueResponseApplicationJson,
+    _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'DeclarativeSettingsSetSensitiveValueResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, DeclarativeSettingsSetSensitiveValueResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs))!
+              as DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$DeclarativeFormField_Options1Serializer implements StructuredSerializer<DeclarativeFormField_Options1> {
   @override
   final Iterable<Type> types = const [DeclarativeFormField_Options1, _$DeclarativeFormField_Options1];
@@ -444,6 +612,12 @@ class _$DeclarativeFormFieldSerializer implements StructuredSerializer<Declarati
         ..add(serializers.serialize(value,
             specifiedType: const FullType(BuiltList, const [const FullType(DeclarativeFormField_Options)])));
     }
+    value = object.sensitive;
+    if (value != null) {
+      result
+        ..add('sensitive')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -488,6 +662,9 @@ class _$DeclarativeFormFieldSerializer implements StructuredSerializer<Declarati
         case 'value':
           result.value = serializers.deserialize(value, specifiedType: const FullType(DeclarativeFormField_Value))!
               as DeclarativeFormField_Value;
+          break;
+        case 'sensitive':
+          result.sensitive = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -1247,6 +1424,385 @@ class DeclarativeSettingsSetValueResponseApplicationJsonBuilder
   }
 }
 
+abstract mixin class $DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterfaceBuilder {
+  void replace($DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterface other);
+  void update(void Function($DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterfaceBuilder) updates);
+  String? get app;
+  set app(String? app);
+
+  String? get formId;
+  set formId(String? formId);
+
+  String? get fieldId;
+  set fieldId(String? fieldId);
+
+  JsonObject? get value;
+  set value(JsonObject? value);
+}
+
+class _$DeclarativeSettingsSetSensitiveValueRequestApplicationJson
+    extends DeclarativeSettingsSetSensitiveValueRequestApplicationJson {
+  @override
+  final String app;
+  @override
+  final String formId;
+  @override
+  final String fieldId;
+  @override
+  final JsonObject value;
+
+  factory _$DeclarativeSettingsSetSensitiveValueRequestApplicationJson(
+          [void Function(DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder)? updates]) =>
+      (DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder()..update(updates))._build();
+
+  _$DeclarativeSettingsSetSensitiveValueRequestApplicationJson._(
+      {required this.app, required this.formId, required this.fieldId, required this.value})
+      : super._();
+  @override
+  DeclarativeSettingsSetSensitiveValueRequestApplicationJson rebuild(
+          void Function(DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder toBuilder() =>
+      DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is DeclarativeSettingsSetSensitiveValueRequestApplicationJson &&
+        app == other.app &&
+        formId == other.formId &&
+        fieldId == other.fieldId &&
+        value == other.value;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, app.hashCode);
+    _$hash = $jc(_$hash, formId.hashCode);
+    _$hash = $jc(_$hash, fieldId.hashCode);
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'DeclarativeSettingsSetSensitiveValueRequestApplicationJson')
+          ..add('app', app)
+          ..add('formId', formId)
+          ..add('fieldId', fieldId)
+          ..add('value', value))
+        .toString();
+  }
+}
+
+class DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder
+    implements
+        Builder<DeclarativeSettingsSetSensitiveValueRequestApplicationJson,
+            DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder>,
+        $DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterfaceBuilder {
+  _$DeclarativeSettingsSetSensitiveValueRequestApplicationJson? _$v;
+
+  String? _app;
+  String? get app => _$this._app;
+  set app(covariant String? app) => _$this._app = app;
+
+  String? _formId;
+  String? get formId => _$this._formId;
+  set formId(covariant String? formId) => _$this._formId = formId;
+
+  String? _fieldId;
+  String? get fieldId => _$this._fieldId;
+  set fieldId(covariant String? fieldId) => _$this._fieldId = fieldId;
+
+  JsonObject? _value;
+  JsonObject? get value => _$this._value;
+  set value(covariant JsonObject? value) => _$this._value = value;
+
+  DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder() {
+    DeclarativeSettingsSetSensitiveValueRequestApplicationJson._defaults(this);
+  }
+
+  DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _app = $v.app;
+      _formId = $v.formId;
+      _fieldId = $v.fieldId;
+      _value = $v.value;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant DeclarativeSettingsSetSensitiveValueRequestApplicationJson other) {
+    _$v = other as _$DeclarativeSettingsSetSensitiveValueRequestApplicationJson;
+  }
+
+  @override
+  void update(void Function(DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  DeclarativeSettingsSetSensitiveValueRequestApplicationJson build() => _build();
+
+  _$DeclarativeSettingsSetSensitiveValueRequestApplicationJson _build() {
+    DeclarativeSettingsSetSensitiveValueRequestApplicationJson._validate(this);
+    final _$result = _$v ??
+        _$DeclarativeSettingsSetSensitiveValueRequestApplicationJson._(
+          app: BuiltValueNullFieldError.checkNotNull(
+              app, r'DeclarativeSettingsSetSensitiveValueRequestApplicationJson', 'app'),
+          formId: BuiltValueNullFieldError.checkNotNull(
+              formId, r'DeclarativeSettingsSetSensitiveValueRequestApplicationJson', 'formId'),
+          fieldId: BuiltValueNullFieldError.checkNotNull(
+              fieldId, r'DeclarativeSettingsSetSensitiveValueRequestApplicationJson', 'fieldId'),
+          value: BuiltValueNullFieldError.checkNotNull(
+              value, r'DeclarativeSettingsSetSensitiveValueRequestApplicationJson', 'value'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterface other);
+  void update(void Function($DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  JsonObject? get data;
+  set data(JsonObject? data);
+}
+
+class _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs
+    extends DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final JsonObject? data;
+
+  factory _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs(
+          [void Function(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder)? updates]) =>
+      (DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs._({required this.meta, this.data}) : super._();
+  @override
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs rebuild(
+          void Function(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder toBuilder() =>
+      DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs &&
+        meta == other.meta &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder
+    implements
+        Builder<DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs,
+            DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder>,
+        $DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterfaceBuilder {
+  _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
+
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder() {
+    DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs other) {
+    _$v = other as _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs build() => _build();
+
+  _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs _build() {
+    DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs._validate(this);
+    _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterfaceBuilder {
+  void replace($DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterface other);
+  void update(void Function($DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterfaceBuilder) updates);
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson
+    extends DeclarativeSettingsSetSensitiveValueResponseApplicationJson {
+  @override
+  final DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs ocs;
+
+  factory _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson(
+          [void Function(DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder)? updates]) =>
+      (DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson rebuild(
+          void Function(DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder toBuilder() =>
+      DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is DeclarativeSettingsSetSensitiveValueResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'DeclarativeSettingsSetSensitiveValueResponseApplicationJson')
+          ..add('ocs', ocs))
+        .toString();
+  }
+}
+
+class DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder
+    implements
+        Builder<DeclarativeSettingsSetSensitiveValueResponseApplicationJson,
+            DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder>,
+        $DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterfaceBuilder {
+  _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson? _$v;
+
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder? _ocs;
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder();
+  set ocs(covariant DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder() {
+    DeclarativeSettingsSetSensitiveValueResponseApplicationJson._defaults(this);
+  }
+
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant DeclarativeSettingsSetSensitiveValueResponseApplicationJson other) {
+    _$v = other as _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson build() => _build();
+
+  _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson _build() {
+    DeclarativeSettingsSetSensitiveValueResponseApplicationJson._validate(this);
+    _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'DeclarativeSettingsSetSensitiveValueResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $DeclarativeFormField_Options1InterfaceBuilder {
   void replace($DeclarativeFormField_Options1Interface other);
   void update(void Function($DeclarativeFormField_Options1InterfaceBuilder) updates);
@@ -1380,6 +1936,9 @@ abstract mixin class $DeclarativeFormFieldInterfaceBuilder {
 
   DeclarativeFormField_Value? get value;
   set value(DeclarativeFormField_Value? value);
+
+  bool? get sensitive;
+  set sensitive(bool? sensitive);
 }
 
 class _$DeclarativeFormField extends DeclarativeFormField {
@@ -1401,6 +1960,8 @@ class _$DeclarativeFormField extends DeclarativeFormField {
   final BuiltList<DeclarativeFormField_Options>? options;
   @override
   final DeclarativeFormField_Value value;
+  @override
+  final bool? sensitive;
 
   factory _$DeclarativeFormField([void Function(DeclarativeFormFieldBuilder)? updates]) =>
       (DeclarativeFormFieldBuilder()..update(updates))._build();
@@ -1414,7 +1975,8 @@ class _$DeclarativeFormField extends DeclarativeFormField {
       this.label,
       required this.$default,
       this.options,
-      required this.value})
+      required this.value,
+      this.sensitive})
       : super._();
   @override
   DeclarativeFormField rebuild(void Function(DeclarativeFormFieldBuilder) updates) =>
@@ -1436,7 +1998,8 @@ class _$DeclarativeFormField extends DeclarativeFormField {
         label == other.label &&
         $default == other.$default &&
         options == _$dynamicOther.options &&
-        value == _$dynamicOther.value;
+        value == _$dynamicOther.value &&
+        sensitive == other.sensitive;
   }
 
   @override
@@ -1451,6 +2014,7 @@ class _$DeclarativeFormField extends DeclarativeFormField {
     _$hash = $jc(_$hash, $default.hashCode);
     _$hash = $jc(_$hash, options.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, sensitive.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -1466,7 +2030,8 @@ class _$DeclarativeFormField extends DeclarativeFormField {
           ..add('label', label)
           ..add('\$default', $default)
           ..add('options', options)
-          ..add('value', value))
+          ..add('value', value)
+          ..add('sensitive', sensitive))
         .toString();
   }
 }
@@ -1512,6 +2077,10 @@ class DeclarativeFormFieldBuilder
   DeclarativeFormField_Value? get value => _$this._value;
   set value(covariant DeclarativeFormField_Value? value) => _$this._value = value;
 
+  bool? _sensitive;
+  bool? get sensitive => _$this._sensitive;
+  set sensitive(covariant bool? sensitive) => _$this._sensitive = sensitive;
+
   DeclarativeFormFieldBuilder() {
     DeclarativeFormField._defaults(this);
   }
@@ -1528,6 +2097,7 @@ class DeclarativeFormFieldBuilder
       _$default = $v.$default;
       _options = $v.options?.toBuilder();
       _value = $v.value;
+      _sensitive = $v.sensitive;
       _$v = null;
     }
     return this;
@@ -1561,6 +2131,7 @@ class DeclarativeFormFieldBuilder
             $default: BuiltValueNullFieldError.checkNotNull($default, r'DeclarativeFormField', '\$default'),
             options: _options?.build(),
             value: BuiltValueNullFieldError.checkNotNull(value, r'DeclarativeFormField', 'value'),
+            sensitive: sensitive,
           );
     } catch (_) {
       late String _$failedField;

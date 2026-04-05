@@ -6,68 +6,6 @@ part of 'theming.openapi.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ThemingGetThemeStylesheetPlain _$themingGetThemeStylesheetPlain$0 = const ThemingGetThemeStylesheetPlain._('\$0');
-const ThemingGetThemeStylesheetPlain _$themingGetThemeStylesheetPlain$1 = const ThemingGetThemeStylesheetPlain._('\$1');
-
-ThemingGetThemeStylesheetPlain _$valueOfThemingGetThemeStylesheetPlain(String name) {
-  switch (name) {
-    case '\$0':
-      return _$themingGetThemeStylesheetPlain$0;
-    case '\$1':
-      return _$themingGetThemeStylesheetPlain$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ThemingGetThemeStylesheetPlain> _$themingGetThemeStylesheetPlainValues =
-    BuiltSet<ThemingGetThemeStylesheetPlain>(const <ThemingGetThemeStylesheetPlain>[
-  _$themingGetThemeStylesheetPlain$0,
-  _$themingGetThemeStylesheetPlain$1,
-]);
-
-const ThemingGetThemeStylesheetWithCustomCss _$themingGetThemeStylesheetWithCustomCss$0 =
-    const ThemingGetThemeStylesheetWithCustomCss._('\$0');
-const ThemingGetThemeStylesheetWithCustomCss _$themingGetThemeStylesheetWithCustomCss$1 =
-    const ThemingGetThemeStylesheetWithCustomCss._('\$1');
-
-ThemingGetThemeStylesheetWithCustomCss _$valueOfThemingGetThemeStylesheetWithCustomCss(String name) {
-  switch (name) {
-    case '\$0':
-      return _$themingGetThemeStylesheetWithCustomCss$0;
-    case '\$1':
-      return _$themingGetThemeStylesheetWithCustomCss$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ThemingGetThemeStylesheetWithCustomCss> _$themingGetThemeStylesheetWithCustomCssValues =
-    BuiltSet<ThemingGetThemeStylesheetWithCustomCss>(const <ThemingGetThemeStylesheetWithCustomCss>[
-  _$themingGetThemeStylesheetWithCustomCss$0,
-  _$themingGetThemeStylesheetWithCustomCss$1,
-]);
-
-const ThemingGetImageUseSvg _$themingGetImageUseSvg$0 = const ThemingGetImageUseSvg._('\$0');
-const ThemingGetImageUseSvg _$themingGetImageUseSvg$1 = const ThemingGetImageUseSvg._('\$1');
-
-ThemingGetImageUseSvg _$valueOfThemingGetImageUseSvg(String name) {
-  switch (name) {
-    case '\$0':
-      return _$themingGetImageUseSvg$0;
-    case '\$1':
-      return _$themingGetImageUseSvg$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ThemingGetImageUseSvg> _$themingGetImageUseSvgValues =
-    BuiltSet<ThemingGetImageUseSvg>(const <ThemingGetImageUseSvg>[
-  _$themingGetImageUseSvg$0,
-  _$themingGetImageUseSvg$1,
-]);
-
 Serializer<ThemingGetManifestResponseApplicationJson_Icons> _$themingGetManifestResponseApplicationJsonIconsSerializer =
     _$ThemingGetManifestResponseApplicationJson_IconsSerializer();
 Serializer<ThemingGetManifestResponseApplicationJson> _$themingGetManifestResponseApplicationJsonSerializer =
@@ -170,6 +108,9 @@ class _$ThemingGetManifestResponseApplicationJsonSerializer
       serializers.serialize(object.icons,
           specifiedType:
               const FullType(BuiltList, const [const FullType(ThemingGetManifestResponseApplicationJson_Icons)])),
+      'display_override',
+      serializers.serialize(object.displayOverride,
+          specifiedType: const FullType(BuiltList, const [const FullType(String)])),
       'display',
       serializers.serialize(object.display, specifiedType: const FullType(String)),
     ];
@@ -211,6 +152,10 @@ class _$ThemingGetManifestResponseApplicationJsonSerializer
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(ThemingGetManifestResponseApplicationJson_Icons)]))!
               as BuiltList<Object?>);
+          break;
+        case 'display_override':
+          result.displayOverride.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
           break;
         case 'display':
           result.display = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
@@ -885,6 +830,9 @@ abstract mixin class $ThemingGetManifestResponseApplicationJsonInterfaceBuilder 
   ListBuilder<ThemingGetManifestResponseApplicationJson_Icons> get icons;
   set icons(ListBuilder<ThemingGetManifestResponseApplicationJson_Icons>? icons);
 
+  ListBuilder<String> get displayOverride;
+  set displayOverride(ListBuilder<String>? displayOverride);
+
   String? get display;
   set display(String? display);
 }
@@ -905,6 +853,8 @@ class _$ThemingGetManifestResponseApplicationJson extends ThemingGetManifestResp
   @override
   final BuiltList<ThemingGetManifestResponseApplicationJson_Icons> icons;
   @override
+  final BuiltList<String> displayOverride;
+  @override
   final String display;
 
   factory _$ThemingGetManifestResponseApplicationJson(
@@ -919,6 +869,7 @@ class _$ThemingGetManifestResponseApplicationJson extends ThemingGetManifestResp
       required this.backgroundColor,
       required this.description,
       required this.icons,
+      required this.displayOverride,
       required this.display})
       : super._();
   @override
@@ -941,6 +892,7 @@ class _$ThemingGetManifestResponseApplicationJson extends ThemingGetManifestResp
         backgroundColor == other.backgroundColor &&
         description == other.description &&
         icons == other.icons &&
+        displayOverride == other.displayOverride &&
         display == other.display;
   }
 
@@ -954,6 +906,7 @@ class _$ThemingGetManifestResponseApplicationJson extends ThemingGetManifestResp
     _$hash = $jc(_$hash, backgroundColor.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, icons.hashCode);
+    _$hash = $jc(_$hash, displayOverride.hashCode);
     _$hash = $jc(_$hash, display.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -969,6 +922,7 @@ class _$ThemingGetManifestResponseApplicationJson extends ThemingGetManifestResp
           ..add('backgroundColor', backgroundColor)
           ..add('description', description)
           ..add('icons', icons)
+          ..add('displayOverride', displayOverride)
           ..add('display', display))
         .toString();
   }
@@ -1009,6 +963,10 @@ class ThemingGetManifestResponseApplicationJsonBuilder
       _$this._icons ??= ListBuilder<ThemingGetManifestResponseApplicationJson_Icons>();
   set icons(covariant ListBuilder<ThemingGetManifestResponseApplicationJson_Icons>? icons) => _$this._icons = icons;
 
+  ListBuilder<String>? _displayOverride;
+  ListBuilder<String> get displayOverride => _$this._displayOverride ??= ListBuilder<String>();
+  set displayOverride(covariant ListBuilder<String>? displayOverride) => _$this._displayOverride = displayOverride;
+
   String? _display;
   String? get display => _$this._display;
   set display(covariant String? display) => _$this._display = display;
@@ -1027,6 +985,7 @@ class ThemingGetManifestResponseApplicationJsonBuilder
       _backgroundColor = $v.backgroundColor;
       _description = $v.description;
       _icons = $v.icons.toBuilder();
+      _displayOverride = $v.displayOverride.toBuilder();
       _display = $v.display;
       _$v = null;
     }
@@ -1064,6 +1023,7 @@ class ThemingGetManifestResponseApplicationJsonBuilder
             description: BuiltValueNullFieldError.checkNotNull(
                 description, r'ThemingGetManifestResponseApplicationJson', 'description'),
             icons: icons.build(),
+            displayOverride: displayOverride.build(),
             display:
                 BuiltValueNullFieldError.checkNotNull(display, r'ThemingGetManifestResponseApplicationJson', 'display'),
           );
@@ -1072,6 +1032,8 @@ class ThemingGetManifestResponseApplicationJsonBuilder
       try {
         _$failedField = 'icons';
         icons.build();
+        _$failedField = 'displayOverride';
+        displayOverride.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(r'ThemingGetManifestResponseApplicationJson', _$failedField, e.toString());
       }

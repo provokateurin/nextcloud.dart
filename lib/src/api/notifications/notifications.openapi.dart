@@ -64,7 +64,7 @@ class $ApiClient {
         bodyType: const FullType(ApiGenerateNotificationResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401, 403},
       );
 
   /// Generate a notification for a user (deprecated, use v3 instead).
@@ -84,6 +84,8 @@ class $ApiClient {
   ///   * 400: Generating notification is not possible
   ///   * 404: User not found
   ///   * 500
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [generateNotification] for a method executing this request and parsing the response.
@@ -156,6 +158,8 @@ class $ApiClient {
   ///   * 400: Generating notification is not possible
   ///   * 404: User not found
   ///   * 500
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$generateNotification_Request] for the request send by this method.
@@ -205,6 +209,8 @@ class $ApiClient {
   /// Status codes:
   ///   * 200: Notification generated successfully, returned id is the notification ID for future delete requests
   ///   * 400: Provided data was invalid, check error field of the response of log file for details
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [generateNotificationV3] for a method executing this request and parsing the response.
@@ -281,6 +287,8 @@ class $ApiClient {
   /// Status codes:
   ///   * 200: Notification generated successfully, returned id is the notification ID for future delete requests
   ///   * 400: Provided data was invalid, check error field of the response of log file for details
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$generateNotificationV3_Request] for the request send by this method.
@@ -313,7 +321,7 @@ class $ApiClient {
         bodyType: const FullType(ApiSelfTestPushResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 400},
+        validStatuses: const {200},
       );
 
   /// Send a test notification to push registered mobile apps.
@@ -330,6 +338,7 @@ class $ApiClient {
   /// Status codes:
   ///   * 200: Test notification generated successfully, but the device should still show the message to the user
   ///   * 400: Test notification could not be generated, show the message to the user
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [selfTestPush] for a method executing this request and parsing the response.
@@ -381,6 +390,7 @@ class $ApiClient {
   /// Status codes:
   ///   * 200: Test notification generated successfully, but the device should still show the message to the user
   ///   * 400: Test notification could not be generated, show the message to the user
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$selfTestPush_Request] for the request send by this method.
@@ -426,6 +436,7 @@ class $EndpointClient {
   /// Status codes:
   ///   * 200: Notifications returned
   ///   * 204: No app uses notifications
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [listNotifications] for a method executing this request and parsing the response.
@@ -478,6 +489,7 @@ class $EndpointClient {
   /// Status codes:
   ///   * 200: Notifications returned
   ///   * 204: No app uses notifications
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$listNotifications_Request] for the request send by this method.
@@ -503,7 +515,7 @@ class $EndpointClient {
             bodyType: const FullType(EndpointDeleteAllNotificationsResponseApplicationJson),
             headersType: null,
             serializers: _$jsonSerializers,
-            validStatuses: const {200},
+            validStatuses: const {200, 401},
           );
 
   /// Delete all notifications.
@@ -518,6 +530,7 @@ class $EndpointClient {
   /// Status codes:
   ///   * 200: All notifications deleted successfully
   ///   * 403: Deleting notification for impersonated user is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteAllNotifications] for a method executing this request and parsing the response.
@@ -573,6 +586,7 @@ class $EndpointClient {
   /// Status codes:
   ///   * 200: All notifications deleted successfully
   ///   * 403: Deleting notification for impersonated user is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteAllNotifications_Request] for the request send by this method.
@@ -614,6 +628,7 @@ class $EndpointClient {
   /// Status codes:
   ///   * 200: Notification returned
   ///   * 404: Notification not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getNotification] for a method executing this request and parsing the response.
@@ -676,6 +691,7 @@ class $EndpointClient {
   /// Status codes:
   ///   * 200: Notification returned
   ///   * 404: Notification not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getNotification_Request] for the request send by this method.
@@ -700,7 +716,7 @@ class $EndpointClient {
         bodyType: const FullType(EndpointDeleteNotificationResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Delete a notification.
@@ -717,6 +733,7 @@ class $EndpointClient {
   ///   * 200: Notification deleted successfully
   ///   * 403: Deleting notification for impersonated user is not allowed
   ///   * 404: Notification not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteNotification] for a method executing this request and parsing the response.
@@ -780,6 +797,7 @@ class $EndpointClient {
   ///   * 200: Notification deleted successfully
   ///   * 403: Deleting notification for impersonated user is not allowed
   ///   * 404: Notification not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteNotification_Request] for the request send by this method.
@@ -821,6 +839,7 @@ class $EndpointClient {
   /// Status codes:
   ///   * 200: Existing notification IDs returned
   ///   * 400: Too many notification IDs requested
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [confirmIdsForUser] for a method executing this request and parsing the response.
@@ -886,6 +905,7 @@ class $EndpointClient {
   /// Status codes:
   ///   * 200: Existing notification IDs returned
   ///   * 400: Too many notification IDs requested
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$confirmIdsForUser_Request] for the request send by this method.
@@ -1022,7 +1042,7 @@ class $PushClient {
         bodyType: const FullType(PushRemoveDeviceResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 202, 401},
+        validStatuses: const {200, 202},
       );
 
   /// Remove a device from push notifications.
@@ -1116,6 +1136,107 @@ class $SettingsClient {
 
   final $Client _rootClient;
 
+  /// Builds a serializer to parse the response of [$admin_Request].
+  @_i2.experimental
+  _i1.DynamiteSerializer<SettingsAdminResponseApplicationJson, void> $admin_Serializer() => _i1.DynamiteSerializer(
+        bodyType: const FullType(SettingsAdminResponseApplicationJson),
+        headersType: null,
+        serializers: _$jsonSerializers,
+        validStatuses: const {200, 401, 403},
+      );
+
+  /// Update default notification settings for new users.
+  ///
+  /// This endpoint requires admin access.
+  ///
+  /// Returns a `DynamiteRequest` backing the [admin] operation.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [apiVersion] Defaults to `"v2"`.
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Admin settings updated
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
+  ///
+  /// See:
+  ///  * [admin] for a method executing this request and parsing the response.
+  ///  * [$admin_Serializer] for a converter to parse the `Response` from an executed this request.
+  @_i2.experimental
+  _i3.Request $admin_Request({
+    required SettingsAdminRequestApplicationJson $body,
+    SettingsAdminApiVersion? apiVersion,
+    bool? oCSAPIRequest,
+  }) {
+    final _parameters = <String, Object?>{};
+    var __apiVersion = _$jsonSerializers.serialize(apiVersion, specifiedType: const FullType(SettingsAdminApiVersion));
+    __apiVersion ??= 'v2';
+    _parameters['apiVersion'] = __apiVersion;
+
+    final _path = _i4.UriTemplate('/ocs/v2.php/apps/notifications/api/{apiVersion}/settings/admin').expand(_parameters);
+    final _uri = Uri.parse('${_rootClient.baseURL}$_path');
+    final _request = _i3.Request('post', _uri);
+    _request.headers['Accept'] = 'application/json';
+    // coverage:ignore-start
+    final authentication = _i5.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
+      (auth) => switch (auth) {
+        _i1.DynamiteHttpBearerAuthentication() || _i1.DynamiteHttpBasicAuthentication() => true,
+        _ => false,
+      },
+    );
+
+    if (authentication != null) {
+      _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
+    }
+
+    // coverage:ignore-end
+    var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
+    __oCSAPIRequest ??= true;
+    _request.headers['OCS-APIRequest'] = const _i6.HeaderEncoder().convert(__oCSAPIRequest);
+
+    _request.headers['Content-Type'] = 'application/json';
+    _request.body = json.encode(
+      _$jsonSerializers.serialize($body, specifiedType: const FullType(SettingsAdminRequestApplicationJson)),
+    );
+    return _request;
+  }
+
+  /// Update default notification settings for new users.
+  ///
+  /// This endpoint requires admin access.
+  ///
+  /// Returns a [Future] containing a `DynamiteResponse` with the status code, deserialized body and headers.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [apiVersion] Defaults to `"v2"`.
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Admin settings updated
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
+  ///
+  /// See:
+  ///  * [$admin_Request] for the request send by this method.
+  ///  * [$admin_Serializer] for a converter to parse the `Response` from an executed request.
+  Future<_i1.DynamiteResponse<SettingsAdminResponseApplicationJson, void>> admin({
+    required SettingsAdminRequestApplicationJson $body,
+    SettingsAdminApiVersion? apiVersion,
+    bool? oCSAPIRequest,
+  }) async {
+    final _request = $admin_Request(apiVersion: apiVersion, oCSAPIRequest: oCSAPIRequest, $body: $body);
+    final _streamedResponse = await _rootClient.httpClient.send(_request);
+    final _response = await _i3.Response.fromStream(_streamedResponse);
+
+    final _serializer = $admin_Serializer();
+    return _i1.ResponseConverter<SettingsAdminResponseApplicationJson, void>(_serializer).convert(_response);
+  }
+
   /// Builds a serializer to parse the response of [$personal_Request].
   @_i2.experimental
   _i1.DynamiteSerializer<SettingsPersonalResponseApplicationJson, void> $personal_Serializer() =>
@@ -1123,7 +1244,7 @@ class $SettingsClient {
         bodyType: const FullType(SettingsPersonalResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Update personal notification settings.
@@ -1137,6 +1258,7 @@ class $SettingsClient {
   ///
   /// Status codes:
   ///   * 200: Personal settings updated
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [personal] for a method executing this request and parsing the response.
@@ -1196,6 +1318,7 @@ class $SettingsClient {
   ///
   /// Status codes:
   ///   * 200: Personal settings updated
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$personal_Request] for the request send by this method.
@@ -1211,103 +1334,6 @@ class $SettingsClient {
 
     final _serializer = $personal_Serializer();
     return _i1.ResponseConverter<SettingsPersonalResponseApplicationJson, void>(_serializer).convert(_response);
-  }
-
-  /// Builds a serializer to parse the response of [$admin_Request].
-  @_i2.experimental
-  _i1.DynamiteSerializer<SettingsAdminResponseApplicationJson, void> $admin_Serializer() => _i1.DynamiteSerializer(
-        bodyType: const FullType(SettingsAdminResponseApplicationJson),
-        headersType: null,
-        serializers: _$jsonSerializers,
-        validStatuses: const {200},
-      );
-
-  /// Update default notification settings for new users.
-  ///
-  /// This endpoint requires admin access.
-  ///
-  /// Returns a `DynamiteRequest` backing the [admin] operation.
-  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
-  ///
-  /// Parameters:
-  ///   * [apiVersion] Defaults to `"v2"`.
-  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
-  ///
-  /// Status codes:
-  ///   * 200: Admin settings updated
-  ///
-  /// See:
-  ///  * [admin] for a method executing this request and parsing the response.
-  ///  * [$admin_Serializer] for a converter to parse the `Response` from an executed this request.
-  @_i2.experimental
-  _i3.Request $admin_Request({
-    required SettingsAdminRequestApplicationJson $body,
-    SettingsAdminApiVersion? apiVersion,
-    bool? oCSAPIRequest,
-  }) {
-    final _parameters = <String, Object?>{};
-    var __apiVersion = _$jsonSerializers.serialize(apiVersion, specifiedType: const FullType(SettingsAdminApiVersion));
-    __apiVersion ??= 'v2';
-    _parameters['apiVersion'] = __apiVersion;
-
-    final _path = _i4.UriTemplate('/ocs/v2.php/apps/notifications/api/{apiVersion}/settings/admin').expand(_parameters);
-    final _uri = Uri.parse('${_rootClient.baseURL}$_path');
-    final _request = _i3.Request('post', _uri);
-    _request.headers['Accept'] = 'application/json';
-    // coverage:ignore-start
-    final authentication = _i5.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
-      (auth) => switch (auth) {
-        _i1.DynamiteHttpBearerAuthentication() || _i1.DynamiteHttpBasicAuthentication() => true,
-        _ => false,
-      },
-    );
-
-    if (authentication != null) {
-      _request.headers.addAll(authentication.headers);
-    } else {
-      throw Exception('Missing authentication for bearer_auth or basic_auth');
-    }
-
-    // coverage:ignore-end
-    var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
-    __oCSAPIRequest ??= true;
-    _request.headers['OCS-APIRequest'] = const _i6.HeaderEncoder().convert(__oCSAPIRequest);
-
-    _request.headers['Content-Type'] = 'application/json';
-    _request.body = json.encode(
-      _$jsonSerializers.serialize($body, specifiedType: const FullType(SettingsAdminRequestApplicationJson)),
-    );
-    return _request;
-  }
-
-  /// Update default notification settings for new users.
-  ///
-  /// This endpoint requires admin access.
-  ///
-  /// Returns a [Future] containing a `DynamiteResponse` with the status code, deserialized body and headers.
-  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
-  ///
-  /// Parameters:
-  ///   * [apiVersion] Defaults to `"v2"`.
-  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
-  ///
-  /// Status codes:
-  ///   * 200: Admin settings updated
-  ///
-  /// See:
-  ///  * [$admin_Request] for the request send by this method.
-  ///  * [$admin_Serializer] for a converter to parse the `Response` from an executed request.
-  Future<_i1.DynamiteResponse<SettingsAdminResponseApplicationJson, void>> admin({
-    required SettingsAdminRequestApplicationJson $body,
-    SettingsAdminApiVersion? apiVersion,
-    bool? oCSAPIRequest,
-  }) async {
-    final _request = $admin_Request(apiVersion: apiVersion, oCSAPIRequest: oCSAPIRequest, $body: $body);
-    final _streamedResponse = await _rootClient.httpClient.send(_request);
-    final _response = await _i3.Response.fromStream(_streamedResponse);
-
-    final _serializer = $admin_Serializer();
-    return _i1.ResponseConverter<SettingsAdminResponseApplicationJson, void>(_serializer).convert(_response);
   }
 }
 
@@ -1904,6 +1930,7 @@ abstract class ApiGenerateNotificationV3ResponseApplicationJson
 @BuiltValue(instantiable: false)
 sealed class $ApiSelfTestPushResponseApplicationJson_Ocs_DataInterface {
   String get message;
+  int get nid;
 
   /// Rebuilds the instance.
   ///
@@ -3807,257 +3834,6 @@ abstract class PushRemoveDeviceResponseApplicationJson
   }
 }
 
-class SettingsPersonalApiVersion extends EnumClass {
-  const SettingsPersonalApiVersion._(super.name);
-
-  /// `v2`
-  static const SettingsPersonalApiVersion v2 = _$settingsPersonalApiVersionV2;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<SettingsPersonalApiVersion> get values => _$settingsPersonalApiVersionValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static SettingsPersonalApiVersion valueOf(String name) => _$valueOfSettingsPersonalApiVersion(name);
-
-  /// Returns the serialized value of this enum value.
-  String get value => _$jsonSerializers.serializeWith(serializer, this)! as String;
-
-  /// Serializer for SettingsPersonalApiVersion.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<SettingsPersonalApiVersion> get serializer => const _$SettingsPersonalApiVersionSerializer();
-}
-
-class _$SettingsPersonalApiVersionSerializer implements PrimitiveSerializer<SettingsPersonalApiVersion> {
-  const _$SettingsPersonalApiVersionSerializer();
-
-  static const Map<SettingsPersonalApiVersion, Object> _toWire = <SettingsPersonalApiVersion, Object>{
-    SettingsPersonalApiVersion.v2: 'v2',
-  };
-
-  static const Map<Object, SettingsPersonalApiVersion> _fromWire = <Object, SettingsPersonalApiVersion>{
-    'v2': SettingsPersonalApiVersion.v2,
-  };
-
-  @override
-  Iterable<Type> get types => const [SettingsPersonalApiVersion];
-
-  @override
-  String get wireName => 'SettingsPersonalApiVersion';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    SettingsPersonalApiVersion object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  SettingsPersonalApiVersion deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-@BuiltValue(instantiable: false)
-sealed class $SettingsPersonalRequestApplicationJsonInterface {
-  /// How often E-mails about missed notifications should be sent (hourly: 1; every three hours: 2; daily: 3; weekly: 4).
-  int get batchSetting;
-
-  /// Enable sound for notifications ('yes' or 'no').
-  String get soundNotification;
-
-  /// Enable sound for Talk notifications ('yes' or 'no').
-  String get soundTalk;
-
-  /// Rebuilds the instance.
-  ///
-  /// The result is the same as this instance but with [updates] applied.
-  /// [updates] is a function that takes a builder [$SettingsPersonalRequestApplicationJsonInterfaceBuilder].
-  $SettingsPersonalRequestApplicationJsonInterface rebuild(
-    void Function($SettingsPersonalRequestApplicationJsonInterfaceBuilder) updates,
-  );
-
-  /// Converts the instance to a builder [$SettingsPersonalRequestApplicationJsonInterfaceBuilder].
-  $SettingsPersonalRequestApplicationJsonInterfaceBuilder toBuilder();
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($SettingsPersonalRequestApplicationJsonInterfaceBuilder b) {}
-  @BuiltValueHook(finalizeBuilder: true)
-  static void _validate($SettingsPersonalRequestApplicationJsonInterfaceBuilder b) {}
-}
-
-abstract class SettingsPersonalRequestApplicationJson
-    implements
-        $SettingsPersonalRequestApplicationJsonInterface,
-        Built<SettingsPersonalRequestApplicationJson, SettingsPersonalRequestApplicationJsonBuilder> {
-  /// Creates a new SettingsPersonalRequestApplicationJson object using the builder pattern.
-  factory SettingsPersonalRequestApplicationJson([void Function(SettingsPersonalRequestApplicationJsonBuilder)? b]) =
-      _$SettingsPersonalRequestApplicationJson;
-
-  // coverage:ignore-start
-  const SettingsPersonalRequestApplicationJson._();
-  // coverage:ignore-end
-
-  /// Creates a new object from the given [json] data.
-  ///
-  /// Use [toJson] to serialize it back into json.
-  // coverage:ignore-start
-  factory SettingsPersonalRequestApplicationJson.fromJson(Map<String, dynamic> json) =>
-      _$jsonSerializers.deserializeWith(serializer, json)!;
-  // coverage:ignore-end
-
-  /// Parses this object into a json like map.
-  ///
-  /// Use the fromJson factory to revive it again.
-  // coverage:ignore-start
-  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
-  // coverage:ignore-end
-
-  /// Serializer for SettingsPersonalRequestApplicationJson.
-  static Serializer<SettingsPersonalRequestApplicationJson> get serializer =>
-      _$settingsPersonalRequestApplicationJsonSerializer;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SettingsPersonalRequestApplicationJsonBuilder b) {
-    $SettingsPersonalRequestApplicationJsonInterface._defaults(b);
-  }
-
-  @BuiltValueHook(finalizeBuilder: true)
-  static void _validate(SettingsPersonalRequestApplicationJsonBuilder b) {
-    $SettingsPersonalRequestApplicationJsonInterface._validate(b);
-  }
-}
-
-@BuiltValue(instantiable: false)
-sealed class $SettingsPersonalResponseApplicationJson_OcsInterface {
-  OCSMeta get meta;
-  JsonObject get data;
-
-  /// Rebuilds the instance.
-  ///
-  /// The result is the same as this instance but with [updates] applied.
-  /// [updates] is a function that takes a builder [$SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder].
-  $SettingsPersonalResponseApplicationJson_OcsInterface rebuild(
-    void Function($SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder) updates,
-  );
-
-  /// Converts the instance to a builder [$SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder].
-  $SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder toBuilder();
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder b) {}
-  @BuiltValueHook(finalizeBuilder: true)
-  static void _validate($SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder b) {}
-}
-
-abstract class SettingsPersonalResponseApplicationJson_Ocs
-    implements
-        $SettingsPersonalResponseApplicationJson_OcsInterface,
-        Built<SettingsPersonalResponseApplicationJson_Ocs, SettingsPersonalResponseApplicationJson_OcsBuilder> {
-  /// Creates a new SettingsPersonalResponseApplicationJson_Ocs object using the builder pattern.
-  factory SettingsPersonalResponseApplicationJson_Ocs([
-    void Function(SettingsPersonalResponseApplicationJson_OcsBuilder)? b,
-  ]) = _$SettingsPersonalResponseApplicationJson_Ocs;
-
-  // coverage:ignore-start
-  const SettingsPersonalResponseApplicationJson_Ocs._();
-  // coverage:ignore-end
-
-  /// Creates a new object from the given [json] data.
-  ///
-  /// Use [toJson] to serialize it back into json.
-  // coverage:ignore-start
-  factory SettingsPersonalResponseApplicationJson_Ocs.fromJson(Map<String, dynamic> json) =>
-      _$jsonSerializers.deserializeWith(serializer, json)!;
-  // coverage:ignore-end
-
-  /// Parses this object into a json like map.
-  ///
-  /// Use the fromJson factory to revive it again.
-  // coverage:ignore-start
-  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
-  // coverage:ignore-end
-
-  /// Serializer for SettingsPersonalResponseApplicationJson_Ocs.
-  static Serializer<SettingsPersonalResponseApplicationJson_Ocs> get serializer =>
-      _$settingsPersonalResponseApplicationJsonOcsSerializer;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SettingsPersonalResponseApplicationJson_OcsBuilder b) {
-    $SettingsPersonalResponseApplicationJson_OcsInterface._defaults(b);
-  }
-
-  @BuiltValueHook(finalizeBuilder: true)
-  static void _validate(SettingsPersonalResponseApplicationJson_OcsBuilder b) {
-    $SettingsPersonalResponseApplicationJson_OcsInterface._validate(b);
-  }
-}
-
-@BuiltValue(instantiable: false)
-sealed class $SettingsPersonalResponseApplicationJsonInterface {
-  SettingsPersonalResponseApplicationJson_Ocs get ocs;
-
-  /// Rebuilds the instance.
-  ///
-  /// The result is the same as this instance but with [updates] applied.
-  /// [updates] is a function that takes a builder [$SettingsPersonalResponseApplicationJsonInterfaceBuilder].
-  $SettingsPersonalResponseApplicationJsonInterface rebuild(
-    void Function($SettingsPersonalResponseApplicationJsonInterfaceBuilder) updates,
-  );
-
-  /// Converts the instance to a builder [$SettingsPersonalResponseApplicationJsonInterfaceBuilder].
-  $SettingsPersonalResponseApplicationJsonInterfaceBuilder toBuilder();
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($SettingsPersonalResponseApplicationJsonInterfaceBuilder b) {}
-  @BuiltValueHook(finalizeBuilder: true)
-  static void _validate($SettingsPersonalResponseApplicationJsonInterfaceBuilder b) {}
-}
-
-abstract class SettingsPersonalResponseApplicationJson
-    implements
-        $SettingsPersonalResponseApplicationJsonInterface,
-        Built<SettingsPersonalResponseApplicationJson, SettingsPersonalResponseApplicationJsonBuilder> {
-  /// Creates a new SettingsPersonalResponseApplicationJson object using the builder pattern.
-  factory SettingsPersonalResponseApplicationJson([void Function(SettingsPersonalResponseApplicationJsonBuilder)? b]) =
-      _$SettingsPersonalResponseApplicationJson;
-
-  // coverage:ignore-start
-  const SettingsPersonalResponseApplicationJson._();
-  // coverage:ignore-end
-
-  /// Creates a new object from the given [json] data.
-  ///
-  /// Use [toJson] to serialize it back into json.
-  // coverage:ignore-start
-  factory SettingsPersonalResponseApplicationJson.fromJson(Map<String, dynamic> json) =>
-      _$jsonSerializers.deserializeWith(serializer, json)!;
-  // coverage:ignore-end
-
-  /// Parses this object into a json like map.
-  ///
-  /// Use the fromJson factory to revive it again.
-  // coverage:ignore-start
-  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
-  // coverage:ignore-end
-
-  /// Serializer for SettingsPersonalResponseApplicationJson.
-  static Serializer<SettingsPersonalResponseApplicationJson> get serializer =>
-      _$settingsPersonalResponseApplicationJsonSerializer;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SettingsPersonalResponseApplicationJsonBuilder b) {
-    $SettingsPersonalResponseApplicationJsonInterface._defaults(b);
-  }
-
-  @BuiltValueHook(finalizeBuilder: true)
-  static void _validate(SettingsPersonalResponseApplicationJsonBuilder b) {
-    $SettingsPersonalResponseApplicationJsonInterface._validate(b);
-  }
-}
-
 class SettingsAdminApiVersion extends EnumClass {
   const SettingsAdminApiVersion._(super.name);
 
@@ -4306,6 +4082,257 @@ abstract class SettingsAdminResponseApplicationJson
   @BuiltValueHook(finalizeBuilder: true)
   static void _validate(SettingsAdminResponseApplicationJsonBuilder b) {
     $SettingsAdminResponseApplicationJsonInterface._validate(b);
+  }
+}
+
+class SettingsPersonalApiVersion extends EnumClass {
+  const SettingsPersonalApiVersion._(super.name);
+
+  /// `v2`
+  static const SettingsPersonalApiVersion v2 = _$settingsPersonalApiVersionV2;
+
+  /// Returns a set with all values this enum contains.
+  // coverage:ignore-start
+  static BuiltSet<SettingsPersonalApiVersion> get values => _$settingsPersonalApiVersionValues;
+  // coverage:ignore-end
+
+  /// Returns the enum value associated to the [name].
+  static SettingsPersonalApiVersion valueOf(String name) => _$valueOfSettingsPersonalApiVersion(name);
+
+  /// Returns the serialized value of this enum value.
+  String get value => _$jsonSerializers.serializeWith(serializer, this)! as String;
+
+  /// Serializer for SettingsPersonalApiVersion.
+  @BuiltValueSerializer(custom: true)
+  static Serializer<SettingsPersonalApiVersion> get serializer => const _$SettingsPersonalApiVersionSerializer();
+}
+
+class _$SettingsPersonalApiVersionSerializer implements PrimitiveSerializer<SettingsPersonalApiVersion> {
+  const _$SettingsPersonalApiVersionSerializer();
+
+  static const Map<SettingsPersonalApiVersion, Object> _toWire = <SettingsPersonalApiVersion, Object>{
+    SettingsPersonalApiVersion.v2: 'v2',
+  };
+
+  static const Map<Object, SettingsPersonalApiVersion> _fromWire = <Object, SettingsPersonalApiVersion>{
+    'v2': SettingsPersonalApiVersion.v2,
+  };
+
+  @override
+  Iterable<Type> get types => const [SettingsPersonalApiVersion];
+
+  @override
+  String get wireName => 'SettingsPersonalApiVersion';
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    SettingsPersonalApiVersion object, {
+    FullType specifiedType = FullType.unspecified,
+  }) =>
+      _toWire[object]!;
+
+  @override
+  SettingsPersonalApiVersion deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) =>
+      _fromWire[serialized]!;
+}
+
+@BuiltValue(instantiable: false)
+sealed class $SettingsPersonalRequestApplicationJsonInterface {
+  /// How often E-mails about missed notifications should be sent (hourly: 1; every three hours: 2; daily: 3; weekly: 4).
+  int get batchSetting;
+
+  /// Enable sound for notifications ('yes' or 'no').
+  String get soundNotification;
+
+  /// Enable sound for Talk notifications ('yes' or 'no').
+  String get soundTalk;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$SettingsPersonalRequestApplicationJsonInterfaceBuilder].
+  $SettingsPersonalRequestApplicationJsonInterface rebuild(
+    void Function($SettingsPersonalRequestApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$SettingsPersonalRequestApplicationJsonInterfaceBuilder].
+  $SettingsPersonalRequestApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($SettingsPersonalRequestApplicationJsonInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($SettingsPersonalRequestApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class SettingsPersonalRequestApplicationJson
+    implements
+        $SettingsPersonalRequestApplicationJsonInterface,
+        Built<SettingsPersonalRequestApplicationJson, SettingsPersonalRequestApplicationJsonBuilder> {
+  /// Creates a new SettingsPersonalRequestApplicationJson object using the builder pattern.
+  factory SettingsPersonalRequestApplicationJson([void Function(SettingsPersonalRequestApplicationJsonBuilder)? b]) =
+      _$SettingsPersonalRequestApplicationJson;
+
+  // coverage:ignore-start
+  const SettingsPersonalRequestApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory SettingsPersonalRequestApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for SettingsPersonalRequestApplicationJson.
+  static Serializer<SettingsPersonalRequestApplicationJson> get serializer =>
+      _$settingsPersonalRequestApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(SettingsPersonalRequestApplicationJsonBuilder b) {
+    $SettingsPersonalRequestApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(SettingsPersonalRequestApplicationJsonBuilder b) {
+    $SettingsPersonalRequestApplicationJsonInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $SettingsPersonalResponseApplicationJson_OcsInterface {
+  OCSMeta get meta;
+  JsonObject get data;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder].
+  $SettingsPersonalResponseApplicationJson_OcsInterface rebuild(
+    void Function($SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder].
+  $SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($SettingsPersonalResponseApplicationJson_OcsInterfaceBuilder b) {}
+}
+
+abstract class SettingsPersonalResponseApplicationJson_Ocs
+    implements
+        $SettingsPersonalResponseApplicationJson_OcsInterface,
+        Built<SettingsPersonalResponseApplicationJson_Ocs, SettingsPersonalResponseApplicationJson_OcsBuilder> {
+  /// Creates a new SettingsPersonalResponseApplicationJson_Ocs object using the builder pattern.
+  factory SettingsPersonalResponseApplicationJson_Ocs([
+    void Function(SettingsPersonalResponseApplicationJson_OcsBuilder)? b,
+  ]) = _$SettingsPersonalResponseApplicationJson_Ocs;
+
+  // coverage:ignore-start
+  const SettingsPersonalResponseApplicationJson_Ocs._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory SettingsPersonalResponseApplicationJson_Ocs.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for SettingsPersonalResponseApplicationJson_Ocs.
+  static Serializer<SettingsPersonalResponseApplicationJson_Ocs> get serializer =>
+      _$settingsPersonalResponseApplicationJsonOcsSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(SettingsPersonalResponseApplicationJson_OcsBuilder b) {
+    $SettingsPersonalResponseApplicationJson_OcsInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(SettingsPersonalResponseApplicationJson_OcsBuilder b) {
+    $SettingsPersonalResponseApplicationJson_OcsInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $SettingsPersonalResponseApplicationJsonInterface {
+  SettingsPersonalResponseApplicationJson_Ocs get ocs;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$SettingsPersonalResponseApplicationJsonInterfaceBuilder].
+  $SettingsPersonalResponseApplicationJsonInterface rebuild(
+    void Function($SettingsPersonalResponseApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$SettingsPersonalResponseApplicationJsonInterfaceBuilder].
+  $SettingsPersonalResponseApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($SettingsPersonalResponseApplicationJsonInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($SettingsPersonalResponseApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class SettingsPersonalResponseApplicationJson
+    implements
+        $SettingsPersonalResponseApplicationJsonInterface,
+        Built<SettingsPersonalResponseApplicationJson, SettingsPersonalResponseApplicationJsonBuilder> {
+  /// Creates a new SettingsPersonalResponseApplicationJson object using the builder pattern.
+  factory SettingsPersonalResponseApplicationJson([void Function(SettingsPersonalResponseApplicationJsonBuilder)? b]) =
+      _$SettingsPersonalResponseApplicationJson;
+
+  // coverage:ignore-start
+  const SettingsPersonalResponseApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory SettingsPersonalResponseApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for SettingsPersonalResponseApplicationJson.
+  static Serializer<SettingsPersonalResponseApplicationJson> get serializer =>
+      _$settingsPersonalResponseApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(SettingsPersonalResponseApplicationJsonBuilder b) {
+    $SettingsPersonalResponseApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(SettingsPersonalResponseApplicationJsonBuilder b) {
+    $SettingsPersonalResponseApplicationJsonInterface._validate(b);
   }
 }
 
@@ -4602,22 +4629,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
         PushRemoveDeviceResponseApplicationJson_OcsBuilder.new,
       )
       ..add(PushRemoveDeviceResponseApplicationJson_Ocs.serializer)
-      ..add(SettingsPersonalApiVersion.serializer)
-      ..addBuilderFactory(
-        const FullType(SettingsPersonalRequestApplicationJson),
-        SettingsPersonalRequestApplicationJsonBuilder.new,
-      )
-      ..add(SettingsPersonalRequestApplicationJson.serializer)
-      ..addBuilderFactory(
-        const FullType(SettingsPersonalResponseApplicationJson),
-        SettingsPersonalResponseApplicationJsonBuilder.new,
-      )
-      ..add(SettingsPersonalResponseApplicationJson.serializer)
-      ..addBuilderFactory(
-        const FullType(SettingsPersonalResponseApplicationJson_Ocs),
-        SettingsPersonalResponseApplicationJson_OcsBuilder.new,
-      )
-      ..add(SettingsPersonalResponseApplicationJson_Ocs.serializer)
       ..add(SettingsAdminApiVersion.serializer)
       ..addBuilderFactory(
         const FullType(SettingsAdminRequestApplicationJson),
@@ -4634,6 +4645,22 @@ final Serializers _$serializers = (Serializers().toBuilder()
         SettingsAdminResponseApplicationJson_OcsBuilder.new,
       )
       ..add(SettingsAdminResponseApplicationJson_Ocs.serializer)
+      ..add(SettingsPersonalApiVersion.serializer)
+      ..addBuilderFactory(
+        const FullType(SettingsPersonalRequestApplicationJson),
+        SettingsPersonalRequestApplicationJsonBuilder.new,
+      )
+      ..add(SettingsPersonalRequestApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(SettingsPersonalResponseApplicationJson),
+        SettingsPersonalResponseApplicationJsonBuilder.new,
+      )
+      ..add(SettingsPersonalResponseApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(SettingsPersonalResponseApplicationJson_Ocs),
+        SettingsPersonalResponseApplicationJson_OcsBuilder.new,
+      )
+      ..add(SettingsPersonalResponseApplicationJson_Ocs.serializer)
       ..addBuilderFactory(const FullType(Capabilities), CapabilitiesBuilder.new)
       ..add(Capabilities.serializer)
       ..addBuilderFactory(const FullType(Capabilities_Notifications), Capabilities_NotificationsBuilder.new)

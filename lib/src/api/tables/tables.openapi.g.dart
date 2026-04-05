@@ -28,7 +28,9 @@ final BuiltSet<View_Sort_Mode> _$viewSortModeValues = BuiltSet<View_Sort_Mode>(c
 const View_Filter_Operator _$viewFilterOperatorBeginsWith = const View_Filter_Operator._('beginsWith');
 const View_Filter_Operator _$viewFilterOperatorEndsWith = const View_Filter_Operator._('endsWith');
 const View_Filter_Operator _$viewFilterOperatorContains = const View_Filter_Operator._('contains');
+const View_Filter_Operator _$viewFilterOperatorDoesNotContain = const View_Filter_Operator._('doesNotContain');
 const View_Filter_Operator _$viewFilterOperatorIsEqual = const View_Filter_Operator._('isEqual');
+const View_Filter_Operator _$viewFilterOperatorIsNotEqual = const View_Filter_Operator._('isNotEqual');
 const View_Filter_Operator _$viewFilterOperatorIsGreaterThan = const View_Filter_Operator._('isGreaterThan');
 const View_Filter_Operator _$viewFilterOperatorIsGreaterThanOrEqual =
     const View_Filter_Operator._('isGreaterThanOrEqual');
@@ -44,8 +46,12 @@ View_Filter_Operator _$valueOfView_Filter_Operator(String name) {
       return _$viewFilterOperatorEndsWith;
     case 'contains':
       return _$viewFilterOperatorContains;
+    case 'doesNotContain':
+      return _$viewFilterOperatorDoesNotContain;
     case 'isEqual':
       return _$viewFilterOperatorIsEqual;
+    case 'isNotEqual':
+      return _$viewFilterOperatorIsNotEqual;
     case 'isGreaterThan':
       return _$viewFilterOperatorIsGreaterThan;
     case 'isGreaterThanOrEqual':
@@ -66,7 +72,9 @@ final BuiltSet<View_Filter_Operator> _$viewFilterOperatorValues =
   _$viewFilterOperatorBeginsWith,
   _$viewFilterOperatorEndsWith,
   _$viewFilterOperatorContains,
+  _$viewFilterOperatorDoesNotContain,
   _$viewFilterOperatorIsEqual,
+  _$viewFilterOperatorIsNotEqual,
   _$viewFilterOperatorIsGreaterThan,
   _$viewFilterOperatorIsGreaterThanOrEqual,
   _$viewFilterOperatorIsLowerThan,
@@ -74,174 +82,108 @@ final BuiltSet<View_Filter_Operator> _$viewFilterOperatorValues =
   _$viewFilterOperatorIsEmpty,
 ]);
 
-const Api1UpdateViewRequestApplicationJson_Data0_Key _$api1UpdateViewRequestApplicationJsonData0KeyTitle =
-    const Api1UpdateViewRequestApplicationJson_Data0_Key._('title');
-const Api1UpdateViewRequestApplicationJson_Data0_Key _$api1UpdateViewRequestApplicationJsonData0KeyEmoji =
-    const Api1UpdateViewRequestApplicationJson_Data0_Key._('emoji');
-const Api1UpdateViewRequestApplicationJson_Data0_Key _$api1UpdateViewRequestApplicationJsonData0KeyDescription =
-    const Api1UpdateViewRequestApplicationJson_Data0_Key._('description');
+const Api1UpdateViewRequestApplicationJson_Data_Sort_Mode _$api1UpdateViewRequestApplicationJsonDataSortModeASC =
+    const Api1UpdateViewRequestApplicationJson_Data_Sort_Mode._('aSC');
+const Api1UpdateViewRequestApplicationJson_Data_Sort_Mode _$api1UpdateViewRequestApplicationJsonDataSortModeDESC =
+    const Api1UpdateViewRequestApplicationJson_Data_Sort_Mode._('dESC');
 
-Api1UpdateViewRequestApplicationJson_Data0_Key _$valueOfApi1UpdateViewRequestApplicationJson_Data0_Key(String name) {
-  switch (name) {
-    case 'title':
-      return _$api1UpdateViewRequestApplicationJsonData0KeyTitle;
-    case 'emoji':
-      return _$api1UpdateViewRequestApplicationJsonData0KeyEmoji;
-    case 'description':
-      return _$api1UpdateViewRequestApplicationJsonData0KeyDescription;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<Api1UpdateViewRequestApplicationJson_Data0_Key> _$api1UpdateViewRequestApplicationJsonData0KeyValues =
-    BuiltSet<Api1UpdateViewRequestApplicationJson_Data0_Key>(const <Api1UpdateViewRequestApplicationJson_Data0_Key>[
-  _$api1UpdateViewRequestApplicationJsonData0KeyTitle,
-  _$api1UpdateViewRequestApplicationJsonData0KeyEmoji,
-  _$api1UpdateViewRequestApplicationJsonData0KeyDescription,
-]);
-
-const Api1UpdateViewRequestApplicationJson_Data1_Key _$api1UpdateViewRequestApplicationJsonData1KeyColumns =
-    const Api1UpdateViewRequestApplicationJson_Data1_Key._('columns');
-
-Api1UpdateViewRequestApplicationJson_Data1_Key _$valueOfApi1UpdateViewRequestApplicationJson_Data1_Key(String name) {
-  switch (name) {
-    case 'columns':
-      return _$api1UpdateViewRequestApplicationJsonData1KeyColumns;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<Api1UpdateViewRequestApplicationJson_Data1_Key> _$api1UpdateViewRequestApplicationJsonData1KeyValues =
-    BuiltSet<Api1UpdateViewRequestApplicationJson_Data1_Key>(const <Api1UpdateViewRequestApplicationJson_Data1_Key>[
-  _$api1UpdateViewRequestApplicationJsonData1KeyColumns,
-]);
-
-const Api1UpdateViewRequestApplicationJson_Data2_Key _$api1UpdateViewRequestApplicationJsonData2KeySort =
-    const Api1UpdateViewRequestApplicationJson_Data2_Key._('sort');
-
-Api1UpdateViewRequestApplicationJson_Data2_Key _$valueOfApi1UpdateViewRequestApplicationJson_Data2_Key(String name) {
-  switch (name) {
-    case 'sort':
-      return _$api1UpdateViewRequestApplicationJsonData2KeySort;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<Api1UpdateViewRequestApplicationJson_Data2_Key> _$api1UpdateViewRequestApplicationJsonData2KeyValues =
-    BuiltSet<Api1UpdateViewRequestApplicationJson_Data2_Key>(const <Api1UpdateViewRequestApplicationJson_Data2_Key>[
-  _$api1UpdateViewRequestApplicationJsonData2KeySort,
-]);
-
-const Api1UpdateViewRequestApplicationJson_Data2_Value_Mode _$api1UpdateViewRequestApplicationJsonData2ValueModeASC =
-    const Api1UpdateViewRequestApplicationJson_Data2_Value_Mode._('aSC');
-const Api1UpdateViewRequestApplicationJson_Data2_Value_Mode _$api1UpdateViewRequestApplicationJsonData2ValueModeDESC =
-    const Api1UpdateViewRequestApplicationJson_Data2_Value_Mode._('dESC');
-
-Api1UpdateViewRequestApplicationJson_Data2_Value_Mode _$valueOfApi1UpdateViewRequestApplicationJson_Data2_Value_Mode(
+Api1UpdateViewRequestApplicationJson_Data_Sort_Mode _$valueOfApi1UpdateViewRequestApplicationJson_Data_Sort_Mode(
     String name) {
   switch (name) {
     case 'aSC':
-      return _$api1UpdateViewRequestApplicationJsonData2ValueModeASC;
+      return _$api1UpdateViewRequestApplicationJsonDataSortModeASC;
     case 'dESC':
-      return _$api1UpdateViewRequestApplicationJsonData2ValueModeDESC;
+      return _$api1UpdateViewRequestApplicationJsonDataSortModeDESC;
     default:
       throw ArgumentError(name);
   }
 }
 
-final BuiltSet<Api1UpdateViewRequestApplicationJson_Data2_Value_Mode>
-    _$api1UpdateViewRequestApplicationJsonData2ValueModeValues = BuiltSet<
-        Api1UpdateViewRequestApplicationJson_Data2_Value_Mode>(const <Api1UpdateViewRequestApplicationJson_Data2_Value_Mode>[
-  _$api1UpdateViewRequestApplicationJsonData2ValueModeASC,
-  _$api1UpdateViewRequestApplicationJsonData2ValueModeDESC,
+final BuiltSet<Api1UpdateViewRequestApplicationJson_Data_Sort_Mode>
+    _$api1UpdateViewRequestApplicationJsonDataSortModeValues = BuiltSet<
+        Api1UpdateViewRequestApplicationJson_Data_Sort_Mode>(const <Api1UpdateViewRequestApplicationJson_Data_Sort_Mode>[
+  _$api1UpdateViewRequestApplicationJsonDataSortModeASC,
+  _$api1UpdateViewRequestApplicationJsonDataSortModeDESC,
 ]);
 
-const Api1UpdateViewRequestApplicationJson_Data3_Key _$api1UpdateViewRequestApplicationJsonData3KeyFilter =
-    const Api1UpdateViewRequestApplicationJson_Data3_Key._('filter');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorBeginsWith =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('beginsWith');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorEndsWith =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('endsWith');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorContains =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('contains');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorDoesNotContain =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('doesNotContain');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsEqual =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('isEqual');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsNotEqual =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('isNotEqual');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsGreaterThan =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('isGreaterThan');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsGreaterThanOrEqual =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('isGreaterThanOrEqual');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsLowerThan =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('isLowerThan');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsLowerThanOrEqual =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('isLowerThanOrEqual');
+const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsEmpty =
+    const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._('isEmpty');
 
-Api1UpdateViewRequestApplicationJson_Data3_Key _$valueOfApi1UpdateViewRequestApplicationJson_Data3_Key(String name) {
-  switch (name) {
-    case 'filter':
-      return _$api1UpdateViewRequestApplicationJsonData3KeyFilter;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<Api1UpdateViewRequestApplicationJson_Data3_Key> _$api1UpdateViewRequestApplicationJsonData3KeyValues =
-    BuiltSet<Api1UpdateViewRequestApplicationJson_Data3_Key>(const <Api1UpdateViewRequestApplicationJson_Data3_Key>[
-  _$api1UpdateViewRequestApplicationJsonData3KeyFilter,
-]);
-
-const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator
-    _$api1UpdateViewRequestApplicationJsonData3ValueOperatorBeginsWith =
-    const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator._('beginsWith');
-const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator
-    _$api1UpdateViewRequestApplicationJsonData3ValueOperatorEndsWith =
-    const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator._('endsWith');
-const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator
-    _$api1UpdateViewRequestApplicationJsonData3ValueOperatorContains =
-    const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator._('contains');
-const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator
-    _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsEqual =
-    const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator._('isEqual');
-const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator
-    _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsGreaterThan =
-    const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator._('isGreaterThan');
-const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator
-    _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsGreaterThanOrEqual =
-    const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator._('isGreaterThanOrEqual');
-const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator
-    _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsLowerThan =
-    const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator._('isLowerThan');
-const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator
-    _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsLowerThanOrEqual =
-    const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator._('isLowerThanOrEqual');
-const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator
-    _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsEmpty =
-    const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator._('isEmpty');
-
-Api1UpdateViewRequestApplicationJson_Data3_Value_Operator
-    _$valueOfApi1UpdateViewRequestApplicationJson_Data3_Value_Operator(String name) {
+Api1UpdateViewRequestApplicationJson_Data_Filter_Operator
+    _$valueOfApi1UpdateViewRequestApplicationJson_Data_Filter_Operator(String name) {
   switch (name) {
     case 'beginsWith':
-      return _$api1UpdateViewRequestApplicationJsonData3ValueOperatorBeginsWith;
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorBeginsWith;
     case 'endsWith':
-      return _$api1UpdateViewRequestApplicationJsonData3ValueOperatorEndsWith;
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorEndsWith;
     case 'contains':
-      return _$api1UpdateViewRequestApplicationJsonData3ValueOperatorContains;
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorContains;
+    case 'doesNotContain':
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorDoesNotContain;
     case 'isEqual':
-      return _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsEqual;
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsEqual;
+    case 'isNotEqual':
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsNotEqual;
     case 'isGreaterThan':
-      return _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsGreaterThan;
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsGreaterThan;
     case 'isGreaterThanOrEqual':
-      return _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsGreaterThanOrEqual;
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsGreaterThanOrEqual;
     case 'isLowerThan':
-      return _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsLowerThan;
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsLowerThan;
     case 'isLowerThanOrEqual':
-      return _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsLowerThanOrEqual;
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsLowerThanOrEqual;
     case 'isEmpty':
-      return _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsEmpty;
+      return _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsEmpty;
     default:
       throw ArgumentError(name);
   }
 }
 
-final BuiltSet<Api1UpdateViewRequestApplicationJson_Data3_Value_Operator>
-    _$api1UpdateViewRequestApplicationJsonData3ValueOperatorValues = BuiltSet<
-        Api1UpdateViewRequestApplicationJson_Data3_Value_Operator>(const <Api1UpdateViewRequestApplicationJson_Data3_Value_Operator>[
-  _$api1UpdateViewRequestApplicationJsonData3ValueOperatorBeginsWith,
-  _$api1UpdateViewRequestApplicationJsonData3ValueOperatorEndsWith,
-  _$api1UpdateViewRequestApplicationJsonData3ValueOperatorContains,
-  _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsEqual,
-  _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsGreaterThan,
-  _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsGreaterThanOrEqual,
-  _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsLowerThan,
-  _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsLowerThanOrEqual,
-  _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsEmpty,
+final BuiltSet<Api1UpdateViewRequestApplicationJson_Data_Filter_Operator>
+    _$api1UpdateViewRequestApplicationJsonDataFilterOperatorValues = BuiltSet<
+        Api1UpdateViewRequestApplicationJson_Data_Filter_Operator>(const <Api1UpdateViewRequestApplicationJson_Data_Filter_Operator>[
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorBeginsWith,
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorEndsWith,
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorContains,
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorDoesNotContain,
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsEqual,
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsNotEqual,
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsGreaterThan,
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsGreaterThanOrEqual,
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsLowerThan,
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsLowerThanOrEqual,
+  _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsEmpty,
 ]);
 
 const Api1CreateTableShareRequestApplicationJson_ReceiverType
@@ -739,20 +681,16 @@ Serializer<Api1UpdateTableRequestApplicationJson> _$api1UpdateTableRequestApplic
 Serializer<Api1Api1ShowSchemeHeaders> _$api1Api1ShowSchemeHeadersSerializer = _$Api1Api1ShowSchemeHeadersSerializer();
 Serializer<Api1CreateViewRequestApplicationJson> _$api1CreateViewRequestApplicationJsonSerializer =
     _$Api1CreateViewRequestApplicationJsonSerializer();
-Serializer<Api1UpdateViewRequestApplicationJson_Data0> _$api1UpdateViewRequestApplicationJsonData0Serializer =
-    _$Api1UpdateViewRequestApplicationJson_Data0Serializer();
-Serializer<Api1UpdateViewRequestApplicationJson_Data1> _$api1UpdateViewRequestApplicationJsonData1Serializer =
-    _$Api1UpdateViewRequestApplicationJson_Data1Serializer();
-Serializer<Api1UpdateViewRequestApplicationJson_Data2_Value>
-    _$api1UpdateViewRequestApplicationJsonData2ValueSerializer =
-    _$Api1UpdateViewRequestApplicationJson_Data2_ValueSerializer();
-Serializer<Api1UpdateViewRequestApplicationJson_Data2> _$api1UpdateViewRequestApplicationJsonData2Serializer =
-    _$Api1UpdateViewRequestApplicationJson_Data2Serializer();
-Serializer<Api1UpdateViewRequestApplicationJson_Data3_Value>
-    _$api1UpdateViewRequestApplicationJsonData3ValueSerializer =
-    _$Api1UpdateViewRequestApplicationJson_Data3_ValueSerializer();
-Serializer<Api1UpdateViewRequestApplicationJson_Data3> _$api1UpdateViewRequestApplicationJsonData3Serializer =
-    _$Api1UpdateViewRequestApplicationJson_Data3Serializer();
+Serializer<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings>
+    _$api1UpdateViewRequestApplicationJsonDataColumnSettingsSerializer =
+    _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsSerializer();
+Serializer<Api1UpdateViewRequestApplicationJson_Data_Sort> _$api1UpdateViewRequestApplicationJsonDataSortSerializer =
+    _$Api1UpdateViewRequestApplicationJson_Data_SortSerializer();
+Serializer<Api1UpdateViewRequestApplicationJson_Data_Filter>
+    _$api1UpdateViewRequestApplicationJsonDataFilterSerializer =
+    _$Api1UpdateViewRequestApplicationJson_Data_FilterSerializer();
+Serializer<Api1UpdateViewRequestApplicationJson_Data> _$api1UpdateViewRequestApplicationJsonDataSerializer =
+    _$Api1UpdateViewRequestApplicationJson_DataSerializer();
 Serializer<Api1UpdateViewRequestApplicationJson> _$api1UpdateViewRequestApplicationJsonSerializer =
     _$Api1UpdateViewRequestApplicationJsonSerializer();
 Serializer<Share> _$shareSerializer = _$ShareSerializer();
@@ -767,6 +705,9 @@ Serializer<Api1UpdateShareDisplayModeRequestApplicationJson>
     _$api1UpdateShareDisplayModeRequestApplicationJsonSerializer =
     _$Api1UpdateShareDisplayModeRequestApplicationJsonSerializer();
 Serializer<ContextNavigation> _$contextNavigationSerializer = _$ContextNavigationSerializer();
+Serializer<Column_ViewColumnInformation> _$columnViewColumnInformationSerializer =
+    _$Column_ViewColumnInformationSerializer();
+Serializer<Column_CustomSettings> _$columnCustomSettingsSerializer = _$Column_CustomSettingsSerializer();
 Serializer<Column> _$columnSerializer = _$ColumnSerializer();
 Serializer<Api1CreateTableColumnRequestApplicationJson> _$api1CreateTableColumnRequestApplicationJsonSerializer =
     _$Api1CreateTableColumnRequestApplicationJsonSerializer();
@@ -1025,6 +966,8 @@ class _$View_ColumnSettingsSerializer implements StructuredSerializer<View_Colum
       serializers.serialize(object.columnId, specifiedType: const FullType(int)),
       'order',
       serializers.serialize(object.order, specifiedType: const FullType(int)),
+      'readonly',
+      serializers.serialize(object.readonly, specifiedType: const FullType(bool)),
     ];
 
     return result;
@@ -1046,6 +989,9 @@ class _$View_ColumnSettingsSerializer implements StructuredSerializer<View_Colum
           break;
         case 'order':
           result.order = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'readonly':
+          result.readonly = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
           break;
       }
     }
@@ -1692,33 +1638,53 @@ class _$Api1CreateViewRequestApplicationJsonSerializer
   }
 }
 
-class _$Api1UpdateViewRequestApplicationJson_Data0Serializer
-    implements StructuredSerializer<Api1UpdateViewRequestApplicationJson_Data0> {
+class _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsSerializer
+    implements StructuredSerializer<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings> {
   @override
   final Iterable<Type> types = const [
-    Api1UpdateViewRequestApplicationJson_Data0,
-    _$Api1UpdateViewRequestApplicationJson_Data0
+    Api1UpdateViewRequestApplicationJson_Data_ColumnSettings,
+    _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettings
   ];
   @override
-  final String wireName = 'Api1UpdateViewRequestApplicationJson_Data0';
+  final String wireName = 'Api1UpdateViewRequestApplicationJson_Data_ColumnSettings';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Api1UpdateViewRequestApplicationJson_Data0 object,
+  Iterable<Object?> serialize(Serializers serializers, Api1UpdateViewRequestApplicationJson_Data_ColumnSettings object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'key',
-      serializers.serialize(object.key, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data0_Key)),
-      'value',
-      serializers.serialize(object.value, specifiedType: const FullType(String)),
-    ];
-
+    final result = <Object?>[];
+    Object? value;
+    value = object.columnId;
+    if (value != null) {
+      result
+        ..add('columnId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.order;
+    if (value != null) {
+      result
+        ..add('order')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.readonly;
+    if (value != null) {
+      result
+        ..add('readonly')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.mandatory;
+    if (value != null) {
+      result
+        ..add('mandatory')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data0 deserialize(Serializers serializers, Iterable<Object?> serialized,
+  Api1UpdateViewRequestApplicationJson_Data_ColumnSettings deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = Api1UpdateViewRequestApplicationJson_Data0Builder();
+    final result = Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1726,13 +1692,17 @@ class _$Api1UpdateViewRequestApplicationJson_Data0Serializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'key':
-          result.key = serializers.deserialize(value,
-                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data0_Key))!
-              as Api1UpdateViewRequestApplicationJson_Data0_Key;
+        case 'columnId':
+          result.columnId = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
-        case 'value':
-          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+        case 'order':
+          result.order = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'readonly':
+          result.readonly = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'mandatory':
+          result.mandatory = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -1741,84 +1711,34 @@ class _$Api1UpdateViewRequestApplicationJson_Data0Serializer
   }
 }
 
-class _$Api1UpdateViewRequestApplicationJson_Data1Serializer
-    implements StructuredSerializer<Api1UpdateViewRequestApplicationJson_Data1> {
+class _$Api1UpdateViewRequestApplicationJson_Data_SortSerializer
+    implements StructuredSerializer<Api1UpdateViewRequestApplicationJson_Data_Sort> {
   @override
   final Iterable<Type> types = const [
-    Api1UpdateViewRequestApplicationJson_Data1,
-    _$Api1UpdateViewRequestApplicationJson_Data1
+    Api1UpdateViewRequestApplicationJson_Data_Sort,
+    _$Api1UpdateViewRequestApplicationJson_Data_Sort
   ];
   @override
-  final String wireName = 'Api1UpdateViewRequestApplicationJson_Data1';
+  final String wireName = 'Api1UpdateViewRequestApplicationJson_Data_Sort';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Api1UpdateViewRequestApplicationJson_Data1 object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'key',
-      serializers.serialize(object.key, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data1_Key)),
-      'value',
-      serializers.serialize(object.value, specifiedType: const FullType(BuiltList, const [const FullType(int)])),
-    ];
-
-    return result;
-  }
-
-  @override
-  Api1UpdateViewRequestApplicationJson_Data1 deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = Api1UpdateViewRequestApplicationJson_Data1Builder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'key':
-          result.key = serializers.deserialize(value,
-                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data1_Key))!
-              as Api1UpdateViewRequestApplicationJson_Data1_Key;
-          break;
-        case 'value':
-          result.value.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(int)]))! as BuiltList<Object?>);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Api1UpdateViewRequestApplicationJson_Data2_ValueSerializer
-    implements StructuredSerializer<Api1UpdateViewRequestApplicationJson_Data2_Value> {
-  @override
-  final Iterable<Type> types = const [
-    Api1UpdateViewRequestApplicationJson_Data2_Value,
-    _$Api1UpdateViewRequestApplicationJson_Data2_Value
-  ];
-  @override
-  final String wireName = 'Api1UpdateViewRequestApplicationJson_Data2_Value';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, Api1UpdateViewRequestApplicationJson_Data2_Value object,
+  Iterable<Object?> serialize(Serializers serializers, Api1UpdateViewRequestApplicationJson_Data_Sort object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'columnId',
       serializers.serialize(object.columnId, specifiedType: const FullType(int)),
       'mode',
       serializers.serialize(object.mode,
-          specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data2_Value_Mode)),
+          specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data_Sort_Mode)),
     ];
 
     return result;
   }
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data2_Value deserialize(Serializers serializers, Iterable<Object?> serialized,
+  Api1UpdateViewRequestApplicationJson_Data_Sort deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder();
+    final result = Api1UpdateViewRequestApplicationJson_Data_SortBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1831,8 +1751,8 @@ class _$Api1UpdateViewRequestApplicationJson_Data2_ValueSerializer
           break;
         case 'mode':
           result.mode = serializers.deserialize(value,
-                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data2_Value_Mode))!
-              as Api1UpdateViewRequestApplicationJson_Data2_Value_Mode;
+                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data_Sort_Mode))!
+              as Api1UpdateViewRequestApplicationJson_Data_Sort_Mode;
           break;
       }
     }
@@ -1841,89 +1761,37 @@ class _$Api1UpdateViewRequestApplicationJson_Data2_ValueSerializer
   }
 }
 
-class _$Api1UpdateViewRequestApplicationJson_Data2Serializer
-    implements StructuredSerializer<Api1UpdateViewRequestApplicationJson_Data2> {
+class _$Api1UpdateViewRequestApplicationJson_Data_FilterSerializer
+    implements StructuredSerializer<Api1UpdateViewRequestApplicationJson_Data_Filter> {
   @override
   final Iterable<Type> types = const [
-    Api1UpdateViewRequestApplicationJson_Data2,
-    _$Api1UpdateViewRequestApplicationJson_Data2
+    Api1UpdateViewRequestApplicationJson_Data_Filter,
+    _$Api1UpdateViewRequestApplicationJson_Data_Filter
   ];
   @override
-  final String wireName = 'Api1UpdateViewRequestApplicationJson_Data2';
+  final String wireName = 'Api1UpdateViewRequestApplicationJson_Data_Filter';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Api1UpdateViewRequestApplicationJson_Data2 object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'key',
-      serializers.serialize(object.key, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data2_Key)),
-      'value',
-      serializers.serialize(object.value,
-          specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data2_Value)),
-    ];
-
-    return result;
-  }
-
-  @override
-  Api1UpdateViewRequestApplicationJson_Data2 deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = Api1UpdateViewRequestApplicationJson_Data2Builder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'key':
-          result.key = serializers.deserialize(value,
-                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data2_Key))!
-              as Api1UpdateViewRequestApplicationJson_Data2_Key;
-          break;
-        case 'value':
-          result.value.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data2_Value))!
-              as Api1UpdateViewRequestApplicationJson_Data2_Value);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$Api1UpdateViewRequestApplicationJson_Data3_ValueSerializer
-    implements StructuredSerializer<Api1UpdateViewRequestApplicationJson_Data3_Value> {
-  @override
-  final Iterable<Type> types = const [
-    Api1UpdateViewRequestApplicationJson_Data3_Value,
-    _$Api1UpdateViewRequestApplicationJson_Data3_Value
-  ];
-  @override
-  final String wireName = 'Api1UpdateViewRequestApplicationJson_Data3_Value';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, Api1UpdateViewRequestApplicationJson_Data3_Value object,
+  Iterable<Object?> serialize(Serializers serializers, Api1UpdateViewRequestApplicationJson_Data_Filter object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'columnId',
       serializers.serialize(object.columnId, specifiedType: const FullType(int)),
       'operator',
       serializers.serialize(object.$operator,
-          specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data3_Value_Operator)),
+          specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data_Filter_Operator)),
       'value',
       serializers.serialize(object.value,
-          specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data3_Value_Value)),
+          specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data_Filter_Value)),
     ];
 
     return result;
   }
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data3_Value deserialize(Serializers serializers, Iterable<Object?> serialized,
+  Api1UpdateViewRequestApplicationJson_Data_Filter deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder();
+    final result = Api1UpdateViewRequestApplicationJson_Data_FilterBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1936,13 +1804,13 @@ class _$Api1UpdateViewRequestApplicationJson_Data3_ValueSerializer
           break;
         case 'operator':
           result.$operator = serializers.deserialize(value,
-                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data3_Value_Operator))!
-              as Api1UpdateViewRequestApplicationJson_Data3_Value_Operator;
+                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data_Filter_Operator))!
+              as Api1UpdateViewRequestApplicationJson_Data_Filter_Operator;
           break;
         case 'value':
           result.value = serializers.deserialize(value,
-                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data3_Value_Value))!
-              as Api1UpdateViewRequestApplicationJson_Data3_Value_Value;
+                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data_Filter_Value))!
+              as Api1UpdateViewRequestApplicationJson_Data_Filter_Value;
           break;
       }
     }
@@ -1951,34 +1819,77 @@ class _$Api1UpdateViewRequestApplicationJson_Data3_ValueSerializer
   }
 }
 
-class _$Api1UpdateViewRequestApplicationJson_Data3Serializer
-    implements StructuredSerializer<Api1UpdateViewRequestApplicationJson_Data3> {
+class _$Api1UpdateViewRequestApplicationJson_DataSerializer
+    implements StructuredSerializer<Api1UpdateViewRequestApplicationJson_Data> {
   @override
   final Iterable<Type> types = const [
-    Api1UpdateViewRequestApplicationJson_Data3,
-    _$Api1UpdateViewRequestApplicationJson_Data3
+    Api1UpdateViewRequestApplicationJson_Data,
+    _$Api1UpdateViewRequestApplicationJson_Data
   ];
   @override
-  final String wireName = 'Api1UpdateViewRequestApplicationJson_Data3';
+  final String wireName = 'Api1UpdateViewRequestApplicationJson_Data';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Api1UpdateViewRequestApplicationJson_Data3 object,
+  Iterable<Object?> serialize(Serializers serializers, Api1UpdateViewRequestApplicationJson_Data object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'key',
-      serializers.serialize(object.key, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data3_Key)),
-      'value',
-      serializers.serialize(object.value,
-          specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data3_Value)),
-    ];
-
+    final result = <Object?>[];
+    Object? value;
+    value = object.title;
+    if (value != null) {
+      result
+        ..add('title')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.emoji;
+    if (value != null) {
+      result
+        ..add('emoji')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.columns;
+    if (value != null) {
+      result
+        ..add('columns')
+        ..add(serializers.serialize(value, specifiedType: const FullType(BuiltList, const [const FullType(int)])));
+    }
+    value = object.columnSettings;
+    if (value != null) {
+      result
+        ..add('columnSettings')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(Api1UpdateViewRequestApplicationJson_Data_ColumnSettings)])));
+    }
+    value = object.sort;
+    if (value != null) {
+      result
+        ..add('sort')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(Api1UpdateViewRequestApplicationJson_Data_Sort)])));
+    }
+    value = object.filter;
+    if (value != null) {
+      result
+        ..add('filter')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(BuiltList, const [const FullType(Api1UpdateViewRequestApplicationJson_Data_Filter)])
+            ])));
+    }
     return result;
   }
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data3 deserialize(Serializers serializers, Iterable<Object?> serialized,
+  Api1UpdateViewRequestApplicationJson_Data deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = Api1UpdateViewRequestApplicationJson_Data3Builder();
+    final result = Api1UpdateViewRequestApplicationJson_DataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1986,15 +1897,36 @@ class _$Api1UpdateViewRequestApplicationJson_Data3Serializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'key':
-          result.key = serializers.deserialize(value,
-                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data3_Key))!
-              as Api1UpdateViewRequestApplicationJson_Data3_Key;
+        case 'title':
+          result.title = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
-        case 'value':
-          result.value.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data3_Value))!
-              as Api1UpdateViewRequestApplicationJson_Data3_Value);
+        case 'emoji':
+          result.emoji = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'columns':
+          result.columns.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [const FullType(int)]))! as BuiltList<Object?>);
+          break;
+        case 'columnSettings':
+          result.columnSettings.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(Api1UpdateViewRequestApplicationJson_Data_ColumnSettings)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'sort':
+          result.sort.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(Api1UpdateViewRequestApplicationJson_Data_Sort)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'filter':
+          result.filter.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(BuiltList, const [const FullType(Api1UpdateViewRequestApplicationJson_Data_Filter)])
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -2033,9 +1965,9 @@ class _$Api1UpdateViewRequestApplicationJsonSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'data':
-          result.data =
+          result.data.replace(
               serializers.deserialize(value, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data))!
-                  as Api1UpdateViewRequestApplicationJson_Data;
+                  as Api1UpdateViewRequestApplicationJson_Data);
           break;
       }
     }
@@ -2461,6 +2393,97 @@ class _$ContextNavigationSerializer implements StructuredSerializer<ContextNavig
   }
 }
 
+class _$Column_ViewColumnInformationSerializer implements StructuredSerializer<Column_ViewColumnInformation> {
+  @override
+  final Iterable<Type> types = const [Column_ViewColumnInformation, _$Column_ViewColumnInformation];
+  @override
+  final String wireName = 'Column_ViewColumnInformation';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Column_ViewColumnInformation object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'columnId',
+      serializers.serialize(object.columnId, specifiedType: const FullType(int)),
+      'order',
+      serializers.serialize(object.order, specifiedType: const FullType(int)),
+      'readonly',
+      serializers.serialize(object.readonly, specifiedType: const FullType(bool)),
+      'mandatory',
+      serializers.serialize(object.mandatory, specifiedType: const FullType(bool)),
+    ];
+
+    return result;
+  }
+
+  @override
+  Column_ViewColumnInformation deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = Column_ViewColumnInformationBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'columnId':
+          result.columnId = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'order':
+          result.order = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'readonly':
+          result.readonly = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'mandatory':
+          result.mandatory = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Column_CustomSettingsSerializer implements StructuredSerializer<Column_CustomSettings> {
+  @override
+  final Iterable<Type> types = const [Column_CustomSettings, _$Column_CustomSettings];
+  @override
+  final String wireName = 'Column_CustomSettings';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Column_CustomSettings object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'width',
+      serializers.serialize(object.width, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  Column_CustomSettings deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = Column_CustomSettingsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'width':
+          result.width = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$ColumnSerializer implements StructuredSerializer<Column> {
   @override
   final Iterable<Type> types = const [Column, _$Column];
@@ -2512,6 +2535,8 @@ class _$ColumnSerializer implements StructuredSerializer<Column> {
       serializers.serialize(object.textAllowedPattern, specifiedType: const FullType(String)),
       'textMaxLength',
       serializers.serialize(object.textMaxLength, specifiedType: const FullType(int)),
+      'textUnique',
+      serializers.serialize(object.textUnique, specifiedType: const FullType(bool)),
       'selectionOptions',
       serializers.serialize(object.selectionOptions, specifiedType: const FullType(String)),
       'selectionDefault',
@@ -2531,7 +2556,19 @@ class _$ColumnSerializer implements StructuredSerializer<Column> {
       'showUserStatus',
       serializers.serialize(object.showUserStatus, specifiedType: const FullType(bool)),
     ];
-
+    Object? value;
+    value = object.viewColumnInformation;
+    if (value != null) {
+      result
+        ..add('viewColumnInformation')
+        ..add(serializers.serialize(value, specifiedType: const FullType(Column_ViewColumnInformation)));
+    }
+    value = object.customSettings;
+    if (value != null) {
+      result
+        ..add('customSettings')
+        ..add(serializers.serialize(value, specifiedType: const FullType(Column_CustomSettings)));
+    }
     return result;
   }
 
@@ -2609,6 +2646,9 @@ class _$ColumnSerializer implements StructuredSerializer<Column> {
         case 'textMaxLength':
           result.textMaxLength = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
+        case 'textUnique':
+          result.textUnique = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
         case 'selectionOptions':
           result.selectionOptions = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
@@ -2635,6 +2675,14 @@ class _$ColumnSerializer implements StructuredSerializer<Column> {
           break;
         case 'showUserStatus':
           result.showUserStatus = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'viewColumnInformation':
+          result.viewColumnInformation.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Column_ViewColumnInformation))! as Column_ViewColumnInformation);
+          break;
+        case 'customSettings':
+          result.customSettings.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Column_CustomSettings))! as Column_CustomSettings);
           break;
       }
     }
@@ -2664,6 +2712,9 @@ class _$Api1CreateTableColumnRequestApplicationJsonSerializer
           specifiedType: const FullType(Api1CreateTableColumnRequestApplicationJson_Type)),
       'mandatory',
       serializers.serialize(object.mandatory, specifiedType: const FullType(bool)),
+      'customSettings',
+      serializers.serialize(object.customSettings,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])),
     ];
     Object? value;
     value = object.subtype;
@@ -2731,6 +2782,12 @@ class _$Api1CreateTableColumnRequestApplicationJsonSerializer
       result
         ..add('textMaxLength')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.textUnique;
+    if (value != null) {
+      result
+        ..add('textUnique')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.selectionOptions;
     if (value != null) {
@@ -2850,6 +2907,9 @@ class _$Api1CreateTableColumnRequestApplicationJsonSerializer
         case 'textMaxLength':
           result.textMaxLength = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
+        case 'textUnique':
+          result.textUnique = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'selectionOptions':
           result.selectionOptions = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
@@ -2881,6 +2941,10 @@ class _$Api1CreateTableColumnRequestApplicationJsonSerializer
           result.selectedViewIds.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [const FullType(int)]))! as BuiltList<Object?>);
           break;
+        case 'customSettings':
+          result.customSettings.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)]))!);
+          break;
       }
     }
 
@@ -2905,6 +2969,9 @@ class _$Api1CreateColumnRequestApplicationJsonSerializer
       serializers.serialize(object.type, specifiedType: const FullType(Api1CreateColumnRequestApplicationJson_Type)),
       'mandatory',
       serializers.serialize(object.mandatory, specifiedType: const FullType(bool)),
+      'customSettings',
+      serializers.serialize(object.customSettings,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])),
     ];
     Object? value;
     value = object.tableId;
@@ -2984,6 +3051,12 @@ class _$Api1CreateColumnRequestApplicationJsonSerializer
       result
         ..add('textMaxLength')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.textUnique;
+    if (value != null) {
+      result
+        ..add('textUnique')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.selectionOptions;
     if (value != null) {
@@ -3109,6 +3182,9 @@ class _$Api1CreateColumnRequestApplicationJsonSerializer
         case 'textMaxLength':
           result.textMaxLength = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
+        case 'textUnique':
+          result.textUnique = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'selectionOptions':
           result.selectionOptions = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
@@ -3140,6 +3216,10 @@ class _$Api1CreateColumnRequestApplicationJsonSerializer
           result.selectedViewIds.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [const FullType(int)]))! as BuiltList<Object?>);
           break;
+        case 'customSettings':
+          result.customSettings.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)]))!);
+          break;
       }
     }
 
@@ -3160,6 +3240,9 @@ class _$Api1UpdateColumnRequestApplicationJsonSerializer
     final result = <Object?>[
       'mandatory',
       serializers.serialize(object.mandatory, specifiedType: const FullType(bool)),
+      'customSettings',
+      serializers.serialize(object.customSettings,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])),
     ];
     Object? value;
     value = object.title;
@@ -3233,6 +3316,12 @@ class _$Api1UpdateColumnRequestApplicationJsonSerializer
       result
         ..add('textMaxLength')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.textUnique;
+    if (value != null) {
+      result
+        ..add('textUnique')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.selectionOptions;
     if (value != null) {
@@ -3341,6 +3430,9 @@ class _$Api1UpdateColumnRequestApplicationJsonSerializer
         case 'textMaxLength':
           result.textMaxLength = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
+        case 'textUnique':
+          result.textUnique = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'selectionOptions':
           result.selectionOptions = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
@@ -3367,6 +3459,10 @@ class _$Api1UpdateColumnRequestApplicationJsonSerializer
           break;
         case 'usergroupShowUserStatus':
           result.usergroupShowUserStatus = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'customSettings':
+          result.customSettings.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)]))!);
           break;
       }
     }
@@ -3693,6 +3789,8 @@ class _$ImportStateSerializer implements StructuredSerializer<ImportState> {
       serializers.serialize(object.createdColumnsCount, specifiedType: const FullType(int)),
       'inserted_rows_count',
       serializers.serialize(object.insertedRowsCount, specifiedType: const FullType(int)),
+      'updated_rows_count',
+      serializers.serialize(object.updatedRowsCount, specifiedType: const FullType(int)),
       'errors_parsing_count',
       serializers.serialize(object.errorsParsingCount, specifiedType: const FullType(int)),
       'errors_count',
@@ -3724,6 +3822,9 @@ class _$ImportStateSerializer implements StructuredSerializer<ImportState> {
           break;
         case 'inserted_rows_count':
           result.insertedRowsCount = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'updated_rows_count':
+          result.updatedRowsCount = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
         case 'errors_parsing_count':
           result.errorsParsingCount = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
@@ -4052,6 +4153,9 @@ class _$ApiColumnsCreateNumberColumnRequestApplicationJsonSerializer
       'baseNodeType',
       serializers.serialize(object.baseNodeType,
           specifiedType: const FullType(ApiColumnsCreateNumberColumnRequestApplicationJson_BaseNodeType)),
+      'customSettings',
+      serializers.serialize(object.customSettings,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])),
     ];
     Object? value;
     value = object.numberDefault;
@@ -4166,6 +4270,10 @@ class _$ApiColumnsCreateNumberColumnRequestApplicationJsonSerializer
           result.baseNodeType = serializers.deserialize(value,
                   specifiedType: const FullType(ApiColumnsCreateNumberColumnRequestApplicationJson_BaseNodeType))!
               as ApiColumnsCreateNumberColumnRequestApplicationJson_BaseNodeType;
+          break;
+        case 'customSettings':
+          result.customSettings.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)]))!);
           break;
       }
     }
@@ -4290,6 +4398,9 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJsonSerializer
       'baseNodeType',
       serializers.serialize(object.baseNodeType,
           specifiedType: const FullType(ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeType)),
+      'customSettings',
+      serializers.serialize(object.customSettings,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])),
     ];
     Object? value;
     value = object.textDefault;
@@ -4309,6 +4420,12 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJsonSerializer
       result
         ..add('textMaxLength')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.textUnique;
+    if (value != null) {
+      result
+        ..add('textUnique')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.subtype;
     if (value != null) {
@@ -4358,6 +4475,9 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJsonSerializer
         case 'textMaxLength':
           result.textMaxLength = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
+        case 'textUnique':
+          result.textUnique = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'subtype':
           result.subtype = serializers.deserialize(value,
                   specifiedType: const FullType(ApiColumnsCreateTextColumnRequestApplicationJson_Subtype))
@@ -4377,6 +4497,10 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJsonSerializer
           result.baseNodeType = serializers.deserialize(value,
                   specifiedType: const FullType(ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeType))!
               as ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeType;
+          break;
+        case 'customSettings':
+          result.customSettings.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)]))!);
           break;
       }
     }
@@ -4503,6 +4627,9 @@ class _$ApiColumnsCreateSelectionColumnRequestApplicationJsonSerializer
       'baseNodeType',
       serializers.serialize(object.baseNodeType,
           specifiedType: const FullType(ApiColumnsCreateSelectionColumnRequestApplicationJson_BaseNodeType)),
+      'customSettings',
+      serializers.serialize(object.customSettings,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])),
     ];
     Object? value;
     value = object.selectionDefault;
@@ -4576,6 +4703,10 @@ class _$ApiColumnsCreateSelectionColumnRequestApplicationJsonSerializer
           result.baseNodeType = serializers.deserialize(value,
                   specifiedType: const FullType(ApiColumnsCreateSelectionColumnRequestApplicationJson_BaseNodeType))!
               as ApiColumnsCreateSelectionColumnRequestApplicationJson_BaseNodeType;
+          break;
+        case 'customSettings':
+          result.customSettings.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)]))!);
           break;
       }
     }
@@ -4702,6 +4833,9 @@ class _$ApiColumnsCreateDatetimeColumnRequestApplicationJsonSerializer
       'baseNodeType',
       serializers.serialize(object.baseNodeType,
           specifiedType: const FullType(ApiColumnsCreateDatetimeColumnRequestApplicationJson_BaseNodeType)),
+      'customSettings',
+      serializers.serialize(object.customSettings,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])),
     ];
     Object? value;
     value = object.datetimeDefault;
@@ -4775,6 +4909,10 @@ class _$ApiColumnsCreateDatetimeColumnRequestApplicationJsonSerializer
           result.baseNodeType = serializers.deserialize(value,
                   specifiedType: const FullType(ApiColumnsCreateDatetimeColumnRequestApplicationJson_BaseNodeType))!
               as ApiColumnsCreateDatetimeColumnRequestApplicationJson_BaseNodeType;
+          break;
+        case 'customSettings':
+          result.customSettings.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)]))!);
           break;
       }
     }
@@ -4900,6 +5038,9 @@ class _$ApiColumnsCreateUsergroupColumnRequestApplicationJsonSerializer
       'baseNodeType',
       serializers.serialize(object.baseNodeType,
           specifiedType: const FullType(ApiColumnsCreateUsergroupColumnRequestApplicationJson_BaseNodeType)),
+      'customSettings',
+      serializers.serialize(object.customSettings,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])),
     ];
     Object? value;
     value = object.usergroupDefault;
@@ -5003,6 +5144,10 @@ class _$ApiColumnsCreateUsergroupColumnRequestApplicationJsonSerializer
           result.baseNodeType = serializers.deserialize(value,
                   specifiedType: const FullType(ApiColumnsCreateUsergroupColumnRequestApplicationJson_BaseNodeType))!
               as ApiColumnsCreateUsergroupColumnRequestApplicationJson_BaseNodeType;
+          break;
+        case 'customSettings':
+          result.customSettings.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)]))!);
           break;
       }
     }
@@ -7835,6 +7980,9 @@ abstract mixin class $View_ColumnSettingsInterfaceBuilder {
 
   int? get order;
   set order(int? order);
+
+  bool? get readonly;
+  set readonly(bool? readonly);
 }
 
 class _$View_ColumnSettings extends View_ColumnSettings {
@@ -7842,11 +7990,13 @@ class _$View_ColumnSettings extends View_ColumnSettings {
   final int columnId;
   @override
   final int order;
+  @override
+  final bool readonly;
 
   factory _$View_ColumnSettings([void Function(View_ColumnSettingsBuilder)? updates]) =>
       (View_ColumnSettingsBuilder()..update(updates))._build();
 
-  _$View_ColumnSettings._({required this.columnId, required this.order}) : super._();
+  _$View_ColumnSettings._({required this.columnId, required this.order, required this.readonly}) : super._();
   @override
   View_ColumnSettings rebuild(void Function(View_ColumnSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -7857,7 +8007,10 @@ class _$View_ColumnSettings extends View_ColumnSettings {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is View_ColumnSettings && columnId == other.columnId && order == other.order;
+    return other is View_ColumnSettings &&
+        columnId == other.columnId &&
+        order == other.order &&
+        readonly == other.readonly;
   }
 
   @override
@@ -7865,6 +8018,7 @@ class _$View_ColumnSettings extends View_ColumnSettings {
     var _$hash = 0;
     _$hash = $jc(_$hash, columnId.hashCode);
     _$hash = $jc(_$hash, order.hashCode);
+    _$hash = $jc(_$hash, readonly.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -7873,7 +8027,8 @@ class _$View_ColumnSettings extends View_ColumnSettings {
   String toString() {
     return (newBuiltValueToStringHelper(r'View_ColumnSettings')
           ..add('columnId', columnId)
-          ..add('order', order))
+          ..add('order', order)
+          ..add('readonly', readonly))
         .toString();
   }
 }
@@ -7890,6 +8045,10 @@ class View_ColumnSettingsBuilder
   int? get order => _$this._order;
   set order(covariant int? order) => _$this._order = order;
 
+  bool? _readonly;
+  bool? get readonly => _$this._readonly;
+  set readonly(covariant bool? readonly) => _$this._readonly = readonly;
+
   View_ColumnSettingsBuilder() {
     View_ColumnSettings._defaults(this);
   }
@@ -7899,6 +8058,7 @@ class View_ColumnSettingsBuilder
     if ($v != null) {
       _columnId = $v.columnId;
       _order = $v.order;
+      _readonly = $v.readonly;
       _$v = null;
     }
     return this;
@@ -7923,6 +8083,7 @@ class View_ColumnSettingsBuilder
         _$View_ColumnSettings._(
           columnId: BuiltValueNullFieldError.checkNotNull(columnId, r'View_ColumnSettings', 'columnId'),
           order: BuiltValueNullFieldError.checkNotNull(order, r'View_ColumnSettings', 'order'),
+          readonly: BuiltValueNullFieldError.checkNotNull(readonly, r'View_ColumnSettings', 'readonly'),
         );
     replace(_$result);
     return _$result;
@@ -9481,268 +9642,181 @@ class Api1CreateViewRequestApplicationJsonBuilder
   }
 }
 
-abstract mixin class $Api1UpdateViewRequestApplicationJson_Data0InterfaceBuilder {
-  void replace($Api1UpdateViewRequestApplicationJson_Data0Interface other);
-  void update(void Function($Api1UpdateViewRequestApplicationJson_Data0InterfaceBuilder) updates);
-  Api1UpdateViewRequestApplicationJson_Data0_Key? get key;
-  set key(Api1UpdateViewRequestApplicationJson_Data0_Key? key);
+abstract mixin class $Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterfaceBuilder {
+  void replace($Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterface other);
+  void update(void Function($Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterfaceBuilder) updates);
+  int? get columnId;
+  set columnId(int? columnId);
 
-  String? get value;
-  set value(String? value);
+  int? get order;
+  set order(int? order);
+
+  bool? get readonly;
+  set readonly(bool? readonly);
+
+  bool? get mandatory;
+  set mandatory(bool? mandatory);
 }
 
-class _$Api1UpdateViewRequestApplicationJson_Data0 extends Api1UpdateViewRequestApplicationJson_Data0 {
+class _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettings
+    extends Api1UpdateViewRequestApplicationJson_Data_ColumnSettings {
   @override
-  final Api1UpdateViewRequestApplicationJson_Data0_Key key;
+  final int? columnId;
   @override
-  final String value;
+  final int? order;
+  @override
+  final bool? readonly;
+  @override
+  final bool? mandatory;
 
-  factory _$Api1UpdateViewRequestApplicationJson_Data0(
-          [void Function(Api1UpdateViewRequestApplicationJson_Data0Builder)? updates]) =>
-      (Api1UpdateViewRequestApplicationJson_Data0Builder()..update(updates))._build();
+  factory _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettings(
+          [void Function(Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder)? updates]) =>
+      (Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder()..update(updates))._build();
 
-  _$Api1UpdateViewRequestApplicationJson_Data0._({required this.key, required this.value}) : super._();
+  _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettings._(
+      {this.columnId, this.order, this.readonly, this.mandatory})
+      : super._();
   @override
-  Api1UpdateViewRequestApplicationJson_Data0 rebuild(
-          void Function(Api1UpdateViewRequestApplicationJson_Data0Builder) updates) =>
+  Api1UpdateViewRequestApplicationJson_Data_ColumnSettings rebuild(
+          void Function(Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data0Builder toBuilder() =>
-      Api1UpdateViewRequestApplicationJson_Data0Builder()..replace(this);
+  Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder toBuilder() =>
+      Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Api1UpdateViewRequestApplicationJson_Data0 && key == other.key && value == other.value;
+    return other is Api1UpdateViewRequestApplicationJson_Data_ColumnSettings &&
+        columnId == other.columnId &&
+        order == other.order &&
+        readonly == other.readonly &&
+        mandatory == other.mandatory;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, key.hashCode);
-    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, columnId.hashCode);
+    _$hash = $jc(_$hash, order.hashCode);
+    _$hash = $jc(_$hash, readonly.hashCode);
+    _$hash = $jc(_$hash, mandatory.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Api1UpdateViewRequestApplicationJson_Data0')
-          ..add('key', key)
-          ..add('value', value))
+    return (newBuiltValueToStringHelper(r'Api1UpdateViewRequestApplicationJson_Data_ColumnSettings')
+          ..add('columnId', columnId)
+          ..add('order', order)
+          ..add('readonly', readonly)
+          ..add('mandatory', mandatory))
         .toString();
   }
 }
 
-class Api1UpdateViewRequestApplicationJson_Data0Builder
+class Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder
     implements
-        Builder<Api1UpdateViewRequestApplicationJson_Data0, Api1UpdateViewRequestApplicationJson_Data0Builder>,
-        $Api1UpdateViewRequestApplicationJson_Data0InterfaceBuilder {
-  _$Api1UpdateViewRequestApplicationJson_Data0? _$v;
+        Builder<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings,
+            Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder>,
+        $Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterfaceBuilder {
+  _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettings? _$v;
 
-  Api1UpdateViewRequestApplicationJson_Data0_Key? _key;
-  Api1UpdateViewRequestApplicationJson_Data0_Key? get key => _$this._key;
-  set key(covariant Api1UpdateViewRequestApplicationJson_Data0_Key? key) => _$this._key = key;
+  int? _columnId;
+  int? get columnId => _$this._columnId;
+  set columnId(covariant int? columnId) => _$this._columnId = columnId;
 
-  String? _value;
-  String? get value => _$this._value;
-  set value(covariant String? value) => _$this._value = value;
+  int? _order;
+  int? get order => _$this._order;
+  set order(covariant int? order) => _$this._order = order;
 
-  Api1UpdateViewRequestApplicationJson_Data0Builder() {
-    Api1UpdateViewRequestApplicationJson_Data0._defaults(this);
+  bool? _readonly;
+  bool? get readonly => _$this._readonly;
+  set readonly(covariant bool? readonly) => _$this._readonly = readonly;
+
+  bool? _mandatory;
+  bool? get mandatory => _$this._mandatory;
+  set mandatory(covariant bool? mandatory) => _$this._mandatory = mandatory;
+
+  Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder() {
+    Api1UpdateViewRequestApplicationJson_Data_ColumnSettings._defaults(this);
   }
 
-  Api1UpdateViewRequestApplicationJson_Data0Builder get _$this {
+  Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _key = $v.key;
-      _value = $v.value;
+      _columnId = $v.columnId;
+      _order = $v.order;
+      _readonly = $v.readonly;
+      _mandatory = $v.mandatory;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(covariant Api1UpdateViewRequestApplicationJson_Data0 other) {
-    _$v = other as _$Api1UpdateViewRequestApplicationJson_Data0;
+  void replace(covariant Api1UpdateViewRequestApplicationJson_Data_ColumnSettings other) {
+    _$v = other as _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettings;
   }
 
   @override
-  void update(void Function(Api1UpdateViewRequestApplicationJson_Data0Builder)? updates) {
+  void update(void Function(Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data0 build() => _build();
+  Api1UpdateViewRequestApplicationJson_Data_ColumnSettings build() => _build();
 
-  _$Api1UpdateViewRequestApplicationJson_Data0 _build() {
-    Api1UpdateViewRequestApplicationJson_Data0._validate(this);
+  _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettings _build() {
+    Api1UpdateViewRequestApplicationJson_Data_ColumnSettings._validate(this);
     final _$result = _$v ??
-        _$Api1UpdateViewRequestApplicationJson_Data0._(
-          key: BuiltValueNullFieldError.checkNotNull(key, r'Api1UpdateViewRequestApplicationJson_Data0', 'key'),
-          value: BuiltValueNullFieldError.checkNotNull(value, r'Api1UpdateViewRequestApplicationJson_Data0', 'value'),
+        _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettings._(
+          columnId: columnId,
+          order: order,
+          readonly: readonly,
+          mandatory: mandatory,
         );
     replace(_$result);
     return _$result;
   }
 }
 
-abstract mixin class $Api1UpdateViewRequestApplicationJson_Data1InterfaceBuilder {
-  void replace($Api1UpdateViewRequestApplicationJson_Data1Interface other);
-  void update(void Function($Api1UpdateViewRequestApplicationJson_Data1InterfaceBuilder) updates);
-  Api1UpdateViewRequestApplicationJson_Data1_Key? get key;
-  set key(Api1UpdateViewRequestApplicationJson_Data1_Key? key);
-
-  ListBuilder<int> get value;
-  set value(ListBuilder<int>? value);
-}
-
-class _$Api1UpdateViewRequestApplicationJson_Data1 extends Api1UpdateViewRequestApplicationJson_Data1 {
-  @override
-  final Api1UpdateViewRequestApplicationJson_Data1_Key key;
-  @override
-  final BuiltList<int> value;
-
-  factory _$Api1UpdateViewRequestApplicationJson_Data1(
-          [void Function(Api1UpdateViewRequestApplicationJson_Data1Builder)? updates]) =>
-      (Api1UpdateViewRequestApplicationJson_Data1Builder()..update(updates))._build();
-
-  _$Api1UpdateViewRequestApplicationJson_Data1._({required this.key, required this.value}) : super._();
-  @override
-  Api1UpdateViewRequestApplicationJson_Data1 rebuild(
-          void Function(Api1UpdateViewRequestApplicationJson_Data1Builder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  Api1UpdateViewRequestApplicationJson_Data1Builder toBuilder() =>
-      Api1UpdateViewRequestApplicationJson_Data1Builder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Api1UpdateViewRequestApplicationJson_Data1 && key == other.key && value == other.value;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, key.hashCode);
-    _$hash = $jc(_$hash, value.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Api1UpdateViewRequestApplicationJson_Data1')
-          ..add('key', key)
-          ..add('value', value))
-        .toString();
-  }
-}
-
-class Api1UpdateViewRequestApplicationJson_Data1Builder
-    implements
-        Builder<Api1UpdateViewRequestApplicationJson_Data1, Api1UpdateViewRequestApplicationJson_Data1Builder>,
-        $Api1UpdateViewRequestApplicationJson_Data1InterfaceBuilder {
-  _$Api1UpdateViewRequestApplicationJson_Data1? _$v;
-
-  Api1UpdateViewRequestApplicationJson_Data1_Key? _key;
-  Api1UpdateViewRequestApplicationJson_Data1_Key? get key => _$this._key;
-  set key(covariant Api1UpdateViewRequestApplicationJson_Data1_Key? key) => _$this._key = key;
-
-  ListBuilder<int>? _value;
-  ListBuilder<int> get value => _$this._value ??= ListBuilder<int>();
-  set value(covariant ListBuilder<int>? value) => _$this._value = value;
-
-  Api1UpdateViewRequestApplicationJson_Data1Builder() {
-    Api1UpdateViewRequestApplicationJson_Data1._defaults(this);
-  }
-
-  Api1UpdateViewRequestApplicationJson_Data1Builder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _key = $v.key;
-      _value = $v.value.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant Api1UpdateViewRequestApplicationJson_Data1 other) {
-    _$v = other as _$Api1UpdateViewRequestApplicationJson_Data1;
-  }
-
-  @override
-  void update(void Function(Api1UpdateViewRequestApplicationJson_Data1Builder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Api1UpdateViewRequestApplicationJson_Data1 build() => _build();
-
-  _$Api1UpdateViewRequestApplicationJson_Data1 _build() {
-    Api1UpdateViewRequestApplicationJson_Data1._validate(this);
-    _$Api1UpdateViewRequestApplicationJson_Data1 _$result;
-    try {
-      _$result = _$v ??
-          _$Api1UpdateViewRequestApplicationJson_Data1._(
-            key: BuiltValueNullFieldError.checkNotNull(key, r'Api1UpdateViewRequestApplicationJson_Data1', 'key'),
-            value: value.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'value';
-        value.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(r'Api1UpdateViewRequestApplicationJson_Data1', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $Api1UpdateViewRequestApplicationJson_Data2_ValueInterfaceBuilder {
-  void replace($Api1UpdateViewRequestApplicationJson_Data2_ValueInterface other);
-  void update(void Function($Api1UpdateViewRequestApplicationJson_Data2_ValueInterfaceBuilder) updates);
+abstract mixin class $Api1UpdateViewRequestApplicationJson_Data_SortInterfaceBuilder {
+  void replace($Api1UpdateViewRequestApplicationJson_Data_SortInterface other);
+  void update(void Function($Api1UpdateViewRequestApplicationJson_Data_SortInterfaceBuilder) updates);
   int? get columnId;
   set columnId(int? columnId);
 
-  Api1UpdateViewRequestApplicationJson_Data2_Value_Mode? get mode;
-  set mode(Api1UpdateViewRequestApplicationJson_Data2_Value_Mode? mode);
+  Api1UpdateViewRequestApplicationJson_Data_Sort_Mode? get mode;
+  set mode(Api1UpdateViewRequestApplicationJson_Data_Sort_Mode? mode);
 }
 
-class _$Api1UpdateViewRequestApplicationJson_Data2_Value extends Api1UpdateViewRequestApplicationJson_Data2_Value {
+class _$Api1UpdateViewRequestApplicationJson_Data_Sort extends Api1UpdateViewRequestApplicationJson_Data_Sort {
   @override
   final int columnId;
   @override
-  final Api1UpdateViewRequestApplicationJson_Data2_Value_Mode mode;
+  final Api1UpdateViewRequestApplicationJson_Data_Sort_Mode mode;
 
-  factory _$Api1UpdateViewRequestApplicationJson_Data2_Value(
-          [void Function(Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder)? updates]) =>
-      (Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder()..update(updates))._build();
+  factory _$Api1UpdateViewRequestApplicationJson_Data_Sort(
+          [void Function(Api1UpdateViewRequestApplicationJson_Data_SortBuilder)? updates]) =>
+      (Api1UpdateViewRequestApplicationJson_Data_SortBuilder()..update(updates))._build();
 
-  _$Api1UpdateViewRequestApplicationJson_Data2_Value._({required this.columnId, required this.mode}) : super._();
+  _$Api1UpdateViewRequestApplicationJson_Data_Sort._({required this.columnId, required this.mode}) : super._();
   @override
-  Api1UpdateViewRequestApplicationJson_Data2_Value rebuild(
-          void Function(Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder) updates) =>
+  Api1UpdateViewRequestApplicationJson_Data_Sort rebuild(
+          void Function(Api1UpdateViewRequestApplicationJson_Data_SortBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder toBuilder() =>
-      Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder()..replace(this);
+  Api1UpdateViewRequestApplicationJson_Data_SortBuilder toBuilder() =>
+      Api1UpdateViewRequestApplicationJson_Data_SortBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Api1UpdateViewRequestApplicationJson_Data2_Value &&
-        columnId == other.columnId &&
-        mode == other.mode;
+    return other is Api1UpdateViewRequestApplicationJson_Data_Sort && columnId == other.columnId && mode == other.mode;
   }
 
   @override
@@ -9756,33 +9830,32 @@ class _$Api1UpdateViewRequestApplicationJson_Data2_Value extends Api1UpdateViewR
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Api1UpdateViewRequestApplicationJson_Data2_Value')
+    return (newBuiltValueToStringHelper(r'Api1UpdateViewRequestApplicationJson_Data_Sort')
           ..add('columnId', columnId)
           ..add('mode', mode))
         .toString();
   }
 }
 
-class Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder
+class Api1UpdateViewRequestApplicationJson_Data_SortBuilder
     implements
-        Builder<Api1UpdateViewRequestApplicationJson_Data2_Value,
-            Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder>,
-        $Api1UpdateViewRequestApplicationJson_Data2_ValueInterfaceBuilder {
-  _$Api1UpdateViewRequestApplicationJson_Data2_Value? _$v;
+        Builder<Api1UpdateViewRequestApplicationJson_Data_Sort, Api1UpdateViewRequestApplicationJson_Data_SortBuilder>,
+        $Api1UpdateViewRequestApplicationJson_Data_SortInterfaceBuilder {
+  _$Api1UpdateViewRequestApplicationJson_Data_Sort? _$v;
 
   int? _columnId;
   int? get columnId => _$this._columnId;
   set columnId(covariant int? columnId) => _$this._columnId = columnId;
 
-  Api1UpdateViewRequestApplicationJson_Data2_Value_Mode? _mode;
-  Api1UpdateViewRequestApplicationJson_Data2_Value_Mode? get mode => _$this._mode;
-  set mode(covariant Api1UpdateViewRequestApplicationJson_Data2_Value_Mode? mode) => _$this._mode = mode;
+  Api1UpdateViewRequestApplicationJson_Data_Sort_Mode? _mode;
+  Api1UpdateViewRequestApplicationJson_Data_Sort_Mode? get mode => _$this._mode;
+  set mode(covariant Api1UpdateViewRequestApplicationJson_Data_Sort_Mode? mode) => _$this._mode = mode;
 
-  Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder() {
-    Api1UpdateViewRequestApplicationJson_Data2_Value._defaults(this);
+  Api1UpdateViewRequestApplicationJson_Data_SortBuilder() {
+    Api1UpdateViewRequestApplicationJson_Data_Sort._defaults(this);
   }
 
-  Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder get _$this {
+  Api1UpdateViewRequestApplicationJson_Data_SortBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _columnId = $v.columnId;
@@ -9793,194 +9866,73 @@ class Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder
   }
 
   @override
-  void replace(covariant Api1UpdateViewRequestApplicationJson_Data2_Value other) {
-    _$v = other as _$Api1UpdateViewRequestApplicationJson_Data2_Value;
+  void replace(covariant Api1UpdateViewRequestApplicationJson_Data_Sort other) {
+    _$v = other as _$Api1UpdateViewRequestApplicationJson_Data_Sort;
   }
 
   @override
-  void update(void Function(Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder)? updates) {
+  void update(void Function(Api1UpdateViewRequestApplicationJson_Data_SortBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data2_Value build() => _build();
+  Api1UpdateViewRequestApplicationJson_Data_Sort build() => _build();
 
-  _$Api1UpdateViewRequestApplicationJson_Data2_Value _build() {
-    Api1UpdateViewRequestApplicationJson_Data2_Value._validate(this);
+  _$Api1UpdateViewRequestApplicationJson_Data_Sort _build() {
+    Api1UpdateViewRequestApplicationJson_Data_Sort._validate(this);
     final _$result = _$v ??
-        _$Api1UpdateViewRequestApplicationJson_Data2_Value._(
+        _$Api1UpdateViewRequestApplicationJson_Data_Sort._(
           columnId: BuiltValueNullFieldError.checkNotNull(
-              columnId, r'Api1UpdateViewRequestApplicationJson_Data2_Value', 'columnId'),
-          mode:
-              BuiltValueNullFieldError.checkNotNull(mode, r'Api1UpdateViewRequestApplicationJson_Data2_Value', 'mode'),
+              columnId, r'Api1UpdateViewRequestApplicationJson_Data_Sort', 'columnId'),
+          mode: BuiltValueNullFieldError.checkNotNull(mode, r'Api1UpdateViewRequestApplicationJson_Data_Sort', 'mode'),
         );
     replace(_$result);
     return _$result;
   }
 }
 
-abstract mixin class $Api1UpdateViewRequestApplicationJson_Data2InterfaceBuilder {
-  void replace($Api1UpdateViewRequestApplicationJson_Data2Interface other);
-  void update(void Function($Api1UpdateViewRequestApplicationJson_Data2InterfaceBuilder) updates);
-  Api1UpdateViewRequestApplicationJson_Data2_Key? get key;
-  set key(Api1UpdateViewRequestApplicationJson_Data2_Key? key);
-
-  Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder get value;
-  set value(Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder? value);
-}
-
-class _$Api1UpdateViewRequestApplicationJson_Data2 extends Api1UpdateViewRequestApplicationJson_Data2 {
-  @override
-  final Api1UpdateViewRequestApplicationJson_Data2_Key key;
-  @override
-  final Api1UpdateViewRequestApplicationJson_Data2_Value value;
-
-  factory _$Api1UpdateViewRequestApplicationJson_Data2(
-          [void Function(Api1UpdateViewRequestApplicationJson_Data2Builder)? updates]) =>
-      (Api1UpdateViewRequestApplicationJson_Data2Builder()..update(updates))._build();
-
-  _$Api1UpdateViewRequestApplicationJson_Data2._({required this.key, required this.value}) : super._();
-  @override
-  Api1UpdateViewRequestApplicationJson_Data2 rebuild(
-          void Function(Api1UpdateViewRequestApplicationJson_Data2Builder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  Api1UpdateViewRequestApplicationJson_Data2Builder toBuilder() =>
-      Api1UpdateViewRequestApplicationJson_Data2Builder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Api1UpdateViewRequestApplicationJson_Data2 && key == other.key && value == other.value;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, key.hashCode);
-    _$hash = $jc(_$hash, value.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Api1UpdateViewRequestApplicationJson_Data2')
-          ..add('key', key)
-          ..add('value', value))
-        .toString();
-  }
-}
-
-class Api1UpdateViewRequestApplicationJson_Data2Builder
-    implements
-        Builder<Api1UpdateViewRequestApplicationJson_Data2, Api1UpdateViewRequestApplicationJson_Data2Builder>,
-        $Api1UpdateViewRequestApplicationJson_Data2InterfaceBuilder {
-  _$Api1UpdateViewRequestApplicationJson_Data2? _$v;
-
-  Api1UpdateViewRequestApplicationJson_Data2_Key? _key;
-  Api1UpdateViewRequestApplicationJson_Data2_Key? get key => _$this._key;
-  set key(covariant Api1UpdateViewRequestApplicationJson_Data2_Key? key) => _$this._key = key;
-
-  Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder? _value;
-  Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder get value =>
-      _$this._value ??= Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder();
-  set value(covariant Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder? value) => _$this._value = value;
-
-  Api1UpdateViewRequestApplicationJson_Data2Builder() {
-    Api1UpdateViewRequestApplicationJson_Data2._defaults(this);
-  }
-
-  Api1UpdateViewRequestApplicationJson_Data2Builder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _key = $v.key;
-      _value = $v.value.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant Api1UpdateViewRequestApplicationJson_Data2 other) {
-    _$v = other as _$Api1UpdateViewRequestApplicationJson_Data2;
-  }
-
-  @override
-  void update(void Function(Api1UpdateViewRequestApplicationJson_Data2Builder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Api1UpdateViewRequestApplicationJson_Data2 build() => _build();
-
-  _$Api1UpdateViewRequestApplicationJson_Data2 _build() {
-    Api1UpdateViewRequestApplicationJson_Data2._validate(this);
-    _$Api1UpdateViewRequestApplicationJson_Data2 _$result;
-    try {
-      _$result = _$v ??
-          _$Api1UpdateViewRequestApplicationJson_Data2._(
-            key: BuiltValueNullFieldError.checkNotNull(key, r'Api1UpdateViewRequestApplicationJson_Data2', 'key'),
-            value: value.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'value';
-        value.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(r'Api1UpdateViewRequestApplicationJson_Data2', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $Api1UpdateViewRequestApplicationJson_Data3_ValueInterfaceBuilder {
-  void replace($Api1UpdateViewRequestApplicationJson_Data3_ValueInterface other);
-  void update(void Function($Api1UpdateViewRequestApplicationJson_Data3_ValueInterfaceBuilder) updates);
+abstract mixin class $Api1UpdateViewRequestApplicationJson_Data_FilterInterfaceBuilder {
+  void replace($Api1UpdateViewRequestApplicationJson_Data_FilterInterface other);
+  void update(void Function($Api1UpdateViewRequestApplicationJson_Data_FilterInterfaceBuilder) updates);
   int? get columnId;
   set columnId(int? columnId);
 
-  Api1UpdateViewRequestApplicationJson_Data3_Value_Operator? get $operator;
-  set $operator(Api1UpdateViewRequestApplicationJson_Data3_Value_Operator? $operator);
+  Api1UpdateViewRequestApplicationJson_Data_Filter_Operator? get $operator;
+  set $operator(Api1UpdateViewRequestApplicationJson_Data_Filter_Operator? $operator);
 
-  Api1UpdateViewRequestApplicationJson_Data3_Value_Value? get value;
-  set value(Api1UpdateViewRequestApplicationJson_Data3_Value_Value? value);
+  Api1UpdateViewRequestApplicationJson_Data_Filter_Value? get value;
+  set value(Api1UpdateViewRequestApplicationJson_Data_Filter_Value? value);
 }
 
-class _$Api1UpdateViewRequestApplicationJson_Data3_Value extends Api1UpdateViewRequestApplicationJson_Data3_Value {
+class _$Api1UpdateViewRequestApplicationJson_Data_Filter extends Api1UpdateViewRequestApplicationJson_Data_Filter {
   @override
   final int columnId;
   @override
-  final Api1UpdateViewRequestApplicationJson_Data3_Value_Operator $operator;
+  final Api1UpdateViewRequestApplicationJson_Data_Filter_Operator $operator;
   @override
-  final Api1UpdateViewRequestApplicationJson_Data3_Value_Value value;
+  final Api1UpdateViewRequestApplicationJson_Data_Filter_Value value;
 
-  factory _$Api1UpdateViewRequestApplicationJson_Data3_Value(
-          [void Function(Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder)? updates]) =>
-      (Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder()..update(updates))._build();
+  factory _$Api1UpdateViewRequestApplicationJson_Data_Filter(
+          [void Function(Api1UpdateViewRequestApplicationJson_Data_FilterBuilder)? updates]) =>
+      (Api1UpdateViewRequestApplicationJson_Data_FilterBuilder()..update(updates))._build();
 
-  _$Api1UpdateViewRequestApplicationJson_Data3_Value._(
+  _$Api1UpdateViewRequestApplicationJson_Data_Filter._(
       {required this.columnId, required this.$operator, required this.value})
       : super._();
   @override
-  Api1UpdateViewRequestApplicationJson_Data3_Value rebuild(
-          void Function(Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder) updates) =>
+  Api1UpdateViewRequestApplicationJson_Data_Filter rebuild(
+          void Function(Api1UpdateViewRequestApplicationJson_Data_FilterBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder toBuilder() =>
-      Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder()..replace(this);
+  Api1UpdateViewRequestApplicationJson_Data_FilterBuilder toBuilder() =>
+      Api1UpdateViewRequestApplicationJson_Data_FilterBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     final dynamic _$dynamicOther = other;
-    return other is Api1UpdateViewRequestApplicationJson_Data3_Value &&
+    return other is Api1UpdateViewRequestApplicationJson_Data_Filter &&
         columnId == other.columnId &&
         $operator == other.$operator &&
         value == _$dynamicOther.value;
@@ -9998,7 +9950,7 @@ class _$Api1UpdateViewRequestApplicationJson_Data3_Value extends Api1UpdateViewR
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Api1UpdateViewRequestApplicationJson_Data3_Value')
+    return (newBuiltValueToStringHelper(r'Api1UpdateViewRequestApplicationJson_Data_Filter')
           ..add('columnId', columnId)
           ..add('\$operator', $operator)
           ..add('value', value))
@@ -10006,31 +9958,31 @@ class _$Api1UpdateViewRequestApplicationJson_Data3_Value extends Api1UpdateViewR
   }
 }
 
-class Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder
+class Api1UpdateViewRequestApplicationJson_Data_FilterBuilder
     implements
-        Builder<Api1UpdateViewRequestApplicationJson_Data3_Value,
-            Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder>,
-        $Api1UpdateViewRequestApplicationJson_Data3_ValueInterfaceBuilder {
-  _$Api1UpdateViewRequestApplicationJson_Data3_Value? _$v;
+        Builder<Api1UpdateViewRequestApplicationJson_Data_Filter,
+            Api1UpdateViewRequestApplicationJson_Data_FilterBuilder>,
+        $Api1UpdateViewRequestApplicationJson_Data_FilterInterfaceBuilder {
+  _$Api1UpdateViewRequestApplicationJson_Data_Filter? _$v;
 
   int? _columnId;
   int? get columnId => _$this._columnId;
   set columnId(covariant int? columnId) => _$this._columnId = columnId;
 
-  Api1UpdateViewRequestApplicationJson_Data3_Value_Operator? _$operator;
-  Api1UpdateViewRequestApplicationJson_Data3_Value_Operator? get $operator => _$this._$operator;
-  set $operator(covariant Api1UpdateViewRequestApplicationJson_Data3_Value_Operator? $operator) =>
+  Api1UpdateViewRequestApplicationJson_Data_Filter_Operator? _$operator;
+  Api1UpdateViewRequestApplicationJson_Data_Filter_Operator? get $operator => _$this._$operator;
+  set $operator(covariant Api1UpdateViewRequestApplicationJson_Data_Filter_Operator? $operator) =>
       _$this._$operator = $operator;
 
-  Api1UpdateViewRequestApplicationJson_Data3_Value_Value? _value;
-  Api1UpdateViewRequestApplicationJson_Data3_Value_Value? get value => _$this._value;
-  set value(covariant Api1UpdateViewRequestApplicationJson_Data3_Value_Value? value) => _$this._value = value;
+  Api1UpdateViewRequestApplicationJson_Data_Filter_Value? _value;
+  Api1UpdateViewRequestApplicationJson_Data_Filter_Value? get value => _$this._value;
+  set value(covariant Api1UpdateViewRequestApplicationJson_Data_Filter_Value? value) => _$this._value = value;
 
-  Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder() {
-    Api1UpdateViewRequestApplicationJson_Data3_Value._defaults(this);
+  Api1UpdateViewRequestApplicationJson_Data_FilterBuilder() {
+    Api1UpdateViewRequestApplicationJson_Data_Filter._defaults(this);
   }
 
-  Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder get _$this {
+  Api1UpdateViewRequestApplicationJson_Data_FilterBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _columnId = $v.columnId;
@@ -10042,146 +9994,230 @@ class Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder
   }
 
   @override
-  void replace(covariant Api1UpdateViewRequestApplicationJson_Data3_Value other) {
-    _$v = other as _$Api1UpdateViewRequestApplicationJson_Data3_Value;
+  void replace(covariant Api1UpdateViewRequestApplicationJson_Data_Filter other) {
+    _$v = other as _$Api1UpdateViewRequestApplicationJson_Data_Filter;
   }
 
   @override
-  void update(void Function(Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder)? updates) {
+  void update(void Function(Api1UpdateViewRequestApplicationJson_Data_FilterBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data3_Value build() => _build();
+  Api1UpdateViewRequestApplicationJson_Data_Filter build() => _build();
 
-  _$Api1UpdateViewRequestApplicationJson_Data3_Value _build() {
-    Api1UpdateViewRequestApplicationJson_Data3_Value._validate(this);
+  _$Api1UpdateViewRequestApplicationJson_Data_Filter _build() {
+    Api1UpdateViewRequestApplicationJson_Data_Filter._validate(this);
     final _$result = _$v ??
-        _$Api1UpdateViewRequestApplicationJson_Data3_Value._(
+        _$Api1UpdateViewRequestApplicationJson_Data_Filter._(
           columnId: BuiltValueNullFieldError.checkNotNull(
-              columnId, r'Api1UpdateViewRequestApplicationJson_Data3_Value', 'columnId'),
+              columnId, r'Api1UpdateViewRequestApplicationJson_Data_Filter', 'columnId'),
           $operator: BuiltValueNullFieldError.checkNotNull(
-              $operator, r'Api1UpdateViewRequestApplicationJson_Data3_Value', '\$operator'),
+              $operator, r'Api1UpdateViewRequestApplicationJson_Data_Filter', '\$operator'),
           value: BuiltValueNullFieldError.checkNotNull(
-              value, r'Api1UpdateViewRequestApplicationJson_Data3_Value', 'value'),
+              value, r'Api1UpdateViewRequestApplicationJson_Data_Filter', 'value'),
         );
     replace(_$result);
     return _$result;
   }
 }
 
-abstract mixin class $Api1UpdateViewRequestApplicationJson_Data3InterfaceBuilder {
-  void replace($Api1UpdateViewRequestApplicationJson_Data3Interface other);
-  void update(void Function($Api1UpdateViewRequestApplicationJson_Data3InterfaceBuilder) updates);
-  Api1UpdateViewRequestApplicationJson_Data3_Key? get key;
-  set key(Api1UpdateViewRequestApplicationJson_Data3_Key? key);
+abstract mixin class $Api1UpdateViewRequestApplicationJson_DataInterfaceBuilder {
+  void replace($Api1UpdateViewRequestApplicationJson_DataInterface other);
+  void update(void Function($Api1UpdateViewRequestApplicationJson_DataInterfaceBuilder) updates);
+  String? get title;
+  set title(String? title);
 
-  Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder get value;
-  set value(Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder? value);
+  String? get emoji;
+  set emoji(String? emoji);
+
+  String? get description;
+  set description(String? description);
+
+  ListBuilder<int> get columns;
+  set columns(ListBuilder<int>? columns);
+
+  ListBuilder<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings> get columnSettings;
+  set columnSettings(ListBuilder<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings>? columnSettings);
+
+  ListBuilder<Api1UpdateViewRequestApplicationJson_Data_Sort> get sort;
+  set sort(ListBuilder<Api1UpdateViewRequestApplicationJson_Data_Sort>? sort);
+
+  ListBuilder<BuiltList<Api1UpdateViewRequestApplicationJson_Data_Filter>> get filter;
+  set filter(ListBuilder<BuiltList<Api1UpdateViewRequestApplicationJson_Data_Filter>>? filter);
 }
 
-class _$Api1UpdateViewRequestApplicationJson_Data3 extends Api1UpdateViewRequestApplicationJson_Data3 {
+class _$Api1UpdateViewRequestApplicationJson_Data extends Api1UpdateViewRequestApplicationJson_Data {
   @override
-  final Api1UpdateViewRequestApplicationJson_Data3_Key key;
+  final String? title;
   @override
-  final Api1UpdateViewRequestApplicationJson_Data3_Value value;
+  final String? emoji;
+  @override
+  final String? description;
+  @override
+  final BuiltList<int>? columns;
+  @override
+  final BuiltList<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings>? columnSettings;
+  @override
+  final BuiltList<Api1UpdateViewRequestApplicationJson_Data_Sort>? sort;
+  @override
+  final BuiltList<BuiltList<Api1UpdateViewRequestApplicationJson_Data_Filter>>? filter;
 
-  factory _$Api1UpdateViewRequestApplicationJson_Data3(
-          [void Function(Api1UpdateViewRequestApplicationJson_Data3Builder)? updates]) =>
-      (Api1UpdateViewRequestApplicationJson_Data3Builder()..update(updates))._build();
+  factory _$Api1UpdateViewRequestApplicationJson_Data(
+          [void Function(Api1UpdateViewRequestApplicationJson_DataBuilder)? updates]) =>
+      (Api1UpdateViewRequestApplicationJson_DataBuilder()..update(updates))._build();
 
-  _$Api1UpdateViewRequestApplicationJson_Data3._({required this.key, required this.value}) : super._();
+  _$Api1UpdateViewRequestApplicationJson_Data._(
+      {this.title, this.emoji, this.description, this.columns, this.columnSettings, this.sort, this.filter})
+      : super._();
   @override
-  Api1UpdateViewRequestApplicationJson_Data3 rebuild(
-          void Function(Api1UpdateViewRequestApplicationJson_Data3Builder) updates) =>
+  Api1UpdateViewRequestApplicationJson_Data rebuild(
+          void Function(Api1UpdateViewRequestApplicationJson_DataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data3Builder toBuilder() =>
-      Api1UpdateViewRequestApplicationJson_Data3Builder()..replace(this);
+  Api1UpdateViewRequestApplicationJson_DataBuilder toBuilder() =>
+      Api1UpdateViewRequestApplicationJson_DataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Api1UpdateViewRequestApplicationJson_Data3 && key == other.key && value == other.value;
+    return other is Api1UpdateViewRequestApplicationJson_Data &&
+        title == other.title &&
+        emoji == other.emoji &&
+        description == other.description &&
+        columns == other.columns &&
+        columnSettings == other.columnSettings &&
+        sort == other.sort &&
+        filter == other.filter;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, key.hashCode);
-    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, emoji.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, columns.hashCode);
+    _$hash = $jc(_$hash, columnSettings.hashCode);
+    _$hash = $jc(_$hash, sort.hashCode);
+    _$hash = $jc(_$hash, filter.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Api1UpdateViewRequestApplicationJson_Data3')
-          ..add('key', key)
-          ..add('value', value))
+    return (newBuiltValueToStringHelper(r'Api1UpdateViewRequestApplicationJson_Data')
+          ..add('title', title)
+          ..add('emoji', emoji)
+          ..add('description', description)
+          ..add('columns', columns)
+          ..add('columnSettings', columnSettings)
+          ..add('sort', sort)
+          ..add('filter', filter))
         .toString();
   }
 }
 
-class Api1UpdateViewRequestApplicationJson_Data3Builder
+class Api1UpdateViewRequestApplicationJson_DataBuilder
     implements
-        Builder<Api1UpdateViewRequestApplicationJson_Data3, Api1UpdateViewRequestApplicationJson_Data3Builder>,
-        $Api1UpdateViewRequestApplicationJson_Data3InterfaceBuilder {
-  _$Api1UpdateViewRequestApplicationJson_Data3? _$v;
+        Builder<Api1UpdateViewRequestApplicationJson_Data, Api1UpdateViewRequestApplicationJson_DataBuilder>,
+        $Api1UpdateViewRequestApplicationJson_DataInterfaceBuilder {
+  _$Api1UpdateViewRequestApplicationJson_Data? _$v;
 
-  Api1UpdateViewRequestApplicationJson_Data3_Key? _key;
-  Api1UpdateViewRequestApplicationJson_Data3_Key? get key => _$this._key;
-  set key(covariant Api1UpdateViewRequestApplicationJson_Data3_Key? key) => _$this._key = key;
+  String? _title;
+  String? get title => _$this._title;
+  set title(covariant String? title) => _$this._title = title;
 
-  Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder? _value;
-  Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder get value =>
-      _$this._value ??= Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder();
-  set value(covariant Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder? value) => _$this._value = value;
+  String? _emoji;
+  String? get emoji => _$this._emoji;
+  set emoji(covariant String? emoji) => _$this._emoji = emoji;
 
-  Api1UpdateViewRequestApplicationJson_Data3Builder() {
-    Api1UpdateViewRequestApplicationJson_Data3._defaults(this);
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) => _$this._description = description;
+
+  ListBuilder<int>? _columns;
+  ListBuilder<int> get columns => _$this._columns ??= ListBuilder<int>();
+  set columns(covariant ListBuilder<int>? columns) => _$this._columns = columns;
+
+  ListBuilder<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings>? _columnSettings;
+  ListBuilder<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings> get columnSettings =>
+      _$this._columnSettings ??= ListBuilder<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings>();
+  set columnSettings(covariant ListBuilder<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings>? columnSettings) =>
+      _$this._columnSettings = columnSettings;
+
+  ListBuilder<Api1UpdateViewRequestApplicationJson_Data_Sort>? _sort;
+  ListBuilder<Api1UpdateViewRequestApplicationJson_Data_Sort> get sort =>
+      _$this._sort ??= ListBuilder<Api1UpdateViewRequestApplicationJson_Data_Sort>();
+  set sort(covariant ListBuilder<Api1UpdateViewRequestApplicationJson_Data_Sort>? sort) => _$this._sort = sort;
+
+  ListBuilder<BuiltList<Api1UpdateViewRequestApplicationJson_Data_Filter>>? _filter;
+  ListBuilder<BuiltList<Api1UpdateViewRequestApplicationJson_Data_Filter>> get filter =>
+      _$this._filter ??= ListBuilder<BuiltList<Api1UpdateViewRequestApplicationJson_Data_Filter>>();
+  set filter(covariant ListBuilder<BuiltList<Api1UpdateViewRequestApplicationJson_Data_Filter>>? filter) =>
+      _$this._filter = filter;
+
+  Api1UpdateViewRequestApplicationJson_DataBuilder() {
+    Api1UpdateViewRequestApplicationJson_Data._defaults(this);
   }
 
-  Api1UpdateViewRequestApplicationJson_Data3Builder get _$this {
+  Api1UpdateViewRequestApplicationJson_DataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _key = $v.key;
-      _value = $v.value.toBuilder();
+      _title = $v.title;
+      _emoji = $v.emoji;
+      _description = $v.description;
+      _columns = $v.columns?.toBuilder();
+      _columnSettings = $v.columnSettings?.toBuilder();
+      _sort = $v.sort?.toBuilder();
+      _filter = $v.filter?.toBuilder();
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(covariant Api1UpdateViewRequestApplicationJson_Data3 other) {
-    _$v = other as _$Api1UpdateViewRequestApplicationJson_Data3;
+  void replace(covariant Api1UpdateViewRequestApplicationJson_Data other) {
+    _$v = other as _$Api1UpdateViewRequestApplicationJson_Data;
   }
 
   @override
-  void update(void Function(Api1UpdateViewRequestApplicationJson_Data3Builder)? updates) {
+  void update(void Function(Api1UpdateViewRequestApplicationJson_DataBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data3 build() => _build();
+  Api1UpdateViewRequestApplicationJson_Data build() => _build();
 
-  _$Api1UpdateViewRequestApplicationJson_Data3 _build() {
-    Api1UpdateViewRequestApplicationJson_Data3._validate(this);
-    _$Api1UpdateViewRequestApplicationJson_Data3 _$result;
+  _$Api1UpdateViewRequestApplicationJson_Data _build() {
+    Api1UpdateViewRequestApplicationJson_Data._validate(this);
+    _$Api1UpdateViewRequestApplicationJson_Data _$result;
     try {
       _$result = _$v ??
-          _$Api1UpdateViewRequestApplicationJson_Data3._(
-            key: BuiltValueNullFieldError.checkNotNull(key, r'Api1UpdateViewRequestApplicationJson_Data3', 'key'),
-            value: value.build(),
+          _$Api1UpdateViewRequestApplicationJson_Data._(
+            title: title,
+            emoji: emoji,
+            description: description,
+            columns: _columns?.build(),
+            columnSettings: _columnSettings?.build(),
+            sort: _sort?.build(),
+            filter: _filter?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'value';
-        value.build();
+        _$failedField = 'columns';
+        _columns?.build();
+        _$failedField = 'columnSettings';
+        _columnSettings?.build();
+        _$failedField = 'sort';
+        _sort?.build();
+        _$failedField = 'filter';
+        _filter?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(r'Api1UpdateViewRequestApplicationJson_Data3', _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(r'Api1UpdateViewRequestApplicationJson_Data', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -10193,8 +10229,8 @@ class Api1UpdateViewRequestApplicationJson_Data3Builder
 abstract mixin class $Api1UpdateViewRequestApplicationJsonInterfaceBuilder {
   void replace($Api1UpdateViewRequestApplicationJsonInterface other);
   void update(void Function($Api1UpdateViewRequestApplicationJsonInterfaceBuilder) updates);
-  Api1UpdateViewRequestApplicationJson_Data? get data;
-  set data(Api1UpdateViewRequestApplicationJson_Data? data);
+  Api1UpdateViewRequestApplicationJson_DataBuilder get data;
+  set data(Api1UpdateViewRequestApplicationJson_DataBuilder? data);
 }
 
 class _$Api1UpdateViewRequestApplicationJson extends Api1UpdateViewRequestApplicationJson {
@@ -10217,8 +10253,7 @@ class _$Api1UpdateViewRequestApplicationJson extends Api1UpdateViewRequestApplic
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is Api1UpdateViewRequestApplicationJson && data == _$dynamicOther.data;
+    return other is Api1UpdateViewRequestApplicationJson && data == other.data;
   }
 
   @override
@@ -10241,9 +10276,10 @@ class Api1UpdateViewRequestApplicationJsonBuilder
         $Api1UpdateViewRequestApplicationJsonInterfaceBuilder {
   _$Api1UpdateViewRequestApplicationJson? _$v;
 
-  Api1UpdateViewRequestApplicationJson_Data? _data;
-  Api1UpdateViewRequestApplicationJson_Data? get data => _$this._data;
-  set data(covariant Api1UpdateViewRequestApplicationJson_Data? data) => _$this._data = data;
+  Api1UpdateViewRequestApplicationJson_DataBuilder? _data;
+  Api1UpdateViewRequestApplicationJson_DataBuilder get data =>
+      _$this._data ??= Api1UpdateViewRequestApplicationJson_DataBuilder();
+  set data(covariant Api1UpdateViewRequestApplicationJson_DataBuilder? data) => _$this._data = data;
 
   Api1UpdateViewRequestApplicationJsonBuilder() {
     Api1UpdateViewRequestApplicationJson._defaults(this);
@@ -10252,7 +10288,7 @@ class Api1UpdateViewRequestApplicationJsonBuilder
   Api1UpdateViewRequestApplicationJsonBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _data = $v.data;
+      _data = $v.data.toBuilder();
       _$v = null;
     }
     return this;
@@ -10273,10 +10309,22 @@ class Api1UpdateViewRequestApplicationJsonBuilder
 
   _$Api1UpdateViewRequestApplicationJson _build() {
     Api1UpdateViewRequestApplicationJson._validate(this);
-    final _$result = _$v ??
-        _$Api1UpdateViewRequestApplicationJson._(
-          data: BuiltValueNullFieldError.checkNotNull(data, r'Api1UpdateViewRequestApplicationJson', 'data'),
-        );
+    _$Api1UpdateViewRequestApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$Api1UpdateViewRequestApplicationJson._(
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'Api1UpdateViewRequestApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
@@ -11360,6 +11408,229 @@ class ContextNavigationBuilder
   }
 }
 
+abstract mixin class $Column_ViewColumnInformationInterfaceBuilder {
+  void replace($Column_ViewColumnInformationInterface other);
+  void update(void Function($Column_ViewColumnInformationInterfaceBuilder) updates);
+  int? get columnId;
+  set columnId(int? columnId);
+
+  int? get order;
+  set order(int? order);
+
+  bool? get readonly;
+  set readonly(bool? readonly);
+
+  bool? get mandatory;
+  set mandatory(bool? mandatory);
+}
+
+class _$Column_ViewColumnInformation extends Column_ViewColumnInformation {
+  @override
+  final int columnId;
+  @override
+  final int order;
+  @override
+  final bool readonly;
+  @override
+  final bool mandatory;
+
+  factory _$Column_ViewColumnInformation([void Function(Column_ViewColumnInformationBuilder)? updates]) =>
+      (Column_ViewColumnInformationBuilder()..update(updates))._build();
+
+  _$Column_ViewColumnInformation._(
+      {required this.columnId, required this.order, required this.readonly, required this.mandatory})
+      : super._();
+  @override
+  Column_ViewColumnInformation rebuild(void Function(Column_ViewColumnInformationBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Column_ViewColumnInformationBuilder toBuilder() => Column_ViewColumnInformationBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Column_ViewColumnInformation &&
+        columnId == other.columnId &&
+        order == other.order &&
+        readonly == other.readonly &&
+        mandatory == other.mandatory;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, columnId.hashCode);
+    _$hash = $jc(_$hash, order.hashCode);
+    _$hash = $jc(_$hash, readonly.hashCode);
+    _$hash = $jc(_$hash, mandatory.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Column_ViewColumnInformation')
+          ..add('columnId', columnId)
+          ..add('order', order)
+          ..add('readonly', readonly)
+          ..add('mandatory', mandatory))
+        .toString();
+  }
+}
+
+class Column_ViewColumnInformationBuilder
+    implements
+        Builder<Column_ViewColumnInformation, Column_ViewColumnInformationBuilder>,
+        $Column_ViewColumnInformationInterfaceBuilder {
+  _$Column_ViewColumnInformation? _$v;
+
+  int? _columnId;
+  int? get columnId => _$this._columnId;
+  set columnId(covariant int? columnId) => _$this._columnId = columnId;
+
+  int? _order;
+  int? get order => _$this._order;
+  set order(covariant int? order) => _$this._order = order;
+
+  bool? _readonly;
+  bool? get readonly => _$this._readonly;
+  set readonly(covariant bool? readonly) => _$this._readonly = readonly;
+
+  bool? _mandatory;
+  bool? get mandatory => _$this._mandatory;
+  set mandatory(covariant bool? mandatory) => _$this._mandatory = mandatory;
+
+  Column_ViewColumnInformationBuilder() {
+    Column_ViewColumnInformation._defaults(this);
+  }
+
+  Column_ViewColumnInformationBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _columnId = $v.columnId;
+      _order = $v.order;
+      _readonly = $v.readonly;
+      _mandatory = $v.mandatory;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant Column_ViewColumnInformation other) {
+    _$v = other as _$Column_ViewColumnInformation;
+  }
+
+  @override
+  void update(void Function(Column_ViewColumnInformationBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Column_ViewColumnInformation build() => _build();
+
+  _$Column_ViewColumnInformation _build() {
+    Column_ViewColumnInformation._validate(this);
+    final _$result = _$v ??
+        _$Column_ViewColumnInformation._(
+          columnId: BuiltValueNullFieldError.checkNotNull(columnId, r'Column_ViewColumnInformation', 'columnId'),
+          order: BuiltValueNullFieldError.checkNotNull(order, r'Column_ViewColumnInformation', 'order'),
+          readonly: BuiltValueNullFieldError.checkNotNull(readonly, r'Column_ViewColumnInformation', 'readonly'),
+          mandatory: BuiltValueNullFieldError.checkNotNull(mandatory, r'Column_ViewColumnInformation', 'mandatory'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $Column_CustomSettingsInterfaceBuilder {
+  void replace($Column_CustomSettingsInterface other);
+  void update(void Function($Column_CustomSettingsInterfaceBuilder) updates);
+  int? get width;
+  set width(int? width);
+}
+
+class _$Column_CustomSettings extends Column_CustomSettings {
+  @override
+  final int width;
+
+  factory _$Column_CustomSettings([void Function(Column_CustomSettingsBuilder)? updates]) =>
+      (Column_CustomSettingsBuilder()..update(updates))._build();
+
+  _$Column_CustomSettings._({required this.width}) : super._();
+  @override
+  Column_CustomSettings rebuild(void Function(Column_CustomSettingsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Column_CustomSettingsBuilder toBuilder() => Column_CustomSettingsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Column_CustomSettings && width == other.width;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, width.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Column_CustomSettings')..add('width', width)).toString();
+  }
+}
+
+class Column_CustomSettingsBuilder
+    implements Builder<Column_CustomSettings, Column_CustomSettingsBuilder>, $Column_CustomSettingsInterfaceBuilder {
+  _$Column_CustomSettings? _$v;
+
+  int? _width;
+  int? get width => _$this._width;
+  set width(covariant int? width) => _$this._width = width;
+
+  Column_CustomSettingsBuilder() {
+    Column_CustomSettings._defaults(this);
+  }
+
+  Column_CustomSettingsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _width = $v.width;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant Column_CustomSettings other) {
+    _$v = other as _$Column_CustomSettings;
+  }
+
+  @override
+  void update(void Function(Column_CustomSettingsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Column_CustomSettings build() => _build();
+
+  _$Column_CustomSettings _build() {
+    Column_CustomSettings._validate(this);
+    final _$result = _$v ??
+        _$Column_CustomSettings._(
+          width: BuiltValueNullFieldError.checkNotNull(width, r'Column_CustomSettings', 'width'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $ColumnInterfaceBuilder {
   void replace($ColumnInterface other);
   void update(void Function($ColumnInterfaceBuilder) updates);
@@ -11426,6 +11697,9 @@ abstract mixin class $ColumnInterfaceBuilder {
   int? get textMaxLength;
   set textMaxLength(int? textMaxLength);
 
+  bool? get textUnique;
+  set textUnique(bool? textUnique);
+
   String? get selectionOptions;
   set selectionOptions(String? selectionOptions);
 
@@ -11452,6 +11726,12 @@ abstract mixin class $ColumnInterfaceBuilder {
 
   bool? get showUserStatus;
   set showUserStatus(bool? showUserStatus);
+
+  Column_ViewColumnInformationBuilder get viewColumnInformation;
+  set viewColumnInformation(Column_ViewColumnInformationBuilder? viewColumnInformation);
+
+  Column_CustomSettingsBuilder get customSettings;
+  set customSettings(Column_CustomSettingsBuilder? customSettings);
 }
 
 class _$Column extends Column {
@@ -11498,6 +11778,8 @@ class _$Column extends Column {
   @override
   final int textMaxLength;
   @override
+  final bool textUnique;
+  @override
   final String selectionOptions;
   @override
   final String selectionDefault;
@@ -11515,6 +11797,10 @@ class _$Column extends Column {
   final bool usergroupSelectTeams;
   @override
   final bool showUserStatus;
+  @override
+  final Column_ViewColumnInformation? viewColumnInformation;
+  @override
+  final Column_CustomSettings? customSettings;
 
   factory _$Column([void Function(ColumnBuilder)? updates]) => (ColumnBuilder()..update(updates))._build();
 
@@ -11540,6 +11826,7 @@ class _$Column extends Column {
       required this.textDefault,
       required this.textAllowedPattern,
       required this.textMaxLength,
+      required this.textUnique,
       required this.selectionOptions,
       required this.selectionDefault,
       required this.datetimeDefault,
@@ -11548,7 +11835,9 @@ class _$Column extends Column {
       required this.usergroupSelectUsers,
       required this.usergroupSelectGroups,
       required this.usergroupSelectTeams,
-      required this.showUserStatus})
+      required this.showUserStatus,
+      this.viewColumnInformation,
+      this.customSettings})
       : super._();
   @override
   Column rebuild(void Function(ColumnBuilder) updates) => (toBuilder()..update(updates)).build();
@@ -11581,6 +11870,7 @@ class _$Column extends Column {
         textDefault == other.textDefault &&
         textAllowedPattern == other.textAllowedPattern &&
         textMaxLength == other.textMaxLength &&
+        textUnique == other.textUnique &&
         selectionOptions == other.selectionOptions &&
         selectionDefault == other.selectionDefault &&
         datetimeDefault == other.datetimeDefault &&
@@ -11589,7 +11879,9 @@ class _$Column extends Column {
         usergroupSelectUsers == other.usergroupSelectUsers &&
         usergroupSelectGroups == other.usergroupSelectGroups &&
         usergroupSelectTeams == other.usergroupSelectTeams &&
-        showUserStatus == other.showUserStatus;
+        showUserStatus == other.showUserStatus &&
+        viewColumnInformation == other.viewColumnInformation &&
+        customSettings == other.customSettings;
   }
 
   @override
@@ -11616,6 +11908,7 @@ class _$Column extends Column {
     _$hash = $jc(_$hash, textDefault.hashCode);
     _$hash = $jc(_$hash, textAllowedPattern.hashCode);
     _$hash = $jc(_$hash, textMaxLength.hashCode);
+    _$hash = $jc(_$hash, textUnique.hashCode);
     _$hash = $jc(_$hash, selectionOptions.hashCode);
     _$hash = $jc(_$hash, selectionDefault.hashCode);
     _$hash = $jc(_$hash, datetimeDefault.hashCode);
@@ -11625,6 +11918,8 @@ class _$Column extends Column {
     _$hash = $jc(_$hash, usergroupSelectGroups.hashCode);
     _$hash = $jc(_$hash, usergroupSelectTeams.hashCode);
     _$hash = $jc(_$hash, showUserStatus.hashCode);
+    _$hash = $jc(_$hash, viewColumnInformation.hashCode);
+    _$hash = $jc(_$hash, customSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -11653,6 +11948,7 @@ class _$Column extends Column {
           ..add('textDefault', textDefault)
           ..add('textAllowedPattern', textAllowedPattern)
           ..add('textMaxLength', textMaxLength)
+          ..add('textUnique', textUnique)
           ..add('selectionOptions', selectionOptions)
           ..add('selectionDefault', selectionDefault)
           ..add('datetimeDefault', datetimeDefault)
@@ -11661,7 +11957,9 @@ class _$Column extends Column {
           ..add('usergroupSelectUsers', usergroupSelectUsers)
           ..add('usergroupSelectGroups', usergroupSelectGroups)
           ..add('usergroupSelectTeams', usergroupSelectTeams)
-          ..add('showUserStatus', showUserStatus))
+          ..add('showUserStatus', showUserStatus)
+          ..add('viewColumnInformation', viewColumnInformation)
+          ..add('customSettings', customSettings))
         .toString();
   }
 }
@@ -11753,6 +12051,10 @@ class ColumnBuilder implements Builder<Column, ColumnBuilder>, $ColumnInterfaceB
   int? get textMaxLength => _$this._textMaxLength;
   set textMaxLength(covariant int? textMaxLength) => _$this._textMaxLength = textMaxLength;
 
+  bool? _textUnique;
+  bool? get textUnique => _$this._textUnique;
+  set textUnique(covariant bool? textUnique) => _$this._textUnique = textUnique;
+
   String? _selectionOptions;
   String? get selectionOptions => _$this._selectionOptions;
   set selectionOptions(covariant String? selectionOptions) => _$this._selectionOptions = selectionOptions;
@@ -11791,6 +12093,16 @@ class ColumnBuilder implements Builder<Column, ColumnBuilder>, $ColumnInterfaceB
   bool? get showUserStatus => _$this._showUserStatus;
   set showUserStatus(covariant bool? showUserStatus) => _$this._showUserStatus = showUserStatus;
 
+  Column_ViewColumnInformationBuilder? _viewColumnInformation;
+  Column_ViewColumnInformationBuilder get viewColumnInformation =>
+      _$this._viewColumnInformation ??= Column_ViewColumnInformationBuilder();
+  set viewColumnInformation(covariant Column_ViewColumnInformationBuilder? viewColumnInformation) =>
+      _$this._viewColumnInformation = viewColumnInformation;
+
+  Column_CustomSettingsBuilder? _customSettings;
+  Column_CustomSettingsBuilder get customSettings => _$this._customSettings ??= Column_CustomSettingsBuilder();
+  set customSettings(covariant Column_CustomSettingsBuilder? customSettings) => _$this._customSettings = customSettings;
+
   ColumnBuilder() {
     Column._defaults(this);
   }
@@ -11819,6 +12131,7 @@ class ColumnBuilder implements Builder<Column, ColumnBuilder>, $ColumnInterfaceB
       _textDefault = $v.textDefault;
       _textAllowedPattern = $v.textAllowedPattern;
       _textMaxLength = $v.textMaxLength;
+      _textUnique = $v.textUnique;
       _selectionOptions = $v.selectionOptions;
       _selectionDefault = $v.selectionDefault;
       _datetimeDefault = $v.datetimeDefault;
@@ -11828,6 +12141,8 @@ class ColumnBuilder implements Builder<Column, ColumnBuilder>, $ColumnInterfaceB
       _usergroupSelectGroups = $v.usergroupSelectGroups;
       _usergroupSelectTeams = $v.usergroupSelectTeams;
       _showUserStatus = $v.showUserStatus;
+      _viewColumnInformation = $v.viewColumnInformation?.toBuilder();
+      _customSettings = $v.customSettings?.toBuilder();
       _$v = null;
     }
     return this;
@@ -11848,44 +12163,61 @@ class ColumnBuilder implements Builder<Column, ColumnBuilder>, $ColumnInterfaceB
 
   _$Column _build() {
     Column._validate(this);
-    final _$result = _$v ??
-        _$Column._(
-          id: BuiltValueNullFieldError.checkNotNull(id, r'Column', 'id'),
-          title: BuiltValueNullFieldError.checkNotNull(title, r'Column', 'title'),
-          tableId: BuiltValueNullFieldError.checkNotNull(tableId, r'Column', 'tableId'),
-          createdBy: BuiltValueNullFieldError.checkNotNull(createdBy, r'Column', 'createdBy'),
-          createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'Column', 'createdAt'),
-          lastEditBy: BuiltValueNullFieldError.checkNotNull(lastEditBy, r'Column', 'lastEditBy'),
-          lastEditAt: BuiltValueNullFieldError.checkNotNull(lastEditAt, r'Column', 'lastEditAt'),
-          type: BuiltValueNullFieldError.checkNotNull(type, r'Column', 'type'),
-          subtype: BuiltValueNullFieldError.checkNotNull(subtype, r'Column', 'subtype'),
-          mandatory: BuiltValueNullFieldError.checkNotNull(mandatory, r'Column', 'mandatory'),
-          description: BuiltValueNullFieldError.checkNotNull(description, r'Column', 'description'),
-          orderWeight: BuiltValueNullFieldError.checkNotNull(orderWeight, r'Column', 'orderWeight'),
-          numberDefault: BuiltValueNullFieldError.checkNotNull(numberDefault, r'Column', 'numberDefault'),
-          numberMin: BuiltValueNullFieldError.checkNotNull(numberMin, r'Column', 'numberMin'),
-          numberMax: BuiltValueNullFieldError.checkNotNull(numberMax, r'Column', 'numberMax'),
-          numberDecimals: BuiltValueNullFieldError.checkNotNull(numberDecimals, r'Column', 'numberDecimals'),
-          numberPrefix: BuiltValueNullFieldError.checkNotNull(numberPrefix, r'Column', 'numberPrefix'),
-          numberSuffix: BuiltValueNullFieldError.checkNotNull(numberSuffix, r'Column', 'numberSuffix'),
-          textDefault: BuiltValueNullFieldError.checkNotNull(textDefault, r'Column', 'textDefault'),
-          textAllowedPattern:
-              BuiltValueNullFieldError.checkNotNull(textAllowedPattern, r'Column', 'textAllowedPattern'),
-          textMaxLength: BuiltValueNullFieldError.checkNotNull(textMaxLength, r'Column', 'textMaxLength'),
-          selectionOptions: BuiltValueNullFieldError.checkNotNull(selectionOptions, r'Column', 'selectionOptions'),
-          selectionDefault: BuiltValueNullFieldError.checkNotNull(selectionDefault, r'Column', 'selectionDefault'),
-          datetimeDefault: BuiltValueNullFieldError.checkNotNull(datetimeDefault, r'Column', 'datetimeDefault'),
-          usergroupDefault: BuiltValueNullFieldError.checkNotNull(usergroupDefault, r'Column', 'usergroupDefault'),
-          usergroupMultipleItems:
-              BuiltValueNullFieldError.checkNotNull(usergroupMultipleItems, r'Column', 'usergroupMultipleItems'),
-          usergroupSelectUsers:
-              BuiltValueNullFieldError.checkNotNull(usergroupSelectUsers, r'Column', 'usergroupSelectUsers'),
-          usergroupSelectGroups:
-              BuiltValueNullFieldError.checkNotNull(usergroupSelectGroups, r'Column', 'usergroupSelectGroups'),
-          usergroupSelectTeams:
-              BuiltValueNullFieldError.checkNotNull(usergroupSelectTeams, r'Column', 'usergroupSelectTeams'),
-          showUserStatus: BuiltValueNullFieldError.checkNotNull(showUserStatus, r'Column', 'showUserStatus'),
-        );
+    _$Column _$result;
+    try {
+      _$result = _$v ??
+          _$Column._(
+            id: BuiltValueNullFieldError.checkNotNull(id, r'Column', 'id'),
+            title: BuiltValueNullFieldError.checkNotNull(title, r'Column', 'title'),
+            tableId: BuiltValueNullFieldError.checkNotNull(tableId, r'Column', 'tableId'),
+            createdBy: BuiltValueNullFieldError.checkNotNull(createdBy, r'Column', 'createdBy'),
+            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'Column', 'createdAt'),
+            lastEditBy: BuiltValueNullFieldError.checkNotNull(lastEditBy, r'Column', 'lastEditBy'),
+            lastEditAt: BuiltValueNullFieldError.checkNotNull(lastEditAt, r'Column', 'lastEditAt'),
+            type: BuiltValueNullFieldError.checkNotNull(type, r'Column', 'type'),
+            subtype: BuiltValueNullFieldError.checkNotNull(subtype, r'Column', 'subtype'),
+            mandatory: BuiltValueNullFieldError.checkNotNull(mandatory, r'Column', 'mandatory'),
+            description: BuiltValueNullFieldError.checkNotNull(description, r'Column', 'description'),
+            orderWeight: BuiltValueNullFieldError.checkNotNull(orderWeight, r'Column', 'orderWeight'),
+            numberDefault: BuiltValueNullFieldError.checkNotNull(numberDefault, r'Column', 'numberDefault'),
+            numberMin: BuiltValueNullFieldError.checkNotNull(numberMin, r'Column', 'numberMin'),
+            numberMax: BuiltValueNullFieldError.checkNotNull(numberMax, r'Column', 'numberMax'),
+            numberDecimals: BuiltValueNullFieldError.checkNotNull(numberDecimals, r'Column', 'numberDecimals'),
+            numberPrefix: BuiltValueNullFieldError.checkNotNull(numberPrefix, r'Column', 'numberPrefix'),
+            numberSuffix: BuiltValueNullFieldError.checkNotNull(numberSuffix, r'Column', 'numberSuffix'),
+            textDefault: BuiltValueNullFieldError.checkNotNull(textDefault, r'Column', 'textDefault'),
+            textAllowedPattern:
+                BuiltValueNullFieldError.checkNotNull(textAllowedPattern, r'Column', 'textAllowedPattern'),
+            textMaxLength: BuiltValueNullFieldError.checkNotNull(textMaxLength, r'Column', 'textMaxLength'),
+            textUnique: BuiltValueNullFieldError.checkNotNull(textUnique, r'Column', 'textUnique'),
+            selectionOptions: BuiltValueNullFieldError.checkNotNull(selectionOptions, r'Column', 'selectionOptions'),
+            selectionDefault: BuiltValueNullFieldError.checkNotNull(selectionDefault, r'Column', 'selectionDefault'),
+            datetimeDefault: BuiltValueNullFieldError.checkNotNull(datetimeDefault, r'Column', 'datetimeDefault'),
+            usergroupDefault: BuiltValueNullFieldError.checkNotNull(usergroupDefault, r'Column', 'usergroupDefault'),
+            usergroupMultipleItems:
+                BuiltValueNullFieldError.checkNotNull(usergroupMultipleItems, r'Column', 'usergroupMultipleItems'),
+            usergroupSelectUsers:
+                BuiltValueNullFieldError.checkNotNull(usergroupSelectUsers, r'Column', 'usergroupSelectUsers'),
+            usergroupSelectGroups:
+                BuiltValueNullFieldError.checkNotNull(usergroupSelectGroups, r'Column', 'usergroupSelectGroups'),
+            usergroupSelectTeams:
+                BuiltValueNullFieldError.checkNotNull(usergroupSelectTeams, r'Column', 'usergroupSelectTeams'),
+            showUserStatus: BuiltValueNullFieldError.checkNotNull(showUserStatus, r'Column', 'showUserStatus'),
+            viewColumnInformation: _viewColumnInformation?.build(),
+            customSettings: _customSettings?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'viewColumnInformation';
+        _viewColumnInformation?.build();
+        _$failedField = 'customSettings';
+        _customSettings?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'Column', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
@@ -11936,6 +12268,9 @@ abstract mixin class $Api1CreateTableColumnRequestApplicationJsonInterfaceBuilde
   int? get textMaxLength;
   set textMaxLength(int? textMaxLength);
 
+  bool? get textUnique;
+  set textUnique(bool? textUnique);
+
   String? get selectionOptions;
   set selectionOptions(String? selectionOptions);
 
@@ -11965,6 +12300,9 @@ abstract mixin class $Api1CreateTableColumnRequestApplicationJsonInterfaceBuilde
 
   ListBuilder<int> get selectedViewIds;
   set selectedViewIds(ListBuilder<int>? selectedViewIds);
+
+  MapBuilder<String, JsonObject> get customSettings;
+  set customSettings(MapBuilder<String, JsonObject>? customSettings);
 }
 
 class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColumnRequestApplicationJson {
@@ -11997,6 +12335,8 @@ class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColum
   @override
   final int? textMaxLength;
   @override
+  final bool? textUnique;
+  @override
   final String? selectionOptions;
   @override
   final String? selectionDefault;
@@ -12016,6 +12356,8 @@ class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColum
   final bool? usergroupShowUserStatus;
   @override
   final BuiltList<int>? selectedViewIds;
+  @override
+  final BuiltMap<String, JsonObject> customSettings;
 
   factory _$Api1CreateTableColumnRequestApplicationJson(
           [void Function(Api1CreateTableColumnRequestApplicationJsonBuilder)? updates]) =>
@@ -12036,6 +12378,7 @@ class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColum
       this.textDefault,
       this.textAllowedPattern,
       this.textMaxLength,
+      this.textUnique,
       this.selectionOptions,
       this.selectionDefault,
       this.datetimeDefault,
@@ -12045,7 +12388,8 @@ class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColum
       this.usergroupSelectGroups,
       this.usergroupSelectTeams,
       this.usergroupShowUserStatus,
-      this.selectedViewIds})
+      this.selectedViewIds,
+      required this.customSettings})
       : super._();
   @override
   Api1CreateTableColumnRequestApplicationJson rebuild(
@@ -12074,6 +12418,7 @@ class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColum
         textDefault == other.textDefault &&
         textAllowedPattern == other.textAllowedPattern &&
         textMaxLength == other.textMaxLength &&
+        textUnique == other.textUnique &&
         selectionOptions == other.selectionOptions &&
         selectionDefault == other.selectionDefault &&
         datetimeDefault == other.datetimeDefault &&
@@ -12083,7 +12428,8 @@ class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColum
         usergroupSelectGroups == other.usergroupSelectGroups &&
         usergroupSelectTeams == other.usergroupSelectTeams &&
         usergroupShowUserStatus == other.usergroupShowUserStatus &&
-        selectedViewIds == other.selectedViewIds;
+        selectedViewIds == other.selectedViewIds &&
+        customSettings == other.customSettings;
   }
 
   @override
@@ -12103,6 +12449,7 @@ class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColum
     _$hash = $jc(_$hash, textDefault.hashCode);
     _$hash = $jc(_$hash, textAllowedPattern.hashCode);
     _$hash = $jc(_$hash, textMaxLength.hashCode);
+    _$hash = $jc(_$hash, textUnique.hashCode);
     _$hash = $jc(_$hash, selectionOptions.hashCode);
     _$hash = $jc(_$hash, selectionDefault.hashCode);
     _$hash = $jc(_$hash, datetimeDefault.hashCode);
@@ -12113,6 +12460,7 @@ class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColum
     _$hash = $jc(_$hash, usergroupSelectTeams.hashCode);
     _$hash = $jc(_$hash, usergroupShowUserStatus.hashCode);
     _$hash = $jc(_$hash, selectedViewIds.hashCode);
+    _$hash = $jc(_$hash, customSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -12134,6 +12482,7 @@ class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColum
           ..add('textDefault', textDefault)
           ..add('textAllowedPattern', textAllowedPattern)
           ..add('textMaxLength', textMaxLength)
+          ..add('textUnique', textUnique)
           ..add('selectionOptions', selectionOptions)
           ..add('selectionDefault', selectionDefault)
           ..add('datetimeDefault', datetimeDefault)
@@ -12143,7 +12492,8 @@ class _$Api1CreateTableColumnRequestApplicationJson extends Api1CreateTableColum
           ..add('usergroupSelectGroups', usergroupSelectGroups)
           ..add('usergroupSelectTeams', usergroupSelectTeams)
           ..add('usergroupShowUserStatus', usergroupShowUserStatus)
-          ..add('selectedViewIds', selectedViewIds))
+          ..add('selectedViewIds', selectedViewIds)
+          ..add('customSettings', customSettings))
         .toString();
   }
 }
@@ -12210,6 +12560,10 @@ class Api1CreateTableColumnRequestApplicationJsonBuilder
   int? get textMaxLength => _$this._textMaxLength;
   set textMaxLength(covariant int? textMaxLength) => _$this._textMaxLength = textMaxLength;
 
+  bool? _textUnique;
+  bool? get textUnique => _$this._textUnique;
+  set textUnique(covariant bool? textUnique) => _$this._textUnique = textUnique;
+
   String? _selectionOptions;
   String? get selectionOptions => _$this._selectionOptions;
   set selectionOptions(covariant String? selectionOptions) => _$this._selectionOptions = selectionOptions;
@@ -12253,6 +12607,11 @@ class Api1CreateTableColumnRequestApplicationJsonBuilder
   ListBuilder<int> get selectedViewIds => _$this._selectedViewIds ??= ListBuilder<int>();
   set selectedViewIds(covariant ListBuilder<int>? selectedViewIds) => _$this._selectedViewIds = selectedViewIds;
 
+  MapBuilder<String, JsonObject>? _customSettings;
+  MapBuilder<String, JsonObject> get customSettings => _$this._customSettings ??= MapBuilder<String, JsonObject>();
+  set customSettings(covariant MapBuilder<String, JsonObject>? customSettings) =>
+      _$this._customSettings = customSettings;
+
   Api1CreateTableColumnRequestApplicationJsonBuilder() {
     Api1CreateTableColumnRequestApplicationJson._defaults(this);
   }
@@ -12274,6 +12633,7 @@ class Api1CreateTableColumnRequestApplicationJsonBuilder
       _textDefault = $v.textDefault;
       _textAllowedPattern = $v.textAllowedPattern;
       _textMaxLength = $v.textMaxLength;
+      _textUnique = $v.textUnique;
       _selectionOptions = $v.selectionOptions;
       _selectionDefault = $v.selectionDefault;
       _datetimeDefault = $v.datetimeDefault;
@@ -12284,6 +12644,7 @@ class Api1CreateTableColumnRequestApplicationJsonBuilder
       _usergroupSelectTeams = $v.usergroupSelectTeams;
       _usergroupShowUserStatus = $v.usergroupShowUserStatus;
       _selectedViewIds = $v.selectedViewIds?.toBuilder();
+      _customSettings = $v.customSettings.toBuilder();
       _$v = null;
     }
     return this;
@@ -12324,6 +12685,7 @@ class Api1CreateTableColumnRequestApplicationJsonBuilder
             textDefault: textDefault,
             textAllowedPattern: textAllowedPattern,
             textMaxLength: textMaxLength,
+            textUnique: textUnique,
             selectionOptions: selectionOptions,
             selectionDefault: selectionDefault,
             datetimeDefault: datetimeDefault,
@@ -12334,12 +12696,15 @@ class Api1CreateTableColumnRequestApplicationJsonBuilder
             usergroupSelectTeams: usergroupSelectTeams,
             usergroupShowUserStatus: usergroupShowUserStatus,
             selectedViewIds: _selectedViewIds?.build(),
+            customSettings: customSettings.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'selectedViewIds';
         _selectedViewIds?.build();
+        _$failedField = 'customSettings';
+        customSettings.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(r'Api1CreateTableColumnRequestApplicationJson', _$failedField, e.toString());
       }
@@ -12401,6 +12766,9 @@ abstract mixin class $Api1CreateColumnRequestApplicationJsonInterfaceBuilder {
   int? get textMaxLength;
   set textMaxLength(int? textMaxLength);
 
+  bool? get textUnique;
+  set textUnique(bool? textUnique);
+
   String? get selectionOptions;
   set selectionOptions(String? selectionOptions);
 
@@ -12430,6 +12798,9 @@ abstract mixin class $Api1CreateColumnRequestApplicationJsonInterfaceBuilder {
 
   ListBuilder<int> get selectedViewIds;
   set selectedViewIds(ListBuilder<int>? selectedViewIds);
+
+  MapBuilder<String, JsonObject> get customSettings;
+  set customSettings(MapBuilder<String, JsonObject>? customSettings);
 }
 
 class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestApplicationJson {
@@ -12466,6 +12837,8 @@ class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestAp
   @override
   final int? textMaxLength;
   @override
+  final bool? textUnique;
+  @override
   final String? selectionOptions;
   @override
   final String? selectionDefault;
@@ -12485,6 +12858,8 @@ class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestAp
   final bool? usergroupShowUserStatus;
   @override
   final BuiltList<int>? selectedViewIds;
+  @override
+  final BuiltMap<String, JsonObject> customSettings;
 
   factory _$Api1CreateColumnRequestApplicationJson(
           [void Function(Api1CreateColumnRequestApplicationJsonBuilder)? updates]) =>
@@ -12507,6 +12882,7 @@ class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestAp
       this.textDefault,
       this.textAllowedPattern,
       this.textMaxLength,
+      this.textUnique,
       this.selectionOptions,
       this.selectionDefault,
       this.datetimeDefault,
@@ -12516,7 +12892,8 @@ class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestAp
       this.usergroupSelectGroups,
       this.usergroupSelectTeams,
       this.usergroupShowUserStatus,
-      this.selectedViewIds})
+      this.selectedViewIds,
+      required this.customSettings})
       : super._();
   @override
   Api1CreateColumnRequestApplicationJson rebuild(
@@ -12547,6 +12924,7 @@ class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestAp
         textDefault == other.textDefault &&
         textAllowedPattern == other.textAllowedPattern &&
         textMaxLength == other.textMaxLength &&
+        textUnique == other.textUnique &&
         selectionOptions == other.selectionOptions &&
         selectionDefault == other.selectionDefault &&
         datetimeDefault == other.datetimeDefault &&
@@ -12556,7 +12934,8 @@ class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestAp
         usergroupSelectGroups == other.usergroupSelectGroups &&
         usergroupSelectTeams == other.usergroupSelectTeams &&
         usergroupShowUserStatus == other.usergroupShowUserStatus &&
-        selectedViewIds == other.selectedViewIds;
+        selectedViewIds == other.selectedViewIds &&
+        customSettings == other.customSettings;
   }
 
   @override
@@ -12578,6 +12957,7 @@ class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestAp
     _$hash = $jc(_$hash, textDefault.hashCode);
     _$hash = $jc(_$hash, textAllowedPattern.hashCode);
     _$hash = $jc(_$hash, textMaxLength.hashCode);
+    _$hash = $jc(_$hash, textUnique.hashCode);
     _$hash = $jc(_$hash, selectionOptions.hashCode);
     _$hash = $jc(_$hash, selectionDefault.hashCode);
     _$hash = $jc(_$hash, datetimeDefault.hashCode);
@@ -12588,6 +12968,7 @@ class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestAp
     _$hash = $jc(_$hash, usergroupSelectTeams.hashCode);
     _$hash = $jc(_$hash, usergroupShowUserStatus.hashCode);
     _$hash = $jc(_$hash, selectedViewIds.hashCode);
+    _$hash = $jc(_$hash, customSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -12611,6 +12992,7 @@ class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestAp
           ..add('textDefault', textDefault)
           ..add('textAllowedPattern', textAllowedPattern)
           ..add('textMaxLength', textMaxLength)
+          ..add('textUnique', textUnique)
           ..add('selectionOptions', selectionOptions)
           ..add('selectionDefault', selectionDefault)
           ..add('datetimeDefault', datetimeDefault)
@@ -12620,7 +13002,8 @@ class _$Api1CreateColumnRequestApplicationJson extends Api1CreateColumnRequestAp
           ..add('usergroupSelectGroups', usergroupSelectGroups)
           ..add('usergroupSelectTeams', usergroupSelectTeams)
           ..add('usergroupShowUserStatus', usergroupShowUserStatus)
-          ..add('selectedViewIds', selectedViewIds))
+          ..add('selectedViewIds', selectedViewIds)
+          ..add('customSettings', customSettings))
         .toString();
   }
 }
@@ -12695,6 +13078,10 @@ class Api1CreateColumnRequestApplicationJsonBuilder
   int? get textMaxLength => _$this._textMaxLength;
   set textMaxLength(covariant int? textMaxLength) => _$this._textMaxLength = textMaxLength;
 
+  bool? _textUnique;
+  bool? get textUnique => _$this._textUnique;
+  set textUnique(covariant bool? textUnique) => _$this._textUnique = textUnique;
+
   String? _selectionOptions;
   String? get selectionOptions => _$this._selectionOptions;
   set selectionOptions(covariant String? selectionOptions) => _$this._selectionOptions = selectionOptions;
@@ -12738,6 +13125,11 @@ class Api1CreateColumnRequestApplicationJsonBuilder
   ListBuilder<int> get selectedViewIds => _$this._selectedViewIds ??= ListBuilder<int>();
   set selectedViewIds(covariant ListBuilder<int>? selectedViewIds) => _$this._selectedViewIds = selectedViewIds;
 
+  MapBuilder<String, JsonObject>? _customSettings;
+  MapBuilder<String, JsonObject> get customSettings => _$this._customSettings ??= MapBuilder<String, JsonObject>();
+  set customSettings(covariant MapBuilder<String, JsonObject>? customSettings) =>
+      _$this._customSettings = customSettings;
+
   Api1CreateColumnRequestApplicationJsonBuilder() {
     Api1CreateColumnRequestApplicationJson._defaults(this);
   }
@@ -12761,6 +13153,7 @@ class Api1CreateColumnRequestApplicationJsonBuilder
       _textDefault = $v.textDefault;
       _textAllowedPattern = $v.textAllowedPattern;
       _textMaxLength = $v.textMaxLength;
+      _textUnique = $v.textUnique;
       _selectionOptions = $v.selectionOptions;
       _selectionDefault = $v.selectionDefault;
       _datetimeDefault = $v.datetimeDefault;
@@ -12771,6 +13164,7 @@ class Api1CreateColumnRequestApplicationJsonBuilder
       _usergroupSelectTeams = $v.usergroupSelectTeams;
       _usergroupShowUserStatus = $v.usergroupShowUserStatus;
       _selectedViewIds = $v.selectedViewIds?.toBuilder();
+      _customSettings = $v.customSettings.toBuilder();
       _$v = null;
     }
     return this;
@@ -12812,6 +13206,7 @@ class Api1CreateColumnRequestApplicationJsonBuilder
             textDefault: textDefault,
             textAllowedPattern: textAllowedPattern,
             textMaxLength: textMaxLength,
+            textUnique: textUnique,
             selectionOptions: selectionOptions,
             selectionDefault: selectionDefault,
             datetimeDefault: datetimeDefault,
@@ -12822,12 +13217,15 @@ class Api1CreateColumnRequestApplicationJsonBuilder
             usergroupSelectTeams: usergroupSelectTeams,
             usergroupShowUserStatus: usergroupShowUserStatus,
             selectedViewIds: _selectedViewIds?.build(),
+            customSettings: customSettings.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'selectedViewIds';
         _selectedViewIds?.build();
+        _$failedField = 'customSettings';
+        customSettings.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(r'Api1CreateColumnRequestApplicationJson', _$failedField, e.toString());
       }
@@ -12880,6 +13278,9 @@ abstract mixin class $Api1UpdateColumnRequestApplicationJsonInterfaceBuilder {
   int? get textMaxLength;
   set textMaxLength(int? textMaxLength);
 
+  bool? get textUnique;
+  set textUnique(bool? textUnique);
+
   String? get selectionOptions;
   set selectionOptions(String? selectionOptions);
 
@@ -12906,6 +13307,9 @@ abstract mixin class $Api1UpdateColumnRequestApplicationJsonInterfaceBuilder {
 
   bool? get usergroupShowUserStatus;
   set usergroupShowUserStatus(bool? usergroupShowUserStatus);
+
+  MapBuilder<String, JsonObject> get customSettings;
+  set customSettings(MapBuilder<String, JsonObject>? customSettings);
 }
 
 class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestApplicationJson {
@@ -12936,6 +13340,8 @@ class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestAp
   @override
   final int? textMaxLength;
   @override
+  final bool? textUnique;
+  @override
   final String? selectionOptions;
   @override
   final String? selectionDefault;
@@ -12953,6 +13359,8 @@ class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestAp
   final bool? usergroupSelectTeams;
   @override
   final bool? usergroupShowUserStatus;
+  @override
+  final BuiltMap<String, JsonObject> customSettings;
 
   factory _$Api1UpdateColumnRequestApplicationJson(
           [void Function(Api1UpdateColumnRequestApplicationJsonBuilder)? updates]) =>
@@ -12972,6 +13380,7 @@ class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestAp
       this.textDefault,
       this.textAllowedPattern,
       this.textMaxLength,
+      this.textUnique,
       this.selectionOptions,
       this.selectionDefault,
       this.datetimeDefault,
@@ -12980,7 +13389,8 @@ class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestAp
       this.usergroupSelectUsers,
       this.usergroupSelectGroups,
       this.usergroupSelectTeams,
-      this.usergroupShowUserStatus})
+      this.usergroupShowUserStatus,
+      required this.customSettings})
       : super._();
   @override
   Api1UpdateColumnRequestApplicationJson rebuild(
@@ -13008,6 +13418,7 @@ class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestAp
         textDefault == other.textDefault &&
         textAllowedPattern == other.textAllowedPattern &&
         textMaxLength == other.textMaxLength &&
+        textUnique == other.textUnique &&
         selectionOptions == other.selectionOptions &&
         selectionDefault == other.selectionDefault &&
         datetimeDefault == other.datetimeDefault &&
@@ -13016,7 +13427,8 @@ class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestAp
         usergroupSelectUsers == other.usergroupSelectUsers &&
         usergroupSelectGroups == other.usergroupSelectGroups &&
         usergroupSelectTeams == other.usergroupSelectTeams &&
-        usergroupShowUserStatus == other.usergroupShowUserStatus;
+        usergroupShowUserStatus == other.usergroupShowUserStatus &&
+        customSettings == other.customSettings;
   }
 
   @override
@@ -13035,6 +13447,7 @@ class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestAp
     _$hash = $jc(_$hash, textDefault.hashCode);
     _$hash = $jc(_$hash, textAllowedPattern.hashCode);
     _$hash = $jc(_$hash, textMaxLength.hashCode);
+    _$hash = $jc(_$hash, textUnique.hashCode);
     _$hash = $jc(_$hash, selectionOptions.hashCode);
     _$hash = $jc(_$hash, selectionDefault.hashCode);
     _$hash = $jc(_$hash, datetimeDefault.hashCode);
@@ -13044,6 +13457,7 @@ class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestAp
     _$hash = $jc(_$hash, usergroupSelectGroups.hashCode);
     _$hash = $jc(_$hash, usergroupSelectTeams.hashCode);
     _$hash = $jc(_$hash, usergroupShowUserStatus.hashCode);
+    _$hash = $jc(_$hash, customSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -13064,6 +13478,7 @@ class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestAp
           ..add('textDefault', textDefault)
           ..add('textAllowedPattern', textAllowedPattern)
           ..add('textMaxLength', textMaxLength)
+          ..add('textUnique', textUnique)
           ..add('selectionOptions', selectionOptions)
           ..add('selectionDefault', selectionDefault)
           ..add('datetimeDefault', datetimeDefault)
@@ -13072,7 +13487,8 @@ class _$Api1UpdateColumnRequestApplicationJson extends Api1UpdateColumnRequestAp
           ..add('usergroupSelectUsers', usergroupSelectUsers)
           ..add('usergroupSelectGroups', usergroupSelectGroups)
           ..add('usergroupSelectTeams', usergroupSelectTeams)
-          ..add('usergroupShowUserStatus', usergroupShowUserStatus))
+          ..add('usergroupShowUserStatus', usergroupShowUserStatus)
+          ..add('customSettings', customSettings))
         .toString();
   }
 }
@@ -13135,6 +13551,10 @@ class Api1UpdateColumnRequestApplicationJsonBuilder
   int? get textMaxLength => _$this._textMaxLength;
   set textMaxLength(covariant int? textMaxLength) => _$this._textMaxLength = textMaxLength;
 
+  bool? _textUnique;
+  bool? get textUnique => _$this._textUnique;
+  set textUnique(covariant bool? textUnique) => _$this._textUnique = textUnique;
+
   String? _selectionOptions;
   String? get selectionOptions => _$this._selectionOptions;
   set selectionOptions(covariant String? selectionOptions) => _$this._selectionOptions = selectionOptions;
@@ -13174,6 +13594,11 @@ class Api1UpdateColumnRequestApplicationJsonBuilder
   set usergroupShowUserStatus(covariant bool? usergroupShowUserStatus) =>
       _$this._usergroupShowUserStatus = usergroupShowUserStatus;
 
+  MapBuilder<String, JsonObject>? _customSettings;
+  MapBuilder<String, JsonObject> get customSettings => _$this._customSettings ??= MapBuilder<String, JsonObject>();
+  set customSettings(covariant MapBuilder<String, JsonObject>? customSettings) =>
+      _$this._customSettings = customSettings;
+
   Api1UpdateColumnRequestApplicationJsonBuilder() {
     Api1UpdateColumnRequestApplicationJson._defaults(this);
   }
@@ -13194,6 +13619,7 @@ class Api1UpdateColumnRequestApplicationJsonBuilder
       _textDefault = $v.textDefault;
       _textAllowedPattern = $v.textAllowedPattern;
       _textMaxLength = $v.textMaxLength;
+      _textUnique = $v.textUnique;
       _selectionOptions = $v.selectionOptions;
       _selectionDefault = $v.selectionDefault;
       _datetimeDefault = $v.datetimeDefault;
@@ -13203,6 +13629,7 @@ class Api1UpdateColumnRequestApplicationJsonBuilder
       _usergroupSelectGroups = $v.usergroupSelectGroups;
       _usergroupSelectTeams = $v.usergroupSelectTeams;
       _usergroupShowUserStatus = $v.usergroupShowUserStatus;
+      _customSettings = $v.customSettings.toBuilder();
       _$v = null;
     }
     return this;
@@ -13223,32 +13650,46 @@ class Api1UpdateColumnRequestApplicationJsonBuilder
 
   _$Api1UpdateColumnRequestApplicationJson _build() {
     Api1UpdateColumnRequestApplicationJson._validate(this);
-    final _$result = _$v ??
-        _$Api1UpdateColumnRequestApplicationJson._(
-          title: title,
-          subtype: subtype,
-          mandatory:
-              BuiltValueNullFieldError.checkNotNull(mandatory, r'Api1UpdateColumnRequestApplicationJson', 'mandatory'),
-          description: description,
-          numberPrefix: numberPrefix,
-          numberSuffix: numberSuffix,
-          numberDefault: numberDefault,
-          numberMin: numberMin,
-          numberMax: numberMax,
-          numberDecimals: numberDecimals,
-          textDefault: textDefault,
-          textAllowedPattern: textAllowedPattern,
-          textMaxLength: textMaxLength,
-          selectionOptions: selectionOptions,
-          selectionDefault: selectionDefault,
-          datetimeDefault: datetimeDefault,
-          usergroupDefault: usergroupDefault,
-          usergroupMultipleItems: usergroupMultipleItems,
-          usergroupSelectUsers: usergroupSelectUsers,
-          usergroupSelectGroups: usergroupSelectGroups,
-          usergroupSelectTeams: usergroupSelectTeams,
-          usergroupShowUserStatus: usergroupShowUserStatus,
-        );
+    _$Api1UpdateColumnRequestApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$Api1UpdateColumnRequestApplicationJson._(
+            title: title,
+            subtype: subtype,
+            mandatory: BuiltValueNullFieldError.checkNotNull(
+                mandatory, r'Api1UpdateColumnRequestApplicationJson', 'mandatory'),
+            description: description,
+            numberPrefix: numberPrefix,
+            numberSuffix: numberSuffix,
+            numberDefault: numberDefault,
+            numberMin: numberMin,
+            numberMax: numberMax,
+            numberDecimals: numberDecimals,
+            textDefault: textDefault,
+            textAllowedPattern: textAllowedPattern,
+            textMaxLength: textMaxLength,
+            textUnique: textUnique,
+            selectionOptions: selectionOptions,
+            selectionDefault: selectionDefault,
+            datetimeDefault: datetimeDefault,
+            usergroupDefault: usergroupDefault,
+            usergroupMultipleItems: usergroupMultipleItems,
+            usergroupSelectUsers: usergroupSelectUsers,
+            usergroupSelectGroups: usergroupSelectGroups,
+            usergroupSelectTeams: usergroupSelectTeams,
+            usergroupShowUserStatus: usergroupShowUserStatus,
+            customSettings: customSettings.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'customSettings';
+        customSettings.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'Api1UpdateColumnRequestApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
@@ -13960,6 +14401,9 @@ abstract mixin class $ImportStateInterfaceBuilder {
   int? get insertedRowsCount;
   set insertedRowsCount(int? insertedRowsCount);
 
+  int? get updatedRowsCount;
+  set updatedRowsCount(int? updatedRowsCount);
+
   int? get errorsParsingCount;
   set errorsParsingCount(int? errorsParsingCount);
 
@@ -13977,6 +14421,8 @@ class _$ImportState extends ImportState {
   @override
   final int insertedRowsCount;
   @override
+  final int updatedRowsCount;
+  @override
   final int errorsParsingCount;
   @override
   final int errorsCount;
@@ -13989,6 +14435,7 @@ class _$ImportState extends ImportState {
       required this.matchingColumnsCount,
       required this.createdColumnsCount,
       required this.insertedRowsCount,
+      required this.updatedRowsCount,
       required this.errorsParsingCount,
       required this.errorsCount})
       : super._();
@@ -14006,6 +14453,7 @@ class _$ImportState extends ImportState {
         matchingColumnsCount == other.matchingColumnsCount &&
         createdColumnsCount == other.createdColumnsCount &&
         insertedRowsCount == other.insertedRowsCount &&
+        updatedRowsCount == other.updatedRowsCount &&
         errorsParsingCount == other.errorsParsingCount &&
         errorsCount == other.errorsCount;
   }
@@ -14017,6 +14465,7 @@ class _$ImportState extends ImportState {
     _$hash = $jc(_$hash, matchingColumnsCount.hashCode);
     _$hash = $jc(_$hash, createdColumnsCount.hashCode);
     _$hash = $jc(_$hash, insertedRowsCount.hashCode);
+    _$hash = $jc(_$hash, updatedRowsCount.hashCode);
     _$hash = $jc(_$hash, errorsParsingCount.hashCode);
     _$hash = $jc(_$hash, errorsCount.hashCode);
     _$hash = $jf(_$hash);
@@ -14030,6 +14479,7 @@ class _$ImportState extends ImportState {
           ..add('matchingColumnsCount', matchingColumnsCount)
           ..add('createdColumnsCount', createdColumnsCount)
           ..add('insertedRowsCount', insertedRowsCount)
+          ..add('updatedRowsCount', updatedRowsCount)
           ..add('errorsParsingCount', errorsParsingCount)
           ..add('errorsCount', errorsCount))
         .toString();
@@ -14055,6 +14505,10 @@ class ImportStateBuilder implements Builder<ImportState, ImportStateBuilder>, $I
   int? get insertedRowsCount => _$this._insertedRowsCount;
   set insertedRowsCount(covariant int? insertedRowsCount) => _$this._insertedRowsCount = insertedRowsCount;
 
+  int? _updatedRowsCount;
+  int? get updatedRowsCount => _$this._updatedRowsCount;
+  set updatedRowsCount(covariant int? updatedRowsCount) => _$this._updatedRowsCount = updatedRowsCount;
+
   int? _errorsParsingCount;
   int? get errorsParsingCount => _$this._errorsParsingCount;
   set errorsParsingCount(covariant int? errorsParsingCount) => _$this._errorsParsingCount = errorsParsingCount;
@@ -14074,6 +14528,7 @@ class ImportStateBuilder implements Builder<ImportState, ImportStateBuilder>, $I
       _matchingColumnsCount = $v.matchingColumnsCount;
       _createdColumnsCount = $v.createdColumnsCount;
       _insertedRowsCount = $v.insertedRowsCount;
+      _updatedRowsCount = $v.updatedRowsCount;
       _errorsParsingCount = $v.errorsParsingCount;
       _errorsCount = $v.errorsCount;
       _$v = null;
@@ -14106,6 +14561,7 @@ class ImportStateBuilder implements Builder<ImportState, ImportStateBuilder>, $I
               BuiltValueNullFieldError.checkNotNull(createdColumnsCount, r'ImportState', 'createdColumnsCount'),
           insertedRowsCount:
               BuiltValueNullFieldError.checkNotNull(insertedRowsCount, r'ImportState', 'insertedRowsCount'),
+          updatedRowsCount: BuiltValueNullFieldError.checkNotNull(updatedRowsCount, r'ImportState', 'updatedRowsCount'),
           errorsParsingCount:
               BuiltValueNullFieldError.checkNotNull(errorsParsingCount, r'ImportState', 'errorsParsingCount'),
           errorsCount: BuiltValueNullFieldError.checkNotNull(errorsCount, r'ImportState', 'errorsCount'),
@@ -14861,6 +15317,9 @@ abstract mixin class $ApiColumnsCreateNumberColumnRequestApplicationJsonInterfac
 
   ApiColumnsCreateNumberColumnRequestApplicationJson_BaseNodeType? get baseNodeType;
   set baseNodeType(ApiColumnsCreateNumberColumnRequestApplicationJson_BaseNodeType? baseNodeType);
+
+  MapBuilder<String, JsonObject> get customSettings;
+  set customSettings(MapBuilder<String, JsonObject>? customSettings);
 }
 
 class _$ApiColumnsCreateNumberColumnRequestApplicationJson extends ApiColumnsCreateNumberColumnRequestApplicationJson {
@@ -14890,6 +15349,8 @@ class _$ApiColumnsCreateNumberColumnRequestApplicationJson extends ApiColumnsCre
   final bool mandatory;
   @override
   final ApiColumnsCreateNumberColumnRequestApplicationJson_BaseNodeType baseNodeType;
+  @override
+  final BuiltMap<String, JsonObject> customSettings;
 
   factory _$ApiColumnsCreateNumberColumnRequestApplicationJson(
           [void Function(ApiColumnsCreateNumberColumnRequestApplicationJsonBuilder)? updates]) =>
@@ -14908,7 +15369,8 @@ class _$ApiColumnsCreateNumberColumnRequestApplicationJson extends ApiColumnsCre
       this.description,
       this.selectedViewIds,
       required this.mandatory,
-      required this.baseNodeType})
+      required this.baseNodeType,
+      required this.customSettings})
       : super._();
   @override
   ApiColumnsCreateNumberColumnRequestApplicationJson rebuild(
@@ -14935,7 +15397,8 @@ class _$ApiColumnsCreateNumberColumnRequestApplicationJson extends ApiColumnsCre
         description == other.description &&
         selectedViewIds == other.selectedViewIds &&
         mandatory == other.mandatory &&
-        baseNodeType == other.baseNodeType;
+        baseNodeType == other.baseNodeType &&
+        customSettings == other.customSettings;
   }
 
   @override
@@ -14954,6 +15417,7 @@ class _$ApiColumnsCreateNumberColumnRequestApplicationJson extends ApiColumnsCre
     _$hash = $jc(_$hash, selectedViewIds.hashCode);
     _$hash = $jc(_$hash, mandatory.hashCode);
     _$hash = $jc(_$hash, baseNodeType.hashCode);
+    _$hash = $jc(_$hash, customSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -14973,7 +15437,8 @@ class _$ApiColumnsCreateNumberColumnRequestApplicationJson extends ApiColumnsCre
           ..add('description', description)
           ..add('selectedViewIds', selectedViewIds)
           ..add('mandatory', mandatory)
-          ..add('baseNodeType', baseNodeType))
+          ..add('baseNodeType', baseNodeType)
+          ..add('customSettings', customSettings))
         .toString();
   }
 }
@@ -15039,6 +15504,11 @@ class ApiColumnsCreateNumberColumnRequestApplicationJsonBuilder
   set baseNodeType(covariant ApiColumnsCreateNumberColumnRequestApplicationJson_BaseNodeType? baseNodeType) =>
       _$this._baseNodeType = baseNodeType;
 
+  MapBuilder<String, JsonObject>? _customSettings;
+  MapBuilder<String, JsonObject> get customSettings => _$this._customSettings ??= MapBuilder<String, JsonObject>();
+  set customSettings(covariant MapBuilder<String, JsonObject>? customSettings) =>
+      _$this._customSettings = customSettings;
+
   ApiColumnsCreateNumberColumnRequestApplicationJsonBuilder() {
     ApiColumnsCreateNumberColumnRequestApplicationJson._defaults(this);
   }
@@ -15059,6 +15529,7 @@ class ApiColumnsCreateNumberColumnRequestApplicationJsonBuilder
       _selectedViewIds = $v.selectedViewIds?.toBuilder();
       _mandatory = $v.mandatory;
       _baseNodeType = $v.baseNodeType;
+      _customSettings = $v.customSettings.toBuilder();
       _$v = null;
     }
     return this;
@@ -15100,12 +15571,16 @@ class ApiColumnsCreateNumberColumnRequestApplicationJsonBuilder
                 mandatory, r'ApiColumnsCreateNumberColumnRequestApplicationJson', 'mandatory'),
             baseNodeType: BuiltValueNullFieldError.checkNotNull(
                 baseNodeType, r'ApiColumnsCreateNumberColumnRequestApplicationJson', 'baseNodeType'),
+            customSettings: customSettings.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'selectedViewIds';
         _selectedViewIds?.build();
+
+        _$failedField = 'customSettings';
+        customSettings.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'ApiColumnsCreateNumberColumnRequestApplicationJson', _$failedField, e.toString());
@@ -15368,6 +15843,9 @@ abstract mixin class $ApiColumnsCreateTextColumnRequestApplicationJsonInterfaceB
   int? get textMaxLength;
   set textMaxLength(int? textMaxLength);
 
+  bool? get textUnique;
+  set textUnique(bool? textUnique);
+
   ApiColumnsCreateTextColumnRequestApplicationJson_Subtype? get subtype;
   set subtype(ApiColumnsCreateTextColumnRequestApplicationJson_Subtype? subtype);
 
@@ -15382,6 +15860,9 @@ abstract mixin class $ApiColumnsCreateTextColumnRequestApplicationJsonInterfaceB
 
   ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeType? get baseNodeType;
   set baseNodeType(ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeType? baseNodeType);
+
+  MapBuilder<String, JsonObject> get customSettings;
+  set customSettings(MapBuilder<String, JsonObject>? customSettings);
 }
 
 class _$ApiColumnsCreateTextColumnRequestApplicationJson extends ApiColumnsCreateTextColumnRequestApplicationJson {
@@ -15396,6 +15877,8 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJson extends ApiColumnsCreat
   @override
   final int? textMaxLength;
   @override
+  final bool? textUnique;
+  @override
   final ApiColumnsCreateTextColumnRequestApplicationJson_Subtype? subtype;
   @override
   final String? description;
@@ -15405,6 +15888,8 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJson extends ApiColumnsCreat
   final bool mandatory;
   @override
   final ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeType baseNodeType;
+  @override
+  final BuiltMap<String, JsonObject> customSettings;
 
   factory _$ApiColumnsCreateTextColumnRequestApplicationJson(
           [void Function(ApiColumnsCreateTextColumnRequestApplicationJsonBuilder)? updates]) =>
@@ -15416,11 +15901,13 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJson extends ApiColumnsCreat
       this.textDefault,
       this.textAllowedPattern,
       this.textMaxLength,
+      this.textUnique,
       this.subtype,
       this.description,
       this.selectedViewIds,
       required this.mandatory,
-      required this.baseNodeType})
+      required this.baseNodeType,
+      required this.customSettings})
       : super._();
   @override
   ApiColumnsCreateTextColumnRequestApplicationJson rebuild(
@@ -15440,11 +15927,13 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJson extends ApiColumnsCreat
         textDefault == other.textDefault &&
         textAllowedPattern == other.textAllowedPattern &&
         textMaxLength == other.textMaxLength &&
+        textUnique == other.textUnique &&
         subtype == other.subtype &&
         description == other.description &&
         selectedViewIds == other.selectedViewIds &&
         mandatory == other.mandatory &&
-        baseNodeType == other.baseNodeType;
+        baseNodeType == other.baseNodeType &&
+        customSettings == other.customSettings;
   }
 
   @override
@@ -15455,11 +15944,13 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJson extends ApiColumnsCreat
     _$hash = $jc(_$hash, textDefault.hashCode);
     _$hash = $jc(_$hash, textAllowedPattern.hashCode);
     _$hash = $jc(_$hash, textMaxLength.hashCode);
+    _$hash = $jc(_$hash, textUnique.hashCode);
     _$hash = $jc(_$hash, subtype.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, selectedViewIds.hashCode);
     _$hash = $jc(_$hash, mandatory.hashCode);
     _$hash = $jc(_$hash, baseNodeType.hashCode);
+    _$hash = $jc(_$hash, customSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -15472,11 +15963,13 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJson extends ApiColumnsCreat
           ..add('textDefault', textDefault)
           ..add('textAllowedPattern', textAllowedPattern)
           ..add('textMaxLength', textMaxLength)
+          ..add('textUnique', textUnique)
           ..add('subtype', subtype)
           ..add('description', description)
           ..add('selectedViewIds', selectedViewIds)
           ..add('mandatory', mandatory)
-          ..add('baseNodeType', baseNodeType))
+          ..add('baseNodeType', baseNodeType)
+          ..add('customSettings', customSettings))
         .toString();
   }
 }
@@ -15508,6 +16001,10 @@ class ApiColumnsCreateTextColumnRequestApplicationJsonBuilder
   int? get textMaxLength => _$this._textMaxLength;
   set textMaxLength(covariant int? textMaxLength) => _$this._textMaxLength = textMaxLength;
 
+  bool? _textUnique;
+  bool? get textUnique => _$this._textUnique;
+  set textUnique(covariant bool? textUnique) => _$this._textUnique = textUnique;
+
   ApiColumnsCreateTextColumnRequestApplicationJson_Subtype? _subtype;
   ApiColumnsCreateTextColumnRequestApplicationJson_Subtype? get subtype => _$this._subtype;
   set subtype(covariant ApiColumnsCreateTextColumnRequestApplicationJson_Subtype? subtype) => _$this._subtype = subtype;
@@ -15529,6 +16026,11 @@ class ApiColumnsCreateTextColumnRequestApplicationJsonBuilder
   set baseNodeType(covariant ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeType? baseNodeType) =>
       _$this._baseNodeType = baseNodeType;
 
+  MapBuilder<String, JsonObject>? _customSettings;
+  MapBuilder<String, JsonObject> get customSettings => _$this._customSettings ??= MapBuilder<String, JsonObject>();
+  set customSettings(covariant MapBuilder<String, JsonObject>? customSettings) =>
+      _$this._customSettings = customSettings;
+
   ApiColumnsCreateTextColumnRequestApplicationJsonBuilder() {
     ApiColumnsCreateTextColumnRequestApplicationJson._defaults(this);
   }
@@ -15541,11 +16043,13 @@ class ApiColumnsCreateTextColumnRequestApplicationJsonBuilder
       _textDefault = $v.textDefault;
       _textAllowedPattern = $v.textAllowedPattern;
       _textMaxLength = $v.textMaxLength;
+      _textUnique = $v.textUnique;
       _subtype = $v.subtype;
       _description = $v.description;
       _selectedViewIds = $v.selectedViewIds?.toBuilder();
       _mandatory = $v.mandatory;
       _baseNodeType = $v.baseNodeType;
+      _customSettings = $v.customSettings.toBuilder();
       _$v = null;
     }
     return this;
@@ -15577,6 +16081,7 @@ class ApiColumnsCreateTextColumnRequestApplicationJsonBuilder
             textDefault: textDefault,
             textAllowedPattern: textAllowedPattern,
             textMaxLength: textMaxLength,
+            textUnique: textUnique,
             subtype: subtype,
             description: description,
             selectedViewIds: _selectedViewIds?.build(),
@@ -15584,12 +16089,16 @@ class ApiColumnsCreateTextColumnRequestApplicationJsonBuilder
                 mandatory, r'ApiColumnsCreateTextColumnRequestApplicationJson', 'mandatory'),
             baseNodeType: BuiltValueNullFieldError.checkNotNull(
                 baseNodeType, r'ApiColumnsCreateTextColumnRequestApplicationJson', 'baseNodeType'),
+            customSettings: customSettings.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'selectedViewIds';
         _selectedViewIds?.build();
+
+        _$failedField = 'customSettings';
+        customSettings.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'ApiColumnsCreateTextColumnRequestApplicationJson', _$failedField, e.toString());
@@ -15862,6 +16371,9 @@ abstract mixin class $ApiColumnsCreateSelectionColumnRequestApplicationJsonInter
 
   ApiColumnsCreateSelectionColumnRequestApplicationJson_BaseNodeType? get baseNodeType;
   set baseNodeType(ApiColumnsCreateSelectionColumnRequestApplicationJson_BaseNodeType? baseNodeType);
+
+  MapBuilder<String, JsonObject> get customSettings;
+  set customSettings(MapBuilder<String, JsonObject>? customSettings);
 }
 
 class _$ApiColumnsCreateSelectionColumnRequestApplicationJson
@@ -15884,6 +16396,8 @@ class _$ApiColumnsCreateSelectionColumnRequestApplicationJson
   final bool mandatory;
   @override
   final ApiColumnsCreateSelectionColumnRequestApplicationJson_BaseNodeType baseNodeType;
+  @override
+  final BuiltMap<String, JsonObject> customSettings;
 
   factory _$ApiColumnsCreateSelectionColumnRequestApplicationJson(
           [void Function(ApiColumnsCreateSelectionColumnRequestApplicationJsonBuilder)? updates]) =>
@@ -15898,7 +16412,8 @@ class _$ApiColumnsCreateSelectionColumnRequestApplicationJson
       this.description,
       this.selectedViewIds,
       required this.mandatory,
-      required this.baseNodeType})
+      required this.baseNodeType,
+      required this.customSettings})
       : super._();
   @override
   ApiColumnsCreateSelectionColumnRequestApplicationJson rebuild(
@@ -15921,7 +16436,8 @@ class _$ApiColumnsCreateSelectionColumnRequestApplicationJson
         description == other.description &&
         selectedViewIds == other.selectedViewIds &&
         mandatory == other.mandatory &&
-        baseNodeType == other.baseNodeType;
+        baseNodeType == other.baseNodeType &&
+        customSettings == other.customSettings;
   }
 
   @override
@@ -15936,6 +16452,7 @@ class _$ApiColumnsCreateSelectionColumnRequestApplicationJson
     _$hash = $jc(_$hash, selectedViewIds.hashCode);
     _$hash = $jc(_$hash, mandatory.hashCode);
     _$hash = $jc(_$hash, baseNodeType.hashCode);
+    _$hash = $jc(_$hash, customSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -15951,7 +16468,8 @@ class _$ApiColumnsCreateSelectionColumnRequestApplicationJson
           ..add('description', description)
           ..add('selectedViewIds', selectedViewIds)
           ..add('mandatory', mandatory)
-          ..add('baseNodeType', baseNodeType))
+          ..add('baseNodeType', baseNodeType)
+          ..add('customSettings', customSettings))
         .toString();
   }
 }
@@ -16001,6 +16519,11 @@ class ApiColumnsCreateSelectionColumnRequestApplicationJsonBuilder
   set baseNodeType(covariant ApiColumnsCreateSelectionColumnRequestApplicationJson_BaseNodeType? baseNodeType) =>
       _$this._baseNodeType = baseNodeType;
 
+  MapBuilder<String, JsonObject>? _customSettings;
+  MapBuilder<String, JsonObject> get customSettings => _$this._customSettings ??= MapBuilder<String, JsonObject>();
+  set customSettings(covariant MapBuilder<String, JsonObject>? customSettings) =>
+      _$this._customSettings = customSettings;
+
   ApiColumnsCreateSelectionColumnRequestApplicationJsonBuilder() {
     ApiColumnsCreateSelectionColumnRequestApplicationJson._defaults(this);
   }
@@ -16017,6 +16540,7 @@ class ApiColumnsCreateSelectionColumnRequestApplicationJsonBuilder
       _selectedViewIds = $v.selectedViewIds?.toBuilder();
       _mandatory = $v.mandatory;
       _baseNodeType = $v.baseNodeType;
+      _customSettings = $v.customSettings.toBuilder();
       _$v = null;
     }
     return this;
@@ -16055,12 +16579,16 @@ class ApiColumnsCreateSelectionColumnRequestApplicationJsonBuilder
                 mandatory, r'ApiColumnsCreateSelectionColumnRequestApplicationJson', 'mandatory'),
             baseNodeType: BuiltValueNullFieldError.checkNotNull(
                 baseNodeType, r'ApiColumnsCreateSelectionColumnRequestApplicationJson', 'baseNodeType'),
+            customSettings: customSettings.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'selectedViewIds';
         _selectedViewIds?.build();
+
+        _$failedField = 'customSettings';
+        customSettings.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'ApiColumnsCreateSelectionColumnRequestApplicationJson', _$failedField, e.toString());
@@ -16333,6 +16861,9 @@ abstract mixin class $ApiColumnsCreateDatetimeColumnRequestApplicationJsonInterf
 
   ApiColumnsCreateDatetimeColumnRequestApplicationJson_BaseNodeType? get baseNodeType;
   set baseNodeType(ApiColumnsCreateDatetimeColumnRequestApplicationJson_BaseNodeType? baseNodeType);
+
+  MapBuilder<String, JsonObject> get customSettings;
+  set customSettings(MapBuilder<String, JsonObject>? customSettings);
 }
 
 class _$ApiColumnsCreateDatetimeColumnRequestApplicationJson
@@ -16353,6 +16884,8 @@ class _$ApiColumnsCreateDatetimeColumnRequestApplicationJson
   final bool mandatory;
   @override
   final ApiColumnsCreateDatetimeColumnRequestApplicationJson_BaseNodeType baseNodeType;
+  @override
+  final BuiltMap<String, JsonObject> customSettings;
 
   factory _$ApiColumnsCreateDatetimeColumnRequestApplicationJson(
           [void Function(ApiColumnsCreateDatetimeColumnRequestApplicationJsonBuilder)? updates]) =>
@@ -16366,7 +16899,8 @@ class _$ApiColumnsCreateDatetimeColumnRequestApplicationJson
       this.description,
       this.selectedViewIds,
       required this.mandatory,
-      required this.baseNodeType})
+      required this.baseNodeType,
+      required this.customSettings})
       : super._();
   @override
   ApiColumnsCreateDatetimeColumnRequestApplicationJson rebuild(
@@ -16388,7 +16922,8 @@ class _$ApiColumnsCreateDatetimeColumnRequestApplicationJson
         description == other.description &&
         selectedViewIds == other.selectedViewIds &&
         mandatory == other.mandatory &&
-        baseNodeType == other.baseNodeType;
+        baseNodeType == other.baseNodeType &&
+        customSettings == other.customSettings;
   }
 
   @override
@@ -16402,6 +16937,7 @@ class _$ApiColumnsCreateDatetimeColumnRequestApplicationJson
     _$hash = $jc(_$hash, selectedViewIds.hashCode);
     _$hash = $jc(_$hash, mandatory.hashCode);
     _$hash = $jc(_$hash, baseNodeType.hashCode);
+    _$hash = $jc(_$hash, customSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -16416,7 +16952,8 @@ class _$ApiColumnsCreateDatetimeColumnRequestApplicationJson
           ..add('description', description)
           ..add('selectedViewIds', selectedViewIds)
           ..add('mandatory', mandatory)
-          ..add('baseNodeType', baseNodeType))
+          ..add('baseNodeType', baseNodeType)
+          ..add('customSettings', customSettings))
         .toString();
   }
 }
@@ -16464,6 +17001,11 @@ class ApiColumnsCreateDatetimeColumnRequestApplicationJsonBuilder
   set baseNodeType(covariant ApiColumnsCreateDatetimeColumnRequestApplicationJson_BaseNodeType? baseNodeType) =>
       _$this._baseNodeType = baseNodeType;
 
+  MapBuilder<String, JsonObject>? _customSettings;
+  MapBuilder<String, JsonObject> get customSettings => _$this._customSettings ??= MapBuilder<String, JsonObject>();
+  set customSettings(covariant MapBuilder<String, JsonObject>? customSettings) =>
+      _$this._customSettings = customSettings;
+
   ApiColumnsCreateDatetimeColumnRequestApplicationJsonBuilder() {
     ApiColumnsCreateDatetimeColumnRequestApplicationJson._defaults(this);
   }
@@ -16479,6 +17021,7 @@ class ApiColumnsCreateDatetimeColumnRequestApplicationJsonBuilder
       _selectedViewIds = $v.selectedViewIds?.toBuilder();
       _mandatory = $v.mandatory;
       _baseNodeType = $v.baseNodeType;
+      _customSettings = $v.customSettings.toBuilder();
       _$v = null;
     }
     return this;
@@ -16515,12 +17058,16 @@ class ApiColumnsCreateDatetimeColumnRequestApplicationJsonBuilder
                 mandatory, r'ApiColumnsCreateDatetimeColumnRequestApplicationJson', 'mandatory'),
             baseNodeType: BuiltValueNullFieldError.checkNotNull(
                 baseNodeType, r'ApiColumnsCreateDatetimeColumnRequestApplicationJson', 'baseNodeType'),
+            customSettings: customSettings.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'selectedViewIds';
         _selectedViewIds?.build();
+
+        _$failedField = 'customSettings';
+        customSettings.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'ApiColumnsCreateDatetimeColumnRequestApplicationJson', _$failedField, e.toString());
@@ -16805,6 +17352,9 @@ abstract mixin class $ApiColumnsCreateUsergroupColumnRequestApplicationJsonInter
 
   ApiColumnsCreateUsergroupColumnRequestApplicationJson_BaseNodeType? get baseNodeType;
   set baseNodeType(ApiColumnsCreateUsergroupColumnRequestApplicationJson_BaseNodeType? baseNodeType);
+
+  MapBuilder<String, JsonObject> get customSettings;
+  set customSettings(MapBuilder<String, JsonObject>? customSettings);
 }
 
 class _$ApiColumnsCreateUsergroupColumnRequestApplicationJson
@@ -16833,6 +17383,8 @@ class _$ApiColumnsCreateUsergroupColumnRequestApplicationJson
   final bool mandatory;
   @override
   final ApiColumnsCreateUsergroupColumnRequestApplicationJson_BaseNodeType baseNodeType;
+  @override
+  final BuiltMap<String, JsonObject> customSettings;
 
   factory _$ApiColumnsCreateUsergroupColumnRequestApplicationJson(
           [void Function(ApiColumnsCreateUsergroupColumnRequestApplicationJsonBuilder)? updates]) =>
@@ -16850,7 +17402,8 @@ class _$ApiColumnsCreateUsergroupColumnRequestApplicationJson
       this.description,
       this.selectedViewIds,
       required this.mandatory,
-      required this.baseNodeType})
+      required this.baseNodeType,
+      required this.customSettings})
       : super._();
   @override
   ApiColumnsCreateUsergroupColumnRequestApplicationJson rebuild(
@@ -16876,7 +17429,8 @@ class _$ApiColumnsCreateUsergroupColumnRequestApplicationJson
         description == other.description &&
         selectedViewIds == other.selectedViewIds &&
         mandatory == other.mandatory &&
-        baseNodeType == other.baseNodeType;
+        baseNodeType == other.baseNodeType &&
+        customSettings == other.customSettings;
   }
 
   @override
@@ -16894,6 +17448,7 @@ class _$ApiColumnsCreateUsergroupColumnRequestApplicationJson
     _$hash = $jc(_$hash, selectedViewIds.hashCode);
     _$hash = $jc(_$hash, mandatory.hashCode);
     _$hash = $jc(_$hash, baseNodeType.hashCode);
+    _$hash = $jc(_$hash, customSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -16912,7 +17467,8 @@ class _$ApiColumnsCreateUsergroupColumnRequestApplicationJson
           ..add('description', description)
           ..add('selectedViewIds', selectedViewIds)
           ..add('mandatory', mandatory)
-          ..add('baseNodeType', baseNodeType))
+          ..add('baseNodeType', baseNodeType)
+          ..add('customSettings', customSettings))
         .toString();
   }
 }
@@ -16975,6 +17531,11 @@ class ApiColumnsCreateUsergroupColumnRequestApplicationJsonBuilder
   set baseNodeType(covariant ApiColumnsCreateUsergroupColumnRequestApplicationJson_BaseNodeType? baseNodeType) =>
       _$this._baseNodeType = baseNodeType;
 
+  MapBuilder<String, JsonObject>? _customSettings;
+  MapBuilder<String, JsonObject> get customSettings => _$this._customSettings ??= MapBuilder<String, JsonObject>();
+  set customSettings(covariant MapBuilder<String, JsonObject>? customSettings) =>
+      _$this._customSettings = customSettings;
+
   ApiColumnsCreateUsergroupColumnRequestApplicationJsonBuilder() {
     ApiColumnsCreateUsergroupColumnRequestApplicationJson._defaults(this);
   }
@@ -16994,6 +17555,7 @@ class ApiColumnsCreateUsergroupColumnRequestApplicationJsonBuilder
       _selectedViewIds = $v.selectedViewIds?.toBuilder();
       _mandatory = $v.mandatory;
       _baseNodeType = $v.baseNodeType;
+      _customSettings = $v.customSettings.toBuilder();
       _$v = null;
     }
     return this;
@@ -17034,12 +17596,16 @@ class ApiColumnsCreateUsergroupColumnRequestApplicationJsonBuilder
                 mandatory, r'ApiColumnsCreateUsergroupColumnRequestApplicationJson', 'mandatory'),
             baseNodeType: BuiltValueNullFieldError.checkNotNull(
                 baseNodeType, r'ApiColumnsCreateUsergroupColumnRequestApplicationJson', 'baseNodeType'),
+            customSettings: customSettings.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'selectedViewIds';
         _selectedViewIds?.build();
+
+        _$failedField = 'customSettings';
+        customSettings.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'ApiColumnsCreateUsergroupColumnRequestApplicationJson', _$failedField, e.toString());

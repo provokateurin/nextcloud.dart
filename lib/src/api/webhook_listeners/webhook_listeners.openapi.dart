@@ -72,6 +72,8 @@ class $WebhooksClient {
   ///
   /// Status codes:
   ///   * 200: Webhook registrations returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [index] for a method executing this request and parsing the response.
@@ -121,6 +123,8 @@ class $WebhooksClient {
   ///
   /// Status codes:
   ///   * 200: Webhook registrations returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$index_Request] for the request send by this method.
@@ -154,18 +158,24 @@ class $WebhooksClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
+  ///   * [exAppId]
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Webhook registration returned
   ///   * 400: Bad request
   ///   * 403: Insufficient permissions
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [create] for a method executing this request and parsing the response.
   ///  * [$create_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $create_Request({required WebhooksCreateRequestApplicationJson $body, bool? oCSAPIRequest}) {
+  _i3.Request $create_Request({
+    required WebhooksCreateRequestApplicationJson $body,
+    String? exAppId,
+    bool? oCSAPIRequest,
+  }) {
     const _path = '/ocs/v2.php/apps/webhook_listeners/api/v1/webhooks';
     final _uri = Uri.parse('${_rootClient.baseURL}$_path');
     final _request = _i3.Request('post', _uri);
@@ -185,6 +195,11 @@ class $WebhooksClient {
     }
 
     // coverage:ignore-end
+    final __exAppId = _$jsonSerializers.serialize(exAppId, specifiedType: const FullType(String));
+    if (__exAppId != null) {
+      _request.headers['ex-app-id'] = const _i6.HeaderEncoder().convert(__exAppId);
+    }
+
     var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
     __oCSAPIRequest ??= true;
     _request.headers['OCS-APIRequest'] = const _i6.HeaderEncoder().convert(__oCSAPIRequest);
@@ -204,21 +219,24 @@ class $WebhooksClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
+  ///   * [exAppId]
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Webhook registration returned
   ///   * 400: Bad request
   ///   * 403: Insufficient permissions
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$create_Request] for the request send by this method.
   ///  * [$create_Serializer] for a converter to parse the `Response` from an executed request.
   Future<_i1.DynamiteResponse<WebhooksCreateResponseApplicationJson, void>> create({
     required WebhooksCreateRequestApplicationJson $body,
+    String? exAppId,
     bool? oCSAPIRequest,
   }) async {
-    final _request = $create_Request(oCSAPIRequest: oCSAPIRequest, $body: $body);
+    final _request = $create_Request(exAppId: exAppId, oCSAPIRequest: oCSAPIRequest, $body: $body);
     final _streamedResponse = await _rootClient.httpClient.send(_request);
     final _response = await _i3.Response.fromStream(_streamedResponse);
 
@@ -249,6 +267,8 @@ class $WebhooksClient {
   /// Status codes:
   ///   * 200: Webhook registration returned
   ///   * 404: Webhook not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$show] for a method executing this request and parsing the response.
@@ -299,6 +319,8 @@ class $WebhooksClient {
   /// Status codes:
   ///   * 200: Webhook registration returned
   ///   * 404: Webhook not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$$show_Request] for the request send by this method.
@@ -333,12 +355,14 @@ class $WebhooksClient {
   ///
   /// Parameters:
   ///   * [id] id of the webhook.
+  ///   * [exAppId]
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Webhook registration returned
   ///   * 400: Bad request
   ///   * 403: Insufficient permissions
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$update] for a method executing this request and parsing the response.
@@ -347,6 +371,7 @@ class $WebhooksClient {
   _i3.Request $$update_Request({
     required int id,
     required WebhooksUpdateRequestApplicationJson $body,
+    String? exAppId,
     bool? oCSAPIRequest,
   }) {
     final _parameters = <String, Object?>{};
@@ -372,6 +397,11 @@ class $WebhooksClient {
     }
 
     // coverage:ignore-end
+    final __exAppId = _$jsonSerializers.serialize(exAppId, specifiedType: const FullType(String));
+    if (__exAppId != null) {
+      _request.headers['ex-app-id'] = const _i6.HeaderEncoder().convert(__exAppId);
+    }
+
     var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
     __oCSAPIRequest ??= true;
     _request.headers['OCS-APIRequest'] = const _i6.HeaderEncoder().convert(__oCSAPIRequest);
@@ -392,12 +422,14 @@ class $WebhooksClient {
   ///
   /// Parameters:
   ///   * [id] id of the webhook.
+  ///   * [exAppId]
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Webhook registration returned
   ///   * 400: Bad request
   ///   * 403: Insufficient permissions
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$$update_Request] for the request send by this method.
@@ -405,9 +437,10 @@ class $WebhooksClient {
   Future<_i1.DynamiteResponse<WebhooksUpdateResponseApplicationJson, void>> $update({
     required int id,
     required WebhooksUpdateRequestApplicationJson $body,
+    String? exAppId,
     bool? oCSAPIRequest,
   }) async {
-    final _request = $$update_Request(id: id, oCSAPIRequest: oCSAPIRequest, $body: $body);
+    final _request = $$update_Request(id: id, exAppId: exAppId, oCSAPIRequest: oCSAPIRequest, $body: $body);
     final _streamedResponse = await _rootClient.httpClient.send(_request);
     final _response = await _i3.Response.fromStream(_streamedResponse);
 
@@ -439,6 +472,7 @@ class $WebhooksClient {
   ///   * 200: Boolean returned whether something was deleted
   ///   * 400: Bad request
   ///   * 403: Insufficient permissions
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [destroy] for a method executing this request and parsing the response.
@@ -490,6 +524,7 @@ class $WebhooksClient {
   ///   * 200: Boolean returned whether something was deleted
   ///   * 400: Bad request
   ///   * 403: Insufficient permissions
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$destroy_Request] for the request send by this method.
@@ -524,13 +559,14 @@ class $WebhooksClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
-  ///   * [appid] id of the app, as in the EX-APP-ID for creation.
+  ///   * [appid] id of the app, as in the ex-app-id for creation.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Integer number of registrations deleted
   ///   * 400: Bad request
   ///   * 403: Insufficient permissions
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteByAppId] for a method executing this request and parsing the response.
@@ -577,13 +613,14 @@ class $WebhooksClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
-  ///   * [appid] id of the app, as in the EX-APP-ID for creation.
+  ///   * [appid] id of the app, as in the ex-app-id for creation.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Integer number of registrations deleted
   ///   * 400: Bad request
   ///   * 403: Insufficient permissions
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteByAppId_Request] for the request send by this method.

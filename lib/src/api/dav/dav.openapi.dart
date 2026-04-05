@@ -76,6 +76,7 @@ class $DirectClient {
   ///   * 404: File not found
   ///   * 400: Getting direct link is not possible
   ///   * 403: Missing permissions to get direct link
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getUrl] for a method executing this request and parsing the response.
@@ -125,6 +126,7 @@ class $DirectClient {
   ///   * 404: File not found
   ///   * 400: Getting direct link is not possible
   ///   * 403: Missing permissions to get direct link
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getUrl_Request] for the request send by this method.
@@ -170,6 +172,7 @@ class $OutOfOfficeClient {
   /// Status codes:
   ///   * 200: Out-of-office data
   ///   * 404: No out-of-office data was found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getCurrentOutOfOfficeData] for a method executing this request and parsing the response.
@@ -218,6 +221,7 @@ class $OutOfOfficeClient {
   /// Status codes:
   ///   * 200: Out-of-office data
   ///   * 404: No out-of-office data was found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getCurrentOutOfOfficeData_Request] for the request send by this method.
@@ -256,6 +260,7 @@ class $OutOfOfficeClient {
   /// Status codes:
   ///   * 200: Out-of-office data
   ///   * 404: No out-of-office data was found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getOutOfOffice] for a method executing this request and parsing the response.
@@ -304,6 +309,7 @@ class $OutOfOfficeClient {
   /// Status codes:
   ///   * 200: Out-of-office data
   ///   * 404: No out-of-office data was found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getOutOfOffice_Request] for the request send by this method.
@@ -433,7 +439,7 @@ class $OutOfOfficeClient {
         bodyType: const FullType(OutOfOfficeClearOutOfOfficeResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 401},
+        validStatuses: const {200},
       );
 
   /// Clear the out-of-office.
@@ -614,7 +620,7 @@ sealed class $DirectGetUrlRequestApplicationJsonInterface {
   int get fileId;
 
   /// Duration until the link expires.
-  int get expirationTime;
+  int? get expirationTime;
 
   /// Rebuilds the instance.
   ///
@@ -1954,6 +1960,14 @@ abstract class UpcomingEventsGetEventsResponseApplicationJson
 @BuiltValue(instantiable: false)
 sealed class $Capabilities_DavInterface {
   String get chunking;
+  @BuiltValueField(wireName: 'public_shares_chunking')
+  bool get publicSharesChunking;
+  @BuiltValueField(wireName: 'search_supports_creation_time')
+  bool get searchSupportsCreationTime;
+  @BuiltValueField(wireName: 'search_supports_upload_time')
+  bool get searchSupportsUploadTime;
+  @BuiltValueField(wireName: 'search_supports_last_activity')
+  bool get searchSupportsLastActivity;
   String? get bulkupload;
   @BuiltValueField(wireName: 'absence-supported')
   bool? get absenceSupported;

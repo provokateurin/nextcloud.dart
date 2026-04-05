@@ -71,6 +71,8 @@ class $ConfigapiClient {
   ///
   /// Status codes:
   ///   * 200: Config created successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [create] for a method executing this request and parsing the response.
@@ -115,6 +117,8 @@ class $ConfigapiClient {
   ///
   /// Status codes:
   ///   * 200: Config created successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$create_Request] for the request send by this method.
@@ -147,27 +151,26 @@ class $ConfigapiClient {
   ///
   /// Parameters:
   ///   * [configID] ID of the config.
-  ///   * [showPassword] Whether to show the password. Defaults to `0`.
+  ///   * [showPassword] Whether to show the password. Defaults to `false`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Config returned
   ///   * 404: Config not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$show] for a method executing this request and parsing the response.
   ///  * [$$show_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $$show_Request({required String configID, ConfigapiShowShowPassword? showPassword, bool? oCSAPIRequest}) {
+  _i3.Request $$show_Request({required String configID, bool? showPassword, bool? oCSAPIRequest}) {
     final _parameters = <String, Object?>{};
     final __configID = _$jsonSerializers.serialize(configID, specifiedType: const FullType(String));
     _parameters['configID'] = __configID;
 
-    var __showPassword = _$jsonSerializers.serialize(
-      showPassword,
-      specifiedType: const FullType(ConfigapiShowShowPassword),
-    );
-    __showPassword ??= 0;
+    var __showPassword = _$jsonSerializers.serialize(showPassword, specifiedType: const FullType(bool));
+    __showPassword ??= false;
     _parameters['showPassword'] = __showPassword;
 
     final _path = _i6.UriTemplate(
@@ -208,19 +211,21 @@ class $ConfigapiClient {
   ///
   /// Parameters:
   ///   * [configID] ID of the config.
-  ///   * [showPassword] Whether to show the password. Defaults to `0`.
+  ///   * [showPassword] Whether to show the password. Defaults to `false`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Config returned
   ///   * 404: Config not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$$show_Request] for the request send by this method.
   ///  * [$$show_Serializer] for a converter to parse the `Response` from an executed request.
   Future<_i1.DynamiteResponse<ConfigapiShowResponseApplicationJson, void>> $show({
     required String configID,
-    ConfigapiShowShowPassword? showPassword,
+    bool? showPassword,
     bool? oCSAPIRequest,
   }) async {
     final _request = $$show_Request(configID: configID, showPassword: showPassword, oCSAPIRequest: oCSAPIRequest);
@@ -237,7 +242,7 @@ class $ConfigapiClient {
         bodyType: const FullType(ConfigapiModifyResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 400, 404},
+        validStatuses: const {200, 400, 404, 401, 403},
       );
 
   /// Modify a configuration.
@@ -255,6 +260,8 @@ class $ConfigapiClient {
   ///   * 200: Config returned
   ///   * 400: Modifying config is not possible
   ///   * 404: Config not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [modify] for a method executing this request and parsing the response.
@@ -314,6 +321,8 @@ class $ConfigapiClient {
   ///   * 200: Config returned
   ///   * 400: Modifying config is not possible
   ///   * 404: Config not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$modify_Request] for the request send by this method.
@@ -337,7 +346,7 @@ class $ConfigapiClient {
         bodyType: const FullType(ConfigapiDeleteResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 404},
+        validStatuses: const {200, 404, 401, 403},
       );
 
   /// Delete a LDAP configuration.
@@ -354,6 +363,8 @@ class $ConfigapiClient {
   /// Status codes:
   ///   * 200: Config deleted successfully
   ///   * 404: Config not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [delete] for a method executing this request and parsing the response.
@@ -404,6 +415,8 @@ class $ConfigapiClient {
   /// Status codes:
   ///   * 200: Config deleted successfully
   ///   * 404: Config not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$delete_Request] for the request send by this method.
@@ -666,69 +679,6 @@ abstract class ConfigapiCreateResponseApplicationJson
   static void _validate(ConfigapiCreateResponseApplicationJsonBuilder b) {
     $ConfigapiCreateResponseApplicationJsonInterface._validate(b);
   }
-}
-
-class ConfigapiShowShowPassword extends EnumClass {
-  const ConfigapiShowShowPassword._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const ConfigapiShowShowPassword $0 = _$configapiShowShowPassword$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const ConfigapiShowShowPassword $1 = _$configapiShowShowPassword$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<ConfigapiShowShowPassword> get values => _$configapiShowShowPasswordValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static ConfigapiShowShowPassword valueOf(String name) => _$valueOfConfigapiShowShowPassword(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for ConfigapiShowShowPassword.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ConfigapiShowShowPassword> get serializer => const _$ConfigapiShowShowPasswordSerializer();
-}
-
-class _$ConfigapiShowShowPasswordSerializer implements PrimitiveSerializer<ConfigapiShowShowPassword> {
-  const _$ConfigapiShowShowPasswordSerializer();
-
-  static const Map<ConfigapiShowShowPassword, Object> _toWire = <ConfigapiShowShowPassword, Object>{
-    ConfigapiShowShowPassword.$0: 0,
-    ConfigapiShowShowPassword.$1: 1,
-  };
-
-  static const Map<Object, ConfigapiShowShowPassword> _fromWire = <Object, ConfigapiShowShowPassword>{
-    0: ConfigapiShowShowPassword.$0,
-    1: ConfigapiShowShowPassword.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [ConfigapiShowShowPassword];
-
-  @override
-  String get wireName => 'ConfigapiShowShowPassword';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    ConfigapiShowShowPassword object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  ConfigapiShowShowPassword deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
 }
 
 @BuiltValue(instantiable: false)
@@ -1197,7 +1147,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
         ConfigapiCreateResponseApplicationJson_Ocs_DataBuilder.new,
       )
       ..add(ConfigapiCreateResponseApplicationJson_Ocs_Data.serializer)
-      ..add(ConfigapiShowShowPassword.serializer)
       ..addBuilderFactory(
         const FullType(ConfigapiShowResponseApplicationJson),
         ConfigapiShowResponseApplicationJsonBuilder.new,

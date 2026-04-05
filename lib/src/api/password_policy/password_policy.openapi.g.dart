@@ -240,6 +240,8 @@ class _$ApiValidateRequestApplicationJsonSerializer implements StructuredSeriali
     final result = <Object?>[
       'password',
       serializers.serialize(object.password, specifiedType: const FullType(String)),
+      'context',
+      serializers.serialize(object.context, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -258,6 +260,9 @@ class _$ApiValidateRequestApplicationJsonSerializer implements StructuredSeriali
       switch (key) {
         case 'password':
           result.password = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'context':
+          result.context = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -1096,16 +1101,21 @@ abstract mixin class $ApiValidateRequestApplicationJsonInterfaceBuilder {
   void update(void Function($ApiValidateRequestApplicationJsonInterfaceBuilder) updates);
   String? get password;
   set password(String? password);
+
+  String? get context;
+  set context(String? context);
 }
 
 class _$ApiValidateRequestApplicationJson extends ApiValidateRequestApplicationJson {
   @override
   final String password;
+  @override
+  final String context;
 
   factory _$ApiValidateRequestApplicationJson([void Function(ApiValidateRequestApplicationJsonBuilder)? updates]) =>
       (ApiValidateRequestApplicationJsonBuilder()..update(updates))._build();
 
-  _$ApiValidateRequestApplicationJson._({required this.password}) : super._();
+  _$ApiValidateRequestApplicationJson._({required this.password, required this.context}) : super._();
   @override
   ApiValidateRequestApplicationJson rebuild(void Function(ApiValidateRequestApplicationJsonBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -1116,20 +1126,24 @@ class _$ApiValidateRequestApplicationJson extends ApiValidateRequestApplicationJ
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiValidateRequestApplicationJson && password == other.password;
+    return other is ApiValidateRequestApplicationJson && password == other.password && context == other.context;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, password.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ApiValidateRequestApplicationJson')..add('password', password)).toString();
+    return (newBuiltValueToStringHelper(r'ApiValidateRequestApplicationJson')
+          ..add('password', password)
+          ..add('context', context))
+        .toString();
   }
 }
 
@@ -1143,6 +1157,10 @@ class ApiValidateRequestApplicationJsonBuilder
   String? get password => _$this._password;
   set password(covariant String? password) => _$this._password = password;
 
+  String? _context;
+  String? get context => _$this._context;
+  set context(covariant String? context) => _$this._context = context;
+
   ApiValidateRequestApplicationJsonBuilder() {
     ApiValidateRequestApplicationJson._defaults(this);
   }
@@ -1151,6 +1169,7 @@ class ApiValidateRequestApplicationJsonBuilder
     final $v = _$v;
     if ($v != null) {
       _password = $v.password;
+      _context = $v.context;
       _$v = null;
     }
     return this;
@@ -1174,6 +1193,7 @@ class ApiValidateRequestApplicationJsonBuilder
     final _$result = _$v ??
         _$ApiValidateRequestApplicationJson._(
           password: BuiltValueNullFieldError.checkNotNull(password, r'ApiValidateRequestApplicationJson', 'password'),
+          context: BuiltValueNullFieldError.checkNotNull(context, r'ApiValidateRequestApplicationJson', 'context'),
         );
     replace(_$result);
     return _$result;

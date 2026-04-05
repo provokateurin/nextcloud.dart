@@ -89,6 +89,7 @@ Serializer<HeartbeatHeartbeatResponseApplicationJson_Ocs> _$heartbeatHeartbeatRe
 Serializer<HeartbeatHeartbeatResponseApplicationJson> _$heartbeatHeartbeatResponseApplicationJsonSerializer =
     _$HeartbeatHeartbeatResponseApplicationJsonSerializer();
 Serializer<ClearAt> _$clearAtSerializer = _$ClearAtSerializer();
+Serializer<Predefined_ClearAt> _$predefinedClearAtSerializer = _$Predefined_ClearAtSerializer();
 Serializer<Predefined> _$predefinedSerializer = _$PredefinedSerializer();
 Serializer<PredefinedStatusFindAllResponseApplicationJson_Ocs>
     _$predefinedStatusFindAllResponseApplicationJsonOcsSerializer =
@@ -548,6 +549,49 @@ class _$ClearAtSerializer implements StructuredSerializer<ClearAt> {
   }
 }
 
+class _$Predefined_ClearAtSerializer implements StructuredSerializer<Predefined_ClearAt> {
+  @override
+  final Iterable<Type> types = const [Predefined_ClearAt, _$Predefined_ClearAt];
+  @override
+  final String wireName = 'Predefined_ClearAt';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Predefined_ClearAt object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'type',
+      serializers.serialize(object.type, specifiedType: const FullType(ClearAt_Type)),
+      'time',
+      serializers.serialize(object.time, specifiedType: const FullType(ClearAt_Time)),
+    ];
+
+    return result;
+  }
+
+  @override
+  Predefined_ClearAt deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = Predefined_ClearAtBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'type':
+          result.type = serializers.deserialize(value, specifiedType: const FullType(ClearAt_Type))! as ClearAt_Type;
+          break;
+        case 'time':
+          result.time = serializers.deserialize(value, specifiedType: const FullType(ClearAt_Time))! as ClearAt_Time;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$PredefinedSerializer implements StructuredSerializer<Predefined> {
   @override
   final Iterable<Type> types = const [Predefined, _$Predefined];
@@ -570,7 +614,7 @@ class _$PredefinedSerializer implements StructuredSerializer<Predefined> {
     if (value != null) {
       result
         ..add('clearAt')
-        ..add(serializers.serialize(value, specifiedType: const FullType(ClearAt)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(Predefined_ClearAt)));
     }
     return result;
   }
@@ -596,7 +640,8 @@ class _$PredefinedSerializer implements StructuredSerializer<Predefined> {
           result.message = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'clearAt':
-          result.clearAt.replace(serializers.deserialize(value, specifiedType: const FullType(ClearAt))! as ClearAt);
+          result.clearAt.replace(
+              serializers.deserialize(value, specifiedType: const FullType(Predefined_ClearAt))! as Predefined_ClearAt);
           break;
       }
     }
@@ -1604,6 +1649,8 @@ class _$Capabilities_UserStatusSerializer implements StructuredSerializer<Capabi
       serializers.serialize(object.restore, specifiedType: const FullType(bool)),
       'supports_emoji',
       serializers.serialize(object.supportsEmoji, specifiedType: const FullType(bool)),
+      'supports_busy',
+      serializers.serialize(object.supportsBusy, specifiedType: const FullType(bool)),
     ];
 
     return result;
@@ -1628,6 +1675,9 @@ class _$Capabilities_UserStatusSerializer implements StructuredSerializer<Capabi
           break;
         case 'supports_emoji':
           result.supportsEmoji = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'supports_busy':
+          result.supportsBusy = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
           break;
       }
     }
@@ -2576,6 +2626,109 @@ class ClearAtBuilder implements Builder<ClearAt, ClearAtBuilder>, $ClearAtInterf
   }
 }
 
+abstract mixin class $Predefined_ClearAtInterfaceBuilder implements $ClearAtInterfaceBuilder {
+  void replace(covariant $Predefined_ClearAtInterface other);
+  void update(void Function($Predefined_ClearAtInterfaceBuilder) updates);
+  ClearAt_Type? get type;
+  set type(covariant ClearAt_Type? type);
+
+  ClearAt_Time? get time;
+  set time(covariant ClearAt_Time? time);
+}
+
+class _$Predefined_ClearAt extends Predefined_ClearAt {
+  @override
+  final ClearAt_Type type;
+  @override
+  final ClearAt_Time time;
+
+  factory _$Predefined_ClearAt([void Function(Predefined_ClearAtBuilder)? updates]) =>
+      (Predefined_ClearAtBuilder()..update(updates))._build();
+
+  _$Predefined_ClearAt._({required this.type, required this.time}) : super._();
+  @override
+  Predefined_ClearAt rebuild(void Function(Predefined_ClearAtBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Predefined_ClearAtBuilder toBuilder() => Predefined_ClearAtBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is Predefined_ClearAt && type == other.type && time == _$dynamicOther.time;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, time.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Predefined_ClearAt')
+          ..add('type', type)
+          ..add('time', time))
+        .toString();
+  }
+}
+
+class Predefined_ClearAtBuilder
+    implements Builder<Predefined_ClearAt, Predefined_ClearAtBuilder>, $Predefined_ClearAtInterfaceBuilder {
+  _$Predefined_ClearAt? _$v;
+
+  ClearAt_Type? _type;
+  ClearAt_Type? get type => _$this._type;
+  set type(covariant ClearAt_Type? type) => _$this._type = type;
+
+  ClearAt_Time? _time;
+  ClearAt_Time? get time => _$this._time;
+  set time(covariant ClearAt_Time? time) => _$this._time = time;
+
+  Predefined_ClearAtBuilder() {
+    Predefined_ClearAt._defaults(this);
+  }
+
+  Predefined_ClearAtBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _type = $v.type;
+      _time = $v.time;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant Predefined_ClearAt other) {
+    _$v = other as _$Predefined_ClearAt;
+  }
+
+  @override
+  void update(void Function(Predefined_ClearAtBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Predefined_ClearAt build() => _build();
+
+  _$Predefined_ClearAt _build() {
+    Predefined_ClearAt._validate(this);
+    final _$result = _$v ??
+        _$Predefined_ClearAt._(
+          type: BuiltValueNullFieldError.checkNotNull(type, r'Predefined_ClearAt', 'type'),
+          time: BuiltValueNullFieldError.checkNotNull(time, r'Predefined_ClearAt', 'time'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $PredefinedInterfaceBuilder {
   void replace($PredefinedInterface other);
   void update(void Function($PredefinedInterfaceBuilder) updates);
@@ -2588,8 +2741,8 @@ abstract mixin class $PredefinedInterfaceBuilder {
   String? get message;
   set message(String? message);
 
-  ClearAtBuilder get clearAt;
-  set clearAt(ClearAtBuilder? clearAt);
+  Predefined_ClearAtBuilder get clearAt;
+  set clearAt(Predefined_ClearAtBuilder? clearAt);
 }
 
 class _$Predefined extends Predefined {
@@ -2600,7 +2753,7 @@ class _$Predefined extends Predefined {
   @override
   final String message;
   @override
-  final ClearAt? clearAt;
+  final Predefined_ClearAt? clearAt;
 
   factory _$Predefined([void Function(PredefinedBuilder)? updates]) => (PredefinedBuilder()..update(updates))._build();
 
@@ -2658,9 +2811,9 @@ class PredefinedBuilder implements Builder<Predefined, PredefinedBuilder>, $Pred
   String? get message => _$this._message;
   set message(covariant String? message) => _$this._message = message;
 
-  ClearAtBuilder? _clearAt;
-  ClearAtBuilder get clearAt => _$this._clearAt ??= ClearAtBuilder();
-  set clearAt(covariant ClearAtBuilder? clearAt) => _$this._clearAt = clearAt;
+  Predefined_ClearAtBuilder? _clearAt;
+  Predefined_ClearAtBuilder get clearAt => _$this._clearAt ??= Predefined_ClearAtBuilder();
+  set clearAt(covariant Predefined_ClearAtBuilder? clearAt) => _$this._clearAt = clearAt;
 
   PredefinedBuilder() {
     Predefined._defaults(this);
@@ -5114,6 +5267,9 @@ abstract mixin class $Capabilities_UserStatusInterfaceBuilder {
 
   bool? get supportsEmoji;
   set supportsEmoji(bool? supportsEmoji);
+
+  bool? get supportsBusy;
+  set supportsBusy(bool? supportsBusy);
 }
 
 class _$Capabilities_UserStatus extends Capabilities_UserStatus {
@@ -5123,11 +5279,15 @@ class _$Capabilities_UserStatus extends Capabilities_UserStatus {
   final bool restore;
   @override
   final bool supportsEmoji;
+  @override
+  final bool supportsBusy;
 
   factory _$Capabilities_UserStatus([void Function(Capabilities_UserStatusBuilder)? updates]) =>
       (Capabilities_UserStatusBuilder()..update(updates))._build();
 
-  _$Capabilities_UserStatus._({required this.enabled, required this.restore, required this.supportsEmoji}) : super._();
+  _$Capabilities_UserStatus._(
+      {required this.enabled, required this.restore, required this.supportsEmoji, required this.supportsBusy})
+      : super._();
   @override
   Capabilities_UserStatus rebuild(void Function(Capabilities_UserStatusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -5141,7 +5301,8 @@ class _$Capabilities_UserStatus extends Capabilities_UserStatus {
     return other is Capabilities_UserStatus &&
         enabled == other.enabled &&
         restore == other.restore &&
-        supportsEmoji == other.supportsEmoji;
+        supportsEmoji == other.supportsEmoji &&
+        supportsBusy == other.supportsBusy;
   }
 
   @override
@@ -5150,6 +5311,7 @@ class _$Capabilities_UserStatus extends Capabilities_UserStatus {
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, restore.hashCode);
     _$hash = $jc(_$hash, supportsEmoji.hashCode);
+    _$hash = $jc(_$hash, supportsBusy.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -5159,7 +5321,8 @@ class _$Capabilities_UserStatus extends Capabilities_UserStatus {
     return (newBuiltValueToStringHelper(r'Capabilities_UserStatus')
           ..add('enabled', enabled)
           ..add('restore', restore)
-          ..add('supportsEmoji', supportsEmoji))
+          ..add('supportsEmoji', supportsEmoji)
+          ..add('supportsBusy', supportsBusy))
         .toString();
   }
 }
@@ -5182,6 +5345,10 @@ class Capabilities_UserStatusBuilder
   bool? get supportsEmoji => _$this._supportsEmoji;
   set supportsEmoji(covariant bool? supportsEmoji) => _$this._supportsEmoji = supportsEmoji;
 
+  bool? _supportsBusy;
+  bool? get supportsBusy => _$this._supportsBusy;
+  set supportsBusy(covariant bool? supportsBusy) => _$this._supportsBusy = supportsBusy;
+
   Capabilities_UserStatusBuilder() {
     Capabilities_UserStatus._defaults(this);
   }
@@ -5192,6 +5359,7 @@ class Capabilities_UserStatusBuilder
       _enabled = $v.enabled;
       _restore = $v.restore;
       _supportsEmoji = $v.supportsEmoji;
+      _supportsBusy = $v.supportsBusy;
       _$v = null;
     }
     return this;
@@ -5218,6 +5386,7 @@ class Capabilities_UserStatusBuilder
           restore: BuiltValueNullFieldError.checkNotNull(restore, r'Capabilities_UserStatus', 'restore'),
           supportsEmoji:
               BuiltValueNullFieldError.checkNotNull(supportsEmoji, r'Capabilities_UserStatus', 'supportsEmoji'),
+          supportsBusy: BuiltValueNullFieldError.checkNotNull(supportsBusy, r'Capabilities_UserStatus', 'supportsBusy'),
         );
     replace(_$result);
     return _$result;

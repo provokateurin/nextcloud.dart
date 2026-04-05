@@ -6,48 +6,6 @@ part of 'files_sharing.openapi.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const PublicPreviewGetPreviewA _$publicPreviewGetPreviewA$0 = const PublicPreviewGetPreviewA._('\$0');
-const PublicPreviewGetPreviewA _$publicPreviewGetPreviewA$1 = const PublicPreviewGetPreviewA._('\$1');
-
-PublicPreviewGetPreviewA _$valueOfPublicPreviewGetPreviewA(String name) {
-  switch (name) {
-    case '\$0':
-      return _$publicPreviewGetPreviewA$0;
-    case '\$1':
-      return _$publicPreviewGetPreviewA$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<PublicPreviewGetPreviewA> _$publicPreviewGetPreviewAValues =
-    BuiltSet<PublicPreviewGetPreviewA>(const <PublicPreviewGetPreviewA>[
-  _$publicPreviewGetPreviewA$0,
-  _$publicPreviewGetPreviewA$1,
-]);
-
-const PublicPreviewGetPreviewMimeFallback _$publicPreviewGetPreviewMimeFallback$0 =
-    const PublicPreviewGetPreviewMimeFallback._('\$0');
-const PublicPreviewGetPreviewMimeFallback _$publicPreviewGetPreviewMimeFallback$1 =
-    const PublicPreviewGetPreviewMimeFallback._('\$1');
-
-PublicPreviewGetPreviewMimeFallback _$valueOfPublicPreviewGetPreviewMimeFallback(String name) {
-  switch (name) {
-    case '\$0':
-      return _$publicPreviewGetPreviewMimeFallback$0;
-    case '\$1':
-      return _$publicPreviewGetPreviewMimeFallback$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<PublicPreviewGetPreviewMimeFallback> _$publicPreviewGetPreviewMimeFallbackValues =
-    BuiltSet<PublicPreviewGetPreviewMimeFallback>(const <PublicPreviewGetPreviewMimeFallback>[
-  _$publicPreviewGetPreviewMimeFallback$0,
-  _$publicPreviewGetPreviewMimeFallback$1,
-]);
-
 const Share_HideDownload _$shareHideDownload$0 = const Share_HideDownload._('\$0');
 const Share_HideDownload _$shareHideDownload$1 = const Share_HideDownload._('\$1');
 
@@ -153,46 +111,6 @@ final BuiltSet<ShareapiCreateShareRequestApplicationJson_SendMail>
         ShareapiCreateShareRequestApplicationJson_SendMail>(const <ShareapiCreateShareRequestApplicationJson_SendMail>[
   _$shareapiCreateShareRequestApplicationJsonSendMail$false,
   _$shareapiCreateShareRequestApplicationJsonSendMail$true,
-]);
-
-const ShareapiGetShareIncludeTags _$shareapiGetShareIncludeTags$0 = const ShareapiGetShareIncludeTags._('\$0');
-const ShareapiGetShareIncludeTags _$shareapiGetShareIncludeTags$1 = const ShareapiGetShareIncludeTags._('\$1');
-
-ShareapiGetShareIncludeTags _$valueOfShareapiGetShareIncludeTags(String name) {
-  switch (name) {
-    case '\$0':
-      return _$shareapiGetShareIncludeTags$0;
-    case '\$1':
-      return _$shareapiGetShareIncludeTags$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ShareapiGetShareIncludeTags> _$shareapiGetShareIncludeTagsValues =
-    BuiltSet<ShareapiGetShareIncludeTags>(const <ShareapiGetShareIncludeTags>[
-  _$shareapiGetShareIncludeTags$0,
-  _$shareapiGetShareIncludeTags$1,
-]);
-
-const ShareesapiSearchLookup _$shareesapiSearchLookup$0 = const ShareesapiSearchLookup._('\$0');
-const ShareesapiSearchLookup _$shareesapiSearchLookup$1 = const ShareesapiSearchLookup._('\$1');
-
-ShareesapiSearchLookup _$valueOfShareesapiSearchLookup(String name) {
-  switch (name) {
-    case '\$0':
-      return _$shareesapiSearchLookup$0;
-    case '\$1':
-      return _$shareesapiSearchLookup$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ShareesapiSearchLookup> _$shareesapiSearchLookupValues =
-    BuiltSet<ShareesapiSearchLookup>(const <ShareesapiSearchLookup>[
-  _$shareesapiSearchLookup$0,
-  _$shareesapiSearchLookup$1,
 ]);
 
 Serializer<OCSMeta> _$oCSMetaSerializer = _$OCSMetaSerializer();
@@ -305,6 +223,17 @@ Serializer<ShareeUser_Status> _$shareeUserStatusSerializer = _$ShareeUser_Status
 Serializer<ShareeUser> _$shareeUserSerializer = _$ShareeUserSerializer();
 Serializer<ShareesSearchResult_Exact> _$shareesSearchResultExactSerializer = _$ShareesSearchResult_ExactSerializer();
 Serializer<Lookup> _$lookupSerializer = _$LookupSerializer();
+Serializer<ShareeLookup_Extra_Name> _$shareeLookupExtraNameSerializer = _$ShareeLookup_Extra_NameSerializer();
+Serializer<ShareeLookup_Extra_Email> _$shareeLookupExtraEmailSerializer = _$ShareeLookup_Extra_EmailSerializer();
+Serializer<ShareeLookup_Extra_Address> _$shareeLookupExtraAddressSerializer = _$ShareeLookup_Extra_AddressSerializer();
+Serializer<ShareeLookup_Extra_Website> _$shareeLookupExtraWebsiteSerializer = _$ShareeLookup_Extra_WebsiteSerializer();
+Serializer<ShareeLookup_Extra_Twitter> _$shareeLookupExtraTwitterSerializer = _$ShareeLookup_Extra_TwitterSerializer();
+Serializer<ShareeLookup_Extra_Phone> _$shareeLookupExtraPhoneSerializer = _$ShareeLookup_Extra_PhoneSerializer();
+Serializer<ShareeLookup_Extra_TwitterSignature> _$shareeLookupExtraTwitterSignatureSerializer =
+    _$ShareeLookup_Extra_TwitterSignatureSerializer();
+Serializer<ShareeLookup_Extra_WebsiteSignature> _$shareeLookupExtraWebsiteSignatureSerializer =
+    _$ShareeLookup_Extra_WebsiteSignatureSerializer();
+Serializer<ShareeLookup_Extra_Userid> _$shareeLookupExtraUseridSerializer = _$ShareeLookup_Extra_UseridSerializer();
 Serializer<ShareeLookup_Extra> _$shareeLookupExtraSerializer = _$ShareeLookup_ExtraSerializer();
 Serializer<ShareeLookup_Value> _$shareeLookupValueSerializer = _$ShareeLookup_ValueSerializer();
 Serializer<ShareeLookup> _$shareeLookupSerializer = _$ShareeLookupSerializer();
@@ -4050,6 +3979,395 @@ class _$LookupSerializer implements StructuredSerializer<Lookup> {
   }
 }
 
+class _$ShareeLookup_Extra_NameSerializer implements StructuredSerializer<ShareeLookup_Extra_Name> {
+  @override
+  final Iterable<Type> types = const [ShareeLookup_Extra_Name, _$ShareeLookup_Extra_Name];
+  @override
+  final String wireName = 'ShareeLookup_Extra_Name';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ShareeLookup_Extra_Name object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
+      'verified',
+      serializers.serialize(object.verified, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ShareeLookup_Extra_Name deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ShareeLookup_Extra_NameBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'verified':
+          result.verified = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ShareeLookup_Extra_EmailSerializer implements StructuredSerializer<ShareeLookup_Extra_Email> {
+  @override
+  final Iterable<Type> types = const [ShareeLookup_Extra_Email, _$ShareeLookup_Extra_Email];
+  @override
+  final String wireName = 'ShareeLookup_Extra_Email';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ShareeLookup_Extra_Email object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
+      'verified',
+      serializers.serialize(object.verified, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ShareeLookup_Extra_Email deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ShareeLookup_Extra_EmailBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'verified':
+          result.verified = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ShareeLookup_Extra_AddressSerializer implements StructuredSerializer<ShareeLookup_Extra_Address> {
+  @override
+  final Iterable<Type> types = const [ShareeLookup_Extra_Address, _$ShareeLookup_Extra_Address];
+  @override
+  final String wireName = 'ShareeLookup_Extra_Address';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ShareeLookup_Extra_Address object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
+      'verified',
+      serializers.serialize(object.verified, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ShareeLookup_Extra_Address deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ShareeLookup_Extra_AddressBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'verified':
+          result.verified = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ShareeLookup_Extra_WebsiteSerializer implements StructuredSerializer<ShareeLookup_Extra_Website> {
+  @override
+  final Iterable<Type> types = const [ShareeLookup_Extra_Website, _$ShareeLookup_Extra_Website];
+  @override
+  final String wireName = 'ShareeLookup_Extra_Website';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ShareeLookup_Extra_Website object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
+      'verified',
+      serializers.serialize(object.verified, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ShareeLookup_Extra_Website deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ShareeLookup_Extra_WebsiteBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'verified':
+          result.verified = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ShareeLookup_Extra_TwitterSerializer implements StructuredSerializer<ShareeLookup_Extra_Twitter> {
+  @override
+  final Iterable<Type> types = const [ShareeLookup_Extra_Twitter, _$ShareeLookup_Extra_Twitter];
+  @override
+  final String wireName = 'ShareeLookup_Extra_Twitter';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ShareeLookup_Extra_Twitter object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
+      'verified',
+      serializers.serialize(object.verified, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ShareeLookup_Extra_Twitter deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ShareeLookup_Extra_TwitterBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'verified':
+          result.verified = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ShareeLookup_Extra_PhoneSerializer implements StructuredSerializer<ShareeLookup_Extra_Phone> {
+  @override
+  final Iterable<Type> types = const [ShareeLookup_Extra_Phone, _$ShareeLookup_Extra_Phone];
+  @override
+  final String wireName = 'ShareeLookup_Extra_Phone';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ShareeLookup_Extra_Phone object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
+      'verified',
+      serializers.serialize(object.verified, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ShareeLookup_Extra_Phone deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ShareeLookup_Extra_PhoneBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'verified':
+          result.verified = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ShareeLookup_Extra_TwitterSignatureSerializer
+    implements StructuredSerializer<ShareeLookup_Extra_TwitterSignature> {
+  @override
+  final Iterable<Type> types = const [ShareeLookup_Extra_TwitterSignature, _$ShareeLookup_Extra_TwitterSignature];
+  @override
+  final String wireName = 'ShareeLookup_Extra_TwitterSignature';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ShareeLookup_Extra_TwitterSignature object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
+      'verified',
+      serializers.serialize(object.verified, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ShareeLookup_Extra_TwitterSignature deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ShareeLookup_Extra_TwitterSignatureBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'verified':
+          result.verified = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ShareeLookup_Extra_WebsiteSignatureSerializer
+    implements StructuredSerializer<ShareeLookup_Extra_WebsiteSignature> {
+  @override
+  final Iterable<Type> types = const [ShareeLookup_Extra_WebsiteSignature, _$ShareeLookup_Extra_WebsiteSignature];
+  @override
+  final String wireName = 'ShareeLookup_Extra_WebsiteSignature';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ShareeLookup_Extra_WebsiteSignature object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
+      'verified',
+      serializers.serialize(object.verified, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ShareeLookup_Extra_WebsiteSignature deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ShareeLookup_Extra_WebsiteSignatureBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'verified':
+          result.verified = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ShareeLookup_Extra_UseridSerializer implements StructuredSerializer<ShareeLookup_Extra_Userid> {
+  @override
+  final Iterable<Type> types = const [ShareeLookup_Extra_Userid, _$ShareeLookup_Extra_Userid];
+  @override
+  final String wireName = 'ShareeLookup_Extra_Userid';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ShareeLookup_Extra_Userid object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
+      'verified',
+      serializers.serialize(object.verified, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ShareeLookup_Extra_Userid deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ShareeLookup_Extra_UseridBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'verified':
+          result.verified = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$ShareeLookup_ExtraSerializer implements StructuredSerializer<ShareeLookup_Extra> {
   @override
   final Iterable<Type> types = const [ShareeLookup_Extra, _$ShareeLookup_Extra];
@@ -4068,55 +4386,55 @@ class _$ShareeLookup_ExtraSerializer implements StructuredSerializer<ShareeLooku
     if (value != null) {
       result
         ..add('name')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Lookup)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(ShareeLookup_Extra_Name)));
     }
     value = object.email;
     if (value != null) {
       result
         ..add('email')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Lookup)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(ShareeLookup_Extra_Email)));
     }
     value = object.address;
     if (value != null) {
       result
         ..add('address')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Lookup)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(ShareeLookup_Extra_Address)));
     }
     value = object.website;
     if (value != null) {
       result
         ..add('website')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Lookup)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(ShareeLookup_Extra_Website)));
     }
     value = object.twitter;
     if (value != null) {
       result
         ..add('twitter')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Lookup)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(ShareeLookup_Extra_Twitter)));
     }
     value = object.phone;
     if (value != null) {
       result
         ..add('phone')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Lookup)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(ShareeLookup_Extra_Phone)));
     }
     value = object.twitterSignature;
     if (value != null) {
       result
         ..add('twitter_signature')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Lookup)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(ShareeLookup_Extra_TwitterSignature)));
     }
     value = object.websiteSignature;
     if (value != null) {
       result
         ..add('website_signature')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Lookup)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(ShareeLookup_Extra_WebsiteSignature)));
     }
     value = object.userid;
     if (value != null) {
       result
         ..add('userid')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Lookup)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(ShareeLookup_Extra_Userid)));
     }
     return result;
   }
@@ -4136,33 +4454,42 @@ class _$ShareeLookup_ExtraSerializer implements StructuredSerializer<ShareeLooku
           result.federationId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'name':
-          result.name.replace(serializers.deserialize(value, specifiedType: const FullType(Lookup))! as Lookup);
+          result.name.replace(serializers.deserialize(value, specifiedType: const FullType(ShareeLookup_Extra_Name))!
+              as ShareeLookup_Extra_Name);
           break;
         case 'email':
-          result.email.replace(serializers.deserialize(value, specifiedType: const FullType(Lookup))! as Lookup);
+          result.email.replace(serializers.deserialize(value, specifiedType: const FullType(ShareeLookup_Extra_Email))!
+              as ShareeLookup_Extra_Email);
           break;
         case 'address':
-          result.address.replace(serializers.deserialize(value, specifiedType: const FullType(Lookup))! as Lookup);
+          result.address.replace(serializers.deserialize(value,
+              specifiedType: const FullType(ShareeLookup_Extra_Address))! as ShareeLookup_Extra_Address);
           break;
         case 'website':
-          result.website.replace(serializers.deserialize(value, specifiedType: const FullType(Lookup))! as Lookup);
+          result.website.replace(serializers.deserialize(value,
+              specifiedType: const FullType(ShareeLookup_Extra_Website))! as ShareeLookup_Extra_Website);
           break;
         case 'twitter':
-          result.twitter.replace(serializers.deserialize(value, specifiedType: const FullType(Lookup))! as Lookup);
+          result.twitter.replace(serializers.deserialize(value,
+              specifiedType: const FullType(ShareeLookup_Extra_Twitter))! as ShareeLookup_Extra_Twitter);
           break;
         case 'phone':
-          result.phone.replace(serializers.deserialize(value, specifiedType: const FullType(Lookup))! as Lookup);
+          result.phone.replace(serializers.deserialize(value, specifiedType: const FullType(ShareeLookup_Extra_Phone))!
+              as ShareeLookup_Extra_Phone);
           break;
         case 'twitter_signature':
-          result.twitterSignature
-              .replace(serializers.deserialize(value, specifiedType: const FullType(Lookup))! as Lookup);
+          result.twitterSignature.replace(
+              serializers.deserialize(value, specifiedType: const FullType(ShareeLookup_Extra_TwitterSignature))!
+                  as ShareeLookup_Extra_TwitterSignature);
           break;
         case 'website_signature':
-          result.websiteSignature
-              .replace(serializers.deserialize(value, specifiedType: const FullType(Lookup))! as Lookup);
+          result.websiteSignature.replace(
+              serializers.deserialize(value, specifiedType: const FullType(ShareeLookup_Extra_WebsiteSignature))!
+                  as ShareeLookup_Extra_WebsiteSignature);
           break;
         case 'userid':
-          result.userid.replace(serializers.deserialize(value, specifiedType: const FullType(Lookup))! as Lookup);
+          result.userid.replace(serializers.deserialize(value,
+              specifiedType: const FullType(ShareeLookup_Extra_Userid))! as ShareeLookup_Extra_Userid);
           break;
       }
     }
@@ -14460,61 +14787,997 @@ class LookupBuilder implements Builder<Lookup, LookupBuilder>, $LookupInterfaceB
   }
 }
 
+abstract mixin class $ShareeLookup_Extra_NameInterfaceBuilder implements $LookupInterfaceBuilder {
+  void replace(covariant $ShareeLookup_Extra_NameInterface other);
+  void update(void Function($ShareeLookup_Extra_NameInterfaceBuilder) updates);
+  String? get value;
+  set value(covariant String? value);
+
+  int? get verified;
+  set verified(covariant int? verified);
+}
+
+class _$ShareeLookup_Extra_Name extends ShareeLookup_Extra_Name {
+  @override
+  final String value;
+  @override
+  final int verified;
+
+  factory _$ShareeLookup_Extra_Name([void Function(ShareeLookup_Extra_NameBuilder)? updates]) =>
+      (ShareeLookup_Extra_NameBuilder()..update(updates))._build();
+
+  _$ShareeLookup_Extra_Name._({required this.value, required this.verified}) : super._();
+  @override
+  ShareeLookup_Extra_Name rebuild(void Function(ShareeLookup_Extra_NameBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ShareeLookup_Extra_NameBuilder toBuilder() => ShareeLookup_Extra_NameBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ShareeLookup_Extra_Name && value == other.value && verified == other.verified;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, verified.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ShareeLookup_Extra_Name')
+          ..add('value', value)
+          ..add('verified', verified))
+        .toString();
+  }
+}
+
+class ShareeLookup_Extra_NameBuilder
+    implements
+        Builder<ShareeLookup_Extra_Name, ShareeLookup_Extra_NameBuilder>,
+        $ShareeLookup_Extra_NameInterfaceBuilder {
+  _$ShareeLookup_Extra_Name? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(covariant String? value) => _$this._value = value;
+
+  int? _verified;
+  int? get verified => _$this._verified;
+  set verified(covariant int? verified) => _$this._verified = verified;
+
+  ShareeLookup_Extra_NameBuilder() {
+    ShareeLookup_Extra_Name._defaults(this);
+  }
+
+  ShareeLookup_Extra_NameBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _value = $v.value;
+      _verified = $v.verified;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ShareeLookup_Extra_Name other) {
+    _$v = other as _$ShareeLookup_Extra_Name;
+  }
+
+  @override
+  void update(void Function(ShareeLookup_Extra_NameBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ShareeLookup_Extra_Name build() => _build();
+
+  _$ShareeLookup_Extra_Name _build() {
+    ShareeLookup_Extra_Name._validate(this);
+    final _$result = _$v ??
+        _$ShareeLookup_Extra_Name._(
+          value: BuiltValueNullFieldError.checkNotNull(value, r'ShareeLookup_Extra_Name', 'value'),
+          verified: BuiltValueNullFieldError.checkNotNull(verified, r'ShareeLookup_Extra_Name', 'verified'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ShareeLookup_Extra_EmailInterfaceBuilder implements $LookupInterfaceBuilder {
+  void replace(covariant $ShareeLookup_Extra_EmailInterface other);
+  void update(void Function($ShareeLookup_Extra_EmailInterfaceBuilder) updates);
+  String? get value;
+  set value(covariant String? value);
+
+  int? get verified;
+  set verified(covariant int? verified);
+}
+
+class _$ShareeLookup_Extra_Email extends ShareeLookup_Extra_Email {
+  @override
+  final String value;
+  @override
+  final int verified;
+
+  factory _$ShareeLookup_Extra_Email([void Function(ShareeLookup_Extra_EmailBuilder)? updates]) =>
+      (ShareeLookup_Extra_EmailBuilder()..update(updates))._build();
+
+  _$ShareeLookup_Extra_Email._({required this.value, required this.verified}) : super._();
+  @override
+  ShareeLookup_Extra_Email rebuild(void Function(ShareeLookup_Extra_EmailBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ShareeLookup_Extra_EmailBuilder toBuilder() => ShareeLookup_Extra_EmailBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ShareeLookup_Extra_Email && value == other.value && verified == other.verified;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, verified.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ShareeLookup_Extra_Email')
+          ..add('value', value)
+          ..add('verified', verified))
+        .toString();
+  }
+}
+
+class ShareeLookup_Extra_EmailBuilder
+    implements
+        Builder<ShareeLookup_Extra_Email, ShareeLookup_Extra_EmailBuilder>,
+        $ShareeLookup_Extra_EmailInterfaceBuilder {
+  _$ShareeLookup_Extra_Email? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(covariant String? value) => _$this._value = value;
+
+  int? _verified;
+  int? get verified => _$this._verified;
+  set verified(covariant int? verified) => _$this._verified = verified;
+
+  ShareeLookup_Extra_EmailBuilder() {
+    ShareeLookup_Extra_Email._defaults(this);
+  }
+
+  ShareeLookup_Extra_EmailBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _value = $v.value;
+      _verified = $v.verified;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ShareeLookup_Extra_Email other) {
+    _$v = other as _$ShareeLookup_Extra_Email;
+  }
+
+  @override
+  void update(void Function(ShareeLookup_Extra_EmailBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ShareeLookup_Extra_Email build() => _build();
+
+  _$ShareeLookup_Extra_Email _build() {
+    ShareeLookup_Extra_Email._validate(this);
+    final _$result = _$v ??
+        _$ShareeLookup_Extra_Email._(
+          value: BuiltValueNullFieldError.checkNotNull(value, r'ShareeLookup_Extra_Email', 'value'),
+          verified: BuiltValueNullFieldError.checkNotNull(verified, r'ShareeLookup_Extra_Email', 'verified'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ShareeLookup_Extra_AddressInterfaceBuilder implements $LookupInterfaceBuilder {
+  void replace(covariant $ShareeLookup_Extra_AddressInterface other);
+  void update(void Function($ShareeLookup_Extra_AddressInterfaceBuilder) updates);
+  String? get value;
+  set value(covariant String? value);
+
+  int? get verified;
+  set verified(covariant int? verified);
+}
+
+class _$ShareeLookup_Extra_Address extends ShareeLookup_Extra_Address {
+  @override
+  final String value;
+  @override
+  final int verified;
+
+  factory _$ShareeLookup_Extra_Address([void Function(ShareeLookup_Extra_AddressBuilder)? updates]) =>
+      (ShareeLookup_Extra_AddressBuilder()..update(updates))._build();
+
+  _$ShareeLookup_Extra_Address._({required this.value, required this.verified}) : super._();
+  @override
+  ShareeLookup_Extra_Address rebuild(void Function(ShareeLookup_Extra_AddressBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ShareeLookup_Extra_AddressBuilder toBuilder() => ShareeLookup_Extra_AddressBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ShareeLookup_Extra_Address && value == other.value && verified == other.verified;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, verified.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ShareeLookup_Extra_Address')
+          ..add('value', value)
+          ..add('verified', verified))
+        .toString();
+  }
+}
+
+class ShareeLookup_Extra_AddressBuilder
+    implements
+        Builder<ShareeLookup_Extra_Address, ShareeLookup_Extra_AddressBuilder>,
+        $ShareeLookup_Extra_AddressInterfaceBuilder {
+  _$ShareeLookup_Extra_Address? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(covariant String? value) => _$this._value = value;
+
+  int? _verified;
+  int? get verified => _$this._verified;
+  set verified(covariant int? verified) => _$this._verified = verified;
+
+  ShareeLookup_Extra_AddressBuilder() {
+    ShareeLookup_Extra_Address._defaults(this);
+  }
+
+  ShareeLookup_Extra_AddressBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _value = $v.value;
+      _verified = $v.verified;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ShareeLookup_Extra_Address other) {
+    _$v = other as _$ShareeLookup_Extra_Address;
+  }
+
+  @override
+  void update(void Function(ShareeLookup_Extra_AddressBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ShareeLookup_Extra_Address build() => _build();
+
+  _$ShareeLookup_Extra_Address _build() {
+    ShareeLookup_Extra_Address._validate(this);
+    final _$result = _$v ??
+        _$ShareeLookup_Extra_Address._(
+          value: BuiltValueNullFieldError.checkNotNull(value, r'ShareeLookup_Extra_Address', 'value'),
+          verified: BuiltValueNullFieldError.checkNotNull(verified, r'ShareeLookup_Extra_Address', 'verified'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ShareeLookup_Extra_WebsiteInterfaceBuilder implements $LookupInterfaceBuilder {
+  void replace(covariant $ShareeLookup_Extra_WebsiteInterface other);
+  void update(void Function($ShareeLookup_Extra_WebsiteInterfaceBuilder) updates);
+  String? get value;
+  set value(covariant String? value);
+
+  int? get verified;
+  set verified(covariant int? verified);
+}
+
+class _$ShareeLookup_Extra_Website extends ShareeLookup_Extra_Website {
+  @override
+  final String value;
+  @override
+  final int verified;
+
+  factory _$ShareeLookup_Extra_Website([void Function(ShareeLookup_Extra_WebsiteBuilder)? updates]) =>
+      (ShareeLookup_Extra_WebsiteBuilder()..update(updates))._build();
+
+  _$ShareeLookup_Extra_Website._({required this.value, required this.verified}) : super._();
+  @override
+  ShareeLookup_Extra_Website rebuild(void Function(ShareeLookup_Extra_WebsiteBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ShareeLookup_Extra_WebsiteBuilder toBuilder() => ShareeLookup_Extra_WebsiteBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ShareeLookup_Extra_Website && value == other.value && verified == other.verified;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, verified.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ShareeLookup_Extra_Website')
+          ..add('value', value)
+          ..add('verified', verified))
+        .toString();
+  }
+}
+
+class ShareeLookup_Extra_WebsiteBuilder
+    implements
+        Builder<ShareeLookup_Extra_Website, ShareeLookup_Extra_WebsiteBuilder>,
+        $ShareeLookup_Extra_WebsiteInterfaceBuilder {
+  _$ShareeLookup_Extra_Website? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(covariant String? value) => _$this._value = value;
+
+  int? _verified;
+  int? get verified => _$this._verified;
+  set verified(covariant int? verified) => _$this._verified = verified;
+
+  ShareeLookup_Extra_WebsiteBuilder() {
+    ShareeLookup_Extra_Website._defaults(this);
+  }
+
+  ShareeLookup_Extra_WebsiteBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _value = $v.value;
+      _verified = $v.verified;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ShareeLookup_Extra_Website other) {
+    _$v = other as _$ShareeLookup_Extra_Website;
+  }
+
+  @override
+  void update(void Function(ShareeLookup_Extra_WebsiteBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ShareeLookup_Extra_Website build() => _build();
+
+  _$ShareeLookup_Extra_Website _build() {
+    ShareeLookup_Extra_Website._validate(this);
+    final _$result = _$v ??
+        _$ShareeLookup_Extra_Website._(
+          value: BuiltValueNullFieldError.checkNotNull(value, r'ShareeLookup_Extra_Website', 'value'),
+          verified: BuiltValueNullFieldError.checkNotNull(verified, r'ShareeLookup_Extra_Website', 'verified'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ShareeLookup_Extra_TwitterInterfaceBuilder implements $LookupInterfaceBuilder {
+  void replace(covariant $ShareeLookup_Extra_TwitterInterface other);
+  void update(void Function($ShareeLookup_Extra_TwitterInterfaceBuilder) updates);
+  String? get value;
+  set value(covariant String? value);
+
+  int? get verified;
+  set verified(covariant int? verified);
+}
+
+class _$ShareeLookup_Extra_Twitter extends ShareeLookup_Extra_Twitter {
+  @override
+  final String value;
+  @override
+  final int verified;
+
+  factory _$ShareeLookup_Extra_Twitter([void Function(ShareeLookup_Extra_TwitterBuilder)? updates]) =>
+      (ShareeLookup_Extra_TwitterBuilder()..update(updates))._build();
+
+  _$ShareeLookup_Extra_Twitter._({required this.value, required this.verified}) : super._();
+  @override
+  ShareeLookup_Extra_Twitter rebuild(void Function(ShareeLookup_Extra_TwitterBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ShareeLookup_Extra_TwitterBuilder toBuilder() => ShareeLookup_Extra_TwitterBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ShareeLookup_Extra_Twitter && value == other.value && verified == other.verified;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, verified.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ShareeLookup_Extra_Twitter')
+          ..add('value', value)
+          ..add('verified', verified))
+        .toString();
+  }
+}
+
+class ShareeLookup_Extra_TwitterBuilder
+    implements
+        Builder<ShareeLookup_Extra_Twitter, ShareeLookup_Extra_TwitterBuilder>,
+        $ShareeLookup_Extra_TwitterInterfaceBuilder {
+  _$ShareeLookup_Extra_Twitter? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(covariant String? value) => _$this._value = value;
+
+  int? _verified;
+  int? get verified => _$this._verified;
+  set verified(covariant int? verified) => _$this._verified = verified;
+
+  ShareeLookup_Extra_TwitterBuilder() {
+    ShareeLookup_Extra_Twitter._defaults(this);
+  }
+
+  ShareeLookup_Extra_TwitterBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _value = $v.value;
+      _verified = $v.verified;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ShareeLookup_Extra_Twitter other) {
+    _$v = other as _$ShareeLookup_Extra_Twitter;
+  }
+
+  @override
+  void update(void Function(ShareeLookup_Extra_TwitterBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ShareeLookup_Extra_Twitter build() => _build();
+
+  _$ShareeLookup_Extra_Twitter _build() {
+    ShareeLookup_Extra_Twitter._validate(this);
+    final _$result = _$v ??
+        _$ShareeLookup_Extra_Twitter._(
+          value: BuiltValueNullFieldError.checkNotNull(value, r'ShareeLookup_Extra_Twitter', 'value'),
+          verified: BuiltValueNullFieldError.checkNotNull(verified, r'ShareeLookup_Extra_Twitter', 'verified'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ShareeLookup_Extra_PhoneInterfaceBuilder implements $LookupInterfaceBuilder {
+  void replace(covariant $ShareeLookup_Extra_PhoneInterface other);
+  void update(void Function($ShareeLookup_Extra_PhoneInterfaceBuilder) updates);
+  String? get value;
+  set value(covariant String? value);
+
+  int? get verified;
+  set verified(covariant int? verified);
+}
+
+class _$ShareeLookup_Extra_Phone extends ShareeLookup_Extra_Phone {
+  @override
+  final String value;
+  @override
+  final int verified;
+
+  factory _$ShareeLookup_Extra_Phone([void Function(ShareeLookup_Extra_PhoneBuilder)? updates]) =>
+      (ShareeLookup_Extra_PhoneBuilder()..update(updates))._build();
+
+  _$ShareeLookup_Extra_Phone._({required this.value, required this.verified}) : super._();
+  @override
+  ShareeLookup_Extra_Phone rebuild(void Function(ShareeLookup_Extra_PhoneBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ShareeLookup_Extra_PhoneBuilder toBuilder() => ShareeLookup_Extra_PhoneBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ShareeLookup_Extra_Phone && value == other.value && verified == other.verified;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, verified.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ShareeLookup_Extra_Phone')
+          ..add('value', value)
+          ..add('verified', verified))
+        .toString();
+  }
+}
+
+class ShareeLookup_Extra_PhoneBuilder
+    implements
+        Builder<ShareeLookup_Extra_Phone, ShareeLookup_Extra_PhoneBuilder>,
+        $ShareeLookup_Extra_PhoneInterfaceBuilder {
+  _$ShareeLookup_Extra_Phone? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(covariant String? value) => _$this._value = value;
+
+  int? _verified;
+  int? get verified => _$this._verified;
+  set verified(covariant int? verified) => _$this._verified = verified;
+
+  ShareeLookup_Extra_PhoneBuilder() {
+    ShareeLookup_Extra_Phone._defaults(this);
+  }
+
+  ShareeLookup_Extra_PhoneBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _value = $v.value;
+      _verified = $v.verified;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ShareeLookup_Extra_Phone other) {
+    _$v = other as _$ShareeLookup_Extra_Phone;
+  }
+
+  @override
+  void update(void Function(ShareeLookup_Extra_PhoneBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ShareeLookup_Extra_Phone build() => _build();
+
+  _$ShareeLookup_Extra_Phone _build() {
+    ShareeLookup_Extra_Phone._validate(this);
+    final _$result = _$v ??
+        _$ShareeLookup_Extra_Phone._(
+          value: BuiltValueNullFieldError.checkNotNull(value, r'ShareeLookup_Extra_Phone', 'value'),
+          verified: BuiltValueNullFieldError.checkNotNull(verified, r'ShareeLookup_Extra_Phone', 'verified'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ShareeLookup_Extra_TwitterSignatureInterfaceBuilder implements $LookupInterfaceBuilder {
+  void replace(covariant $ShareeLookup_Extra_TwitterSignatureInterface other);
+  void update(void Function($ShareeLookup_Extra_TwitterSignatureInterfaceBuilder) updates);
+  String? get value;
+  set value(covariant String? value);
+
+  int? get verified;
+  set verified(covariant int? verified);
+}
+
+class _$ShareeLookup_Extra_TwitterSignature extends ShareeLookup_Extra_TwitterSignature {
+  @override
+  final String value;
+  @override
+  final int verified;
+
+  factory _$ShareeLookup_Extra_TwitterSignature([void Function(ShareeLookup_Extra_TwitterSignatureBuilder)? updates]) =>
+      (ShareeLookup_Extra_TwitterSignatureBuilder()..update(updates))._build();
+
+  _$ShareeLookup_Extra_TwitterSignature._({required this.value, required this.verified}) : super._();
+  @override
+  ShareeLookup_Extra_TwitterSignature rebuild(void Function(ShareeLookup_Extra_TwitterSignatureBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ShareeLookup_Extra_TwitterSignatureBuilder toBuilder() => ShareeLookup_Extra_TwitterSignatureBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ShareeLookup_Extra_TwitterSignature && value == other.value && verified == other.verified;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, verified.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ShareeLookup_Extra_TwitterSignature')
+          ..add('value', value)
+          ..add('verified', verified))
+        .toString();
+  }
+}
+
+class ShareeLookup_Extra_TwitterSignatureBuilder
+    implements
+        Builder<ShareeLookup_Extra_TwitterSignature, ShareeLookup_Extra_TwitterSignatureBuilder>,
+        $ShareeLookup_Extra_TwitterSignatureInterfaceBuilder {
+  _$ShareeLookup_Extra_TwitterSignature? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(covariant String? value) => _$this._value = value;
+
+  int? _verified;
+  int? get verified => _$this._verified;
+  set verified(covariant int? verified) => _$this._verified = verified;
+
+  ShareeLookup_Extra_TwitterSignatureBuilder() {
+    ShareeLookup_Extra_TwitterSignature._defaults(this);
+  }
+
+  ShareeLookup_Extra_TwitterSignatureBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _value = $v.value;
+      _verified = $v.verified;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ShareeLookup_Extra_TwitterSignature other) {
+    _$v = other as _$ShareeLookup_Extra_TwitterSignature;
+  }
+
+  @override
+  void update(void Function(ShareeLookup_Extra_TwitterSignatureBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ShareeLookup_Extra_TwitterSignature build() => _build();
+
+  _$ShareeLookup_Extra_TwitterSignature _build() {
+    ShareeLookup_Extra_TwitterSignature._validate(this);
+    final _$result = _$v ??
+        _$ShareeLookup_Extra_TwitterSignature._(
+          value: BuiltValueNullFieldError.checkNotNull(value, r'ShareeLookup_Extra_TwitterSignature', 'value'),
+          verified: BuiltValueNullFieldError.checkNotNull(verified, r'ShareeLookup_Extra_TwitterSignature', 'verified'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ShareeLookup_Extra_WebsiteSignatureInterfaceBuilder implements $LookupInterfaceBuilder {
+  void replace(covariant $ShareeLookup_Extra_WebsiteSignatureInterface other);
+  void update(void Function($ShareeLookup_Extra_WebsiteSignatureInterfaceBuilder) updates);
+  String? get value;
+  set value(covariant String? value);
+
+  int? get verified;
+  set verified(covariant int? verified);
+}
+
+class _$ShareeLookup_Extra_WebsiteSignature extends ShareeLookup_Extra_WebsiteSignature {
+  @override
+  final String value;
+  @override
+  final int verified;
+
+  factory _$ShareeLookup_Extra_WebsiteSignature([void Function(ShareeLookup_Extra_WebsiteSignatureBuilder)? updates]) =>
+      (ShareeLookup_Extra_WebsiteSignatureBuilder()..update(updates))._build();
+
+  _$ShareeLookup_Extra_WebsiteSignature._({required this.value, required this.verified}) : super._();
+  @override
+  ShareeLookup_Extra_WebsiteSignature rebuild(void Function(ShareeLookup_Extra_WebsiteSignatureBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ShareeLookup_Extra_WebsiteSignatureBuilder toBuilder() => ShareeLookup_Extra_WebsiteSignatureBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ShareeLookup_Extra_WebsiteSignature && value == other.value && verified == other.verified;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, verified.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ShareeLookup_Extra_WebsiteSignature')
+          ..add('value', value)
+          ..add('verified', verified))
+        .toString();
+  }
+}
+
+class ShareeLookup_Extra_WebsiteSignatureBuilder
+    implements
+        Builder<ShareeLookup_Extra_WebsiteSignature, ShareeLookup_Extra_WebsiteSignatureBuilder>,
+        $ShareeLookup_Extra_WebsiteSignatureInterfaceBuilder {
+  _$ShareeLookup_Extra_WebsiteSignature? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(covariant String? value) => _$this._value = value;
+
+  int? _verified;
+  int? get verified => _$this._verified;
+  set verified(covariant int? verified) => _$this._verified = verified;
+
+  ShareeLookup_Extra_WebsiteSignatureBuilder() {
+    ShareeLookup_Extra_WebsiteSignature._defaults(this);
+  }
+
+  ShareeLookup_Extra_WebsiteSignatureBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _value = $v.value;
+      _verified = $v.verified;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ShareeLookup_Extra_WebsiteSignature other) {
+    _$v = other as _$ShareeLookup_Extra_WebsiteSignature;
+  }
+
+  @override
+  void update(void Function(ShareeLookup_Extra_WebsiteSignatureBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ShareeLookup_Extra_WebsiteSignature build() => _build();
+
+  _$ShareeLookup_Extra_WebsiteSignature _build() {
+    ShareeLookup_Extra_WebsiteSignature._validate(this);
+    final _$result = _$v ??
+        _$ShareeLookup_Extra_WebsiteSignature._(
+          value: BuiltValueNullFieldError.checkNotNull(value, r'ShareeLookup_Extra_WebsiteSignature', 'value'),
+          verified: BuiltValueNullFieldError.checkNotNull(verified, r'ShareeLookup_Extra_WebsiteSignature', 'verified'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ShareeLookup_Extra_UseridInterfaceBuilder implements $LookupInterfaceBuilder {
+  void replace(covariant $ShareeLookup_Extra_UseridInterface other);
+  void update(void Function($ShareeLookup_Extra_UseridInterfaceBuilder) updates);
+  String? get value;
+  set value(covariant String? value);
+
+  int? get verified;
+  set verified(covariant int? verified);
+}
+
+class _$ShareeLookup_Extra_Userid extends ShareeLookup_Extra_Userid {
+  @override
+  final String value;
+  @override
+  final int verified;
+
+  factory _$ShareeLookup_Extra_Userid([void Function(ShareeLookup_Extra_UseridBuilder)? updates]) =>
+      (ShareeLookup_Extra_UseridBuilder()..update(updates))._build();
+
+  _$ShareeLookup_Extra_Userid._({required this.value, required this.verified}) : super._();
+  @override
+  ShareeLookup_Extra_Userid rebuild(void Function(ShareeLookup_Extra_UseridBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ShareeLookup_Extra_UseridBuilder toBuilder() => ShareeLookup_Extra_UseridBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ShareeLookup_Extra_Userid && value == other.value && verified == other.verified;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jc(_$hash, verified.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ShareeLookup_Extra_Userid')
+          ..add('value', value)
+          ..add('verified', verified))
+        .toString();
+  }
+}
+
+class ShareeLookup_Extra_UseridBuilder
+    implements
+        Builder<ShareeLookup_Extra_Userid, ShareeLookup_Extra_UseridBuilder>,
+        $ShareeLookup_Extra_UseridInterfaceBuilder {
+  _$ShareeLookup_Extra_Userid? _$v;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(covariant String? value) => _$this._value = value;
+
+  int? _verified;
+  int? get verified => _$this._verified;
+  set verified(covariant int? verified) => _$this._verified = verified;
+
+  ShareeLookup_Extra_UseridBuilder() {
+    ShareeLookup_Extra_Userid._defaults(this);
+  }
+
+  ShareeLookup_Extra_UseridBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _value = $v.value;
+      _verified = $v.verified;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ShareeLookup_Extra_Userid other) {
+    _$v = other as _$ShareeLookup_Extra_Userid;
+  }
+
+  @override
+  void update(void Function(ShareeLookup_Extra_UseridBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ShareeLookup_Extra_Userid build() => _build();
+
+  _$ShareeLookup_Extra_Userid _build() {
+    ShareeLookup_Extra_Userid._validate(this);
+    final _$result = _$v ??
+        _$ShareeLookup_Extra_Userid._(
+          value: BuiltValueNullFieldError.checkNotNull(value, r'ShareeLookup_Extra_Userid', 'value'),
+          verified: BuiltValueNullFieldError.checkNotNull(verified, r'ShareeLookup_Extra_Userid', 'verified'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $ShareeLookup_ExtraInterfaceBuilder {
   void replace($ShareeLookup_ExtraInterface other);
   void update(void Function($ShareeLookup_ExtraInterfaceBuilder) updates);
   String? get federationId;
   set federationId(String? federationId);
 
-  LookupBuilder get name;
-  set name(LookupBuilder? name);
+  ShareeLookup_Extra_NameBuilder get name;
+  set name(ShareeLookup_Extra_NameBuilder? name);
 
-  LookupBuilder get email;
-  set email(LookupBuilder? email);
+  ShareeLookup_Extra_EmailBuilder get email;
+  set email(ShareeLookup_Extra_EmailBuilder? email);
 
-  LookupBuilder get address;
-  set address(LookupBuilder? address);
+  ShareeLookup_Extra_AddressBuilder get address;
+  set address(ShareeLookup_Extra_AddressBuilder? address);
 
-  LookupBuilder get website;
-  set website(LookupBuilder? website);
+  ShareeLookup_Extra_WebsiteBuilder get website;
+  set website(ShareeLookup_Extra_WebsiteBuilder? website);
 
-  LookupBuilder get twitter;
-  set twitter(LookupBuilder? twitter);
+  ShareeLookup_Extra_TwitterBuilder get twitter;
+  set twitter(ShareeLookup_Extra_TwitterBuilder? twitter);
 
-  LookupBuilder get phone;
-  set phone(LookupBuilder? phone);
+  ShareeLookup_Extra_PhoneBuilder get phone;
+  set phone(ShareeLookup_Extra_PhoneBuilder? phone);
 
-  LookupBuilder get twitterSignature;
-  set twitterSignature(LookupBuilder? twitterSignature);
+  ShareeLookup_Extra_TwitterSignatureBuilder get twitterSignature;
+  set twitterSignature(ShareeLookup_Extra_TwitterSignatureBuilder? twitterSignature);
 
-  LookupBuilder get websiteSignature;
-  set websiteSignature(LookupBuilder? websiteSignature);
+  ShareeLookup_Extra_WebsiteSignatureBuilder get websiteSignature;
+  set websiteSignature(ShareeLookup_Extra_WebsiteSignatureBuilder? websiteSignature);
 
-  LookupBuilder get userid;
-  set userid(LookupBuilder? userid);
+  ShareeLookup_Extra_UseridBuilder get userid;
+  set userid(ShareeLookup_Extra_UseridBuilder? userid);
 }
 
 class _$ShareeLookup_Extra extends ShareeLookup_Extra {
   @override
   final String federationId;
   @override
-  final Lookup? name;
+  final ShareeLookup_Extra_Name? name;
   @override
-  final Lookup? email;
+  final ShareeLookup_Extra_Email? email;
   @override
-  final Lookup? address;
+  final ShareeLookup_Extra_Address? address;
   @override
-  final Lookup? website;
+  final ShareeLookup_Extra_Website? website;
   @override
-  final Lookup? twitter;
+  final ShareeLookup_Extra_Twitter? twitter;
   @override
-  final Lookup? phone;
+  final ShareeLookup_Extra_Phone? phone;
   @override
-  final Lookup? twitterSignature;
+  final ShareeLookup_Extra_TwitterSignature? twitterSignature;
   @override
-  final Lookup? websiteSignature;
+  final ShareeLookup_Extra_WebsiteSignature? websiteSignature;
   @override
-  final Lookup? userid;
+  final ShareeLookup_Extra_Userid? userid;
 
   factory _$ShareeLookup_Extra([void Function(ShareeLookup_ExtraBuilder)? updates]) =>
       (ShareeLookup_ExtraBuilder()..update(updates))._build();
@@ -14596,41 +15859,45 @@ class ShareeLookup_ExtraBuilder
   String? get federationId => _$this._federationId;
   set federationId(covariant String? federationId) => _$this._federationId = federationId;
 
-  LookupBuilder? _name;
-  LookupBuilder get name => _$this._name ??= LookupBuilder();
-  set name(covariant LookupBuilder? name) => _$this._name = name;
+  ShareeLookup_Extra_NameBuilder? _name;
+  ShareeLookup_Extra_NameBuilder get name => _$this._name ??= ShareeLookup_Extra_NameBuilder();
+  set name(covariant ShareeLookup_Extra_NameBuilder? name) => _$this._name = name;
 
-  LookupBuilder? _email;
-  LookupBuilder get email => _$this._email ??= LookupBuilder();
-  set email(covariant LookupBuilder? email) => _$this._email = email;
+  ShareeLookup_Extra_EmailBuilder? _email;
+  ShareeLookup_Extra_EmailBuilder get email => _$this._email ??= ShareeLookup_Extra_EmailBuilder();
+  set email(covariant ShareeLookup_Extra_EmailBuilder? email) => _$this._email = email;
 
-  LookupBuilder? _address;
-  LookupBuilder get address => _$this._address ??= LookupBuilder();
-  set address(covariant LookupBuilder? address) => _$this._address = address;
+  ShareeLookup_Extra_AddressBuilder? _address;
+  ShareeLookup_Extra_AddressBuilder get address => _$this._address ??= ShareeLookup_Extra_AddressBuilder();
+  set address(covariant ShareeLookup_Extra_AddressBuilder? address) => _$this._address = address;
 
-  LookupBuilder? _website;
-  LookupBuilder get website => _$this._website ??= LookupBuilder();
-  set website(covariant LookupBuilder? website) => _$this._website = website;
+  ShareeLookup_Extra_WebsiteBuilder? _website;
+  ShareeLookup_Extra_WebsiteBuilder get website => _$this._website ??= ShareeLookup_Extra_WebsiteBuilder();
+  set website(covariant ShareeLookup_Extra_WebsiteBuilder? website) => _$this._website = website;
 
-  LookupBuilder? _twitter;
-  LookupBuilder get twitter => _$this._twitter ??= LookupBuilder();
-  set twitter(covariant LookupBuilder? twitter) => _$this._twitter = twitter;
+  ShareeLookup_Extra_TwitterBuilder? _twitter;
+  ShareeLookup_Extra_TwitterBuilder get twitter => _$this._twitter ??= ShareeLookup_Extra_TwitterBuilder();
+  set twitter(covariant ShareeLookup_Extra_TwitterBuilder? twitter) => _$this._twitter = twitter;
 
-  LookupBuilder? _phone;
-  LookupBuilder get phone => _$this._phone ??= LookupBuilder();
-  set phone(covariant LookupBuilder? phone) => _$this._phone = phone;
+  ShareeLookup_Extra_PhoneBuilder? _phone;
+  ShareeLookup_Extra_PhoneBuilder get phone => _$this._phone ??= ShareeLookup_Extra_PhoneBuilder();
+  set phone(covariant ShareeLookup_Extra_PhoneBuilder? phone) => _$this._phone = phone;
 
-  LookupBuilder? _twitterSignature;
-  LookupBuilder get twitterSignature => _$this._twitterSignature ??= LookupBuilder();
-  set twitterSignature(covariant LookupBuilder? twitterSignature) => _$this._twitterSignature = twitterSignature;
+  ShareeLookup_Extra_TwitterSignatureBuilder? _twitterSignature;
+  ShareeLookup_Extra_TwitterSignatureBuilder get twitterSignature =>
+      _$this._twitterSignature ??= ShareeLookup_Extra_TwitterSignatureBuilder();
+  set twitterSignature(covariant ShareeLookup_Extra_TwitterSignatureBuilder? twitterSignature) =>
+      _$this._twitterSignature = twitterSignature;
 
-  LookupBuilder? _websiteSignature;
-  LookupBuilder get websiteSignature => _$this._websiteSignature ??= LookupBuilder();
-  set websiteSignature(covariant LookupBuilder? websiteSignature) => _$this._websiteSignature = websiteSignature;
+  ShareeLookup_Extra_WebsiteSignatureBuilder? _websiteSignature;
+  ShareeLookup_Extra_WebsiteSignatureBuilder get websiteSignature =>
+      _$this._websiteSignature ??= ShareeLookup_Extra_WebsiteSignatureBuilder();
+  set websiteSignature(covariant ShareeLookup_Extra_WebsiteSignatureBuilder? websiteSignature) =>
+      _$this._websiteSignature = websiteSignature;
 
-  LookupBuilder? _userid;
-  LookupBuilder get userid => _$this._userid ??= LookupBuilder();
-  set userid(covariant LookupBuilder? userid) => _$this._userid = userid;
+  ShareeLookup_Extra_UseridBuilder? _userid;
+  ShareeLookup_Extra_UseridBuilder get userid => _$this._userid ??= ShareeLookup_Extra_UseridBuilder();
+  set userid(covariant ShareeLookup_Extra_UseridBuilder? userid) => _$this._userid = userid;
 
   ShareeLookup_ExtraBuilder() {
     ShareeLookup_Extra._defaults(this);

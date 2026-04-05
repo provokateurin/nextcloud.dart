@@ -92,6 +92,7 @@
                     "textDefault",
                     "textAllowedPattern",
                     "textMaxLength",
+                    "textUnique",
                     "selectionOptions",
                     "selectionDefault",
                     "datetimeDefault",
@@ -100,7 +101,9 @@
                     "usergroupSelectUsers",
                     "usergroupSelectGroups",
                     "usergroupSelectTeams",
-                    "showUserStatus"
+                    "showUserStatus",
+                    "viewColumnInformation",
+                    "customSettings"
                 ],
                 "properties": {
                     "id": {
@@ -174,6 +177,9 @@
                         "type": "integer",
                         "format": "int64"
                     },
+                    "textUnique": {
+                        "type": "boolean"
+                    },
                     "selectionOptions": {
                         "type": "string"
                     },
@@ -200,6 +206,45 @@
                     },
                     "showUserStatus": {
                         "type": "boolean"
+                    },
+                    "viewColumnInformation": {
+                        "type": "object",
+                        "nullable": true,
+                        "required": [
+                            "columnId",
+                            "order",
+                            "readonly",
+                            "mandatory"
+                        ],
+                        "properties": {
+                            "columnId": {
+                                "type": "integer",
+                                "format": "int64"
+                            },
+                            "order": {
+                                "type": "integer",
+                                "format": "int64"
+                            },
+                            "readonly": {
+                                "type": "boolean"
+                            },
+                            "mandatory": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "customSettings": {
+                        "type": "object",
+                        "nullable": true,
+                        "required": [
+                            "width"
+                        ],
+                        "properties": {
+                            "width": {
+                                "type": "integer",
+                                "format": "int64"
+                            }
+                        }
                     }
                 }
             },
@@ -269,6 +314,7 @@
                     "matching_columns_count",
                     "created_columns_count",
                     "inserted_rows_count",
+                    "updated_rows_count",
                     "errors_parsing_count",
                     "errors_count"
                 ],
@@ -286,6 +332,10 @@
                         "format": "int64"
                     },
                     "inserted_rows_count": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "updated_rows_count": {
                         "type": "integer",
                         "format": "int64"
                     },
@@ -643,7 +693,8 @@
                             "type": "object",
                             "required": [
                                 "columnId",
-                                "order"
+                                "order",
+                                "readonly"
                             ],
                             "properties": {
                                 "columnId": {
@@ -653,6 +704,9 @@
                                 "order": {
                                     "type": "integer",
                                     "format": "int64"
+                                },
+                                "readonly": {
+                                    "type": "boolean"
                                 }
                             }
                         }
@@ -702,7 +756,9 @@
                                             "begins-with",
                                             "ends-with",
                                             "contains",
+                                            "does-not-contain",
                                             "is-equal",
+                                            "is-not-equal",
                                             "is-greater-than",
                                             "is-greater-than-or-equal",
                                             "is-lower-than",
@@ -1316,7 +1372,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Table returned",
+                        "description": "Scheme returned",
                         "headers": {
                             "Content-Disposition": {
                                 "schema": {
@@ -1787,99 +1843,75 @@
                                 ],
                                 "properties": {
                                     "data": {
-                                        "description": "key-value pairs",
-                                        "anyOf": [
-                                            {
-                                                "type": "object",
-                                                "required": [
-                                                    "key",
-                                                    "value"
-                                                ],
-                                                "properties": {
-                                                    "key": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "title",
-                                                            "emoji",
-                                                            "description"
-                                                        ]
-                                                    },
-                                                    "value": {
-                                                        "type": "string"
-                                                    }
+                                        "type": "object",
+                                        "description": "fields of the view with their new values",
+                                        "properties": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "emoji": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "columns": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "integer",
+                                                    "format": "int64"
                                                 }
                                             },
-                                            {
-                                                "type": "object",
-                                                "required": [
-                                                    "key",
-                                                    "value"
-                                                ],
-                                                "properties": {
-                                                    "key": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "columns"
-                                                        ]
-                                                    },
-                                                    "value": {
-                                                        "type": "array",
-                                                        "items": {
+                                            "columnSettings": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "columnId": {
                                                             "type": "integer",
                                                             "format": "int64"
+                                                        },
+                                                        "order": {
+                                                            "type": "integer",
+                                                            "format": "int64"
+                                                        },
+                                                        "readonly": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "mandatory": {
+                                                            "type": "boolean"
                                                         }
                                                     }
                                                 }
                                             },
-                                            {
-                                                "type": "object",
-                                                "required": [
-                                                    "key",
-                                                    "value"
-                                                ],
-                                                "properties": {
-                                                    "key": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "sort"
-                                                        ]
-                                                    },
-                                                    "value": {
-                                                        "type": "object",
-                                                        "required": [
-                                                            "columnId",
-                                                            "mode"
-                                                        ],
-                                                        "properties": {
-                                                            "columnId": {
-                                                                "type": "integer",
-                                                                "format": "int64"
-                                                            },
-                                                            "mode": {
-                                                                "type": "string",
-                                                                "enum": [
-                                                                    "ASC",
-                                                                    "DESC"
-                                                                ]
-                                                            }
+                                            "sort": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "required": [
+                                                        "columnId",
+                                                        "mode"
+                                                    ],
+                                                    "properties": {
+                                                        "columnId": {
+                                                            "type": "integer",
+                                                            "format": "int64"
+                                                        },
+                                                        "mode": {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                "ASC",
+                                                                "DESC"
+                                                            ]
                                                         }
                                                     }
                                                 }
                                             },
-                                            {
-                                                "type": "object",
-                                                "required": [
-                                                    "key",
-                                                    "value"
-                                                ],
-                                                "properties": {
-                                                    "key": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "filter"
-                                                        ]
-                                                    },
-                                                    "value": {
+                                            "filter": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "array",
+                                                    "items": {
                                                         "type": "object",
                                                         "required": [
                                                             "columnId",
@@ -1897,7 +1929,9 @@
                                                                     "begins-with",
                                                                     "ends-with",
                                                                     "contains",
+                                                                    "does-not-contain",
                                                                     "is-equal",
+                                                                    "is-not-equal",
                                                                     "is-greater-than",
                                                                     "is-greater-than-or-equal",
                                                                     "is-lower-than",
@@ -1924,7 +1958,7 @@
                                                     }
                                                 }
                                             }
-                                        ]
+                                        }
                                     }
                                 }
                             }
@@ -3443,6 +3477,11 @@
                                         "nullable": true,
                                         "description": "Max length, if column is a text"
                                     },
+                                    "textUnique": {
+                                        "type": "boolean",
+                                        "nullable": true,
+                                        "description": "Whether the text value must be unique, if column is a text"
+                                    },
                                     "selectionOptions": {
                                         "type": "string",
                                         "nullable": true,
@@ -3505,6 +3544,14 @@
                                         "items": {
                                             "type": "integer",
                                             "format": "int64"
+                                        }
+                                    },
+                                    "customSettings": {
+                                        "type": "object",
+                                        "default": {},
+                                        "description": "Custom settings for the column",
+                                        "additionalProperties": {
+                                            "type": "object"
                                         }
                                     }
                                 }
@@ -3573,6 +3620,24 @@
                     },
                     "404": {
                         "description": "Not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "message"
+                                    ],
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3840,6 +3905,12 @@
                                         "nullable": true,
                                         "description": "Max length, if column is a text"
                                     },
+                                    "textUnique": {
+                                        "type": "boolean",
+                                        "nullable": true,
+                                        "default": false,
+                                        "description": "Whether the text value must be unique, if column is a text"
+                                    },
                                     "selectionOptions": {
                                         "type": "string",
                                         "nullable": true,
@@ -3902,6 +3973,14 @@
                                         "items": {
                                             "type": "integer",
                                             "format": "int64"
+                                        }
+                                    },
+                                    "customSettings": {
+                                        "type": "object",
+                                        "default": {},
+                                        "description": "Custom settings for the column",
+                                        "additionalProperties": {
+                                            "type": "object"
                                         }
                                     }
                                 }
@@ -3975,7 +4054,7 @@
                         }
                     },
                     "400": {
-                        "description": "Invalid arguments",
+                        "description": "Invalid input data",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4105,6 +4184,11 @@
                                         "nullable": true,
                                         "description": "Max length, if column is a text"
                                     },
+                                    "textUnique": {
+                                        "type": "boolean",
+                                        "nullable": true,
+                                        "description": "Whether the text value must be unique, if column is a text"
+                                    },
                                     "selectionOptions": {
                                         "type": "string",
                                         "nullable": true,
@@ -4149,6 +4233,14 @@
                                         "type": "boolean",
                                         "nullable": true,
                                         "description": "Whether to show the user's status, if column type is usergroup"
+                                    },
+                                    "customSettings": {
+                                        "type": "object",
+                                        "default": {},
+                                        "description": "Custom settings for the column",
+                                        "additionalProperties": {
+                                            "type": "object"
+                                        }
                                     }
                                 }
                             }
@@ -4178,8 +4270,8 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "",
+                    "400": {
+                        "description": "Validation error",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4196,8 +4288,8 @@
                             }
                         }
                     },
-                    "400": {
-                        "description": "Invalid arguments",
+                    "500": {
+                        "description": "Internal error",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4802,6 +4894,24 @@
                             }
                         }
                     },
+                    "400": {
+                        "description": "Validation error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "message"
+                                    ],
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "404": {
                         "description": "Not found",
                         "content": {
@@ -5074,6 +5184,24 @@
                             }
                         }
                     },
+                    "400": {
+                        "description": "Validation error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "message"
+                                    ],
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "500": {
                         "description": "",
                         "content": {
@@ -5295,6 +5423,24 @@
                     },
                     "403": {
                         "description": "No permissions",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "message"
+                                    ],
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Validation error",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -8124,6 +8270,14 @@
                                             "view"
                                         ],
                                         "description": "Context type of the column creation"
+                                    },
+                                    "customSettings": {
+                                        "type": "object",
+                                        "default": {},
+                                        "description": "Custom settings for the column",
+                                        "additionalProperties": {
+                                            "type": "object"
+                                        }
                                     }
                                 }
                             }
@@ -8370,6 +8524,12 @@
                                         "nullable": true,
                                         "description": "Max raw text length"
                                     },
+                                    "textUnique": {
+                                        "type": "boolean",
+                                        "nullable": true,
+                                        "default": false,
+                                        "description": "Whether the text value must be unique, if column is a text"
+                                    },
                                     "subtype": {
                                         "type": "string",
                                         "nullable": true,
@@ -8409,6 +8569,14 @@
                                             "view"
                                         ],
                                         "description": "Context type of the column creation"
+                                    },
+                                    "customSettings": {
+                                        "type": "object",
+                                        "default": {},
+                                        "description": "Custom settings for the column",
+                                        "additionalProperties": {
+                                            "type": "object"
+                                        }
                                     }
                                 }
                             }
@@ -8688,6 +8856,14 @@
                                             "view"
                                         ],
                                         "description": "Context type of the column creation"
+                                    },
+                                    "customSettings": {
+                                        "type": "object",
+                                        "default": {},
+                                        "description": "Custom settings for the column",
+                                        "additionalProperties": {
+                                            "type": "object"
+                                        }
                                     }
                                 }
                             }
@@ -8966,6 +9142,14 @@
                                             "view"
                                         ],
                                         "description": "Context type of the column creation"
+                                    },
+                                    "customSettings": {
+                                        "type": "object",
+                                        "default": {},
+                                        "description": "Custom settings for the column",
+                                        "additionalProperties": {
+                                            "type": "object"
+                                        }
                                     }
                                 }
                             }
@@ -9254,6 +9438,14 @@
                                             "view"
                                         ],
                                         "description": "Context type of the column creation"
+                                    },
+                                    "customSettings": {
+                                        "type": "object",
+                                        "default": {},
+                                        "description": "Custom settings for the column",
+                                        "additionalProperties": {
+                                            "type": "object"
+                                        }
                                     }
                                 }
                             }
@@ -10654,6 +10846,44 @@
                     },
                     "403": {
                         "description": "No permissions",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "ocs"
+                                    ],
+                                    "properties": {
+                                        "ocs": {
+                                            "type": "object",
+                                            "required": [
+                                                "meta",
+                                                "data"
+                                            ],
+                                            "properties": {
+                                                "meta": {
+                                                    "$ref": "#/components/schemas/OCSMeta"
+                                                },
+                                                "data": {
+                                                    "type": "object",
+                                                    "required": [
+                                                        "message"
+                                                    ],
+                                                    "properties": {
+                                                        "message": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "bad request",
                         "content": {
                             "application/json": {
                                 "schema": {

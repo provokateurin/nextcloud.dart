@@ -10,9 +10,6 @@ const UserDetailsScope _$userDetailsScopeV2Private = const UserDetailsScope._('v
 const UserDetailsScope _$userDetailsScopeV2Local = const UserDetailsScope._('v2Local');
 const UserDetailsScope _$userDetailsScopeV2Federated = const UserDetailsScope._('v2Federated');
 const UserDetailsScope _$userDetailsScopeV2Published = const UserDetailsScope._('v2Published');
-const UserDetailsScope _$userDetailsScopePrivate = const UserDetailsScope._('private');
-const UserDetailsScope _$userDetailsScopeContacts = const UserDetailsScope._('contacts');
-const UserDetailsScope _$userDetailsScopePublic = const UserDetailsScope._('public');
 
 UserDetailsScope _$valueOfUserDetailsScope(String name) {
   switch (name) {
@@ -24,12 +21,6 @@ UserDetailsScope _$valueOfUserDetailsScope(String name) {
       return _$userDetailsScopeV2Federated;
     case 'v2Published':
       return _$userDetailsScopeV2Published;
-    case 'private':
-      return _$userDetailsScopePrivate;
-    case 'contacts':
-      return _$userDetailsScopeContacts;
-    case 'public':
-      return _$userDetailsScopePublic;
     default:
       throw ArgumentError(name);
   }
@@ -40,9 +31,6 @@ final BuiltSet<UserDetailsScope> _$userDetailsScopeValues = BuiltSet<UserDetails
   _$userDetailsScopeV2Local,
   _$userDetailsScopeV2Federated,
   _$userDetailsScopeV2Published,
-  _$userDetailsScopePrivate,
-  _$userDetailsScopeContacts,
-  _$userDetailsScopePublic,
 ]);
 
 Serializer<OCSMeta> _$oCSMetaSerializer = _$OCSMetaSerializer();
@@ -60,12 +48,23 @@ Serializer<AppConfigGetKeysResponseApplicationJson_Ocs> _$appConfigGetKeysRespon
     _$AppConfigGetKeysResponseApplicationJson_OcsSerializer();
 Serializer<AppConfigGetKeysResponseApplicationJson> _$appConfigGetKeysResponseApplicationJsonSerializer =
     _$AppConfigGetKeysResponseApplicationJsonSerializer();
+Serializer<AppConfigGetValueResponseApplicationJson_Ocs_Data>
+    _$appConfigGetValueResponseApplicationJsonOcsDataSerializer =
+    _$AppConfigGetValueResponseApplicationJson_Ocs_DataSerializer();
+Serializer<AppConfigGetValueResponseApplicationJson_Ocs> _$appConfigGetValueResponseApplicationJsonOcsSerializer =
+    _$AppConfigGetValueResponseApplicationJson_OcsSerializer();
+Serializer<AppConfigGetValueResponseApplicationJson> _$appConfigGetValueResponseApplicationJsonSerializer =
+    _$AppConfigGetValueResponseApplicationJsonSerializer();
 Serializer<AppConfigSetValueRequestApplicationJson> _$appConfigSetValueRequestApplicationJsonSerializer =
     _$AppConfigSetValueRequestApplicationJsonSerializer();
 Serializer<AppConfigSetValueResponseApplicationJson_Ocs> _$appConfigSetValueResponseApplicationJsonOcsSerializer =
     _$AppConfigSetValueResponseApplicationJson_OcsSerializer();
 Serializer<AppConfigSetValueResponseApplicationJson> _$appConfigSetValueResponseApplicationJsonSerializer =
     _$AppConfigSetValueResponseApplicationJsonSerializer();
+Serializer<AppConfigDeleteKeyResponseApplicationJson_Ocs> _$appConfigDeleteKeyResponseApplicationJsonOcsSerializer =
+    _$AppConfigDeleteKeyResponseApplicationJson_OcsSerializer();
+Serializer<AppConfigDeleteKeyResponseApplicationJson> _$appConfigDeleteKeyResponseApplicationJsonSerializer =
+    _$AppConfigDeleteKeyResponseApplicationJsonSerializer();
 Serializer<AppsGetAppsResponseApplicationJson_Ocs_Data> _$appsGetAppsResponseApplicationJsonOcsDataSerializer =
     _$AppsGetAppsResponseApplicationJson_Ocs_DataSerializer();
 Serializer<AppsGetAppsResponseApplicationJson_Ocs> _$appsGetAppsResponseApplicationJsonOcsSerializer =
@@ -96,12 +95,28 @@ Serializer<GroupsGetGroupsResponseApplicationJson_Ocs> _$groupsGetGroupsResponse
     _$GroupsGetGroupsResponseApplicationJson_OcsSerializer();
 Serializer<GroupsGetGroupsResponseApplicationJson> _$groupsGetGroupsResponseApplicationJsonSerializer =
     _$GroupsGetGroupsResponseApplicationJsonSerializer();
+Serializer<GroupsAddGroupRequestApplicationJson> _$groupsAddGroupRequestApplicationJsonSerializer =
+    _$GroupsAddGroupRequestApplicationJsonSerializer();
+Serializer<GroupsAddGroupResponseApplicationJson_Ocs> _$groupsAddGroupResponseApplicationJsonOcsSerializer =
+    _$GroupsAddGroupResponseApplicationJson_OcsSerializer();
+Serializer<GroupsAddGroupResponseApplicationJson> _$groupsAddGroupResponseApplicationJsonSerializer =
+    _$GroupsAddGroupResponseApplicationJsonSerializer();
 Serializer<GroupsGetGroupResponseApplicationJson_Ocs_Data> _$groupsGetGroupResponseApplicationJsonOcsDataSerializer =
     _$GroupsGetGroupResponseApplicationJson_Ocs_DataSerializer();
 Serializer<GroupsGetGroupResponseApplicationJson_Ocs> _$groupsGetGroupResponseApplicationJsonOcsSerializer =
     _$GroupsGetGroupResponseApplicationJson_OcsSerializer();
 Serializer<GroupsGetGroupResponseApplicationJson> _$groupsGetGroupResponseApplicationJsonSerializer =
     _$GroupsGetGroupResponseApplicationJsonSerializer();
+Serializer<GroupsUpdateGroupRequestApplicationJson> _$groupsUpdateGroupRequestApplicationJsonSerializer =
+    _$GroupsUpdateGroupRequestApplicationJsonSerializer();
+Serializer<GroupsUpdateGroupResponseApplicationJson_Ocs> _$groupsUpdateGroupResponseApplicationJsonOcsSerializer =
+    _$GroupsUpdateGroupResponseApplicationJson_OcsSerializer();
+Serializer<GroupsUpdateGroupResponseApplicationJson> _$groupsUpdateGroupResponseApplicationJsonSerializer =
+    _$GroupsUpdateGroupResponseApplicationJsonSerializer();
+Serializer<GroupsDeleteGroupResponseApplicationJson_Ocs> _$groupsDeleteGroupResponseApplicationJsonOcsSerializer =
+    _$GroupsDeleteGroupResponseApplicationJson_OcsSerializer();
+Serializer<GroupsDeleteGroupResponseApplicationJson> _$groupsDeleteGroupResponseApplicationJsonSerializer =
+    _$GroupsDeleteGroupResponseApplicationJsonSerializer();
 Serializer<GroupDetails> _$groupDetailsSerializer = _$GroupDetailsSerializer();
 Serializer<GroupsGetGroupsDetailsResponseApplicationJson_Ocs_Data>
     _$groupsGetGroupsDetailsResponseApplicationJsonOcsDataSerializer =
@@ -680,6 +695,142 @@ class _$AppConfigGetKeysResponseApplicationJsonSerializer
   }
 }
 
+class _$AppConfigGetValueResponseApplicationJson_Ocs_DataSerializer
+    implements StructuredSerializer<AppConfigGetValueResponseApplicationJson_Ocs_Data> {
+  @override
+  final Iterable<Type> types = const [
+    AppConfigGetValueResponseApplicationJson_Ocs_Data,
+    _$AppConfigGetValueResponseApplicationJson_Ocs_Data
+  ];
+  @override
+  final String wireName = 'AppConfigGetValueResponseApplicationJson_Ocs_Data';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, AppConfigGetValueResponseApplicationJson_Ocs_Data object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  AppConfigGetValueResponseApplicationJson_Ocs_Data deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'data':
+          result.data = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$AppConfigGetValueResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<AppConfigGetValueResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    AppConfigGetValueResponseApplicationJson_Ocs,
+    _$AppConfigGetValueResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'AppConfigGetValueResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, AppConfigGetValueResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(AppConfigGetValueResponseApplicationJson_Ocs_Data)),
+    ];
+
+    return result;
+  }
+
+  @override
+  AppConfigGetValueResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = AppConfigGetValueResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(AppConfigGetValueResponseApplicationJson_Ocs_Data))!
+              as AppConfigGetValueResponseApplicationJson_Ocs_Data);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$AppConfigGetValueResponseApplicationJsonSerializer
+    implements StructuredSerializer<AppConfigGetValueResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    AppConfigGetValueResponseApplicationJson,
+    _$AppConfigGetValueResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'AppConfigGetValueResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, AppConfigGetValueResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs, specifiedType: const FullType(AppConfigGetValueResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  AppConfigGetValueResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = AppConfigGetValueResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(AppConfigGetValueResponseApplicationJson_Ocs))!
+              as AppConfigGetValueResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$AppConfigSetValueRequestApplicationJsonSerializer
     implements StructuredSerializer<AppConfigSetValueRequestApplicationJson> {
   @override
@@ -805,6 +956,97 @@ class _$AppConfigSetValueResponseApplicationJsonSerializer
           result.ocs.replace(serializers.deserialize(value,
                   specifiedType: const FullType(AppConfigSetValueResponseApplicationJson_Ocs))!
               as AppConfigSetValueResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$AppConfigDeleteKeyResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<AppConfigDeleteKeyResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    AppConfigDeleteKeyResponseApplicationJson_Ocs,
+    _$AppConfigDeleteKeyResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'AppConfigDeleteKeyResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, AppConfigDeleteKeyResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(JsonObject)),
+    ];
+
+    return result;
+  }
+
+  @override
+  AppConfigDeleteKeyResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = AppConfigDeleteKeyResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data = serializers.deserialize(value, specifiedType: const FullType(JsonObject))! as JsonObject;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$AppConfigDeleteKeyResponseApplicationJsonSerializer
+    implements StructuredSerializer<AppConfigDeleteKeyResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    AppConfigDeleteKeyResponseApplicationJson,
+    _$AppConfigDeleteKeyResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'AppConfigDeleteKeyResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, AppConfigDeleteKeyResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs, specifiedType: const FullType(AppConfigDeleteKeyResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  AppConfigDeleteKeyResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = AppConfigDeleteKeyResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(AppConfigDeleteKeyResponseApplicationJson_Ocs))!
+              as AppConfigDeleteKeyResponseApplicationJson_Ocs);
           break;
       }
     }
@@ -1431,6 +1673,138 @@ class _$GroupsGetGroupsResponseApplicationJsonSerializer
   }
 }
 
+class _$GroupsAddGroupRequestApplicationJsonSerializer
+    implements StructuredSerializer<GroupsAddGroupRequestApplicationJson> {
+  @override
+  final Iterable<Type> types = const [GroupsAddGroupRequestApplicationJson, _$GroupsAddGroupRequestApplicationJson];
+  @override
+  final String wireName = 'GroupsAddGroupRequestApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GroupsAddGroupRequestApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'groupid',
+      serializers.serialize(object.groupid, specifiedType: const FullType(String)),
+      'displayname',
+      serializers.serialize(object.displayname, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GroupsAddGroupRequestApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = GroupsAddGroupRequestApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'groupid':
+          result.groupid = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'displayname':
+          result.displayname = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GroupsAddGroupResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<GroupsAddGroupResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    GroupsAddGroupResponseApplicationJson_Ocs,
+    _$GroupsAddGroupResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'GroupsAddGroupResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GroupsAddGroupResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(JsonObject)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GroupsAddGroupResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = GroupsAddGroupResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data = serializers.deserialize(value, specifiedType: const FullType(JsonObject))! as JsonObject;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GroupsAddGroupResponseApplicationJsonSerializer
+    implements StructuredSerializer<GroupsAddGroupResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [GroupsAddGroupResponseApplicationJson, _$GroupsAddGroupResponseApplicationJson];
+  @override
+  final String wireName = 'GroupsAddGroupResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GroupsAddGroupResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs, specifiedType: const FullType(GroupsAddGroupResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GroupsAddGroupResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = GroupsAddGroupResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(
+              serializers.deserialize(value, specifiedType: const FullType(GroupsAddGroupResponseApplicationJson_Ocs))!
+                  as GroupsAddGroupResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$GroupsGetGroupResponseApplicationJson_Ocs_DataSerializer
     implements StructuredSerializer<GroupsGetGroupResponseApplicationJson_Ocs_Data> {
   @override
@@ -1556,6 +1930,235 @@ class _$GroupsGetGroupResponseApplicationJsonSerializer
           result.ocs.replace(
               serializers.deserialize(value, specifiedType: const FullType(GroupsGetGroupResponseApplicationJson_Ocs))!
                   as GroupsGetGroupResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GroupsUpdateGroupRequestApplicationJsonSerializer
+    implements StructuredSerializer<GroupsUpdateGroupRequestApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    GroupsUpdateGroupRequestApplicationJson,
+    _$GroupsUpdateGroupRequestApplicationJson
+  ];
+  @override
+  final String wireName = 'GroupsUpdateGroupRequestApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GroupsUpdateGroupRequestApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'key',
+      serializers.serialize(object.key, specifiedType: const FullType(String)),
+      'value',
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GroupsUpdateGroupRequestApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = GroupsUpdateGroupRequestApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'key':
+          result.key = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'value':
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GroupsUpdateGroupResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<GroupsUpdateGroupResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    GroupsUpdateGroupResponseApplicationJson_Ocs,
+    _$GroupsUpdateGroupResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'GroupsUpdateGroupResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GroupsUpdateGroupResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(JsonObject)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GroupsUpdateGroupResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = GroupsUpdateGroupResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data = serializers.deserialize(value, specifiedType: const FullType(JsonObject))! as JsonObject;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GroupsUpdateGroupResponseApplicationJsonSerializer
+    implements StructuredSerializer<GroupsUpdateGroupResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    GroupsUpdateGroupResponseApplicationJson,
+    _$GroupsUpdateGroupResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'GroupsUpdateGroupResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GroupsUpdateGroupResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs, specifiedType: const FullType(GroupsUpdateGroupResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GroupsUpdateGroupResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = GroupsUpdateGroupResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GroupsUpdateGroupResponseApplicationJson_Ocs))!
+              as GroupsUpdateGroupResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GroupsDeleteGroupResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<GroupsDeleteGroupResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    GroupsDeleteGroupResponseApplicationJson_Ocs,
+    _$GroupsDeleteGroupResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'GroupsDeleteGroupResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GroupsDeleteGroupResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(JsonObject)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GroupsDeleteGroupResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = GroupsDeleteGroupResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data = serializers.deserialize(value, specifiedType: const FullType(JsonObject))! as JsonObject;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GroupsDeleteGroupResponseApplicationJsonSerializer
+    implements StructuredSerializer<GroupsDeleteGroupResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    GroupsDeleteGroupResponseApplicationJson,
+    _$GroupsDeleteGroupResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'GroupsDeleteGroupResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GroupsDeleteGroupResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs, specifiedType: const FullType(GroupsDeleteGroupResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GroupsDeleteGroupResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = GroupsDeleteGroupResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GroupsDeleteGroupResponseApplicationJson_Ocs))!
+              as GroupsDeleteGroupResponseApplicationJson_Ocs);
           break;
       }
     }
@@ -2192,10 +2795,28 @@ class _$UserDetailsSerializer implements StructuredSerializer<UserDetails> {
         ..add('storageLocation')
         ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
+    value = object.timezone;
+    if (value != null) {
+      result
+        ..add('timezone')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
     value = object.twitterScope;
     if (value != null) {
       result
         ..add('twitterScope')
+        ..add(serializers.serialize(value, specifiedType: const FullType(UserDetailsScope)));
+    }
+    value = object.bluesky;
+    if (value != null) {
+      result
+        ..add('bluesky')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.blueskyScope;
+    if (value != null) {
+      result
+        ..add('blueskyScope')
         ..add(serializers.serialize(value, specifiedType: const FullType(UserDetailsScope)));
     }
     value = object.websiteScope;
@@ -2360,11 +2981,21 @@ class _$UserDetailsSerializer implements StructuredSerializer<UserDetails> {
           result.subadmin.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
           break;
+        case 'timezone':
+          result.timezone = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
         case 'twitter':
           result.twitter = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'twitterScope':
           result.twitterScope =
+              serializers.deserialize(value, specifiedType: const FullType(UserDetailsScope)) as UserDetailsScope?;
+          break;
+        case 'bluesky':
+          result.bluesky = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'blueskyScope':
+          result.blueskyScope =
               serializers.deserialize(value, specifiedType: const FullType(UserDetailsScope)) as UserDetailsScope?;
           break;
         case 'website':
@@ -7199,6 +7830,328 @@ class AppConfigGetKeysResponseApplicationJsonBuilder
   }
 }
 
+abstract mixin class $AppConfigGetValueResponseApplicationJson_Ocs_DataInterfaceBuilder {
+  void replace($AppConfigGetValueResponseApplicationJson_Ocs_DataInterface other);
+  void update(void Function($AppConfigGetValueResponseApplicationJson_Ocs_DataInterfaceBuilder) updates);
+  String? get data;
+  set data(String? data);
+}
+
+class _$AppConfigGetValueResponseApplicationJson_Ocs_Data extends AppConfigGetValueResponseApplicationJson_Ocs_Data {
+  @override
+  final String data;
+
+  factory _$AppConfigGetValueResponseApplicationJson_Ocs_Data(
+          [void Function(AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder)? updates]) =>
+      (AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder()..update(updates))._build();
+
+  _$AppConfigGetValueResponseApplicationJson_Ocs_Data._({required this.data}) : super._();
+  @override
+  AppConfigGetValueResponseApplicationJson_Ocs_Data rebuild(
+          void Function(AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder toBuilder() =>
+      AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is AppConfigGetValueResponseApplicationJson_Ocs_Data && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'AppConfigGetValueResponseApplicationJson_Ocs_Data')..add('data', data))
+        .toString();
+  }
+}
+
+class AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder
+    implements
+        Builder<AppConfigGetValueResponseApplicationJson_Ocs_Data,
+            AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder>,
+        $AppConfigGetValueResponseApplicationJson_Ocs_DataInterfaceBuilder {
+  _$AppConfigGetValueResponseApplicationJson_Ocs_Data? _$v;
+
+  String? _data;
+  String? get data => _$this._data;
+  set data(covariant String? data) => _$this._data = data;
+
+  AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder() {
+    AppConfigGetValueResponseApplicationJson_Ocs_Data._defaults(this);
+  }
+
+  AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _data = $v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant AppConfigGetValueResponseApplicationJson_Ocs_Data other) {
+    _$v = other as _$AppConfigGetValueResponseApplicationJson_Ocs_Data;
+  }
+
+  @override
+  void update(void Function(AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  AppConfigGetValueResponseApplicationJson_Ocs_Data build() => _build();
+
+  _$AppConfigGetValueResponseApplicationJson_Ocs_Data _build() {
+    AppConfigGetValueResponseApplicationJson_Ocs_Data._validate(this);
+    final _$result = _$v ??
+        _$AppConfigGetValueResponseApplicationJson_Ocs_Data._(
+          data:
+              BuiltValueNullFieldError.checkNotNull(data, r'AppConfigGetValueResponseApplicationJson_Ocs_Data', 'data'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $AppConfigGetValueResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($AppConfigGetValueResponseApplicationJson_OcsInterface other);
+  void update(void Function($AppConfigGetValueResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder get data;
+  set data(AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder? data);
+}
+
+class _$AppConfigGetValueResponseApplicationJson_Ocs extends AppConfigGetValueResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final AppConfigGetValueResponseApplicationJson_Ocs_Data data;
+
+  factory _$AppConfigGetValueResponseApplicationJson_Ocs(
+          [void Function(AppConfigGetValueResponseApplicationJson_OcsBuilder)? updates]) =>
+      (AppConfigGetValueResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$AppConfigGetValueResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  AppConfigGetValueResponseApplicationJson_Ocs rebuild(
+          void Function(AppConfigGetValueResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  AppConfigGetValueResponseApplicationJson_OcsBuilder toBuilder() =>
+      AppConfigGetValueResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is AppConfigGetValueResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'AppConfigGetValueResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class AppConfigGetValueResponseApplicationJson_OcsBuilder
+    implements
+        Builder<AppConfigGetValueResponseApplicationJson_Ocs, AppConfigGetValueResponseApplicationJson_OcsBuilder>,
+        $AppConfigGetValueResponseApplicationJson_OcsInterfaceBuilder {
+  _$AppConfigGetValueResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder? _data;
+  AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder get data =>
+      _$this._data ??= AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder();
+  set data(covariant AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder? data) => _$this._data = data;
+
+  AppConfigGetValueResponseApplicationJson_OcsBuilder() {
+    AppConfigGetValueResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  AppConfigGetValueResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant AppConfigGetValueResponseApplicationJson_Ocs other) {
+    _$v = other as _$AppConfigGetValueResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(AppConfigGetValueResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  AppConfigGetValueResponseApplicationJson_Ocs build() => _build();
+
+  _$AppConfigGetValueResponseApplicationJson_Ocs _build() {
+    AppConfigGetValueResponseApplicationJson_Ocs._validate(this);
+    _$AppConfigGetValueResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$AppConfigGetValueResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'AppConfigGetValueResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $AppConfigGetValueResponseApplicationJsonInterfaceBuilder {
+  void replace($AppConfigGetValueResponseApplicationJsonInterface other);
+  void update(void Function($AppConfigGetValueResponseApplicationJsonInterfaceBuilder) updates);
+  AppConfigGetValueResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(AppConfigGetValueResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$AppConfigGetValueResponseApplicationJson extends AppConfigGetValueResponseApplicationJson {
+  @override
+  final AppConfigGetValueResponseApplicationJson_Ocs ocs;
+
+  factory _$AppConfigGetValueResponseApplicationJson(
+          [void Function(AppConfigGetValueResponseApplicationJsonBuilder)? updates]) =>
+      (AppConfigGetValueResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$AppConfigGetValueResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  AppConfigGetValueResponseApplicationJson rebuild(
+          void Function(AppConfigGetValueResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  AppConfigGetValueResponseApplicationJsonBuilder toBuilder() =>
+      AppConfigGetValueResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is AppConfigGetValueResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'AppConfigGetValueResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class AppConfigGetValueResponseApplicationJsonBuilder
+    implements
+        Builder<AppConfigGetValueResponseApplicationJson, AppConfigGetValueResponseApplicationJsonBuilder>,
+        $AppConfigGetValueResponseApplicationJsonInterfaceBuilder {
+  _$AppConfigGetValueResponseApplicationJson? _$v;
+
+  AppConfigGetValueResponseApplicationJson_OcsBuilder? _ocs;
+  AppConfigGetValueResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= AppConfigGetValueResponseApplicationJson_OcsBuilder();
+  set ocs(covariant AppConfigGetValueResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  AppConfigGetValueResponseApplicationJsonBuilder() {
+    AppConfigGetValueResponseApplicationJson._defaults(this);
+  }
+
+  AppConfigGetValueResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant AppConfigGetValueResponseApplicationJson other) {
+    _$v = other as _$AppConfigGetValueResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(AppConfigGetValueResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  AppConfigGetValueResponseApplicationJson build() => _build();
+
+  _$AppConfigGetValueResponseApplicationJson _build() {
+    AppConfigGetValueResponseApplicationJson._validate(this);
+    _$AppConfigGetValueResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$AppConfigGetValueResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'AppConfigGetValueResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $AppConfigSetValueRequestApplicationJsonInterfaceBuilder {
   void replace($AppConfigSetValueRequestApplicationJsonInterface other);
   void update(void Function($AppConfigSetValueRequestApplicationJsonInterfaceBuilder) updates);
@@ -7507,6 +8460,230 @@ class AppConfigSetValueResponseApplicationJsonBuilder
         ocs.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(r'AppConfigSetValueResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $AppConfigDeleteKeyResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($AppConfigDeleteKeyResponseApplicationJson_OcsInterface other);
+  void update(void Function($AppConfigDeleteKeyResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  JsonObject? get data;
+  set data(JsonObject? data);
+}
+
+class _$AppConfigDeleteKeyResponseApplicationJson_Ocs extends AppConfigDeleteKeyResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final JsonObject data;
+
+  factory _$AppConfigDeleteKeyResponseApplicationJson_Ocs(
+          [void Function(AppConfigDeleteKeyResponseApplicationJson_OcsBuilder)? updates]) =>
+      (AppConfigDeleteKeyResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$AppConfigDeleteKeyResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  AppConfigDeleteKeyResponseApplicationJson_Ocs rebuild(
+          void Function(AppConfigDeleteKeyResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  AppConfigDeleteKeyResponseApplicationJson_OcsBuilder toBuilder() =>
+      AppConfigDeleteKeyResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is AppConfigDeleteKeyResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'AppConfigDeleteKeyResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class AppConfigDeleteKeyResponseApplicationJson_OcsBuilder
+    implements
+        Builder<AppConfigDeleteKeyResponseApplicationJson_Ocs, AppConfigDeleteKeyResponseApplicationJson_OcsBuilder>,
+        $AppConfigDeleteKeyResponseApplicationJson_OcsInterfaceBuilder {
+  _$AppConfigDeleteKeyResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
+
+  AppConfigDeleteKeyResponseApplicationJson_OcsBuilder() {
+    AppConfigDeleteKeyResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  AppConfigDeleteKeyResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant AppConfigDeleteKeyResponseApplicationJson_Ocs other) {
+    _$v = other as _$AppConfigDeleteKeyResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(AppConfigDeleteKeyResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  AppConfigDeleteKeyResponseApplicationJson_Ocs build() => _build();
+
+  _$AppConfigDeleteKeyResponseApplicationJson_Ocs _build() {
+    AppConfigDeleteKeyResponseApplicationJson_Ocs._validate(this);
+    _$AppConfigDeleteKeyResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$AppConfigDeleteKeyResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: BuiltValueNullFieldError.checkNotNull(data, r'AppConfigDeleteKeyResponseApplicationJson_Ocs', 'data'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'AppConfigDeleteKeyResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $AppConfigDeleteKeyResponseApplicationJsonInterfaceBuilder {
+  void replace($AppConfigDeleteKeyResponseApplicationJsonInterface other);
+  void update(void Function($AppConfigDeleteKeyResponseApplicationJsonInterfaceBuilder) updates);
+  AppConfigDeleteKeyResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(AppConfigDeleteKeyResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$AppConfigDeleteKeyResponseApplicationJson extends AppConfigDeleteKeyResponseApplicationJson {
+  @override
+  final AppConfigDeleteKeyResponseApplicationJson_Ocs ocs;
+
+  factory _$AppConfigDeleteKeyResponseApplicationJson(
+          [void Function(AppConfigDeleteKeyResponseApplicationJsonBuilder)? updates]) =>
+      (AppConfigDeleteKeyResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$AppConfigDeleteKeyResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  AppConfigDeleteKeyResponseApplicationJson rebuild(
+          void Function(AppConfigDeleteKeyResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  AppConfigDeleteKeyResponseApplicationJsonBuilder toBuilder() =>
+      AppConfigDeleteKeyResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is AppConfigDeleteKeyResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'AppConfigDeleteKeyResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class AppConfigDeleteKeyResponseApplicationJsonBuilder
+    implements
+        Builder<AppConfigDeleteKeyResponseApplicationJson, AppConfigDeleteKeyResponseApplicationJsonBuilder>,
+        $AppConfigDeleteKeyResponseApplicationJsonInterfaceBuilder {
+  _$AppConfigDeleteKeyResponseApplicationJson? _$v;
+
+  AppConfigDeleteKeyResponseApplicationJson_OcsBuilder? _ocs;
+  AppConfigDeleteKeyResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= AppConfigDeleteKeyResponseApplicationJson_OcsBuilder();
+  set ocs(covariant AppConfigDeleteKeyResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  AppConfigDeleteKeyResponseApplicationJsonBuilder() {
+    AppConfigDeleteKeyResponseApplicationJson._defaults(this);
+  }
+
+  AppConfigDeleteKeyResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant AppConfigDeleteKeyResponseApplicationJson other) {
+    _$v = other as _$AppConfigDeleteKeyResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(AppConfigDeleteKeyResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  AppConfigDeleteKeyResponseApplicationJson build() => _build();
+
+  _$AppConfigDeleteKeyResponseApplicationJson _build() {
+    AppConfigDeleteKeyResponseApplicationJson._validate(this);
+    _$AppConfigDeleteKeyResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$AppConfigDeleteKeyResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'AppConfigDeleteKeyResponseApplicationJson', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -9075,6 +10252,338 @@ class GroupsGetGroupsResponseApplicationJsonBuilder
   }
 }
 
+abstract mixin class $GroupsAddGroupRequestApplicationJsonInterfaceBuilder {
+  void replace($GroupsAddGroupRequestApplicationJsonInterface other);
+  void update(void Function($GroupsAddGroupRequestApplicationJsonInterfaceBuilder) updates);
+  String? get groupid;
+  set groupid(String? groupid);
+
+  String? get displayname;
+  set displayname(String? displayname);
+}
+
+class _$GroupsAddGroupRequestApplicationJson extends GroupsAddGroupRequestApplicationJson {
+  @override
+  final String groupid;
+  @override
+  final String displayname;
+
+  factory _$GroupsAddGroupRequestApplicationJson(
+          [void Function(GroupsAddGroupRequestApplicationJsonBuilder)? updates]) =>
+      (GroupsAddGroupRequestApplicationJsonBuilder()..update(updates))._build();
+
+  _$GroupsAddGroupRequestApplicationJson._({required this.groupid, required this.displayname}) : super._();
+  @override
+  GroupsAddGroupRequestApplicationJson rebuild(void Function(GroupsAddGroupRequestApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GroupsAddGroupRequestApplicationJsonBuilder toBuilder() =>
+      GroupsAddGroupRequestApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GroupsAddGroupRequestApplicationJson &&
+        groupid == other.groupid &&
+        displayname == other.displayname;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, groupid.hashCode);
+    _$hash = $jc(_$hash, displayname.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GroupsAddGroupRequestApplicationJson')
+          ..add('groupid', groupid)
+          ..add('displayname', displayname))
+        .toString();
+  }
+}
+
+class GroupsAddGroupRequestApplicationJsonBuilder
+    implements
+        Builder<GroupsAddGroupRequestApplicationJson, GroupsAddGroupRequestApplicationJsonBuilder>,
+        $GroupsAddGroupRequestApplicationJsonInterfaceBuilder {
+  _$GroupsAddGroupRequestApplicationJson? _$v;
+
+  String? _groupid;
+  String? get groupid => _$this._groupid;
+  set groupid(covariant String? groupid) => _$this._groupid = groupid;
+
+  String? _displayname;
+  String? get displayname => _$this._displayname;
+  set displayname(covariant String? displayname) => _$this._displayname = displayname;
+
+  GroupsAddGroupRequestApplicationJsonBuilder() {
+    GroupsAddGroupRequestApplicationJson._defaults(this);
+  }
+
+  GroupsAddGroupRequestApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _groupid = $v.groupid;
+      _displayname = $v.displayname;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant GroupsAddGroupRequestApplicationJson other) {
+    _$v = other as _$GroupsAddGroupRequestApplicationJson;
+  }
+
+  @override
+  void update(void Function(GroupsAddGroupRequestApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GroupsAddGroupRequestApplicationJson build() => _build();
+
+  _$GroupsAddGroupRequestApplicationJson _build() {
+    GroupsAddGroupRequestApplicationJson._validate(this);
+    final _$result = _$v ??
+        _$GroupsAddGroupRequestApplicationJson._(
+          groupid: BuiltValueNullFieldError.checkNotNull(groupid, r'GroupsAddGroupRequestApplicationJson', 'groupid'),
+          displayname: BuiltValueNullFieldError.checkNotNull(
+              displayname, r'GroupsAddGroupRequestApplicationJson', 'displayname'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $GroupsAddGroupResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($GroupsAddGroupResponseApplicationJson_OcsInterface other);
+  void update(void Function($GroupsAddGroupResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  JsonObject? get data;
+  set data(JsonObject? data);
+}
+
+class _$GroupsAddGroupResponseApplicationJson_Ocs extends GroupsAddGroupResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final JsonObject data;
+
+  factory _$GroupsAddGroupResponseApplicationJson_Ocs(
+          [void Function(GroupsAddGroupResponseApplicationJson_OcsBuilder)? updates]) =>
+      (GroupsAddGroupResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$GroupsAddGroupResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  GroupsAddGroupResponseApplicationJson_Ocs rebuild(
+          void Function(GroupsAddGroupResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GroupsAddGroupResponseApplicationJson_OcsBuilder toBuilder() =>
+      GroupsAddGroupResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GroupsAddGroupResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GroupsAddGroupResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GroupsAddGroupResponseApplicationJson_OcsBuilder
+    implements
+        Builder<GroupsAddGroupResponseApplicationJson_Ocs, GroupsAddGroupResponseApplicationJson_OcsBuilder>,
+        $GroupsAddGroupResponseApplicationJson_OcsInterfaceBuilder {
+  _$GroupsAddGroupResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
+
+  GroupsAddGroupResponseApplicationJson_OcsBuilder() {
+    GroupsAddGroupResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  GroupsAddGroupResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant GroupsAddGroupResponseApplicationJson_Ocs other) {
+    _$v = other as _$GroupsAddGroupResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(GroupsAddGroupResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GroupsAddGroupResponseApplicationJson_Ocs build() => _build();
+
+  _$GroupsAddGroupResponseApplicationJson_Ocs _build() {
+    GroupsAddGroupResponseApplicationJson_Ocs._validate(this);
+    _$GroupsAddGroupResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$GroupsAddGroupResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: BuiltValueNullFieldError.checkNotNull(data, r'GroupsAddGroupResponseApplicationJson_Ocs', 'data'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'GroupsAddGroupResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $GroupsAddGroupResponseApplicationJsonInterfaceBuilder {
+  void replace($GroupsAddGroupResponseApplicationJsonInterface other);
+  void update(void Function($GroupsAddGroupResponseApplicationJsonInterfaceBuilder) updates);
+  GroupsAddGroupResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(GroupsAddGroupResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$GroupsAddGroupResponseApplicationJson extends GroupsAddGroupResponseApplicationJson {
+  @override
+  final GroupsAddGroupResponseApplicationJson_Ocs ocs;
+
+  factory _$GroupsAddGroupResponseApplicationJson(
+          [void Function(GroupsAddGroupResponseApplicationJsonBuilder)? updates]) =>
+      (GroupsAddGroupResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$GroupsAddGroupResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  GroupsAddGroupResponseApplicationJson rebuild(void Function(GroupsAddGroupResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GroupsAddGroupResponseApplicationJsonBuilder toBuilder() =>
+      GroupsAddGroupResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GroupsAddGroupResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GroupsAddGroupResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class GroupsAddGroupResponseApplicationJsonBuilder
+    implements
+        Builder<GroupsAddGroupResponseApplicationJson, GroupsAddGroupResponseApplicationJsonBuilder>,
+        $GroupsAddGroupResponseApplicationJsonInterfaceBuilder {
+  _$GroupsAddGroupResponseApplicationJson? _$v;
+
+  GroupsAddGroupResponseApplicationJson_OcsBuilder? _ocs;
+  GroupsAddGroupResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= GroupsAddGroupResponseApplicationJson_OcsBuilder();
+  set ocs(covariant GroupsAddGroupResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  GroupsAddGroupResponseApplicationJsonBuilder() {
+    GroupsAddGroupResponseApplicationJson._defaults(this);
+  }
+
+  GroupsAddGroupResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant GroupsAddGroupResponseApplicationJson other) {
+    _$v = other as _$GroupsAddGroupResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(GroupsAddGroupResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GroupsAddGroupResponseApplicationJson build() => _build();
+
+  _$GroupsAddGroupResponseApplicationJson _build() {
+    GroupsAddGroupResponseApplicationJson._validate(this);
+    _$GroupsAddGroupResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$GroupsAddGroupResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'GroupsAddGroupResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $GroupsGetGroupResponseApplicationJson_Ocs_DataInterfaceBuilder {
   void replace($GroupsGetGroupResponseApplicationJson_Ocs_DataInterface other);
   void update(void Function($GroupsGetGroupResponseApplicationJson_Ocs_DataInterfaceBuilder) updates);
@@ -9399,6 +10908,561 @@ class GroupsGetGroupResponseApplicationJsonBuilder
         ocs.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(r'GroupsGetGroupResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $GroupsUpdateGroupRequestApplicationJsonInterfaceBuilder {
+  void replace($GroupsUpdateGroupRequestApplicationJsonInterface other);
+  void update(void Function($GroupsUpdateGroupRequestApplicationJsonInterfaceBuilder) updates);
+  String? get key;
+  set key(String? key);
+
+  String? get value;
+  set value(String? value);
+}
+
+class _$GroupsUpdateGroupRequestApplicationJson extends GroupsUpdateGroupRequestApplicationJson {
+  @override
+  final String key;
+  @override
+  final String value;
+
+  factory _$GroupsUpdateGroupRequestApplicationJson(
+          [void Function(GroupsUpdateGroupRequestApplicationJsonBuilder)? updates]) =>
+      (GroupsUpdateGroupRequestApplicationJsonBuilder()..update(updates))._build();
+
+  _$GroupsUpdateGroupRequestApplicationJson._({required this.key, required this.value}) : super._();
+  @override
+  GroupsUpdateGroupRequestApplicationJson rebuild(
+          void Function(GroupsUpdateGroupRequestApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GroupsUpdateGroupRequestApplicationJsonBuilder toBuilder() =>
+      GroupsUpdateGroupRequestApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GroupsUpdateGroupRequestApplicationJson && key == other.key && value == other.value;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, key.hashCode);
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GroupsUpdateGroupRequestApplicationJson')
+          ..add('key', key)
+          ..add('value', value))
+        .toString();
+  }
+}
+
+class GroupsUpdateGroupRequestApplicationJsonBuilder
+    implements
+        Builder<GroupsUpdateGroupRequestApplicationJson, GroupsUpdateGroupRequestApplicationJsonBuilder>,
+        $GroupsUpdateGroupRequestApplicationJsonInterfaceBuilder {
+  _$GroupsUpdateGroupRequestApplicationJson? _$v;
+
+  String? _key;
+  String? get key => _$this._key;
+  set key(covariant String? key) => _$this._key = key;
+
+  String? _value;
+  String? get value => _$this._value;
+  set value(covariant String? value) => _$this._value = value;
+
+  GroupsUpdateGroupRequestApplicationJsonBuilder() {
+    GroupsUpdateGroupRequestApplicationJson._defaults(this);
+  }
+
+  GroupsUpdateGroupRequestApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _key = $v.key;
+      _value = $v.value;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant GroupsUpdateGroupRequestApplicationJson other) {
+    _$v = other as _$GroupsUpdateGroupRequestApplicationJson;
+  }
+
+  @override
+  void update(void Function(GroupsUpdateGroupRequestApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GroupsUpdateGroupRequestApplicationJson build() => _build();
+
+  _$GroupsUpdateGroupRequestApplicationJson _build() {
+    GroupsUpdateGroupRequestApplicationJson._validate(this);
+    final _$result = _$v ??
+        _$GroupsUpdateGroupRequestApplicationJson._(
+          key: BuiltValueNullFieldError.checkNotNull(key, r'GroupsUpdateGroupRequestApplicationJson', 'key'),
+          value: BuiltValueNullFieldError.checkNotNull(value, r'GroupsUpdateGroupRequestApplicationJson', 'value'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $GroupsUpdateGroupResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($GroupsUpdateGroupResponseApplicationJson_OcsInterface other);
+  void update(void Function($GroupsUpdateGroupResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  JsonObject? get data;
+  set data(JsonObject? data);
+}
+
+class _$GroupsUpdateGroupResponseApplicationJson_Ocs extends GroupsUpdateGroupResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final JsonObject data;
+
+  factory _$GroupsUpdateGroupResponseApplicationJson_Ocs(
+          [void Function(GroupsUpdateGroupResponseApplicationJson_OcsBuilder)? updates]) =>
+      (GroupsUpdateGroupResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$GroupsUpdateGroupResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  GroupsUpdateGroupResponseApplicationJson_Ocs rebuild(
+          void Function(GroupsUpdateGroupResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GroupsUpdateGroupResponseApplicationJson_OcsBuilder toBuilder() =>
+      GroupsUpdateGroupResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GroupsUpdateGroupResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GroupsUpdateGroupResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GroupsUpdateGroupResponseApplicationJson_OcsBuilder
+    implements
+        Builder<GroupsUpdateGroupResponseApplicationJson_Ocs, GroupsUpdateGroupResponseApplicationJson_OcsBuilder>,
+        $GroupsUpdateGroupResponseApplicationJson_OcsInterfaceBuilder {
+  _$GroupsUpdateGroupResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
+
+  GroupsUpdateGroupResponseApplicationJson_OcsBuilder() {
+    GroupsUpdateGroupResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  GroupsUpdateGroupResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant GroupsUpdateGroupResponseApplicationJson_Ocs other) {
+    _$v = other as _$GroupsUpdateGroupResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(GroupsUpdateGroupResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GroupsUpdateGroupResponseApplicationJson_Ocs build() => _build();
+
+  _$GroupsUpdateGroupResponseApplicationJson_Ocs _build() {
+    GroupsUpdateGroupResponseApplicationJson_Ocs._validate(this);
+    _$GroupsUpdateGroupResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$GroupsUpdateGroupResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: BuiltValueNullFieldError.checkNotNull(data, r'GroupsUpdateGroupResponseApplicationJson_Ocs', 'data'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'GroupsUpdateGroupResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $GroupsUpdateGroupResponseApplicationJsonInterfaceBuilder {
+  void replace($GroupsUpdateGroupResponseApplicationJsonInterface other);
+  void update(void Function($GroupsUpdateGroupResponseApplicationJsonInterfaceBuilder) updates);
+  GroupsUpdateGroupResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(GroupsUpdateGroupResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$GroupsUpdateGroupResponseApplicationJson extends GroupsUpdateGroupResponseApplicationJson {
+  @override
+  final GroupsUpdateGroupResponseApplicationJson_Ocs ocs;
+
+  factory _$GroupsUpdateGroupResponseApplicationJson(
+          [void Function(GroupsUpdateGroupResponseApplicationJsonBuilder)? updates]) =>
+      (GroupsUpdateGroupResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$GroupsUpdateGroupResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  GroupsUpdateGroupResponseApplicationJson rebuild(
+          void Function(GroupsUpdateGroupResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GroupsUpdateGroupResponseApplicationJsonBuilder toBuilder() =>
+      GroupsUpdateGroupResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GroupsUpdateGroupResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GroupsUpdateGroupResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class GroupsUpdateGroupResponseApplicationJsonBuilder
+    implements
+        Builder<GroupsUpdateGroupResponseApplicationJson, GroupsUpdateGroupResponseApplicationJsonBuilder>,
+        $GroupsUpdateGroupResponseApplicationJsonInterfaceBuilder {
+  _$GroupsUpdateGroupResponseApplicationJson? _$v;
+
+  GroupsUpdateGroupResponseApplicationJson_OcsBuilder? _ocs;
+  GroupsUpdateGroupResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= GroupsUpdateGroupResponseApplicationJson_OcsBuilder();
+  set ocs(covariant GroupsUpdateGroupResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  GroupsUpdateGroupResponseApplicationJsonBuilder() {
+    GroupsUpdateGroupResponseApplicationJson._defaults(this);
+  }
+
+  GroupsUpdateGroupResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant GroupsUpdateGroupResponseApplicationJson other) {
+    _$v = other as _$GroupsUpdateGroupResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(GroupsUpdateGroupResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GroupsUpdateGroupResponseApplicationJson build() => _build();
+
+  _$GroupsUpdateGroupResponseApplicationJson _build() {
+    GroupsUpdateGroupResponseApplicationJson._validate(this);
+    _$GroupsUpdateGroupResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$GroupsUpdateGroupResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'GroupsUpdateGroupResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $GroupsDeleteGroupResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($GroupsDeleteGroupResponseApplicationJson_OcsInterface other);
+  void update(void Function($GroupsDeleteGroupResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  JsonObject? get data;
+  set data(JsonObject? data);
+}
+
+class _$GroupsDeleteGroupResponseApplicationJson_Ocs extends GroupsDeleteGroupResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final JsonObject data;
+
+  factory _$GroupsDeleteGroupResponseApplicationJson_Ocs(
+          [void Function(GroupsDeleteGroupResponseApplicationJson_OcsBuilder)? updates]) =>
+      (GroupsDeleteGroupResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$GroupsDeleteGroupResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  GroupsDeleteGroupResponseApplicationJson_Ocs rebuild(
+          void Function(GroupsDeleteGroupResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GroupsDeleteGroupResponseApplicationJson_OcsBuilder toBuilder() =>
+      GroupsDeleteGroupResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GroupsDeleteGroupResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GroupsDeleteGroupResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class GroupsDeleteGroupResponseApplicationJson_OcsBuilder
+    implements
+        Builder<GroupsDeleteGroupResponseApplicationJson_Ocs, GroupsDeleteGroupResponseApplicationJson_OcsBuilder>,
+        $GroupsDeleteGroupResponseApplicationJson_OcsInterfaceBuilder {
+  _$GroupsDeleteGroupResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
+
+  GroupsDeleteGroupResponseApplicationJson_OcsBuilder() {
+    GroupsDeleteGroupResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  GroupsDeleteGroupResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant GroupsDeleteGroupResponseApplicationJson_Ocs other) {
+    _$v = other as _$GroupsDeleteGroupResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(GroupsDeleteGroupResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GroupsDeleteGroupResponseApplicationJson_Ocs build() => _build();
+
+  _$GroupsDeleteGroupResponseApplicationJson_Ocs _build() {
+    GroupsDeleteGroupResponseApplicationJson_Ocs._validate(this);
+    _$GroupsDeleteGroupResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$GroupsDeleteGroupResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: BuiltValueNullFieldError.checkNotNull(data, r'GroupsDeleteGroupResponseApplicationJson_Ocs', 'data'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'GroupsDeleteGroupResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $GroupsDeleteGroupResponseApplicationJsonInterfaceBuilder {
+  void replace($GroupsDeleteGroupResponseApplicationJsonInterface other);
+  void update(void Function($GroupsDeleteGroupResponseApplicationJsonInterfaceBuilder) updates);
+  GroupsDeleteGroupResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(GroupsDeleteGroupResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$GroupsDeleteGroupResponseApplicationJson extends GroupsDeleteGroupResponseApplicationJson {
+  @override
+  final GroupsDeleteGroupResponseApplicationJson_Ocs ocs;
+
+  factory _$GroupsDeleteGroupResponseApplicationJson(
+          [void Function(GroupsDeleteGroupResponseApplicationJsonBuilder)? updates]) =>
+      (GroupsDeleteGroupResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$GroupsDeleteGroupResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  GroupsDeleteGroupResponseApplicationJson rebuild(
+          void Function(GroupsDeleteGroupResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GroupsDeleteGroupResponseApplicationJsonBuilder toBuilder() =>
+      GroupsDeleteGroupResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GroupsDeleteGroupResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GroupsDeleteGroupResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class GroupsDeleteGroupResponseApplicationJsonBuilder
+    implements
+        Builder<GroupsDeleteGroupResponseApplicationJson, GroupsDeleteGroupResponseApplicationJsonBuilder>,
+        $GroupsDeleteGroupResponseApplicationJsonInterfaceBuilder {
+  _$GroupsDeleteGroupResponseApplicationJson? _$v;
+
+  GroupsDeleteGroupResponseApplicationJson_OcsBuilder? _ocs;
+  GroupsDeleteGroupResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= GroupsDeleteGroupResponseApplicationJson_OcsBuilder();
+  set ocs(covariant GroupsDeleteGroupResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  GroupsDeleteGroupResponseApplicationJsonBuilder() {
+    GroupsDeleteGroupResponseApplicationJson._defaults(this);
+  }
+
+  GroupsDeleteGroupResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant GroupsDeleteGroupResponseApplicationJson other) {
+    _$v = other as _$GroupsDeleteGroupResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(GroupsDeleteGroupResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GroupsDeleteGroupResponseApplicationJson build() => _build();
+
+  _$GroupsDeleteGroupResponseApplicationJson _build() {
+    GroupsDeleteGroupResponseApplicationJson._validate(this);
+    _$GroupsDeleteGroupResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$GroupsDeleteGroupResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'GroupsDeleteGroupResponseApplicationJson', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -10629,11 +12693,20 @@ abstract mixin class $UserDetailsInterfaceBuilder {
   ListBuilder<String> get subadmin;
   set subadmin(ListBuilder<String>? subadmin);
 
+  String? get timezone;
+  set timezone(String? timezone);
+
   String? get twitter;
   set twitter(String? twitter);
 
   UserDetailsScope? get twitterScope;
   set twitterScope(UserDetailsScope? twitterScope);
+
+  String? get bluesky;
+  set bluesky(String? bluesky);
+
+  UserDetailsScope? get blueskyScope;
+  set blueskyScope(UserDetailsScope? blueskyScope);
 
   String? get website;
   set website(String? website);
@@ -10726,9 +12799,15 @@ class _$UserDetails extends UserDetails {
   @override
   final BuiltList<String> subadmin;
   @override
+  final String? timezone;
+  @override
   final String twitter;
   @override
   final UserDetailsScope? twitterScope;
+  @override
+  final String? bluesky;
+  @override
+  final UserDetailsScope? blueskyScope;
   @override
   final String website;
   @override
@@ -10779,8 +12858,11 @@ class _$UserDetails extends UserDetails {
       this.roleScope,
       this.storageLocation,
       required this.subadmin,
+      this.timezone,
       required this.twitter,
       this.twitterScope,
+      this.bluesky,
+      this.blueskyScope,
       required this.website,
       this.websiteScope})
       : super._();
@@ -10835,8 +12917,11 @@ class _$UserDetails extends UserDetails {
         roleScope == other.roleScope &&
         storageLocation == other.storageLocation &&
         subadmin == other.subadmin &&
+        timezone == other.timezone &&
         twitter == other.twitter &&
         twitterScope == other.twitterScope &&
+        bluesky == other.bluesky &&
+        blueskyScope == other.blueskyScope &&
         website == other.website &&
         websiteScope == other.websiteScope;
   }
@@ -10885,8 +12970,11 @@ class _$UserDetails extends UserDetails {
     _$hash = $jc(_$hash, roleScope.hashCode);
     _$hash = $jc(_$hash, storageLocation.hashCode);
     _$hash = $jc(_$hash, subadmin.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, twitter.hashCode);
     _$hash = $jc(_$hash, twitterScope.hashCode);
+    _$hash = $jc(_$hash, bluesky.hashCode);
+    _$hash = $jc(_$hash, blueskyScope.hashCode);
     _$hash = $jc(_$hash, website.hashCode);
     _$hash = $jc(_$hash, websiteScope.hashCode);
     _$hash = $jf(_$hash);
@@ -10937,8 +13025,11 @@ class _$UserDetails extends UserDetails {
           ..add('roleScope', roleScope)
           ..add('storageLocation', storageLocation)
           ..add('subadmin', subadmin)
+          ..add('timezone', timezone)
           ..add('twitter', twitter)
           ..add('twitterScope', twitterScope)
+          ..add('bluesky', bluesky)
+          ..add('blueskyScope', blueskyScope)
           ..add('website', website)
           ..add('websiteScope', websiteScope))
         .toString();
@@ -11117,6 +13208,10 @@ class UserDetailsBuilder implements Builder<UserDetails, UserDetailsBuilder>, $U
   ListBuilder<String> get subadmin => _$this._subadmin ??= ListBuilder<String>();
   set subadmin(covariant ListBuilder<String>? subadmin) => _$this._subadmin = subadmin;
 
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(covariant String? timezone) => _$this._timezone = timezone;
+
   String? _twitter;
   String? get twitter => _$this._twitter;
   set twitter(covariant String? twitter) => _$this._twitter = twitter;
@@ -11124,6 +13219,14 @@ class UserDetailsBuilder implements Builder<UserDetails, UserDetailsBuilder>, $U
   UserDetailsScope? _twitterScope;
   UserDetailsScope? get twitterScope => _$this._twitterScope;
   set twitterScope(covariant UserDetailsScope? twitterScope) => _$this._twitterScope = twitterScope;
+
+  String? _bluesky;
+  String? get bluesky => _$this._bluesky;
+  set bluesky(covariant String? bluesky) => _$this._bluesky = bluesky;
+
+  UserDetailsScope? _blueskyScope;
+  UserDetailsScope? get blueskyScope => _$this._blueskyScope;
+  set blueskyScope(covariant UserDetailsScope? blueskyScope) => _$this._blueskyScope = blueskyScope;
 
   String? _website;
   String? get website => _$this._website;
@@ -11181,8 +13284,11 @@ class UserDetailsBuilder implements Builder<UserDetails, UserDetailsBuilder>, $U
       _roleScope = $v.roleScope;
       _storageLocation = $v.storageLocation;
       _subadmin = $v.subadmin.toBuilder();
+      _timezone = $v.timezone;
       _twitter = $v.twitter;
       _twitterScope = $v.twitterScope;
+      _bluesky = $v.bluesky;
+      _blueskyScope = $v.blueskyScope;
       _website = $v.website;
       _websiteScope = $v.websiteScope;
       _$v = null;
@@ -11250,8 +13356,11 @@ class UserDetailsBuilder implements Builder<UserDetails, UserDetailsBuilder>, $U
             roleScope: roleScope,
             storageLocation: storageLocation,
             subadmin: subadmin.build(),
+            timezone: timezone,
             twitter: BuiltValueNullFieldError.checkNotNull(twitter, r'UserDetails', 'twitter'),
             twitterScope: twitterScope,
+            bluesky: bluesky,
+            blueskyScope: blueskyScope,
             website: BuiltValueNullFieldError.checkNotNull(website, r'UserDetails', 'website'),
             websiteScope: websiteScope,
           );

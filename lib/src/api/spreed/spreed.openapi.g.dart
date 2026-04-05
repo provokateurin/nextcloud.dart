@@ -22,26 +22,6 @@ final BuiltSet<AvatarGetAvatarApiVersion> _$avatarGetAvatarApiVersionValues =
   _$avatarGetAvatarApiVersionV1,
 ]);
 
-const AvatarGetAvatarDarkTheme _$avatarGetAvatarDarkTheme$0 = const AvatarGetAvatarDarkTheme._('\$0');
-const AvatarGetAvatarDarkTheme _$avatarGetAvatarDarkTheme$1 = const AvatarGetAvatarDarkTheme._('\$1');
-
-AvatarGetAvatarDarkTheme _$valueOfAvatarGetAvatarDarkTheme(String name) {
-  switch (name) {
-    case '\$0':
-      return _$avatarGetAvatarDarkTheme$0;
-    case '\$1':
-      return _$avatarGetAvatarDarkTheme$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<AvatarGetAvatarDarkTheme> _$avatarGetAvatarDarkThemeValues =
-    BuiltSet<AvatarGetAvatarDarkTheme>(const <AvatarGetAvatarDarkTheme>[
-  _$avatarGetAvatarDarkTheme$0,
-  _$avatarGetAvatarDarkTheme$1,
-]);
-
 const AvatarUploadAvatarApiVersion _$avatarUploadAvatarApiVersionV1 = const AvatarUploadAvatarApiVersion._('v1');
 
 AvatarUploadAvatarApiVersion _$valueOfAvatarUploadAvatarApiVersion(String name) {
@@ -103,6 +83,41 @@ final BuiltSet<ActorTypes> _$actorTypesValues = BuiltSet<ActorTypes>(const <Acto
   _$actorTypesBots,
   _$actorTypesFederatedUsers,
   _$actorTypesPhones,
+]);
+
+const Room_CallRecording _$roomCallRecording$0 = const Room_CallRecording._('\$0');
+const Room_CallRecording _$roomCallRecording$1 = const Room_CallRecording._('\$1');
+const Room_CallRecording _$roomCallRecording$2 = const Room_CallRecording._('\$2');
+const Room_CallRecording _$roomCallRecording$3 = const Room_CallRecording._('\$3');
+const Room_CallRecording _$roomCallRecording$4 = const Room_CallRecording._('\$4');
+const Room_CallRecording _$roomCallRecording$5 = const Room_CallRecording._('\$5');
+
+Room_CallRecording _$valueOfRoom_CallRecording(String name) {
+  switch (name) {
+    case '\$0':
+      return _$roomCallRecording$0;
+    case '\$1':
+      return _$roomCallRecording$1;
+    case '\$2':
+      return _$roomCallRecording$2;
+    case '\$3':
+      return _$roomCallRecording$3;
+    case '\$4':
+      return _$roomCallRecording$4;
+    case '\$5':
+      return _$roomCallRecording$5;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<Room_CallRecording> _$roomCallRecordingValues = BuiltSet<Room_CallRecording>(const <Room_CallRecording>[
+  _$roomCallRecording$0,
+  _$roomCallRecording$1,
+  _$roomCallRecording$2,
+  _$roomCallRecording$3,
+  _$roomCallRecording$4,
+  _$roomCallRecording$5,
 ]);
 
 const MessageType _$messageTypeComment = const MessageType._('comment');
@@ -170,6 +185,26 @@ ChatMessage_Deleted _$valueOfChatMessage_Deleted(String name) {
 final BuiltSet<ChatMessage_Deleted> _$chatMessageDeletedValues =
     BuiltSet<ChatMessage_Deleted>(const <ChatMessage_Deleted>[
   _$chatMessageDeleted$true,
+]);
+
+const Room_MentionPermissions _$roomMentionPermissions$0 = const Room_MentionPermissions._('\$0');
+const Room_MentionPermissions _$roomMentionPermissions$1 = const Room_MentionPermissions._('\$1');
+
+Room_MentionPermissions _$valueOfRoom_MentionPermissions(String name) {
+  switch (name) {
+    case '\$0':
+      return _$roomMentionPermissions$0;
+    case '\$1':
+      return _$roomMentionPermissions$1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<Room_MentionPermissions> _$roomMentionPermissionsValues =
+    BuiltSet<Room_MentionPermissions>(const <Room_MentionPermissions>[
+  _$roomMentionPermissions$0,
+  _$roomMentionPermissions$1,
 ]);
 
 const AvatarDeleteAvatarApiVersion _$avatarDeleteAvatarApiVersionV1 = const AvatarDeleteAvatarApiVersion._('v1');
@@ -259,28 +294,6 @@ final BuiltSet<AvatarGetUserProxyAvatarWithoutRoomApiVersion> _$avatarGetUserPro
   _$avatarGetUserProxyAvatarWithoutRoomApiVersionV1,
 ]);
 
-const AvatarGetUserProxyAvatarWithoutRoomDarkTheme _$avatarGetUserProxyAvatarWithoutRoomDarkTheme$0 =
-    const AvatarGetUserProxyAvatarWithoutRoomDarkTheme._('\$0');
-const AvatarGetUserProxyAvatarWithoutRoomDarkTheme _$avatarGetUserProxyAvatarWithoutRoomDarkTheme$1 =
-    const AvatarGetUserProxyAvatarWithoutRoomDarkTheme._('\$1');
-
-AvatarGetUserProxyAvatarWithoutRoomDarkTheme _$valueOfAvatarGetUserProxyAvatarWithoutRoomDarkTheme(String name) {
-  switch (name) {
-    case '\$0':
-      return _$avatarGetUserProxyAvatarWithoutRoomDarkTheme$0;
-    case '\$1':
-      return _$avatarGetUserProxyAvatarWithoutRoomDarkTheme$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<AvatarGetUserProxyAvatarWithoutRoomDarkTheme> _$avatarGetUserProxyAvatarWithoutRoomDarkThemeValues =
-    BuiltSet<AvatarGetUserProxyAvatarWithoutRoomDarkTheme>(const <AvatarGetUserProxyAvatarWithoutRoomDarkTheme>[
-  _$avatarGetUserProxyAvatarWithoutRoomDarkTheme$0,
-  _$avatarGetUserProxyAvatarWithoutRoomDarkTheme$1,
-]);
-
 const AvatarGetUserProxyAvatarDarkWithoutRoomSize _$avatarGetUserProxyAvatarDarkWithoutRoomSize$64 =
     const AvatarGetUserProxyAvatarDarkWithoutRoomSize._('\$64');
 const AvatarGetUserProxyAvatarDarkWithoutRoomSize _$avatarGetUserProxyAvatarDarkWithoutRoomSize$512 =
@@ -357,28 +370,6 @@ AvatarGetUserProxyAvatarApiVersion _$valueOfAvatarGetUserProxyAvatarApiVersion(S
 final BuiltSet<AvatarGetUserProxyAvatarApiVersion> _$avatarGetUserProxyAvatarApiVersionValues =
     BuiltSet<AvatarGetUserProxyAvatarApiVersion>(const <AvatarGetUserProxyAvatarApiVersion>[
   _$avatarGetUserProxyAvatarApiVersionV1,
-]);
-
-const AvatarGetUserProxyAvatarDarkTheme _$avatarGetUserProxyAvatarDarkTheme$0 =
-    const AvatarGetUserProxyAvatarDarkTheme._('\$0');
-const AvatarGetUserProxyAvatarDarkTheme _$avatarGetUserProxyAvatarDarkTheme$1 =
-    const AvatarGetUserProxyAvatarDarkTheme._('\$1');
-
-AvatarGetUserProxyAvatarDarkTheme _$valueOfAvatarGetUserProxyAvatarDarkTheme(String name) {
-  switch (name) {
-    case '\$0':
-      return _$avatarGetUserProxyAvatarDarkTheme$0;
-    case '\$1':
-      return _$avatarGetUserProxyAvatarDarkTheme$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<AvatarGetUserProxyAvatarDarkTheme> _$avatarGetUserProxyAvatarDarkThemeValues =
-    BuiltSet<AvatarGetUserProxyAvatarDarkTheme>(const <AvatarGetUserProxyAvatarDarkTheme>[
-  _$avatarGetUserProxyAvatarDarkTheme$0,
-  _$avatarGetUserProxyAvatarDarkTheme$1,
 ]);
 
 const AvatarGetUserProxyAvatarDarkSize _$avatarGetUserProxyAvatarDarkSize$64 =
@@ -886,25 +877,6 @@ final BuiltSet<CallLeaveCallApiVersion> _$callLeaveCallApiVersionValues =
   _$callLeaveCallApiVersionV4,
 ]);
 
-const CallLeaveCallAll _$callLeaveCallAll$0 = const CallLeaveCallAll._('\$0');
-const CallLeaveCallAll _$callLeaveCallAll$1 = const CallLeaveCallAll._('\$1');
-
-CallLeaveCallAll _$valueOfCallLeaveCallAll(String name) {
-  switch (name) {
-    case '\$0':
-      return _$callLeaveCallAll$0;
-    case '\$1':
-      return _$callLeaveCallAll$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<CallLeaveCallAll> _$callLeaveCallAllValues = BuiltSet<CallLeaveCallAll>(const <CallLeaveCallAll>[
-  _$callLeaveCallAll$0,
-  _$callLeaveCallAll$1,
-]);
-
 const CallNotificationStateApiVersion _$callNotificationStateApiVersionV4 =
     const CallNotificationStateApiVersion._('v4');
 
@@ -1213,6 +1185,40 @@ final BuiltSet<ChatClearHistoryApiVersion> _$chatClearHistoryApiVersionValues =
   _$chatClearHistoryApiVersionV1,
 ]);
 
+const ChatGetObjectsSharedInRoomApiVersion _$chatGetObjectsSharedInRoomApiVersionV1 =
+    const ChatGetObjectsSharedInRoomApiVersion._('v1');
+
+ChatGetObjectsSharedInRoomApiVersion _$valueOfChatGetObjectsSharedInRoomApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$chatGetObjectsSharedInRoomApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<ChatGetObjectsSharedInRoomApiVersion> _$chatGetObjectsSharedInRoomApiVersionValues =
+    BuiltSet<ChatGetObjectsSharedInRoomApiVersion>(const <ChatGetObjectsSharedInRoomApiVersion>[
+  _$chatGetObjectsSharedInRoomApiVersionV1,
+]);
+
+const ChatShareObjectToChatApiVersion _$chatShareObjectToChatApiVersionV1 =
+    const ChatShareObjectToChatApiVersion._('v1');
+
+ChatShareObjectToChatApiVersion _$valueOfChatShareObjectToChatApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$chatShareObjectToChatApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<ChatShareObjectToChatApiVersion> _$chatShareObjectToChatApiVersionValues =
+    BuiltSet<ChatShareObjectToChatApiVersion>(const <ChatShareObjectToChatApiVersion>[
+  _$chatShareObjectToChatApiVersionV1,
+]);
+
 const ChatSummarizeChatApiVersion _$chatSummarizeChatApiVersionV1 = const ChatSummarizeChatApiVersion._('v1');
 
 ChatSummarizeChatApiVersion _$valueOfChatSummarizeChatApiVersion(String name) {
@@ -1227,6 +1233,23 @@ ChatSummarizeChatApiVersion _$valueOfChatSummarizeChatApiVersion(String name) {
 final BuiltSet<ChatSummarizeChatApiVersion> _$chatSummarizeChatApiVersionValues =
     BuiltSet<ChatSummarizeChatApiVersion>(const <ChatSummarizeChatApiVersion>[
   _$chatSummarizeChatApiVersionV1,
+]);
+
+const ChatGetMessageContextApiVersion _$chatGetMessageContextApiVersionV1 =
+    const ChatGetMessageContextApiVersion._('v1');
+
+ChatGetMessageContextApiVersion _$valueOfChatGetMessageContextApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$chatGetMessageContextApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<ChatGetMessageContextApiVersion> _$chatGetMessageContextApiVersionValues =
+    BuiltSet<ChatGetMessageContextApiVersion>(const <ChatGetMessageContextApiVersion>[
+  _$chatGetMessageContextApiVersionV1,
 ]);
 
 const ChatEditMessageApiVersion _$chatEditMessageApiVersionV1 = const ChatEditMessageApiVersion._('v1');
@@ -1259,23 +1282,6 @@ ChatDeleteMessageApiVersion _$valueOfChatDeleteMessageApiVersion(String name) {
 final BuiltSet<ChatDeleteMessageApiVersion> _$chatDeleteMessageApiVersionValues =
     BuiltSet<ChatDeleteMessageApiVersion>(const <ChatDeleteMessageApiVersion>[
   _$chatDeleteMessageApiVersionV1,
-]);
-
-const ChatGetMessageContextApiVersion _$chatGetMessageContextApiVersionV1 =
-    const ChatGetMessageContextApiVersion._('v1');
-
-ChatGetMessageContextApiVersion _$valueOfChatGetMessageContextApiVersion(String name) {
-  switch (name) {
-    case 'v1':
-      return _$chatGetMessageContextApiVersionV1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ChatGetMessageContextApiVersion> _$chatGetMessageContextApiVersionValues =
-    BuiltSet<ChatGetMessageContextApiVersion>(const <ChatGetMessageContextApiVersion>[
-  _$chatGetMessageContextApiVersionV1,
 ]);
 
 const ChatGetReminderApiVersion _$chatGetReminderApiVersionV1 = const ChatGetReminderApiVersion._('v1');
@@ -1375,76 +1381,6 @@ final BuiltSet<ChatMarkUnreadApiVersion> _$chatMarkUnreadApiVersionValues =
   _$chatMarkUnreadApiVersionV1,
 ]);
 
-const ChatMentionsApiVersion _$chatMentionsApiVersionV1 = const ChatMentionsApiVersion._('v1');
-
-ChatMentionsApiVersion _$valueOfChatMentionsApiVersion(String name) {
-  switch (name) {
-    case 'v1':
-      return _$chatMentionsApiVersionV1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ChatMentionsApiVersion> _$chatMentionsApiVersionValues =
-    BuiltSet<ChatMentionsApiVersion>(const <ChatMentionsApiVersion>[
-  _$chatMentionsApiVersionV1,
-]);
-
-const ChatMentionsIncludeStatus _$chatMentionsIncludeStatus$0 = const ChatMentionsIncludeStatus._('\$0');
-const ChatMentionsIncludeStatus _$chatMentionsIncludeStatus$1 = const ChatMentionsIncludeStatus._('\$1');
-
-ChatMentionsIncludeStatus _$valueOfChatMentionsIncludeStatus(String name) {
-  switch (name) {
-    case '\$0':
-      return _$chatMentionsIncludeStatus$0;
-    case '\$1':
-      return _$chatMentionsIncludeStatus$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ChatMentionsIncludeStatus> _$chatMentionsIncludeStatusValues =
-    BuiltSet<ChatMentionsIncludeStatus>(const <ChatMentionsIncludeStatus>[
-  _$chatMentionsIncludeStatus$0,
-  _$chatMentionsIncludeStatus$1,
-]);
-
-const ChatGetObjectsSharedInRoomApiVersion _$chatGetObjectsSharedInRoomApiVersionV1 =
-    const ChatGetObjectsSharedInRoomApiVersion._('v1');
-
-ChatGetObjectsSharedInRoomApiVersion _$valueOfChatGetObjectsSharedInRoomApiVersion(String name) {
-  switch (name) {
-    case 'v1':
-      return _$chatGetObjectsSharedInRoomApiVersionV1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ChatGetObjectsSharedInRoomApiVersion> _$chatGetObjectsSharedInRoomApiVersionValues =
-    BuiltSet<ChatGetObjectsSharedInRoomApiVersion>(const <ChatGetObjectsSharedInRoomApiVersion>[
-  _$chatGetObjectsSharedInRoomApiVersionV1,
-]);
-
-const ChatShareObjectToChatApiVersion _$chatShareObjectToChatApiVersionV1 =
-    const ChatShareObjectToChatApiVersion._('v1');
-
-ChatShareObjectToChatApiVersion _$valueOfChatShareObjectToChatApiVersion(String name) {
-  switch (name) {
-    case 'v1':
-      return _$chatShareObjectToChatApiVersionV1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ChatShareObjectToChatApiVersion> _$chatShareObjectToChatApiVersionValues =
-    BuiltSet<ChatShareObjectToChatApiVersion>(const <ChatShareObjectToChatApiVersion>[
-  _$chatShareObjectToChatApiVersionV1,
-]);
-
 const ChatGetObjectsSharedInRoomOverviewApiVersion _$chatGetObjectsSharedInRoomOverviewApiVersionV1 =
     const ChatGetObjectsSharedInRoomOverviewApiVersion._('v1');
 
@@ -1460,6 +1396,22 @@ ChatGetObjectsSharedInRoomOverviewApiVersion _$valueOfChatGetObjectsSharedInRoom
 final BuiltSet<ChatGetObjectsSharedInRoomOverviewApiVersion> _$chatGetObjectsSharedInRoomOverviewApiVersionValues =
     BuiltSet<ChatGetObjectsSharedInRoomOverviewApiVersion>(const <ChatGetObjectsSharedInRoomOverviewApiVersion>[
   _$chatGetObjectsSharedInRoomOverviewApiVersionV1,
+]);
+
+const ChatMentionsApiVersion _$chatMentionsApiVersionV1 = const ChatMentionsApiVersion._('v1');
+
+ChatMentionsApiVersion _$valueOfChatMentionsApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$chatMentionsApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<ChatMentionsApiVersion> _$chatMentionsApiVersionValues =
+    BuiltSet<ChatMentionsApiVersion>(const <ChatMentionsApiVersion>[
+  _$chatMentionsApiVersionV1,
 ]);
 
 const SignalingGetSettingsApiVersion _$signalingGetSettingsApiVersionV3 = const SignalingGetSettingsApiVersion._('v3');
@@ -1661,6 +1613,76 @@ SignalingSendMessagesApiVersion _$valueOfSignalingSendMessagesApiVersion(String 
 final BuiltSet<SignalingSendMessagesApiVersion> _$signalingSendMessagesApiVersionValues =
     BuiltSet<SignalingSendMessagesApiVersion>(const <SignalingSendMessagesApiVersion>[
   _$signalingSendMessagesApiVersionV3,
+]);
+
+const LiveTranscriptionEnableApiVersion _$liveTranscriptionEnableApiVersionV1 =
+    const LiveTranscriptionEnableApiVersion._('v1');
+
+LiveTranscriptionEnableApiVersion _$valueOfLiveTranscriptionEnableApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$liveTranscriptionEnableApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<LiveTranscriptionEnableApiVersion> _$liveTranscriptionEnableApiVersionValues =
+    BuiltSet<LiveTranscriptionEnableApiVersion>(const <LiveTranscriptionEnableApiVersion>[
+  _$liveTranscriptionEnableApiVersionV1,
+]);
+
+const LiveTranscriptionDisableApiVersion _$liveTranscriptionDisableApiVersionV1 =
+    const LiveTranscriptionDisableApiVersion._('v1');
+
+LiveTranscriptionDisableApiVersion _$valueOfLiveTranscriptionDisableApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$liveTranscriptionDisableApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<LiveTranscriptionDisableApiVersion> _$liveTranscriptionDisableApiVersionValues =
+    BuiltSet<LiveTranscriptionDisableApiVersion>(const <LiveTranscriptionDisableApiVersion>[
+  _$liveTranscriptionDisableApiVersionV1,
+]);
+
+const LiveTranscriptionGetAvailableLanguagesApiVersion _$liveTranscriptionGetAvailableLanguagesApiVersionV1 =
+    const LiveTranscriptionGetAvailableLanguagesApiVersion._('v1');
+
+LiveTranscriptionGetAvailableLanguagesApiVersion _$valueOfLiveTranscriptionGetAvailableLanguagesApiVersion(
+    String name) {
+  switch (name) {
+    case 'v1':
+      return _$liveTranscriptionGetAvailableLanguagesApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<LiveTranscriptionGetAvailableLanguagesApiVersion>
+    _$liveTranscriptionGetAvailableLanguagesApiVersionValues =
+    BuiltSet<LiveTranscriptionGetAvailableLanguagesApiVersion>(const <LiveTranscriptionGetAvailableLanguagesApiVersion>[
+  _$liveTranscriptionGetAvailableLanguagesApiVersionV1,
+]);
+
+const LiveTranscriptionSetLanguageApiVersion _$liveTranscriptionSetLanguageApiVersionV1 =
+    const LiveTranscriptionSetLanguageApiVersion._('v1');
+
+LiveTranscriptionSetLanguageApiVersion _$valueOfLiveTranscriptionSetLanguageApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$liveTranscriptionSetLanguageApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<LiveTranscriptionSetLanguageApiVersion> _$liveTranscriptionSetLanguageApiVersionValues =
+    BuiltSet<LiveTranscriptionSetLanguageApiVersion>(const <LiveTranscriptionSetLanguageApiVersion>[
+  _$liveTranscriptionSetLanguageApiVersionV1,
 ]);
 
 const MatterbridgeGetBridgeOfRoomApiVersion _$matterbridgeGetBridgeOfRoomApiVersionV1 =
@@ -2131,46 +2153,6 @@ final BuiltSet<RoomGetRoomsNoStatusUpdate> _$roomGetRoomsNoStatusUpdateValues =
     BuiltSet<RoomGetRoomsNoStatusUpdate>(const <RoomGetRoomsNoStatusUpdate>[
   _$roomGetRoomsNoStatusUpdate$0,
   _$roomGetRoomsNoStatusUpdate$1,
-]);
-
-const RoomGetRoomsIncludeStatus _$roomGetRoomsIncludeStatus$0 = const RoomGetRoomsIncludeStatus._('\$0');
-const RoomGetRoomsIncludeStatus _$roomGetRoomsIncludeStatus$1 = const RoomGetRoomsIncludeStatus._('\$1');
-
-RoomGetRoomsIncludeStatus _$valueOfRoomGetRoomsIncludeStatus(String name) {
-  switch (name) {
-    case '\$0':
-      return _$roomGetRoomsIncludeStatus$0;
-    case '\$1':
-      return _$roomGetRoomsIncludeStatus$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<RoomGetRoomsIncludeStatus> _$roomGetRoomsIncludeStatusValues =
-    BuiltSet<RoomGetRoomsIncludeStatus>(const <RoomGetRoomsIncludeStatus>[
-  _$roomGetRoomsIncludeStatus$0,
-  _$roomGetRoomsIncludeStatus$1,
-]);
-
-const RoomGetRoomsIncludeLastMessage _$roomGetRoomsIncludeLastMessage$0 = const RoomGetRoomsIncludeLastMessage._('\$0');
-const RoomGetRoomsIncludeLastMessage _$roomGetRoomsIncludeLastMessage$1 = const RoomGetRoomsIncludeLastMessage._('\$1');
-
-RoomGetRoomsIncludeLastMessage _$valueOfRoomGetRoomsIncludeLastMessage(String name) {
-  switch (name) {
-    case '\$0':
-      return _$roomGetRoomsIncludeLastMessage$0;
-    case '\$1':
-      return _$roomGetRoomsIncludeLastMessage$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<RoomGetRoomsIncludeLastMessage> _$roomGetRoomsIncludeLastMessageValues =
-    BuiltSet<RoomGetRoomsIncludeLastMessage>(const <RoomGetRoomsIncludeLastMessage>[
-  _$roomGetRoomsIncludeLastMessage$0,
-  _$roomGetRoomsIncludeLastMessage$1,
 ]);
 
 const RoomCreateRoomApiVersion _$roomCreateRoomApiVersionV4 = const RoomCreateRoomApiVersion._('v4');
@@ -2648,28 +2630,6 @@ final BuiltSet<RoomGetParticipantsApiVersion> _$roomGetParticipantsApiVersionVal
   _$roomGetParticipantsApiVersionV4,
 ]);
 
-const RoomGetParticipantsIncludeStatus _$roomGetParticipantsIncludeStatus$0 =
-    const RoomGetParticipantsIncludeStatus._('\$0');
-const RoomGetParticipantsIncludeStatus _$roomGetParticipantsIncludeStatus$1 =
-    const RoomGetParticipantsIncludeStatus._('\$1');
-
-RoomGetParticipantsIncludeStatus _$valueOfRoomGetParticipantsIncludeStatus(String name) {
-  switch (name) {
-    case '\$0':
-      return _$roomGetParticipantsIncludeStatus$0;
-    case '\$1':
-      return _$roomGetParticipantsIncludeStatus$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<RoomGetParticipantsIncludeStatus> _$roomGetParticipantsIncludeStatusValues =
-    BuiltSet<RoomGetParticipantsIncludeStatus>(const <RoomGetParticipantsIncludeStatus>[
-  _$roomGetParticipantsIncludeStatus$0,
-  _$roomGetParticipantsIncludeStatus$1,
-]);
-
 const RoomAddParticipantToRoomApiVersion _$roomAddParticipantToRoomApiVersionV4 =
     const RoomAddParticipantToRoomApiVersion._('v4');
 
@@ -2758,28 +2718,6 @@ RoomGetBreakoutRoomParticipantsApiVersion _$valueOfRoomGetBreakoutRoomParticipan
 final BuiltSet<RoomGetBreakoutRoomParticipantsApiVersion> _$roomGetBreakoutRoomParticipantsApiVersionValues =
     BuiltSet<RoomGetBreakoutRoomParticipantsApiVersion>(const <RoomGetBreakoutRoomParticipantsApiVersion>[
   _$roomGetBreakoutRoomParticipantsApiVersionV4,
-]);
-
-const RoomGetBreakoutRoomParticipantsIncludeStatus _$roomGetBreakoutRoomParticipantsIncludeStatus$0 =
-    const RoomGetBreakoutRoomParticipantsIncludeStatus._('\$0');
-const RoomGetBreakoutRoomParticipantsIncludeStatus _$roomGetBreakoutRoomParticipantsIncludeStatus$1 =
-    const RoomGetBreakoutRoomParticipantsIncludeStatus._('\$1');
-
-RoomGetBreakoutRoomParticipantsIncludeStatus _$valueOfRoomGetBreakoutRoomParticipantsIncludeStatus(String name) {
-  switch (name) {
-    case '\$0':
-      return _$roomGetBreakoutRoomParticipantsIncludeStatus$0;
-    case '\$1':
-      return _$roomGetBreakoutRoomParticipantsIncludeStatus$1;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<RoomGetBreakoutRoomParticipantsIncludeStatus> _$roomGetBreakoutRoomParticipantsIncludeStatusValues =
-    BuiltSet<RoomGetBreakoutRoomParticipantsIncludeStatus>(const <RoomGetBreakoutRoomParticipantsIncludeStatus>[
-  _$roomGetBreakoutRoomParticipantsIncludeStatus$0,
-  _$roomGetBreakoutRoomParticipantsIncludeStatus$1,
 ]);
 
 const RoomRemoveSelfFromRoomApiVersion _$roomRemoveSelfFromRoomApiVersionV4 =
@@ -3341,6 +3279,33 @@ final BuiltSet<Capabilities_Config_Conversations_ListStyle> _$capabilitiesConfig
   _$capabilitiesConfigConversationsListStyleCompact,
 ]);
 
+const Capabilities_Config_Signaling_Mode _$capabilitiesConfigSignalingModeInternal =
+    const Capabilities_Config_Signaling_Mode._('internal');
+const Capabilities_Config_Signaling_Mode _$capabilitiesConfigSignalingMode$external =
+    const Capabilities_Config_Signaling_Mode._('\$external');
+const Capabilities_Config_Signaling_Mode _$capabilitiesConfigSignalingModeConversationCluster =
+    const Capabilities_Config_Signaling_Mode._('conversationCluster');
+
+Capabilities_Config_Signaling_Mode _$valueOfCapabilities_Config_Signaling_Mode(String name) {
+  switch (name) {
+    case 'internal':
+      return _$capabilitiesConfigSignalingModeInternal;
+    case '\$external':
+      return _$capabilitiesConfigSignalingMode$external;
+    case 'conversationCluster':
+      return _$capabilitiesConfigSignalingModeConversationCluster;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<Capabilities_Config_Signaling_Mode> _$capabilitiesConfigSignalingModeValues =
+    BuiltSet<Capabilities_Config_Signaling_Mode>(const <Capabilities_Config_Signaling_Mode>[
+  _$capabilitiesConfigSignalingModeInternal,
+  _$capabilitiesConfigSignalingMode$external,
+  _$capabilitiesConfigSignalingModeConversationCluster,
+]);
+
 const RoomSetMentionPermissionsApiVersion _$roomSetMentionPermissionsApiVersionV4 =
     const RoomSetMentionPermissionsApiVersion._('v4');
 
@@ -3738,6 +3703,121 @@ final BuiltSet<SignalingBackendApiVersion> _$signalingBackendApiVersionValues =
   _$signalingBackendApiVersionV3,
 ]);
 
+const ThreadGetRecentActiveThreadsApiVersion _$threadGetRecentActiveThreadsApiVersionV1 =
+    const ThreadGetRecentActiveThreadsApiVersion._('v1');
+
+ThreadGetRecentActiveThreadsApiVersion _$valueOfThreadGetRecentActiveThreadsApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$threadGetRecentActiveThreadsApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<ThreadGetRecentActiveThreadsApiVersion> _$threadGetRecentActiveThreadsApiVersionValues =
+    BuiltSet<ThreadGetRecentActiveThreadsApiVersion>(const <ThreadGetRecentActiveThreadsApiVersion>[
+  _$threadGetRecentActiveThreadsApiVersionV1,
+]);
+
+const ThreadAttendee_NotificationLevel _$threadAttendeeNotificationLevel$0 =
+    const ThreadAttendee_NotificationLevel._('\$0');
+const ThreadAttendee_NotificationLevel _$threadAttendeeNotificationLevel$1 =
+    const ThreadAttendee_NotificationLevel._('\$1');
+const ThreadAttendee_NotificationLevel _$threadAttendeeNotificationLevel$2 =
+    const ThreadAttendee_NotificationLevel._('\$2');
+const ThreadAttendee_NotificationLevel _$threadAttendeeNotificationLevel$3 =
+    const ThreadAttendee_NotificationLevel._('\$3');
+
+ThreadAttendee_NotificationLevel _$valueOfThreadAttendee_NotificationLevel(String name) {
+  switch (name) {
+    case '\$0':
+      return _$threadAttendeeNotificationLevel$0;
+    case '\$1':
+      return _$threadAttendeeNotificationLevel$1;
+    case '\$2':
+      return _$threadAttendeeNotificationLevel$2;
+    case '\$3':
+      return _$threadAttendeeNotificationLevel$3;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<ThreadAttendee_NotificationLevel> _$threadAttendeeNotificationLevelValues =
+    BuiltSet<ThreadAttendee_NotificationLevel>(const <ThreadAttendee_NotificationLevel>[
+  _$threadAttendeeNotificationLevel$0,
+  _$threadAttendeeNotificationLevel$1,
+  _$threadAttendeeNotificationLevel$2,
+  _$threadAttendeeNotificationLevel$3,
+]);
+
+const ThreadGetSubscribedThreadsApiVersion _$threadGetSubscribedThreadsApiVersionV1 =
+    const ThreadGetSubscribedThreadsApiVersion._('v1');
+
+ThreadGetSubscribedThreadsApiVersion _$valueOfThreadGetSubscribedThreadsApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$threadGetSubscribedThreadsApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<ThreadGetSubscribedThreadsApiVersion> _$threadGetSubscribedThreadsApiVersionValues =
+    BuiltSet<ThreadGetSubscribedThreadsApiVersion>(const <ThreadGetSubscribedThreadsApiVersion>[
+  _$threadGetSubscribedThreadsApiVersionV1,
+]);
+
+const ThreadGetThreadApiVersion _$threadGetThreadApiVersionV1 = const ThreadGetThreadApiVersion._('v1');
+
+ThreadGetThreadApiVersion _$valueOfThreadGetThreadApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$threadGetThreadApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<ThreadGetThreadApiVersion> _$threadGetThreadApiVersionValues =
+    BuiltSet<ThreadGetThreadApiVersion>(const <ThreadGetThreadApiVersion>[
+  _$threadGetThreadApiVersionV1,
+]);
+
+const ThreadRenameThreadApiVersion _$threadRenameThreadApiVersionV1 = const ThreadRenameThreadApiVersion._('v1');
+
+ThreadRenameThreadApiVersion _$valueOfThreadRenameThreadApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$threadRenameThreadApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<ThreadRenameThreadApiVersion> _$threadRenameThreadApiVersionValues =
+    BuiltSet<ThreadRenameThreadApiVersion>(const <ThreadRenameThreadApiVersion>[
+  _$threadRenameThreadApiVersionV1,
+]);
+
+const ThreadSetNotificationLevelApiVersion _$threadSetNotificationLevelApiVersionV1 =
+    const ThreadSetNotificationLevelApiVersion._('v1');
+
+ThreadSetNotificationLevelApiVersion _$valueOfThreadSetNotificationLevelApiVersion(String name) {
+  switch (name) {
+    case 'v1':
+      return _$threadSetNotificationLevelApiVersionV1;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<ThreadSetNotificationLevelApiVersion> _$threadSetNotificationLevelApiVersionValues =
+    BuiltSet<ThreadSetNotificationLevelApiVersion>(const <ThreadSetNotificationLevelApiVersion>[
+  _$threadSetNotificationLevelApiVersionV1,
+]);
+
 Serializer<OCSMeta> _$oCSMetaSerializer = _$OCSMetaSerializer();
 Serializer<BaseMessage> _$baseMessageSerializer = _$BaseMessageSerializer();
 Serializer<ChatMessage> _$chatMessageSerializer = _$ChatMessageSerializer();
@@ -3776,10 +3856,14 @@ Serializer<BotListBotsResponseApplicationJson_Ocs> _$botListBotsResponseApplicat
     _$BotListBotsResponseApplicationJson_OcsSerializer();
 Serializer<BotListBotsResponseApplicationJson> _$botListBotsResponseApplicationJsonSerializer =
     _$BotListBotsResponseApplicationJsonSerializer();
+Serializer<BotEnableBotResponseApplicationJson_Ocs_Data> _$botEnableBotResponseApplicationJsonOcsDataSerializer =
+    _$BotEnableBotResponseApplicationJson_Ocs_DataSerializer();
 Serializer<BotEnableBotResponseApplicationJson_Ocs> _$botEnableBotResponseApplicationJsonOcsSerializer =
     _$BotEnableBotResponseApplicationJson_OcsSerializer();
 Serializer<BotEnableBotResponseApplicationJson> _$botEnableBotResponseApplicationJsonSerializer =
     _$BotEnableBotResponseApplicationJsonSerializer();
+Serializer<BotDisableBotResponseApplicationJson_Ocs_Data> _$botDisableBotResponseApplicationJsonOcsDataSerializer =
+    _$BotDisableBotResponseApplicationJson_Ocs_DataSerializer();
 Serializer<BotDisableBotResponseApplicationJson_Ocs> _$botDisableBotResponseApplicationJsonOcsSerializer =
     _$BotDisableBotResponseApplicationJson_OcsSerializer();
 Serializer<BotDisableBotResponseApplicationJson> _$botDisableBotResponseApplicationJsonSerializer =
@@ -3946,6 +4030,8 @@ Serializer<ChatChatReceiveMessagesHeaders> _$chatChatReceiveMessagesHeadersSeria
     _$ChatChatReceiveMessagesHeadersSerializer();
 Serializer<ChatSendMessageRequestApplicationJson> _$chatSendMessageRequestApplicationJsonSerializer =
     _$ChatSendMessageRequestApplicationJsonSerializer();
+Serializer<ChatSendMessageResponseApplicationJson_Ocs_Data> _$chatSendMessageResponseApplicationJsonOcsDataSerializer =
+    _$ChatSendMessageResponseApplicationJson_Ocs_DataSerializer();
 Serializer<ChatSendMessageResponseApplicationJson_Ocs> _$chatSendMessageResponseApplicationJsonOcsSerializer =
     _$ChatSendMessageResponseApplicationJson_OcsSerializer();
 Serializer<ChatSendMessageResponseApplicationJson> _$chatSendMessageResponseApplicationJsonSerializer =
@@ -3958,6 +4044,26 @@ Serializer<ChatClearHistoryResponseApplicationJson> _$chatClearHistoryResponseAp
     _$ChatClearHistoryResponseApplicationJsonSerializer();
 Serializer<ChatChatClearHistoryHeaders> _$chatChatClearHistoryHeadersSerializer =
     _$ChatChatClearHistoryHeadersSerializer();
+Serializer<ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs>
+    _$chatGetObjectsSharedInRoomResponseApplicationJsonOcsSerializer =
+    _$ChatGetObjectsSharedInRoomResponseApplicationJson_OcsSerializer();
+Serializer<ChatGetObjectsSharedInRoomResponseApplicationJson>
+    _$chatGetObjectsSharedInRoomResponseApplicationJsonSerializer =
+    _$ChatGetObjectsSharedInRoomResponseApplicationJsonSerializer();
+Serializer<ChatChatGetObjectsSharedInRoomHeaders> _$chatChatGetObjectsSharedInRoomHeadersSerializer =
+    _$ChatChatGetObjectsSharedInRoomHeadersSerializer();
+Serializer<ChatShareObjectToChatRequestApplicationJson> _$chatShareObjectToChatRequestApplicationJsonSerializer =
+    _$ChatShareObjectToChatRequestApplicationJsonSerializer();
+Serializer<ChatShareObjectToChatResponseApplicationJson_Ocs_Data>
+    _$chatShareObjectToChatResponseApplicationJsonOcsDataSerializer =
+    _$ChatShareObjectToChatResponseApplicationJson_Ocs_DataSerializer();
+Serializer<ChatShareObjectToChatResponseApplicationJson_Ocs>
+    _$chatShareObjectToChatResponseApplicationJsonOcsSerializer =
+    _$ChatShareObjectToChatResponseApplicationJson_OcsSerializer();
+Serializer<ChatShareObjectToChatResponseApplicationJson> _$chatShareObjectToChatResponseApplicationJsonSerializer =
+    _$ChatShareObjectToChatResponseApplicationJsonSerializer();
+Serializer<ChatChatShareObjectToChatHeaders> _$chatChatShareObjectToChatHeadersSerializer =
+    _$ChatChatShareObjectToChatHeadersSerializer();
 Serializer<ChatSummarizeChatRequestApplicationJson> _$chatSummarizeChatRequestApplicationJsonSerializer =
     _$ChatSummarizeChatRequestApplicationJsonSerializer();
 Serializer<ChatSummarizeChatResponseApplicationJson_Ocs_Data>
@@ -3967,6 +4073,13 @@ Serializer<ChatSummarizeChatResponseApplicationJson_Ocs> _$chatSummarizeChatResp
     _$ChatSummarizeChatResponseApplicationJson_OcsSerializer();
 Serializer<ChatSummarizeChatResponseApplicationJson> _$chatSummarizeChatResponseApplicationJsonSerializer =
     _$ChatSummarizeChatResponseApplicationJsonSerializer();
+Serializer<ChatGetMessageContextResponseApplicationJson_Ocs>
+    _$chatGetMessageContextResponseApplicationJsonOcsSerializer =
+    _$ChatGetMessageContextResponseApplicationJson_OcsSerializer();
+Serializer<ChatGetMessageContextResponseApplicationJson> _$chatGetMessageContextResponseApplicationJsonSerializer =
+    _$ChatGetMessageContextResponseApplicationJsonSerializer();
+Serializer<ChatChatGetMessageContextHeaders> _$chatChatGetMessageContextHeadersSerializer =
+    _$ChatChatGetMessageContextHeadersSerializer();
 Serializer<ChatEditMessageRequestApplicationJson> _$chatEditMessageRequestApplicationJsonSerializer =
     _$ChatEditMessageRequestApplicationJsonSerializer();
 Serializer<ChatEditMessageResponseApplicationJson_Ocs> _$chatEditMessageResponseApplicationJsonOcsSerializer =
@@ -3981,13 +4094,6 @@ Serializer<ChatDeleteMessageResponseApplicationJson> _$chatDeleteMessageResponse
     _$ChatDeleteMessageResponseApplicationJsonSerializer();
 Serializer<ChatChatDeleteMessageHeaders> _$chatChatDeleteMessageHeadersSerializer =
     _$ChatChatDeleteMessageHeadersSerializer();
-Serializer<ChatGetMessageContextResponseApplicationJson_Ocs>
-    _$chatGetMessageContextResponseApplicationJsonOcsSerializer =
-    _$ChatGetMessageContextResponseApplicationJson_OcsSerializer();
-Serializer<ChatGetMessageContextResponseApplicationJson> _$chatGetMessageContextResponseApplicationJsonSerializer =
-    _$ChatGetMessageContextResponseApplicationJsonSerializer();
-Serializer<ChatChatGetMessageContextHeaders> _$chatChatGetMessageContextHeadersSerializer =
-    _$ChatChatGetMessageContextHeadersSerializer();
 Serializer<ChatReminder> _$chatReminderSerializer = _$ChatReminderSerializer();
 Serializer<ChatGetReminderResponseApplicationJson_Ocs> _$chatGetReminderResponseApplicationJsonOcsSerializer =
     _$ChatGetReminderResponseApplicationJson_OcsSerializer();
@@ -4026,34 +4132,17 @@ Serializer<ChatMarkUnreadResponseApplicationJson_Ocs> _$chatMarkUnreadResponseAp
 Serializer<ChatMarkUnreadResponseApplicationJson> _$chatMarkUnreadResponseApplicationJsonSerializer =
     _$ChatMarkUnreadResponseApplicationJsonSerializer();
 Serializer<ChatChatMarkUnreadHeaders> _$chatChatMarkUnreadHeadersSerializer = _$ChatChatMarkUnreadHeadersSerializer();
-Serializer<ChatMentionSuggestion> _$chatMentionSuggestionSerializer = _$ChatMentionSuggestionSerializer();
-Serializer<ChatMentionsResponseApplicationJson_Ocs> _$chatMentionsResponseApplicationJsonOcsSerializer =
-    _$ChatMentionsResponseApplicationJson_OcsSerializer();
-Serializer<ChatMentionsResponseApplicationJson> _$chatMentionsResponseApplicationJsonSerializer =
-    _$ChatMentionsResponseApplicationJsonSerializer();
-Serializer<ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs>
-    _$chatGetObjectsSharedInRoomResponseApplicationJsonOcsSerializer =
-    _$ChatGetObjectsSharedInRoomResponseApplicationJson_OcsSerializer();
-Serializer<ChatGetObjectsSharedInRoomResponseApplicationJson>
-    _$chatGetObjectsSharedInRoomResponseApplicationJsonSerializer =
-    _$ChatGetObjectsSharedInRoomResponseApplicationJsonSerializer();
-Serializer<ChatChatGetObjectsSharedInRoomHeaders> _$chatChatGetObjectsSharedInRoomHeadersSerializer =
-    _$ChatChatGetObjectsSharedInRoomHeadersSerializer();
-Serializer<ChatShareObjectToChatRequestApplicationJson> _$chatShareObjectToChatRequestApplicationJsonSerializer =
-    _$ChatShareObjectToChatRequestApplicationJsonSerializer();
-Serializer<ChatShareObjectToChatResponseApplicationJson_Ocs>
-    _$chatShareObjectToChatResponseApplicationJsonOcsSerializer =
-    _$ChatShareObjectToChatResponseApplicationJson_OcsSerializer();
-Serializer<ChatShareObjectToChatResponseApplicationJson> _$chatShareObjectToChatResponseApplicationJsonSerializer =
-    _$ChatShareObjectToChatResponseApplicationJsonSerializer();
-Serializer<ChatChatShareObjectToChatHeaders> _$chatChatShareObjectToChatHeadersSerializer =
-    _$ChatChatShareObjectToChatHeadersSerializer();
 Serializer<ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs>
     _$chatGetObjectsSharedInRoomOverviewResponseApplicationJsonOcsSerializer =
     _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsSerializer();
 Serializer<ChatGetObjectsSharedInRoomOverviewResponseApplicationJson>
     _$chatGetObjectsSharedInRoomOverviewResponseApplicationJsonSerializer =
     _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonSerializer();
+Serializer<ChatMentionSuggestion> _$chatMentionSuggestionSerializer = _$ChatMentionSuggestionSerializer();
+Serializer<ChatMentionsResponseApplicationJson_Ocs> _$chatMentionsResponseApplicationJsonOcsSerializer =
+    _$ChatMentionsResponseApplicationJson_OcsSerializer();
+Serializer<ChatMentionsResponseApplicationJson> _$chatMentionsResponseApplicationJsonSerializer =
+    _$ChatMentionsResponseApplicationJsonSerializer();
 Serializer<SignalingFederationSettings_HelloAuthParams> _$signalingFederationSettingsHelloAuthParamsSerializer =
     _$SignalingFederationSettings_HelloAuthParamsSerializer();
 Serializer<SignalingFederationSettings> _$signalingFederationSettingsSerializer =
@@ -4149,6 +4238,35 @@ Serializer<SignalingSendMessagesResponseApplicationJson_Ocs>
     _$SignalingSendMessagesResponseApplicationJson_OcsSerializer();
 Serializer<SignalingSendMessagesResponseApplicationJson> _$signalingSendMessagesResponseApplicationJsonSerializer =
     _$SignalingSendMessagesResponseApplicationJsonSerializer();
+Serializer<LiveTranscriptionEnableResponseApplicationJson_Ocs>
+    _$liveTranscriptionEnableResponseApplicationJsonOcsSerializer =
+    _$LiveTranscriptionEnableResponseApplicationJson_OcsSerializer();
+Serializer<LiveTranscriptionEnableResponseApplicationJson> _$liveTranscriptionEnableResponseApplicationJsonSerializer =
+    _$LiveTranscriptionEnableResponseApplicationJsonSerializer();
+Serializer<LiveTranscriptionDisableResponseApplicationJson_Ocs>
+    _$liveTranscriptionDisableResponseApplicationJsonOcsSerializer =
+    _$LiveTranscriptionDisableResponseApplicationJson_OcsSerializer();
+Serializer<LiveTranscriptionDisableResponseApplicationJson>
+    _$liveTranscriptionDisableResponseApplicationJsonSerializer =
+    _$LiveTranscriptionDisableResponseApplicationJsonSerializer();
+Serializer<LiveTranscriptionLanguage_Metadata> _$liveTranscriptionLanguageMetadataSerializer =
+    _$LiveTranscriptionLanguage_MetadataSerializer();
+Serializer<LiveTranscriptionLanguage> _$liveTranscriptionLanguageSerializer = _$LiveTranscriptionLanguageSerializer();
+Serializer<LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs>
+    _$liveTranscriptionGetAvailableLanguagesResponseApplicationJsonOcsSerializer =
+    _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsSerializer();
+Serializer<LiveTranscriptionGetAvailableLanguagesResponseApplicationJson>
+    _$liveTranscriptionGetAvailableLanguagesResponseApplicationJsonSerializer =
+    _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonSerializer();
+Serializer<LiveTranscriptionSetLanguageRequestApplicationJson>
+    _$liveTranscriptionSetLanguageRequestApplicationJsonSerializer =
+    _$LiveTranscriptionSetLanguageRequestApplicationJsonSerializer();
+Serializer<LiveTranscriptionSetLanguageResponseApplicationJson_Ocs>
+    _$liveTranscriptionSetLanguageResponseApplicationJsonOcsSerializer =
+    _$LiveTranscriptionSetLanguageResponseApplicationJson_OcsSerializer();
+Serializer<LiveTranscriptionSetLanguageResponseApplicationJson>
+    _$liveTranscriptionSetLanguageResponseApplicationJsonSerializer =
+    _$LiveTranscriptionSetLanguageResponseApplicationJsonSerializer();
 Serializer<Matterbridge> _$matterbridgeSerializer = _$MatterbridgeSerializer();
 Serializer<MatterbridgeProcessState> _$matterbridgeProcessStateSerializer = _$MatterbridgeProcessStateSerializer();
 Serializer<MatterbridgeWithProcessState> _$matterbridgeWithProcessStateSerializer =
@@ -4546,6 +4664,8 @@ Serializer<Capabilities_Config_Signaling> _$capabilitiesConfigSignalingSerialize
     _$Capabilities_Config_SignalingSerializer();
 Serializer<Capabilities_Config_Experiments> _$capabilitiesConfigExperimentsSerializer =
     _$Capabilities_Config_ExperimentsSerializer();
+Serializer<Capabilities_Config_Permissions> _$capabilitiesConfigPermissionsSerializer =
+    _$Capabilities_Config_PermissionsSerializer();
 Serializer<Capabilities_Config> _$capabilitiesConfigSerializer = _$Capabilities_ConfigSerializer();
 Serializer<Capabilities> _$capabilitiesSerializer = _$CapabilitiesSerializer();
 Serializer<RoomGetCapabilitiesResponseApplicationJson_Ocs> _$roomGetCapabilitiesResponseApplicationJsonOcsSerializer =
@@ -4707,6 +4827,42 @@ Serializer<SignalingBackendResponseApplicationJson_Ocs> _$signalingBackendRespon
     _$SignalingBackendResponseApplicationJson_OcsSerializer();
 Serializer<SignalingBackendResponseApplicationJson> _$signalingBackendResponseApplicationJsonSerializer =
     _$SignalingBackendResponseApplicationJsonSerializer();
+Serializer<Thread> _$threadSerializer = _$ThreadSerializer();
+Serializer<ThreadAttendee> _$threadAttendeeSerializer = _$ThreadAttendeeSerializer();
+Serializer<ThreadInfo_First> _$threadInfoFirstSerializer = _$ThreadInfo_FirstSerializer();
+Serializer<ThreadInfo_Last> _$threadInfoLastSerializer = _$ThreadInfo_LastSerializer();
+Serializer<ThreadInfo> _$threadInfoSerializer = _$ThreadInfoSerializer();
+Serializer<ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs>
+    _$threadGetRecentActiveThreadsResponseApplicationJsonOcsSerializer =
+    _$ThreadGetRecentActiveThreadsResponseApplicationJson_OcsSerializer();
+Serializer<ThreadGetRecentActiveThreadsResponseApplicationJson>
+    _$threadGetRecentActiveThreadsResponseApplicationJsonSerializer =
+    _$ThreadGetRecentActiveThreadsResponseApplicationJsonSerializer();
+Serializer<ThreadGetSubscribedThreadsResponseApplicationJson_Ocs>
+    _$threadGetSubscribedThreadsResponseApplicationJsonOcsSerializer =
+    _$ThreadGetSubscribedThreadsResponseApplicationJson_OcsSerializer();
+Serializer<ThreadGetSubscribedThreadsResponseApplicationJson>
+    _$threadGetSubscribedThreadsResponseApplicationJsonSerializer =
+    _$ThreadGetSubscribedThreadsResponseApplicationJsonSerializer();
+Serializer<ThreadGetThreadResponseApplicationJson_Ocs> _$threadGetThreadResponseApplicationJsonOcsSerializer =
+    _$ThreadGetThreadResponseApplicationJson_OcsSerializer();
+Serializer<ThreadGetThreadResponseApplicationJson> _$threadGetThreadResponseApplicationJsonSerializer =
+    _$ThreadGetThreadResponseApplicationJsonSerializer();
+Serializer<ThreadRenameThreadRequestApplicationJson> _$threadRenameThreadRequestApplicationJsonSerializer =
+    _$ThreadRenameThreadRequestApplicationJsonSerializer();
+Serializer<ThreadRenameThreadResponseApplicationJson_Ocs> _$threadRenameThreadResponseApplicationJsonOcsSerializer =
+    _$ThreadRenameThreadResponseApplicationJson_OcsSerializer();
+Serializer<ThreadRenameThreadResponseApplicationJson> _$threadRenameThreadResponseApplicationJsonSerializer =
+    _$ThreadRenameThreadResponseApplicationJsonSerializer();
+Serializer<ThreadSetNotificationLevelRequestApplicationJson>
+    _$threadSetNotificationLevelRequestApplicationJsonSerializer =
+    _$ThreadSetNotificationLevelRequestApplicationJsonSerializer();
+Serializer<ThreadSetNotificationLevelResponseApplicationJson_Ocs>
+    _$threadSetNotificationLevelResponseApplicationJsonOcsSerializer =
+    _$ThreadSetNotificationLevelResponseApplicationJson_OcsSerializer();
+Serializer<ThreadSetNotificationLevelResponseApplicationJson>
+    _$threadSetNotificationLevelResponseApplicationJsonSerializer =
+    _$ThreadSetNotificationLevelResponseApplicationJsonSerializer();
 Serializer<TempAvatarPostAvatarResponseApplicationJson_Ocs> _$tempAvatarPostAvatarResponseApplicationJsonOcsSerializer =
     _$TempAvatarPostAvatarResponseApplicationJson_OcsSerializer();
 Serializer<TempAvatarPostAvatarResponseApplicationJson> _$tempAvatarPostAvatarResponseApplicationJsonSerializer =
@@ -4961,6 +5117,30 @@ class _$ChatMessageSerializer implements StructuredSerializer<ChatMessage> {
         ..add('silent')
         ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.threadId;
+    if (value != null) {
+      result
+        ..add('threadId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.isThread;
+    if (value != null) {
+      result
+        ..add('isThread')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.threadTitle;
+    if (value != null) {
+      result
+        ..add('threadTitle')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.threadReplies;
+    if (value != null) {
+      result
+        ..add('threadReplies')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -5021,6 +5201,18 @@ class _$ChatMessageSerializer implements StructuredSerializer<ChatMessage> {
           break;
         case 'silent':
           result.silent = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadId':
+          result.threadId = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'isThread':
+          result.isThread = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadTitle':
+          result.threadTitle = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'threadReplies':
+          result.threadReplies = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
         case 'actorDisplayName':
           result.actorDisplayName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
@@ -5086,7 +5278,7 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
       'callPermissions',
       serializers.serialize(object.callPermissions, specifiedType: const FullType(int)),
       'callRecording',
-      serializers.serialize(object.callRecording, specifiedType: const FullType(int)),
+      serializers.serialize(object.callRecording, specifiedType: const FullType(Room_CallRecording)),
       'callStartTime',
       serializers.serialize(object.callStartTime, specifiedType: const FullType(int)),
       'canDeleteConversation',
@@ -5128,7 +5320,7 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
       'lobbyTimer',
       serializers.serialize(object.lobbyTimer, specifiedType: const FullType(int)),
       'mentionPermissions',
-      serializers.serialize(object.mentionPermissions, specifiedType: const FullType(int)),
+      serializers.serialize(object.mentionPermissions, specifiedType: const FullType(Room_MentionPermissions)),
       'messageExpiration',
       serializers.serialize(object.messageExpiration, specifiedType: const FullType(int)),
       'name',
@@ -5186,6 +5378,12 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
       result
         ..add('lastMessage')
         ..add(serializers.serialize(value, specifiedType: const FullType(RoomLastMessage)));
+    }
+    value = object.liveTranscriptionLanguageId;
+    if (value != null) {
+      result
+        ..add('liveTranscriptionLanguageId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.remoteServer;
     if (value != null) {
@@ -5283,7 +5481,8 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
           result.callPermissions = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
         case 'callRecording':
-          result.callRecording = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          result.callRecording =
+              serializers.deserialize(value, specifiedType: const FullType(Room_CallRecording))! as Room_CallRecording;
           break;
         case 'callStartTime':
           result.callStartTime = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
@@ -5343,6 +5542,10 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
         case 'listable':
           result.listable = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
+        case 'liveTranscriptionLanguageId':
+          result.liveTranscriptionLanguageId =
+              serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
         case 'lobbyState':
           result.lobbyState = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
@@ -5350,7 +5553,8 @@ class _$RoomSerializer implements StructuredSerializer<Room> {
           result.lobbyTimer = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
         case 'mentionPermissions':
-          result.mentionPermissions = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          result.mentionPermissions = serializers.deserialize(value,
+              specifiedType: const FullType(Room_MentionPermissions))! as Room_MentionPermissions;
           break;
         case 'messageExpiration':
           result.messageExpiration = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
@@ -6298,6 +6502,67 @@ class _$BotListBotsResponseApplicationJsonSerializer
   }
 }
 
+class _$BotEnableBotResponseApplicationJson_Ocs_DataSerializer
+    implements StructuredSerializer<BotEnableBotResponseApplicationJson_Ocs_Data> {
+  @override
+  final Iterable<Type> types = const [
+    BotEnableBotResponseApplicationJson_Ocs_Data,
+    _$BotEnableBotResponseApplicationJson_Ocs_Data
+  ];
+  @override
+  final String wireName = 'BotEnableBotResponseApplicationJson_Ocs_Data';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, BotEnableBotResponseApplicationJson_Ocs_Data object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(int)),
+      'name',
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'state',
+      serializers.serialize(object.state, specifiedType: const FullType(int)),
+    ];
+    Object? value;
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  BotEnableBotResponseApplicationJson_Ocs_Data deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = BotEnableBotResponseApplicationJson_Ocs_DataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'description':
+          result.description = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'state':
+          result.state = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$BotEnableBotResponseApplicationJson_OcsSerializer
     implements StructuredSerializer<BotEnableBotResponseApplicationJson_Ocs> {
   @override
@@ -6320,7 +6585,8 @@ class _$BotEnableBotResponseApplicationJson_OcsSerializer
     if (value != null) {
       result
         ..add('data')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Bot)));
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(BotEnableBotResponseApplicationJson_Ocs_Data)));
     }
     return result;
   }
@@ -6340,7 +6606,9 @@ class _$BotEnableBotResponseApplicationJson_OcsSerializer
           result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
           break;
         case 'data':
-          result.data.replace(serializers.deserialize(value, specifiedType: const FullType(Bot))! as Bot);
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(BotEnableBotResponseApplicationJson_Ocs_Data))!
+              as BotEnableBotResponseApplicationJson_Ocs_Data);
           break;
       }
     }
@@ -6390,6 +6658,67 @@ class _$BotEnableBotResponseApplicationJsonSerializer
   }
 }
 
+class _$BotDisableBotResponseApplicationJson_Ocs_DataSerializer
+    implements StructuredSerializer<BotDisableBotResponseApplicationJson_Ocs_Data> {
+  @override
+  final Iterable<Type> types = const [
+    BotDisableBotResponseApplicationJson_Ocs_Data,
+    _$BotDisableBotResponseApplicationJson_Ocs_Data
+  ];
+  @override
+  final String wireName = 'BotDisableBotResponseApplicationJson_Ocs_Data';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, BotDisableBotResponseApplicationJson_Ocs_Data object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(int)),
+      'name',
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'state',
+      serializers.serialize(object.state, specifiedType: const FullType(int)),
+    ];
+    Object? value;
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  BotDisableBotResponseApplicationJson_Ocs_Data deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = BotDisableBotResponseApplicationJson_Ocs_DataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'description':
+          result.description = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'state':
+          result.state = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$BotDisableBotResponseApplicationJson_OcsSerializer
     implements StructuredSerializer<BotDisableBotResponseApplicationJson_Ocs> {
   @override
@@ -6412,7 +6741,8 @@ class _$BotDisableBotResponseApplicationJson_OcsSerializer
     if (value != null) {
       result
         ..add('data')
-        ..add(serializers.serialize(value, specifiedType: const FullType(Bot)));
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(BotDisableBotResponseApplicationJson_Ocs_Data)));
     }
     return result;
   }
@@ -6432,7 +6762,9 @@ class _$BotDisableBotResponseApplicationJson_OcsSerializer
           result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
           break;
         case 'data':
-          result.data.replace(serializers.deserialize(value, specifiedType: const FullType(Bot))! as Bot);
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(BotDisableBotResponseApplicationJson_Ocs_Data))!
+              as BotDisableBotResponseApplicationJson_Ocs_Data);
           break;
       }
     }
@@ -6501,6 +6833,10 @@ class _$BotSendMessageRequestApplicationJsonSerializer
       serializers.serialize(object.replyTo, specifiedType: const FullType(int)),
       'silent',
       serializers.serialize(object.silent, specifiedType: const FullType(bool)),
+      'threadTitle',
+      serializers.serialize(object.threadTitle, specifiedType: const FullType(String)),
+      'threadId',
+      serializers.serialize(object.threadId, specifiedType: const FullType(int)),
     ];
 
     return result;
@@ -6528,6 +6864,12 @@ class _$BotSendMessageRequestApplicationJsonSerializer
           break;
         case 'silent':
           result.silent = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'threadTitle':
+          result.threadTitle = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'threadId':
+          result.threadId = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
       }
     }
@@ -9706,6 +10048,30 @@ class _$ChatMessageWithParentSerializer implements StructuredSerializer<ChatMess
         ..add('silent')
         ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.threadId;
+    if (value != null) {
+      result
+        ..add('threadId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.isThread;
+    if (value != null) {
+      result
+        ..add('isThread')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.threadTitle;
+    if (value != null) {
+      result
+        ..add('threadTitle')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.threadReplies;
+    if (value != null) {
+      result
+        ..add('threadReplies')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -9770,6 +10136,18 @@ class _$ChatMessageWithParentSerializer implements StructuredSerializer<ChatMess
           break;
         case 'silent':
           result.silent = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadId':
+          result.threadId = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'isThread':
+          result.isThread = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadTitle':
+          result.threadTitle = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'threadReplies':
+          result.threadReplies = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
         case 'actorDisplayName':
           result.actorDisplayName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
@@ -9972,6 +10350,10 @@ class _$ChatSendMessageRequestApplicationJsonSerializer
       serializers.serialize(object.replyTo, specifiedType: const FullType(int)),
       'silent',
       serializers.serialize(object.silent, specifiedType: const FullType(bool)),
+      'threadTitle',
+      serializers.serialize(object.threadTitle, specifiedType: const FullType(String)),
+      'threadId',
+      serializers.serialize(object.threadId, specifiedType: const FullType(int)),
     ];
 
     return result;
@@ -10003,6 +10385,248 @@ class _$ChatSendMessageRequestApplicationJsonSerializer
         case 'silent':
           result.silent = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
           break;
+        case 'threadTitle':
+          result.threadTitle = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'threadId':
+          result.threadId = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatSendMessageResponseApplicationJson_Ocs_DataSerializer
+    implements StructuredSerializer<ChatSendMessageResponseApplicationJson_Ocs_Data> {
+  @override
+  final Iterable<Type> types = const [
+    ChatSendMessageResponseApplicationJson_Ocs_Data,
+    _$ChatSendMessageResponseApplicationJson_Ocs_Data
+  ];
+  @override
+  final String wireName = 'ChatSendMessageResponseApplicationJson_Ocs_Data';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatSendMessageResponseApplicationJson_Ocs_Data object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(int)),
+      'isReplyable',
+      serializers.serialize(object.isReplyable, specifiedType: const FullType(bool)),
+      'markdown',
+      serializers.serialize(object.markdown, specifiedType: const FullType(bool)),
+      'reactions',
+      serializers.serialize(object.reactions,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(int)])),
+      'referenceId',
+      serializers.serialize(object.referenceId, specifiedType: const FullType(String)),
+      'timestamp',
+      serializers.serialize(object.timestamp, specifiedType: const FullType(int)),
+      'token',
+      serializers.serialize(object.token, specifiedType: const FullType(String)),
+      'actorDisplayName',
+      serializers.serialize(object.actorDisplayName, specifiedType: const FullType(String)),
+      'actorId',
+      serializers.serialize(object.actorId, specifiedType: const FullType(String)),
+      'actorType',
+      serializers.serialize(object.actorType, specifiedType: const FullType(ActorTypes)),
+      'expirationTimestamp',
+      serializers.serialize(object.expirationTimestamp, specifiedType: const FullType(int)),
+      'message',
+      serializers.serialize(object.message, specifiedType: const FullType(String)),
+      'messageParameters',
+      serializers.serialize(object.messageParameters,
+          specifiedType: const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])
+          ])),
+      'messageType',
+      serializers.serialize(object.messageType, specifiedType: const FullType(MessageType)),
+      'systemMessage',
+      serializers.serialize(object.systemMessage, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.parent;
+    if (value != null) {
+      result
+        ..add('parent')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ChatMessageWithParent_Parent)));
+    }
+    value = object.deleted;
+    if (value != null) {
+      result
+        ..add('deleted')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ChatMessage_Deleted)));
+    }
+    value = object.reactionsSelf;
+    if (value != null) {
+      result
+        ..add('reactionsSelf')
+        ..add(serializers.serialize(value, specifiedType: const FullType(BuiltList, const [const FullType(String)])));
+    }
+    value = object.lastEditActorDisplayName;
+    if (value != null) {
+      result
+        ..add('lastEditActorDisplayName')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.lastEditActorId;
+    if (value != null) {
+      result
+        ..add('lastEditActorId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.lastEditActorType;
+    if (value != null) {
+      result
+        ..add('lastEditActorType')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ActorTypes)));
+    }
+    value = object.lastEditTimestamp;
+    if (value != null) {
+      result
+        ..add('lastEditTimestamp')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.silent;
+    if (value != null) {
+      result
+        ..add('silent')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.threadId;
+    if (value != null) {
+      result
+        ..add('threadId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.isThread;
+    if (value != null) {
+      result
+        ..add('isThread')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.threadTitle;
+    if (value != null) {
+      result
+        ..add('threadTitle')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.threadReplies;
+    if (value != null) {
+      result
+        ..add('threadReplies')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  ChatSendMessageResponseApplicationJson_Ocs_Data deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatSendMessageResponseApplicationJson_Ocs_DataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'parent':
+          result.parent = serializers.deserialize(value, specifiedType: const FullType(ChatMessageWithParent_Parent))
+              as ChatMessageWithParent_Parent?;
+          break;
+        case 'deleted':
+          result.deleted = serializers.deserialize(value, specifiedType: const FullType(ChatMessage_Deleted))
+              as ChatMessage_Deleted?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'isReplyable':
+          result.isReplyable = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'markdown':
+          result.markdown = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'reactions':
+          result.reactions.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(int)]))!);
+          break;
+        case 'reactionsSelf':
+          result.reactionsSelf.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+          break;
+        case 'referenceId':
+          result.referenceId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'timestamp':
+          result.timestamp = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'token':
+          result.token = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'lastEditActorDisplayName':
+          result.lastEditActorDisplayName =
+              serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'lastEditActorId':
+          result.lastEditActorId = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'lastEditActorType':
+          result.lastEditActorType =
+              serializers.deserialize(value, specifiedType: const FullType(ActorTypes)) as ActorTypes?;
+          break;
+        case 'lastEditTimestamp':
+          result.lastEditTimestamp = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'silent':
+          result.silent = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadId':
+          result.threadId = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'isThread':
+          result.isThread = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadTitle':
+          result.threadTitle = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'threadReplies':
+          result.threadReplies = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'actorDisplayName':
+          result.actorDisplayName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'actorId':
+          result.actorId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'actorType':
+          result.actorType = serializers.deserialize(value, specifiedType: const FullType(ActorTypes))! as ActorTypes;
+          break;
+        case 'expirationTimestamp':
+          result.expirationTimestamp = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'message':
+          result.message = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'messageParameters':
+          result.messageParameters.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [
+                const FullType(String),
+                const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])
+              ]))!);
+          break;
+        case 'messageType':
+          result.messageType =
+              serializers.deserialize(value, specifiedType: const FullType(MessageType))! as MessageType;
+          break;
+        case 'systemMessage':
+          result.systemMessage = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
       }
     }
 
@@ -10032,7 +10656,8 @@ class _$ChatSendMessageResponseApplicationJson_OcsSerializer
     if (value != null) {
       result
         ..add('data')
-        ..add(serializers.serialize(value, specifiedType: const FullType(ChatMessageWithParent)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(ChatSendMessageResponseApplicationJson_Ocs_Data)));
     }
     return result;
   }
@@ -10052,8 +10677,9 @@ class _$ChatSendMessageResponseApplicationJson_OcsSerializer
           result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
           break;
         case 'data':
-          result.data.replace(serializers.deserialize(value, specifiedType: const FullType(ChatMessageWithParent))!
-              as ChatMessageWithParent);
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(ChatSendMessageResponseApplicationJson_Ocs_Data))!
+              as ChatSendMessageResponseApplicationJson_Ocs_Data);
           break;
       }
     }
@@ -10277,6 +10903,587 @@ class _$ChatChatClearHistoryHeadersSerializer implements StructuredSerializer<Ch
   }
 }
 
+class _$ChatGetObjectsSharedInRoomResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs,
+    _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(ChatMessage)])),
+    ];
+
+    return result;
+  }
+
+  @override
+  ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(ChatMessage)]))!);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatGetObjectsSharedInRoomResponseApplicationJsonSerializer
+    implements StructuredSerializer<ChatGetObjectsSharedInRoomResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ChatGetObjectsSharedInRoomResponseApplicationJson,
+    _$ChatGetObjectsSharedInRoomResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'ChatGetObjectsSharedInRoomResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatGetObjectsSharedInRoomResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ChatGetObjectsSharedInRoomResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs))!
+              as ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatChatGetObjectsSharedInRoomHeadersSerializer
+    implements StructuredSerializer<ChatChatGetObjectsSharedInRoomHeaders> {
+  @override
+  final Iterable<Type> types = const [ChatChatGetObjectsSharedInRoomHeaders, _$ChatChatGetObjectsSharedInRoomHeaders];
+  @override
+  final String wireName = 'ChatChatGetObjectsSharedInRoomHeaders';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatChatGetObjectsSharedInRoomHeaders object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.xChatLastGiven;
+    if (value != null) {
+      result
+        ..add('x-chat-last-given')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  ChatChatGetObjectsSharedInRoomHeaders deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatChatGetObjectsSharedInRoomHeadersBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'x-chat-last-given':
+          result.xChatLastGiven = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatShareObjectToChatRequestApplicationJsonSerializer
+    implements StructuredSerializer<ChatShareObjectToChatRequestApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ChatShareObjectToChatRequestApplicationJson,
+    _$ChatShareObjectToChatRequestApplicationJson
+  ];
+  @override
+  final String wireName = 'ChatShareObjectToChatRequestApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatShareObjectToChatRequestApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'objectType',
+      serializers.serialize(object.objectType, specifiedType: const FullType(String)),
+      'objectId',
+      serializers.serialize(object.objectId, specifiedType: const FullType(String)),
+      'metaData',
+      serializers.serialize(object.metaData, specifiedType: const FullType(String)),
+      'actorDisplayName',
+      serializers.serialize(object.actorDisplayName, specifiedType: const FullType(String)),
+      'referenceId',
+      serializers.serialize(object.referenceId, specifiedType: const FullType(String)),
+      'threadId',
+      serializers.serialize(object.threadId, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ChatShareObjectToChatRequestApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatShareObjectToChatRequestApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'objectType':
+          result.objectType = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'objectId':
+          result.objectId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'metaData':
+          result.metaData = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'actorDisplayName':
+          result.actorDisplayName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'referenceId':
+          result.referenceId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'threadId':
+          result.threadId = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatShareObjectToChatResponseApplicationJson_Ocs_DataSerializer
+    implements StructuredSerializer<ChatShareObjectToChatResponseApplicationJson_Ocs_Data> {
+  @override
+  final Iterable<Type> types = const [
+    ChatShareObjectToChatResponseApplicationJson_Ocs_Data,
+    _$ChatShareObjectToChatResponseApplicationJson_Ocs_Data
+  ];
+  @override
+  final String wireName = 'ChatShareObjectToChatResponseApplicationJson_Ocs_Data';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatShareObjectToChatResponseApplicationJson_Ocs_Data object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(int)),
+      'isReplyable',
+      serializers.serialize(object.isReplyable, specifiedType: const FullType(bool)),
+      'markdown',
+      serializers.serialize(object.markdown, specifiedType: const FullType(bool)),
+      'reactions',
+      serializers.serialize(object.reactions,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(int)])),
+      'referenceId',
+      serializers.serialize(object.referenceId, specifiedType: const FullType(String)),
+      'timestamp',
+      serializers.serialize(object.timestamp, specifiedType: const FullType(int)),
+      'token',
+      serializers.serialize(object.token, specifiedType: const FullType(String)),
+      'actorDisplayName',
+      serializers.serialize(object.actorDisplayName, specifiedType: const FullType(String)),
+      'actorId',
+      serializers.serialize(object.actorId, specifiedType: const FullType(String)),
+      'actorType',
+      serializers.serialize(object.actorType, specifiedType: const FullType(ActorTypes)),
+      'expirationTimestamp',
+      serializers.serialize(object.expirationTimestamp, specifiedType: const FullType(int)),
+      'message',
+      serializers.serialize(object.message, specifiedType: const FullType(String)),
+      'messageParameters',
+      serializers.serialize(object.messageParameters,
+          specifiedType: const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])
+          ])),
+      'messageType',
+      serializers.serialize(object.messageType, specifiedType: const FullType(MessageType)),
+      'systemMessage',
+      serializers.serialize(object.systemMessage, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.parent;
+    if (value != null) {
+      result
+        ..add('parent')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ChatMessageWithParent_Parent)));
+    }
+    value = object.deleted;
+    if (value != null) {
+      result
+        ..add('deleted')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ChatMessage_Deleted)));
+    }
+    value = object.reactionsSelf;
+    if (value != null) {
+      result
+        ..add('reactionsSelf')
+        ..add(serializers.serialize(value, specifiedType: const FullType(BuiltList, const [const FullType(String)])));
+    }
+    value = object.lastEditActorDisplayName;
+    if (value != null) {
+      result
+        ..add('lastEditActorDisplayName')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.lastEditActorId;
+    if (value != null) {
+      result
+        ..add('lastEditActorId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.lastEditActorType;
+    if (value != null) {
+      result
+        ..add('lastEditActorType')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ActorTypes)));
+    }
+    value = object.lastEditTimestamp;
+    if (value != null) {
+      result
+        ..add('lastEditTimestamp')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.silent;
+    if (value != null) {
+      result
+        ..add('silent')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.threadId;
+    if (value != null) {
+      result
+        ..add('threadId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.isThread;
+    if (value != null) {
+      result
+        ..add('isThread')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.threadTitle;
+    if (value != null) {
+      result
+        ..add('threadTitle')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.threadReplies;
+    if (value != null) {
+      result
+        ..add('threadReplies')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  ChatShareObjectToChatResponseApplicationJson_Ocs_Data deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'parent':
+          result.parent = serializers.deserialize(value, specifiedType: const FullType(ChatMessageWithParent_Parent))
+              as ChatMessageWithParent_Parent?;
+          break;
+        case 'deleted':
+          result.deleted = serializers.deserialize(value, specifiedType: const FullType(ChatMessage_Deleted))
+              as ChatMessage_Deleted?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'isReplyable':
+          result.isReplyable = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'markdown':
+          result.markdown = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'reactions':
+          result.reactions.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(int)]))!);
+          break;
+        case 'reactionsSelf':
+          result.reactionsSelf.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+          break;
+        case 'referenceId':
+          result.referenceId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'timestamp':
+          result.timestamp = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'token':
+          result.token = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'lastEditActorDisplayName':
+          result.lastEditActorDisplayName =
+              serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'lastEditActorId':
+          result.lastEditActorId = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'lastEditActorType':
+          result.lastEditActorType =
+              serializers.deserialize(value, specifiedType: const FullType(ActorTypes)) as ActorTypes?;
+          break;
+        case 'lastEditTimestamp':
+          result.lastEditTimestamp = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'silent':
+          result.silent = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadId':
+          result.threadId = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'isThread':
+          result.isThread = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadTitle':
+          result.threadTitle = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'threadReplies':
+          result.threadReplies = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'actorDisplayName':
+          result.actorDisplayName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'actorId':
+          result.actorId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'actorType':
+          result.actorType = serializers.deserialize(value, specifiedType: const FullType(ActorTypes))! as ActorTypes;
+          break;
+        case 'expirationTimestamp':
+          result.expirationTimestamp = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'message':
+          result.message = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'messageParameters':
+          result.messageParameters.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [
+                const FullType(String),
+                const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])
+              ]))!);
+          break;
+        case 'messageType':
+          result.messageType =
+              serializers.deserialize(value, specifiedType: const FullType(MessageType))! as MessageType;
+          break;
+        case 'systemMessage':
+          result.systemMessage = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatShareObjectToChatResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<ChatShareObjectToChatResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    ChatShareObjectToChatResponseApplicationJson_Ocs,
+    _$ChatShareObjectToChatResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'ChatShareObjectToChatResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatShareObjectToChatResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+    ];
+    Object? value;
+    value = object.data;
+    if (value != null) {
+      result
+        ..add('data')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(ChatShareObjectToChatResponseApplicationJson_Ocs_Data)));
+    }
+    return result;
+  }
+
+  @override
+  ChatShareObjectToChatResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatShareObjectToChatResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(ChatShareObjectToChatResponseApplicationJson_Ocs_Data))!
+              as ChatShareObjectToChatResponseApplicationJson_Ocs_Data);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatShareObjectToChatResponseApplicationJsonSerializer
+    implements StructuredSerializer<ChatShareObjectToChatResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ChatShareObjectToChatResponseApplicationJson,
+    _$ChatShareObjectToChatResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'ChatShareObjectToChatResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatShareObjectToChatResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(ChatShareObjectToChatResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ChatShareObjectToChatResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatShareObjectToChatResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(ChatShareObjectToChatResponseApplicationJson_Ocs))!
+              as ChatShareObjectToChatResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatChatShareObjectToChatHeadersSerializer implements StructuredSerializer<ChatChatShareObjectToChatHeaders> {
+  @override
+  final Iterable<Type> types = const [ChatChatShareObjectToChatHeaders, _$ChatChatShareObjectToChatHeaders];
+  @override
+  final String wireName = 'ChatChatShareObjectToChatHeaders';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatChatShareObjectToChatHeaders object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.xChatLastCommonRead;
+    if (value != null) {
+      result
+        ..add('x-chat-last-common-read')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  ChatChatShareObjectToChatHeaders deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatChatShareObjectToChatHeadersBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'x-chat-last-common-read':
+          result.xChatLastCommonRead = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$ChatSummarizeChatRequestApplicationJsonSerializer
     implements StructuredSerializer<ChatSummarizeChatRequestApplicationJson> {
   @override
@@ -10456,6 +11663,151 @@ class _$ChatSummarizeChatResponseApplicationJsonSerializer
           result.ocs.replace(serializers.deserialize(value,
                   specifiedType: const FullType(ChatSummarizeChatResponseApplicationJson_Ocs))!
               as ChatSummarizeChatResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatGetMessageContextResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<ChatGetMessageContextResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    ChatGetMessageContextResponseApplicationJson_Ocs,
+    _$ChatGetMessageContextResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'ChatGetMessageContextResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatGetMessageContextResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(BuiltList, const [const FullType(ChatMessageWithParent)])),
+    ];
+
+    return result;
+  }
+
+  @override
+  ChatGetMessageContextResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatGetMessageContextResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(BuiltList, const [const FullType(ChatMessageWithParent)]))!
+              as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatGetMessageContextResponseApplicationJsonSerializer
+    implements StructuredSerializer<ChatGetMessageContextResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ChatGetMessageContextResponseApplicationJson,
+    _$ChatGetMessageContextResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'ChatGetMessageContextResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatGetMessageContextResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(ChatGetMessageContextResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ChatGetMessageContextResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatGetMessageContextResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(ChatGetMessageContextResponseApplicationJson_Ocs))!
+              as ChatGetMessageContextResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatChatGetMessageContextHeadersSerializer implements StructuredSerializer<ChatChatGetMessageContextHeaders> {
+  @override
+  final Iterable<Type> types = const [ChatChatGetMessageContextHeaders, _$ChatChatGetMessageContextHeaders];
+  @override
+  final String wireName = 'ChatChatGetMessageContextHeaders';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatChatGetMessageContextHeaders object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.xChatLastCommonRead;
+    if (value != null) {
+      result
+        ..add('x-chat-last-common-read')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.xChatLastGiven;
+    if (value != null) {
+      result
+        ..add('x-chat-last-given')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  ChatChatGetMessageContextHeaders deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatChatGetMessageContextHeadersBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'x-chat-last-common-read':
+          result.xChatLastCommonRead = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'x-chat-last-given':
+          result.xChatLastGiven = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -10758,151 +12110,6 @@ class _$ChatChatDeleteMessageHeadersSerializer implements StructuredSerializer<C
       switch (key) {
         case 'x-chat-last-common-read':
           result.xChatLastCommonRead = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatGetMessageContextResponseApplicationJson_OcsSerializer
-    implements StructuredSerializer<ChatGetMessageContextResponseApplicationJson_Ocs> {
-  @override
-  final Iterable<Type> types = const [
-    ChatGetMessageContextResponseApplicationJson_Ocs,
-    _$ChatGetMessageContextResponseApplicationJson_Ocs
-  ];
-  @override
-  final String wireName = 'ChatGetMessageContextResponseApplicationJson_Ocs';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatGetMessageContextResponseApplicationJson_Ocs object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'meta',
-      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
-      'data',
-      serializers.serialize(object.data,
-          specifiedType: const FullType(BuiltList, const [const FullType(ChatMessageWithParent)])),
-    ];
-
-    return result;
-  }
-
-  @override
-  ChatGetMessageContextResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatGetMessageContextResponseApplicationJson_OcsBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'meta':
-          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
-          break;
-        case 'data':
-          result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, const [const FullType(ChatMessageWithParent)]))!
-              as BuiltList<Object?>);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatGetMessageContextResponseApplicationJsonSerializer
-    implements StructuredSerializer<ChatGetMessageContextResponseApplicationJson> {
-  @override
-  final Iterable<Type> types = const [
-    ChatGetMessageContextResponseApplicationJson,
-    _$ChatGetMessageContextResponseApplicationJson
-  ];
-  @override
-  final String wireName = 'ChatGetMessageContextResponseApplicationJson';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatGetMessageContextResponseApplicationJson object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'ocs',
-      serializers.serialize(object.ocs,
-          specifiedType: const FullType(ChatGetMessageContextResponseApplicationJson_Ocs)),
-    ];
-
-    return result;
-  }
-
-  @override
-  ChatGetMessageContextResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatGetMessageContextResponseApplicationJsonBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'ocs':
-          result.ocs.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ChatGetMessageContextResponseApplicationJson_Ocs))!
-              as ChatGetMessageContextResponseApplicationJson_Ocs);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatChatGetMessageContextHeadersSerializer implements StructuredSerializer<ChatChatGetMessageContextHeaders> {
-  @override
-  final Iterable<Type> types = const [ChatChatGetMessageContextHeaders, _$ChatChatGetMessageContextHeaders];
-  @override
-  final String wireName = 'ChatChatGetMessageContextHeaders';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatChatGetMessageContextHeaders object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.xChatLastCommonRead;
-    if (value != null) {
-      result
-        ..add('x-chat-last-common-read')
-        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
-    }
-    value = object.xChatLastGiven;
-    if (value != null) {
-      result
-        ..add('x-chat-last-given')
-        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
-    }
-    return result;
-  }
-
-  @override
-  ChatChatGetMessageContextHeaders deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatChatGetMessageContextHeadersBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'x-chat-last-common-read':
-          result.xChatLastCommonRead = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
-          break;
-        case 'x-chat-last-given':
-          result.xChatLastGiven = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -11802,6 +13009,109 @@ class _$ChatChatMarkUnreadHeadersSerializer implements StructuredSerializer<Chat
   }
 }
 
+class _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs,
+    _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltList, const [const FullType(ChatMessage)])
+          ])),
+    ];
+
+    return result;
+  }
+
+  @override
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [
+                const FullType(String),
+                const FullType(BuiltList, const [const FullType(ChatMessage)])
+              ]))!);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonSerializer
+    implements StructuredSerializer<ChatGetObjectsSharedInRoomOverviewResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson,
+    _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ChatGetObjectsSharedInRoomOverviewResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs))!
+              as ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$ChatMentionSuggestionSerializer implements StructuredSerializer<ChatMentionSuggestion> {
   @override
   final Iterable<Type> types = const [ChatMentionSuggestion, _$ChatMentionSuggestion];
@@ -11983,446 +13293,6 @@ class _$ChatMentionsResponseApplicationJsonSerializer
           result.ocs.replace(
               serializers.deserialize(value, specifiedType: const FullType(ChatMentionsResponseApplicationJson_Ocs))!
                   as ChatMentionsResponseApplicationJson_Ocs);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatGetObjectsSharedInRoomResponseApplicationJson_OcsSerializer
-    implements StructuredSerializer<ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs> {
-  @override
-  final Iterable<Type> types = const [
-    ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs,
-    _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs
-  ];
-  @override
-  final String wireName = 'ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'meta',
-      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
-      'data',
-      serializers.serialize(object.data,
-          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(ChatMessage)])),
-    ];
-
-    return result;
-  }
-
-  @override
-  ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'meta':
-          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
-          break;
-        case 'data':
-          result.data.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(ChatMessage)]))!);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatGetObjectsSharedInRoomResponseApplicationJsonSerializer
-    implements StructuredSerializer<ChatGetObjectsSharedInRoomResponseApplicationJson> {
-  @override
-  final Iterable<Type> types = const [
-    ChatGetObjectsSharedInRoomResponseApplicationJson,
-    _$ChatGetObjectsSharedInRoomResponseApplicationJson
-  ];
-  @override
-  final String wireName = 'ChatGetObjectsSharedInRoomResponseApplicationJson';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatGetObjectsSharedInRoomResponseApplicationJson object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'ocs',
-      serializers.serialize(object.ocs,
-          specifiedType: const FullType(ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs)),
-    ];
-
-    return result;
-  }
-
-  @override
-  ChatGetObjectsSharedInRoomResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'ocs':
-          result.ocs.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs))!
-              as ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatChatGetObjectsSharedInRoomHeadersSerializer
-    implements StructuredSerializer<ChatChatGetObjectsSharedInRoomHeaders> {
-  @override
-  final Iterable<Type> types = const [ChatChatGetObjectsSharedInRoomHeaders, _$ChatChatGetObjectsSharedInRoomHeaders];
-  @override
-  final String wireName = 'ChatChatGetObjectsSharedInRoomHeaders';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatChatGetObjectsSharedInRoomHeaders object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.xChatLastGiven;
-    if (value != null) {
-      result
-        ..add('x-chat-last-given')
-        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
-    }
-    return result;
-  }
-
-  @override
-  ChatChatGetObjectsSharedInRoomHeaders deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatChatGetObjectsSharedInRoomHeadersBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'x-chat-last-given':
-          result.xChatLastGiven = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatShareObjectToChatRequestApplicationJsonSerializer
-    implements StructuredSerializer<ChatShareObjectToChatRequestApplicationJson> {
-  @override
-  final Iterable<Type> types = const [
-    ChatShareObjectToChatRequestApplicationJson,
-    _$ChatShareObjectToChatRequestApplicationJson
-  ];
-  @override
-  final String wireName = 'ChatShareObjectToChatRequestApplicationJson';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatShareObjectToChatRequestApplicationJson object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'objectType',
-      serializers.serialize(object.objectType, specifiedType: const FullType(String)),
-      'objectId',
-      serializers.serialize(object.objectId, specifiedType: const FullType(String)),
-      'metaData',
-      serializers.serialize(object.metaData, specifiedType: const FullType(String)),
-      'actorDisplayName',
-      serializers.serialize(object.actorDisplayName, specifiedType: const FullType(String)),
-      'referenceId',
-      serializers.serialize(object.referenceId, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  ChatShareObjectToChatRequestApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatShareObjectToChatRequestApplicationJsonBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'objectType':
-          result.objectType = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
-          break;
-        case 'objectId':
-          result.objectId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
-          break;
-        case 'metaData':
-          result.metaData = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
-          break;
-        case 'actorDisplayName':
-          result.actorDisplayName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
-          break;
-        case 'referenceId':
-          result.referenceId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatShareObjectToChatResponseApplicationJson_OcsSerializer
-    implements StructuredSerializer<ChatShareObjectToChatResponseApplicationJson_Ocs> {
-  @override
-  final Iterable<Type> types = const [
-    ChatShareObjectToChatResponseApplicationJson_Ocs,
-    _$ChatShareObjectToChatResponseApplicationJson_Ocs
-  ];
-  @override
-  final String wireName = 'ChatShareObjectToChatResponseApplicationJson_Ocs';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatShareObjectToChatResponseApplicationJson_Ocs object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'meta',
-      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
-    ];
-    Object? value;
-    value = object.data;
-    if (value != null) {
-      result
-        ..add('data')
-        ..add(serializers.serialize(value, specifiedType: const FullType(ChatMessageWithParent)));
-    }
-    return result;
-  }
-
-  @override
-  ChatShareObjectToChatResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatShareObjectToChatResponseApplicationJson_OcsBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'meta':
-          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
-          break;
-        case 'data':
-          result.data.replace(serializers.deserialize(value, specifiedType: const FullType(ChatMessageWithParent))!
-              as ChatMessageWithParent);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatShareObjectToChatResponseApplicationJsonSerializer
-    implements StructuredSerializer<ChatShareObjectToChatResponseApplicationJson> {
-  @override
-  final Iterable<Type> types = const [
-    ChatShareObjectToChatResponseApplicationJson,
-    _$ChatShareObjectToChatResponseApplicationJson
-  ];
-  @override
-  final String wireName = 'ChatShareObjectToChatResponseApplicationJson';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatShareObjectToChatResponseApplicationJson object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'ocs',
-      serializers.serialize(object.ocs,
-          specifiedType: const FullType(ChatShareObjectToChatResponseApplicationJson_Ocs)),
-    ];
-
-    return result;
-  }
-
-  @override
-  ChatShareObjectToChatResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatShareObjectToChatResponseApplicationJsonBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'ocs':
-          result.ocs.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ChatShareObjectToChatResponseApplicationJson_Ocs))!
-              as ChatShareObjectToChatResponseApplicationJson_Ocs);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatChatShareObjectToChatHeadersSerializer implements StructuredSerializer<ChatChatShareObjectToChatHeaders> {
-  @override
-  final Iterable<Type> types = const [ChatChatShareObjectToChatHeaders, _$ChatChatShareObjectToChatHeaders];
-  @override
-  final String wireName = 'ChatChatShareObjectToChatHeaders';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatChatShareObjectToChatHeaders object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.xChatLastCommonRead;
-    if (value != null) {
-      result
-        ..add('x-chat-last-common-read')
-        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
-    }
-    return result;
-  }
-
-  @override
-  ChatChatShareObjectToChatHeaders deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatChatShareObjectToChatHeadersBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'x-chat-last-common-read':
-          result.xChatLastCommonRead = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsSerializer
-    implements StructuredSerializer<ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs> {
-  @override
-  final Iterable<Type> types = const [
-    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs,
-    _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs
-  ];
-  @override
-  final String wireName = 'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs';
-
-  @override
-  Iterable<Object?> serialize(
-      Serializers serializers, ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'meta',
-      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
-      'data',
-      serializers.serialize(object.data,
-          specifiedType: const FullType(BuiltMap, const [
-            const FullType(String),
-            const FullType(BuiltList, const [const FullType(ChatMessage)])
-          ])),
-    ];
-
-    return result;
-  }
-
-  @override
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'meta':
-          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
-          break;
-        case 'data':
-          result.data.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltMap, const [
-                const FullType(String),
-                const FullType(BuiltList, const [const FullType(ChatMessage)])
-              ]))!);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonSerializer
-    implements StructuredSerializer<ChatGetObjectsSharedInRoomOverviewResponseApplicationJson> {
-  @override
-  final Iterable<Type> types = const [
-    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson,
-    _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson
-  ];
-  @override
-  final String wireName = 'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, ChatGetObjectsSharedInRoomOverviewResponseApplicationJson object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'ocs',
-      serializers.serialize(object.ocs,
-          specifiedType: const FullType(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs)),
-    ];
-
-    return result;
-  }
-
-  @override
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'ocs':
-          result.ocs.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs))!
-              as ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs);
           break;
       }
     }
@@ -14462,6 +15332,526 @@ class _$SignalingSendMessagesResponseApplicationJsonSerializer
   }
 }
 
+class _$LiveTranscriptionEnableResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<LiveTranscriptionEnableResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    LiveTranscriptionEnableResponseApplicationJson_Ocs,
+    _$LiveTranscriptionEnableResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'LiveTranscriptionEnableResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, LiveTranscriptionEnableResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+    ];
+    Object? value;
+    value = object.data;
+    if (value != null) {
+      result
+        ..add('data')
+        ..add(serializers.serialize(value, specifiedType: const FullType(JsonObject)));
+    }
+    return result;
+  }
+
+  @override
+  LiveTranscriptionEnableResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionEnableResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data = serializers.deserialize(value, specifiedType: const FullType(JsonObject)) as JsonObject?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$LiveTranscriptionEnableResponseApplicationJsonSerializer
+    implements StructuredSerializer<LiveTranscriptionEnableResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    LiveTranscriptionEnableResponseApplicationJson,
+    _$LiveTranscriptionEnableResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'LiveTranscriptionEnableResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, LiveTranscriptionEnableResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(LiveTranscriptionEnableResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  LiveTranscriptionEnableResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionEnableResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(LiveTranscriptionEnableResponseApplicationJson_Ocs))!
+              as LiveTranscriptionEnableResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$LiveTranscriptionDisableResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<LiveTranscriptionDisableResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    LiveTranscriptionDisableResponseApplicationJson_Ocs,
+    _$LiveTranscriptionDisableResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'LiveTranscriptionDisableResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, LiveTranscriptionDisableResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+    ];
+    Object? value;
+    value = object.data;
+    if (value != null) {
+      result
+        ..add('data')
+        ..add(serializers.serialize(value, specifiedType: const FullType(JsonObject)));
+    }
+    return result;
+  }
+
+  @override
+  LiveTranscriptionDisableResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionDisableResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data = serializers.deserialize(value, specifiedType: const FullType(JsonObject)) as JsonObject?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$LiveTranscriptionDisableResponseApplicationJsonSerializer
+    implements StructuredSerializer<LiveTranscriptionDisableResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    LiveTranscriptionDisableResponseApplicationJson,
+    _$LiveTranscriptionDisableResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'LiveTranscriptionDisableResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, LiveTranscriptionDisableResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(LiveTranscriptionDisableResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  LiveTranscriptionDisableResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionDisableResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(LiveTranscriptionDisableResponseApplicationJson_Ocs))!
+              as LiveTranscriptionDisableResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$LiveTranscriptionLanguage_MetadataSerializer
+    implements StructuredSerializer<LiveTranscriptionLanguage_Metadata> {
+  @override
+  final Iterable<Type> types = const [LiveTranscriptionLanguage_Metadata, _$LiveTranscriptionLanguage_Metadata];
+  @override
+  final String wireName = 'LiveTranscriptionLanguage_Metadata';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, LiveTranscriptionLanguage_Metadata object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'separator',
+      serializers.serialize(object.separator, specifiedType: const FullType(String)),
+      'rtl',
+      serializers.serialize(object.rtl, specifiedType: const FullType(bool)),
+    ];
+
+    return result;
+  }
+
+  @override
+  LiveTranscriptionLanguage_Metadata deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionLanguage_MetadataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'separator':
+          result.separator = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'rtl':
+          result.rtl = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$LiveTranscriptionLanguageSerializer implements StructuredSerializer<LiveTranscriptionLanguage> {
+  @override
+  final Iterable<Type> types = const [LiveTranscriptionLanguage, _$LiveTranscriptionLanguage];
+  @override
+  final String wireName = 'LiveTranscriptionLanguage';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, LiveTranscriptionLanguage object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'name',
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'metadata',
+      serializers.serialize(object.metadata, specifiedType: const FullType(LiveTranscriptionLanguage_Metadata)),
+    ];
+
+    return result;
+  }
+
+  @override
+  LiveTranscriptionLanguage deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionLanguageBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'name':
+          result.name = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'metadata':
+          result.metadata.replace(
+              serializers.deserialize(value, specifiedType: const FullType(LiveTranscriptionLanguage_Metadata))!
+                  as LiveTranscriptionLanguage_Metadata);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs,
+    _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data,
+          specifiedType:
+              const FullType(BuiltMap, const [const FullType(String), const FullType(LiveTranscriptionLanguage)])),
+    ];
+
+    return result;
+  }
+
+  @override
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+              specifiedType: const FullType(
+                  BuiltMap, const [const FullType(String), const FullType(LiveTranscriptionLanguage)]))!);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonSerializer
+    implements StructuredSerializer<LiveTranscriptionGetAvailableLanguagesResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    LiveTranscriptionGetAvailableLanguagesResponseApplicationJson,
+    _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'LiveTranscriptionGetAvailableLanguagesResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, LiveTranscriptionGetAvailableLanguagesResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs))!
+              as LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$LiveTranscriptionSetLanguageRequestApplicationJsonSerializer
+    implements StructuredSerializer<LiveTranscriptionSetLanguageRequestApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    LiveTranscriptionSetLanguageRequestApplicationJson,
+    _$LiveTranscriptionSetLanguageRequestApplicationJson
+  ];
+  @override
+  final String wireName = 'LiveTranscriptionSetLanguageRequestApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, LiveTranscriptionSetLanguageRequestApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'languageId',
+      serializers.serialize(object.languageId, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  LiveTranscriptionSetLanguageRequestApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionSetLanguageRequestApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'languageId':
+          result.languageId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$LiveTranscriptionSetLanguageResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<LiveTranscriptionSetLanguageResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    LiveTranscriptionSetLanguageResponseApplicationJson_Ocs,
+    _$LiveTranscriptionSetLanguageResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'LiveTranscriptionSetLanguageResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, LiveTranscriptionSetLanguageResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+    ];
+    Object? value;
+    value = object.data;
+    if (value != null) {
+      result
+        ..add('data')
+        ..add(serializers.serialize(value, specifiedType: const FullType(JsonObject)));
+    }
+    return result;
+  }
+
+  @override
+  LiveTranscriptionSetLanguageResponseApplicationJson_Ocs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data = serializers.deserialize(value, specifiedType: const FullType(JsonObject)) as JsonObject?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$LiveTranscriptionSetLanguageResponseApplicationJsonSerializer
+    implements StructuredSerializer<LiveTranscriptionSetLanguageResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    LiveTranscriptionSetLanguageResponseApplicationJson,
+    _$LiveTranscriptionSetLanguageResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'LiveTranscriptionSetLanguageResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, LiveTranscriptionSetLanguageResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(LiveTranscriptionSetLanguageResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  LiveTranscriptionSetLanguageResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = LiveTranscriptionSetLanguageResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(LiveTranscriptionSetLanguageResponseApplicationJson_Ocs))!
+              as LiveTranscriptionSetLanguageResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$MatterbridgeSerializer implements StructuredSerializer<Matterbridge> {
   @override
   final Iterable<Type> types = const [Matterbridge, _$Matterbridge];
@@ -15315,6 +16705,8 @@ class _$PollCreatePollRequestApplicationJsonSerializer
       serializers.serialize(object.maxVotes, specifiedType: const FullType(int)),
       'draft',
       serializers.serialize(object.draft, specifiedType: const FullType(bool)),
+      'threadId',
+      serializers.serialize(object.threadId, specifiedType: const FullType(int)),
     ];
 
     return result;
@@ -15348,6 +16740,9 @@ class _$PollCreatePollRequestApplicationJsonSerializer
           break;
         case 'draft':
           result.draft = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'threadId':
+          result.threadId = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
       }
     }
@@ -22873,6 +24268,12 @@ class _$Capabilities_Config_CallSerializer implements StructuredSerializer<Capab
         ..add('predefined-backgrounds-v2')
         ..add(serializers.serialize(value, specifiedType: const FullType(BuiltList, const [const FullType(String)])));
     }
+    value = object.defaultPhoneRegion;
+    if (value != null) {
+      result
+        ..add('default-phone-region')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
     value = object.startWithoutMedia;
     if (value != null) {
       result
@@ -22895,6 +24296,30 @@ class _$Capabilities_Config_CallSerializer implements StructuredSerializer<Capab
     if (value != null) {
       result
         ..add('end-to-end-encryption')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.liveTranscription;
+    if (value != null) {
+      result
+        ..add('live-transcription')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.playSounds;
+    if (value != null) {
+      result
+        ..add('play-sounds')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.gridLimit;
+    if (value != null) {
+      result
+        ..add('grid-limit')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.gridLimitEnforced;
+    if (value != null) {
+      result
+        ..add('grid-limit-enforced')
         ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     return result;
@@ -22944,6 +24369,9 @@ class _$Capabilities_Config_CallSerializer implements StructuredSerializer<Capab
         case 'sip-dialout-enabled':
           result.sipDialoutEnabled = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
           break;
+        case 'default-phone-region':
+          result.defaultPhoneRegion = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
         case 'can-enable-sip':
           result.canEnableSip = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
           break;
@@ -22958,6 +24386,18 @@ class _$Capabilities_Config_CallSerializer implements StructuredSerializer<Capab
           break;
         case 'end-to-end-encryption':
           result.endToEndEncryption = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'live-transcription':
+          result.liveTranscription = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'play-sounds':
+          result.playSounds = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'grid-limit':
+          result.gridLimit = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'grid-limit-enforced':
+          result.gridLimitEnforced = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -22998,6 +24438,12 @@ class _$Capabilities_Config_ChatSerializer implements StructuredSerializer<Capab
         ..add('summary-threshold')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.matterbridgeEnabled;
+    if (value != null) {
+      result
+        ..add('matterbridge-enabled')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     return result;
   }
 
@@ -23030,6 +24476,9 @@ class _$Capabilities_Config_ChatSerializer implements StructuredSerializer<Capab
           break;
         case 'summary-threshold':
           result.summaryThreshold = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'matterbridge-enabled':
+          result.matterbridgeEnabled = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -23235,6 +24684,8 @@ class _$Capabilities_Config_SignalingSerializer implements StructuredSerializer<
     final result = <Object?>[
       'session-ping-limit',
       serializers.serialize(object.sessionPingLimit, specifiedType: const FullType(int)),
+      'mode',
+      serializers.serialize(object.mode, specifiedType: const FullType(Capabilities_Config_Signaling_Mode)),
     ];
     Object? value;
     value = object.helloV2TokenKey;
@@ -23259,6 +24710,10 @@ class _$Capabilities_Config_SignalingSerializer implements StructuredSerializer<
       switch (key) {
         case 'session-ping-limit':
           result.sessionPingLimit = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'mode':
+          result.mode = serializers.deserialize(value,
+              specifiedType: const FullType(Capabilities_Config_Signaling_Mode))! as Capabilities_Config_Signaling_Mode;
           break;
         case 'hello-v2-token-key':
           result.helloV2TokenKey = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
@@ -23308,6 +24763,54 @@ class _$Capabilities_Config_ExperimentsSerializer implements StructuredSerialize
   }
 }
 
+class _$Capabilities_Config_PermissionsSerializer implements StructuredSerializer<Capabilities_Config_Permissions> {
+  @override
+  final Iterable<Type> types = const [Capabilities_Config_Permissions, _$Capabilities_Config_Permissions];
+  @override
+  final String wireName = 'Capabilities_Config_Permissions';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Capabilities_Config_Permissions object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'max-default',
+      serializers.serialize(object.maxDefault, specifiedType: const FullType(int)),
+      'max-custom',
+      serializers.serialize(object.maxCustom, specifiedType: const FullType(int)),
+      'default',
+      serializers.serialize(object.$default, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  Capabilities_Config_Permissions deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = Capabilities_Config_PermissionsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'max-default':
+          result.maxDefault = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'max-custom':
+          result.maxCustom = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'default':
+          result.$default = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$Capabilities_ConfigSerializer implements StructuredSerializer<Capabilities_Config> {
   @override
   final Iterable<Type> types = const [Capabilities_Config, _$Capabilities_Config];
@@ -23339,6 +24842,12 @@ class _$Capabilities_ConfigSerializer implements StructuredSerializer<Capabiliti
       result
         ..add('experiments')
         ..add(serializers.serialize(value, specifiedType: const FullType(Capabilities_Config_Experiments)));
+    }
+    value = object.permissions;
+    if (value != null) {
+      result
+        ..add('permissions')
+        ..add(serializers.serialize(value, specifiedType: const FullType(Capabilities_Config_Permissions)));
     }
     return result;
   }
@@ -23385,6 +24894,10 @@ class _$Capabilities_ConfigSerializer implements StructuredSerializer<Capabiliti
         case 'experiments':
           result.experiments.replace(serializers.deserialize(value,
               specifiedType: const FullType(Capabilities_Config_Experiments))! as Capabilities_Config_Experiments);
+          break;
+        case 'permissions':
+          result.permissions.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Capabilities_Config_Permissions))! as Capabilities_Config_Permissions);
           break;
       }
     }
@@ -26652,6 +28165,1159 @@ class _$SignalingBackendResponseApplicationJsonSerializer
   }
 }
 
+class _$ThreadSerializer implements StructuredSerializer<Thread> {
+  @override
+  final Iterable<Type> types = const [Thread, _$Thread];
+  @override
+  final String wireName = 'Thread';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Thread object, {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(int)),
+      'roomToken',
+      serializers.serialize(object.roomToken, specifiedType: const FullType(String)),
+      'title',
+      serializers.serialize(object.title, specifiedType: const FullType(String)),
+      'lastMessageId',
+      serializers.serialize(object.lastMessageId, specifiedType: const FullType(int)),
+      'lastActivity',
+      serializers.serialize(object.lastActivity, specifiedType: const FullType(int)),
+      'numReplies',
+      serializers.serialize(object.numReplies, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  Thread deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'roomToken':
+          result.roomToken = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'title':
+          result.title = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'lastMessageId':
+          result.lastMessageId = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'lastActivity':
+          result.lastActivity = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'numReplies':
+          result.numReplies = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadAttendeeSerializer implements StructuredSerializer<ThreadAttendee> {
+  @override
+  final Iterable<Type> types = const [ThreadAttendee, _$ThreadAttendee];
+  @override
+  final String wireName = 'ThreadAttendee';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadAttendee object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'notificationLevel',
+      serializers.serialize(object.notificationLevel, specifiedType: const FullType(ThreadAttendee_NotificationLevel)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadAttendee deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadAttendeeBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'notificationLevel':
+          result.notificationLevel = serializers.deserialize(value,
+              specifiedType: const FullType(ThreadAttendee_NotificationLevel))! as ThreadAttendee_NotificationLevel;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadInfo_FirstSerializer implements StructuredSerializer<ThreadInfo_First> {
+  @override
+  final Iterable<Type> types = const [ThreadInfo_First, _$ThreadInfo_First];
+  @override
+  final String wireName = 'ThreadInfo_First';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadInfo_First object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(int)),
+      'isReplyable',
+      serializers.serialize(object.isReplyable, specifiedType: const FullType(bool)),
+      'markdown',
+      serializers.serialize(object.markdown, specifiedType: const FullType(bool)),
+      'reactions',
+      serializers.serialize(object.reactions,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(int)])),
+      'referenceId',
+      serializers.serialize(object.referenceId, specifiedType: const FullType(String)),
+      'timestamp',
+      serializers.serialize(object.timestamp, specifiedType: const FullType(int)),
+      'token',
+      serializers.serialize(object.token, specifiedType: const FullType(String)),
+      'actorDisplayName',
+      serializers.serialize(object.actorDisplayName, specifiedType: const FullType(String)),
+      'actorId',
+      serializers.serialize(object.actorId, specifiedType: const FullType(String)),
+      'actorType',
+      serializers.serialize(object.actorType, specifiedType: const FullType(ActorTypes)),
+      'expirationTimestamp',
+      serializers.serialize(object.expirationTimestamp, specifiedType: const FullType(int)),
+      'message',
+      serializers.serialize(object.message, specifiedType: const FullType(String)),
+      'messageParameters',
+      serializers.serialize(object.messageParameters,
+          specifiedType: const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])
+          ])),
+      'messageType',
+      serializers.serialize(object.messageType, specifiedType: const FullType(MessageType)),
+      'systemMessage',
+      serializers.serialize(object.systemMessage, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.deleted;
+    if (value != null) {
+      result
+        ..add('deleted')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ChatMessage_Deleted)));
+    }
+    value = object.reactionsSelf;
+    if (value != null) {
+      result
+        ..add('reactionsSelf')
+        ..add(serializers.serialize(value, specifiedType: const FullType(BuiltList, const [const FullType(String)])));
+    }
+    value = object.lastEditActorDisplayName;
+    if (value != null) {
+      result
+        ..add('lastEditActorDisplayName')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.lastEditActorId;
+    if (value != null) {
+      result
+        ..add('lastEditActorId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.lastEditActorType;
+    if (value != null) {
+      result
+        ..add('lastEditActorType')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ActorTypes)));
+    }
+    value = object.lastEditTimestamp;
+    if (value != null) {
+      result
+        ..add('lastEditTimestamp')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.silent;
+    if (value != null) {
+      result
+        ..add('silent')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.threadId;
+    if (value != null) {
+      result
+        ..add('threadId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.isThread;
+    if (value != null) {
+      result
+        ..add('isThread')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.threadTitle;
+    if (value != null) {
+      result
+        ..add('threadTitle')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.threadReplies;
+    if (value != null) {
+      result
+        ..add('threadReplies')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  ThreadInfo_First deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadInfo_FirstBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'deleted':
+          result.deleted = serializers.deserialize(value, specifiedType: const FullType(ChatMessage_Deleted))
+              as ChatMessage_Deleted?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'isReplyable':
+          result.isReplyable = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'markdown':
+          result.markdown = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'reactions':
+          result.reactions.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(int)]))!);
+          break;
+        case 'reactionsSelf':
+          result.reactionsSelf.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+          break;
+        case 'referenceId':
+          result.referenceId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'timestamp':
+          result.timestamp = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'token':
+          result.token = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'lastEditActorDisplayName':
+          result.lastEditActorDisplayName =
+              serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'lastEditActorId':
+          result.lastEditActorId = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'lastEditActorType':
+          result.lastEditActorType =
+              serializers.deserialize(value, specifiedType: const FullType(ActorTypes)) as ActorTypes?;
+          break;
+        case 'lastEditTimestamp':
+          result.lastEditTimestamp = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'silent':
+          result.silent = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadId':
+          result.threadId = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'isThread':
+          result.isThread = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadTitle':
+          result.threadTitle = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'threadReplies':
+          result.threadReplies = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'actorDisplayName':
+          result.actorDisplayName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'actorId':
+          result.actorId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'actorType':
+          result.actorType = serializers.deserialize(value, specifiedType: const FullType(ActorTypes))! as ActorTypes;
+          break;
+        case 'expirationTimestamp':
+          result.expirationTimestamp = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'message':
+          result.message = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'messageParameters':
+          result.messageParameters.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [
+                const FullType(String),
+                const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])
+              ]))!);
+          break;
+        case 'messageType':
+          result.messageType =
+              serializers.deserialize(value, specifiedType: const FullType(MessageType))! as MessageType;
+          break;
+        case 'systemMessage':
+          result.systemMessage = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadInfo_LastSerializer implements StructuredSerializer<ThreadInfo_Last> {
+  @override
+  final Iterable<Type> types = const [ThreadInfo_Last, _$ThreadInfo_Last];
+  @override
+  final String wireName = 'ThreadInfo_Last';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadInfo_Last object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(int)),
+      'isReplyable',
+      serializers.serialize(object.isReplyable, specifiedType: const FullType(bool)),
+      'markdown',
+      serializers.serialize(object.markdown, specifiedType: const FullType(bool)),
+      'reactions',
+      serializers.serialize(object.reactions,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(int)])),
+      'referenceId',
+      serializers.serialize(object.referenceId, specifiedType: const FullType(String)),
+      'timestamp',
+      serializers.serialize(object.timestamp, specifiedType: const FullType(int)),
+      'token',
+      serializers.serialize(object.token, specifiedType: const FullType(String)),
+      'actorDisplayName',
+      serializers.serialize(object.actorDisplayName, specifiedType: const FullType(String)),
+      'actorId',
+      serializers.serialize(object.actorId, specifiedType: const FullType(String)),
+      'actorType',
+      serializers.serialize(object.actorType, specifiedType: const FullType(ActorTypes)),
+      'expirationTimestamp',
+      serializers.serialize(object.expirationTimestamp, specifiedType: const FullType(int)),
+      'message',
+      serializers.serialize(object.message, specifiedType: const FullType(String)),
+      'messageParameters',
+      serializers.serialize(object.messageParameters,
+          specifiedType: const FullType(BuiltMap, const [
+            const FullType(String),
+            const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])
+          ])),
+      'messageType',
+      serializers.serialize(object.messageType, specifiedType: const FullType(MessageType)),
+      'systemMessage',
+      serializers.serialize(object.systemMessage, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.deleted;
+    if (value != null) {
+      result
+        ..add('deleted')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ChatMessage_Deleted)));
+    }
+    value = object.reactionsSelf;
+    if (value != null) {
+      result
+        ..add('reactionsSelf')
+        ..add(serializers.serialize(value, specifiedType: const FullType(BuiltList, const [const FullType(String)])));
+    }
+    value = object.lastEditActorDisplayName;
+    if (value != null) {
+      result
+        ..add('lastEditActorDisplayName')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.lastEditActorId;
+    if (value != null) {
+      result
+        ..add('lastEditActorId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.lastEditActorType;
+    if (value != null) {
+      result
+        ..add('lastEditActorType')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ActorTypes)));
+    }
+    value = object.lastEditTimestamp;
+    if (value != null) {
+      result
+        ..add('lastEditTimestamp')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.silent;
+    if (value != null) {
+      result
+        ..add('silent')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.threadId;
+    if (value != null) {
+      result
+        ..add('threadId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.isThread;
+    if (value != null) {
+      result
+        ..add('isThread')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.threadTitle;
+    if (value != null) {
+      result
+        ..add('threadTitle')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    value = object.threadReplies;
+    if (value != null) {
+      result
+        ..add('threadReplies')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  ThreadInfo_Last deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadInfo_LastBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'deleted':
+          result.deleted = serializers.deserialize(value, specifiedType: const FullType(ChatMessage_Deleted))
+              as ChatMessage_Deleted?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'isReplyable':
+          result.isReplyable = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'markdown':
+          result.markdown = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'reactions':
+          result.reactions.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(int)]))!);
+          break;
+        case 'reactionsSelf':
+          result.reactionsSelf.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+          break;
+        case 'referenceId':
+          result.referenceId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'timestamp':
+          result.timestamp = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'token':
+          result.token = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'lastEditActorDisplayName':
+          result.lastEditActorDisplayName =
+              serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'lastEditActorId':
+          result.lastEditActorId = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'lastEditActorType':
+          result.lastEditActorType =
+              serializers.deserialize(value, specifiedType: const FullType(ActorTypes)) as ActorTypes?;
+          break;
+        case 'lastEditTimestamp':
+          result.lastEditTimestamp = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'silent':
+          result.silent = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadId':
+          result.threadId = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'isThread':
+          result.isThread = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'threadTitle':
+          result.threadTitle = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'threadReplies':
+          result.threadReplies = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
+          break;
+        case 'actorDisplayName':
+          result.actorDisplayName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'actorId':
+          result.actorId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'actorType':
+          result.actorType = serializers.deserialize(value, specifiedType: const FullType(ActorTypes))! as ActorTypes;
+          break;
+        case 'expirationTimestamp':
+          result.expirationTimestamp = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'message':
+          result.message = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'messageParameters':
+          result.messageParameters.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [
+                const FullType(String),
+                const FullType(BuiltMap, const [const FullType(String), const FullType(JsonObject)])
+              ]))!);
+          break;
+        case 'messageType':
+          result.messageType =
+              serializers.deserialize(value, specifiedType: const FullType(MessageType))! as MessageType;
+          break;
+        case 'systemMessage':
+          result.systemMessage = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadInfoSerializer implements StructuredSerializer<ThreadInfo> {
+  @override
+  final Iterable<Type> types = const [ThreadInfo, _$ThreadInfo];
+  @override
+  final String wireName = 'ThreadInfo';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadInfo object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'thread',
+      serializers.serialize(object.thread, specifiedType: const FullType(Thread)),
+      'attendee',
+      serializers.serialize(object.attendee, specifiedType: const FullType(ThreadAttendee)),
+    ];
+    Object? value;
+    value = object.first;
+    if (value != null) {
+      result
+        ..add('first')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ThreadInfo_First)));
+    }
+    value = object.last;
+    if (value != null) {
+      result
+        ..add('last')
+        ..add(serializers.serialize(value, specifiedType: const FullType(ThreadInfo_Last)));
+    }
+    return result;
+  }
+
+  @override
+  ThreadInfo deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadInfoBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'thread':
+          result.thread.replace(serializers.deserialize(value, specifiedType: const FullType(Thread))! as Thread);
+          break;
+        case 'attendee':
+          result.attendee.replace(
+              serializers.deserialize(value, specifiedType: const FullType(ThreadAttendee))! as ThreadAttendee);
+          break;
+        case 'first':
+          result.first.replace(
+              serializers.deserialize(value, specifiedType: const FullType(ThreadInfo_First))! as ThreadInfo_First);
+          break;
+        case 'last':
+          result.last.replace(
+              serializers.deserialize(value, specifiedType: const FullType(ThreadInfo_Last))! as ThreadInfo_Last);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadGetRecentActiveThreadsResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs,
+    _$ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(BuiltList, const [const FullType(ThreadInfo)])),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [const FullType(ThreadInfo)]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadGetRecentActiveThreadsResponseApplicationJsonSerializer
+    implements StructuredSerializer<ThreadGetRecentActiveThreadsResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadGetRecentActiveThreadsResponseApplicationJson,
+    _$ThreadGetRecentActiveThreadsResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'ThreadGetRecentActiveThreadsResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadGetRecentActiveThreadsResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadGetRecentActiveThreadsResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs))!
+              as ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadGetSubscribedThreadsResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<ThreadGetSubscribedThreadsResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadGetSubscribedThreadsResponseApplicationJson_Ocs,
+    _$ThreadGetSubscribedThreadsResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'ThreadGetSubscribedThreadsResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadGetSubscribedThreadsResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(BuiltList, const [const FullType(ThreadInfo)])),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadGetSubscribedThreadsResponseApplicationJson_Ocs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [const FullType(ThreadInfo)]))! as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadGetSubscribedThreadsResponseApplicationJsonSerializer
+    implements StructuredSerializer<ThreadGetSubscribedThreadsResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadGetSubscribedThreadsResponseApplicationJson,
+    _$ThreadGetSubscribedThreadsResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'ThreadGetSubscribedThreadsResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadGetSubscribedThreadsResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(ThreadGetSubscribedThreadsResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadGetSubscribedThreadsResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadGetSubscribedThreadsResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(ThreadGetSubscribedThreadsResponseApplicationJson_Ocs))!
+              as ThreadGetSubscribedThreadsResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadGetThreadResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<ThreadGetThreadResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadGetThreadResponseApplicationJson_Ocs,
+    _$ThreadGetThreadResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'ThreadGetThreadResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadGetThreadResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(ThreadInfo)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadGetThreadResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadGetThreadResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value, specifiedType: const FullType(ThreadInfo))! as ThreadInfo);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadGetThreadResponseApplicationJsonSerializer
+    implements StructuredSerializer<ThreadGetThreadResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [ThreadGetThreadResponseApplicationJson, _$ThreadGetThreadResponseApplicationJson];
+  @override
+  final String wireName = 'ThreadGetThreadResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadGetThreadResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs, specifiedType: const FullType(ThreadGetThreadResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadGetThreadResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadGetThreadResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(
+              serializers.deserialize(value, specifiedType: const FullType(ThreadGetThreadResponseApplicationJson_Ocs))!
+                  as ThreadGetThreadResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadRenameThreadRequestApplicationJsonSerializer
+    implements StructuredSerializer<ThreadRenameThreadRequestApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadRenameThreadRequestApplicationJson,
+    _$ThreadRenameThreadRequestApplicationJson
+  ];
+  @override
+  final String wireName = 'ThreadRenameThreadRequestApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadRenameThreadRequestApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'threadTitle',
+      serializers.serialize(object.threadTitle, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadRenameThreadRequestApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadRenameThreadRequestApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'threadTitle':
+          result.threadTitle = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadRenameThreadResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<ThreadRenameThreadResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadRenameThreadResponseApplicationJson_Ocs,
+    _$ThreadRenameThreadResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'ThreadRenameThreadResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadRenameThreadResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(ThreadInfo)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadRenameThreadResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadRenameThreadResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value, specifiedType: const FullType(ThreadInfo))! as ThreadInfo);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadRenameThreadResponseApplicationJsonSerializer
+    implements StructuredSerializer<ThreadRenameThreadResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadRenameThreadResponseApplicationJson,
+    _$ThreadRenameThreadResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'ThreadRenameThreadResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadRenameThreadResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs, specifiedType: const FullType(ThreadRenameThreadResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadRenameThreadResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadRenameThreadResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(ThreadRenameThreadResponseApplicationJson_Ocs))!
+              as ThreadRenameThreadResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadSetNotificationLevelRequestApplicationJsonSerializer
+    implements StructuredSerializer<ThreadSetNotificationLevelRequestApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadSetNotificationLevelRequestApplicationJson,
+    _$ThreadSetNotificationLevelRequestApplicationJson
+  ];
+  @override
+  final String wireName = 'ThreadSetNotificationLevelRequestApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadSetNotificationLevelRequestApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'level',
+      serializers.serialize(object.level, specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadSetNotificationLevelRequestApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadSetNotificationLevelRequestApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'level':
+          result.level = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadSetNotificationLevelResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<ThreadSetNotificationLevelResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadSetNotificationLevelResponseApplicationJson_Ocs,
+    _$ThreadSetNotificationLevelResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'ThreadSetNotificationLevelResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadSetNotificationLevelResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(ThreadInfo)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadSetNotificationLevelResponseApplicationJson_Ocs deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data.replace(serializers.deserialize(value, specifiedType: const FullType(ThreadInfo))! as ThreadInfo);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$ThreadSetNotificationLevelResponseApplicationJsonSerializer
+    implements StructuredSerializer<ThreadSetNotificationLevelResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [
+    ThreadSetNotificationLevelResponseApplicationJson,
+    _$ThreadSetNotificationLevelResponseApplicationJson
+  ];
+  @override
+  final String wireName = 'ThreadSetNotificationLevelResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, ThreadSetNotificationLevelResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs,
+          specifiedType: const FullType(ThreadSetNotificationLevelResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  ThreadSetNotificationLevelResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = ThreadSetNotificationLevelResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(ThreadSetNotificationLevelResponseApplicationJson_Ocs))!
+              as ThreadSetNotificationLevelResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$TempAvatarPostAvatarResponseApplicationJson_OcsSerializer
     implements StructuredSerializer<TempAvatarPostAvatarResponseApplicationJson_Ocs> {
   @override
@@ -26916,7 +29582,7 @@ class _$RoomWithInvalidInvitationsSerializer implements StructuredSerializer<Roo
       'callPermissions',
       serializers.serialize(object.callPermissions, specifiedType: const FullType(int)),
       'callRecording',
-      serializers.serialize(object.callRecording, specifiedType: const FullType(int)),
+      serializers.serialize(object.callRecording, specifiedType: const FullType(Room_CallRecording)),
       'callStartTime',
       serializers.serialize(object.callStartTime, specifiedType: const FullType(int)),
       'canDeleteConversation',
@@ -26958,7 +29624,7 @@ class _$RoomWithInvalidInvitationsSerializer implements StructuredSerializer<Roo
       'lobbyTimer',
       serializers.serialize(object.lobbyTimer, specifiedType: const FullType(int)),
       'mentionPermissions',
-      serializers.serialize(object.mentionPermissions, specifiedType: const FullType(int)),
+      serializers.serialize(object.mentionPermissions, specifiedType: const FullType(Room_MentionPermissions)),
       'messageExpiration',
       serializers.serialize(object.messageExpiration, specifiedType: const FullType(int)),
       'name',
@@ -27016,6 +29682,12 @@ class _$RoomWithInvalidInvitationsSerializer implements StructuredSerializer<Roo
       result
         ..add('lastMessage')
         ..add(serializers.serialize(value, specifiedType: const FullType(RoomLastMessage)));
+    }
+    value = object.liveTranscriptionLanguageId;
+    if (value != null) {
+      result
+        ..add('liveTranscriptionLanguageId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.remoteServer;
     if (value != null) {
@@ -27117,7 +29789,8 @@ class _$RoomWithInvalidInvitationsSerializer implements StructuredSerializer<Roo
           result.callPermissions = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
         case 'callRecording':
-          result.callRecording = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          result.callRecording =
+              serializers.deserialize(value, specifiedType: const FullType(Room_CallRecording))! as Room_CallRecording;
           break;
         case 'callStartTime':
           result.callStartTime = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
@@ -27177,6 +29850,10 @@ class _$RoomWithInvalidInvitationsSerializer implements StructuredSerializer<Roo
         case 'listable':
           result.listable = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
+        case 'liveTranscriptionLanguageId':
+          result.liveTranscriptionLanguageId =
+              serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
         case 'lobbyState':
           result.lobbyState = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
@@ -27184,7 +29861,8 @@ class _$RoomWithInvalidInvitationsSerializer implements StructuredSerializer<Roo
           result.lobbyTimer = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
         case 'mentionPermissions':
-          result.mentionPermissions = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          result.mentionPermissions = serializers.deserialize(value,
+              specifiedType: const FullType(Room_MentionPermissions))! as Room_MentionPermissions;
           break;
         case 'messageExpiration':
           result.messageExpiration = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
@@ -27674,6 +30352,18 @@ abstract mixin class $ChatMessageInterfaceBuilder implements $BaseMessageInterfa
   bool? get silent;
   set silent(covariant bool? silent);
 
+  int? get threadId;
+  set threadId(covariant int? threadId);
+
+  bool? get isThread;
+  set isThread(covariant bool? isThread);
+
+  String? get threadTitle;
+  set threadTitle(covariant String? threadTitle);
+
+  int? get threadReplies;
+  set threadReplies(covariant int? threadReplies);
+
   String? get actorDisplayName;
   set actorDisplayName(covariant String? actorDisplayName);
 
@@ -27729,6 +30419,14 @@ class _$ChatMessage extends ChatMessage {
   @override
   final bool? silent;
   @override
+  final int? threadId;
+  @override
+  final bool? isThread;
+  @override
+  final String? threadTitle;
+  @override
+  final int? threadReplies;
+  @override
   final String actorDisplayName;
   @override
   final String actorId;
@@ -27763,6 +30461,10 @@ class _$ChatMessage extends ChatMessage {
       this.lastEditActorType,
       this.lastEditTimestamp,
       this.silent,
+      this.threadId,
+      this.isThread,
+      this.threadTitle,
+      this.threadReplies,
       required this.actorDisplayName,
       required this.actorId,
       required this.actorType,
@@ -27796,6 +30498,10 @@ class _$ChatMessage extends ChatMessage {
         lastEditActorType == other.lastEditActorType &&
         lastEditTimestamp == other.lastEditTimestamp &&
         silent == other.silent &&
+        threadId == other.threadId &&
+        isThread == other.isThread &&
+        threadTitle == other.threadTitle &&
+        threadReplies == other.threadReplies &&
         actorDisplayName == other.actorDisplayName &&
         actorId == other.actorId &&
         actorType == other.actorType &&
@@ -27823,6 +30529,10 @@ class _$ChatMessage extends ChatMessage {
     _$hash = $jc(_$hash, lastEditActorType.hashCode);
     _$hash = $jc(_$hash, lastEditTimestamp.hashCode);
     _$hash = $jc(_$hash, silent.hashCode);
+    _$hash = $jc(_$hash, threadId.hashCode);
+    _$hash = $jc(_$hash, isThread.hashCode);
+    _$hash = $jc(_$hash, threadTitle.hashCode);
+    _$hash = $jc(_$hash, threadReplies.hashCode);
     _$hash = $jc(_$hash, actorDisplayName.hashCode);
     _$hash = $jc(_$hash, actorId.hashCode);
     _$hash = $jc(_$hash, actorType.hashCode);
@@ -27852,6 +30562,10 @@ class _$ChatMessage extends ChatMessage {
           ..add('lastEditActorType', lastEditActorType)
           ..add('lastEditTimestamp', lastEditTimestamp)
           ..add('silent', silent)
+          ..add('threadId', threadId)
+          ..add('isThread', isThread)
+          ..add('threadTitle', threadTitle)
+          ..add('threadReplies', threadReplies)
           ..add('actorDisplayName', actorDisplayName)
           ..add('actorId', actorId)
           ..add('actorType', actorType)
@@ -27924,6 +30638,22 @@ class ChatMessageBuilder implements Builder<ChatMessage, ChatMessageBuilder>, $C
   bool? get silent => _$this._silent;
   set silent(covariant bool? silent) => _$this._silent = silent;
 
+  int? _threadId;
+  int? get threadId => _$this._threadId;
+  set threadId(covariant int? threadId) => _$this._threadId = threadId;
+
+  bool? _isThread;
+  bool? get isThread => _$this._isThread;
+  set isThread(covariant bool? isThread) => _$this._isThread = isThread;
+
+  String? _threadTitle;
+  String? get threadTitle => _$this._threadTitle;
+  set threadTitle(covariant String? threadTitle) => _$this._threadTitle = threadTitle;
+
+  int? _threadReplies;
+  int? get threadReplies => _$this._threadReplies;
+  set threadReplies(covariant int? threadReplies) => _$this._threadReplies = threadReplies;
+
   String? _actorDisplayName;
   String? get actorDisplayName => _$this._actorDisplayName;
   set actorDisplayName(covariant String? actorDisplayName) => _$this._actorDisplayName = actorDisplayName;
@@ -27979,6 +30709,10 @@ class ChatMessageBuilder implements Builder<ChatMessage, ChatMessageBuilder>, $C
       _lastEditActorType = $v.lastEditActorType;
       _lastEditTimestamp = $v.lastEditTimestamp;
       _silent = $v.silent;
+      _threadId = $v.threadId;
+      _isThread = $v.isThread;
+      _threadTitle = $v.threadTitle;
+      _threadReplies = $v.threadReplies;
       _actorDisplayName = $v.actorDisplayName;
       _actorId = $v.actorId;
       _actorType = $v.actorType;
@@ -28025,6 +30759,10 @@ class ChatMessageBuilder implements Builder<ChatMessage, ChatMessageBuilder>, $C
             lastEditActorType: lastEditActorType,
             lastEditTimestamp: lastEditTimestamp,
             silent: silent,
+            threadId: threadId,
+            isThread: isThread,
+            threadTitle: threadTitle,
+            threadReplies: threadReplies,
             actorDisplayName:
                 BuiltValueNullFieldError.checkNotNull(actorDisplayName, r'ChatMessage', 'actorDisplayName'),
             actorId: BuiltValueNullFieldError.checkNotNull(actorId, r'ChatMessage', 'actorId'),
@@ -28092,8 +30830,8 @@ abstract mixin class $RoomInterfaceBuilder {
   int? get callPermissions;
   set callPermissions(int? callPermissions);
 
-  int? get callRecording;
-  set callRecording(int? callRecording);
+  Room_CallRecording? get callRecording;
+  set callRecording(Room_CallRecording? callRecording);
 
   int? get callStartTime;
   set callStartTime(int? callStartTime);
@@ -28152,14 +30890,17 @@ abstract mixin class $RoomInterfaceBuilder {
   int? get listable;
   set listable(int? listable);
 
+  String? get liveTranscriptionLanguageId;
+  set liveTranscriptionLanguageId(String? liveTranscriptionLanguageId);
+
   int? get lobbyState;
   set lobbyState(int? lobbyState);
 
   int? get lobbyTimer;
   set lobbyTimer(int? lobbyTimer);
 
-  int? get mentionPermissions;
-  set mentionPermissions(int? mentionPermissions);
+  Room_MentionPermissions? get mentionPermissions;
+  set mentionPermissions(Room_MentionPermissions? mentionPermissions);
 
   int? get messageExpiration;
   set messageExpiration(int? messageExpiration);
@@ -28267,7 +31008,7 @@ class _$Room extends Room {
   @override
   final int callPermissions;
   @override
-  final int callRecording;
+  final Room_CallRecording callRecording;
   @override
   final int callStartTime;
   @override
@@ -28307,11 +31048,13 @@ class _$Room extends Room {
   @override
   final int listable;
   @override
+  final String? liveTranscriptionLanguageId;
+  @override
   final int lobbyState;
   @override
   final int lobbyTimer;
   @override
-  final int mentionPermissions;
+  final Room_MentionPermissions mentionPermissions;
   @override
   final int messageExpiration;
   @override
@@ -28401,6 +31144,7 @@ class _$Room extends Room {
       required this.lastPing,
       required this.lastReadMessage,
       required this.listable,
+      this.liveTranscriptionLanguageId,
       required this.lobbyState,
       required this.lobbyTimer,
       required this.mentionPermissions,
@@ -28474,6 +31218,7 @@ class _$Room extends Room {
         lastPing == other.lastPing &&
         lastReadMessage == other.lastReadMessage &&
         listable == other.listable &&
+        liveTranscriptionLanguageId == other.liveTranscriptionLanguageId &&
         lobbyState == other.lobbyState &&
         lobbyTimer == other.lobbyTimer &&
         mentionPermissions == other.mentionPermissions &&
@@ -28540,6 +31285,7 @@ class _$Room extends Room {
     _$hash = $jc(_$hash, lastPing.hashCode);
     _$hash = $jc(_$hash, lastReadMessage.hashCode);
     _$hash = $jc(_$hash, listable.hashCode);
+    _$hash = $jc(_$hash, liveTranscriptionLanguageId.hashCode);
     _$hash = $jc(_$hash, lobbyState.hashCode);
     _$hash = $jc(_$hash, lobbyTimer.hashCode);
     _$hash = $jc(_$hash, mentionPermissions.hashCode);
@@ -28608,6 +31354,7 @@ class _$Room extends Room {
           ..add('lastPing', lastPing)
           ..add('lastReadMessage', lastReadMessage)
           ..add('listable', listable)
+          ..add('liveTranscriptionLanguageId', liveTranscriptionLanguageId)
           ..add('lobbyState', lobbyState)
           ..add('lobbyTimer', lobbyTimer)
           ..add('mentionPermissions', mentionPermissions)
@@ -28689,9 +31436,9 @@ class RoomBuilder implements Builder<Room, RoomBuilder>, $RoomInterfaceBuilder {
   int? get callPermissions => _$this._callPermissions;
   set callPermissions(covariant int? callPermissions) => _$this._callPermissions = callPermissions;
 
-  int? _callRecording;
-  int? get callRecording => _$this._callRecording;
-  set callRecording(covariant int? callRecording) => _$this._callRecording = callRecording;
+  Room_CallRecording? _callRecording;
+  Room_CallRecording? get callRecording => _$this._callRecording;
+  set callRecording(covariant Room_CallRecording? callRecording) => _$this._callRecording = callRecording;
 
   int? _callStartTime;
   int? get callStartTime => _$this._callStartTime;
@@ -28771,6 +31518,11 @@ class RoomBuilder implements Builder<Room, RoomBuilder>, $RoomInterfaceBuilder {
   int? get listable => _$this._listable;
   set listable(covariant int? listable) => _$this._listable = listable;
 
+  String? _liveTranscriptionLanguageId;
+  String? get liveTranscriptionLanguageId => _$this._liveTranscriptionLanguageId;
+  set liveTranscriptionLanguageId(covariant String? liveTranscriptionLanguageId) =>
+      _$this._liveTranscriptionLanguageId = liveTranscriptionLanguageId;
+
   int? _lobbyState;
   int? get lobbyState => _$this._lobbyState;
   set lobbyState(covariant int? lobbyState) => _$this._lobbyState = lobbyState;
@@ -28779,9 +31531,10 @@ class RoomBuilder implements Builder<Room, RoomBuilder>, $RoomInterfaceBuilder {
   int? get lobbyTimer => _$this._lobbyTimer;
   set lobbyTimer(covariant int? lobbyTimer) => _$this._lobbyTimer = lobbyTimer;
 
-  int? _mentionPermissions;
-  int? get mentionPermissions => _$this._mentionPermissions;
-  set mentionPermissions(covariant int? mentionPermissions) => _$this._mentionPermissions = mentionPermissions;
+  Room_MentionPermissions? _mentionPermissions;
+  Room_MentionPermissions? get mentionPermissions => _$this._mentionPermissions;
+  set mentionPermissions(covariant Room_MentionPermissions? mentionPermissions) =>
+      _$this._mentionPermissions = mentionPermissions;
 
   int? _messageExpiration;
   int? get messageExpiration => _$this._messageExpiration;
@@ -28929,6 +31682,7 @@ class RoomBuilder implements Builder<Room, RoomBuilder>, $RoomInterfaceBuilder {
       _lastPing = $v.lastPing;
       _lastReadMessage = $v.lastReadMessage;
       _listable = $v.listable;
+      _liveTranscriptionLanguageId = $v.liveTranscriptionLanguageId;
       _lobbyState = $v.lobbyState;
       _lobbyTimer = $v.lobbyTimer;
       _mentionPermissions = $v.mentionPermissions;
@@ -29016,6 +31770,7 @@ class RoomBuilder implements Builder<Room, RoomBuilder>, $RoomInterfaceBuilder {
           lastPing: BuiltValueNullFieldError.checkNotNull(lastPing, r'Room', 'lastPing'),
           lastReadMessage: BuiltValueNullFieldError.checkNotNull(lastReadMessage, r'Room', 'lastReadMessage'),
           listable: BuiltValueNullFieldError.checkNotNull(listable, r'Room', 'listable'),
+          liveTranscriptionLanguageId: liveTranscriptionLanguageId,
           lobbyState: BuiltValueNullFieldError.checkNotNull(lobbyState, r'Room', 'lobbyState'),
           lobbyTimer: BuiltValueNullFieldError.checkNotNull(lobbyTimer, r'Room', 'lobbyTimer'),
           mentionPermissions: BuiltValueNullFieldError.checkNotNull(mentionPermissions, r'Room', 'mentionPermissions'),
@@ -31193,21 +33948,160 @@ class BotListBotsResponseApplicationJsonBuilder
   }
 }
 
+abstract mixin class $BotEnableBotResponseApplicationJson_Ocs_DataInterfaceBuilder implements $BotInterfaceBuilder {
+  void replace(covariant $BotEnableBotResponseApplicationJson_Ocs_DataInterface other);
+  void update(void Function($BotEnableBotResponseApplicationJson_Ocs_DataInterfaceBuilder) updates);
+  String? get description;
+  set description(covariant String? description);
+
+  int? get id;
+  set id(covariant int? id);
+
+  String? get name;
+  set name(covariant String? name);
+
+  int? get state;
+  set state(covariant int? state);
+}
+
+class _$BotEnableBotResponseApplicationJson_Ocs_Data extends BotEnableBotResponseApplicationJson_Ocs_Data {
+  @override
+  final String? description;
+  @override
+  final int id;
+  @override
+  final String name;
+  @override
+  final int state;
+
+  factory _$BotEnableBotResponseApplicationJson_Ocs_Data(
+          [void Function(BotEnableBotResponseApplicationJson_Ocs_DataBuilder)? updates]) =>
+      (BotEnableBotResponseApplicationJson_Ocs_DataBuilder()..update(updates))._build();
+
+  _$BotEnableBotResponseApplicationJson_Ocs_Data._(
+      {this.description, required this.id, required this.name, required this.state})
+      : super._();
+  @override
+  BotEnableBotResponseApplicationJson_Ocs_Data rebuild(
+          void Function(BotEnableBotResponseApplicationJson_Ocs_DataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  BotEnableBotResponseApplicationJson_Ocs_DataBuilder toBuilder() =>
+      BotEnableBotResponseApplicationJson_Ocs_DataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is BotEnableBotResponseApplicationJson_Ocs_Data &&
+        description == other.description &&
+        id == other.id &&
+        name == other.name &&
+        state == other.state;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, state.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'BotEnableBotResponseApplicationJson_Ocs_Data')
+          ..add('description', description)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('state', state))
+        .toString();
+  }
+}
+
+class BotEnableBotResponseApplicationJson_Ocs_DataBuilder
+    implements
+        Builder<BotEnableBotResponseApplicationJson_Ocs_Data, BotEnableBotResponseApplicationJson_Ocs_DataBuilder>,
+        $BotEnableBotResponseApplicationJson_Ocs_DataInterfaceBuilder {
+  _$BotEnableBotResponseApplicationJson_Ocs_Data? _$v;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) => _$this._description = description;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  int? _state;
+  int? get state => _$this._state;
+  set state(covariant int? state) => _$this._state = state;
+
+  BotEnableBotResponseApplicationJson_Ocs_DataBuilder() {
+    BotEnableBotResponseApplicationJson_Ocs_Data._defaults(this);
+  }
+
+  BotEnableBotResponseApplicationJson_Ocs_DataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _description = $v.description;
+      _id = $v.id;
+      _name = $v.name;
+      _state = $v.state;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant BotEnableBotResponseApplicationJson_Ocs_Data other) {
+    _$v = other as _$BotEnableBotResponseApplicationJson_Ocs_Data;
+  }
+
+  @override
+  void update(void Function(BotEnableBotResponseApplicationJson_Ocs_DataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  BotEnableBotResponseApplicationJson_Ocs_Data build() => _build();
+
+  _$BotEnableBotResponseApplicationJson_Ocs_Data _build() {
+    BotEnableBotResponseApplicationJson_Ocs_Data._validate(this);
+    final _$result = _$v ??
+        _$BotEnableBotResponseApplicationJson_Ocs_Data._(
+          description: description,
+          id: BuiltValueNullFieldError.checkNotNull(id, r'BotEnableBotResponseApplicationJson_Ocs_Data', 'id'),
+          name: BuiltValueNullFieldError.checkNotNull(name, r'BotEnableBotResponseApplicationJson_Ocs_Data', 'name'),
+          state: BuiltValueNullFieldError.checkNotNull(state, r'BotEnableBotResponseApplicationJson_Ocs_Data', 'state'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $BotEnableBotResponseApplicationJson_OcsInterfaceBuilder {
   void replace($BotEnableBotResponseApplicationJson_OcsInterface other);
   void update(void Function($BotEnableBotResponseApplicationJson_OcsInterfaceBuilder) updates);
   OCSMetaBuilder get meta;
   set meta(OCSMetaBuilder? meta);
 
-  BotBuilder get data;
-  set data(BotBuilder? data);
+  BotEnableBotResponseApplicationJson_Ocs_DataBuilder get data;
+  set data(BotEnableBotResponseApplicationJson_Ocs_DataBuilder? data);
 }
 
 class _$BotEnableBotResponseApplicationJson_Ocs extends BotEnableBotResponseApplicationJson_Ocs {
   @override
   final OCSMeta meta;
   @override
-  final Bot? data;
+  final BotEnableBotResponseApplicationJson_Ocs_Data? data;
 
   factory _$BotEnableBotResponseApplicationJson_Ocs(
           [void Function(BotEnableBotResponseApplicationJson_OcsBuilder)? updates]) =>
@@ -31257,9 +34151,10 @@ class BotEnableBotResponseApplicationJson_OcsBuilder
   OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
   set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
 
-  BotBuilder? _data;
-  BotBuilder get data => _$this._data ??= BotBuilder();
-  set data(covariant BotBuilder? data) => _$this._data = data;
+  BotEnableBotResponseApplicationJson_Ocs_DataBuilder? _data;
+  BotEnableBotResponseApplicationJson_Ocs_DataBuilder get data =>
+      _$this._data ??= BotEnableBotResponseApplicationJson_Ocs_DataBuilder();
+  set data(covariant BotEnableBotResponseApplicationJson_Ocs_DataBuilder? data) => _$this._data = data;
 
   BotEnableBotResponseApplicationJson_OcsBuilder() {
     BotEnableBotResponseApplicationJson_Ocs._defaults(this);
@@ -31416,21 +34311,161 @@ class BotEnableBotResponseApplicationJsonBuilder
   }
 }
 
+abstract mixin class $BotDisableBotResponseApplicationJson_Ocs_DataInterfaceBuilder implements $BotInterfaceBuilder {
+  void replace(covariant $BotDisableBotResponseApplicationJson_Ocs_DataInterface other);
+  void update(void Function($BotDisableBotResponseApplicationJson_Ocs_DataInterfaceBuilder) updates);
+  String? get description;
+  set description(covariant String? description);
+
+  int? get id;
+  set id(covariant int? id);
+
+  String? get name;
+  set name(covariant String? name);
+
+  int? get state;
+  set state(covariant int? state);
+}
+
+class _$BotDisableBotResponseApplicationJson_Ocs_Data extends BotDisableBotResponseApplicationJson_Ocs_Data {
+  @override
+  final String? description;
+  @override
+  final int id;
+  @override
+  final String name;
+  @override
+  final int state;
+
+  factory _$BotDisableBotResponseApplicationJson_Ocs_Data(
+          [void Function(BotDisableBotResponseApplicationJson_Ocs_DataBuilder)? updates]) =>
+      (BotDisableBotResponseApplicationJson_Ocs_DataBuilder()..update(updates))._build();
+
+  _$BotDisableBotResponseApplicationJson_Ocs_Data._(
+      {this.description, required this.id, required this.name, required this.state})
+      : super._();
+  @override
+  BotDisableBotResponseApplicationJson_Ocs_Data rebuild(
+          void Function(BotDisableBotResponseApplicationJson_Ocs_DataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  BotDisableBotResponseApplicationJson_Ocs_DataBuilder toBuilder() =>
+      BotDisableBotResponseApplicationJson_Ocs_DataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is BotDisableBotResponseApplicationJson_Ocs_Data &&
+        description == other.description &&
+        id == other.id &&
+        name == other.name &&
+        state == other.state;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, state.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'BotDisableBotResponseApplicationJson_Ocs_Data')
+          ..add('description', description)
+          ..add('id', id)
+          ..add('name', name)
+          ..add('state', state))
+        .toString();
+  }
+}
+
+class BotDisableBotResponseApplicationJson_Ocs_DataBuilder
+    implements
+        Builder<BotDisableBotResponseApplicationJson_Ocs_Data, BotDisableBotResponseApplicationJson_Ocs_DataBuilder>,
+        $BotDisableBotResponseApplicationJson_Ocs_DataInterfaceBuilder {
+  _$BotDisableBotResponseApplicationJson_Ocs_Data? _$v;
+
+  String? _description;
+  String? get description => _$this._description;
+  set description(covariant String? description) => _$this._description = description;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  int? _state;
+  int? get state => _$this._state;
+  set state(covariant int? state) => _$this._state = state;
+
+  BotDisableBotResponseApplicationJson_Ocs_DataBuilder() {
+    BotDisableBotResponseApplicationJson_Ocs_Data._defaults(this);
+  }
+
+  BotDisableBotResponseApplicationJson_Ocs_DataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _description = $v.description;
+      _id = $v.id;
+      _name = $v.name;
+      _state = $v.state;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant BotDisableBotResponseApplicationJson_Ocs_Data other) {
+    _$v = other as _$BotDisableBotResponseApplicationJson_Ocs_Data;
+  }
+
+  @override
+  void update(void Function(BotDisableBotResponseApplicationJson_Ocs_DataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  BotDisableBotResponseApplicationJson_Ocs_Data build() => _build();
+
+  _$BotDisableBotResponseApplicationJson_Ocs_Data _build() {
+    BotDisableBotResponseApplicationJson_Ocs_Data._validate(this);
+    final _$result = _$v ??
+        _$BotDisableBotResponseApplicationJson_Ocs_Data._(
+          description: description,
+          id: BuiltValueNullFieldError.checkNotNull(id, r'BotDisableBotResponseApplicationJson_Ocs_Data', 'id'),
+          name: BuiltValueNullFieldError.checkNotNull(name, r'BotDisableBotResponseApplicationJson_Ocs_Data', 'name'),
+          state:
+              BuiltValueNullFieldError.checkNotNull(state, r'BotDisableBotResponseApplicationJson_Ocs_Data', 'state'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $BotDisableBotResponseApplicationJson_OcsInterfaceBuilder {
   void replace($BotDisableBotResponseApplicationJson_OcsInterface other);
   void update(void Function($BotDisableBotResponseApplicationJson_OcsInterfaceBuilder) updates);
   OCSMetaBuilder get meta;
   set meta(OCSMetaBuilder? meta);
 
-  BotBuilder get data;
-  set data(BotBuilder? data);
+  BotDisableBotResponseApplicationJson_Ocs_DataBuilder get data;
+  set data(BotDisableBotResponseApplicationJson_Ocs_DataBuilder? data);
 }
 
 class _$BotDisableBotResponseApplicationJson_Ocs extends BotDisableBotResponseApplicationJson_Ocs {
   @override
   final OCSMeta meta;
   @override
-  final Bot? data;
+  final BotDisableBotResponseApplicationJson_Ocs_Data? data;
 
   factory _$BotDisableBotResponseApplicationJson_Ocs(
           [void Function(BotDisableBotResponseApplicationJson_OcsBuilder)? updates]) =>
@@ -31480,9 +34515,10 @@ class BotDisableBotResponseApplicationJson_OcsBuilder
   OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
   set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
 
-  BotBuilder? _data;
-  BotBuilder get data => _$this._data ??= BotBuilder();
-  set data(covariant BotBuilder? data) => _$this._data = data;
+  BotDisableBotResponseApplicationJson_Ocs_DataBuilder? _data;
+  BotDisableBotResponseApplicationJson_Ocs_DataBuilder get data =>
+      _$this._data ??= BotDisableBotResponseApplicationJson_Ocs_DataBuilder();
+  set data(covariant BotDisableBotResponseApplicationJson_Ocs_DataBuilder? data) => _$this._data = data;
 
   BotDisableBotResponseApplicationJson_OcsBuilder() {
     BotDisableBotResponseApplicationJson_Ocs._defaults(this);
@@ -31655,6 +34691,12 @@ abstract mixin class $BotSendMessageRequestApplicationJsonInterfaceBuilder {
 
   bool? get silent;
   set silent(bool? silent);
+
+  String? get threadTitle;
+  set threadTitle(String? threadTitle);
+
+  int? get threadId;
+  set threadId(int? threadId);
 }
 
 class _$BotSendMessageRequestApplicationJson extends BotSendMessageRequestApplicationJson {
@@ -31666,13 +34708,22 @@ class _$BotSendMessageRequestApplicationJson extends BotSendMessageRequestApplic
   final int replyTo;
   @override
   final bool silent;
+  @override
+  final String threadTitle;
+  @override
+  final int threadId;
 
   factory _$BotSendMessageRequestApplicationJson(
           [void Function(BotSendMessageRequestApplicationJsonBuilder)? updates]) =>
       (BotSendMessageRequestApplicationJsonBuilder()..update(updates))._build();
 
   _$BotSendMessageRequestApplicationJson._(
-      {required this.message, required this.referenceId, required this.replyTo, required this.silent})
+      {required this.message,
+      required this.referenceId,
+      required this.replyTo,
+      required this.silent,
+      required this.threadTitle,
+      required this.threadId})
       : super._();
   @override
   BotSendMessageRequestApplicationJson rebuild(void Function(BotSendMessageRequestApplicationJsonBuilder) updates) =>
@@ -31689,7 +34740,9 @@ class _$BotSendMessageRequestApplicationJson extends BotSendMessageRequestApplic
         message == other.message &&
         referenceId == other.referenceId &&
         replyTo == other.replyTo &&
-        silent == other.silent;
+        silent == other.silent &&
+        threadTitle == other.threadTitle &&
+        threadId == other.threadId;
   }
 
   @override
@@ -31699,6 +34752,8 @@ class _$BotSendMessageRequestApplicationJson extends BotSendMessageRequestApplic
     _$hash = $jc(_$hash, referenceId.hashCode);
     _$hash = $jc(_$hash, replyTo.hashCode);
     _$hash = $jc(_$hash, silent.hashCode);
+    _$hash = $jc(_$hash, threadTitle.hashCode);
+    _$hash = $jc(_$hash, threadId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -31709,7 +34764,9 @@ class _$BotSendMessageRequestApplicationJson extends BotSendMessageRequestApplic
           ..add('message', message)
           ..add('referenceId', referenceId)
           ..add('replyTo', replyTo)
-          ..add('silent', silent))
+          ..add('silent', silent)
+          ..add('threadTitle', threadTitle)
+          ..add('threadId', threadId))
         .toString();
   }
 }
@@ -31736,6 +34793,14 @@ class BotSendMessageRequestApplicationJsonBuilder
   bool? get silent => _$this._silent;
   set silent(covariant bool? silent) => _$this._silent = silent;
 
+  String? _threadTitle;
+  String? get threadTitle => _$this._threadTitle;
+  set threadTitle(covariant String? threadTitle) => _$this._threadTitle = threadTitle;
+
+  int? _threadId;
+  int? get threadId => _$this._threadId;
+  set threadId(covariant int? threadId) => _$this._threadId = threadId;
+
   BotSendMessageRequestApplicationJsonBuilder() {
     BotSendMessageRequestApplicationJson._defaults(this);
   }
@@ -31747,6 +34812,8 @@ class BotSendMessageRequestApplicationJsonBuilder
       _referenceId = $v.referenceId;
       _replyTo = $v.replyTo;
       _silent = $v.silent;
+      _threadTitle = $v.threadTitle;
+      _threadId = $v.threadId;
       _$v = null;
     }
     return this;
@@ -31774,6 +34841,10 @@ class BotSendMessageRequestApplicationJsonBuilder
               referenceId, r'BotSendMessageRequestApplicationJson', 'referenceId'),
           replyTo: BuiltValueNullFieldError.checkNotNull(replyTo, r'BotSendMessageRequestApplicationJson', 'replyTo'),
           silent: BuiltValueNullFieldError.checkNotNull(silent, r'BotSendMessageRequestApplicationJson', 'silent'),
+          threadTitle: BuiltValueNullFieldError.checkNotNull(
+              threadTitle, r'BotSendMessageRequestApplicationJson', 'threadTitle'),
+          threadId:
+              BuiltValueNullFieldError.checkNotNull(threadId, r'BotSendMessageRequestApplicationJson', 'threadId'),
         );
     replace(_$result);
     return _$result;
@@ -39250,6 +42321,18 @@ abstract mixin class $ChatMessageWithParentInterfaceBuilder implements $ChatMess
   bool? get silent;
   set silent(covariant bool? silent);
 
+  int? get threadId;
+  set threadId(covariant int? threadId);
+
+  bool? get isThread;
+  set isThread(covariant bool? isThread);
+
+  String? get threadTitle;
+  set threadTitle(covariant String? threadTitle);
+
+  int? get threadReplies;
+  set threadReplies(covariant int? threadReplies);
+
   String? get actorDisplayName;
   set actorDisplayName(covariant String? actorDisplayName);
 
@@ -39307,6 +42390,14 @@ class _$ChatMessageWithParent extends ChatMessageWithParent {
   @override
   final bool? silent;
   @override
+  final int? threadId;
+  @override
+  final bool? isThread;
+  @override
+  final String? threadTitle;
+  @override
+  final int? threadReplies;
+  @override
   final String actorDisplayName;
   @override
   final String actorId;
@@ -39342,6 +42433,10 @@ class _$ChatMessageWithParent extends ChatMessageWithParent {
       this.lastEditActorType,
       this.lastEditTimestamp,
       this.silent,
+      this.threadId,
+      this.isThread,
+      this.threadTitle,
+      this.threadReplies,
       required this.actorDisplayName,
       required this.actorId,
       required this.actorType,
@@ -39378,6 +42473,10 @@ class _$ChatMessageWithParent extends ChatMessageWithParent {
         lastEditActorType == other.lastEditActorType &&
         lastEditTimestamp == other.lastEditTimestamp &&
         silent == other.silent &&
+        threadId == other.threadId &&
+        isThread == other.isThread &&
+        threadTitle == other.threadTitle &&
+        threadReplies == other.threadReplies &&
         actorDisplayName == other.actorDisplayName &&
         actorId == other.actorId &&
         actorType == other.actorType &&
@@ -39406,6 +42505,10 @@ class _$ChatMessageWithParent extends ChatMessageWithParent {
     _$hash = $jc(_$hash, lastEditActorType.hashCode);
     _$hash = $jc(_$hash, lastEditTimestamp.hashCode);
     _$hash = $jc(_$hash, silent.hashCode);
+    _$hash = $jc(_$hash, threadId.hashCode);
+    _$hash = $jc(_$hash, isThread.hashCode);
+    _$hash = $jc(_$hash, threadTitle.hashCode);
+    _$hash = $jc(_$hash, threadReplies.hashCode);
     _$hash = $jc(_$hash, actorDisplayName.hashCode);
     _$hash = $jc(_$hash, actorId.hashCode);
     _$hash = $jc(_$hash, actorType.hashCode);
@@ -39436,6 +42539,10 @@ class _$ChatMessageWithParent extends ChatMessageWithParent {
           ..add('lastEditActorType', lastEditActorType)
           ..add('lastEditTimestamp', lastEditTimestamp)
           ..add('silent', silent)
+          ..add('threadId', threadId)
+          ..add('isThread', isThread)
+          ..add('threadTitle', threadTitle)
+          ..add('threadReplies', threadReplies)
           ..add('actorDisplayName', actorDisplayName)
           ..add('actorId', actorId)
           ..add('actorType', actorType)
@@ -39513,6 +42620,22 @@ class ChatMessageWithParentBuilder
   bool? get silent => _$this._silent;
   set silent(covariant bool? silent) => _$this._silent = silent;
 
+  int? _threadId;
+  int? get threadId => _$this._threadId;
+  set threadId(covariant int? threadId) => _$this._threadId = threadId;
+
+  bool? _isThread;
+  bool? get isThread => _$this._isThread;
+  set isThread(covariant bool? isThread) => _$this._isThread = isThread;
+
+  String? _threadTitle;
+  String? get threadTitle => _$this._threadTitle;
+  set threadTitle(covariant String? threadTitle) => _$this._threadTitle = threadTitle;
+
+  int? _threadReplies;
+  int? get threadReplies => _$this._threadReplies;
+  set threadReplies(covariant int? threadReplies) => _$this._threadReplies = threadReplies;
+
   String? _actorDisplayName;
   String? get actorDisplayName => _$this._actorDisplayName;
   set actorDisplayName(covariant String? actorDisplayName) => _$this._actorDisplayName = actorDisplayName;
@@ -39569,6 +42692,10 @@ class ChatMessageWithParentBuilder
       _lastEditActorType = $v.lastEditActorType;
       _lastEditTimestamp = $v.lastEditTimestamp;
       _silent = $v.silent;
+      _threadId = $v.threadId;
+      _isThread = $v.isThread;
+      _threadTitle = $v.threadTitle;
+      _threadReplies = $v.threadReplies;
       _actorDisplayName = $v.actorDisplayName;
       _actorId = $v.actorId;
       _actorType = $v.actorType;
@@ -39616,6 +42743,10 @@ class ChatMessageWithParentBuilder
             lastEditActorType: lastEditActorType,
             lastEditTimestamp: lastEditTimestamp,
             silent: silent,
+            threadId: threadId,
+            isThread: isThread,
+            threadTitle: threadTitle,
+            threadReplies: threadReplies,
             actorDisplayName:
                 BuiltValueNullFieldError.checkNotNull(actorDisplayName, r'ChatMessageWithParent', 'actorDisplayName'),
             actorId: BuiltValueNullFieldError.checkNotNull(actorId, r'ChatMessageWithParent', 'actorId'),
@@ -39998,6 +43129,12 @@ abstract mixin class $ChatSendMessageRequestApplicationJsonInterfaceBuilder {
 
   bool? get silent;
   set silent(bool? silent);
+
+  String? get threadTitle;
+  set threadTitle(String? threadTitle);
+
+  int? get threadId;
+  set threadId(int? threadId);
 }
 
 class _$ChatSendMessageRequestApplicationJson extends ChatSendMessageRequestApplicationJson {
@@ -40011,6 +43148,10 @@ class _$ChatSendMessageRequestApplicationJson extends ChatSendMessageRequestAppl
   final int replyTo;
   @override
   final bool silent;
+  @override
+  final String threadTitle;
+  @override
+  final int threadId;
 
   factory _$ChatSendMessageRequestApplicationJson(
           [void Function(ChatSendMessageRequestApplicationJsonBuilder)? updates]) =>
@@ -40021,7 +43162,9 @@ class _$ChatSendMessageRequestApplicationJson extends ChatSendMessageRequestAppl
       required this.actorDisplayName,
       required this.referenceId,
       required this.replyTo,
-      required this.silent})
+      required this.silent,
+      required this.threadTitle,
+      required this.threadId})
       : super._();
   @override
   ChatSendMessageRequestApplicationJson rebuild(void Function(ChatSendMessageRequestApplicationJsonBuilder) updates) =>
@@ -40039,7 +43182,9 @@ class _$ChatSendMessageRequestApplicationJson extends ChatSendMessageRequestAppl
         actorDisplayName == other.actorDisplayName &&
         referenceId == other.referenceId &&
         replyTo == other.replyTo &&
-        silent == other.silent;
+        silent == other.silent &&
+        threadTitle == other.threadTitle &&
+        threadId == other.threadId;
   }
 
   @override
@@ -40050,6 +43195,8 @@ class _$ChatSendMessageRequestApplicationJson extends ChatSendMessageRequestAppl
     _$hash = $jc(_$hash, referenceId.hashCode);
     _$hash = $jc(_$hash, replyTo.hashCode);
     _$hash = $jc(_$hash, silent.hashCode);
+    _$hash = $jc(_$hash, threadTitle.hashCode);
+    _$hash = $jc(_$hash, threadId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -40061,7 +43208,9 @@ class _$ChatSendMessageRequestApplicationJson extends ChatSendMessageRequestAppl
           ..add('actorDisplayName', actorDisplayName)
           ..add('referenceId', referenceId)
           ..add('replyTo', replyTo)
-          ..add('silent', silent))
+          ..add('silent', silent)
+          ..add('threadTitle', threadTitle)
+          ..add('threadId', threadId))
         .toString();
   }
 }
@@ -40092,6 +43241,14 @@ class ChatSendMessageRequestApplicationJsonBuilder
   bool? get silent => _$this._silent;
   set silent(covariant bool? silent) => _$this._silent = silent;
 
+  String? _threadTitle;
+  String? get threadTitle => _$this._threadTitle;
+  set threadTitle(covariant String? threadTitle) => _$this._threadTitle = threadTitle;
+
+  int? _threadId;
+  int? get threadId => _$this._threadId;
+  set threadId(covariant int? threadId) => _$this._threadId = threadId;
+
   ChatSendMessageRequestApplicationJsonBuilder() {
     ChatSendMessageRequestApplicationJson._defaults(this);
   }
@@ -40104,6 +43261,8 @@ class ChatSendMessageRequestApplicationJsonBuilder
       _referenceId = $v.referenceId;
       _replyTo = $v.replyTo;
       _silent = $v.silent;
+      _threadTitle = $v.threadTitle;
+      _threadId = $v.threadId;
       _$v = null;
     }
     return this;
@@ -40133,7 +43292,534 @@ class ChatSendMessageRequestApplicationJsonBuilder
               referenceId, r'ChatSendMessageRequestApplicationJson', 'referenceId'),
           replyTo: BuiltValueNullFieldError.checkNotNull(replyTo, r'ChatSendMessageRequestApplicationJson', 'replyTo'),
           silent: BuiltValueNullFieldError.checkNotNull(silent, r'ChatSendMessageRequestApplicationJson', 'silent'),
+          threadTitle: BuiltValueNullFieldError.checkNotNull(
+              threadTitle, r'ChatSendMessageRequestApplicationJson', 'threadTitle'),
+          threadId:
+              BuiltValueNullFieldError.checkNotNull(threadId, r'ChatSendMessageRequestApplicationJson', 'threadId'),
         );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatSendMessageResponseApplicationJson_Ocs_DataInterfaceBuilder
+    implements $ChatMessageWithParentInterfaceBuilder {
+  void replace(covariant $ChatSendMessageResponseApplicationJson_Ocs_DataInterface other);
+  void update(void Function($ChatSendMessageResponseApplicationJson_Ocs_DataInterfaceBuilder) updates);
+  ChatMessageWithParent_Parent? get parent;
+  set parent(covariant ChatMessageWithParent_Parent? parent);
+
+  ChatMessage_Deleted? get deleted;
+  set deleted(covariant ChatMessage_Deleted? deleted);
+
+  int? get id;
+  set id(covariant int? id);
+
+  bool? get isReplyable;
+  set isReplyable(covariant bool? isReplyable);
+
+  bool? get markdown;
+  set markdown(covariant bool? markdown);
+
+  MapBuilder<String, int> get reactions;
+  set reactions(covariant MapBuilder<String, int>? reactions);
+
+  ListBuilder<String> get reactionsSelf;
+  set reactionsSelf(covariant ListBuilder<String>? reactionsSelf);
+
+  String? get referenceId;
+  set referenceId(covariant String? referenceId);
+
+  int? get timestamp;
+  set timestamp(covariant int? timestamp);
+
+  String? get token;
+  set token(covariant String? token);
+
+  String? get lastEditActorDisplayName;
+  set lastEditActorDisplayName(covariant String? lastEditActorDisplayName);
+
+  String? get lastEditActorId;
+  set lastEditActorId(covariant String? lastEditActorId);
+
+  ActorTypes? get lastEditActorType;
+  set lastEditActorType(covariant ActorTypes? lastEditActorType);
+
+  int? get lastEditTimestamp;
+  set lastEditTimestamp(covariant int? lastEditTimestamp);
+
+  bool? get silent;
+  set silent(covariant bool? silent);
+
+  int? get threadId;
+  set threadId(covariant int? threadId);
+
+  bool? get isThread;
+  set isThread(covariant bool? isThread);
+
+  String? get threadTitle;
+  set threadTitle(covariant String? threadTitle);
+
+  int? get threadReplies;
+  set threadReplies(covariant int? threadReplies);
+
+  String? get actorDisplayName;
+  set actorDisplayName(covariant String? actorDisplayName);
+
+  String? get actorId;
+  set actorId(covariant String? actorId);
+
+  ActorTypes? get actorType;
+  set actorType(covariant ActorTypes? actorType);
+
+  int? get expirationTimestamp;
+  set expirationTimestamp(covariant int? expirationTimestamp);
+
+  String? get message;
+  set message(covariant String? message);
+
+  MapBuilder<String, BuiltMap<String, JsonObject>> get messageParameters;
+  set messageParameters(covariant MapBuilder<String, BuiltMap<String, JsonObject>>? messageParameters);
+
+  MessageType? get messageType;
+  set messageType(covariant MessageType? messageType);
+
+  String? get systemMessage;
+  set systemMessage(covariant String? systemMessage);
+}
+
+class _$ChatSendMessageResponseApplicationJson_Ocs_Data extends ChatSendMessageResponseApplicationJson_Ocs_Data {
+  @override
+  final ChatMessageWithParent_Parent? parent;
+  @override
+  final ChatMessage_Deleted? deleted;
+  @override
+  final int id;
+  @override
+  final bool isReplyable;
+  @override
+  final bool markdown;
+  @override
+  final BuiltMap<String, int> reactions;
+  @override
+  final BuiltList<String>? reactionsSelf;
+  @override
+  final String referenceId;
+  @override
+  final int timestamp;
+  @override
+  final String token;
+  @override
+  final String? lastEditActorDisplayName;
+  @override
+  final String? lastEditActorId;
+  @override
+  final ActorTypes? lastEditActorType;
+  @override
+  final int? lastEditTimestamp;
+  @override
+  final bool? silent;
+  @override
+  final int? threadId;
+  @override
+  final bool? isThread;
+  @override
+  final String? threadTitle;
+  @override
+  final int? threadReplies;
+  @override
+  final String actorDisplayName;
+  @override
+  final String actorId;
+  @override
+  final ActorTypes actorType;
+  @override
+  final int expirationTimestamp;
+  @override
+  final String message;
+  @override
+  final BuiltMap<String, BuiltMap<String, JsonObject>> messageParameters;
+  @override
+  final MessageType messageType;
+  @override
+  final String systemMessage;
+
+  factory _$ChatSendMessageResponseApplicationJson_Ocs_Data(
+          [void Function(ChatSendMessageResponseApplicationJson_Ocs_DataBuilder)? updates]) =>
+      (ChatSendMessageResponseApplicationJson_Ocs_DataBuilder()..update(updates))._build();
+
+  _$ChatSendMessageResponseApplicationJson_Ocs_Data._(
+      {this.parent,
+      this.deleted,
+      required this.id,
+      required this.isReplyable,
+      required this.markdown,
+      required this.reactions,
+      this.reactionsSelf,
+      required this.referenceId,
+      required this.timestamp,
+      required this.token,
+      this.lastEditActorDisplayName,
+      this.lastEditActorId,
+      this.lastEditActorType,
+      this.lastEditTimestamp,
+      this.silent,
+      this.threadId,
+      this.isThread,
+      this.threadTitle,
+      this.threadReplies,
+      required this.actorDisplayName,
+      required this.actorId,
+      required this.actorType,
+      required this.expirationTimestamp,
+      required this.message,
+      required this.messageParameters,
+      required this.messageType,
+      required this.systemMessage})
+      : super._();
+  @override
+  ChatSendMessageResponseApplicationJson_Ocs_Data rebuild(
+          void Function(ChatSendMessageResponseApplicationJson_Ocs_DataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatSendMessageResponseApplicationJson_Ocs_DataBuilder toBuilder() =>
+      ChatSendMessageResponseApplicationJson_Ocs_DataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is ChatSendMessageResponseApplicationJson_Ocs_Data &&
+        parent == _$dynamicOther.parent &&
+        deleted == other.deleted &&
+        id == other.id &&
+        isReplyable == other.isReplyable &&
+        markdown == other.markdown &&
+        reactions == other.reactions &&
+        reactionsSelf == other.reactionsSelf &&
+        referenceId == other.referenceId &&
+        timestamp == other.timestamp &&
+        token == other.token &&
+        lastEditActorDisplayName == other.lastEditActorDisplayName &&
+        lastEditActorId == other.lastEditActorId &&
+        lastEditActorType == other.lastEditActorType &&
+        lastEditTimestamp == other.lastEditTimestamp &&
+        silent == other.silent &&
+        threadId == other.threadId &&
+        isThread == other.isThread &&
+        threadTitle == other.threadTitle &&
+        threadReplies == other.threadReplies &&
+        actorDisplayName == other.actorDisplayName &&
+        actorId == other.actorId &&
+        actorType == other.actorType &&
+        expirationTimestamp == other.expirationTimestamp &&
+        message == other.message &&
+        messageParameters == other.messageParameters &&
+        messageType == other.messageType &&
+        systemMessage == other.systemMessage;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, parent.hashCode);
+    _$hash = $jc(_$hash, deleted.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, isReplyable.hashCode);
+    _$hash = $jc(_$hash, markdown.hashCode);
+    _$hash = $jc(_$hash, reactions.hashCode);
+    _$hash = $jc(_$hash, reactionsSelf.hashCode);
+    _$hash = $jc(_$hash, referenceId.hashCode);
+    _$hash = $jc(_$hash, timestamp.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, lastEditActorDisplayName.hashCode);
+    _$hash = $jc(_$hash, lastEditActorId.hashCode);
+    _$hash = $jc(_$hash, lastEditActorType.hashCode);
+    _$hash = $jc(_$hash, lastEditTimestamp.hashCode);
+    _$hash = $jc(_$hash, silent.hashCode);
+    _$hash = $jc(_$hash, threadId.hashCode);
+    _$hash = $jc(_$hash, isThread.hashCode);
+    _$hash = $jc(_$hash, threadTitle.hashCode);
+    _$hash = $jc(_$hash, threadReplies.hashCode);
+    _$hash = $jc(_$hash, actorDisplayName.hashCode);
+    _$hash = $jc(_$hash, actorId.hashCode);
+    _$hash = $jc(_$hash, actorType.hashCode);
+    _$hash = $jc(_$hash, expirationTimestamp.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, messageParameters.hashCode);
+    _$hash = $jc(_$hash, messageType.hashCode);
+    _$hash = $jc(_$hash, systemMessage.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatSendMessageResponseApplicationJson_Ocs_Data')
+          ..add('parent', parent)
+          ..add('deleted', deleted)
+          ..add('id', id)
+          ..add('isReplyable', isReplyable)
+          ..add('markdown', markdown)
+          ..add('reactions', reactions)
+          ..add('reactionsSelf', reactionsSelf)
+          ..add('referenceId', referenceId)
+          ..add('timestamp', timestamp)
+          ..add('token', token)
+          ..add('lastEditActorDisplayName', lastEditActorDisplayName)
+          ..add('lastEditActorId', lastEditActorId)
+          ..add('lastEditActorType', lastEditActorType)
+          ..add('lastEditTimestamp', lastEditTimestamp)
+          ..add('silent', silent)
+          ..add('threadId', threadId)
+          ..add('isThread', isThread)
+          ..add('threadTitle', threadTitle)
+          ..add('threadReplies', threadReplies)
+          ..add('actorDisplayName', actorDisplayName)
+          ..add('actorId', actorId)
+          ..add('actorType', actorType)
+          ..add('expirationTimestamp', expirationTimestamp)
+          ..add('message', message)
+          ..add('messageParameters', messageParameters)
+          ..add('messageType', messageType)
+          ..add('systemMessage', systemMessage))
+        .toString();
+  }
+}
+
+class ChatSendMessageResponseApplicationJson_Ocs_DataBuilder
+    implements
+        Builder<ChatSendMessageResponseApplicationJson_Ocs_Data,
+            ChatSendMessageResponseApplicationJson_Ocs_DataBuilder>,
+        $ChatSendMessageResponseApplicationJson_Ocs_DataInterfaceBuilder {
+  _$ChatSendMessageResponseApplicationJson_Ocs_Data? _$v;
+
+  ChatMessageWithParent_Parent? _parent;
+  ChatMessageWithParent_Parent? get parent => _$this._parent;
+  set parent(covariant ChatMessageWithParent_Parent? parent) => _$this._parent = parent;
+
+  ChatMessage_Deleted? _deleted;
+  ChatMessage_Deleted? get deleted => _$this._deleted;
+  set deleted(covariant ChatMessage_Deleted? deleted) => _$this._deleted = deleted;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  bool? _isReplyable;
+  bool? get isReplyable => _$this._isReplyable;
+  set isReplyable(covariant bool? isReplyable) => _$this._isReplyable = isReplyable;
+
+  bool? _markdown;
+  bool? get markdown => _$this._markdown;
+  set markdown(covariant bool? markdown) => _$this._markdown = markdown;
+
+  MapBuilder<String, int>? _reactions;
+  MapBuilder<String, int> get reactions => _$this._reactions ??= MapBuilder<String, int>();
+  set reactions(covariant MapBuilder<String, int>? reactions) => _$this._reactions = reactions;
+
+  ListBuilder<String>? _reactionsSelf;
+  ListBuilder<String> get reactionsSelf => _$this._reactionsSelf ??= ListBuilder<String>();
+  set reactionsSelf(covariant ListBuilder<String>? reactionsSelf) => _$this._reactionsSelf = reactionsSelf;
+
+  String? _referenceId;
+  String? get referenceId => _$this._referenceId;
+  set referenceId(covariant String? referenceId) => _$this._referenceId = referenceId;
+
+  int? _timestamp;
+  int? get timestamp => _$this._timestamp;
+  set timestamp(covariant int? timestamp) => _$this._timestamp = timestamp;
+
+  String? _token;
+  String? get token => _$this._token;
+  set token(covariant String? token) => _$this._token = token;
+
+  String? _lastEditActorDisplayName;
+  String? get lastEditActorDisplayName => _$this._lastEditActorDisplayName;
+  set lastEditActorDisplayName(covariant String? lastEditActorDisplayName) =>
+      _$this._lastEditActorDisplayName = lastEditActorDisplayName;
+
+  String? _lastEditActorId;
+  String? get lastEditActorId => _$this._lastEditActorId;
+  set lastEditActorId(covariant String? lastEditActorId) => _$this._lastEditActorId = lastEditActorId;
+
+  ActorTypes? _lastEditActorType;
+  ActorTypes? get lastEditActorType => _$this._lastEditActorType;
+  set lastEditActorType(covariant ActorTypes? lastEditActorType) => _$this._lastEditActorType = lastEditActorType;
+
+  int? _lastEditTimestamp;
+  int? get lastEditTimestamp => _$this._lastEditTimestamp;
+  set lastEditTimestamp(covariant int? lastEditTimestamp) => _$this._lastEditTimestamp = lastEditTimestamp;
+
+  bool? _silent;
+  bool? get silent => _$this._silent;
+  set silent(covariant bool? silent) => _$this._silent = silent;
+
+  int? _threadId;
+  int? get threadId => _$this._threadId;
+  set threadId(covariant int? threadId) => _$this._threadId = threadId;
+
+  bool? _isThread;
+  bool? get isThread => _$this._isThread;
+  set isThread(covariant bool? isThread) => _$this._isThread = isThread;
+
+  String? _threadTitle;
+  String? get threadTitle => _$this._threadTitle;
+  set threadTitle(covariant String? threadTitle) => _$this._threadTitle = threadTitle;
+
+  int? _threadReplies;
+  int? get threadReplies => _$this._threadReplies;
+  set threadReplies(covariant int? threadReplies) => _$this._threadReplies = threadReplies;
+
+  String? _actorDisplayName;
+  String? get actorDisplayName => _$this._actorDisplayName;
+  set actorDisplayName(covariant String? actorDisplayName) => _$this._actorDisplayName = actorDisplayName;
+
+  String? _actorId;
+  String? get actorId => _$this._actorId;
+  set actorId(covariant String? actorId) => _$this._actorId = actorId;
+
+  ActorTypes? _actorType;
+  ActorTypes? get actorType => _$this._actorType;
+  set actorType(covariant ActorTypes? actorType) => _$this._actorType = actorType;
+
+  int? _expirationTimestamp;
+  int? get expirationTimestamp => _$this._expirationTimestamp;
+  set expirationTimestamp(covariant int? expirationTimestamp) => _$this._expirationTimestamp = expirationTimestamp;
+
+  String? _message;
+  String? get message => _$this._message;
+  set message(covariant String? message) => _$this._message = message;
+
+  MapBuilder<String, BuiltMap<String, JsonObject>>? _messageParameters;
+  MapBuilder<String, BuiltMap<String, JsonObject>> get messageParameters =>
+      _$this._messageParameters ??= MapBuilder<String, BuiltMap<String, JsonObject>>();
+  set messageParameters(covariant MapBuilder<String, BuiltMap<String, JsonObject>>? messageParameters) =>
+      _$this._messageParameters = messageParameters;
+
+  MessageType? _messageType;
+  MessageType? get messageType => _$this._messageType;
+  set messageType(covariant MessageType? messageType) => _$this._messageType = messageType;
+
+  String? _systemMessage;
+  String? get systemMessage => _$this._systemMessage;
+  set systemMessage(covariant String? systemMessage) => _$this._systemMessage = systemMessage;
+
+  ChatSendMessageResponseApplicationJson_Ocs_DataBuilder() {
+    ChatSendMessageResponseApplicationJson_Ocs_Data._defaults(this);
+  }
+
+  ChatSendMessageResponseApplicationJson_Ocs_DataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _parent = $v.parent;
+      _deleted = $v.deleted;
+      _id = $v.id;
+      _isReplyable = $v.isReplyable;
+      _markdown = $v.markdown;
+      _reactions = $v.reactions.toBuilder();
+      _reactionsSelf = $v.reactionsSelf?.toBuilder();
+      _referenceId = $v.referenceId;
+      _timestamp = $v.timestamp;
+      _token = $v.token;
+      _lastEditActorDisplayName = $v.lastEditActorDisplayName;
+      _lastEditActorId = $v.lastEditActorId;
+      _lastEditActorType = $v.lastEditActorType;
+      _lastEditTimestamp = $v.lastEditTimestamp;
+      _silent = $v.silent;
+      _threadId = $v.threadId;
+      _isThread = $v.isThread;
+      _threadTitle = $v.threadTitle;
+      _threadReplies = $v.threadReplies;
+      _actorDisplayName = $v.actorDisplayName;
+      _actorId = $v.actorId;
+      _actorType = $v.actorType;
+      _expirationTimestamp = $v.expirationTimestamp;
+      _message = $v.message;
+      _messageParameters = $v.messageParameters.toBuilder();
+      _messageType = $v.messageType;
+      _systemMessage = $v.systemMessage;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatSendMessageResponseApplicationJson_Ocs_Data other) {
+    _$v = other as _$ChatSendMessageResponseApplicationJson_Ocs_Data;
+  }
+
+  @override
+  void update(void Function(ChatSendMessageResponseApplicationJson_Ocs_DataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatSendMessageResponseApplicationJson_Ocs_Data build() => _build();
+
+  _$ChatSendMessageResponseApplicationJson_Ocs_Data _build() {
+    ChatSendMessageResponseApplicationJson_Ocs_Data._validate(this);
+    _$ChatSendMessageResponseApplicationJson_Ocs_Data _$result;
+    try {
+      _$result = _$v ??
+          _$ChatSendMessageResponseApplicationJson_Ocs_Data._(
+            parent: parent,
+            deleted: deleted,
+            id: BuiltValueNullFieldError.checkNotNull(id, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'id'),
+            isReplyable: BuiltValueNullFieldError.checkNotNull(
+                isReplyable, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'isReplyable'),
+            markdown: BuiltValueNullFieldError.checkNotNull(
+                markdown, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'markdown'),
+            reactions: reactions.build(),
+            reactionsSelf: _reactionsSelf?.build(),
+            referenceId: BuiltValueNullFieldError.checkNotNull(
+                referenceId, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'referenceId'),
+            timestamp: BuiltValueNullFieldError.checkNotNull(
+                timestamp, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'timestamp'),
+            token: BuiltValueNullFieldError.checkNotNull(
+                token, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'token'),
+            lastEditActorDisplayName: lastEditActorDisplayName,
+            lastEditActorId: lastEditActorId,
+            lastEditActorType: lastEditActorType,
+            lastEditTimestamp: lastEditTimestamp,
+            silent: silent,
+            threadId: threadId,
+            isThread: isThread,
+            threadTitle: threadTitle,
+            threadReplies: threadReplies,
+            actorDisplayName: BuiltValueNullFieldError.checkNotNull(
+                actorDisplayName, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'actorDisplayName'),
+            actorId: BuiltValueNullFieldError.checkNotNull(
+                actorId, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'actorId'),
+            actorType: BuiltValueNullFieldError.checkNotNull(
+                actorType, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'actorType'),
+            expirationTimestamp: BuiltValueNullFieldError.checkNotNull(
+                expirationTimestamp, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'expirationTimestamp'),
+            message: BuiltValueNullFieldError.checkNotNull(
+                message, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'message'),
+            messageParameters: messageParameters.build(),
+            messageType: BuiltValueNullFieldError.checkNotNull(
+                messageType, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'messageType'),
+            systemMessage: BuiltValueNullFieldError.checkNotNull(
+                systemMessage, r'ChatSendMessageResponseApplicationJson_Ocs_Data', 'systemMessage'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'reactions';
+        reactions.build();
+        _$failedField = 'reactionsSelf';
+        _reactionsSelf?.build();
+
+        _$failedField = 'messageParameters';
+        messageParameters.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ChatSendMessageResponseApplicationJson_Ocs_Data', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
@@ -40145,15 +43831,15 @@ abstract mixin class $ChatSendMessageResponseApplicationJson_OcsInterfaceBuilder
   OCSMetaBuilder get meta;
   set meta(OCSMetaBuilder? meta);
 
-  ChatMessageWithParentBuilder get data;
-  set data(ChatMessageWithParentBuilder? data);
+  ChatSendMessageResponseApplicationJson_Ocs_DataBuilder get data;
+  set data(ChatSendMessageResponseApplicationJson_Ocs_DataBuilder? data);
 }
 
 class _$ChatSendMessageResponseApplicationJson_Ocs extends ChatSendMessageResponseApplicationJson_Ocs {
   @override
   final OCSMeta meta;
   @override
-  final ChatMessageWithParent? data;
+  final ChatSendMessageResponseApplicationJson_Ocs_Data? data;
 
   factory _$ChatSendMessageResponseApplicationJson_Ocs(
           [void Function(ChatSendMessageResponseApplicationJson_OcsBuilder)? updates]) =>
@@ -40203,9 +43889,10 @@ class ChatSendMessageResponseApplicationJson_OcsBuilder
   OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
   set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
 
-  ChatMessageWithParentBuilder? _data;
-  ChatMessageWithParentBuilder get data => _$this._data ??= ChatMessageWithParentBuilder();
-  set data(covariant ChatMessageWithParentBuilder? data) => _$this._data = data;
+  ChatSendMessageResponseApplicationJson_Ocs_DataBuilder? _data;
+  ChatSendMessageResponseApplicationJson_Ocs_DataBuilder get data =>
+      _$this._data ??= ChatSendMessageResponseApplicationJson_Ocs_DataBuilder();
+  set data(covariant ChatSendMessageResponseApplicationJson_Ocs_DataBuilder? data) => _$this._data = data;
 
   ChatSendMessageResponseApplicationJson_OcsBuilder() {
     ChatSendMessageResponseApplicationJson_Ocs._defaults(this);
@@ -40772,6 +44459,1354 @@ class ChatChatClearHistoryHeadersBuilder
   }
 }
 
+abstract mixin class $ChatGetObjectsSharedInRoomResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($ChatGetObjectsSharedInRoomResponseApplicationJson_OcsInterface other);
+  void update(void Function($ChatGetObjectsSharedInRoomResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  MapBuilder<String, ChatMessage> get data;
+  set data(MapBuilder<String, ChatMessage>? data);
+}
+
+class _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs
+    extends ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final BuiltMap<String, ChatMessage> data;
+
+  factory _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs(
+          [void Function(ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder)? updates]) =>
+      (ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs rebuild(
+          void Function(ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder toBuilder() =>
+      ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder
+    implements
+        Builder<ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs,
+            ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder>,
+        $ChatGetObjectsSharedInRoomResponseApplicationJson_OcsInterfaceBuilder {
+  _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  MapBuilder<String, ChatMessage>? _data;
+  MapBuilder<String, ChatMessage> get data => _$this._data ??= MapBuilder<String, ChatMessage>();
+  set data(covariant MapBuilder<String, ChatMessage>? data) => _$this._data = data;
+
+  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder() {
+    ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs other) {
+    _$v = other as _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs build() => _build();
+
+  _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs _build() {
+    ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs._validate(this);
+    _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatGetObjectsSharedInRoomResponseApplicationJsonInterfaceBuilder {
+  void replace($ChatGetObjectsSharedInRoomResponseApplicationJsonInterface other);
+  void update(void Function($ChatGetObjectsSharedInRoomResponseApplicationJsonInterfaceBuilder) updates);
+  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$ChatGetObjectsSharedInRoomResponseApplicationJson extends ChatGetObjectsSharedInRoomResponseApplicationJson {
+  @override
+  final ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs ocs;
+
+  factory _$ChatGetObjectsSharedInRoomResponseApplicationJson(
+          [void Function(ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder)? updates]) =>
+      (ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$ChatGetObjectsSharedInRoomResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  ChatGetObjectsSharedInRoomResponseApplicationJson rebuild(
+          void Function(ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder toBuilder() =>
+      ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatGetObjectsSharedInRoomResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatGetObjectsSharedInRoomResponseApplicationJson')..add('ocs', ocs))
+        .toString();
+  }
+}
+
+class ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder
+    implements
+        Builder<ChatGetObjectsSharedInRoomResponseApplicationJson,
+            ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder>,
+        $ChatGetObjectsSharedInRoomResponseApplicationJsonInterfaceBuilder {
+  _$ChatGetObjectsSharedInRoomResponseApplicationJson? _$v;
+
+  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder? _ocs;
+  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder();
+  set ocs(covariant ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder() {
+    ChatGetObjectsSharedInRoomResponseApplicationJson._defaults(this);
+  }
+
+  ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatGetObjectsSharedInRoomResponseApplicationJson other) {
+    _$v = other as _$ChatGetObjectsSharedInRoomResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatGetObjectsSharedInRoomResponseApplicationJson build() => _build();
+
+  _$ChatGetObjectsSharedInRoomResponseApplicationJson _build() {
+    ChatGetObjectsSharedInRoomResponseApplicationJson._validate(this);
+    _$ChatGetObjectsSharedInRoomResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$ChatGetObjectsSharedInRoomResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ChatGetObjectsSharedInRoomResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatChatGetObjectsSharedInRoomHeadersInterfaceBuilder {
+  void replace($ChatChatGetObjectsSharedInRoomHeadersInterface other);
+  void update(void Function($ChatChatGetObjectsSharedInRoomHeadersInterfaceBuilder) updates);
+  String? get xChatLastGiven;
+  set xChatLastGiven(String? xChatLastGiven);
+}
+
+class _$ChatChatGetObjectsSharedInRoomHeaders extends ChatChatGetObjectsSharedInRoomHeaders {
+  @override
+  final String? xChatLastGiven;
+
+  factory _$ChatChatGetObjectsSharedInRoomHeaders(
+          [void Function(ChatChatGetObjectsSharedInRoomHeadersBuilder)? updates]) =>
+      (ChatChatGetObjectsSharedInRoomHeadersBuilder()..update(updates))._build();
+
+  _$ChatChatGetObjectsSharedInRoomHeaders._({this.xChatLastGiven}) : super._();
+  @override
+  ChatChatGetObjectsSharedInRoomHeaders rebuild(void Function(ChatChatGetObjectsSharedInRoomHeadersBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatChatGetObjectsSharedInRoomHeadersBuilder toBuilder() =>
+      ChatChatGetObjectsSharedInRoomHeadersBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatChatGetObjectsSharedInRoomHeaders && xChatLastGiven == other.xChatLastGiven;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, xChatLastGiven.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatChatGetObjectsSharedInRoomHeaders')
+          ..add('xChatLastGiven', xChatLastGiven))
+        .toString();
+  }
+}
+
+class ChatChatGetObjectsSharedInRoomHeadersBuilder
+    implements
+        Builder<ChatChatGetObjectsSharedInRoomHeaders, ChatChatGetObjectsSharedInRoomHeadersBuilder>,
+        $ChatChatGetObjectsSharedInRoomHeadersInterfaceBuilder {
+  _$ChatChatGetObjectsSharedInRoomHeaders? _$v;
+
+  String? _xChatLastGiven;
+  String? get xChatLastGiven => _$this._xChatLastGiven;
+  set xChatLastGiven(covariant String? xChatLastGiven) => _$this._xChatLastGiven = xChatLastGiven;
+
+  ChatChatGetObjectsSharedInRoomHeadersBuilder() {
+    ChatChatGetObjectsSharedInRoomHeaders._defaults(this);
+  }
+
+  ChatChatGetObjectsSharedInRoomHeadersBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _xChatLastGiven = $v.xChatLastGiven;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatChatGetObjectsSharedInRoomHeaders other) {
+    _$v = other as _$ChatChatGetObjectsSharedInRoomHeaders;
+  }
+
+  @override
+  void update(void Function(ChatChatGetObjectsSharedInRoomHeadersBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatChatGetObjectsSharedInRoomHeaders build() => _build();
+
+  _$ChatChatGetObjectsSharedInRoomHeaders _build() {
+    ChatChatGetObjectsSharedInRoomHeaders._validate(this);
+    final _$result = _$v ??
+        _$ChatChatGetObjectsSharedInRoomHeaders._(
+          xChatLastGiven: xChatLastGiven,
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatShareObjectToChatRequestApplicationJsonInterfaceBuilder {
+  void replace($ChatShareObjectToChatRequestApplicationJsonInterface other);
+  void update(void Function($ChatShareObjectToChatRequestApplicationJsonInterfaceBuilder) updates);
+  String? get objectType;
+  set objectType(String? objectType);
+
+  String? get objectId;
+  set objectId(String? objectId);
+
+  String? get metaData;
+  set metaData(String? metaData);
+
+  String? get actorDisplayName;
+  set actorDisplayName(String? actorDisplayName);
+
+  String? get referenceId;
+  set referenceId(String? referenceId);
+
+  int? get threadId;
+  set threadId(int? threadId);
+}
+
+class _$ChatShareObjectToChatRequestApplicationJson extends ChatShareObjectToChatRequestApplicationJson {
+  @override
+  final String objectType;
+  @override
+  final String objectId;
+  @override
+  final String metaData;
+  @override
+  final String actorDisplayName;
+  @override
+  final String referenceId;
+  @override
+  final int threadId;
+
+  factory _$ChatShareObjectToChatRequestApplicationJson(
+          [void Function(ChatShareObjectToChatRequestApplicationJsonBuilder)? updates]) =>
+      (ChatShareObjectToChatRequestApplicationJsonBuilder()..update(updates))._build();
+
+  _$ChatShareObjectToChatRequestApplicationJson._(
+      {required this.objectType,
+      required this.objectId,
+      required this.metaData,
+      required this.actorDisplayName,
+      required this.referenceId,
+      required this.threadId})
+      : super._();
+  @override
+  ChatShareObjectToChatRequestApplicationJson rebuild(
+          void Function(ChatShareObjectToChatRequestApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatShareObjectToChatRequestApplicationJsonBuilder toBuilder() =>
+      ChatShareObjectToChatRequestApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatShareObjectToChatRequestApplicationJson &&
+        objectType == other.objectType &&
+        objectId == other.objectId &&
+        metaData == other.metaData &&
+        actorDisplayName == other.actorDisplayName &&
+        referenceId == other.referenceId &&
+        threadId == other.threadId;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, objectType.hashCode);
+    _$hash = $jc(_$hash, objectId.hashCode);
+    _$hash = $jc(_$hash, metaData.hashCode);
+    _$hash = $jc(_$hash, actorDisplayName.hashCode);
+    _$hash = $jc(_$hash, referenceId.hashCode);
+    _$hash = $jc(_$hash, threadId.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatShareObjectToChatRequestApplicationJson')
+          ..add('objectType', objectType)
+          ..add('objectId', objectId)
+          ..add('metaData', metaData)
+          ..add('actorDisplayName', actorDisplayName)
+          ..add('referenceId', referenceId)
+          ..add('threadId', threadId))
+        .toString();
+  }
+}
+
+class ChatShareObjectToChatRequestApplicationJsonBuilder
+    implements
+        Builder<ChatShareObjectToChatRequestApplicationJson, ChatShareObjectToChatRequestApplicationJsonBuilder>,
+        $ChatShareObjectToChatRequestApplicationJsonInterfaceBuilder {
+  _$ChatShareObjectToChatRequestApplicationJson? _$v;
+
+  String? _objectType;
+  String? get objectType => _$this._objectType;
+  set objectType(covariant String? objectType) => _$this._objectType = objectType;
+
+  String? _objectId;
+  String? get objectId => _$this._objectId;
+  set objectId(covariant String? objectId) => _$this._objectId = objectId;
+
+  String? _metaData;
+  String? get metaData => _$this._metaData;
+  set metaData(covariant String? metaData) => _$this._metaData = metaData;
+
+  String? _actorDisplayName;
+  String? get actorDisplayName => _$this._actorDisplayName;
+  set actorDisplayName(covariant String? actorDisplayName) => _$this._actorDisplayName = actorDisplayName;
+
+  String? _referenceId;
+  String? get referenceId => _$this._referenceId;
+  set referenceId(covariant String? referenceId) => _$this._referenceId = referenceId;
+
+  int? _threadId;
+  int? get threadId => _$this._threadId;
+  set threadId(covariant int? threadId) => _$this._threadId = threadId;
+
+  ChatShareObjectToChatRequestApplicationJsonBuilder() {
+    ChatShareObjectToChatRequestApplicationJson._defaults(this);
+  }
+
+  ChatShareObjectToChatRequestApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _objectType = $v.objectType;
+      _objectId = $v.objectId;
+      _metaData = $v.metaData;
+      _actorDisplayName = $v.actorDisplayName;
+      _referenceId = $v.referenceId;
+      _threadId = $v.threadId;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatShareObjectToChatRequestApplicationJson other) {
+    _$v = other as _$ChatShareObjectToChatRequestApplicationJson;
+  }
+
+  @override
+  void update(void Function(ChatShareObjectToChatRequestApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatShareObjectToChatRequestApplicationJson build() => _build();
+
+  _$ChatShareObjectToChatRequestApplicationJson _build() {
+    ChatShareObjectToChatRequestApplicationJson._validate(this);
+    final _$result = _$v ??
+        _$ChatShareObjectToChatRequestApplicationJson._(
+          objectType: BuiltValueNullFieldError.checkNotNull(
+              objectType, r'ChatShareObjectToChatRequestApplicationJson', 'objectType'),
+          objectId: BuiltValueNullFieldError.checkNotNull(
+              objectId, r'ChatShareObjectToChatRequestApplicationJson', 'objectId'),
+          metaData: BuiltValueNullFieldError.checkNotNull(
+              metaData, r'ChatShareObjectToChatRequestApplicationJson', 'metaData'),
+          actorDisplayName: BuiltValueNullFieldError.checkNotNull(
+              actorDisplayName, r'ChatShareObjectToChatRequestApplicationJson', 'actorDisplayName'),
+          referenceId: BuiltValueNullFieldError.checkNotNull(
+              referenceId, r'ChatShareObjectToChatRequestApplicationJson', 'referenceId'),
+          threadId: BuiltValueNullFieldError.checkNotNull(
+              threadId, r'ChatShareObjectToChatRequestApplicationJson', 'threadId'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatShareObjectToChatResponseApplicationJson_Ocs_DataInterfaceBuilder
+    implements $ChatMessageWithParentInterfaceBuilder {
+  void replace(covariant $ChatShareObjectToChatResponseApplicationJson_Ocs_DataInterface other);
+  void update(void Function($ChatShareObjectToChatResponseApplicationJson_Ocs_DataInterfaceBuilder) updates);
+  ChatMessageWithParent_Parent? get parent;
+  set parent(covariant ChatMessageWithParent_Parent? parent);
+
+  ChatMessage_Deleted? get deleted;
+  set deleted(covariant ChatMessage_Deleted? deleted);
+
+  int? get id;
+  set id(covariant int? id);
+
+  bool? get isReplyable;
+  set isReplyable(covariant bool? isReplyable);
+
+  bool? get markdown;
+  set markdown(covariant bool? markdown);
+
+  MapBuilder<String, int> get reactions;
+  set reactions(covariant MapBuilder<String, int>? reactions);
+
+  ListBuilder<String> get reactionsSelf;
+  set reactionsSelf(covariant ListBuilder<String>? reactionsSelf);
+
+  String? get referenceId;
+  set referenceId(covariant String? referenceId);
+
+  int? get timestamp;
+  set timestamp(covariant int? timestamp);
+
+  String? get token;
+  set token(covariant String? token);
+
+  String? get lastEditActorDisplayName;
+  set lastEditActorDisplayName(covariant String? lastEditActorDisplayName);
+
+  String? get lastEditActorId;
+  set lastEditActorId(covariant String? lastEditActorId);
+
+  ActorTypes? get lastEditActorType;
+  set lastEditActorType(covariant ActorTypes? lastEditActorType);
+
+  int? get lastEditTimestamp;
+  set lastEditTimestamp(covariant int? lastEditTimestamp);
+
+  bool? get silent;
+  set silent(covariant bool? silent);
+
+  int? get threadId;
+  set threadId(covariant int? threadId);
+
+  bool? get isThread;
+  set isThread(covariant bool? isThread);
+
+  String? get threadTitle;
+  set threadTitle(covariant String? threadTitle);
+
+  int? get threadReplies;
+  set threadReplies(covariant int? threadReplies);
+
+  String? get actorDisplayName;
+  set actorDisplayName(covariant String? actorDisplayName);
+
+  String? get actorId;
+  set actorId(covariant String? actorId);
+
+  ActorTypes? get actorType;
+  set actorType(covariant ActorTypes? actorType);
+
+  int? get expirationTimestamp;
+  set expirationTimestamp(covariant int? expirationTimestamp);
+
+  String? get message;
+  set message(covariant String? message);
+
+  MapBuilder<String, BuiltMap<String, JsonObject>> get messageParameters;
+  set messageParameters(covariant MapBuilder<String, BuiltMap<String, JsonObject>>? messageParameters);
+
+  MessageType? get messageType;
+  set messageType(covariant MessageType? messageType);
+
+  String? get systemMessage;
+  set systemMessage(covariant String? systemMessage);
+}
+
+class _$ChatShareObjectToChatResponseApplicationJson_Ocs_Data
+    extends ChatShareObjectToChatResponseApplicationJson_Ocs_Data {
+  @override
+  final ChatMessageWithParent_Parent? parent;
+  @override
+  final ChatMessage_Deleted? deleted;
+  @override
+  final int id;
+  @override
+  final bool isReplyable;
+  @override
+  final bool markdown;
+  @override
+  final BuiltMap<String, int> reactions;
+  @override
+  final BuiltList<String>? reactionsSelf;
+  @override
+  final String referenceId;
+  @override
+  final int timestamp;
+  @override
+  final String token;
+  @override
+  final String? lastEditActorDisplayName;
+  @override
+  final String? lastEditActorId;
+  @override
+  final ActorTypes? lastEditActorType;
+  @override
+  final int? lastEditTimestamp;
+  @override
+  final bool? silent;
+  @override
+  final int? threadId;
+  @override
+  final bool? isThread;
+  @override
+  final String? threadTitle;
+  @override
+  final int? threadReplies;
+  @override
+  final String actorDisplayName;
+  @override
+  final String actorId;
+  @override
+  final ActorTypes actorType;
+  @override
+  final int expirationTimestamp;
+  @override
+  final String message;
+  @override
+  final BuiltMap<String, BuiltMap<String, JsonObject>> messageParameters;
+  @override
+  final MessageType messageType;
+  @override
+  final String systemMessage;
+
+  factory _$ChatShareObjectToChatResponseApplicationJson_Ocs_Data(
+          [void Function(ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder)? updates]) =>
+      (ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder()..update(updates))._build();
+
+  _$ChatShareObjectToChatResponseApplicationJson_Ocs_Data._(
+      {this.parent,
+      this.deleted,
+      required this.id,
+      required this.isReplyable,
+      required this.markdown,
+      required this.reactions,
+      this.reactionsSelf,
+      required this.referenceId,
+      required this.timestamp,
+      required this.token,
+      this.lastEditActorDisplayName,
+      this.lastEditActorId,
+      this.lastEditActorType,
+      this.lastEditTimestamp,
+      this.silent,
+      this.threadId,
+      this.isThread,
+      this.threadTitle,
+      this.threadReplies,
+      required this.actorDisplayName,
+      required this.actorId,
+      required this.actorType,
+      required this.expirationTimestamp,
+      required this.message,
+      required this.messageParameters,
+      required this.messageType,
+      required this.systemMessage})
+      : super._();
+  @override
+  ChatShareObjectToChatResponseApplicationJson_Ocs_Data rebuild(
+          void Function(ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder toBuilder() =>
+      ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    final dynamic _$dynamicOther = other;
+    return other is ChatShareObjectToChatResponseApplicationJson_Ocs_Data &&
+        parent == _$dynamicOther.parent &&
+        deleted == other.deleted &&
+        id == other.id &&
+        isReplyable == other.isReplyable &&
+        markdown == other.markdown &&
+        reactions == other.reactions &&
+        reactionsSelf == other.reactionsSelf &&
+        referenceId == other.referenceId &&
+        timestamp == other.timestamp &&
+        token == other.token &&
+        lastEditActorDisplayName == other.lastEditActorDisplayName &&
+        lastEditActorId == other.lastEditActorId &&
+        lastEditActorType == other.lastEditActorType &&
+        lastEditTimestamp == other.lastEditTimestamp &&
+        silent == other.silent &&
+        threadId == other.threadId &&
+        isThread == other.isThread &&
+        threadTitle == other.threadTitle &&
+        threadReplies == other.threadReplies &&
+        actorDisplayName == other.actorDisplayName &&
+        actorId == other.actorId &&
+        actorType == other.actorType &&
+        expirationTimestamp == other.expirationTimestamp &&
+        message == other.message &&
+        messageParameters == other.messageParameters &&
+        messageType == other.messageType &&
+        systemMessage == other.systemMessage;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, parent.hashCode);
+    _$hash = $jc(_$hash, deleted.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, isReplyable.hashCode);
+    _$hash = $jc(_$hash, markdown.hashCode);
+    _$hash = $jc(_$hash, reactions.hashCode);
+    _$hash = $jc(_$hash, reactionsSelf.hashCode);
+    _$hash = $jc(_$hash, referenceId.hashCode);
+    _$hash = $jc(_$hash, timestamp.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, lastEditActorDisplayName.hashCode);
+    _$hash = $jc(_$hash, lastEditActorId.hashCode);
+    _$hash = $jc(_$hash, lastEditActorType.hashCode);
+    _$hash = $jc(_$hash, lastEditTimestamp.hashCode);
+    _$hash = $jc(_$hash, silent.hashCode);
+    _$hash = $jc(_$hash, threadId.hashCode);
+    _$hash = $jc(_$hash, isThread.hashCode);
+    _$hash = $jc(_$hash, threadTitle.hashCode);
+    _$hash = $jc(_$hash, threadReplies.hashCode);
+    _$hash = $jc(_$hash, actorDisplayName.hashCode);
+    _$hash = $jc(_$hash, actorId.hashCode);
+    _$hash = $jc(_$hash, actorType.hashCode);
+    _$hash = $jc(_$hash, expirationTimestamp.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, messageParameters.hashCode);
+    _$hash = $jc(_$hash, messageType.hashCode);
+    _$hash = $jc(_$hash, systemMessage.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data')
+          ..add('parent', parent)
+          ..add('deleted', deleted)
+          ..add('id', id)
+          ..add('isReplyable', isReplyable)
+          ..add('markdown', markdown)
+          ..add('reactions', reactions)
+          ..add('reactionsSelf', reactionsSelf)
+          ..add('referenceId', referenceId)
+          ..add('timestamp', timestamp)
+          ..add('token', token)
+          ..add('lastEditActorDisplayName', lastEditActorDisplayName)
+          ..add('lastEditActorId', lastEditActorId)
+          ..add('lastEditActorType', lastEditActorType)
+          ..add('lastEditTimestamp', lastEditTimestamp)
+          ..add('silent', silent)
+          ..add('threadId', threadId)
+          ..add('isThread', isThread)
+          ..add('threadTitle', threadTitle)
+          ..add('threadReplies', threadReplies)
+          ..add('actorDisplayName', actorDisplayName)
+          ..add('actorId', actorId)
+          ..add('actorType', actorType)
+          ..add('expirationTimestamp', expirationTimestamp)
+          ..add('message', message)
+          ..add('messageParameters', messageParameters)
+          ..add('messageType', messageType)
+          ..add('systemMessage', systemMessage))
+        .toString();
+  }
+}
+
+class ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder
+    implements
+        Builder<ChatShareObjectToChatResponseApplicationJson_Ocs_Data,
+            ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder>,
+        $ChatShareObjectToChatResponseApplicationJson_Ocs_DataInterfaceBuilder {
+  _$ChatShareObjectToChatResponseApplicationJson_Ocs_Data? _$v;
+
+  ChatMessageWithParent_Parent? _parent;
+  ChatMessageWithParent_Parent? get parent => _$this._parent;
+  set parent(covariant ChatMessageWithParent_Parent? parent) => _$this._parent = parent;
+
+  ChatMessage_Deleted? _deleted;
+  ChatMessage_Deleted? get deleted => _$this._deleted;
+  set deleted(covariant ChatMessage_Deleted? deleted) => _$this._deleted = deleted;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  bool? _isReplyable;
+  bool? get isReplyable => _$this._isReplyable;
+  set isReplyable(covariant bool? isReplyable) => _$this._isReplyable = isReplyable;
+
+  bool? _markdown;
+  bool? get markdown => _$this._markdown;
+  set markdown(covariant bool? markdown) => _$this._markdown = markdown;
+
+  MapBuilder<String, int>? _reactions;
+  MapBuilder<String, int> get reactions => _$this._reactions ??= MapBuilder<String, int>();
+  set reactions(covariant MapBuilder<String, int>? reactions) => _$this._reactions = reactions;
+
+  ListBuilder<String>? _reactionsSelf;
+  ListBuilder<String> get reactionsSelf => _$this._reactionsSelf ??= ListBuilder<String>();
+  set reactionsSelf(covariant ListBuilder<String>? reactionsSelf) => _$this._reactionsSelf = reactionsSelf;
+
+  String? _referenceId;
+  String? get referenceId => _$this._referenceId;
+  set referenceId(covariant String? referenceId) => _$this._referenceId = referenceId;
+
+  int? _timestamp;
+  int? get timestamp => _$this._timestamp;
+  set timestamp(covariant int? timestamp) => _$this._timestamp = timestamp;
+
+  String? _token;
+  String? get token => _$this._token;
+  set token(covariant String? token) => _$this._token = token;
+
+  String? _lastEditActorDisplayName;
+  String? get lastEditActorDisplayName => _$this._lastEditActorDisplayName;
+  set lastEditActorDisplayName(covariant String? lastEditActorDisplayName) =>
+      _$this._lastEditActorDisplayName = lastEditActorDisplayName;
+
+  String? _lastEditActorId;
+  String? get lastEditActorId => _$this._lastEditActorId;
+  set lastEditActorId(covariant String? lastEditActorId) => _$this._lastEditActorId = lastEditActorId;
+
+  ActorTypes? _lastEditActorType;
+  ActorTypes? get lastEditActorType => _$this._lastEditActorType;
+  set lastEditActorType(covariant ActorTypes? lastEditActorType) => _$this._lastEditActorType = lastEditActorType;
+
+  int? _lastEditTimestamp;
+  int? get lastEditTimestamp => _$this._lastEditTimestamp;
+  set lastEditTimestamp(covariant int? lastEditTimestamp) => _$this._lastEditTimestamp = lastEditTimestamp;
+
+  bool? _silent;
+  bool? get silent => _$this._silent;
+  set silent(covariant bool? silent) => _$this._silent = silent;
+
+  int? _threadId;
+  int? get threadId => _$this._threadId;
+  set threadId(covariant int? threadId) => _$this._threadId = threadId;
+
+  bool? _isThread;
+  bool? get isThread => _$this._isThread;
+  set isThread(covariant bool? isThread) => _$this._isThread = isThread;
+
+  String? _threadTitle;
+  String? get threadTitle => _$this._threadTitle;
+  set threadTitle(covariant String? threadTitle) => _$this._threadTitle = threadTitle;
+
+  int? _threadReplies;
+  int? get threadReplies => _$this._threadReplies;
+  set threadReplies(covariant int? threadReplies) => _$this._threadReplies = threadReplies;
+
+  String? _actorDisplayName;
+  String? get actorDisplayName => _$this._actorDisplayName;
+  set actorDisplayName(covariant String? actorDisplayName) => _$this._actorDisplayName = actorDisplayName;
+
+  String? _actorId;
+  String? get actorId => _$this._actorId;
+  set actorId(covariant String? actorId) => _$this._actorId = actorId;
+
+  ActorTypes? _actorType;
+  ActorTypes? get actorType => _$this._actorType;
+  set actorType(covariant ActorTypes? actorType) => _$this._actorType = actorType;
+
+  int? _expirationTimestamp;
+  int? get expirationTimestamp => _$this._expirationTimestamp;
+  set expirationTimestamp(covariant int? expirationTimestamp) => _$this._expirationTimestamp = expirationTimestamp;
+
+  String? _message;
+  String? get message => _$this._message;
+  set message(covariant String? message) => _$this._message = message;
+
+  MapBuilder<String, BuiltMap<String, JsonObject>>? _messageParameters;
+  MapBuilder<String, BuiltMap<String, JsonObject>> get messageParameters =>
+      _$this._messageParameters ??= MapBuilder<String, BuiltMap<String, JsonObject>>();
+  set messageParameters(covariant MapBuilder<String, BuiltMap<String, JsonObject>>? messageParameters) =>
+      _$this._messageParameters = messageParameters;
+
+  MessageType? _messageType;
+  MessageType? get messageType => _$this._messageType;
+  set messageType(covariant MessageType? messageType) => _$this._messageType = messageType;
+
+  String? _systemMessage;
+  String? get systemMessage => _$this._systemMessage;
+  set systemMessage(covariant String? systemMessage) => _$this._systemMessage = systemMessage;
+
+  ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder() {
+    ChatShareObjectToChatResponseApplicationJson_Ocs_Data._defaults(this);
+  }
+
+  ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _parent = $v.parent;
+      _deleted = $v.deleted;
+      _id = $v.id;
+      _isReplyable = $v.isReplyable;
+      _markdown = $v.markdown;
+      _reactions = $v.reactions.toBuilder();
+      _reactionsSelf = $v.reactionsSelf?.toBuilder();
+      _referenceId = $v.referenceId;
+      _timestamp = $v.timestamp;
+      _token = $v.token;
+      _lastEditActorDisplayName = $v.lastEditActorDisplayName;
+      _lastEditActorId = $v.lastEditActorId;
+      _lastEditActorType = $v.lastEditActorType;
+      _lastEditTimestamp = $v.lastEditTimestamp;
+      _silent = $v.silent;
+      _threadId = $v.threadId;
+      _isThread = $v.isThread;
+      _threadTitle = $v.threadTitle;
+      _threadReplies = $v.threadReplies;
+      _actorDisplayName = $v.actorDisplayName;
+      _actorId = $v.actorId;
+      _actorType = $v.actorType;
+      _expirationTimestamp = $v.expirationTimestamp;
+      _message = $v.message;
+      _messageParameters = $v.messageParameters.toBuilder();
+      _messageType = $v.messageType;
+      _systemMessage = $v.systemMessage;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatShareObjectToChatResponseApplicationJson_Ocs_Data other) {
+    _$v = other as _$ChatShareObjectToChatResponseApplicationJson_Ocs_Data;
+  }
+
+  @override
+  void update(void Function(ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatShareObjectToChatResponseApplicationJson_Ocs_Data build() => _build();
+
+  _$ChatShareObjectToChatResponseApplicationJson_Ocs_Data _build() {
+    ChatShareObjectToChatResponseApplicationJson_Ocs_Data._validate(this);
+    _$ChatShareObjectToChatResponseApplicationJson_Ocs_Data _$result;
+    try {
+      _$result = _$v ??
+          _$ChatShareObjectToChatResponseApplicationJson_Ocs_Data._(
+            parent: parent,
+            deleted: deleted,
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'id'),
+            isReplyable: BuiltValueNullFieldError.checkNotNull(
+                isReplyable, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'isReplyable'),
+            markdown: BuiltValueNullFieldError.checkNotNull(
+                markdown, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'markdown'),
+            reactions: reactions.build(),
+            reactionsSelf: _reactionsSelf?.build(),
+            referenceId: BuiltValueNullFieldError.checkNotNull(
+                referenceId, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'referenceId'),
+            timestamp: BuiltValueNullFieldError.checkNotNull(
+                timestamp, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'timestamp'),
+            token: BuiltValueNullFieldError.checkNotNull(
+                token, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'token'),
+            lastEditActorDisplayName: lastEditActorDisplayName,
+            lastEditActorId: lastEditActorId,
+            lastEditActorType: lastEditActorType,
+            lastEditTimestamp: lastEditTimestamp,
+            silent: silent,
+            threadId: threadId,
+            isThread: isThread,
+            threadTitle: threadTitle,
+            threadReplies: threadReplies,
+            actorDisplayName: BuiltValueNullFieldError.checkNotNull(
+                actorDisplayName, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'actorDisplayName'),
+            actorId: BuiltValueNullFieldError.checkNotNull(
+                actorId, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'actorId'),
+            actorType: BuiltValueNullFieldError.checkNotNull(
+                actorType, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'actorType'),
+            expirationTimestamp: BuiltValueNullFieldError.checkNotNull(
+                expirationTimestamp, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'expirationTimestamp'),
+            message: BuiltValueNullFieldError.checkNotNull(
+                message, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'message'),
+            messageParameters: messageParameters.build(),
+            messageType: BuiltValueNullFieldError.checkNotNull(
+                messageType, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'messageType'),
+            systemMessage: BuiltValueNullFieldError.checkNotNull(
+                systemMessage, r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', 'systemMessage'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'reactions';
+        reactions.build();
+        _$failedField = 'reactionsSelf';
+        _reactionsSelf?.build();
+
+        _$failedField = 'messageParameters';
+        messageParameters.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ChatShareObjectToChatResponseApplicationJson_Ocs_Data', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatShareObjectToChatResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($ChatShareObjectToChatResponseApplicationJson_OcsInterface other);
+  void update(void Function($ChatShareObjectToChatResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder get data;
+  set data(ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder? data);
+}
+
+class _$ChatShareObjectToChatResponseApplicationJson_Ocs extends ChatShareObjectToChatResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final ChatShareObjectToChatResponseApplicationJson_Ocs_Data? data;
+
+  factory _$ChatShareObjectToChatResponseApplicationJson_Ocs(
+          [void Function(ChatShareObjectToChatResponseApplicationJson_OcsBuilder)? updates]) =>
+      (ChatShareObjectToChatResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$ChatShareObjectToChatResponseApplicationJson_Ocs._({required this.meta, this.data}) : super._();
+  @override
+  ChatShareObjectToChatResponseApplicationJson_Ocs rebuild(
+          void Function(ChatShareObjectToChatResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatShareObjectToChatResponseApplicationJson_OcsBuilder toBuilder() =>
+      ChatShareObjectToChatResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatShareObjectToChatResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatShareObjectToChatResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class ChatShareObjectToChatResponseApplicationJson_OcsBuilder
+    implements
+        Builder<ChatShareObjectToChatResponseApplicationJson_Ocs,
+            ChatShareObjectToChatResponseApplicationJson_OcsBuilder>,
+        $ChatShareObjectToChatResponseApplicationJson_OcsInterfaceBuilder {
+  _$ChatShareObjectToChatResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder? _data;
+  ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder get data =>
+      _$this._data ??= ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder();
+  set data(covariant ChatShareObjectToChatResponseApplicationJson_Ocs_DataBuilder? data) => _$this._data = data;
+
+  ChatShareObjectToChatResponseApplicationJson_OcsBuilder() {
+    ChatShareObjectToChatResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  ChatShareObjectToChatResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatShareObjectToChatResponseApplicationJson_Ocs other) {
+    _$v = other as _$ChatShareObjectToChatResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(ChatShareObjectToChatResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatShareObjectToChatResponseApplicationJson_Ocs build() => _build();
+
+  _$ChatShareObjectToChatResponseApplicationJson_Ocs _build() {
+    ChatShareObjectToChatResponseApplicationJson_Ocs._validate(this);
+    _$ChatShareObjectToChatResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$ChatShareObjectToChatResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: _data?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        _data?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ChatShareObjectToChatResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatShareObjectToChatResponseApplicationJsonInterfaceBuilder {
+  void replace($ChatShareObjectToChatResponseApplicationJsonInterface other);
+  void update(void Function($ChatShareObjectToChatResponseApplicationJsonInterfaceBuilder) updates);
+  ChatShareObjectToChatResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(ChatShareObjectToChatResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$ChatShareObjectToChatResponseApplicationJson extends ChatShareObjectToChatResponseApplicationJson {
+  @override
+  final ChatShareObjectToChatResponseApplicationJson_Ocs ocs;
+
+  factory _$ChatShareObjectToChatResponseApplicationJson(
+          [void Function(ChatShareObjectToChatResponseApplicationJsonBuilder)? updates]) =>
+      (ChatShareObjectToChatResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$ChatShareObjectToChatResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  ChatShareObjectToChatResponseApplicationJson rebuild(
+          void Function(ChatShareObjectToChatResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatShareObjectToChatResponseApplicationJsonBuilder toBuilder() =>
+      ChatShareObjectToChatResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatShareObjectToChatResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatShareObjectToChatResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class ChatShareObjectToChatResponseApplicationJsonBuilder
+    implements
+        Builder<ChatShareObjectToChatResponseApplicationJson, ChatShareObjectToChatResponseApplicationJsonBuilder>,
+        $ChatShareObjectToChatResponseApplicationJsonInterfaceBuilder {
+  _$ChatShareObjectToChatResponseApplicationJson? _$v;
+
+  ChatShareObjectToChatResponseApplicationJson_OcsBuilder? _ocs;
+  ChatShareObjectToChatResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= ChatShareObjectToChatResponseApplicationJson_OcsBuilder();
+  set ocs(covariant ChatShareObjectToChatResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  ChatShareObjectToChatResponseApplicationJsonBuilder() {
+    ChatShareObjectToChatResponseApplicationJson._defaults(this);
+  }
+
+  ChatShareObjectToChatResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatShareObjectToChatResponseApplicationJson other) {
+    _$v = other as _$ChatShareObjectToChatResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(ChatShareObjectToChatResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatShareObjectToChatResponseApplicationJson build() => _build();
+
+  _$ChatShareObjectToChatResponseApplicationJson _build() {
+    ChatShareObjectToChatResponseApplicationJson._validate(this);
+    _$ChatShareObjectToChatResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$ChatShareObjectToChatResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'ChatShareObjectToChatResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatChatShareObjectToChatHeadersInterfaceBuilder {
+  void replace($ChatChatShareObjectToChatHeadersInterface other);
+  void update(void Function($ChatChatShareObjectToChatHeadersInterfaceBuilder) updates);
+  String? get xChatLastCommonRead;
+  set xChatLastCommonRead(String? xChatLastCommonRead);
+}
+
+class _$ChatChatShareObjectToChatHeaders extends ChatChatShareObjectToChatHeaders {
+  @override
+  final String? xChatLastCommonRead;
+
+  factory _$ChatChatShareObjectToChatHeaders([void Function(ChatChatShareObjectToChatHeadersBuilder)? updates]) =>
+      (ChatChatShareObjectToChatHeadersBuilder()..update(updates))._build();
+
+  _$ChatChatShareObjectToChatHeaders._({this.xChatLastCommonRead}) : super._();
+  @override
+  ChatChatShareObjectToChatHeaders rebuild(void Function(ChatChatShareObjectToChatHeadersBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatChatShareObjectToChatHeadersBuilder toBuilder() => ChatChatShareObjectToChatHeadersBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatChatShareObjectToChatHeaders && xChatLastCommonRead == other.xChatLastCommonRead;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, xChatLastCommonRead.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatChatShareObjectToChatHeaders')
+          ..add('xChatLastCommonRead', xChatLastCommonRead))
+        .toString();
+  }
+}
+
+class ChatChatShareObjectToChatHeadersBuilder
+    implements
+        Builder<ChatChatShareObjectToChatHeaders, ChatChatShareObjectToChatHeadersBuilder>,
+        $ChatChatShareObjectToChatHeadersInterfaceBuilder {
+  _$ChatChatShareObjectToChatHeaders? _$v;
+
+  String? _xChatLastCommonRead;
+  String? get xChatLastCommonRead => _$this._xChatLastCommonRead;
+  set xChatLastCommonRead(covariant String? xChatLastCommonRead) => _$this._xChatLastCommonRead = xChatLastCommonRead;
+
+  ChatChatShareObjectToChatHeadersBuilder() {
+    ChatChatShareObjectToChatHeaders._defaults(this);
+  }
+
+  ChatChatShareObjectToChatHeadersBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _xChatLastCommonRead = $v.xChatLastCommonRead;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatChatShareObjectToChatHeaders other) {
+    _$v = other as _$ChatChatShareObjectToChatHeaders;
+  }
+
+  @override
+  void update(void Function(ChatChatShareObjectToChatHeadersBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatChatShareObjectToChatHeaders build() => _build();
+
+  _$ChatChatShareObjectToChatHeaders _build() {
+    ChatChatShareObjectToChatHeaders._validate(this);
+    final _$result = _$v ??
+        _$ChatChatShareObjectToChatHeaders._(
+          xChatLastCommonRead: xChatLastCommonRead,
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $ChatSummarizeChatRequestApplicationJsonInterfaceBuilder {
   void replace($ChatSummarizeChatRequestApplicationJsonInterface other);
   void update(void Function($ChatSummarizeChatRequestApplicationJsonInterfaceBuilder) updates);
@@ -41200,6 +46235,340 @@ class ChatSummarizeChatResponseApplicationJsonBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatGetMessageContextResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($ChatGetMessageContextResponseApplicationJson_OcsInterface other);
+  void update(void Function($ChatGetMessageContextResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  ListBuilder<ChatMessageWithParent> get data;
+  set data(ListBuilder<ChatMessageWithParent>? data);
+}
+
+class _$ChatGetMessageContextResponseApplicationJson_Ocs extends ChatGetMessageContextResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final BuiltList<ChatMessageWithParent> data;
+
+  factory _$ChatGetMessageContextResponseApplicationJson_Ocs(
+          [void Function(ChatGetMessageContextResponseApplicationJson_OcsBuilder)? updates]) =>
+      (ChatGetMessageContextResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$ChatGetMessageContextResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  ChatGetMessageContextResponseApplicationJson_Ocs rebuild(
+          void Function(ChatGetMessageContextResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatGetMessageContextResponseApplicationJson_OcsBuilder toBuilder() =>
+      ChatGetMessageContextResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatGetMessageContextResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatGetMessageContextResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class ChatGetMessageContextResponseApplicationJson_OcsBuilder
+    implements
+        Builder<ChatGetMessageContextResponseApplicationJson_Ocs,
+            ChatGetMessageContextResponseApplicationJson_OcsBuilder>,
+        $ChatGetMessageContextResponseApplicationJson_OcsInterfaceBuilder {
+  _$ChatGetMessageContextResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  ListBuilder<ChatMessageWithParent>? _data;
+  ListBuilder<ChatMessageWithParent> get data => _$this._data ??= ListBuilder<ChatMessageWithParent>();
+  set data(covariant ListBuilder<ChatMessageWithParent>? data) => _$this._data = data;
+
+  ChatGetMessageContextResponseApplicationJson_OcsBuilder() {
+    ChatGetMessageContextResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  ChatGetMessageContextResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatGetMessageContextResponseApplicationJson_Ocs other) {
+    _$v = other as _$ChatGetMessageContextResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(ChatGetMessageContextResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatGetMessageContextResponseApplicationJson_Ocs build() => _build();
+
+  _$ChatGetMessageContextResponseApplicationJson_Ocs _build() {
+    ChatGetMessageContextResponseApplicationJson_Ocs._validate(this);
+    _$ChatGetMessageContextResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$ChatGetMessageContextResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ChatGetMessageContextResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatGetMessageContextResponseApplicationJsonInterfaceBuilder {
+  void replace($ChatGetMessageContextResponseApplicationJsonInterface other);
+  void update(void Function($ChatGetMessageContextResponseApplicationJsonInterfaceBuilder) updates);
+  ChatGetMessageContextResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(ChatGetMessageContextResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$ChatGetMessageContextResponseApplicationJson extends ChatGetMessageContextResponseApplicationJson {
+  @override
+  final ChatGetMessageContextResponseApplicationJson_Ocs ocs;
+
+  factory _$ChatGetMessageContextResponseApplicationJson(
+          [void Function(ChatGetMessageContextResponseApplicationJsonBuilder)? updates]) =>
+      (ChatGetMessageContextResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$ChatGetMessageContextResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  ChatGetMessageContextResponseApplicationJson rebuild(
+          void Function(ChatGetMessageContextResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatGetMessageContextResponseApplicationJsonBuilder toBuilder() =>
+      ChatGetMessageContextResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatGetMessageContextResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatGetMessageContextResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class ChatGetMessageContextResponseApplicationJsonBuilder
+    implements
+        Builder<ChatGetMessageContextResponseApplicationJson, ChatGetMessageContextResponseApplicationJsonBuilder>,
+        $ChatGetMessageContextResponseApplicationJsonInterfaceBuilder {
+  _$ChatGetMessageContextResponseApplicationJson? _$v;
+
+  ChatGetMessageContextResponseApplicationJson_OcsBuilder? _ocs;
+  ChatGetMessageContextResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= ChatGetMessageContextResponseApplicationJson_OcsBuilder();
+  set ocs(covariant ChatGetMessageContextResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  ChatGetMessageContextResponseApplicationJsonBuilder() {
+    ChatGetMessageContextResponseApplicationJson._defaults(this);
+  }
+
+  ChatGetMessageContextResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatGetMessageContextResponseApplicationJson other) {
+    _$v = other as _$ChatGetMessageContextResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(ChatGetMessageContextResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatGetMessageContextResponseApplicationJson build() => _build();
+
+  _$ChatGetMessageContextResponseApplicationJson _build() {
+    ChatGetMessageContextResponseApplicationJson._validate(this);
+    _$ChatGetMessageContextResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$ChatGetMessageContextResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'ChatGetMessageContextResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatChatGetMessageContextHeadersInterfaceBuilder {
+  void replace($ChatChatGetMessageContextHeadersInterface other);
+  void update(void Function($ChatChatGetMessageContextHeadersInterfaceBuilder) updates);
+  String? get xChatLastCommonRead;
+  set xChatLastCommonRead(String? xChatLastCommonRead);
+
+  String? get xChatLastGiven;
+  set xChatLastGiven(String? xChatLastGiven);
+}
+
+class _$ChatChatGetMessageContextHeaders extends ChatChatGetMessageContextHeaders {
+  @override
+  final String? xChatLastCommonRead;
+  @override
+  final String? xChatLastGiven;
+
+  factory _$ChatChatGetMessageContextHeaders([void Function(ChatChatGetMessageContextHeadersBuilder)? updates]) =>
+      (ChatChatGetMessageContextHeadersBuilder()..update(updates))._build();
+
+  _$ChatChatGetMessageContextHeaders._({this.xChatLastCommonRead, this.xChatLastGiven}) : super._();
+  @override
+  ChatChatGetMessageContextHeaders rebuild(void Function(ChatChatGetMessageContextHeadersBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatChatGetMessageContextHeadersBuilder toBuilder() => ChatChatGetMessageContextHeadersBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatChatGetMessageContextHeaders &&
+        xChatLastCommonRead == other.xChatLastCommonRead &&
+        xChatLastGiven == other.xChatLastGiven;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, xChatLastCommonRead.hashCode);
+    _$hash = $jc(_$hash, xChatLastGiven.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatChatGetMessageContextHeaders')
+          ..add('xChatLastCommonRead', xChatLastCommonRead)
+          ..add('xChatLastGiven', xChatLastGiven))
+        .toString();
+  }
+}
+
+class ChatChatGetMessageContextHeadersBuilder
+    implements
+        Builder<ChatChatGetMessageContextHeaders, ChatChatGetMessageContextHeadersBuilder>,
+        $ChatChatGetMessageContextHeadersInterfaceBuilder {
+  _$ChatChatGetMessageContextHeaders? _$v;
+
+  String? _xChatLastCommonRead;
+  String? get xChatLastCommonRead => _$this._xChatLastCommonRead;
+  set xChatLastCommonRead(covariant String? xChatLastCommonRead) => _$this._xChatLastCommonRead = xChatLastCommonRead;
+
+  String? _xChatLastGiven;
+  String? get xChatLastGiven => _$this._xChatLastGiven;
+  set xChatLastGiven(covariant String? xChatLastGiven) => _$this._xChatLastGiven = xChatLastGiven;
+
+  ChatChatGetMessageContextHeadersBuilder() {
+    ChatChatGetMessageContextHeaders._defaults(this);
+  }
+
+  ChatChatGetMessageContextHeadersBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _xChatLastCommonRead = $v.xChatLastCommonRead;
+      _xChatLastGiven = $v.xChatLastGiven;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatChatGetMessageContextHeaders other) {
+    _$v = other as _$ChatChatGetMessageContextHeaders;
+  }
+
+  @override
+  void update(void Function(ChatChatGetMessageContextHeadersBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatChatGetMessageContextHeaders build() => _build();
+
+  _$ChatChatGetMessageContextHeaders _build() {
+    ChatChatGetMessageContextHeaders._validate(this);
+    final _$result = _$v ??
+        _$ChatChatGetMessageContextHeaders._(
+          xChatLastCommonRead: xChatLastCommonRead,
+          xChatLastGiven: xChatLastGiven,
+        );
     replace(_$result);
     return _$result;
   }
@@ -41923,340 +47292,6 @@ class ChatChatDeleteMessageHeadersBuilder
     final _$result = _$v ??
         _$ChatChatDeleteMessageHeaders._(
           xChatLastCommonRead: xChatLastCommonRead,
-        );
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatGetMessageContextResponseApplicationJson_OcsInterfaceBuilder {
-  void replace($ChatGetMessageContextResponseApplicationJson_OcsInterface other);
-  void update(void Function($ChatGetMessageContextResponseApplicationJson_OcsInterfaceBuilder) updates);
-  OCSMetaBuilder get meta;
-  set meta(OCSMetaBuilder? meta);
-
-  ListBuilder<ChatMessageWithParent> get data;
-  set data(ListBuilder<ChatMessageWithParent>? data);
-}
-
-class _$ChatGetMessageContextResponseApplicationJson_Ocs extends ChatGetMessageContextResponseApplicationJson_Ocs {
-  @override
-  final OCSMeta meta;
-  @override
-  final BuiltList<ChatMessageWithParent> data;
-
-  factory _$ChatGetMessageContextResponseApplicationJson_Ocs(
-          [void Function(ChatGetMessageContextResponseApplicationJson_OcsBuilder)? updates]) =>
-      (ChatGetMessageContextResponseApplicationJson_OcsBuilder()..update(updates))._build();
-
-  _$ChatGetMessageContextResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
-  @override
-  ChatGetMessageContextResponseApplicationJson_Ocs rebuild(
-          void Function(ChatGetMessageContextResponseApplicationJson_OcsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatGetMessageContextResponseApplicationJson_OcsBuilder toBuilder() =>
-      ChatGetMessageContextResponseApplicationJson_OcsBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatGetMessageContextResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, meta.hashCode);
-    _$hash = $jc(_$hash, data.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatGetMessageContextResponseApplicationJson_Ocs')
-          ..add('meta', meta)
-          ..add('data', data))
-        .toString();
-  }
-}
-
-class ChatGetMessageContextResponseApplicationJson_OcsBuilder
-    implements
-        Builder<ChatGetMessageContextResponseApplicationJson_Ocs,
-            ChatGetMessageContextResponseApplicationJson_OcsBuilder>,
-        $ChatGetMessageContextResponseApplicationJson_OcsInterfaceBuilder {
-  _$ChatGetMessageContextResponseApplicationJson_Ocs? _$v;
-
-  OCSMetaBuilder? _meta;
-  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
-  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
-
-  ListBuilder<ChatMessageWithParent>? _data;
-  ListBuilder<ChatMessageWithParent> get data => _$this._data ??= ListBuilder<ChatMessageWithParent>();
-  set data(covariant ListBuilder<ChatMessageWithParent>? data) => _$this._data = data;
-
-  ChatGetMessageContextResponseApplicationJson_OcsBuilder() {
-    ChatGetMessageContextResponseApplicationJson_Ocs._defaults(this);
-  }
-
-  ChatGetMessageContextResponseApplicationJson_OcsBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _meta = $v.meta.toBuilder();
-      _data = $v.data.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatGetMessageContextResponseApplicationJson_Ocs other) {
-    _$v = other as _$ChatGetMessageContextResponseApplicationJson_Ocs;
-  }
-
-  @override
-  void update(void Function(ChatGetMessageContextResponseApplicationJson_OcsBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatGetMessageContextResponseApplicationJson_Ocs build() => _build();
-
-  _$ChatGetMessageContextResponseApplicationJson_Ocs _build() {
-    ChatGetMessageContextResponseApplicationJson_Ocs._validate(this);
-    _$ChatGetMessageContextResponseApplicationJson_Ocs _$result;
-    try {
-      _$result = _$v ??
-          _$ChatGetMessageContextResponseApplicationJson_Ocs._(
-            meta: meta.build(),
-            data: data.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'meta';
-        meta.build();
-        _$failedField = 'data';
-        data.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'ChatGetMessageContextResponseApplicationJson_Ocs', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatGetMessageContextResponseApplicationJsonInterfaceBuilder {
-  void replace($ChatGetMessageContextResponseApplicationJsonInterface other);
-  void update(void Function($ChatGetMessageContextResponseApplicationJsonInterfaceBuilder) updates);
-  ChatGetMessageContextResponseApplicationJson_OcsBuilder get ocs;
-  set ocs(ChatGetMessageContextResponseApplicationJson_OcsBuilder? ocs);
-}
-
-class _$ChatGetMessageContextResponseApplicationJson extends ChatGetMessageContextResponseApplicationJson {
-  @override
-  final ChatGetMessageContextResponseApplicationJson_Ocs ocs;
-
-  factory _$ChatGetMessageContextResponseApplicationJson(
-          [void Function(ChatGetMessageContextResponseApplicationJsonBuilder)? updates]) =>
-      (ChatGetMessageContextResponseApplicationJsonBuilder()..update(updates))._build();
-
-  _$ChatGetMessageContextResponseApplicationJson._({required this.ocs}) : super._();
-  @override
-  ChatGetMessageContextResponseApplicationJson rebuild(
-          void Function(ChatGetMessageContextResponseApplicationJsonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatGetMessageContextResponseApplicationJsonBuilder toBuilder() =>
-      ChatGetMessageContextResponseApplicationJsonBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatGetMessageContextResponseApplicationJson && ocs == other.ocs;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, ocs.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatGetMessageContextResponseApplicationJson')..add('ocs', ocs)).toString();
-  }
-}
-
-class ChatGetMessageContextResponseApplicationJsonBuilder
-    implements
-        Builder<ChatGetMessageContextResponseApplicationJson, ChatGetMessageContextResponseApplicationJsonBuilder>,
-        $ChatGetMessageContextResponseApplicationJsonInterfaceBuilder {
-  _$ChatGetMessageContextResponseApplicationJson? _$v;
-
-  ChatGetMessageContextResponseApplicationJson_OcsBuilder? _ocs;
-  ChatGetMessageContextResponseApplicationJson_OcsBuilder get ocs =>
-      _$this._ocs ??= ChatGetMessageContextResponseApplicationJson_OcsBuilder();
-  set ocs(covariant ChatGetMessageContextResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
-
-  ChatGetMessageContextResponseApplicationJsonBuilder() {
-    ChatGetMessageContextResponseApplicationJson._defaults(this);
-  }
-
-  ChatGetMessageContextResponseApplicationJsonBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _ocs = $v.ocs.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatGetMessageContextResponseApplicationJson other) {
-    _$v = other as _$ChatGetMessageContextResponseApplicationJson;
-  }
-
-  @override
-  void update(void Function(ChatGetMessageContextResponseApplicationJsonBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatGetMessageContextResponseApplicationJson build() => _build();
-
-  _$ChatGetMessageContextResponseApplicationJson _build() {
-    ChatGetMessageContextResponseApplicationJson._validate(this);
-    _$ChatGetMessageContextResponseApplicationJson _$result;
-    try {
-      _$result = _$v ??
-          _$ChatGetMessageContextResponseApplicationJson._(
-            ocs: ocs.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'ocs';
-        ocs.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(r'ChatGetMessageContextResponseApplicationJson', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatChatGetMessageContextHeadersInterfaceBuilder {
-  void replace($ChatChatGetMessageContextHeadersInterface other);
-  void update(void Function($ChatChatGetMessageContextHeadersInterfaceBuilder) updates);
-  String? get xChatLastCommonRead;
-  set xChatLastCommonRead(String? xChatLastCommonRead);
-
-  String? get xChatLastGiven;
-  set xChatLastGiven(String? xChatLastGiven);
-}
-
-class _$ChatChatGetMessageContextHeaders extends ChatChatGetMessageContextHeaders {
-  @override
-  final String? xChatLastCommonRead;
-  @override
-  final String? xChatLastGiven;
-
-  factory _$ChatChatGetMessageContextHeaders([void Function(ChatChatGetMessageContextHeadersBuilder)? updates]) =>
-      (ChatChatGetMessageContextHeadersBuilder()..update(updates))._build();
-
-  _$ChatChatGetMessageContextHeaders._({this.xChatLastCommonRead, this.xChatLastGiven}) : super._();
-  @override
-  ChatChatGetMessageContextHeaders rebuild(void Function(ChatChatGetMessageContextHeadersBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatChatGetMessageContextHeadersBuilder toBuilder() => ChatChatGetMessageContextHeadersBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatChatGetMessageContextHeaders &&
-        xChatLastCommonRead == other.xChatLastCommonRead &&
-        xChatLastGiven == other.xChatLastGiven;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, xChatLastCommonRead.hashCode);
-    _$hash = $jc(_$hash, xChatLastGiven.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatChatGetMessageContextHeaders')
-          ..add('xChatLastCommonRead', xChatLastCommonRead)
-          ..add('xChatLastGiven', xChatLastGiven))
-        .toString();
-  }
-}
-
-class ChatChatGetMessageContextHeadersBuilder
-    implements
-        Builder<ChatChatGetMessageContextHeaders, ChatChatGetMessageContextHeadersBuilder>,
-        $ChatChatGetMessageContextHeadersInterfaceBuilder {
-  _$ChatChatGetMessageContextHeaders? _$v;
-
-  String? _xChatLastCommonRead;
-  String? get xChatLastCommonRead => _$this._xChatLastCommonRead;
-  set xChatLastCommonRead(covariant String? xChatLastCommonRead) => _$this._xChatLastCommonRead = xChatLastCommonRead;
-
-  String? _xChatLastGiven;
-  String? get xChatLastGiven => _$this._xChatLastGiven;
-  set xChatLastGiven(covariant String? xChatLastGiven) => _$this._xChatLastGiven = xChatLastGiven;
-
-  ChatChatGetMessageContextHeadersBuilder() {
-    ChatChatGetMessageContextHeaders._defaults(this);
-  }
-
-  ChatChatGetMessageContextHeadersBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _xChatLastCommonRead = $v.xChatLastCommonRead;
-      _xChatLastGiven = $v.xChatLastGiven;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatChatGetMessageContextHeaders other) {
-    _$v = other as _$ChatChatGetMessageContextHeaders;
-  }
-
-  @override
-  void update(void Function(ChatChatGetMessageContextHeadersBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatChatGetMessageContextHeaders build() => _build();
-
-  _$ChatChatGetMessageContextHeaders _build() {
-    ChatChatGetMessageContextHeaders._validate(this);
-    final _$result = _$v ??
-        _$ChatChatGetMessageContextHeaders._(
-          xChatLastCommonRead: xChatLastCommonRead,
-          xChatLastGiven: xChatLastGiven,
         );
     replace(_$result);
     return _$result;
@@ -44431,6 +49466,242 @@ class ChatChatMarkUnreadHeadersBuilder
   }
 }
 
+abstract mixin class $ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsInterface other);
+  void update(void Function($ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  MapBuilder<String, BuiltList<ChatMessage>> get data;
+  set data(MapBuilder<String, BuiltList<ChatMessage>>? data);
+}
+
+class _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs
+    extends ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final BuiltMap<String, BuiltList<ChatMessage>> data;
+
+  factory _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs(
+          [void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder)? updates]) =>
+      (ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs._({required this.meta, required this.data})
+      : super._();
+  @override
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs rebuild(
+          void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder toBuilder() =>
+      ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs &&
+        meta == other.meta &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder
+    implements
+        Builder<ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs,
+            ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder>,
+        $ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsInterfaceBuilder {
+  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  MapBuilder<String, BuiltList<ChatMessage>>? _data;
+  MapBuilder<String, BuiltList<ChatMessage>> get data => _$this._data ??= MapBuilder<String, BuiltList<ChatMessage>>();
+  set data(covariant MapBuilder<String, BuiltList<ChatMessage>>? data) => _$this._data = data;
+
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder() {
+    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs other) {
+    _$v = other as _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs build() => _build();
+
+  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs _build() {
+    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs._validate(this);
+    _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonInterfaceBuilder {
+  void replace($ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonInterface other);
+  void update(void Function($ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonInterfaceBuilder) updates);
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson
+    extends ChatGetObjectsSharedInRoomOverviewResponseApplicationJson {
+  @override
+  final ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs ocs;
+
+  factory _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson(
+          [void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder)? updates]) =>
+      (ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson rebuild(
+          void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder toBuilder() =>
+      ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ChatGetObjectsSharedInRoomOverviewResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson')..add('ocs', ocs))
+        .toString();
+  }
+}
+
+class ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder
+    implements
+        Builder<ChatGetObjectsSharedInRoomOverviewResponseApplicationJson,
+            ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder>,
+        $ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonInterfaceBuilder {
+  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson? _$v;
+
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder? _ocs;
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder();
+  set ocs(covariant ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder() {
+    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson._defaults(this);
+  }
+
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ChatGetObjectsSharedInRoomOverviewResponseApplicationJson other) {
+    _$v = other as _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson build() => _build();
+
+  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson _build() {
+    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson._validate(this);
+    _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $ChatMentionSuggestionInterfaceBuilder {
   void replace($ChatMentionSuggestionInterface other);
   void update(void Function($ChatMentionSuggestionInterfaceBuilder) updates);
@@ -44858,1048 +50129,6 @@ class ChatMentionsResponseApplicationJsonBuilder
         ocs.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(r'ChatMentionsResponseApplicationJson', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatGetObjectsSharedInRoomResponseApplicationJson_OcsInterfaceBuilder {
-  void replace($ChatGetObjectsSharedInRoomResponseApplicationJson_OcsInterface other);
-  void update(void Function($ChatGetObjectsSharedInRoomResponseApplicationJson_OcsInterfaceBuilder) updates);
-  OCSMetaBuilder get meta;
-  set meta(OCSMetaBuilder? meta);
-
-  MapBuilder<String, ChatMessage> get data;
-  set data(MapBuilder<String, ChatMessage>? data);
-}
-
-class _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs
-    extends ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs {
-  @override
-  final OCSMeta meta;
-  @override
-  final BuiltMap<String, ChatMessage> data;
-
-  factory _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs(
-          [void Function(ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder)? updates]) =>
-      (ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder()..update(updates))._build();
-
-  _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
-  @override
-  ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs rebuild(
-          void Function(ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder toBuilder() =>
-      ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, meta.hashCode);
-    _$hash = $jc(_$hash, data.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs')
-          ..add('meta', meta)
-          ..add('data', data))
-        .toString();
-  }
-}
-
-class ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder
-    implements
-        Builder<ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs,
-            ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder>,
-        $ChatGetObjectsSharedInRoomResponseApplicationJson_OcsInterfaceBuilder {
-  _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs? _$v;
-
-  OCSMetaBuilder? _meta;
-  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
-  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
-
-  MapBuilder<String, ChatMessage>? _data;
-  MapBuilder<String, ChatMessage> get data => _$this._data ??= MapBuilder<String, ChatMessage>();
-  set data(covariant MapBuilder<String, ChatMessage>? data) => _$this._data = data;
-
-  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder() {
-    ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs._defaults(this);
-  }
-
-  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _meta = $v.meta.toBuilder();
-      _data = $v.data.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs other) {
-    _$v = other as _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs;
-  }
-
-  @override
-  void update(void Function(ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs build() => _build();
-
-  _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs _build() {
-    ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs._validate(this);
-    _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs _$result;
-    try {
-      _$result = _$v ??
-          _$ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs._(
-            meta: meta.build(),
-            data: data.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'meta';
-        meta.build();
-        _$failedField = 'data';
-        data.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatGetObjectsSharedInRoomResponseApplicationJsonInterfaceBuilder {
-  void replace($ChatGetObjectsSharedInRoomResponseApplicationJsonInterface other);
-  void update(void Function($ChatGetObjectsSharedInRoomResponseApplicationJsonInterfaceBuilder) updates);
-  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder get ocs;
-  set ocs(ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder? ocs);
-}
-
-class _$ChatGetObjectsSharedInRoomResponseApplicationJson extends ChatGetObjectsSharedInRoomResponseApplicationJson {
-  @override
-  final ChatGetObjectsSharedInRoomResponseApplicationJson_Ocs ocs;
-
-  factory _$ChatGetObjectsSharedInRoomResponseApplicationJson(
-          [void Function(ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder)? updates]) =>
-      (ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder()..update(updates))._build();
-
-  _$ChatGetObjectsSharedInRoomResponseApplicationJson._({required this.ocs}) : super._();
-  @override
-  ChatGetObjectsSharedInRoomResponseApplicationJson rebuild(
-          void Function(ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder toBuilder() =>
-      ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatGetObjectsSharedInRoomResponseApplicationJson && ocs == other.ocs;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, ocs.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatGetObjectsSharedInRoomResponseApplicationJson')..add('ocs', ocs))
-        .toString();
-  }
-}
-
-class ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder
-    implements
-        Builder<ChatGetObjectsSharedInRoomResponseApplicationJson,
-            ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder>,
-        $ChatGetObjectsSharedInRoomResponseApplicationJsonInterfaceBuilder {
-  _$ChatGetObjectsSharedInRoomResponseApplicationJson? _$v;
-
-  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder? _ocs;
-  ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder get ocs =>
-      _$this._ocs ??= ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder();
-  set ocs(covariant ChatGetObjectsSharedInRoomResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
-
-  ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder() {
-    ChatGetObjectsSharedInRoomResponseApplicationJson._defaults(this);
-  }
-
-  ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _ocs = $v.ocs.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatGetObjectsSharedInRoomResponseApplicationJson other) {
-    _$v = other as _$ChatGetObjectsSharedInRoomResponseApplicationJson;
-  }
-
-  @override
-  void update(void Function(ChatGetObjectsSharedInRoomResponseApplicationJsonBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatGetObjectsSharedInRoomResponseApplicationJson build() => _build();
-
-  _$ChatGetObjectsSharedInRoomResponseApplicationJson _build() {
-    ChatGetObjectsSharedInRoomResponseApplicationJson._validate(this);
-    _$ChatGetObjectsSharedInRoomResponseApplicationJson _$result;
-    try {
-      _$result = _$v ??
-          _$ChatGetObjectsSharedInRoomResponseApplicationJson._(
-            ocs: ocs.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'ocs';
-        ocs.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'ChatGetObjectsSharedInRoomResponseApplicationJson', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatChatGetObjectsSharedInRoomHeadersInterfaceBuilder {
-  void replace($ChatChatGetObjectsSharedInRoomHeadersInterface other);
-  void update(void Function($ChatChatGetObjectsSharedInRoomHeadersInterfaceBuilder) updates);
-  String? get xChatLastGiven;
-  set xChatLastGiven(String? xChatLastGiven);
-}
-
-class _$ChatChatGetObjectsSharedInRoomHeaders extends ChatChatGetObjectsSharedInRoomHeaders {
-  @override
-  final String? xChatLastGiven;
-
-  factory _$ChatChatGetObjectsSharedInRoomHeaders(
-          [void Function(ChatChatGetObjectsSharedInRoomHeadersBuilder)? updates]) =>
-      (ChatChatGetObjectsSharedInRoomHeadersBuilder()..update(updates))._build();
-
-  _$ChatChatGetObjectsSharedInRoomHeaders._({this.xChatLastGiven}) : super._();
-  @override
-  ChatChatGetObjectsSharedInRoomHeaders rebuild(void Function(ChatChatGetObjectsSharedInRoomHeadersBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatChatGetObjectsSharedInRoomHeadersBuilder toBuilder() =>
-      ChatChatGetObjectsSharedInRoomHeadersBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatChatGetObjectsSharedInRoomHeaders && xChatLastGiven == other.xChatLastGiven;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, xChatLastGiven.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatChatGetObjectsSharedInRoomHeaders')
-          ..add('xChatLastGiven', xChatLastGiven))
-        .toString();
-  }
-}
-
-class ChatChatGetObjectsSharedInRoomHeadersBuilder
-    implements
-        Builder<ChatChatGetObjectsSharedInRoomHeaders, ChatChatGetObjectsSharedInRoomHeadersBuilder>,
-        $ChatChatGetObjectsSharedInRoomHeadersInterfaceBuilder {
-  _$ChatChatGetObjectsSharedInRoomHeaders? _$v;
-
-  String? _xChatLastGiven;
-  String? get xChatLastGiven => _$this._xChatLastGiven;
-  set xChatLastGiven(covariant String? xChatLastGiven) => _$this._xChatLastGiven = xChatLastGiven;
-
-  ChatChatGetObjectsSharedInRoomHeadersBuilder() {
-    ChatChatGetObjectsSharedInRoomHeaders._defaults(this);
-  }
-
-  ChatChatGetObjectsSharedInRoomHeadersBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _xChatLastGiven = $v.xChatLastGiven;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatChatGetObjectsSharedInRoomHeaders other) {
-    _$v = other as _$ChatChatGetObjectsSharedInRoomHeaders;
-  }
-
-  @override
-  void update(void Function(ChatChatGetObjectsSharedInRoomHeadersBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatChatGetObjectsSharedInRoomHeaders build() => _build();
-
-  _$ChatChatGetObjectsSharedInRoomHeaders _build() {
-    ChatChatGetObjectsSharedInRoomHeaders._validate(this);
-    final _$result = _$v ??
-        _$ChatChatGetObjectsSharedInRoomHeaders._(
-          xChatLastGiven: xChatLastGiven,
-        );
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatShareObjectToChatRequestApplicationJsonInterfaceBuilder {
-  void replace($ChatShareObjectToChatRequestApplicationJsonInterface other);
-  void update(void Function($ChatShareObjectToChatRequestApplicationJsonInterfaceBuilder) updates);
-  String? get objectType;
-  set objectType(String? objectType);
-
-  String? get objectId;
-  set objectId(String? objectId);
-
-  String? get metaData;
-  set metaData(String? metaData);
-
-  String? get actorDisplayName;
-  set actorDisplayName(String? actorDisplayName);
-
-  String? get referenceId;
-  set referenceId(String? referenceId);
-}
-
-class _$ChatShareObjectToChatRequestApplicationJson extends ChatShareObjectToChatRequestApplicationJson {
-  @override
-  final String objectType;
-  @override
-  final String objectId;
-  @override
-  final String metaData;
-  @override
-  final String actorDisplayName;
-  @override
-  final String referenceId;
-
-  factory _$ChatShareObjectToChatRequestApplicationJson(
-          [void Function(ChatShareObjectToChatRequestApplicationJsonBuilder)? updates]) =>
-      (ChatShareObjectToChatRequestApplicationJsonBuilder()..update(updates))._build();
-
-  _$ChatShareObjectToChatRequestApplicationJson._(
-      {required this.objectType,
-      required this.objectId,
-      required this.metaData,
-      required this.actorDisplayName,
-      required this.referenceId})
-      : super._();
-  @override
-  ChatShareObjectToChatRequestApplicationJson rebuild(
-          void Function(ChatShareObjectToChatRequestApplicationJsonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatShareObjectToChatRequestApplicationJsonBuilder toBuilder() =>
-      ChatShareObjectToChatRequestApplicationJsonBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatShareObjectToChatRequestApplicationJson &&
-        objectType == other.objectType &&
-        objectId == other.objectId &&
-        metaData == other.metaData &&
-        actorDisplayName == other.actorDisplayName &&
-        referenceId == other.referenceId;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, objectType.hashCode);
-    _$hash = $jc(_$hash, objectId.hashCode);
-    _$hash = $jc(_$hash, metaData.hashCode);
-    _$hash = $jc(_$hash, actorDisplayName.hashCode);
-    _$hash = $jc(_$hash, referenceId.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatShareObjectToChatRequestApplicationJson')
-          ..add('objectType', objectType)
-          ..add('objectId', objectId)
-          ..add('metaData', metaData)
-          ..add('actorDisplayName', actorDisplayName)
-          ..add('referenceId', referenceId))
-        .toString();
-  }
-}
-
-class ChatShareObjectToChatRequestApplicationJsonBuilder
-    implements
-        Builder<ChatShareObjectToChatRequestApplicationJson, ChatShareObjectToChatRequestApplicationJsonBuilder>,
-        $ChatShareObjectToChatRequestApplicationJsonInterfaceBuilder {
-  _$ChatShareObjectToChatRequestApplicationJson? _$v;
-
-  String? _objectType;
-  String? get objectType => _$this._objectType;
-  set objectType(covariant String? objectType) => _$this._objectType = objectType;
-
-  String? _objectId;
-  String? get objectId => _$this._objectId;
-  set objectId(covariant String? objectId) => _$this._objectId = objectId;
-
-  String? _metaData;
-  String? get metaData => _$this._metaData;
-  set metaData(covariant String? metaData) => _$this._metaData = metaData;
-
-  String? _actorDisplayName;
-  String? get actorDisplayName => _$this._actorDisplayName;
-  set actorDisplayName(covariant String? actorDisplayName) => _$this._actorDisplayName = actorDisplayName;
-
-  String? _referenceId;
-  String? get referenceId => _$this._referenceId;
-  set referenceId(covariant String? referenceId) => _$this._referenceId = referenceId;
-
-  ChatShareObjectToChatRequestApplicationJsonBuilder() {
-    ChatShareObjectToChatRequestApplicationJson._defaults(this);
-  }
-
-  ChatShareObjectToChatRequestApplicationJsonBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _objectType = $v.objectType;
-      _objectId = $v.objectId;
-      _metaData = $v.metaData;
-      _actorDisplayName = $v.actorDisplayName;
-      _referenceId = $v.referenceId;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatShareObjectToChatRequestApplicationJson other) {
-    _$v = other as _$ChatShareObjectToChatRequestApplicationJson;
-  }
-
-  @override
-  void update(void Function(ChatShareObjectToChatRequestApplicationJsonBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatShareObjectToChatRequestApplicationJson build() => _build();
-
-  _$ChatShareObjectToChatRequestApplicationJson _build() {
-    ChatShareObjectToChatRequestApplicationJson._validate(this);
-    final _$result = _$v ??
-        _$ChatShareObjectToChatRequestApplicationJson._(
-          objectType: BuiltValueNullFieldError.checkNotNull(
-              objectType, r'ChatShareObjectToChatRequestApplicationJson', 'objectType'),
-          objectId: BuiltValueNullFieldError.checkNotNull(
-              objectId, r'ChatShareObjectToChatRequestApplicationJson', 'objectId'),
-          metaData: BuiltValueNullFieldError.checkNotNull(
-              metaData, r'ChatShareObjectToChatRequestApplicationJson', 'metaData'),
-          actorDisplayName: BuiltValueNullFieldError.checkNotNull(
-              actorDisplayName, r'ChatShareObjectToChatRequestApplicationJson', 'actorDisplayName'),
-          referenceId: BuiltValueNullFieldError.checkNotNull(
-              referenceId, r'ChatShareObjectToChatRequestApplicationJson', 'referenceId'),
-        );
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatShareObjectToChatResponseApplicationJson_OcsInterfaceBuilder {
-  void replace($ChatShareObjectToChatResponseApplicationJson_OcsInterface other);
-  void update(void Function($ChatShareObjectToChatResponseApplicationJson_OcsInterfaceBuilder) updates);
-  OCSMetaBuilder get meta;
-  set meta(OCSMetaBuilder? meta);
-
-  ChatMessageWithParentBuilder get data;
-  set data(ChatMessageWithParentBuilder? data);
-}
-
-class _$ChatShareObjectToChatResponseApplicationJson_Ocs extends ChatShareObjectToChatResponseApplicationJson_Ocs {
-  @override
-  final OCSMeta meta;
-  @override
-  final ChatMessageWithParent? data;
-
-  factory _$ChatShareObjectToChatResponseApplicationJson_Ocs(
-          [void Function(ChatShareObjectToChatResponseApplicationJson_OcsBuilder)? updates]) =>
-      (ChatShareObjectToChatResponseApplicationJson_OcsBuilder()..update(updates))._build();
-
-  _$ChatShareObjectToChatResponseApplicationJson_Ocs._({required this.meta, this.data}) : super._();
-  @override
-  ChatShareObjectToChatResponseApplicationJson_Ocs rebuild(
-          void Function(ChatShareObjectToChatResponseApplicationJson_OcsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatShareObjectToChatResponseApplicationJson_OcsBuilder toBuilder() =>
-      ChatShareObjectToChatResponseApplicationJson_OcsBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatShareObjectToChatResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, meta.hashCode);
-    _$hash = $jc(_$hash, data.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatShareObjectToChatResponseApplicationJson_Ocs')
-          ..add('meta', meta)
-          ..add('data', data))
-        .toString();
-  }
-}
-
-class ChatShareObjectToChatResponseApplicationJson_OcsBuilder
-    implements
-        Builder<ChatShareObjectToChatResponseApplicationJson_Ocs,
-            ChatShareObjectToChatResponseApplicationJson_OcsBuilder>,
-        $ChatShareObjectToChatResponseApplicationJson_OcsInterfaceBuilder {
-  _$ChatShareObjectToChatResponseApplicationJson_Ocs? _$v;
-
-  OCSMetaBuilder? _meta;
-  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
-  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
-
-  ChatMessageWithParentBuilder? _data;
-  ChatMessageWithParentBuilder get data => _$this._data ??= ChatMessageWithParentBuilder();
-  set data(covariant ChatMessageWithParentBuilder? data) => _$this._data = data;
-
-  ChatShareObjectToChatResponseApplicationJson_OcsBuilder() {
-    ChatShareObjectToChatResponseApplicationJson_Ocs._defaults(this);
-  }
-
-  ChatShareObjectToChatResponseApplicationJson_OcsBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _meta = $v.meta.toBuilder();
-      _data = $v.data?.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatShareObjectToChatResponseApplicationJson_Ocs other) {
-    _$v = other as _$ChatShareObjectToChatResponseApplicationJson_Ocs;
-  }
-
-  @override
-  void update(void Function(ChatShareObjectToChatResponseApplicationJson_OcsBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatShareObjectToChatResponseApplicationJson_Ocs build() => _build();
-
-  _$ChatShareObjectToChatResponseApplicationJson_Ocs _build() {
-    ChatShareObjectToChatResponseApplicationJson_Ocs._validate(this);
-    _$ChatShareObjectToChatResponseApplicationJson_Ocs _$result;
-    try {
-      _$result = _$v ??
-          _$ChatShareObjectToChatResponseApplicationJson_Ocs._(
-            meta: meta.build(),
-            data: _data?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'meta';
-        meta.build();
-        _$failedField = 'data';
-        _data?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'ChatShareObjectToChatResponseApplicationJson_Ocs', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatShareObjectToChatResponseApplicationJsonInterfaceBuilder {
-  void replace($ChatShareObjectToChatResponseApplicationJsonInterface other);
-  void update(void Function($ChatShareObjectToChatResponseApplicationJsonInterfaceBuilder) updates);
-  ChatShareObjectToChatResponseApplicationJson_OcsBuilder get ocs;
-  set ocs(ChatShareObjectToChatResponseApplicationJson_OcsBuilder? ocs);
-}
-
-class _$ChatShareObjectToChatResponseApplicationJson extends ChatShareObjectToChatResponseApplicationJson {
-  @override
-  final ChatShareObjectToChatResponseApplicationJson_Ocs ocs;
-
-  factory _$ChatShareObjectToChatResponseApplicationJson(
-          [void Function(ChatShareObjectToChatResponseApplicationJsonBuilder)? updates]) =>
-      (ChatShareObjectToChatResponseApplicationJsonBuilder()..update(updates))._build();
-
-  _$ChatShareObjectToChatResponseApplicationJson._({required this.ocs}) : super._();
-  @override
-  ChatShareObjectToChatResponseApplicationJson rebuild(
-          void Function(ChatShareObjectToChatResponseApplicationJsonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatShareObjectToChatResponseApplicationJsonBuilder toBuilder() =>
-      ChatShareObjectToChatResponseApplicationJsonBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatShareObjectToChatResponseApplicationJson && ocs == other.ocs;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, ocs.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatShareObjectToChatResponseApplicationJson')..add('ocs', ocs)).toString();
-  }
-}
-
-class ChatShareObjectToChatResponseApplicationJsonBuilder
-    implements
-        Builder<ChatShareObjectToChatResponseApplicationJson, ChatShareObjectToChatResponseApplicationJsonBuilder>,
-        $ChatShareObjectToChatResponseApplicationJsonInterfaceBuilder {
-  _$ChatShareObjectToChatResponseApplicationJson? _$v;
-
-  ChatShareObjectToChatResponseApplicationJson_OcsBuilder? _ocs;
-  ChatShareObjectToChatResponseApplicationJson_OcsBuilder get ocs =>
-      _$this._ocs ??= ChatShareObjectToChatResponseApplicationJson_OcsBuilder();
-  set ocs(covariant ChatShareObjectToChatResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
-
-  ChatShareObjectToChatResponseApplicationJsonBuilder() {
-    ChatShareObjectToChatResponseApplicationJson._defaults(this);
-  }
-
-  ChatShareObjectToChatResponseApplicationJsonBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _ocs = $v.ocs.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatShareObjectToChatResponseApplicationJson other) {
-    _$v = other as _$ChatShareObjectToChatResponseApplicationJson;
-  }
-
-  @override
-  void update(void Function(ChatShareObjectToChatResponseApplicationJsonBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatShareObjectToChatResponseApplicationJson build() => _build();
-
-  _$ChatShareObjectToChatResponseApplicationJson _build() {
-    ChatShareObjectToChatResponseApplicationJson._validate(this);
-    _$ChatShareObjectToChatResponseApplicationJson _$result;
-    try {
-      _$result = _$v ??
-          _$ChatShareObjectToChatResponseApplicationJson._(
-            ocs: ocs.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'ocs';
-        ocs.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(r'ChatShareObjectToChatResponseApplicationJson', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatChatShareObjectToChatHeadersInterfaceBuilder {
-  void replace($ChatChatShareObjectToChatHeadersInterface other);
-  void update(void Function($ChatChatShareObjectToChatHeadersInterfaceBuilder) updates);
-  String? get xChatLastCommonRead;
-  set xChatLastCommonRead(String? xChatLastCommonRead);
-}
-
-class _$ChatChatShareObjectToChatHeaders extends ChatChatShareObjectToChatHeaders {
-  @override
-  final String? xChatLastCommonRead;
-
-  factory _$ChatChatShareObjectToChatHeaders([void Function(ChatChatShareObjectToChatHeadersBuilder)? updates]) =>
-      (ChatChatShareObjectToChatHeadersBuilder()..update(updates))._build();
-
-  _$ChatChatShareObjectToChatHeaders._({this.xChatLastCommonRead}) : super._();
-  @override
-  ChatChatShareObjectToChatHeaders rebuild(void Function(ChatChatShareObjectToChatHeadersBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatChatShareObjectToChatHeadersBuilder toBuilder() => ChatChatShareObjectToChatHeadersBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatChatShareObjectToChatHeaders && xChatLastCommonRead == other.xChatLastCommonRead;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, xChatLastCommonRead.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatChatShareObjectToChatHeaders')
-          ..add('xChatLastCommonRead', xChatLastCommonRead))
-        .toString();
-  }
-}
-
-class ChatChatShareObjectToChatHeadersBuilder
-    implements
-        Builder<ChatChatShareObjectToChatHeaders, ChatChatShareObjectToChatHeadersBuilder>,
-        $ChatChatShareObjectToChatHeadersInterfaceBuilder {
-  _$ChatChatShareObjectToChatHeaders? _$v;
-
-  String? _xChatLastCommonRead;
-  String? get xChatLastCommonRead => _$this._xChatLastCommonRead;
-  set xChatLastCommonRead(covariant String? xChatLastCommonRead) => _$this._xChatLastCommonRead = xChatLastCommonRead;
-
-  ChatChatShareObjectToChatHeadersBuilder() {
-    ChatChatShareObjectToChatHeaders._defaults(this);
-  }
-
-  ChatChatShareObjectToChatHeadersBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _xChatLastCommonRead = $v.xChatLastCommonRead;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatChatShareObjectToChatHeaders other) {
-    _$v = other as _$ChatChatShareObjectToChatHeaders;
-  }
-
-  @override
-  void update(void Function(ChatChatShareObjectToChatHeadersBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatChatShareObjectToChatHeaders build() => _build();
-
-  _$ChatChatShareObjectToChatHeaders _build() {
-    ChatChatShareObjectToChatHeaders._validate(this);
-    final _$result = _$v ??
-        _$ChatChatShareObjectToChatHeaders._(
-          xChatLastCommonRead: xChatLastCommonRead,
-        );
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsInterfaceBuilder {
-  void replace($ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsInterface other);
-  void update(void Function($ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsInterfaceBuilder) updates);
-  OCSMetaBuilder get meta;
-  set meta(OCSMetaBuilder? meta);
-
-  MapBuilder<String, BuiltList<ChatMessage>> get data;
-  set data(MapBuilder<String, BuiltList<ChatMessage>>? data);
-}
-
-class _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs
-    extends ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs {
-  @override
-  final OCSMeta meta;
-  @override
-  final BuiltMap<String, BuiltList<ChatMessage>> data;
-
-  factory _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs(
-          [void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder)? updates]) =>
-      (ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder()..update(updates))._build();
-
-  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs._({required this.meta, required this.data})
-      : super._();
-  @override
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs rebuild(
-          void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder toBuilder() =>
-      ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs &&
-        meta == other.meta &&
-        data == other.data;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, meta.hashCode);
-    _$hash = $jc(_$hash, data.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs')
-          ..add('meta', meta)
-          ..add('data', data))
-        .toString();
-  }
-}
-
-class ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder
-    implements
-        Builder<ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs,
-            ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder>,
-        $ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsInterfaceBuilder {
-  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs? _$v;
-
-  OCSMetaBuilder? _meta;
-  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
-  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
-
-  MapBuilder<String, BuiltList<ChatMessage>>? _data;
-  MapBuilder<String, BuiltList<ChatMessage>> get data => _$this._data ??= MapBuilder<String, BuiltList<ChatMessage>>();
-  set data(covariant MapBuilder<String, BuiltList<ChatMessage>>? data) => _$this._data = data;
-
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder() {
-    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs._defaults(this);
-  }
-
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _meta = $v.meta.toBuilder();
-      _data = $v.data.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs other) {
-    _$v = other as _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs;
-  }
-
-  @override
-  void update(void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs build() => _build();
-
-  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs _build() {
-    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs._validate(this);
-    _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs _$result;
-    try {
-      _$result = _$v ??
-          _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs._(
-            meta: meta.build(),
-            data: data.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'meta';
-        meta.build();
-        _$failedField = 'data';
-        data.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonInterfaceBuilder {
-  void replace($ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonInterface other);
-  void update(void Function($ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonInterfaceBuilder) updates);
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder get ocs;
-  set ocs(ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder? ocs);
-}
-
-class _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson
-    extends ChatGetObjectsSharedInRoomOverviewResponseApplicationJson {
-  @override
-  final ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_Ocs ocs;
-
-  factory _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson(
-          [void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder)? updates]) =>
-      (ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder()..update(updates))._build();
-
-  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson._({required this.ocs}) : super._();
-  @override
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson rebuild(
-          void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder toBuilder() =>
-      ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ChatGetObjectsSharedInRoomOverviewResponseApplicationJson && ocs == other.ocs;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, ocs.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson')..add('ocs', ocs))
-        .toString();
-  }
-}
-
-class ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder
-    implements
-        Builder<ChatGetObjectsSharedInRoomOverviewResponseApplicationJson,
-            ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder>,
-        $ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonInterfaceBuilder {
-  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson? _$v;
-
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder? _ocs;
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder get ocs =>
-      _$this._ocs ??= ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder();
-  set ocs(covariant ChatGetObjectsSharedInRoomOverviewResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
-
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder() {
-    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson._defaults(this);
-  }
-
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _ocs = $v.ocs.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant ChatGetObjectsSharedInRoomOverviewResponseApplicationJson other) {
-    _$v = other as _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson;
-  }
-
-  @override
-  void update(void Function(ChatGetObjectsSharedInRoomOverviewResponseApplicationJsonBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ChatGetObjectsSharedInRoomOverviewResponseApplicationJson build() => _build();
-
-  _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson _build() {
-    ChatGetObjectsSharedInRoomOverviewResponseApplicationJson._validate(this);
-    _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson _$result;
-    try {
-      _$result = _$v ??
-          _$ChatGetObjectsSharedInRoomOverviewResponseApplicationJson._(
-            ocs: ocs.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'ocs';
-        ocs.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'ChatGetObjectsSharedInRoomOverviewResponseApplicationJson', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -50843,6 +55072,1251 @@ class SignalingSendMessagesResponseApplicationJsonBuilder
   }
 }
 
+abstract mixin class $LiveTranscriptionEnableResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($LiveTranscriptionEnableResponseApplicationJson_OcsInterface other);
+  void update(void Function($LiveTranscriptionEnableResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  JsonObject? get data;
+  set data(JsonObject? data);
+}
+
+class _$LiveTranscriptionEnableResponseApplicationJson_Ocs extends LiveTranscriptionEnableResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final JsonObject? data;
+
+  factory _$LiveTranscriptionEnableResponseApplicationJson_Ocs(
+          [void Function(LiveTranscriptionEnableResponseApplicationJson_OcsBuilder)? updates]) =>
+      (LiveTranscriptionEnableResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionEnableResponseApplicationJson_Ocs._({required this.meta, this.data}) : super._();
+  @override
+  LiveTranscriptionEnableResponseApplicationJson_Ocs rebuild(
+          void Function(LiveTranscriptionEnableResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionEnableResponseApplicationJson_OcsBuilder toBuilder() =>
+      LiveTranscriptionEnableResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionEnableResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionEnableResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class LiveTranscriptionEnableResponseApplicationJson_OcsBuilder
+    implements
+        Builder<LiveTranscriptionEnableResponseApplicationJson_Ocs,
+            LiveTranscriptionEnableResponseApplicationJson_OcsBuilder>,
+        $LiveTranscriptionEnableResponseApplicationJson_OcsInterfaceBuilder {
+  _$LiveTranscriptionEnableResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
+
+  LiveTranscriptionEnableResponseApplicationJson_OcsBuilder() {
+    LiveTranscriptionEnableResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  LiveTranscriptionEnableResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionEnableResponseApplicationJson_Ocs other) {
+    _$v = other as _$LiveTranscriptionEnableResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionEnableResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionEnableResponseApplicationJson_Ocs build() => _build();
+
+  _$LiveTranscriptionEnableResponseApplicationJson_Ocs _build() {
+    LiveTranscriptionEnableResponseApplicationJson_Ocs._validate(this);
+    _$LiveTranscriptionEnableResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$LiveTranscriptionEnableResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'LiveTranscriptionEnableResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $LiveTranscriptionEnableResponseApplicationJsonInterfaceBuilder {
+  void replace($LiveTranscriptionEnableResponseApplicationJsonInterface other);
+  void update(void Function($LiveTranscriptionEnableResponseApplicationJsonInterfaceBuilder) updates);
+  LiveTranscriptionEnableResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(LiveTranscriptionEnableResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$LiveTranscriptionEnableResponseApplicationJson extends LiveTranscriptionEnableResponseApplicationJson {
+  @override
+  final LiveTranscriptionEnableResponseApplicationJson_Ocs ocs;
+
+  factory _$LiveTranscriptionEnableResponseApplicationJson(
+          [void Function(LiveTranscriptionEnableResponseApplicationJsonBuilder)? updates]) =>
+      (LiveTranscriptionEnableResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionEnableResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  LiveTranscriptionEnableResponseApplicationJson rebuild(
+          void Function(LiveTranscriptionEnableResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionEnableResponseApplicationJsonBuilder toBuilder() =>
+      LiveTranscriptionEnableResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionEnableResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionEnableResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class LiveTranscriptionEnableResponseApplicationJsonBuilder
+    implements
+        Builder<LiveTranscriptionEnableResponseApplicationJson, LiveTranscriptionEnableResponseApplicationJsonBuilder>,
+        $LiveTranscriptionEnableResponseApplicationJsonInterfaceBuilder {
+  _$LiveTranscriptionEnableResponseApplicationJson? _$v;
+
+  LiveTranscriptionEnableResponseApplicationJson_OcsBuilder? _ocs;
+  LiveTranscriptionEnableResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= LiveTranscriptionEnableResponseApplicationJson_OcsBuilder();
+  set ocs(covariant LiveTranscriptionEnableResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  LiveTranscriptionEnableResponseApplicationJsonBuilder() {
+    LiveTranscriptionEnableResponseApplicationJson._defaults(this);
+  }
+
+  LiveTranscriptionEnableResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionEnableResponseApplicationJson other) {
+    _$v = other as _$LiveTranscriptionEnableResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionEnableResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionEnableResponseApplicationJson build() => _build();
+
+  _$LiveTranscriptionEnableResponseApplicationJson _build() {
+    LiveTranscriptionEnableResponseApplicationJson._validate(this);
+    _$LiveTranscriptionEnableResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$LiveTranscriptionEnableResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'LiveTranscriptionEnableResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $LiveTranscriptionDisableResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($LiveTranscriptionDisableResponseApplicationJson_OcsInterface other);
+  void update(void Function($LiveTranscriptionDisableResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  JsonObject? get data;
+  set data(JsonObject? data);
+}
+
+class _$LiveTranscriptionDisableResponseApplicationJson_Ocs
+    extends LiveTranscriptionDisableResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final JsonObject? data;
+
+  factory _$LiveTranscriptionDisableResponseApplicationJson_Ocs(
+          [void Function(LiveTranscriptionDisableResponseApplicationJson_OcsBuilder)? updates]) =>
+      (LiveTranscriptionDisableResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionDisableResponseApplicationJson_Ocs._({required this.meta, this.data}) : super._();
+  @override
+  LiveTranscriptionDisableResponseApplicationJson_Ocs rebuild(
+          void Function(LiveTranscriptionDisableResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionDisableResponseApplicationJson_OcsBuilder toBuilder() =>
+      LiveTranscriptionDisableResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionDisableResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionDisableResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class LiveTranscriptionDisableResponseApplicationJson_OcsBuilder
+    implements
+        Builder<LiveTranscriptionDisableResponseApplicationJson_Ocs,
+            LiveTranscriptionDisableResponseApplicationJson_OcsBuilder>,
+        $LiveTranscriptionDisableResponseApplicationJson_OcsInterfaceBuilder {
+  _$LiveTranscriptionDisableResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
+
+  LiveTranscriptionDisableResponseApplicationJson_OcsBuilder() {
+    LiveTranscriptionDisableResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  LiveTranscriptionDisableResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionDisableResponseApplicationJson_Ocs other) {
+    _$v = other as _$LiveTranscriptionDisableResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionDisableResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionDisableResponseApplicationJson_Ocs build() => _build();
+
+  _$LiveTranscriptionDisableResponseApplicationJson_Ocs _build() {
+    LiveTranscriptionDisableResponseApplicationJson_Ocs._validate(this);
+    _$LiveTranscriptionDisableResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$LiveTranscriptionDisableResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'LiveTranscriptionDisableResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $LiveTranscriptionDisableResponseApplicationJsonInterfaceBuilder {
+  void replace($LiveTranscriptionDisableResponseApplicationJsonInterface other);
+  void update(void Function($LiveTranscriptionDisableResponseApplicationJsonInterfaceBuilder) updates);
+  LiveTranscriptionDisableResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(LiveTranscriptionDisableResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$LiveTranscriptionDisableResponseApplicationJson extends LiveTranscriptionDisableResponseApplicationJson {
+  @override
+  final LiveTranscriptionDisableResponseApplicationJson_Ocs ocs;
+
+  factory _$LiveTranscriptionDisableResponseApplicationJson(
+          [void Function(LiveTranscriptionDisableResponseApplicationJsonBuilder)? updates]) =>
+      (LiveTranscriptionDisableResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionDisableResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  LiveTranscriptionDisableResponseApplicationJson rebuild(
+          void Function(LiveTranscriptionDisableResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionDisableResponseApplicationJsonBuilder toBuilder() =>
+      LiveTranscriptionDisableResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionDisableResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionDisableResponseApplicationJson')..add('ocs', ocs))
+        .toString();
+  }
+}
+
+class LiveTranscriptionDisableResponseApplicationJsonBuilder
+    implements
+        Builder<LiveTranscriptionDisableResponseApplicationJson,
+            LiveTranscriptionDisableResponseApplicationJsonBuilder>,
+        $LiveTranscriptionDisableResponseApplicationJsonInterfaceBuilder {
+  _$LiveTranscriptionDisableResponseApplicationJson? _$v;
+
+  LiveTranscriptionDisableResponseApplicationJson_OcsBuilder? _ocs;
+  LiveTranscriptionDisableResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= LiveTranscriptionDisableResponseApplicationJson_OcsBuilder();
+  set ocs(covariant LiveTranscriptionDisableResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  LiveTranscriptionDisableResponseApplicationJsonBuilder() {
+    LiveTranscriptionDisableResponseApplicationJson._defaults(this);
+  }
+
+  LiveTranscriptionDisableResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionDisableResponseApplicationJson other) {
+    _$v = other as _$LiveTranscriptionDisableResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionDisableResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionDisableResponseApplicationJson build() => _build();
+
+  _$LiveTranscriptionDisableResponseApplicationJson _build() {
+    LiveTranscriptionDisableResponseApplicationJson._validate(this);
+    _$LiveTranscriptionDisableResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$LiveTranscriptionDisableResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'LiveTranscriptionDisableResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $LiveTranscriptionLanguage_MetadataInterfaceBuilder {
+  void replace($LiveTranscriptionLanguage_MetadataInterface other);
+  void update(void Function($LiveTranscriptionLanguage_MetadataInterfaceBuilder) updates);
+  String? get separator;
+  set separator(String? separator);
+
+  bool? get rtl;
+  set rtl(bool? rtl);
+}
+
+class _$LiveTranscriptionLanguage_Metadata extends LiveTranscriptionLanguage_Metadata {
+  @override
+  final String separator;
+  @override
+  final bool rtl;
+
+  factory _$LiveTranscriptionLanguage_Metadata([void Function(LiveTranscriptionLanguage_MetadataBuilder)? updates]) =>
+      (LiveTranscriptionLanguage_MetadataBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionLanguage_Metadata._({required this.separator, required this.rtl}) : super._();
+  @override
+  LiveTranscriptionLanguage_Metadata rebuild(void Function(LiveTranscriptionLanguage_MetadataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionLanguage_MetadataBuilder toBuilder() => LiveTranscriptionLanguage_MetadataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionLanguage_Metadata && separator == other.separator && rtl == other.rtl;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, separator.hashCode);
+    _$hash = $jc(_$hash, rtl.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionLanguage_Metadata')
+          ..add('separator', separator)
+          ..add('rtl', rtl))
+        .toString();
+  }
+}
+
+class LiveTranscriptionLanguage_MetadataBuilder
+    implements
+        Builder<LiveTranscriptionLanguage_Metadata, LiveTranscriptionLanguage_MetadataBuilder>,
+        $LiveTranscriptionLanguage_MetadataInterfaceBuilder {
+  _$LiveTranscriptionLanguage_Metadata? _$v;
+
+  String? _separator;
+  String? get separator => _$this._separator;
+  set separator(covariant String? separator) => _$this._separator = separator;
+
+  bool? _rtl;
+  bool? get rtl => _$this._rtl;
+  set rtl(covariant bool? rtl) => _$this._rtl = rtl;
+
+  LiveTranscriptionLanguage_MetadataBuilder() {
+    LiveTranscriptionLanguage_Metadata._defaults(this);
+  }
+
+  LiveTranscriptionLanguage_MetadataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _separator = $v.separator;
+      _rtl = $v.rtl;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionLanguage_Metadata other) {
+    _$v = other as _$LiveTranscriptionLanguage_Metadata;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionLanguage_MetadataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionLanguage_Metadata build() => _build();
+
+  _$LiveTranscriptionLanguage_Metadata _build() {
+    LiveTranscriptionLanguage_Metadata._validate(this);
+    final _$result = _$v ??
+        _$LiveTranscriptionLanguage_Metadata._(
+          separator:
+              BuiltValueNullFieldError.checkNotNull(separator, r'LiveTranscriptionLanguage_Metadata', 'separator'),
+          rtl: BuiltValueNullFieldError.checkNotNull(rtl, r'LiveTranscriptionLanguage_Metadata', 'rtl'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $LiveTranscriptionLanguageInterfaceBuilder {
+  void replace($LiveTranscriptionLanguageInterface other);
+  void update(void Function($LiveTranscriptionLanguageInterfaceBuilder) updates);
+  String? get name;
+  set name(String? name);
+
+  LiveTranscriptionLanguage_MetadataBuilder get metadata;
+  set metadata(LiveTranscriptionLanguage_MetadataBuilder? metadata);
+}
+
+class _$LiveTranscriptionLanguage extends LiveTranscriptionLanguage {
+  @override
+  final String name;
+  @override
+  final LiveTranscriptionLanguage_Metadata metadata;
+
+  factory _$LiveTranscriptionLanguage([void Function(LiveTranscriptionLanguageBuilder)? updates]) =>
+      (LiveTranscriptionLanguageBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionLanguage._({required this.name, required this.metadata}) : super._();
+  @override
+  LiveTranscriptionLanguage rebuild(void Function(LiveTranscriptionLanguageBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionLanguageBuilder toBuilder() => LiveTranscriptionLanguageBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionLanguage && name == other.name && metadata == other.metadata;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, metadata.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionLanguage')
+          ..add('name', name)
+          ..add('metadata', metadata))
+        .toString();
+  }
+}
+
+class LiveTranscriptionLanguageBuilder
+    implements
+        Builder<LiveTranscriptionLanguage, LiveTranscriptionLanguageBuilder>,
+        $LiveTranscriptionLanguageInterfaceBuilder {
+  _$LiveTranscriptionLanguage? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  LiveTranscriptionLanguage_MetadataBuilder? _metadata;
+  LiveTranscriptionLanguage_MetadataBuilder get metadata =>
+      _$this._metadata ??= LiveTranscriptionLanguage_MetadataBuilder();
+  set metadata(covariant LiveTranscriptionLanguage_MetadataBuilder? metadata) => _$this._metadata = metadata;
+
+  LiveTranscriptionLanguageBuilder() {
+    LiveTranscriptionLanguage._defaults(this);
+  }
+
+  LiveTranscriptionLanguageBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _metadata = $v.metadata.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionLanguage other) {
+    _$v = other as _$LiveTranscriptionLanguage;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionLanguageBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionLanguage build() => _build();
+
+  _$LiveTranscriptionLanguage _build() {
+    LiveTranscriptionLanguage._validate(this);
+    _$LiveTranscriptionLanguage _$result;
+    try {
+      _$result = _$v ??
+          _$LiveTranscriptionLanguage._(
+            name: BuiltValueNullFieldError.checkNotNull(name, r'LiveTranscriptionLanguage', 'name'),
+            metadata: metadata.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'metadata';
+        metadata.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'LiveTranscriptionLanguage', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsInterface other);
+  void update(
+      void Function($LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  MapBuilder<String, LiveTranscriptionLanguage> get data;
+  set data(MapBuilder<String, LiveTranscriptionLanguage>? data);
+}
+
+class _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs
+    extends LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final BuiltMap<String, LiveTranscriptionLanguage> data;
+
+  factory _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs(
+          [void Function(LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder)? updates]) =>
+      (LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs._({required this.meta, required this.data})
+      : super._();
+  @override
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs rebuild(
+          void Function(LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder toBuilder() =>
+      LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs &&
+        meta == other.meta &&
+        data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder
+    implements
+        Builder<LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs,
+            LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder>,
+        $LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsInterfaceBuilder {
+  _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  MapBuilder<String, LiveTranscriptionLanguage>? _data;
+  MapBuilder<String, LiveTranscriptionLanguage> get data =>
+      _$this._data ??= MapBuilder<String, LiveTranscriptionLanguage>();
+  set data(covariant MapBuilder<String, LiveTranscriptionLanguage>? data) => _$this._data = data;
+
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder() {
+    LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs other) {
+    _$v = other as _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs build() => _build();
+
+  _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs _build() {
+    LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs._validate(this);
+    _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonInterfaceBuilder {
+  void replace($LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonInterface other);
+  void update(void Function($LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonInterfaceBuilder) updates);
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson
+    extends LiveTranscriptionGetAvailableLanguagesResponseApplicationJson {
+  @override
+  final LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_Ocs ocs;
+
+  factory _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson(
+          [void Function(LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder)? updates]) =>
+      (LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson rebuild(
+          void Function(LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder toBuilder() =>
+      LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionGetAvailableLanguagesResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionGetAvailableLanguagesResponseApplicationJson')
+          ..add('ocs', ocs))
+        .toString();
+  }
+}
+
+class LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder
+    implements
+        Builder<LiveTranscriptionGetAvailableLanguagesResponseApplicationJson,
+            LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder>,
+        $LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonInterfaceBuilder {
+  _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson? _$v;
+
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder? _ocs;
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder();
+  set ocs(covariant LiveTranscriptionGetAvailableLanguagesResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder() {
+    LiveTranscriptionGetAvailableLanguagesResponseApplicationJson._defaults(this);
+  }
+
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionGetAvailableLanguagesResponseApplicationJson other) {
+    _$v = other as _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionGetAvailableLanguagesResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionGetAvailableLanguagesResponseApplicationJson build() => _build();
+
+  _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson _build() {
+    LiveTranscriptionGetAvailableLanguagesResponseApplicationJson._validate(this);
+    _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$LiveTranscriptionGetAvailableLanguagesResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'LiveTranscriptionGetAvailableLanguagesResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $LiveTranscriptionSetLanguageRequestApplicationJsonInterfaceBuilder {
+  void replace($LiveTranscriptionSetLanguageRequestApplicationJsonInterface other);
+  void update(void Function($LiveTranscriptionSetLanguageRequestApplicationJsonInterfaceBuilder) updates);
+  String? get languageId;
+  set languageId(String? languageId);
+}
+
+class _$LiveTranscriptionSetLanguageRequestApplicationJson extends LiveTranscriptionSetLanguageRequestApplicationJson {
+  @override
+  final String languageId;
+
+  factory _$LiveTranscriptionSetLanguageRequestApplicationJson(
+          [void Function(LiveTranscriptionSetLanguageRequestApplicationJsonBuilder)? updates]) =>
+      (LiveTranscriptionSetLanguageRequestApplicationJsonBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionSetLanguageRequestApplicationJson._({required this.languageId}) : super._();
+  @override
+  LiveTranscriptionSetLanguageRequestApplicationJson rebuild(
+          void Function(LiveTranscriptionSetLanguageRequestApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionSetLanguageRequestApplicationJsonBuilder toBuilder() =>
+      LiveTranscriptionSetLanguageRequestApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionSetLanguageRequestApplicationJson && languageId == other.languageId;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, languageId.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionSetLanguageRequestApplicationJson')
+          ..add('languageId', languageId))
+        .toString();
+  }
+}
+
+class LiveTranscriptionSetLanguageRequestApplicationJsonBuilder
+    implements
+        Builder<LiveTranscriptionSetLanguageRequestApplicationJson,
+            LiveTranscriptionSetLanguageRequestApplicationJsonBuilder>,
+        $LiveTranscriptionSetLanguageRequestApplicationJsonInterfaceBuilder {
+  _$LiveTranscriptionSetLanguageRequestApplicationJson? _$v;
+
+  String? _languageId;
+  String? get languageId => _$this._languageId;
+  set languageId(covariant String? languageId) => _$this._languageId = languageId;
+
+  LiveTranscriptionSetLanguageRequestApplicationJsonBuilder() {
+    LiveTranscriptionSetLanguageRequestApplicationJson._defaults(this);
+  }
+
+  LiveTranscriptionSetLanguageRequestApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _languageId = $v.languageId;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionSetLanguageRequestApplicationJson other) {
+    _$v = other as _$LiveTranscriptionSetLanguageRequestApplicationJson;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionSetLanguageRequestApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionSetLanguageRequestApplicationJson build() => _build();
+
+  _$LiveTranscriptionSetLanguageRequestApplicationJson _build() {
+    LiveTranscriptionSetLanguageRequestApplicationJson._validate(this);
+    final _$result = _$v ??
+        _$LiveTranscriptionSetLanguageRequestApplicationJson._(
+          languageId: BuiltValueNullFieldError.checkNotNull(
+              languageId, r'LiveTranscriptionSetLanguageRequestApplicationJson', 'languageId'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $LiveTranscriptionSetLanguageResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($LiveTranscriptionSetLanguageResponseApplicationJson_OcsInterface other);
+  void update(void Function($LiveTranscriptionSetLanguageResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  JsonObject? get data;
+  set data(JsonObject? data);
+}
+
+class _$LiveTranscriptionSetLanguageResponseApplicationJson_Ocs
+    extends LiveTranscriptionSetLanguageResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final JsonObject? data;
+
+  factory _$LiveTranscriptionSetLanguageResponseApplicationJson_Ocs(
+          [void Function(LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder)? updates]) =>
+      (LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionSetLanguageResponseApplicationJson_Ocs._({required this.meta, this.data}) : super._();
+  @override
+  LiveTranscriptionSetLanguageResponseApplicationJson_Ocs rebuild(
+          void Function(LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder toBuilder() =>
+      LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionSetLanguageResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionSetLanguageResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder
+    implements
+        Builder<LiveTranscriptionSetLanguageResponseApplicationJson_Ocs,
+            LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder>,
+        $LiveTranscriptionSetLanguageResponseApplicationJson_OcsInterfaceBuilder {
+  _$LiveTranscriptionSetLanguageResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
+
+  LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder() {
+    LiveTranscriptionSetLanguageResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionSetLanguageResponseApplicationJson_Ocs other) {
+    _$v = other as _$LiveTranscriptionSetLanguageResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionSetLanguageResponseApplicationJson_Ocs build() => _build();
+
+  _$LiveTranscriptionSetLanguageResponseApplicationJson_Ocs _build() {
+    LiveTranscriptionSetLanguageResponseApplicationJson_Ocs._validate(this);
+    _$LiveTranscriptionSetLanguageResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$LiveTranscriptionSetLanguageResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'LiveTranscriptionSetLanguageResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $LiveTranscriptionSetLanguageResponseApplicationJsonInterfaceBuilder {
+  void replace($LiveTranscriptionSetLanguageResponseApplicationJsonInterface other);
+  void update(void Function($LiveTranscriptionSetLanguageResponseApplicationJsonInterfaceBuilder) updates);
+  LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$LiveTranscriptionSetLanguageResponseApplicationJson
+    extends LiveTranscriptionSetLanguageResponseApplicationJson {
+  @override
+  final LiveTranscriptionSetLanguageResponseApplicationJson_Ocs ocs;
+
+  factory _$LiveTranscriptionSetLanguageResponseApplicationJson(
+          [void Function(LiveTranscriptionSetLanguageResponseApplicationJsonBuilder)? updates]) =>
+      (LiveTranscriptionSetLanguageResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$LiveTranscriptionSetLanguageResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  LiveTranscriptionSetLanguageResponseApplicationJson rebuild(
+          void Function(LiveTranscriptionSetLanguageResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  LiveTranscriptionSetLanguageResponseApplicationJsonBuilder toBuilder() =>
+      LiveTranscriptionSetLanguageResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is LiveTranscriptionSetLanguageResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'LiveTranscriptionSetLanguageResponseApplicationJson')..add('ocs', ocs))
+        .toString();
+  }
+}
+
+class LiveTranscriptionSetLanguageResponseApplicationJsonBuilder
+    implements
+        Builder<LiveTranscriptionSetLanguageResponseApplicationJson,
+            LiveTranscriptionSetLanguageResponseApplicationJsonBuilder>,
+        $LiveTranscriptionSetLanguageResponseApplicationJsonInterfaceBuilder {
+  _$LiveTranscriptionSetLanguageResponseApplicationJson? _$v;
+
+  LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder? _ocs;
+  LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder();
+  set ocs(covariant LiveTranscriptionSetLanguageResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  LiveTranscriptionSetLanguageResponseApplicationJsonBuilder() {
+    LiveTranscriptionSetLanguageResponseApplicationJson._defaults(this);
+  }
+
+  LiveTranscriptionSetLanguageResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant LiveTranscriptionSetLanguageResponseApplicationJson other) {
+    _$v = other as _$LiveTranscriptionSetLanguageResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(LiveTranscriptionSetLanguageResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  LiveTranscriptionSetLanguageResponseApplicationJson build() => _build();
+
+  _$LiveTranscriptionSetLanguageResponseApplicationJson _build() {
+    LiveTranscriptionSetLanguageResponseApplicationJson._validate(this);
+    _$LiveTranscriptionSetLanguageResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$LiveTranscriptionSetLanguageResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'LiveTranscriptionSetLanguageResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $MatterbridgeInterfaceBuilder {
   void replace($MatterbridgeInterface other);
   void update(void Function($MatterbridgeInterfaceBuilder) updates);
@@ -52890,6 +58364,9 @@ abstract mixin class $PollCreatePollRequestApplicationJsonInterfaceBuilder {
 
   bool? get draft;
   set draft(bool? draft);
+
+  int? get threadId;
+  set threadId(int? threadId);
 }
 
 class _$PollCreatePollRequestApplicationJson extends PollCreatePollRequestApplicationJson {
@@ -52903,6 +58380,8 @@ class _$PollCreatePollRequestApplicationJson extends PollCreatePollRequestApplic
   final int maxVotes;
   @override
   final bool draft;
+  @override
+  final int threadId;
 
   factory _$PollCreatePollRequestApplicationJson(
           [void Function(PollCreatePollRequestApplicationJsonBuilder)? updates]) =>
@@ -52913,7 +58392,8 @@ class _$PollCreatePollRequestApplicationJson extends PollCreatePollRequestApplic
       required this.options,
       required this.resultMode,
       required this.maxVotes,
-      required this.draft})
+      required this.draft,
+      required this.threadId})
       : super._();
   @override
   PollCreatePollRequestApplicationJson rebuild(void Function(PollCreatePollRequestApplicationJsonBuilder) updates) =>
@@ -52931,7 +58411,8 @@ class _$PollCreatePollRequestApplicationJson extends PollCreatePollRequestApplic
         options == other.options &&
         resultMode == other.resultMode &&
         maxVotes == other.maxVotes &&
-        draft == other.draft;
+        draft == other.draft &&
+        threadId == other.threadId;
   }
 
   @override
@@ -52942,6 +58423,7 @@ class _$PollCreatePollRequestApplicationJson extends PollCreatePollRequestApplic
     _$hash = $jc(_$hash, resultMode.hashCode);
     _$hash = $jc(_$hash, maxVotes.hashCode);
     _$hash = $jc(_$hash, draft.hashCode);
+    _$hash = $jc(_$hash, threadId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -52953,7 +58435,8 @@ class _$PollCreatePollRequestApplicationJson extends PollCreatePollRequestApplic
           ..add('options', options)
           ..add('resultMode', resultMode)
           ..add('maxVotes', maxVotes)
-          ..add('draft', draft))
+          ..add('draft', draft)
+          ..add('threadId', threadId))
         .toString();
   }
 }
@@ -52985,6 +58468,10 @@ class PollCreatePollRequestApplicationJsonBuilder
   bool? get draft => _$this._draft;
   set draft(covariant bool? draft) => _$this._draft = draft;
 
+  int? _threadId;
+  int? get threadId => _$this._threadId;
+  set threadId(covariant int? threadId) => _$this._threadId = threadId;
+
   PollCreatePollRequestApplicationJsonBuilder() {
     PollCreatePollRequestApplicationJson._defaults(this);
   }
@@ -52997,6 +58484,7 @@ class PollCreatePollRequestApplicationJsonBuilder
       _resultMode = $v.resultMode;
       _maxVotes = $v.maxVotes;
       _draft = $v.draft;
+      _threadId = $v.threadId;
       _$v = null;
     }
     return this;
@@ -53029,6 +58517,8 @@ class PollCreatePollRequestApplicationJsonBuilder
             maxVotes:
                 BuiltValueNullFieldError.checkNotNull(maxVotes, r'PollCreatePollRequestApplicationJson', 'maxVotes'),
             draft: BuiltValueNullFieldError.checkNotNull(draft, r'PollCreatePollRequestApplicationJson', 'draft'),
+            threadId:
+                BuiltValueNullFieldError.checkNotNull(threadId, r'PollCreatePollRequestApplicationJson', 'threadId'),
           );
     } catch (_) {
       late String _$failedField;
@@ -71068,6 +76558,9 @@ abstract mixin class $Capabilities_Config_CallInterfaceBuilder {
   bool? get sipDialoutEnabled;
   set sipDialoutEnabled(bool? sipDialoutEnabled);
 
+  String? get defaultPhoneRegion;
+  set defaultPhoneRegion(String? defaultPhoneRegion);
+
   bool? get canEnableSip;
   set canEnableSip(bool? canEnableSip);
 
@@ -71082,6 +76575,18 @@ abstract mixin class $Capabilities_Config_CallInterfaceBuilder {
 
   bool? get endToEndEncryption;
   set endToEndEncryption(bool? endToEndEncryption);
+
+  bool? get liveTranscription;
+  set liveTranscription(bool? liveTranscription);
+
+  bool? get playSounds;
+  set playSounds(bool? playSounds);
+
+  int? get gridLimit;
+  set gridLimit(int? gridLimit);
+
+  bool? get gridLimitEnforced;
+  set gridLimitEnforced(bool? gridLimitEnforced);
 }
 
 class _$Capabilities_Config_Call extends Capabilities_Config_Call {
@@ -71106,6 +76611,8 @@ class _$Capabilities_Config_Call extends Capabilities_Config_Call {
   @override
   final bool sipDialoutEnabled;
   @override
+  final String? defaultPhoneRegion;
+  @override
   final bool canEnableSip;
   @override
   final bool? startWithoutMedia;
@@ -71115,6 +76622,14 @@ class _$Capabilities_Config_Call extends Capabilities_Config_Call {
   final bool? blurVirtualBackground;
   @override
   final bool? endToEndEncryption;
+  @override
+  final bool? liveTranscription;
+  @override
+  final bool? playSounds;
+  @override
+  final int? gridLimit;
+  @override
+  final bool? gridLimitEnforced;
 
   factory _$Capabilities_Config_Call([void Function(Capabilities_Config_CallBuilder)? updates]) =>
       (Capabilities_Config_CallBuilder()..update(updates))._build();
@@ -71130,11 +76645,16 @@ class _$Capabilities_Config_Call extends Capabilities_Config_Call {
       required this.canUploadBackground,
       required this.sipEnabled,
       required this.sipDialoutEnabled,
+      this.defaultPhoneRegion,
       required this.canEnableSip,
       this.startWithoutMedia,
       this.maxDuration,
       this.blurVirtualBackground,
-      this.endToEndEncryption})
+      this.endToEndEncryption,
+      this.liveTranscription,
+      this.playSounds,
+      this.gridLimit,
+      this.gridLimitEnforced})
       : super._();
   @override
   Capabilities_Config_Call rebuild(void Function(Capabilities_Config_CallBuilder) updates) =>
@@ -71157,11 +76677,16 @@ class _$Capabilities_Config_Call extends Capabilities_Config_Call {
         canUploadBackground == other.canUploadBackground &&
         sipEnabled == other.sipEnabled &&
         sipDialoutEnabled == other.sipDialoutEnabled &&
+        defaultPhoneRegion == other.defaultPhoneRegion &&
         canEnableSip == other.canEnableSip &&
         startWithoutMedia == other.startWithoutMedia &&
         maxDuration == other.maxDuration &&
         blurVirtualBackground == other.blurVirtualBackground &&
-        endToEndEncryption == other.endToEndEncryption;
+        endToEndEncryption == other.endToEndEncryption &&
+        liveTranscription == other.liveTranscription &&
+        playSounds == other.playSounds &&
+        gridLimit == other.gridLimit &&
+        gridLimitEnforced == other.gridLimitEnforced;
   }
 
   @override
@@ -71177,11 +76702,16 @@ class _$Capabilities_Config_Call extends Capabilities_Config_Call {
     _$hash = $jc(_$hash, canUploadBackground.hashCode);
     _$hash = $jc(_$hash, sipEnabled.hashCode);
     _$hash = $jc(_$hash, sipDialoutEnabled.hashCode);
+    _$hash = $jc(_$hash, defaultPhoneRegion.hashCode);
     _$hash = $jc(_$hash, canEnableSip.hashCode);
     _$hash = $jc(_$hash, startWithoutMedia.hashCode);
     _$hash = $jc(_$hash, maxDuration.hashCode);
     _$hash = $jc(_$hash, blurVirtualBackground.hashCode);
     _$hash = $jc(_$hash, endToEndEncryption.hashCode);
+    _$hash = $jc(_$hash, liveTranscription.hashCode);
+    _$hash = $jc(_$hash, playSounds.hashCode);
+    _$hash = $jc(_$hash, gridLimit.hashCode);
+    _$hash = $jc(_$hash, gridLimitEnforced.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71199,11 +76729,16 @@ class _$Capabilities_Config_Call extends Capabilities_Config_Call {
           ..add('canUploadBackground', canUploadBackground)
           ..add('sipEnabled', sipEnabled)
           ..add('sipDialoutEnabled', sipDialoutEnabled)
+          ..add('defaultPhoneRegion', defaultPhoneRegion)
           ..add('canEnableSip', canEnableSip)
           ..add('startWithoutMedia', startWithoutMedia)
           ..add('maxDuration', maxDuration)
           ..add('blurVirtualBackground', blurVirtualBackground)
-          ..add('endToEndEncryption', endToEndEncryption))
+          ..add('endToEndEncryption', endToEndEncryption)
+          ..add('liveTranscription', liveTranscription)
+          ..add('playSounds', playSounds)
+          ..add('gridLimit', gridLimit)
+          ..add('gridLimitEnforced', gridLimitEnforced))
         .toString();
   }
 }
@@ -71257,6 +76792,10 @@ class Capabilities_Config_CallBuilder
   bool? get sipDialoutEnabled => _$this._sipDialoutEnabled;
   set sipDialoutEnabled(covariant bool? sipDialoutEnabled) => _$this._sipDialoutEnabled = sipDialoutEnabled;
 
+  String? _defaultPhoneRegion;
+  String? get defaultPhoneRegion => _$this._defaultPhoneRegion;
+  set defaultPhoneRegion(covariant String? defaultPhoneRegion) => _$this._defaultPhoneRegion = defaultPhoneRegion;
+
   bool? _canEnableSip;
   bool? get canEnableSip => _$this._canEnableSip;
   set canEnableSip(covariant bool? canEnableSip) => _$this._canEnableSip = canEnableSip;
@@ -71278,6 +76817,22 @@ class Capabilities_Config_CallBuilder
   bool? get endToEndEncryption => _$this._endToEndEncryption;
   set endToEndEncryption(covariant bool? endToEndEncryption) => _$this._endToEndEncryption = endToEndEncryption;
 
+  bool? _liveTranscription;
+  bool? get liveTranscription => _$this._liveTranscription;
+  set liveTranscription(covariant bool? liveTranscription) => _$this._liveTranscription = liveTranscription;
+
+  bool? _playSounds;
+  bool? get playSounds => _$this._playSounds;
+  set playSounds(covariant bool? playSounds) => _$this._playSounds = playSounds;
+
+  int? _gridLimit;
+  int? get gridLimit => _$this._gridLimit;
+  set gridLimit(covariant int? gridLimit) => _$this._gridLimit = gridLimit;
+
+  bool? _gridLimitEnforced;
+  bool? get gridLimitEnforced => _$this._gridLimitEnforced;
+  set gridLimitEnforced(covariant bool? gridLimitEnforced) => _$this._gridLimitEnforced = gridLimitEnforced;
+
   Capabilities_Config_CallBuilder() {
     Capabilities_Config_Call._defaults(this);
   }
@@ -71295,11 +76850,16 @@ class Capabilities_Config_CallBuilder
       _canUploadBackground = $v.canUploadBackground;
       _sipEnabled = $v.sipEnabled;
       _sipDialoutEnabled = $v.sipDialoutEnabled;
+      _defaultPhoneRegion = $v.defaultPhoneRegion;
       _canEnableSip = $v.canEnableSip;
       _startWithoutMedia = $v.startWithoutMedia;
       _maxDuration = $v.maxDuration;
       _blurVirtualBackground = $v.blurVirtualBackground;
       _endToEndEncryption = $v.endToEndEncryption;
+      _liveTranscription = $v.liveTranscription;
+      _playSounds = $v.playSounds;
+      _gridLimit = $v.gridLimit;
+      _gridLimitEnforced = $v.gridLimitEnforced;
       _$v = null;
     }
     return this;
@@ -71338,12 +76898,17 @@ class Capabilities_Config_CallBuilder
             sipEnabled: BuiltValueNullFieldError.checkNotNull(sipEnabled, r'Capabilities_Config_Call', 'sipEnabled'),
             sipDialoutEnabled: BuiltValueNullFieldError.checkNotNull(
                 sipDialoutEnabled, r'Capabilities_Config_Call', 'sipDialoutEnabled'),
+            defaultPhoneRegion: defaultPhoneRegion,
             canEnableSip:
                 BuiltValueNullFieldError.checkNotNull(canEnableSip, r'Capabilities_Config_Call', 'canEnableSip'),
             startWithoutMedia: startWithoutMedia,
             maxDuration: maxDuration,
             blurVirtualBackground: blurVirtualBackground,
             endToEndEncryption: endToEndEncryption,
+            liveTranscription: liveTranscription,
+            playSounds: playSounds,
+            gridLimit: gridLimit,
+            gridLimitEnforced: gridLimitEnforced,
           );
     } catch (_) {
       late String _$failedField;
@@ -71384,6 +76949,9 @@ abstract mixin class $Capabilities_Config_ChatInterfaceBuilder {
 
   int? get summaryThreshold;
   set summaryThreshold(int? summaryThreshold);
+
+  bool? get matterbridgeEnabled;
+  set matterbridgeEnabled(bool? matterbridgeEnabled);
 }
 
 class _$Capabilities_Config_Chat extends Capabilities_Config_Chat {
@@ -71399,6 +76967,8 @@ class _$Capabilities_Config_Chat extends Capabilities_Config_Chat {
   final int typingPrivacy;
   @override
   final int? summaryThreshold;
+  @override
+  final bool? matterbridgeEnabled;
 
   factory _$Capabilities_Config_Chat([void Function(Capabilities_Config_ChatBuilder)? updates]) =>
       (Capabilities_Config_ChatBuilder()..update(updates))._build();
@@ -71409,7 +76979,8 @@ class _$Capabilities_Config_Chat extends Capabilities_Config_Chat {
       required this.hasTranslationProviders,
       this.hasTranslationTaskProviders,
       required this.typingPrivacy,
-      this.summaryThreshold})
+      this.summaryThreshold,
+      this.matterbridgeEnabled})
       : super._();
   @override
   Capabilities_Config_Chat rebuild(void Function(Capabilities_Config_ChatBuilder) updates) =>
@@ -71427,7 +76998,8 @@ class _$Capabilities_Config_Chat extends Capabilities_Config_Chat {
         hasTranslationProviders == other.hasTranslationProviders &&
         hasTranslationTaskProviders == other.hasTranslationTaskProviders &&
         typingPrivacy == other.typingPrivacy &&
-        summaryThreshold == other.summaryThreshold;
+        summaryThreshold == other.summaryThreshold &&
+        matterbridgeEnabled == other.matterbridgeEnabled;
   }
 
   @override
@@ -71439,6 +77011,7 @@ class _$Capabilities_Config_Chat extends Capabilities_Config_Chat {
     _$hash = $jc(_$hash, hasTranslationTaskProviders.hashCode);
     _$hash = $jc(_$hash, typingPrivacy.hashCode);
     _$hash = $jc(_$hash, summaryThreshold.hashCode);
+    _$hash = $jc(_$hash, matterbridgeEnabled.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71451,7 +77024,8 @@ class _$Capabilities_Config_Chat extends Capabilities_Config_Chat {
           ..add('hasTranslationProviders', hasTranslationProviders)
           ..add('hasTranslationTaskProviders', hasTranslationTaskProviders)
           ..add('typingPrivacy', typingPrivacy)
-          ..add('summaryThreshold', summaryThreshold))
+          ..add('summaryThreshold', summaryThreshold)
+          ..add('matterbridgeEnabled', matterbridgeEnabled))
         .toString();
   }
 }
@@ -71488,6 +77062,10 @@ class Capabilities_Config_ChatBuilder
   int? get summaryThreshold => _$this._summaryThreshold;
   set summaryThreshold(covariant int? summaryThreshold) => _$this._summaryThreshold = summaryThreshold;
 
+  bool? _matterbridgeEnabled;
+  bool? get matterbridgeEnabled => _$this._matterbridgeEnabled;
+  set matterbridgeEnabled(covariant bool? matterbridgeEnabled) => _$this._matterbridgeEnabled = matterbridgeEnabled;
+
   Capabilities_Config_ChatBuilder() {
     Capabilities_Config_Chat._defaults(this);
   }
@@ -71501,6 +77079,7 @@ class Capabilities_Config_ChatBuilder
       _hasTranslationTaskProviders = $v.hasTranslationTaskProviders;
       _typingPrivacy = $v.typingPrivacy;
       _summaryThreshold = $v.summaryThreshold;
+      _matterbridgeEnabled = $v.matterbridgeEnabled;
       _$v = null;
     }
     return this;
@@ -71531,6 +77110,7 @@ class Capabilities_Config_ChatBuilder
           typingPrivacy:
               BuiltValueNullFieldError.checkNotNull(typingPrivacy, r'Capabilities_Config_Chat', 'typingPrivacy'),
           summaryThreshold: summaryThreshold,
+          matterbridgeEnabled: matterbridgeEnabled,
         );
     replace(_$result);
     return _$result;
@@ -71960,6 +77540,9 @@ abstract mixin class $Capabilities_Config_SignalingInterfaceBuilder {
   int? get sessionPingLimit;
   set sessionPingLimit(int? sessionPingLimit);
 
+  Capabilities_Config_Signaling_Mode? get mode;
+  set mode(Capabilities_Config_Signaling_Mode? mode);
+
   String? get helloV2TokenKey;
   set helloV2TokenKey(String? helloV2TokenKey);
 }
@@ -71968,12 +77551,15 @@ class _$Capabilities_Config_Signaling extends Capabilities_Config_Signaling {
   @override
   final int sessionPingLimit;
   @override
+  final Capabilities_Config_Signaling_Mode mode;
+  @override
   final String? helloV2TokenKey;
 
   factory _$Capabilities_Config_Signaling([void Function(Capabilities_Config_SignalingBuilder)? updates]) =>
       (Capabilities_Config_SignalingBuilder()..update(updates))._build();
 
-  _$Capabilities_Config_Signaling._({required this.sessionPingLimit, this.helloV2TokenKey}) : super._();
+  _$Capabilities_Config_Signaling._({required this.sessionPingLimit, required this.mode, this.helloV2TokenKey})
+      : super._();
   @override
   Capabilities_Config_Signaling rebuild(void Function(Capabilities_Config_SignalingBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -71986,6 +77572,7 @@ class _$Capabilities_Config_Signaling extends Capabilities_Config_Signaling {
     if (identical(other, this)) return true;
     return other is Capabilities_Config_Signaling &&
         sessionPingLimit == other.sessionPingLimit &&
+        mode == other.mode &&
         helloV2TokenKey == other.helloV2TokenKey;
   }
 
@@ -71993,6 +77580,7 @@ class _$Capabilities_Config_Signaling extends Capabilities_Config_Signaling {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, sessionPingLimit.hashCode);
+    _$hash = $jc(_$hash, mode.hashCode);
     _$hash = $jc(_$hash, helloV2TokenKey.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -72002,6 +77590,7 @@ class _$Capabilities_Config_Signaling extends Capabilities_Config_Signaling {
   String toString() {
     return (newBuiltValueToStringHelper(r'Capabilities_Config_Signaling')
           ..add('sessionPingLimit', sessionPingLimit)
+          ..add('mode', mode)
           ..add('helloV2TokenKey', helloV2TokenKey))
         .toString();
   }
@@ -72017,6 +77606,10 @@ class Capabilities_Config_SignalingBuilder
   int? get sessionPingLimit => _$this._sessionPingLimit;
   set sessionPingLimit(covariant int? sessionPingLimit) => _$this._sessionPingLimit = sessionPingLimit;
 
+  Capabilities_Config_Signaling_Mode? _mode;
+  Capabilities_Config_Signaling_Mode? get mode => _$this._mode;
+  set mode(covariant Capabilities_Config_Signaling_Mode? mode) => _$this._mode = mode;
+
   String? _helloV2TokenKey;
   String? get helloV2TokenKey => _$this._helloV2TokenKey;
   set helloV2TokenKey(covariant String? helloV2TokenKey) => _$this._helloV2TokenKey = helloV2TokenKey;
@@ -72029,6 +77622,7 @@ class Capabilities_Config_SignalingBuilder
     final $v = _$v;
     if ($v != null) {
       _sessionPingLimit = $v.sessionPingLimit;
+      _mode = $v.mode;
       _helloV2TokenKey = $v.helloV2TokenKey;
       _$v = null;
     }
@@ -72054,6 +77648,7 @@ class Capabilities_Config_SignalingBuilder
         _$Capabilities_Config_Signaling._(
           sessionPingLimit: BuiltValueNullFieldError.checkNotNull(
               sessionPingLimit, r'Capabilities_Config_Signaling', 'sessionPingLimit'),
+          mode: BuiltValueNullFieldError.checkNotNull(mode, r'Capabilities_Config_Signaling', 'mode'),
           helloV2TokenKey: helloV2TokenKey,
         );
     replace(_$result);
@@ -72150,6 +77745,128 @@ class Capabilities_Config_ExperimentsBuilder
   }
 }
 
+abstract mixin class $Capabilities_Config_PermissionsInterfaceBuilder {
+  void replace($Capabilities_Config_PermissionsInterface other);
+  void update(void Function($Capabilities_Config_PermissionsInterfaceBuilder) updates);
+  int? get maxDefault;
+  set maxDefault(int? maxDefault);
+
+  int? get maxCustom;
+  set maxCustom(int? maxCustom);
+
+  int? get $default;
+  set $default(int? $default);
+}
+
+class _$Capabilities_Config_Permissions extends Capabilities_Config_Permissions {
+  @override
+  final int maxDefault;
+  @override
+  final int maxCustom;
+  @override
+  final int $default;
+
+  factory _$Capabilities_Config_Permissions([void Function(Capabilities_Config_PermissionsBuilder)? updates]) =>
+      (Capabilities_Config_PermissionsBuilder()..update(updates))._build();
+
+  _$Capabilities_Config_Permissions._({required this.maxDefault, required this.maxCustom, required this.$default})
+      : super._();
+  @override
+  Capabilities_Config_Permissions rebuild(void Function(Capabilities_Config_PermissionsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Capabilities_Config_PermissionsBuilder toBuilder() => Capabilities_Config_PermissionsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Capabilities_Config_Permissions &&
+        maxDefault == other.maxDefault &&
+        maxCustom == other.maxCustom &&
+        $default == other.$default;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, maxDefault.hashCode);
+    _$hash = $jc(_$hash, maxCustom.hashCode);
+    _$hash = $jc(_$hash, $default.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Capabilities_Config_Permissions')
+          ..add('maxDefault', maxDefault)
+          ..add('maxCustom', maxCustom)
+          ..add('\$default', $default))
+        .toString();
+  }
+}
+
+class Capabilities_Config_PermissionsBuilder
+    implements
+        Builder<Capabilities_Config_Permissions, Capabilities_Config_PermissionsBuilder>,
+        $Capabilities_Config_PermissionsInterfaceBuilder {
+  _$Capabilities_Config_Permissions? _$v;
+
+  int? _maxDefault;
+  int? get maxDefault => _$this._maxDefault;
+  set maxDefault(covariant int? maxDefault) => _$this._maxDefault = maxDefault;
+
+  int? _maxCustom;
+  int? get maxCustom => _$this._maxCustom;
+  set maxCustom(covariant int? maxCustom) => _$this._maxCustom = maxCustom;
+
+  int? _$default;
+  int? get $default => _$this._$default;
+  set $default(covariant int? $default) => _$this._$default = $default;
+
+  Capabilities_Config_PermissionsBuilder() {
+    Capabilities_Config_Permissions._defaults(this);
+  }
+
+  Capabilities_Config_PermissionsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _maxDefault = $v.maxDefault;
+      _maxCustom = $v.maxCustom;
+      _$default = $v.$default;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant Capabilities_Config_Permissions other) {
+    _$v = other as _$Capabilities_Config_Permissions;
+  }
+
+  @override
+  void update(void Function(Capabilities_Config_PermissionsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Capabilities_Config_Permissions build() => _build();
+
+  _$Capabilities_Config_Permissions _build() {
+    Capabilities_Config_Permissions._validate(this);
+    final _$result = _$v ??
+        _$Capabilities_Config_Permissions._(
+          maxDefault:
+              BuiltValueNullFieldError.checkNotNull(maxDefault, r'Capabilities_Config_Permissions', 'maxDefault'),
+          maxCustom: BuiltValueNullFieldError.checkNotNull(maxCustom, r'Capabilities_Config_Permissions', 'maxCustom'),
+          $default: BuiltValueNullFieldError.checkNotNull($default, r'Capabilities_Config_Permissions', '\$default'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $Capabilities_ConfigInterfaceBuilder {
   void replace($Capabilities_ConfigInterface other);
   void update(void Function($Capabilities_ConfigInterfaceBuilder) updates);
@@ -72176,6 +77893,9 @@ abstract mixin class $Capabilities_ConfigInterfaceBuilder {
 
   Capabilities_Config_ExperimentsBuilder get experiments;
   set experiments(Capabilities_Config_ExperimentsBuilder? experiments);
+
+  Capabilities_Config_PermissionsBuilder get permissions;
+  set permissions(Capabilities_Config_PermissionsBuilder? permissions);
 }
 
 class _$Capabilities_Config extends Capabilities_Config {
@@ -72195,6 +77915,8 @@ class _$Capabilities_Config extends Capabilities_Config {
   final Capabilities_Config_Signaling signaling;
   @override
   final Capabilities_Config_Experiments? experiments;
+  @override
+  final Capabilities_Config_Permissions? permissions;
 
   factory _$Capabilities_Config([void Function(Capabilities_ConfigBuilder)? updates]) =>
       (Capabilities_ConfigBuilder()..update(updates))._build();
@@ -72207,7 +77929,8 @@ class _$Capabilities_Config extends Capabilities_Config {
       required this.federation,
       required this.previews,
       required this.signaling,
-      this.experiments})
+      this.experiments,
+      this.permissions})
       : super._();
   @override
   Capabilities_Config rebuild(void Function(Capabilities_ConfigBuilder) updates) =>
@@ -72227,7 +77950,8 @@ class _$Capabilities_Config extends Capabilities_Config {
         federation == other.federation &&
         previews == other.previews &&
         signaling == other.signaling &&
-        experiments == other.experiments;
+        experiments == other.experiments &&
+        permissions == other.permissions;
   }
 
   @override
@@ -72241,6 +77965,7 @@ class _$Capabilities_Config extends Capabilities_Config {
     _$hash = $jc(_$hash, previews.hashCode);
     _$hash = $jc(_$hash, signaling.hashCode);
     _$hash = $jc(_$hash, experiments.hashCode);
+    _$hash = $jc(_$hash, permissions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -72255,7 +77980,8 @@ class _$Capabilities_Config extends Capabilities_Config {
           ..add('federation', federation)
           ..add('previews', previews)
           ..add('signaling', signaling)
-          ..add('experiments', experiments))
+          ..add('experiments', experiments)
+          ..add('permissions', permissions))
         .toString();
   }
 }
@@ -72301,6 +78027,11 @@ class Capabilities_ConfigBuilder
       _$this._experiments ??= Capabilities_Config_ExperimentsBuilder();
   set experiments(covariant Capabilities_Config_ExperimentsBuilder? experiments) => _$this._experiments = experiments;
 
+  Capabilities_Config_PermissionsBuilder? _permissions;
+  Capabilities_Config_PermissionsBuilder get permissions =>
+      _$this._permissions ??= Capabilities_Config_PermissionsBuilder();
+  set permissions(covariant Capabilities_Config_PermissionsBuilder? permissions) => _$this._permissions = permissions;
+
   Capabilities_ConfigBuilder() {
     Capabilities_Config._defaults(this);
   }
@@ -72316,6 +78047,7 @@ class Capabilities_ConfigBuilder
       _previews = $v.previews.toBuilder();
       _signaling = $v.signaling.toBuilder();
       _experiments = $v.experiments?.toBuilder();
+      _permissions = $v.permissions?.toBuilder();
       _$v = null;
     }
     return this;
@@ -72348,6 +78080,7 @@ class Capabilities_ConfigBuilder
             previews: previews.build(),
             signaling: signaling.build(),
             experiments: _experiments?.build(),
+            permissions: _permissions?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -72368,6 +78101,8 @@ class Capabilities_ConfigBuilder
         signaling.build();
         _$failedField = 'experiments';
         _experiments?.build();
+        _$failedField = 'permissions';
+        _permissions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(r'Capabilities_Config', _$failedField, e.toString());
       }
@@ -80049,6 +85784,2718 @@ class SignalingBackendResponseApplicationJsonBuilder
   }
 }
 
+abstract mixin class $ThreadInterfaceBuilder {
+  void replace($ThreadInterface other);
+  void update(void Function($ThreadInterfaceBuilder) updates);
+  int? get id;
+  set id(int? id);
+
+  String? get roomToken;
+  set roomToken(String? roomToken);
+
+  String? get title;
+  set title(String? title);
+
+  int? get lastMessageId;
+  set lastMessageId(int? lastMessageId);
+
+  int? get lastActivity;
+  set lastActivity(int? lastActivity);
+
+  int? get numReplies;
+  set numReplies(int? numReplies);
+}
+
+class _$Thread extends Thread {
+  @override
+  final int id;
+  @override
+  final String roomToken;
+  @override
+  final String title;
+  @override
+  final int lastMessageId;
+  @override
+  final int lastActivity;
+  @override
+  final int numReplies;
+
+  factory _$Thread([void Function(ThreadBuilder)? updates]) => (ThreadBuilder()..update(updates))._build();
+
+  _$Thread._(
+      {required this.id,
+      required this.roomToken,
+      required this.title,
+      required this.lastMessageId,
+      required this.lastActivity,
+      required this.numReplies})
+      : super._();
+  @override
+  Thread rebuild(void Function(ThreadBuilder) updates) => (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadBuilder toBuilder() => ThreadBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Thread &&
+        id == other.id &&
+        roomToken == other.roomToken &&
+        title == other.title &&
+        lastMessageId == other.lastMessageId &&
+        lastActivity == other.lastActivity &&
+        numReplies == other.numReplies;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, roomToken.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, lastMessageId.hashCode);
+    _$hash = $jc(_$hash, lastActivity.hashCode);
+    _$hash = $jc(_$hash, numReplies.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Thread')
+          ..add('id', id)
+          ..add('roomToken', roomToken)
+          ..add('title', title)
+          ..add('lastMessageId', lastMessageId)
+          ..add('lastActivity', lastActivity)
+          ..add('numReplies', numReplies))
+        .toString();
+  }
+}
+
+class ThreadBuilder implements Builder<Thread, ThreadBuilder>, $ThreadInterfaceBuilder {
+  _$Thread? _$v;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  String? _roomToken;
+  String? get roomToken => _$this._roomToken;
+  set roomToken(covariant String? roomToken) => _$this._roomToken = roomToken;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(covariant String? title) => _$this._title = title;
+
+  int? _lastMessageId;
+  int? get lastMessageId => _$this._lastMessageId;
+  set lastMessageId(covariant int? lastMessageId) => _$this._lastMessageId = lastMessageId;
+
+  int? _lastActivity;
+  int? get lastActivity => _$this._lastActivity;
+  set lastActivity(covariant int? lastActivity) => _$this._lastActivity = lastActivity;
+
+  int? _numReplies;
+  int? get numReplies => _$this._numReplies;
+  set numReplies(covariant int? numReplies) => _$this._numReplies = numReplies;
+
+  ThreadBuilder() {
+    Thread._defaults(this);
+  }
+
+  ThreadBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _roomToken = $v.roomToken;
+      _title = $v.title;
+      _lastMessageId = $v.lastMessageId;
+      _lastActivity = $v.lastActivity;
+      _numReplies = $v.numReplies;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant Thread other) {
+    _$v = other as _$Thread;
+  }
+
+  @override
+  void update(void Function(ThreadBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Thread build() => _build();
+
+  _$Thread _build() {
+    Thread._validate(this);
+    final _$result = _$v ??
+        _$Thread._(
+          id: BuiltValueNullFieldError.checkNotNull(id, r'Thread', 'id'),
+          roomToken: BuiltValueNullFieldError.checkNotNull(roomToken, r'Thread', 'roomToken'),
+          title: BuiltValueNullFieldError.checkNotNull(title, r'Thread', 'title'),
+          lastMessageId: BuiltValueNullFieldError.checkNotNull(lastMessageId, r'Thread', 'lastMessageId'),
+          lastActivity: BuiltValueNullFieldError.checkNotNull(lastActivity, r'Thread', 'lastActivity'),
+          numReplies: BuiltValueNullFieldError.checkNotNull(numReplies, r'Thread', 'numReplies'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadAttendeeInterfaceBuilder {
+  void replace($ThreadAttendeeInterface other);
+  void update(void Function($ThreadAttendeeInterfaceBuilder) updates);
+  ThreadAttendee_NotificationLevel? get notificationLevel;
+  set notificationLevel(ThreadAttendee_NotificationLevel? notificationLevel);
+}
+
+class _$ThreadAttendee extends ThreadAttendee {
+  @override
+  final ThreadAttendee_NotificationLevel notificationLevel;
+
+  factory _$ThreadAttendee([void Function(ThreadAttendeeBuilder)? updates]) =>
+      (ThreadAttendeeBuilder()..update(updates))._build();
+
+  _$ThreadAttendee._({required this.notificationLevel}) : super._();
+  @override
+  ThreadAttendee rebuild(void Function(ThreadAttendeeBuilder) updates) => (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadAttendeeBuilder toBuilder() => ThreadAttendeeBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadAttendee && notificationLevel == other.notificationLevel;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, notificationLevel.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadAttendee')..add('notificationLevel', notificationLevel)).toString();
+  }
+}
+
+class ThreadAttendeeBuilder implements Builder<ThreadAttendee, ThreadAttendeeBuilder>, $ThreadAttendeeInterfaceBuilder {
+  _$ThreadAttendee? _$v;
+
+  ThreadAttendee_NotificationLevel? _notificationLevel;
+  ThreadAttendee_NotificationLevel? get notificationLevel => _$this._notificationLevel;
+  set notificationLevel(covariant ThreadAttendee_NotificationLevel? notificationLevel) =>
+      _$this._notificationLevel = notificationLevel;
+
+  ThreadAttendeeBuilder() {
+    ThreadAttendee._defaults(this);
+  }
+
+  ThreadAttendeeBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _notificationLevel = $v.notificationLevel;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadAttendee other) {
+    _$v = other as _$ThreadAttendee;
+  }
+
+  @override
+  void update(void Function(ThreadAttendeeBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadAttendee build() => _build();
+
+  _$ThreadAttendee _build() {
+    ThreadAttendee._validate(this);
+    final _$result = _$v ??
+        _$ThreadAttendee._(
+          notificationLevel:
+              BuiltValueNullFieldError.checkNotNull(notificationLevel, r'ThreadAttendee', 'notificationLevel'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadInfo_FirstInterfaceBuilder implements $ChatMessageInterfaceBuilder {
+  void replace(covariant $ThreadInfo_FirstInterface other);
+  void update(void Function($ThreadInfo_FirstInterfaceBuilder) updates);
+  ChatMessage_Deleted? get deleted;
+  set deleted(covariant ChatMessage_Deleted? deleted);
+
+  int? get id;
+  set id(covariant int? id);
+
+  bool? get isReplyable;
+  set isReplyable(covariant bool? isReplyable);
+
+  bool? get markdown;
+  set markdown(covariant bool? markdown);
+
+  MapBuilder<String, int> get reactions;
+  set reactions(covariant MapBuilder<String, int>? reactions);
+
+  ListBuilder<String> get reactionsSelf;
+  set reactionsSelf(covariant ListBuilder<String>? reactionsSelf);
+
+  String? get referenceId;
+  set referenceId(covariant String? referenceId);
+
+  int? get timestamp;
+  set timestamp(covariant int? timestamp);
+
+  String? get token;
+  set token(covariant String? token);
+
+  String? get lastEditActorDisplayName;
+  set lastEditActorDisplayName(covariant String? lastEditActorDisplayName);
+
+  String? get lastEditActorId;
+  set lastEditActorId(covariant String? lastEditActorId);
+
+  ActorTypes? get lastEditActorType;
+  set lastEditActorType(covariant ActorTypes? lastEditActorType);
+
+  int? get lastEditTimestamp;
+  set lastEditTimestamp(covariant int? lastEditTimestamp);
+
+  bool? get silent;
+  set silent(covariant bool? silent);
+
+  int? get threadId;
+  set threadId(covariant int? threadId);
+
+  bool? get isThread;
+  set isThread(covariant bool? isThread);
+
+  String? get threadTitle;
+  set threadTitle(covariant String? threadTitle);
+
+  int? get threadReplies;
+  set threadReplies(covariant int? threadReplies);
+
+  String? get actorDisplayName;
+  set actorDisplayName(covariant String? actorDisplayName);
+
+  String? get actorId;
+  set actorId(covariant String? actorId);
+
+  ActorTypes? get actorType;
+  set actorType(covariant ActorTypes? actorType);
+
+  int? get expirationTimestamp;
+  set expirationTimestamp(covariant int? expirationTimestamp);
+
+  String? get message;
+  set message(covariant String? message);
+
+  MapBuilder<String, BuiltMap<String, JsonObject>> get messageParameters;
+  set messageParameters(covariant MapBuilder<String, BuiltMap<String, JsonObject>>? messageParameters);
+
+  MessageType? get messageType;
+  set messageType(covariant MessageType? messageType);
+
+  String? get systemMessage;
+  set systemMessage(covariant String? systemMessage);
+}
+
+class _$ThreadInfo_First extends ThreadInfo_First {
+  @override
+  final ChatMessage_Deleted? deleted;
+  @override
+  final int id;
+  @override
+  final bool isReplyable;
+  @override
+  final bool markdown;
+  @override
+  final BuiltMap<String, int> reactions;
+  @override
+  final BuiltList<String>? reactionsSelf;
+  @override
+  final String referenceId;
+  @override
+  final int timestamp;
+  @override
+  final String token;
+  @override
+  final String? lastEditActorDisplayName;
+  @override
+  final String? lastEditActorId;
+  @override
+  final ActorTypes? lastEditActorType;
+  @override
+  final int? lastEditTimestamp;
+  @override
+  final bool? silent;
+  @override
+  final int? threadId;
+  @override
+  final bool? isThread;
+  @override
+  final String? threadTitle;
+  @override
+  final int? threadReplies;
+  @override
+  final String actorDisplayName;
+  @override
+  final String actorId;
+  @override
+  final ActorTypes actorType;
+  @override
+  final int expirationTimestamp;
+  @override
+  final String message;
+  @override
+  final BuiltMap<String, BuiltMap<String, JsonObject>> messageParameters;
+  @override
+  final MessageType messageType;
+  @override
+  final String systemMessage;
+
+  factory _$ThreadInfo_First([void Function(ThreadInfo_FirstBuilder)? updates]) =>
+      (ThreadInfo_FirstBuilder()..update(updates))._build();
+
+  _$ThreadInfo_First._(
+      {this.deleted,
+      required this.id,
+      required this.isReplyable,
+      required this.markdown,
+      required this.reactions,
+      this.reactionsSelf,
+      required this.referenceId,
+      required this.timestamp,
+      required this.token,
+      this.lastEditActorDisplayName,
+      this.lastEditActorId,
+      this.lastEditActorType,
+      this.lastEditTimestamp,
+      this.silent,
+      this.threadId,
+      this.isThread,
+      this.threadTitle,
+      this.threadReplies,
+      required this.actorDisplayName,
+      required this.actorId,
+      required this.actorType,
+      required this.expirationTimestamp,
+      required this.message,
+      required this.messageParameters,
+      required this.messageType,
+      required this.systemMessage})
+      : super._();
+  @override
+  ThreadInfo_First rebuild(void Function(ThreadInfo_FirstBuilder) updates) => (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadInfo_FirstBuilder toBuilder() => ThreadInfo_FirstBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadInfo_First &&
+        deleted == other.deleted &&
+        id == other.id &&
+        isReplyable == other.isReplyable &&
+        markdown == other.markdown &&
+        reactions == other.reactions &&
+        reactionsSelf == other.reactionsSelf &&
+        referenceId == other.referenceId &&
+        timestamp == other.timestamp &&
+        token == other.token &&
+        lastEditActorDisplayName == other.lastEditActorDisplayName &&
+        lastEditActorId == other.lastEditActorId &&
+        lastEditActorType == other.lastEditActorType &&
+        lastEditTimestamp == other.lastEditTimestamp &&
+        silent == other.silent &&
+        threadId == other.threadId &&
+        isThread == other.isThread &&
+        threadTitle == other.threadTitle &&
+        threadReplies == other.threadReplies &&
+        actorDisplayName == other.actorDisplayName &&
+        actorId == other.actorId &&
+        actorType == other.actorType &&
+        expirationTimestamp == other.expirationTimestamp &&
+        message == other.message &&
+        messageParameters == other.messageParameters &&
+        messageType == other.messageType &&
+        systemMessage == other.systemMessage;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, deleted.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, isReplyable.hashCode);
+    _$hash = $jc(_$hash, markdown.hashCode);
+    _$hash = $jc(_$hash, reactions.hashCode);
+    _$hash = $jc(_$hash, reactionsSelf.hashCode);
+    _$hash = $jc(_$hash, referenceId.hashCode);
+    _$hash = $jc(_$hash, timestamp.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, lastEditActorDisplayName.hashCode);
+    _$hash = $jc(_$hash, lastEditActorId.hashCode);
+    _$hash = $jc(_$hash, lastEditActorType.hashCode);
+    _$hash = $jc(_$hash, lastEditTimestamp.hashCode);
+    _$hash = $jc(_$hash, silent.hashCode);
+    _$hash = $jc(_$hash, threadId.hashCode);
+    _$hash = $jc(_$hash, isThread.hashCode);
+    _$hash = $jc(_$hash, threadTitle.hashCode);
+    _$hash = $jc(_$hash, threadReplies.hashCode);
+    _$hash = $jc(_$hash, actorDisplayName.hashCode);
+    _$hash = $jc(_$hash, actorId.hashCode);
+    _$hash = $jc(_$hash, actorType.hashCode);
+    _$hash = $jc(_$hash, expirationTimestamp.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, messageParameters.hashCode);
+    _$hash = $jc(_$hash, messageType.hashCode);
+    _$hash = $jc(_$hash, systemMessage.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadInfo_First')
+          ..add('deleted', deleted)
+          ..add('id', id)
+          ..add('isReplyable', isReplyable)
+          ..add('markdown', markdown)
+          ..add('reactions', reactions)
+          ..add('reactionsSelf', reactionsSelf)
+          ..add('referenceId', referenceId)
+          ..add('timestamp', timestamp)
+          ..add('token', token)
+          ..add('lastEditActorDisplayName', lastEditActorDisplayName)
+          ..add('lastEditActorId', lastEditActorId)
+          ..add('lastEditActorType', lastEditActorType)
+          ..add('lastEditTimestamp', lastEditTimestamp)
+          ..add('silent', silent)
+          ..add('threadId', threadId)
+          ..add('isThread', isThread)
+          ..add('threadTitle', threadTitle)
+          ..add('threadReplies', threadReplies)
+          ..add('actorDisplayName', actorDisplayName)
+          ..add('actorId', actorId)
+          ..add('actorType', actorType)
+          ..add('expirationTimestamp', expirationTimestamp)
+          ..add('message', message)
+          ..add('messageParameters', messageParameters)
+          ..add('messageType', messageType)
+          ..add('systemMessage', systemMessage))
+        .toString();
+  }
+}
+
+class ThreadInfo_FirstBuilder
+    implements Builder<ThreadInfo_First, ThreadInfo_FirstBuilder>, $ThreadInfo_FirstInterfaceBuilder {
+  _$ThreadInfo_First? _$v;
+
+  ChatMessage_Deleted? _deleted;
+  ChatMessage_Deleted? get deleted => _$this._deleted;
+  set deleted(covariant ChatMessage_Deleted? deleted) => _$this._deleted = deleted;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  bool? _isReplyable;
+  bool? get isReplyable => _$this._isReplyable;
+  set isReplyable(covariant bool? isReplyable) => _$this._isReplyable = isReplyable;
+
+  bool? _markdown;
+  bool? get markdown => _$this._markdown;
+  set markdown(covariant bool? markdown) => _$this._markdown = markdown;
+
+  MapBuilder<String, int>? _reactions;
+  MapBuilder<String, int> get reactions => _$this._reactions ??= MapBuilder<String, int>();
+  set reactions(covariant MapBuilder<String, int>? reactions) => _$this._reactions = reactions;
+
+  ListBuilder<String>? _reactionsSelf;
+  ListBuilder<String> get reactionsSelf => _$this._reactionsSelf ??= ListBuilder<String>();
+  set reactionsSelf(covariant ListBuilder<String>? reactionsSelf) => _$this._reactionsSelf = reactionsSelf;
+
+  String? _referenceId;
+  String? get referenceId => _$this._referenceId;
+  set referenceId(covariant String? referenceId) => _$this._referenceId = referenceId;
+
+  int? _timestamp;
+  int? get timestamp => _$this._timestamp;
+  set timestamp(covariant int? timestamp) => _$this._timestamp = timestamp;
+
+  String? _token;
+  String? get token => _$this._token;
+  set token(covariant String? token) => _$this._token = token;
+
+  String? _lastEditActorDisplayName;
+  String? get lastEditActorDisplayName => _$this._lastEditActorDisplayName;
+  set lastEditActorDisplayName(covariant String? lastEditActorDisplayName) =>
+      _$this._lastEditActorDisplayName = lastEditActorDisplayName;
+
+  String? _lastEditActorId;
+  String? get lastEditActorId => _$this._lastEditActorId;
+  set lastEditActorId(covariant String? lastEditActorId) => _$this._lastEditActorId = lastEditActorId;
+
+  ActorTypes? _lastEditActorType;
+  ActorTypes? get lastEditActorType => _$this._lastEditActorType;
+  set lastEditActorType(covariant ActorTypes? lastEditActorType) => _$this._lastEditActorType = lastEditActorType;
+
+  int? _lastEditTimestamp;
+  int? get lastEditTimestamp => _$this._lastEditTimestamp;
+  set lastEditTimestamp(covariant int? lastEditTimestamp) => _$this._lastEditTimestamp = lastEditTimestamp;
+
+  bool? _silent;
+  bool? get silent => _$this._silent;
+  set silent(covariant bool? silent) => _$this._silent = silent;
+
+  int? _threadId;
+  int? get threadId => _$this._threadId;
+  set threadId(covariant int? threadId) => _$this._threadId = threadId;
+
+  bool? _isThread;
+  bool? get isThread => _$this._isThread;
+  set isThread(covariant bool? isThread) => _$this._isThread = isThread;
+
+  String? _threadTitle;
+  String? get threadTitle => _$this._threadTitle;
+  set threadTitle(covariant String? threadTitle) => _$this._threadTitle = threadTitle;
+
+  int? _threadReplies;
+  int? get threadReplies => _$this._threadReplies;
+  set threadReplies(covariant int? threadReplies) => _$this._threadReplies = threadReplies;
+
+  String? _actorDisplayName;
+  String? get actorDisplayName => _$this._actorDisplayName;
+  set actorDisplayName(covariant String? actorDisplayName) => _$this._actorDisplayName = actorDisplayName;
+
+  String? _actorId;
+  String? get actorId => _$this._actorId;
+  set actorId(covariant String? actorId) => _$this._actorId = actorId;
+
+  ActorTypes? _actorType;
+  ActorTypes? get actorType => _$this._actorType;
+  set actorType(covariant ActorTypes? actorType) => _$this._actorType = actorType;
+
+  int? _expirationTimestamp;
+  int? get expirationTimestamp => _$this._expirationTimestamp;
+  set expirationTimestamp(covariant int? expirationTimestamp) => _$this._expirationTimestamp = expirationTimestamp;
+
+  String? _message;
+  String? get message => _$this._message;
+  set message(covariant String? message) => _$this._message = message;
+
+  MapBuilder<String, BuiltMap<String, JsonObject>>? _messageParameters;
+  MapBuilder<String, BuiltMap<String, JsonObject>> get messageParameters =>
+      _$this._messageParameters ??= MapBuilder<String, BuiltMap<String, JsonObject>>();
+  set messageParameters(covariant MapBuilder<String, BuiltMap<String, JsonObject>>? messageParameters) =>
+      _$this._messageParameters = messageParameters;
+
+  MessageType? _messageType;
+  MessageType? get messageType => _$this._messageType;
+  set messageType(covariant MessageType? messageType) => _$this._messageType = messageType;
+
+  String? _systemMessage;
+  String? get systemMessage => _$this._systemMessage;
+  set systemMessage(covariant String? systemMessage) => _$this._systemMessage = systemMessage;
+
+  ThreadInfo_FirstBuilder() {
+    ThreadInfo_First._defaults(this);
+  }
+
+  ThreadInfo_FirstBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _deleted = $v.deleted;
+      _id = $v.id;
+      _isReplyable = $v.isReplyable;
+      _markdown = $v.markdown;
+      _reactions = $v.reactions.toBuilder();
+      _reactionsSelf = $v.reactionsSelf?.toBuilder();
+      _referenceId = $v.referenceId;
+      _timestamp = $v.timestamp;
+      _token = $v.token;
+      _lastEditActorDisplayName = $v.lastEditActorDisplayName;
+      _lastEditActorId = $v.lastEditActorId;
+      _lastEditActorType = $v.lastEditActorType;
+      _lastEditTimestamp = $v.lastEditTimestamp;
+      _silent = $v.silent;
+      _threadId = $v.threadId;
+      _isThread = $v.isThread;
+      _threadTitle = $v.threadTitle;
+      _threadReplies = $v.threadReplies;
+      _actorDisplayName = $v.actorDisplayName;
+      _actorId = $v.actorId;
+      _actorType = $v.actorType;
+      _expirationTimestamp = $v.expirationTimestamp;
+      _message = $v.message;
+      _messageParameters = $v.messageParameters.toBuilder();
+      _messageType = $v.messageType;
+      _systemMessage = $v.systemMessage;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadInfo_First other) {
+    _$v = other as _$ThreadInfo_First;
+  }
+
+  @override
+  void update(void Function(ThreadInfo_FirstBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadInfo_First build() => _build();
+
+  _$ThreadInfo_First _build() {
+    ThreadInfo_First._validate(this);
+    _$ThreadInfo_First _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadInfo_First._(
+            deleted: deleted,
+            id: BuiltValueNullFieldError.checkNotNull(id, r'ThreadInfo_First', 'id'),
+            isReplyable: BuiltValueNullFieldError.checkNotNull(isReplyable, r'ThreadInfo_First', 'isReplyable'),
+            markdown: BuiltValueNullFieldError.checkNotNull(markdown, r'ThreadInfo_First', 'markdown'),
+            reactions: reactions.build(),
+            reactionsSelf: _reactionsSelf?.build(),
+            referenceId: BuiltValueNullFieldError.checkNotNull(referenceId, r'ThreadInfo_First', 'referenceId'),
+            timestamp: BuiltValueNullFieldError.checkNotNull(timestamp, r'ThreadInfo_First', 'timestamp'),
+            token: BuiltValueNullFieldError.checkNotNull(token, r'ThreadInfo_First', 'token'),
+            lastEditActorDisplayName: lastEditActorDisplayName,
+            lastEditActorId: lastEditActorId,
+            lastEditActorType: lastEditActorType,
+            lastEditTimestamp: lastEditTimestamp,
+            silent: silent,
+            threadId: threadId,
+            isThread: isThread,
+            threadTitle: threadTitle,
+            threadReplies: threadReplies,
+            actorDisplayName:
+                BuiltValueNullFieldError.checkNotNull(actorDisplayName, r'ThreadInfo_First', 'actorDisplayName'),
+            actorId: BuiltValueNullFieldError.checkNotNull(actorId, r'ThreadInfo_First', 'actorId'),
+            actorType: BuiltValueNullFieldError.checkNotNull(actorType, r'ThreadInfo_First', 'actorType'),
+            expirationTimestamp:
+                BuiltValueNullFieldError.checkNotNull(expirationTimestamp, r'ThreadInfo_First', 'expirationTimestamp'),
+            message: BuiltValueNullFieldError.checkNotNull(message, r'ThreadInfo_First', 'message'),
+            messageParameters: messageParameters.build(),
+            messageType: BuiltValueNullFieldError.checkNotNull(messageType, r'ThreadInfo_First', 'messageType'),
+            systemMessage: BuiltValueNullFieldError.checkNotNull(systemMessage, r'ThreadInfo_First', 'systemMessage'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'reactions';
+        reactions.build();
+        _$failedField = 'reactionsSelf';
+        _reactionsSelf?.build();
+
+        _$failedField = 'messageParameters';
+        messageParameters.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'ThreadInfo_First', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadInfo_LastInterfaceBuilder implements $ChatMessageInterfaceBuilder {
+  void replace(covariant $ThreadInfo_LastInterface other);
+  void update(void Function($ThreadInfo_LastInterfaceBuilder) updates);
+  ChatMessage_Deleted? get deleted;
+  set deleted(covariant ChatMessage_Deleted? deleted);
+
+  int? get id;
+  set id(covariant int? id);
+
+  bool? get isReplyable;
+  set isReplyable(covariant bool? isReplyable);
+
+  bool? get markdown;
+  set markdown(covariant bool? markdown);
+
+  MapBuilder<String, int> get reactions;
+  set reactions(covariant MapBuilder<String, int>? reactions);
+
+  ListBuilder<String> get reactionsSelf;
+  set reactionsSelf(covariant ListBuilder<String>? reactionsSelf);
+
+  String? get referenceId;
+  set referenceId(covariant String? referenceId);
+
+  int? get timestamp;
+  set timestamp(covariant int? timestamp);
+
+  String? get token;
+  set token(covariant String? token);
+
+  String? get lastEditActorDisplayName;
+  set lastEditActorDisplayName(covariant String? lastEditActorDisplayName);
+
+  String? get lastEditActorId;
+  set lastEditActorId(covariant String? lastEditActorId);
+
+  ActorTypes? get lastEditActorType;
+  set lastEditActorType(covariant ActorTypes? lastEditActorType);
+
+  int? get lastEditTimestamp;
+  set lastEditTimestamp(covariant int? lastEditTimestamp);
+
+  bool? get silent;
+  set silent(covariant bool? silent);
+
+  int? get threadId;
+  set threadId(covariant int? threadId);
+
+  bool? get isThread;
+  set isThread(covariant bool? isThread);
+
+  String? get threadTitle;
+  set threadTitle(covariant String? threadTitle);
+
+  int? get threadReplies;
+  set threadReplies(covariant int? threadReplies);
+
+  String? get actorDisplayName;
+  set actorDisplayName(covariant String? actorDisplayName);
+
+  String? get actorId;
+  set actorId(covariant String? actorId);
+
+  ActorTypes? get actorType;
+  set actorType(covariant ActorTypes? actorType);
+
+  int? get expirationTimestamp;
+  set expirationTimestamp(covariant int? expirationTimestamp);
+
+  String? get message;
+  set message(covariant String? message);
+
+  MapBuilder<String, BuiltMap<String, JsonObject>> get messageParameters;
+  set messageParameters(covariant MapBuilder<String, BuiltMap<String, JsonObject>>? messageParameters);
+
+  MessageType? get messageType;
+  set messageType(covariant MessageType? messageType);
+
+  String? get systemMessage;
+  set systemMessage(covariant String? systemMessage);
+}
+
+class _$ThreadInfo_Last extends ThreadInfo_Last {
+  @override
+  final ChatMessage_Deleted? deleted;
+  @override
+  final int id;
+  @override
+  final bool isReplyable;
+  @override
+  final bool markdown;
+  @override
+  final BuiltMap<String, int> reactions;
+  @override
+  final BuiltList<String>? reactionsSelf;
+  @override
+  final String referenceId;
+  @override
+  final int timestamp;
+  @override
+  final String token;
+  @override
+  final String? lastEditActorDisplayName;
+  @override
+  final String? lastEditActorId;
+  @override
+  final ActorTypes? lastEditActorType;
+  @override
+  final int? lastEditTimestamp;
+  @override
+  final bool? silent;
+  @override
+  final int? threadId;
+  @override
+  final bool? isThread;
+  @override
+  final String? threadTitle;
+  @override
+  final int? threadReplies;
+  @override
+  final String actorDisplayName;
+  @override
+  final String actorId;
+  @override
+  final ActorTypes actorType;
+  @override
+  final int expirationTimestamp;
+  @override
+  final String message;
+  @override
+  final BuiltMap<String, BuiltMap<String, JsonObject>> messageParameters;
+  @override
+  final MessageType messageType;
+  @override
+  final String systemMessage;
+
+  factory _$ThreadInfo_Last([void Function(ThreadInfo_LastBuilder)? updates]) =>
+      (ThreadInfo_LastBuilder()..update(updates))._build();
+
+  _$ThreadInfo_Last._(
+      {this.deleted,
+      required this.id,
+      required this.isReplyable,
+      required this.markdown,
+      required this.reactions,
+      this.reactionsSelf,
+      required this.referenceId,
+      required this.timestamp,
+      required this.token,
+      this.lastEditActorDisplayName,
+      this.lastEditActorId,
+      this.lastEditActorType,
+      this.lastEditTimestamp,
+      this.silent,
+      this.threadId,
+      this.isThread,
+      this.threadTitle,
+      this.threadReplies,
+      required this.actorDisplayName,
+      required this.actorId,
+      required this.actorType,
+      required this.expirationTimestamp,
+      required this.message,
+      required this.messageParameters,
+      required this.messageType,
+      required this.systemMessage})
+      : super._();
+  @override
+  ThreadInfo_Last rebuild(void Function(ThreadInfo_LastBuilder) updates) => (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadInfo_LastBuilder toBuilder() => ThreadInfo_LastBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadInfo_Last &&
+        deleted == other.deleted &&
+        id == other.id &&
+        isReplyable == other.isReplyable &&
+        markdown == other.markdown &&
+        reactions == other.reactions &&
+        reactionsSelf == other.reactionsSelf &&
+        referenceId == other.referenceId &&
+        timestamp == other.timestamp &&
+        token == other.token &&
+        lastEditActorDisplayName == other.lastEditActorDisplayName &&
+        lastEditActorId == other.lastEditActorId &&
+        lastEditActorType == other.lastEditActorType &&
+        lastEditTimestamp == other.lastEditTimestamp &&
+        silent == other.silent &&
+        threadId == other.threadId &&
+        isThread == other.isThread &&
+        threadTitle == other.threadTitle &&
+        threadReplies == other.threadReplies &&
+        actorDisplayName == other.actorDisplayName &&
+        actorId == other.actorId &&
+        actorType == other.actorType &&
+        expirationTimestamp == other.expirationTimestamp &&
+        message == other.message &&
+        messageParameters == other.messageParameters &&
+        messageType == other.messageType &&
+        systemMessage == other.systemMessage;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, deleted.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, isReplyable.hashCode);
+    _$hash = $jc(_$hash, markdown.hashCode);
+    _$hash = $jc(_$hash, reactions.hashCode);
+    _$hash = $jc(_$hash, reactionsSelf.hashCode);
+    _$hash = $jc(_$hash, referenceId.hashCode);
+    _$hash = $jc(_$hash, timestamp.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, lastEditActorDisplayName.hashCode);
+    _$hash = $jc(_$hash, lastEditActorId.hashCode);
+    _$hash = $jc(_$hash, lastEditActorType.hashCode);
+    _$hash = $jc(_$hash, lastEditTimestamp.hashCode);
+    _$hash = $jc(_$hash, silent.hashCode);
+    _$hash = $jc(_$hash, threadId.hashCode);
+    _$hash = $jc(_$hash, isThread.hashCode);
+    _$hash = $jc(_$hash, threadTitle.hashCode);
+    _$hash = $jc(_$hash, threadReplies.hashCode);
+    _$hash = $jc(_$hash, actorDisplayName.hashCode);
+    _$hash = $jc(_$hash, actorId.hashCode);
+    _$hash = $jc(_$hash, actorType.hashCode);
+    _$hash = $jc(_$hash, expirationTimestamp.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, messageParameters.hashCode);
+    _$hash = $jc(_$hash, messageType.hashCode);
+    _$hash = $jc(_$hash, systemMessage.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadInfo_Last')
+          ..add('deleted', deleted)
+          ..add('id', id)
+          ..add('isReplyable', isReplyable)
+          ..add('markdown', markdown)
+          ..add('reactions', reactions)
+          ..add('reactionsSelf', reactionsSelf)
+          ..add('referenceId', referenceId)
+          ..add('timestamp', timestamp)
+          ..add('token', token)
+          ..add('lastEditActorDisplayName', lastEditActorDisplayName)
+          ..add('lastEditActorId', lastEditActorId)
+          ..add('lastEditActorType', lastEditActorType)
+          ..add('lastEditTimestamp', lastEditTimestamp)
+          ..add('silent', silent)
+          ..add('threadId', threadId)
+          ..add('isThread', isThread)
+          ..add('threadTitle', threadTitle)
+          ..add('threadReplies', threadReplies)
+          ..add('actorDisplayName', actorDisplayName)
+          ..add('actorId', actorId)
+          ..add('actorType', actorType)
+          ..add('expirationTimestamp', expirationTimestamp)
+          ..add('message', message)
+          ..add('messageParameters', messageParameters)
+          ..add('messageType', messageType)
+          ..add('systemMessage', systemMessage))
+        .toString();
+  }
+}
+
+class ThreadInfo_LastBuilder
+    implements Builder<ThreadInfo_Last, ThreadInfo_LastBuilder>, $ThreadInfo_LastInterfaceBuilder {
+  _$ThreadInfo_Last? _$v;
+
+  ChatMessage_Deleted? _deleted;
+  ChatMessage_Deleted? get deleted => _$this._deleted;
+  set deleted(covariant ChatMessage_Deleted? deleted) => _$this._deleted = deleted;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(covariant int? id) => _$this._id = id;
+
+  bool? _isReplyable;
+  bool? get isReplyable => _$this._isReplyable;
+  set isReplyable(covariant bool? isReplyable) => _$this._isReplyable = isReplyable;
+
+  bool? _markdown;
+  bool? get markdown => _$this._markdown;
+  set markdown(covariant bool? markdown) => _$this._markdown = markdown;
+
+  MapBuilder<String, int>? _reactions;
+  MapBuilder<String, int> get reactions => _$this._reactions ??= MapBuilder<String, int>();
+  set reactions(covariant MapBuilder<String, int>? reactions) => _$this._reactions = reactions;
+
+  ListBuilder<String>? _reactionsSelf;
+  ListBuilder<String> get reactionsSelf => _$this._reactionsSelf ??= ListBuilder<String>();
+  set reactionsSelf(covariant ListBuilder<String>? reactionsSelf) => _$this._reactionsSelf = reactionsSelf;
+
+  String? _referenceId;
+  String? get referenceId => _$this._referenceId;
+  set referenceId(covariant String? referenceId) => _$this._referenceId = referenceId;
+
+  int? _timestamp;
+  int? get timestamp => _$this._timestamp;
+  set timestamp(covariant int? timestamp) => _$this._timestamp = timestamp;
+
+  String? _token;
+  String? get token => _$this._token;
+  set token(covariant String? token) => _$this._token = token;
+
+  String? _lastEditActorDisplayName;
+  String? get lastEditActorDisplayName => _$this._lastEditActorDisplayName;
+  set lastEditActorDisplayName(covariant String? lastEditActorDisplayName) =>
+      _$this._lastEditActorDisplayName = lastEditActorDisplayName;
+
+  String? _lastEditActorId;
+  String? get lastEditActorId => _$this._lastEditActorId;
+  set lastEditActorId(covariant String? lastEditActorId) => _$this._lastEditActorId = lastEditActorId;
+
+  ActorTypes? _lastEditActorType;
+  ActorTypes? get lastEditActorType => _$this._lastEditActorType;
+  set lastEditActorType(covariant ActorTypes? lastEditActorType) => _$this._lastEditActorType = lastEditActorType;
+
+  int? _lastEditTimestamp;
+  int? get lastEditTimestamp => _$this._lastEditTimestamp;
+  set lastEditTimestamp(covariant int? lastEditTimestamp) => _$this._lastEditTimestamp = lastEditTimestamp;
+
+  bool? _silent;
+  bool? get silent => _$this._silent;
+  set silent(covariant bool? silent) => _$this._silent = silent;
+
+  int? _threadId;
+  int? get threadId => _$this._threadId;
+  set threadId(covariant int? threadId) => _$this._threadId = threadId;
+
+  bool? _isThread;
+  bool? get isThread => _$this._isThread;
+  set isThread(covariant bool? isThread) => _$this._isThread = isThread;
+
+  String? _threadTitle;
+  String? get threadTitle => _$this._threadTitle;
+  set threadTitle(covariant String? threadTitle) => _$this._threadTitle = threadTitle;
+
+  int? _threadReplies;
+  int? get threadReplies => _$this._threadReplies;
+  set threadReplies(covariant int? threadReplies) => _$this._threadReplies = threadReplies;
+
+  String? _actorDisplayName;
+  String? get actorDisplayName => _$this._actorDisplayName;
+  set actorDisplayName(covariant String? actorDisplayName) => _$this._actorDisplayName = actorDisplayName;
+
+  String? _actorId;
+  String? get actorId => _$this._actorId;
+  set actorId(covariant String? actorId) => _$this._actorId = actorId;
+
+  ActorTypes? _actorType;
+  ActorTypes? get actorType => _$this._actorType;
+  set actorType(covariant ActorTypes? actorType) => _$this._actorType = actorType;
+
+  int? _expirationTimestamp;
+  int? get expirationTimestamp => _$this._expirationTimestamp;
+  set expirationTimestamp(covariant int? expirationTimestamp) => _$this._expirationTimestamp = expirationTimestamp;
+
+  String? _message;
+  String? get message => _$this._message;
+  set message(covariant String? message) => _$this._message = message;
+
+  MapBuilder<String, BuiltMap<String, JsonObject>>? _messageParameters;
+  MapBuilder<String, BuiltMap<String, JsonObject>> get messageParameters =>
+      _$this._messageParameters ??= MapBuilder<String, BuiltMap<String, JsonObject>>();
+  set messageParameters(covariant MapBuilder<String, BuiltMap<String, JsonObject>>? messageParameters) =>
+      _$this._messageParameters = messageParameters;
+
+  MessageType? _messageType;
+  MessageType? get messageType => _$this._messageType;
+  set messageType(covariant MessageType? messageType) => _$this._messageType = messageType;
+
+  String? _systemMessage;
+  String? get systemMessage => _$this._systemMessage;
+  set systemMessage(covariant String? systemMessage) => _$this._systemMessage = systemMessage;
+
+  ThreadInfo_LastBuilder() {
+    ThreadInfo_Last._defaults(this);
+  }
+
+  ThreadInfo_LastBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _deleted = $v.deleted;
+      _id = $v.id;
+      _isReplyable = $v.isReplyable;
+      _markdown = $v.markdown;
+      _reactions = $v.reactions.toBuilder();
+      _reactionsSelf = $v.reactionsSelf?.toBuilder();
+      _referenceId = $v.referenceId;
+      _timestamp = $v.timestamp;
+      _token = $v.token;
+      _lastEditActorDisplayName = $v.lastEditActorDisplayName;
+      _lastEditActorId = $v.lastEditActorId;
+      _lastEditActorType = $v.lastEditActorType;
+      _lastEditTimestamp = $v.lastEditTimestamp;
+      _silent = $v.silent;
+      _threadId = $v.threadId;
+      _isThread = $v.isThread;
+      _threadTitle = $v.threadTitle;
+      _threadReplies = $v.threadReplies;
+      _actorDisplayName = $v.actorDisplayName;
+      _actorId = $v.actorId;
+      _actorType = $v.actorType;
+      _expirationTimestamp = $v.expirationTimestamp;
+      _message = $v.message;
+      _messageParameters = $v.messageParameters.toBuilder();
+      _messageType = $v.messageType;
+      _systemMessage = $v.systemMessage;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadInfo_Last other) {
+    _$v = other as _$ThreadInfo_Last;
+  }
+
+  @override
+  void update(void Function(ThreadInfo_LastBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadInfo_Last build() => _build();
+
+  _$ThreadInfo_Last _build() {
+    ThreadInfo_Last._validate(this);
+    _$ThreadInfo_Last _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadInfo_Last._(
+            deleted: deleted,
+            id: BuiltValueNullFieldError.checkNotNull(id, r'ThreadInfo_Last', 'id'),
+            isReplyable: BuiltValueNullFieldError.checkNotNull(isReplyable, r'ThreadInfo_Last', 'isReplyable'),
+            markdown: BuiltValueNullFieldError.checkNotNull(markdown, r'ThreadInfo_Last', 'markdown'),
+            reactions: reactions.build(),
+            reactionsSelf: _reactionsSelf?.build(),
+            referenceId: BuiltValueNullFieldError.checkNotNull(referenceId, r'ThreadInfo_Last', 'referenceId'),
+            timestamp: BuiltValueNullFieldError.checkNotNull(timestamp, r'ThreadInfo_Last', 'timestamp'),
+            token: BuiltValueNullFieldError.checkNotNull(token, r'ThreadInfo_Last', 'token'),
+            lastEditActorDisplayName: lastEditActorDisplayName,
+            lastEditActorId: lastEditActorId,
+            lastEditActorType: lastEditActorType,
+            lastEditTimestamp: lastEditTimestamp,
+            silent: silent,
+            threadId: threadId,
+            isThread: isThread,
+            threadTitle: threadTitle,
+            threadReplies: threadReplies,
+            actorDisplayName:
+                BuiltValueNullFieldError.checkNotNull(actorDisplayName, r'ThreadInfo_Last', 'actorDisplayName'),
+            actorId: BuiltValueNullFieldError.checkNotNull(actorId, r'ThreadInfo_Last', 'actorId'),
+            actorType: BuiltValueNullFieldError.checkNotNull(actorType, r'ThreadInfo_Last', 'actorType'),
+            expirationTimestamp:
+                BuiltValueNullFieldError.checkNotNull(expirationTimestamp, r'ThreadInfo_Last', 'expirationTimestamp'),
+            message: BuiltValueNullFieldError.checkNotNull(message, r'ThreadInfo_Last', 'message'),
+            messageParameters: messageParameters.build(),
+            messageType: BuiltValueNullFieldError.checkNotNull(messageType, r'ThreadInfo_Last', 'messageType'),
+            systemMessage: BuiltValueNullFieldError.checkNotNull(systemMessage, r'ThreadInfo_Last', 'systemMessage'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'reactions';
+        reactions.build();
+        _$failedField = 'reactionsSelf';
+        _reactionsSelf?.build();
+
+        _$failedField = 'messageParameters';
+        messageParameters.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'ThreadInfo_Last', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadInfoInterfaceBuilder {
+  void replace($ThreadInfoInterface other);
+  void update(void Function($ThreadInfoInterfaceBuilder) updates);
+  ThreadBuilder get thread;
+  set thread(ThreadBuilder? thread);
+
+  ThreadAttendeeBuilder get attendee;
+  set attendee(ThreadAttendeeBuilder? attendee);
+
+  ThreadInfo_FirstBuilder get first;
+  set first(ThreadInfo_FirstBuilder? first);
+
+  ThreadInfo_LastBuilder get last;
+  set last(ThreadInfo_LastBuilder? last);
+}
+
+class _$ThreadInfo extends ThreadInfo {
+  @override
+  final Thread thread;
+  @override
+  final ThreadAttendee attendee;
+  @override
+  final ThreadInfo_First? first;
+  @override
+  final ThreadInfo_Last? last;
+
+  factory _$ThreadInfo([void Function(ThreadInfoBuilder)? updates]) => (ThreadInfoBuilder()..update(updates))._build();
+
+  _$ThreadInfo._({required this.thread, required this.attendee, this.first, this.last}) : super._();
+  @override
+  ThreadInfo rebuild(void Function(ThreadInfoBuilder) updates) => (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadInfoBuilder toBuilder() => ThreadInfoBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadInfo &&
+        thread == other.thread &&
+        attendee == other.attendee &&
+        first == other.first &&
+        last == other.last;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, thread.hashCode);
+    _$hash = $jc(_$hash, attendee.hashCode);
+    _$hash = $jc(_$hash, first.hashCode);
+    _$hash = $jc(_$hash, last.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadInfo')
+          ..add('thread', thread)
+          ..add('attendee', attendee)
+          ..add('first', first)
+          ..add('last', last))
+        .toString();
+  }
+}
+
+class ThreadInfoBuilder implements Builder<ThreadInfo, ThreadInfoBuilder>, $ThreadInfoInterfaceBuilder {
+  _$ThreadInfo? _$v;
+
+  ThreadBuilder? _thread;
+  ThreadBuilder get thread => _$this._thread ??= ThreadBuilder();
+  set thread(covariant ThreadBuilder? thread) => _$this._thread = thread;
+
+  ThreadAttendeeBuilder? _attendee;
+  ThreadAttendeeBuilder get attendee => _$this._attendee ??= ThreadAttendeeBuilder();
+  set attendee(covariant ThreadAttendeeBuilder? attendee) => _$this._attendee = attendee;
+
+  ThreadInfo_FirstBuilder? _first;
+  ThreadInfo_FirstBuilder get first => _$this._first ??= ThreadInfo_FirstBuilder();
+  set first(covariant ThreadInfo_FirstBuilder? first) => _$this._first = first;
+
+  ThreadInfo_LastBuilder? _last;
+  ThreadInfo_LastBuilder get last => _$this._last ??= ThreadInfo_LastBuilder();
+  set last(covariant ThreadInfo_LastBuilder? last) => _$this._last = last;
+
+  ThreadInfoBuilder() {
+    ThreadInfo._defaults(this);
+  }
+
+  ThreadInfoBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _thread = $v.thread.toBuilder();
+      _attendee = $v.attendee.toBuilder();
+      _first = $v.first?.toBuilder();
+      _last = $v.last?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadInfo other) {
+    _$v = other as _$ThreadInfo;
+  }
+
+  @override
+  void update(void Function(ThreadInfoBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadInfo build() => _build();
+
+  _$ThreadInfo _build() {
+    ThreadInfo._validate(this);
+    _$ThreadInfo _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadInfo._(
+            thread: thread.build(),
+            attendee: attendee.build(),
+            first: _first?.build(),
+            last: _last?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'thread';
+        thread.build();
+        _$failedField = 'attendee';
+        attendee.build();
+        _$failedField = 'first';
+        _first?.build();
+        _$failedField = 'last';
+        _last?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'ThreadInfo', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadGetRecentActiveThreadsResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($ThreadGetRecentActiveThreadsResponseApplicationJson_OcsInterface other);
+  void update(void Function($ThreadGetRecentActiveThreadsResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  ListBuilder<ThreadInfo> get data;
+  set data(ListBuilder<ThreadInfo>? data);
+}
+
+class _$ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs
+    extends ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final BuiltList<ThreadInfo> data;
+
+  factory _$ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs(
+          [void Function(ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder)? updates]) =>
+      (ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs rebuild(
+          void Function(ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder toBuilder() =>
+      ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder
+    implements
+        Builder<ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs,
+            ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder>,
+        $ThreadGetRecentActiveThreadsResponseApplicationJson_OcsInterfaceBuilder {
+  _$ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  ListBuilder<ThreadInfo>? _data;
+  ListBuilder<ThreadInfo> get data => _$this._data ??= ListBuilder<ThreadInfo>();
+  set data(covariant ListBuilder<ThreadInfo>? data) => _$this._data = data;
+
+  ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder() {
+    ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs other) {
+    _$v = other as _$ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs build() => _build();
+
+  _$ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs _build() {
+    ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs._validate(this);
+    _$ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadGetRecentActiveThreadsResponseApplicationJsonInterfaceBuilder {
+  void replace($ThreadGetRecentActiveThreadsResponseApplicationJsonInterface other);
+  void update(void Function($ThreadGetRecentActiveThreadsResponseApplicationJsonInterfaceBuilder) updates);
+  ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$ThreadGetRecentActiveThreadsResponseApplicationJson
+    extends ThreadGetRecentActiveThreadsResponseApplicationJson {
+  @override
+  final ThreadGetRecentActiveThreadsResponseApplicationJson_Ocs ocs;
+
+  factory _$ThreadGetRecentActiveThreadsResponseApplicationJson(
+          [void Function(ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder)? updates]) =>
+      (ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$ThreadGetRecentActiveThreadsResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  ThreadGetRecentActiveThreadsResponseApplicationJson rebuild(
+          void Function(ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder toBuilder() =>
+      ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadGetRecentActiveThreadsResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadGetRecentActiveThreadsResponseApplicationJson')..add('ocs', ocs))
+        .toString();
+  }
+}
+
+class ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder
+    implements
+        Builder<ThreadGetRecentActiveThreadsResponseApplicationJson,
+            ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder>,
+        $ThreadGetRecentActiveThreadsResponseApplicationJsonInterfaceBuilder {
+  _$ThreadGetRecentActiveThreadsResponseApplicationJson? _$v;
+
+  ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder? _ocs;
+  ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder();
+  set ocs(covariant ThreadGetRecentActiveThreadsResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder() {
+    ThreadGetRecentActiveThreadsResponseApplicationJson._defaults(this);
+  }
+
+  ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadGetRecentActiveThreadsResponseApplicationJson other) {
+    _$v = other as _$ThreadGetRecentActiveThreadsResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(ThreadGetRecentActiveThreadsResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadGetRecentActiveThreadsResponseApplicationJson build() => _build();
+
+  _$ThreadGetRecentActiveThreadsResponseApplicationJson _build() {
+    ThreadGetRecentActiveThreadsResponseApplicationJson._validate(this);
+    _$ThreadGetRecentActiveThreadsResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadGetRecentActiveThreadsResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ThreadGetRecentActiveThreadsResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadGetSubscribedThreadsResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($ThreadGetSubscribedThreadsResponseApplicationJson_OcsInterface other);
+  void update(void Function($ThreadGetSubscribedThreadsResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  ListBuilder<ThreadInfo> get data;
+  set data(ListBuilder<ThreadInfo>? data);
+}
+
+class _$ThreadGetSubscribedThreadsResponseApplicationJson_Ocs
+    extends ThreadGetSubscribedThreadsResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final BuiltList<ThreadInfo> data;
+
+  factory _$ThreadGetSubscribedThreadsResponseApplicationJson_Ocs(
+          [void Function(ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder)? updates]) =>
+      (ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$ThreadGetSubscribedThreadsResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  ThreadGetSubscribedThreadsResponseApplicationJson_Ocs rebuild(
+          void Function(ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder toBuilder() =>
+      ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadGetSubscribedThreadsResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadGetSubscribedThreadsResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder
+    implements
+        Builder<ThreadGetSubscribedThreadsResponseApplicationJson_Ocs,
+            ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder>,
+        $ThreadGetSubscribedThreadsResponseApplicationJson_OcsInterfaceBuilder {
+  _$ThreadGetSubscribedThreadsResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  ListBuilder<ThreadInfo>? _data;
+  ListBuilder<ThreadInfo> get data => _$this._data ??= ListBuilder<ThreadInfo>();
+  set data(covariant ListBuilder<ThreadInfo>? data) => _$this._data = data;
+
+  ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder() {
+    ThreadGetSubscribedThreadsResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadGetSubscribedThreadsResponseApplicationJson_Ocs other) {
+    _$v = other as _$ThreadGetSubscribedThreadsResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadGetSubscribedThreadsResponseApplicationJson_Ocs build() => _build();
+
+  _$ThreadGetSubscribedThreadsResponseApplicationJson_Ocs _build() {
+    ThreadGetSubscribedThreadsResponseApplicationJson_Ocs._validate(this);
+    _$ThreadGetSubscribedThreadsResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadGetSubscribedThreadsResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ThreadGetSubscribedThreadsResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadGetSubscribedThreadsResponseApplicationJsonInterfaceBuilder {
+  void replace($ThreadGetSubscribedThreadsResponseApplicationJsonInterface other);
+  void update(void Function($ThreadGetSubscribedThreadsResponseApplicationJsonInterfaceBuilder) updates);
+  ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$ThreadGetSubscribedThreadsResponseApplicationJson extends ThreadGetSubscribedThreadsResponseApplicationJson {
+  @override
+  final ThreadGetSubscribedThreadsResponseApplicationJson_Ocs ocs;
+
+  factory _$ThreadGetSubscribedThreadsResponseApplicationJson(
+          [void Function(ThreadGetSubscribedThreadsResponseApplicationJsonBuilder)? updates]) =>
+      (ThreadGetSubscribedThreadsResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$ThreadGetSubscribedThreadsResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  ThreadGetSubscribedThreadsResponseApplicationJson rebuild(
+          void Function(ThreadGetSubscribedThreadsResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadGetSubscribedThreadsResponseApplicationJsonBuilder toBuilder() =>
+      ThreadGetSubscribedThreadsResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadGetSubscribedThreadsResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadGetSubscribedThreadsResponseApplicationJson')..add('ocs', ocs))
+        .toString();
+  }
+}
+
+class ThreadGetSubscribedThreadsResponseApplicationJsonBuilder
+    implements
+        Builder<ThreadGetSubscribedThreadsResponseApplicationJson,
+            ThreadGetSubscribedThreadsResponseApplicationJsonBuilder>,
+        $ThreadGetSubscribedThreadsResponseApplicationJsonInterfaceBuilder {
+  _$ThreadGetSubscribedThreadsResponseApplicationJson? _$v;
+
+  ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder? _ocs;
+  ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder();
+  set ocs(covariant ThreadGetSubscribedThreadsResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  ThreadGetSubscribedThreadsResponseApplicationJsonBuilder() {
+    ThreadGetSubscribedThreadsResponseApplicationJson._defaults(this);
+  }
+
+  ThreadGetSubscribedThreadsResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadGetSubscribedThreadsResponseApplicationJson other) {
+    _$v = other as _$ThreadGetSubscribedThreadsResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(ThreadGetSubscribedThreadsResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadGetSubscribedThreadsResponseApplicationJson build() => _build();
+
+  _$ThreadGetSubscribedThreadsResponseApplicationJson _build() {
+    ThreadGetSubscribedThreadsResponseApplicationJson._validate(this);
+    _$ThreadGetSubscribedThreadsResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadGetSubscribedThreadsResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ThreadGetSubscribedThreadsResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadGetThreadResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($ThreadGetThreadResponseApplicationJson_OcsInterface other);
+  void update(void Function($ThreadGetThreadResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  ThreadInfoBuilder get data;
+  set data(ThreadInfoBuilder? data);
+}
+
+class _$ThreadGetThreadResponseApplicationJson_Ocs extends ThreadGetThreadResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final ThreadInfo data;
+
+  factory _$ThreadGetThreadResponseApplicationJson_Ocs(
+          [void Function(ThreadGetThreadResponseApplicationJson_OcsBuilder)? updates]) =>
+      (ThreadGetThreadResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$ThreadGetThreadResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  ThreadGetThreadResponseApplicationJson_Ocs rebuild(
+          void Function(ThreadGetThreadResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadGetThreadResponseApplicationJson_OcsBuilder toBuilder() =>
+      ThreadGetThreadResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadGetThreadResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadGetThreadResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class ThreadGetThreadResponseApplicationJson_OcsBuilder
+    implements
+        Builder<ThreadGetThreadResponseApplicationJson_Ocs, ThreadGetThreadResponseApplicationJson_OcsBuilder>,
+        $ThreadGetThreadResponseApplicationJson_OcsInterfaceBuilder {
+  _$ThreadGetThreadResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  ThreadInfoBuilder? _data;
+  ThreadInfoBuilder get data => _$this._data ??= ThreadInfoBuilder();
+  set data(covariant ThreadInfoBuilder? data) => _$this._data = data;
+
+  ThreadGetThreadResponseApplicationJson_OcsBuilder() {
+    ThreadGetThreadResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  ThreadGetThreadResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadGetThreadResponseApplicationJson_Ocs other) {
+    _$v = other as _$ThreadGetThreadResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(ThreadGetThreadResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadGetThreadResponseApplicationJson_Ocs build() => _build();
+
+  _$ThreadGetThreadResponseApplicationJson_Ocs _build() {
+    ThreadGetThreadResponseApplicationJson_Ocs._validate(this);
+    _$ThreadGetThreadResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadGetThreadResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'ThreadGetThreadResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadGetThreadResponseApplicationJsonInterfaceBuilder {
+  void replace($ThreadGetThreadResponseApplicationJsonInterface other);
+  void update(void Function($ThreadGetThreadResponseApplicationJsonInterfaceBuilder) updates);
+  ThreadGetThreadResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(ThreadGetThreadResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$ThreadGetThreadResponseApplicationJson extends ThreadGetThreadResponseApplicationJson {
+  @override
+  final ThreadGetThreadResponseApplicationJson_Ocs ocs;
+
+  factory _$ThreadGetThreadResponseApplicationJson(
+          [void Function(ThreadGetThreadResponseApplicationJsonBuilder)? updates]) =>
+      (ThreadGetThreadResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$ThreadGetThreadResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  ThreadGetThreadResponseApplicationJson rebuild(
+          void Function(ThreadGetThreadResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadGetThreadResponseApplicationJsonBuilder toBuilder() =>
+      ThreadGetThreadResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadGetThreadResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadGetThreadResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class ThreadGetThreadResponseApplicationJsonBuilder
+    implements
+        Builder<ThreadGetThreadResponseApplicationJson, ThreadGetThreadResponseApplicationJsonBuilder>,
+        $ThreadGetThreadResponseApplicationJsonInterfaceBuilder {
+  _$ThreadGetThreadResponseApplicationJson? _$v;
+
+  ThreadGetThreadResponseApplicationJson_OcsBuilder? _ocs;
+  ThreadGetThreadResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= ThreadGetThreadResponseApplicationJson_OcsBuilder();
+  set ocs(covariant ThreadGetThreadResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  ThreadGetThreadResponseApplicationJsonBuilder() {
+    ThreadGetThreadResponseApplicationJson._defaults(this);
+  }
+
+  ThreadGetThreadResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadGetThreadResponseApplicationJson other) {
+    _$v = other as _$ThreadGetThreadResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(ThreadGetThreadResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadGetThreadResponseApplicationJson build() => _build();
+
+  _$ThreadGetThreadResponseApplicationJson _build() {
+    ThreadGetThreadResponseApplicationJson._validate(this);
+    _$ThreadGetThreadResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadGetThreadResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'ThreadGetThreadResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadRenameThreadRequestApplicationJsonInterfaceBuilder {
+  void replace($ThreadRenameThreadRequestApplicationJsonInterface other);
+  void update(void Function($ThreadRenameThreadRequestApplicationJsonInterfaceBuilder) updates);
+  String? get threadTitle;
+  set threadTitle(String? threadTitle);
+}
+
+class _$ThreadRenameThreadRequestApplicationJson extends ThreadRenameThreadRequestApplicationJson {
+  @override
+  final String threadTitle;
+
+  factory _$ThreadRenameThreadRequestApplicationJson(
+          [void Function(ThreadRenameThreadRequestApplicationJsonBuilder)? updates]) =>
+      (ThreadRenameThreadRequestApplicationJsonBuilder()..update(updates))._build();
+
+  _$ThreadRenameThreadRequestApplicationJson._({required this.threadTitle}) : super._();
+  @override
+  ThreadRenameThreadRequestApplicationJson rebuild(
+          void Function(ThreadRenameThreadRequestApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadRenameThreadRequestApplicationJsonBuilder toBuilder() =>
+      ThreadRenameThreadRequestApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadRenameThreadRequestApplicationJson && threadTitle == other.threadTitle;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, threadTitle.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadRenameThreadRequestApplicationJson')..add('threadTitle', threadTitle))
+        .toString();
+  }
+}
+
+class ThreadRenameThreadRequestApplicationJsonBuilder
+    implements
+        Builder<ThreadRenameThreadRequestApplicationJson, ThreadRenameThreadRequestApplicationJsonBuilder>,
+        $ThreadRenameThreadRequestApplicationJsonInterfaceBuilder {
+  _$ThreadRenameThreadRequestApplicationJson? _$v;
+
+  String? _threadTitle;
+  String? get threadTitle => _$this._threadTitle;
+  set threadTitle(covariant String? threadTitle) => _$this._threadTitle = threadTitle;
+
+  ThreadRenameThreadRequestApplicationJsonBuilder() {
+    ThreadRenameThreadRequestApplicationJson._defaults(this);
+  }
+
+  ThreadRenameThreadRequestApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _threadTitle = $v.threadTitle;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadRenameThreadRequestApplicationJson other) {
+    _$v = other as _$ThreadRenameThreadRequestApplicationJson;
+  }
+
+  @override
+  void update(void Function(ThreadRenameThreadRequestApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadRenameThreadRequestApplicationJson build() => _build();
+
+  _$ThreadRenameThreadRequestApplicationJson _build() {
+    ThreadRenameThreadRequestApplicationJson._validate(this);
+    final _$result = _$v ??
+        _$ThreadRenameThreadRequestApplicationJson._(
+          threadTitle: BuiltValueNullFieldError.checkNotNull(
+              threadTitle, r'ThreadRenameThreadRequestApplicationJson', 'threadTitle'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadRenameThreadResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($ThreadRenameThreadResponseApplicationJson_OcsInterface other);
+  void update(void Function($ThreadRenameThreadResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  ThreadInfoBuilder get data;
+  set data(ThreadInfoBuilder? data);
+}
+
+class _$ThreadRenameThreadResponseApplicationJson_Ocs extends ThreadRenameThreadResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final ThreadInfo data;
+
+  factory _$ThreadRenameThreadResponseApplicationJson_Ocs(
+          [void Function(ThreadRenameThreadResponseApplicationJson_OcsBuilder)? updates]) =>
+      (ThreadRenameThreadResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$ThreadRenameThreadResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  ThreadRenameThreadResponseApplicationJson_Ocs rebuild(
+          void Function(ThreadRenameThreadResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadRenameThreadResponseApplicationJson_OcsBuilder toBuilder() =>
+      ThreadRenameThreadResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadRenameThreadResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadRenameThreadResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class ThreadRenameThreadResponseApplicationJson_OcsBuilder
+    implements
+        Builder<ThreadRenameThreadResponseApplicationJson_Ocs, ThreadRenameThreadResponseApplicationJson_OcsBuilder>,
+        $ThreadRenameThreadResponseApplicationJson_OcsInterfaceBuilder {
+  _$ThreadRenameThreadResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  ThreadInfoBuilder? _data;
+  ThreadInfoBuilder get data => _$this._data ??= ThreadInfoBuilder();
+  set data(covariant ThreadInfoBuilder? data) => _$this._data = data;
+
+  ThreadRenameThreadResponseApplicationJson_OcsBuilder() {
+    ThreadRenameThreadResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  ThreadRenameThreadResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadRenameThreadResponseApplicationJson_Ocs other) {
+    _$v = other as _$ThreadRenameThreadResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(ThreadRenameThreadResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadRenameThreadResponseApplicationJson_Ocs build() => _build();
+
+  _$ThreadRenameThreadResponseApplicationJson_Ocs _build() {
+    ThreadRenameThreadResponseApplicationJson_Ocs._validate(this);
+    _$ThreadRenameThreadResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadRenameThreadResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'ThreadRenameThreadResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadRenameThreadResponseApplicationJsonInterfaceBuilder {
+  void replace($ThreadRenameThreadResponseApplicationJsonInterface other);
+  void update(void Function($ThreadRenameThreadResponseApplicationJsonInterfaceBuilder) updates);
+  ThreadRenameThreadResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(ThreadRenameThreadResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$ThreadRenameThreadResponseApplicationJson extends ThreadRenameThreadResponseApplicationJson {
+  @override
+  final ThreadRenameThreadResponseApplicationJson_Ocs ocs;
+
+  factory _$ThreadRenameThreadResponseApplicationJson(
+          [void Function(ThreadRenameThreadResponseApplicationJsonBuilder)? updates]) =>
+      (ThreadRenameThreadResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$ThreadRenameThreadResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  ThreadRenameThreadResponseApplicationJson rebuild(
+          void Function(ThreadRenameThreadResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadRenameThreadResponseApplicationJsonBuilder toBuilder() =>
+      ThreadRenameThreadResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadRenameThreadResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadRenameThreadResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class ThreadRenameThreadResponseApplicationJsonBuilder
+    implements
+        Builder<ThreadRenameThreadResponseApplicationJson, ThreadRenameThreadResponseApplicationJsonBuilder>,
+        $ThreadRenameThreadResponseApplicationJsonInterfaceBuilder {
+  _$ThreadRenameThreadResponseApplicationJson? _$v;
+
+  ThreadRenameThreadResponseApplicationJson_OcsBuilder? _ocs;
+  ThreadRenameThreadResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= ThreadRenameThreadResponseApplicationJson_OcsBuilder();
+  set ocs(covariant ThreadRenameThreadResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  ThreadRenameThreadResponseApplicationJsonBuilder() {
+    ThreadRenameThreadResponseApplicationJson._defaults(this);
+  }
+
+  ThreadRenameThreadResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadRenameThreadResponseApplicationJson other) {
+    _$v = other as _$ThreadRenameThreadResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(ThreadRenameThreadResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadRenameThreadResponseApplicationJson build() => _build();
+
+  _$ThreadRenameThreadResponseApplicationJson _build() {
+    ThreadRenameThreadResponseApplicationJson._validate(this);
+    _$ThreadRenameThreadResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadRenameThreadResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'ThreadRenameThreadResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadSetNotificationLevelRequestApplicationJsonInterfaceBuilder {
+  void replace($ThreadSetNotificationLevelRequestApplicationJsonInterface other);
+  void update(void Function($ThreadSetNotificationLevelRequestApplicationJsonInterfaceBuilder) updates);
+  int? get level;
+  set level(int? level);
+}
+
+class _$ThreadSetNotificationLevelRequestApplicationJson extends ThreadSetNotificationLevelRequestApplicationJson {
+  @override
+  final int level;
+
+  factory _$ThreadSetNotificationLevelRequestApplicationJson(
+          [void Function(ThreadSetNotificationLevelRequestApplicationJsonBuilder)? updates]) =>
+      (ThreadSetNotificationLevelRequestApplicationJsonBuilder()..update(updates))._build();
+
+  _$ThreadSetNotificationLevelRequestApplicationJson._({required this.level}) : super._();
+  @override
+  ThreadSetNotificationLevelRequestApplicationJson rebuild(
+          void Function(ThreadSetNotificationLevelRequestApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadSetNotificationLevelRequestApplicationJsonBuilder toBuilder() =>
+      ThreadSetNotificationLevelRequestApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadSetNotificationLevelRequestApplicationJson && level == other.level;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, level.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadSetNotificationLevelRequestApplicationJson')..add('level', level))
+        .toString();
+  }
+}
+
+class ThreadSetNotificationLevelRequestApplicationJsonBuilder
+    implements
+        Builder<ThreadSetNotificationLevelRequestApplicationJson,
+            ThreadSetNotificationLevelRequestApplicationJsonBuilder>,
+        $ThreadSetNotificationLevelRequestApplicationJsonInterfaceBuilder {
+  _$ThreadSetNotificationLevelRequestApplicationJson? _$v;
+
+  int? _level;
+  int? get level => _$this._level;
+  set level(covariant int? level) => _$this._level = level;
+
+  ThreadSetNotificationLevelRequestApplicationJsonBuilder() {
+    ThreadSetNotificationLevelRequestApplicationJson._defaults(this);
+  }
+
+  ThreadSetNotificationLevelRequestApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _level = $v.level;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadSetNotificationLevelRequestApplicationJson other) {
+    _$v = other as _$ThreadSetNotificationLevelRequestApplicationJson;
+  }
+
+  @override
+  void update(void Function(ThreadSetNotificationLevelRequestApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadSetNotificationLevelRequestApplicationJson build() => _build();
+
+  _$ThreadSetNotificationLevelRequestApplicationJson _build() {
+    ThreadSetNotificationLevelRequestApplicationJson._validate(this);
+    final _$result = _$v ??
+        _$ThreadSetNotificationLevelRequestApplicationJson._(
+          level: BuiltValueNullFieldError.checkNotNull(
+              level, r'ThreadSetNotificationLevelRequestApplicationJson', 'level'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadSetNotificationLevelResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($ThreadSetNotificationLevelResponseApplicationJson_OcsInterface other);
+  void update(void Function($ThreadSetNotificationLevelResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  ThreadInfoBuilder get data;
+  set data(ThreadInfoBuilder? data);
+}
+
+class _$ThreadSetNotificationLevelResponseApplicationJson_Ocs
+    extends ThreadSetNotificationLevelResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final ThreadInfo data;
+
+  factory _$ThreadSetNotificationLevelResponseApplicationJson_Ocs(
+          [void Function(ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder)? updates]) =>
+      (ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$ThreadSetNotificationLevelResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  ThreadSetNotificationLevelResponseApplicationJson_Ocs rebuild(
+          void Function(ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder toBuilder() =>
+      ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadSetNotificationLevelResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadSetNotificationLevelResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder
+    implements
+        Builder<ThreadSetNotificationLevelResponseApplicationJson_Ocs,
+            ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder>,
+        $ThreadSetNotificationLevelResponseApplicationJson_OcsInterfaceBuilder {
+  _$ThreadSetNotificationLevelResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  ThreadInfoBuilder? _data;
+  ThreadInfoBuilder get data => _$this._data ??= ThreadInfoBuilder();
+  set data(covariant ThreadInfoBuilder? data) => _$this._data = data;
+
+  ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder() {
+    ThreadSetNotificationLevelResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadSetNotificationLevelResponseApplicationJson_Ocs other) {
+    _$v = other as _$ThreadSetNotificationLevelResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadSetNotificationLevelResponseApplicationJson_Ocs build() => _build();
+
+  _$ThreadSetNotificationLevelResponseApplicationJson_Ocs _build() {
+    ThreadSetNotificationLevelResponseApplicationJson_Ocs._validate(this);
+    _$ThreadSetNotificationLevelResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadSetNotificationLevelResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: data.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+        _$failedField = 'data';
+        data.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ThreadSetNotificationLevelResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $ThreadSetNotificationLevelResponseApplicationJsonInterfaceBuilder {
+  void replace($ThreadSetNotificationLevelResponseApplicationJsonInterface other);
+  void update(void Function($ThreadSetNotificationLevelResponseApplicationJsonInterfaceBuilder) updates);
+  ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$ThreadSetNotificationLevelResponseApplicationJson extends ThreadSetNotificationLevelResponseApplicationJson {
+  @override
+  final ThreadSetNotificationLevelResponseApplicationJson_Ocs ocs;
+
+  factory _$ThreadSetNotificationLevelResponseApplicationJson(
+          [void Function(ThreadSetNotificationLevelResponseApplicationJsonBuilder)? updates]) =>
+      (ThreadSetNotificationLevelResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$ThreadSetNotificationLevelResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  ThreadSetNotificationLevelResponseApplicationJson rebuild(
+          void Function(ThreadSetNotificationLevelResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ThreadSetNotificationLevelResponseApplicationJsonBuilder toBuilder() =>
+      ThreadSetNotificationLevelResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ThreadSetNotificationLevelResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ThreadSetNotificationLevelResponseApplicationJson')..add('ocs', ocs))
+        .toString();
+  }
+}
+
+class ThreadSetNotificationLevelResponseApplicationJsonBuilder
+    implements
+        Builder<ThreadSetNotificationLevelResponseApplicationJson,
+            ThreadSetNotificationLevelResponseApplicationJsonBuilder>,
+        $ThreadSetNotificationLevelResponseApplicationJsonInterfaceBuilder {
+  _$ThreadSetNotificationLevelResponseApplicationJson? _$v;
+
+  ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder? _ocs;
+  ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder();
+  set ocs(covariant ThreadSetNotificationLevelResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  ThreadSetNotificationLevelResponseApplicationJsonBuilder() {
+    ThreadSetNotificationLevelResponseApplicationJson._defaults(this);
+  }
+
+  ThreadSetNotificationLevelResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant ThreadSetNotificationLevelResponseApplicationJson other) {
+    _$v = other as _$ThreadSetNotificationLevelResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(ThreadSetNotificationLevelResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ThreadSetNotificationLevelResponseApplicationJson build() => _build();
+
+  _$ThreadSetNotificationLevelResponseApplicationJson _build() {
+    ThreadSetNotificationLevelResponseApplicationJson._validate(this);
+    _$ThreadSetNotificationLevelResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$ThreadSetNotificationLevelResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ThreadSetNotificationLevelResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $TempAvatarPostAvatarResponseApplicationJson_OcsInterfaceBuilder {
   void replace($TempAvatarPostAvatarResponseApplicationJson_OcsInterface other);
   void update(void Function($TempAvatarPostAvatarResponseApplicationJson_OcsInterfaceBuilder) updates);
@@ -80639,8 +89086,8 @@ abstract mixin class $RoomWithInvalidInvitationsInterfaceBuilder implements $Roo
   int? get callPermissions;
   set callPermissions(covariant int? callPermissions);
 
-  int? get callRecording;
-  set callRecording(covariant int? callRecording);
+  Room_CallRecording? get callRecording;
+  set callRecording(covariant Room_CallRecording? callRecording);
 
   int? get callStartTime;
   set callStartTime(covariant int? callStartTime);
@@ -80699,14 +89146,17 @@ abstract mixin class $RoomWithInvalidInvitationsInterfaceBuilder implements $Roo
   int? get listable;
   set listable(covariant int? listable);
 
+  String? get liveTranscriptionLanguageId;
+  set liveTranscriptionLanguageId(covariant String? liveTranscriptionLanguageId);
+
   int? get lobbyState;
   set lobbyState(covariant int? lobbyState);
 
   int? get lobbyTimer;
   set lobbyTimer(covariant int? lobbyTimer);
 
-  int? get mentionPermissions;
-  set mentionPermissions(covariant int? mentionPermissions);
+  Room_MentionPermissions? get mentionPermissions;
+  set mentionPermissions(covariant Room_MentionPermissions? mentionPermissions);
 
   int? get messageExpiration;
   set messageExpiration(covariant int? messageExpiration);
@@ -80816,7 +89266,7 @@ class _$RoomWithInvalidInvitations extends RoomWithInvalidInvitations {
   @override
   final int callPermissions;
   @override
-  final int callRecording;
+  final Room_CallRecording callRecording;
   @override
   final int callStartTime;
   @override
@@ -80856,11 +89306,13 @@ class _$RoomWithInvalidInvitations extends RoomWithInvalidInvitations {
   @override
   final int listable;
   @override
+  final String? liveTranscriptionLanguageId;
+  @override
   final int lobbyState;
   @override
   final int lobbyTimer;
   @override
-  final int mentionPermissions;
+  final Room_MentionPermissions mentionPermissions;
   @override
   final int messageExpiration;
   @override
@@ -80952,6 +89404,7 @@ class _$RoomWithInvalidInvitations extends RoomWithInvalidInvitations {
       required this.lastPing,
       required this.lastReadMessage,
       required this.listable,
+      this.liveTranscriptionLanguageId,
       required this.lobbyState,
       required this.lobbyTimer,
       required this.mentionPermissions,
@@ -81027,6 +89480,7 @@ class _$RoomWithInvalidInvitations extends RoomWithInvalidInvitations {
         lastPing == other.lastPing &&
         lastReadMessage == other.lastReadMessage &&
         listable == other.listable &&
+        liveTranscriptionLanguageId == other.liveTranscriptionLanguageId &&
         lobbyState == other.lobbyState &&
         lobbyTimer == other.lobbyTimer &&
         mentionPermissions == other.mentionPermissions &&
@@ -81094,6 +89548,7 @@ class _$RoomWithInvalidInvitations extends RoomWithInvalidInvitations {
     _$hash = $jc(_$hash, lastPing.hashCode);
     _$hash = $jc(_$hash, lastReadMessage.hashCode);
     _$hash = $jc(_$hash, listable.hashCode);
+    _$hash = $jc(_$hash, liveTranscriptionLanguageId.hashCode);
     _$hash = $jc(_$hash, lobbyState.hashCode);
     _$hash = $jc(_$hash, lobbyTimer.hashCode);
     _$hash = $jc(_$hash, mentionPermissions.hashCode);
@@ -81163,6 +89618,7 @@ class _$RoomWithInvalidInvitations extends RoomWithInvalidInvitations {
           ..add('lastPing', lastPing)
           ..add('lastReadMessage', lastReadMessage)
           ..add('listable', listable)
+          ..add('liveTranscriptionLanguageId', liveTranscriptionLanguageId)
           ..add('lobbyState', lobbyState)
           ..add('lobbyTimer', lobbyTimer)
           ..add('mentionPermissions', mentionPermissions)
@@ -81252,9 +89708,9 @@ class RoomWithInvalidInvitationsBuilder
   int? get callPermissions => _$this._callPermissions;
   set callPermissions(covariant int? callPermissions) => _$this._callPermissions = callPermissions;
 
-  int? _callRecording;
-  int? get callRecording => _$this._callRecording;
-  set callRecording(covariant int? callRecording) => _$this._callRecording = callRecording;
+  Room_CallRecording? _callRecording;
+  Room_CallRecording? get callRecording => _$this._callRecording;
+  set callRecording(covariant Room_CallRecording? callRecording) => _$this._callRecording = callRecording;
 
   int? _callStartTime;
   int? get callStartTime => _$this._callStartTime;
@@ -81334,6 +89790,11 @@ class RoomWithInvalidInvitationsBuilder
   int? get listable => _$this._listable;
   set listable(covariant int? listable) => _$this._listable = listable;
 
+  String? _liveTranscriptionLanguageId;
+  String? get liveTranscriptionLanguageId => _$this._liveTranscriptionLanguageId;
+  set liveTranscriptionLanguageId(covariant String? liveTranscriptionLanguageId) =>
+      _$this._liveTranscriptionLanguageId = liveTranscriptionLanguageId;
+
   int? _lobbyState;
   int? get lobbyState => _$this._lobbyState;
   set lobbyState(covariant int? lobbyState) => _$this._lobbyState = lobbyState;
@@ -81342,9 +89803,10 @@ class RoomWithInvalidInvitationsBuilder
   int? get lobbyTimer => _$this._lobbyTimer;
   set lobbyTimer(covariant int? lobbyTimer) => _$this._lobbyTimer = lobbyTimer;
 
-  int? _mentionPermissions;
-  int? get mentionPermissions => _$this._mentionPermissions;
-  set mentionPermissions(covariant int? mentionPermissions) => _$this._mentionPermissions = mentionPermissions;
+  Room_MentionPermissions? _mentionPermissions;
+  Room_MentionPermissions? get mentionPermissions => _$this._mentionPermissions;
+  set mentionPermissions(covariant Room_MentionPermissions? mentionPermissions) =>
+      _$this._mentionPermissions = mentionPermissions;
 
   int? _messageExpiration;
   int? get messageExpiration => _$this._messageExpiration;
@@ -81493,6 +89955,7 @@ class RoomWithInvalidInvitationsBuilder
       _lastPing = $v.lastPing;
       _lastReadMessage = $v.lastReadMessage;
       _listable = $v.listable;
+      _liveTranscriptionLanguageId = $v.liveTranscriptionLanguageId;
       _lobbyState = $v.lobbyState;
       _lobbyTimer = $v.lobbyTimer;
       _mentionPermissions = $v.mentionPermissions;
@@ -81598,6 +90061,7 @@ class RoomWithInvalidInvitationsBuilder
             lastReadMessage: BuiltValueNullFieldError.checkNotNull(
                 lastReadMessage, r'RoomWithInvalidInvitations', 'lastReadMessage'),
             listable: BuiltValueNullFieldError.checkNotNull(listable, r'RoomWithInvalidInvitations', 'listable'),
+            liveTranscriptionLanguageId: liveTranscriptionLanguageId,
             lobbyState: BuiltValueNullFieldError.checkNotNull(lobbyState, r'RoomWithInvalidInvitations', 'lobbyState'),
             lobbyTimer: BuiltValueNullFieldError.checkNotNull(lobbyTimer, r'RoomWithInvalidInvitations', 'lobbyTimer'),
             mentionPermissions: BuiltValueNullFieldError.checkNotNull(

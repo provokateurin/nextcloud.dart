@@ -79,6 +79,8 @@ class $AppConfigClient {
   ///
   /// Status codes:
   ///   * 200: Apps returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [getApps] for a method executing this request and parsing the response.
@@ -123,6 +125,8 @@ class $AppConfigClient {
   ///
   /// Status codes:
   ///   * 200: Apps returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$getApps_Request] for the request send by this method.
@@ -159,6 +163,7 @@ class $AppConfigClient {
   /// Status codes:
   ///   * 200: Keys returned
   ///   * 403: App is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getKeys] for a method executing this request and parsing the response.
@@ -209,6 +214,7 @@ class $AppConfigClient {
   /// Status codes:
   ///   * 200: Keys returned
   ///   * 403: App is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getKeys_Request] for the request send by this method.
@@ -225,6 +231,113 @@ class $AppConfigClient {
     return _i1.ResponseConverter<AppConfigGetKeysResponseApplicationJson, void>(_serializer).convert(_response);
   }
 
+  /// Builds a serializer to parse the response of [$getValue_Request].
+  @_i2.experimental
+  _i1.DynamiteSerializer<AppConfigGetValueResponseApplicationJson, void> $getValue_Serializer() =>
+      _i1.DynamiteSerializer(
+        bodyType: const FullType(AppConfigGetValueResponseApplicationJson),
+        headersType: null,
+        serializers: _$jsonSerializers,
+        validStatuses: const {200},
+      );
+
+  /// Get a the config value of an app.
+  ///
+  /// This endpoint requires admin access.
+  ///
+  /// Returns a `DynamiteRequest` backing the [getValue] operation.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [app] ID of the app.
+  ///   * [key] Key.
+  ///   * [defaultValue] Default returned value if the value is empty. Defaults to `""`.
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Value returned
+  ///   * 403: App is not allowed
+  ///   * 401: Current user is not logged in
+  ///
+  /// See:
+  ///  * [getValue] for a method executing this request and parsing the response.
+  ///  * [$getValue_Serializer] for a converter to parse the `Response` from an executed this request.
+  @_i2.experimental
+  _i3.Request $getValue_Request({required String app, required String key, String? defaultValue, bool? oCSAPIRequest}) {
+    final _parameters = <String, Object?>{};
+    final __app = _$jsonSerializers.serialize(app, specifiedType: const FullType(String));
+    _parameters['app'] = __app;
+
+    final __key = _$jsonSerializers.serialize(key, specifiedType: const FullType(String));
+    _parameters['key'] = __key;
+
+    var __defaultValue = _$jsonSerializers.serialize(defaultValue, specifiedType: const FullType(String));
+    __defaultValue ??= '';
+    _parameters['defaultValue'] = __defaultValue;
+
+    final _path = _i6.UriTemplate(
+      '/ocs/v2.php/apps/provisioning_api/api/v1/config/apps/{app}/{key}{?defaultValue*}',
+    ).expand(_parameters);
+    final _uri = Uri.parse('${_rootClient.baseURL}$_path');
+    final _request = _i3.Request('get', _uri);
+    _request.headers['Accept'] = 'application/json';
+    // coverage:ignore-start
+    final authentication = _i4.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
+      (auth) => switch (auth) {
+        _i1.DynamiteHttpBearerAuthentication() || _i1.DynamiteHttpBasicAuthentication() => true,
+        _ => false,
+      },
+    );
+
+    if (authentication != null) {
+      _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
+    }
+
+    // coverage:ignore-end
+    var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
+    __oCSAPIRequest ??= true;
+    _request.headers['OCS-APIRequest'] = const _i5.HeaderEncoder().convert(__oCSAPIRequest);
+
+    return _request;
+  }
+
+  /// Get a the config value of an app.
+  ///
+  /// This endpoint requires admin access.
+  ///
+  /// Returns a [Future] containing a `DynamiteResponse` with the status code, deserialized body and headers.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [app] ID of the app.
+  ///   * [key] Key.
+  ///   * [defaultValue] Default returned value if the value is empty. Defaults to `""`.
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Value returned
+  ///   * 403: App is not allowed
+  ///   * 401: Current user is not logged in
+  ///
+  /// See:
+  ///  * [$getValue_Request] for the request send by this method.
+  ///  * [$getValue_Serializer] for a converter to parse the `Response` from an executed request.
+  Future<_i1.DynamiteResponse<AppConfigGetValueResponseApplicationJson, void>> getValue({
+    required String app,
+    required String key,
+    String? defaultValue,
+    bool? oCSAPIRequest,
+  }) async {
+    final _request = $getValue_Request(app: app, key: key, defaultValue: defaultValue, oCSAPIRequest: oCSAPIRequest);
+    final _streamedResponse = await _rootClient.httpClient.send(_request);
+    final _response = await _i3.Response.fromStream(_streamedResponse);
+
+    final _serializer = $getValue_Serializer();
+    return _i1.ResponseConverter<AppConfigGetValueResponseApplicationJson, void>(_serializer).convert(_response);
+  }
+
   /// Builds a serializer to parse the response of [$setValue_Request].
   @_i2.experimental
   _i1.DynamiteSerializer<AppConfigSetValueResponseApplicationJson, void> $setValue_Serializer() =>
@@ -232,7 +345,7 @@ class $AppConfigClient {
         bodyType: const FullType(AppConfigSetValueResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Update the config value of an app.
@@ -250,6 +363,7 @@ class $AppConfigClient {
   /// Status codes:
   ///   * 200: Value updated successfully
   ///   * 403: App or key is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setValue] for a method executing this request and parsing the response.
@@ -315,6 +429,7 @@ class $AppConfigClient {
   /// Status codes:
   ///   * 200: Value updated successfully
   ///   * 403: App or key is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setValue_Request] for the request send by this method.
@@ -331,6 +446,108 @@ class $AppConfigClient {
 
     final _serializer = $setValue_Serializer();
     return _i1.ResponseConverter<AppConfigSetValueResponseApplicationJson, void>(_serializer).convert(_response);
+  }
+
+  /// Builds a serializer to parse the response of [$deleteKey_Request].
+  @_i2.experimental
+  _i1.DynamiteSerializer<AppConfigDeleteKeyResponseApplicationJson, void> $deleteKey_Serializer() =>
+      _i1.DynamiteSerializer(
+        bodyType: const FullType(AppConfigDeleteKeyResponseApplicationJson),
+        headersType: null,
+        serializers: _$jsonSerializers,
+        validStatuses: const {200, 401},
+      );
+
+  /// Delete a config key of an app.
+  ///
+  /// This endpoint requires admin access.
+  /// This endpoint requires password confirmation.
+  ///
+  /// Returns a `DynamiteRequest` backing the [deleteKey] operation.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [app] ID of the app.
+  ///   * [key] Key to delete.
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Key deleted successfully
+  ///   * 403: App or key is not allowed
+  ///   * 401: Current user is not logged in
+  ///
+  /// See:
+  ///  * [deleteKey] for a method executing this request and parsing the response.
+  ///  * [$deleteKey_Serializer] for a converter to parse the `Response` from an executed this request.
+  @_i2.experimental
+  _i3.Request $deleteKey_Request({required String app, required String key, bool? oCSAPIRequest}) {
+    final _parameters = <String, Object?>{};
+    final __app = _$jsonSerializers.serialize(app, specifiedType: const FullType(String));
+    _parameters['app'] = __app;
+
+    final __key = _$jsonSerializers.serialize(key, specifiedType: const FullType(String));
+    _parameters['key'] = __key;
+
+    final _path = _i6.UriTemplate(
+      '/ocs/v2.php/apps/provisioning_api/api/v1/config/apps/{app}/{key}',
+    ).expand(_parameters);
+    final _uri = Uri.parse('${_rootClient.baseURL}$_path');
+    final _request = _i3.Request('delete', _uri);
+    _request.headers['Accept'] = 'application/json';
+    // coverage:ignore-start
+    final authentication = _i4.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
+      (auth) => switch (auth) {
+        _i1.DynamiteHttpBearerAuthentication() || _i1.DynamiteHttpBasicAuthentication() => true,
+        _ => false,
+      },
+    );
+
+    if (authentication != null) {
+      _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
+    }
+
+    // coverage:ignore-end
+    var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
+    __oCSAPIRequest ??= true;
+    _request.headers['OCS-APIRequest'] = const _i5.HeaderEncoder().convert(__oCSAPIRequest);
+
+    return _request;
+  }
+
+  /// Delete a config key of an app.
+  ///
+  /// This endpoint requires admin access.
+  /// This endpoint requires password confirmation.
+  ///
+  /// Returns a [Future] containing a `DynamiteResponse` with the status code, deserialized body and headers.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [app] ID of the app.
+  ///   * [key] Key to delete.
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Key deleted successfully
+  ///   * 403: App or key is not allowed
+  ///   * 401: Current user is not logged in
+  ///
+  /// See:
+  ///  * [$deleteKey_Request] for the request send by this method.
+  ///  * [$deleteKey_Serializer] for a converter to parse the `Response` from an executed request.
+  Future<_i1.DynamiteResponse<AppConfigDeleteKeyResponseApplicationJson, void>> deleteKey({
+    required String app,
+    required String key,
+    bool? oCSAPIRequest,
+  }) async {
+    final _request = $deleteKey_Request(app: app, key: key, oCSAPIRequest: oCSAPIRequest);
+    final _streamedResponse = await _rootClient.httpClient.send(_request);
+    final _response = await _i3.Response.fromStream(_streamedResponse);
+
+    final _serializer = $deleteKey_Serializer();
+    return _i1.ResponseConverter<AppConfigDeleteKeyResponseApplicationJson, void>(_serializer).convert(_response);
   }
 }
 
@@ -362,6 +579,8 @@ class $AppsClient {
   ///
   /// Status codes:
   ///   * 200: Installed apps returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [getApps] for a method executing this request and parsing the response.
@@ -411,6 +630,8 @@ class $AppsClient {
   ///
   /// Status codes:
   ///   * 200: Installed apps returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$getApps_Request] for the request send by this method.
@@ -450,6 +671,8 @@ class $AppsClient {
   ///
   /// Status codes:
   ///   * 200: App info returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [getAppInfo] for a method executing this request and parsing the response.
@@ -499,6 +722,8 @@ class $AppsClient {
   ///
   /// Status codes:
   ///   * 200: App info returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$getAppInfo_Request] for the request send by this method.
@@ -521,7 +746,7 @@ class $AppsClient {
         bodyType: const FullType(AppsEnableResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401, 403},
       );
 
   /// Enable an app.
@@ -538,6 +763,8 @@ class $AppsClient {
   ///
   /// Status codes:
   ///   * 200: App enabled successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [enable] for a method executing this request and parsing the response.
@@ -588,6 +815,8 @@ class $AppsClient {
   ///
   /// Status codes:
   ///   * 200: App enabled successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$enable_Request] for the request send by this method.
@@ -610,7 +839,7 @@ class $AppsClient {
         bodyType: const FullType(AppsDisableResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401, 403},
       );
 
   /// Disable an app.
@@ -627,6 +856,8 @@ class $AppsClient {
   ///
   /// Status codes:
   ///   * 200: App disabled successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [disable] for a method executing this request and parsing the response.
@@ -677,6 +908,8 @@ class $AppsClient {
   ///
   /// Status codes:
   ///   * 200: App disabled successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$disable_Request] for the request send by this method.
@@ -723,6 +956,8 @@ class $GroupsClient {
   ///
   /// Status codes:
   ///   * 200: Sub admins returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [getSubAdminsOfGroup] for a method executing this request and parsing the response.
@@ -773,6 +1008,8 @@ class $GroupsClient {
   ///
   /// Status codes:
   ///   * 200: Sub admins returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$getSubAdminsOfGroup_Request] for the request send by this method.
@@ -814,6 +1051,7 @@ class $GroupsClient {
   ///
   /// Status codes:
   ///   * 200: Groups returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getGroups] for a method executing this request and parsing the response.
@@ -871,6 +1109,7 @@ class $GroupsClient {
   ///
   /// Status codes:
   ///   * 200: Groups returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getGroups_Request] for the request send by this method.
@@ -887,6 +1126,97 @@ class $GroupsClient {
 
     final _serializer = $getGroups_Serializer();
     return _i1.ResponseConverter<GroupsGetGroupsResponseApplicationJson, void>(_serializer).convert(_response);
+  }
+
+  /// Builds a serializer to parse the response of [$addGroup_Request].
+  @_i2.experimental
+  _i1.DynamiteSerializer<GroupsAddGroupResponseApplicationJson, void> $addGroup_Serializer() => _i1.DynamiteSerializer(
+        bodyType: const FullType(GroupsAddGroupResponseApplicationJson),
+        headersType: null,
+        serializers: _$jsonSerializers,
+        validStatuses: const {200, 401, 403},
+      );
+
+  /// Create a new group.
+  ///
+  /// This endpoint requires admin access.
+  /// This endpoint requires password confirmation.
+  ///
+  /// Returns a `DynamiteRequest` backing the [addGroup] operation.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Group created successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
+  ///
+  /// See:
+  ///  * [addGroup] for a method executing this request and parsing the response.
+  ///  * [$addGroup_Serializer] for a converter to parse the `Response` from an executed this request.
+  @_i2.experimental
+  _i3.Request $addGroup_Request({required GroupsAddGroupRequestApplicationJson $body, bool? oCSAPIRequest}) {
+    const _path = '/ocs/v2.php/cloud/groups';
+    final _uri = Uri.parse('${_rootClient.baseURL}$_path');
+    final _request = _i3.Request('post', _uri);
+    _request.headers['Accept'] = 'application/json';
+    // coverage:ignore-start
+    final authentication = _i4.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
+      (auth) => switch (auth) {
+        _i1.DynamiteHttpBearerAuthentication() || _i1.DynamiteHttpBasicAuthentication() => true,
+        _ => false,
+      },
+    );
+
+    if (authentication != null) {
+      _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
+    }
+
+    // coverage:ignore-end
+    var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
+    __oCSAPIRequest ??= true;
+    _request.headers['OCS-APIRequest'] = const _i5.HeaderEncoder().convert(__oCSAPIRequest);
+
+    _request.headers['Content-Type'] = 'application/json';
+    _request.body = json.encode(
+      _$jsonSerializers.serialize($body, specifiedType: const FullType(GroupsAddGroupRequestApplicationJson)),
+    );
+    return _request;
+  }
+
+  /// Create a new group.
+  ///
+  /// This endpoint requires admin access.
+  /// This endpoint requires password confirmation.
+  ///
+  /// Returns a [Future] containing a `DynamiteResponse` with the status code, deserialized body and headers.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Group created successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
+  ///
+  /// See:
+  ///  * [$addGroup_Request] for the request send by this method.
+  ///  * [$addGroup_Serializer] for a converter to parse the `Response` from an executed request.
+  Future<_i1.DynamiteResponse<GroupsAddGroupResponseApplicationJson, void>> addGroup({
+    required GroupsAddGroupRequestApplicationJson $body,
+    bool? oCSAPIRequest,
+  }) async {
+    final _request = $addGroup_Request(oCSAPIRequest: oCSAPIRequest, $body: $body);
+    final _streamedResponse = await _rootClient.httpClient.send(_request);
+    final _response = await _i3.Response.fromStream(_streamedResponse);
+
+    final _serializer = $addGroup_Serializer();
+    return _i1.ResponseConverter<GroupsAddGroupResponseApplicationJson, void>(_serializer).convert(_response);
   }
 
   /// Builds a serializer to parse the response of [$getGroup_Request].
@@ -910,6 +1240,7 @@ class $GroupsClient {
   ///
   /// Status codes:
   ///   * 200: Group users returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getGroup] for a method executing this request and parsing the response.
@@ -959,6 +1290,7 @@ class $GroupsClient {
   ///
   /// Status codes:
   ///   * 200: Group users returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getGroup_Request] for the request send by this method.
@@ -974,6 +1306,205 @@ class $GroupsClient {
 
     final _serializer = $getGroup_Serializer();
     return _i1.ResponseConverter<GroupsGetGroupResponseApplicationJson, void>(_serializer).convert(_response);
+  }
+
+  /// Builds a serializer to parse the response of [$updateGroup_Request].
+  @_i2.experimental
+  _i1.DynamiteSerializer<GroupsUpdateGroupResponseApplicationJson, void> $updateGroup_Serializer() =>
+      _i1.DynamiteSerializer(
+        bodyType: const FullType(GroupsUpdateGroupResponseApplicationJson),
+        headersType: null,
+        serializers: _$jsonSerializers,
+        validStatuses: const {200, 401, 403},
+      );
+
+  /// Update a group.
+  ///
+  /// This endpoint requires admin access.
+  /// This endpoint requires password confirmation.
+  ///
+  /// Returns a `DynamiteRequest` backing the [updateGroup] operation.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [groupId] ID of the group.
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Group updated successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
+  ///
+  /// See:
+  ///  * [updateGroup] for a method executing this request and parsing the response.
+  ///  * [$updateGroup_Serializer] for a converter to parse the `Response` from an executed this request.
+  @_i2.experimental
+  _i3.Request $updateGroup_Request({
+    required String groupId,
+    required GroupsUpdateGroupRequestApplicationJson $body,
+    bool? oCSAPIRequest,
+  }) {
+    final _parameters = <String, Object?>{};
+    final __groupId = _$jsonSerializers.serialize(groupId, specifiedType: const FullType(String));
+    _i5.checkString(__groupId, 'groupId', pattern: RegExp(r'^.+$'));
+    _parameters['groupId'] = __groupId;
+
+    final _path = _i6.UriTemplate('/ocs/v2.php/cloud/groups/{groupId}').expand(_parameters);
+    final _uri = Uri.parse('${_rootClient.baseURL}$_path');
+    final _request = _i3.Request('put', _uri);
+    _request.headers['Accept'] = 'application/json';
+    // coverage:ignore-start
+    final authentication = _i4.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
+      (auth) => switch (auth) {
+        _i1.DynamiteHttpBearerAuthentication() || _i1.DynamiteHttpBasicAuthentication() => true,
+        _ => false,
+      },
+    );
+
+    if (authentication != null) {
+      _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
+    }
+
+    // coverage:ignore-end
+    var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
+    __oCSAPIRequest ??= true;
+    _request.headers['OCS-APIRequest'] = const _i5.HeaderEncoder().convert(__oCSAPIRequest);
+
+    _request.headers['Content-Type'] = 'application/json';
+    _request.body = json.encode(
+      _$jsonSerializers.serialize($body, specifiedType: const FullType(GroupsUpdateGroupRequestApplicationJson)),
+    );
+    return _request;
+  }
+
+  /// Update a group.
+  ///
+  /// This endpoint requires admin access.
+  /// This endpoint requires password confirmation.
+  ///
+  /// Returns a [Future] containing a `DynamiteResponse` with the status code, deserialized body and headers.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [groupId] ID of the group.
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Group updated successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
+  ///
+  /// See:
+  ///  * [$updateGroup_Request] for the request send by this method.
+  ///  * [$updateGroup_Serializer] for a converter to parse the `Response` from an executed request.
+  Future<_i1.DynamiteResponse<GroupsUpdateGroupResponseApplicationJson, void>> updateGroup({
+    required String groupId,
+    required GroupsUpdateGroupRequestApplicationJson $body,
+    bool? oCSAPIRequest,
+  }) async {
+    final _request = $updateGroup_Request(groupId: groupId, oCSAPIRequest: oCSAPIRequest, $body: $body);
+    final _streamedResponse = await _rootClient.httpClient.send(_request);
+    final _response = await _i3.Response.fromStream(_streamedResponse);
+
+    final _serializer = $updateGroup_Serializer();
+    return _i1.ResponseConverter<GroupsUpdateGroupResponseApplicationJson, void>(_serializer).convert(_response);
+  }
+
+  /// Builds a serializer to parse the response of [$deleteGroup_Request].
+  @_i2.experimental
+  _i1.DynamiteSerializer<GroupsDeleteGroupResponseApplicationJson, void> $deleteGroup_Serializer() =>
+      _i1.DynamiteSerializer(
+        bodyType: const FullType(GroupsDeleteGroupResponseApplicationJson),
+        headersType: null,
+        serializers: _$jsonSerializers,
+        validStatuses: const {200, 401, 403},
+      );
+
+  /// Delete a group.
+  ///
+  /// This endpoint requires admin access.
+  /// This endpoint requires password confirmation.
+  ///
+  /// Returns a `DynamiteRequest` backing the [deleteGroup] operation.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [groupId] ID of the group.
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Group deleted successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
+  ///
+  /// See:
+  ///  * [deleteGroup] for a method executing this request and parsing the response.
+  ///  * [$deleteGroup_Serializer] for a converter to parse the `Response` from an executed this request.
+  @_i2.experimental
+  _i3.Request $deleteGroup_Request({required String groupId, bool? oCSAPIRequest}) {
+    final _parameters = <String, Object?>{};
+    final __groupId = _$jsonSerializers.serialize(groupId, specifiedType: const FullType(String));
+    _i5.checkString(__groupId, 'groupId', pattern: RegExp(r'^.+$'));
+    _parameters['groupId'] = __groupId;
+
+    final _path = _i6.UriTemplate('/ocs/v2.php/cloud/groups/{groupId}').expand(_parameters);
+    final _uri = Uri.parse('${_rootClient.baseURL}$_path');
+    final _request = _i3.Request('delete', _uri);
+    _request.headers['Accept'] = 'application/json';
+    // coverage:ignore-start
+    final authentication = _i4.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
+      (auth) => switch (auth) {
+        _i1.DynamiteHttpBearerAuthentication() || _i1.DynamiteHttpBasicAuthentication() => true,
+        _ => false,
+      },
+    );
+
+    if (authentication != null) {
+      _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
+    }
+
+    // coverage:ignore-end
+    var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
+    __oCSAPIRequest ??= true;
+    _request.headers['OCS-APIRequest'] = const _i5.HeaderEncoder().convert(__oCSAPIRequest);
+
+    return _request;
+  }
+
+  /// Delete a group.
+  ///
+  /// This endpoint requires admin access.
+  /// This endpoint requires password confirmation.
+  ///
+  /// Returns a [Future] containing a `DynamiteResponse` with the status code, deserialized body and headers.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [groupId] ID of the group.
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Group deleted successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
+  ///
+  /// See:
+  ///  * [$deleteGroup_Request] for the request send by this method.
+  ///  * [$deleteGroup_Serializer] for a converter to parse the `Response` from an executed request.
+  Future<_i1.DynamiteResponse<GroupsDeleteGroupResponseApplicationJson, void>> deleteGroup({
+    required String groupId,
+    bool? oCSAPIRequest,
+  }) async {
+    final _request = $deleteGroup_Request(groupId: groupId, oCSAPIRequest: oCSAPIRequest);
+    final _streamedResponse = await _rootClient.httpClient.send(_request);
+    final _response = await _i3.Response.fromStream(_streamedResponse);
+
+    final _serializer = $deleteGroup_Serializer();
+    return _i1.ResponseConverter<GroupsDeleteGroupResponseApplicationJson, void>(_serializer).convert(_response);
   }
 
   /// Builds a serializer to parse the response of [$getGroupsDetails_Request].
@@ -999,6 +1530,7 @@ class $GroupsClient {
   ///
   /// Status codes:
   ///   * 200: Groups details returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getGroupsDetails] for a method executing this request and parsing the response.
@@ -1056,6 +1588,7 @@ class $GroupsClient {
   ///
   /// Status codes:
   ///   * 200: Groups details returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getGroupsDetails_Request] for the request send by this method.
@@ -1102,6 +1635,7 @@ class $GroupsClient {
   ///   * 200: User IDs returned
   ///   * 404: Group not found
   ///   * 403: Missing permissions to get users in the group
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getGroupUsers] for a method executing this request and parsing the response.
@@ -1152,6 +1686,7 @@ class $GroupsClient {
   ///   * 200: User IDs returned
   ///   * 404: Group not found
   ///   * 403: Missing permissions to get users in the group
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getGroupUsers_Request] for the request send by this method.
@@ -1192,6 +1727,7 @@ class $GroupsClient {
   ///
   /// Status codes:
   ///   * 200: Group users details returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getGroupUsersDetails] for a method executing this request and parsing the response.
@@ -1262,6 +1798,7 @@ class $GroupsClient {
   ///
   /// Status codes:
   ///   * 200: Group users details returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getGroupUsersDetails_Request] for the request send by this method.
@@ -1303,7 +1840,7 @@ class $PreferencesClient {
         bodyType: const FullType(PreferencesSetPreferenceResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 400},
+        validStatuses: const {200, 400, 401},
       );
 
   /// Update a preference value of an app.
@@ -1319,6 +1856,7 @@ class $PreferencesClient {
   /// Status codes:
   ///   * 200: Preference updated successfully
   ///   * 400: Preference invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setPreference] for a method executing this request and parsing the response.
@@ -1382,6 +1920,7 @@ class $PreferencesClient {
   /// Status codes:
   ///   * 200: Preference updated successfully
   ///   * 400: Preference invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setPreference_Request] for the request send by this method.
@@ -1412,7 +1951,7 @@ class $PreferencesClient {
         bodyType: const FullType(PreferencesDeletePreferenceResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 400},
+        validStatuses: const {200, 400, 401},
       );
 
   /// Delete a preference for an app.
@@ -1428,6 +1967,7 @@ class $PreferencesClient {
   /// Status codes:
   ///   * 200: Preference deleted successfully
   ///   * 400: Preference invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deletePreference] for a method executing this request and parsing the response.
@@ -1482,6 +2022,7 @@ class $PreferencesClient {
   /// Status codes:
   ///   * 200: Preference deleted successfully
   ///   * 400: Preference invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deletePreference_Request] for the request send by this method.
@@ -1508,7 +2049,7 @@ class $PreferencesClient {
             bodyType: const FullType(PreferencesSetMultiplePreferencesResponseApplicationJson),
             headersType: null,
             serializers: _$jsonSerializers,
-            validStatuses: const {200, 400},
+            validStatuses: const {200, 400, 401},
           );
 
   /// Update multiple preference values of an app.
@@ -1523,6 +2064,7 @@ class $PreferencesClient {
   /// Status codes:
   ///   * 200: Preferences updated successfully
   ///   * 400: Preference invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setMultiplePreferences] for a method executing this request and parsing the response.
@@ -1582,6 +2124,7 @@ class $PreferencesClient {
   /// Status codes:
   ///   * 200: Preferences updated successfully
   ///   * 400: Preference invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setMultiplePreferences_Request] for the request send by this method.
@@ -1608,7 +2151,7 @@ class $PreferencesClient {
             bodyType: const FullType(PreferencesDeleteMultiplePreferenceResponseApplicationJson),
             headersType: null,
             serializers: _$jsonSerializers,
-            validStatuses: const {200, 400},
+            validStatuses: const {200, 400, 401},
           );
 
   /// Delete multiple preferences for an app.
@@ -1624,6 +2167,7 @@ class $PreferencesClient {
   /// Status codes:
   ///   * 200: Preferences deleted successfully
   ///   * 400: Preference invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteMultiplePreference] for a method executing this request and parsing the response.
@@ -1685,6 +2229,7 @@ class $PreferencesClient {
   /// Status codes:
   ///   * 200: Preferences deleted successfully
   ///   * 400: Preference invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteMultiplePreference_Request] for the request send by this method.
@@ -1741,6 +2286,8 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users details returned based on last logged in information
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [getLastLoggedInUsers] for a method executing this request and parsing the response.
@@ -1800,6 +2347,8 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users details returned based on last logged in information
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$getLastLoggedInUsers_Request] for the request send by this method.
@@ -1848,6 +2397,8 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User subadmin groups returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [getUserSubAdminGroups] for a method executing this request and parsing the response.
@@ -1897,6 +2448,8 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User subadmin groups returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$getUserSubAdminGroups_Request] for the request send by this method.
@@ -1922,7 +2475,7 @@ class $UsersClient {
         bodyType: const FullType(UsersAddSubAdminResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401, 403},
       );
 
   /// Make a user a subadmin of a group.
@@ -1939,6 +2492,8 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User added as group subadmin successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [addSubAdmin] for a method executing this request and parsing the response.
@@ -1997,6 +2552,8 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User added as group subadmin successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$addSubAdmin_Request] for the request send by this method.
@@ -2021,7 +2578,7 @@ class $UsersClient {
         bodyType: const FullType(UsersRemoveSubAdminResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401, 403},
       );
 
   /// Remove a user from the subadmins of a group.
@@ -2039,6 +2596,8 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User removed as group subadmin successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [removeSubAdmin] for a method executing this request and parsing the response.
@@ -2093,6 +2652,8 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User removed as group subadmin successfully
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$removeSubAdmin_Request] for the request send by this method.
@@ -2132,6 +2693,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getUsers] for a method executing this request and parsing the response.
@@ -2189,6 +2751,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getUsers_Request] for the request send by this method.
@@ -2229,6 +2792,7 @@ class $UsersClient {
   /// Status codes:
   ///   * 200: User added successfully
   ///   * 403: Missing permissions to make user subadmin
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [addUser] for a method executing this request and parsing the response.
@@ -2278,6 +2842,7 @@ class $UsersClient {
   /// Status codes:
   ///   * 200: User added successfully
   ///   * 403: Missing permissions to make user subadmin
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$addUser_Request] for the request send by this method.
@@ -2317,6 +2882,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users details returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getUsersDetails] for a method executing this request and parsing the response.
@@ -2374,6 +2940,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users details returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getUsersDetails_Request] for the request send by this method.
@@ -2420,6 +2987,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Disabled users details returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getDisabledUsersDetails] for a method executing this request and parsing the response.
@@ -2477,6 +3045,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Disabled users details returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getDisabledUsersDetails_Request] for the request send by this method.
@@ -2523,6 +3092,7 @@ class $UsersClient {
   /// Status codes:
   ///   * 200: Users returned
   ///   * 400: Invalid location
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [searchByPhoneNumbers] for a method executing this request and parsing the response.
@@ -2576,6 +3146,7 @@ class $UsersClient {
   /// Status codes:
   ///   * 200: Users returned
   ///   * 400: Invalid location
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$searchByPhoneNumbers_Request] for the request send by this method.
@@ -2614,6 +3185,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getUser] for a method executing this request and parsing the response.
@@ -2661,6 +3233,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getUser_Request] for the request send by this method.
@@ -2683,7 +3256,7 @@ class $UsersClient {
         bodyType: const FullType(UsersEditUserResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Update a value of the user's details.
@@ -2699,6 +3272,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User value edited successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [editUser] for a method executing this request and parsing the response.
@@ -2756,6 +3330,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User value edited successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$editUser_Request] for the request send by this method.
@@ -2780,7 +3355,7 @@ class $UsersClient {
         bodyType: const FullType(UsersDeleteUserResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Delete a user.
@@ -2796,6 +3371,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User deleted successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteUser] for a method executing this request and parsing the response.
@@ -2845,6 +3421,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User deleted successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteUser_Request] for the request send by this method.
@@ -2881,6 +3458,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Current user returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getCurrentUser] for a method executing this request and parsing the response.
@@ -2923,6 +3501,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Current user returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getCurrentUser_Request] for the request send by this method.
@@ -2958,6 +3537,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Editable fields returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getEditableFields] for a method executing this request and parsing the response.
@@ -3000,6 +3580,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Editable fields returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getEditableFields_Request] for the request send by this method.
@@ -3036,6 +3617,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Editable fields for user returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getEditableFieldsForUser] for a method executing this request and parsing the response.
@@ -3083,6 +3665,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Editable fields for user returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getEditableFieldsForUser_Request] for the request send by this method.
@@ -3121,6 +3704,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Enabled apps returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getEnabledApps] for a method executing this request and parsing the response.
@@ -3163,6 +3747,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Enabled apps returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getEnabledApps_Request] for the request send by this method.
@@ -3185,7 +3770,7 @@ class $UsersClient {
         bodyType: const FullType(UsersEditUserMultiValueResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Update multiple values of the user's details.
@@ -3202,6 +3787,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User values edited successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [editUserMultiValue] for a method executing this request and parsing the response.
@@ -3265,6 +3851,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User values edited successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$editUserMultiValue_Request] for the request send by this method.
@@ -3295,7 +3882,7 @@ class $UsersClient {
         bodyType: const FullType(UsersWipeUserDevicesResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Wipe all devices of a user.
@@ -3311,6 +3898,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Wiped all user devices successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [wipeUserDevices] for a method executing this request and parsing the response.
@@ -3360,6 +3948,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Wiped all user devices successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$wipeUserDevices_Request] for the request send by this method.
@@ -3383,7 +3972,7 @@ class $UsersClient {
         bodyType: const FullType(UsersEnableUserResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Enable a user.
@@ -3399,6 +3988,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User enabled successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [enableUser] for a method executing this request and parsing the response.
@@ -3448,6 +4038,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User enabled successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$enableUser_Request] for the request send by this method.
@@ -3471,7 +4062,7 @@ class $UsersClient {
         bodyType: const FullType(UsersDisableUserResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Disable a user.
@@ -3487,6 +4078,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User disabled successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [disableUser] for a method executing this request and parsing the response.
@@ -3536,6 +4128,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User disabled successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$disableUser_Request] for the request send by this method.
@@ -3573,6 +4166,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users groups returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getUsersGroups] for a method executing this request and parsing the response.
@@ -3620,6 +4214,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users groups returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getUsersGroups_Request] for the request send by this method.
@@ -3643,7 +4238,7 @@ class $UsersClient {
         bodyType: const FullType(UsersAddToGroupResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Add a user to a group.
@@ -3659,6 +4254,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User added to group successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [addToGroup] for a method executing this request and parsing the response.
@@ -3723,6 +4319,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User added to group successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$addToGroup_Request] for the request send by this method.
@@ -3747,7 +4344,7 @@ class $UsersClient {
         bodyType: const FullType(UsersRemoveFromGroupResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Remove a user from a group.
@@ -3764,6 +4361,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User removed from group successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [removeFromGroup] for a method executing this request and parsing the response.
@@ -3817,6 +4415,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: User removed from group successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$removeFromGroup_Request] for the request send by this method.
@@ -3855,6 +4454,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users groups returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getUsersGroupsDetails] for a method executing this request and parsing the response.
@@ -3902,6 +4502,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users groups returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getUsersGroupsDetails_Request] for the request send by this method.
@@ -3941,6 +4542,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users subadmin groups returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getUserSubAdminGroupsDetails] for a method executing this request and parsing the response.
@@ -3988,6 +4590,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Users subadmin groups returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getUserSubAdminGroupsDetails_Request] for the request send by this method.
@@ -4011,7 +4614,7 @@ class $UsersClient {
         bodyType: const FullType(UsersResendWelcomeMessageResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Resend the welcome message.
@@ -4027,6 +4630,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Resent welcome message successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [resendWelcomeMessage] for a method executing this request and parsing the response.
@@ -4076,6 +4680,7 @@ class $UsersClient {
   ///
   /// Status codes:
   ///   * 200: Resent welcome message successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$resendWelcomeMessage_Request] for the request send by this method.
@@ -4534,6 +5139,197 @@ abstract class AppConfigGetKeysResponseApplicationJson
 }
 
 @BuiltValue(instantiable: false)
+sealed class $AppConfigGetValueResponseApplicationJson_Ocs_DataInterface {
+  String get data;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$AppConfigGetValueResponseApplicationJson_Ocs_DataInterfaceBuilder].
+  $AppConfigGetValueResponseApplicationJson_Ocs_DataInterface rebuild(
+    void Function($AppConfigGetValueResponseApplicationJson_Ocs_DataInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$AppConfigGetValueResponseApplicationJson_Ocs_DataInterfaceBuilder].
+  $AppConfigGetValueResponseApplicationJson_Ocs_DataInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($AppConfigGetValueResponseApplicationJson_Ocs_DataInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($AppConfigGetValueResponseApplicationJson_Ocs_DataInterfaceBuilder b) {}
+}
+
+abstract class AppConfigGetValueResponseApplicationJson_Ocs_Data
+    implements
+        $AppConfigGetValueResponseApplicationJson_Ocs_DataInterface,
+        Built<AppConfigGetValueResponseApplicationJson_Ocs_Data,
+            AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder> {
+  /// Creates a new AppConfigGetValueResponseApplicationJson_Ocs_Data object using the builder pattern.
+  factory AppConfigGetValueResponseApplicationJson_Ocs_Data([
+    void Function(AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder)? b,
+  ]) = _$AppConfigGetValueResponseApplicationJson_Ocs_Data;
+
+  // coverage:ignore-start
+  const AppConfigGetValueResponseApplicationJson_Ocs_Data._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory AppConfigGetValueResponseApplicationJson_Ocs_Data.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for AppConfigGetValueResponseApplicationJson_Ocs_Data.
+  static Serializer<AppConfigGetValueResponseApplicationJson_Ocs_Data> get serializer =>
+      _$appConfigGetValueResponseApplicationJsonOcsDataSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder b) {
+    $AppConfigGetValueResponseApplicationJson_Ocs_DataInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder b) {
+    $AppConfigGetValueResponseApplicationJson_Ocs_DataInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $AppConfigGetValueResponseApplicationJson_OcsInterface {
+  OCSMeta get meta;
+  AppConfigGetValueResponseApplicationJson_Ocs_Data get data;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$AppConfigGetValueResponseApplicationJson_OcsInterfaceBuilder].
+  $AppConfigGetValueResponseApplicationJson_OcsInterface rebuild(
+    void Function($AppConfigGetValueResponseApplicationJson_OcsInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$AppConfigGetValueResponseApplicationJson_OcsInterfaceBuilder].
+  $AppConfigGetValueResponseApplicationJson_OcsInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($AppConfigGetValueResponseApplicationJson_OcsInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($AppConfigGetValueResponseApplicationJson_OcsInterfaceBuilder b) {}
+}
+
+abstract class AppConfigGetValueResponseApplicationJson_Ocs
+    implements
+        $AppConfigGetValueResponseApplicationJson_OcsInterface,
+        Built<AppConfigGetValueResponseApplicationJson_Ocs, AppConfigGetValueResponseApplicationJson_OcsBuilder> {
+  /// Creates a new AppConfigGetValueResponseApplicationJson_Ocs object using the builder pattern.
+  factory AppConfigGetValueResponseApplicationJson_Ocs([
+    void Function(AppConfigGetValueResponseApplicationJson_OcsBuilder)? b,
+  ]) = _$AppConfigGetValueResponseApplicationJson_Ocs;
+
+  // coverage:ignore-start
+  const AppConfigGetValueResponseApplicationJson_Ocs._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory AppConfigGetValueResponseApplicationJson_Ocs.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for AppConfigGetValueResponseApplicationJson_Ocs.
+  static Serializer<AppConfigGetValueResponseApplicationJson_Ocs> get serializer =>
+      _$appConfigGetValueResponseApplicationJsonOcsSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AppConfigGetValueResponseApplicationJson_OcsBuilder b) {
+    $AppConfigGetValueResponseApplicationJson_OcsInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(AppConfigGetValueResponseApplicationJson_OcsBuilder b) {
+    $AppConfigGetValueResponseApplicationJson_OcsInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $AppConfigGetValueResponseApplicationJsonInterface {
+  AppConfigGetValueResponseApplicationJson_Ocs get ocs;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$AppConfigGetValueResponseApplicationJsonInterfaceBuilder].
+  $AppConfigGetValueResponseApplicationJsonInterface rebuild(
+    void Function($AppConfigGetValueResponseApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$AppConfigGetValueResponseApplicationJsonInterfaceBuilder].
+  $AppConfigGetValueResponseApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($AppConfigGetValueResponseApplicationJsonInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($AppConfigGetValueResponseApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class AppConfigGetValueResponseApplicationJson
+    implements
+        $AppConfigGetValueResponseApplicationJsonInterface,
+        Built<AppConfigGetValueResponseApplicationJson, AppConfigGetValueResponseApplicationJsonBuilder> {
+  /// Creates a new AppConfigGetValueResponseApplicationJson object using the builder pattern.
+  factory AppConfigGetValueResponseApplicationJson([
+    void Function(AppConfigGetValueResponseApplicationJsonBuilder)? b,
+  ]) = _$AppConfigGetValueResponseApplicationJson;
+
+  // coverage:ignore-start
+  const AppConfigGetValueResponseApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory AppConfigGetValueResponseApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for AppConfigGetValueResponseApplicationJson.
+  static Serializer<AppConfigGetValueResponseApplicationJson> get serializer =>
+      _$appConfigGetValueResponseApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AppConfigGetValueResponseApplicationJsonBuilder b) {
+    $AppConfigGetValueResponseApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(AppConfigGetValueResponseApplicationJsonBuilder b) {
+    $AppConfigGetValueResponseApplicationJsonInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $AppConfigSetValueRequestApplicationJsonInterface {
   /// New value for the key.
   String get value;
@@ -4720,6 +5516,133 @@ abstract class AppConfigSetValueResponseApplicationJson
   @BuiltValueHook(finalizeBuilder: true)
   static void _validate(AppConfigSetValueResponseApplicationJsonBuilder b) {
     $AppConfigSetValueResponseApplicationJsonInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $AppConfigDeleteKeyResponseApplicationJson_OcsInterface {
+  OCSMeta get meta;
+  JsonObject get data;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$AppConfigDeleteKeyResponseApplicationJson_OcsInterfaceBuilder].
+  $AppConfigDeleteKeyResponseApplicationJson_OcsInterface rebuild(
+    void Function($AppConfigDeleteKeyResponseApplicationJson_OcsInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$AppConfigDeleteKeyResponseApplicationJson_OcsInterfaceBuilder].
+  $AppConfigDeleteKeyResponseApplicationJson_OcsInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($AppConfigDeleteKeyResponseApplicationJson_OcsInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($AppConfigDeleteKeyResponseApplicationJson_OcsInterfaceBuilder b) {}
+}
+
+abstract class AppConfigDeleteKeyResponseApplicationJson_Ocs
+    implements
+        $AppConfigDeleteKeyResponseApplicationJson_OcsInterface,
+        Built<AppConfigDeleteKeyResponseApplicationJson_Ocs, AppConfigDeleteKeyResponseApplicationJson_OcsBuilder> {
+  /// Creates a new AppConfigDeleteKeyResponseApplicationJson_Ocs object using the builder pattern.
+  factory AppConfigDeleteKeyResponseApplicationJson_Ocs([
+    void Function(AppConfigDeleteKeyResponseApplicationJson_OcsBuilder)? b,
+  ]) = _$AppConfigDeleteKeyResponseApplicationJson_Ocs;
+
+  // coverage:ignore-start
+  const AppConfigDeleteKeyResponseApplicationJson_Ocs._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory AppConfigDeleteKeyResponseApplicationJson_Ocs.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for AppConfigDeleteKeyResponseApplicationJson_Ocs.
+  static Serializer<AppConfigDeleteKeyResponseApplicationJson_Ocs> get serializer =>
+      _$appConfigDeleteKeyResponseApplicationJsonOcsSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AppConfigDeleteKeyResponseApplicationJson_OcsBuilder b) {
+    $AppConfigDeleteKeyResponseApplicationJson_OcsInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(AppConfigDeleteKeyResponseApplicationJson_OcsBuilder b) {
+    $AppConfigDeleteKeyResponseApplicationJson_OcsInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $AppConfigDeleteKeyResponseApplicationJsonInterface {
+  AppConfigDeleteKeyResponseApplicationJson_Ocs get ocs;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$AppConfigDeleteKeyResponseApplicationJsonInterfaceBuilder].
+  $AppConfigDeleteKeyResponseApplicationJsonInterface rebuild(
+    void Function($AppConfigDeleteKeyResponseApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$AppConfigDeleteKeyResponseApplicationJsonInterfaceBuilder].
+  $AppConfigDeleteKeyResponseApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($AppConfigDeleteKeyResponseApplicationJsonInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($AppConfigDeleteKeyResponseApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class AppConfigDeleteKeyResponseApplicationJson
+    implements
+        $AppConfigDeleteKeyResponseApplicationJsonInterface,
+        Built<AppConfigDeleteKeyResponseApplicationJson, AppConfigDeleteKeyResponseApplicationJsonBuilder> {
+  /// Creates a new AppConfigDeleteKeyResponseApplicationJson object using the builder pattern.
+  factory AppConfigDeleteKeyResponseApplicationJson([
+    void Function(AppConfigDeleteKeyResponseApplicationJsonBuilder)? b,
+  ]) = _$AppConfigDeleteKeyResponseApplicationJson;
+
+  // coverage:ignore-start
+  const AppConfigDeleteKeyResponseApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory AppConfigDeleteKeyResponseApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for AppConfigDeleteKeyResponseApplicationJson.
+  static Serializer<AppConfigDeleteKeyResponseApplicationJson> get serializer =>
+      _$appConfigDeleteKeyResponseApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AppConfigDeleteKeyResponseApplicationJsonBuilder b) {
+    $AppConfigDeleteKeyResponseApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(AppConfigDeleteKeyResponseApplicationJsonBuilder b) {
+    $AppConfigDeleteKeyResponseApplicationJsonInterface._validate(b);
   }
 }
 
@@ -5605,6 +6528,203 @@ abstract class GroupsGetGroupsResponseApplicationJson
 }
 
 @BuiltValue(instantiable: false)
+sealed class $GroupsAddGroupRequestApplicationJsonInterface {
+  static final _$displayname = _$jsonSerializers.deserialize('', specifiedType: const FullType(String))! as String;
+
+  /// ID of the group.
+  String get groupid;
+
+  /// Display name of the group.
+  String get displayname;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$GroupsAddGroupRequestApplicationJsonInterfaceBuilder].
+  $GroupsAddGroupRequestApplicationJsonInterface rebuild(
+    void Function($GroupsAddGroupRequestApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$GroupsAddGroupRequestApplicationJsonInterfaceBuilder].
+  $GroupsAddGroupRequestApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($GroupsAddGroupRequestApplicationJsonInterfaceBuilder b) {
+    b.displayname = _$displayname;
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($GroupsAddGroupRequestApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class GroupsAddGroupRequestApplicationJson
+    implements
+        $GroupsAddGroupRequestApplicationJsonInterface,
+        Built<GroupsAddGroupRequestApplicationJson, GroupsAddGroupRequestApplicationJsonBuilder> {
+  /// Creates a new GroupsAddGroupRequestApplicationJson object using the builder pattern.
+  factory GroupsAddGroupRequestApplicationJson([void Function(GroupsAddGroupRequestApplicationJsonBuilder)? b]) =
+      _$GroupsAddGroupRequestApplicationJson;
+
+  // coverage:ignore-start
+  const GroupsAddGroupRequestApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory GroupsAddGroupRequestApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for GroupsAddGroupRequestApplicationJson.
+  static Serializer<GroupsAddGroupRequestApplicationJson> get serializer =>
+      _$groupsAddGroupRequestApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(GroupsAddGroupRequestApplicationJsonBuilder b) {
+    $GroupsAddGroupRequestApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(GroupsAddGroupRequestApplicationJsonBuilder b) {
+    $GroupsAddGroupRequestApplicationJsonInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $GroupsAddGroupResponseApplicationJson_OcsInterface {
+  OCSMeta get meta;
+  JsonObject get data;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$GroupsAddGroupResponseApplicationJson_OcsInterfaceBuilder].
+  $GroupsAddGroupResponseApplicationJson_OcsInterface rebuild(
+    void Function($GroupsAddGroupResponseApplicationJson_OcsInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$GroupsAddGroupResponseApplicationJson_OcsInterfaceBuilder].
+  $GroupsAddGroupResponseApplicationJson_OcsInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($GroupsAddGroupResponseApplicationJson_OcsInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($GroupsAddGroupResponseApplicationJson_OcsInterfaceBuilder b) {}
+}
+
+abstract class GroupsAddGroupResponseApplicationJson_Ocs
+    implements
+        $GroupsAddGroupResponseApplicationJson_OcsInterface,
+        Built<GroupsAddGroupResponseApplicationJson_Ocs, GroupsAddGroupResponseApplicationJson_OcsBuilder> {
+  /// Creates a new GroupsAddGroupResponseApplicationJson_Ocs object using the builder pattern.
+  factory GroupsAddGroupResponseApplicationJson_Ocs([
+    void Function(GroupsAddGroupResponseApplicationJson_OcsBuilder)? b,
+  ]) = _$GroupsAddGroupResponseApplicationJson_Ocs;
+
+  // coverage:ignore-start
+  const GroupsAddGroupResponseApplicationJson_Ocs._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory GroupsAddGroupResponseApplicationJson_Ocs.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for GroupsAddGroupResponseApplicationJson_Ocs.
+  static Serializer<GroupsAddGroupResponseApplicationJson_Ocs> get serializer =>
+      _$groupsAddGroupResponseApplicationJsonOcsSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(GroupsAddGroupResponseApplicationJson_OcsBuilder b) {
+    $GroupsAddGroupResponseApplicationJson_OcsInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(GroupsAddGroupResponseApplicationJson_OcsBuilder b) {
+    $GroupsAddGroupResponseApplicationJson_OcsInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $GroupsAddGroupResponseApplicationJsonInterface {
+  GroupsAddGroupResponseApplicationJson_Ocs get ocs;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$GroupsAddGroupResponseApplicationJsonInterfaceBuilder].
+  $GroupsAddGroupResponseApplicationJsonInterface rebuild(
+    void Function($GroupsAddGroupResponseApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$GroupsAddGroupResponseApplicationJsonInterfaceBuilder].
+  $GroupsAddGroupResponseApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($GroupsAddGroupResponseApplicationJsonInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($GroupsAddGroupResponseApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class GroupsAddGroupResponseApplicationJson
+    implements
+        $GroupsAddGroupResponseApplicationJsonInterface,
+        Built<GroupsAddGroupResponseApplicationJson, GroupsAddGroupResponseApplicationJsonBuilder> {
+  /// Creates a new GroupsAddGroupResponseApplicationJson object using the builder pattern.
+  factory GroupsAddGroupResponseApplicationJson([void Function(GroupsAddGroupResponseApplicationJsonBuilder)? b]) =
+      _$GroupsAddGroupResponseApplicationJson;
+
+  // coverage:ignore-start
+  const GroupsAddGroupResponseApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory GroupsAddGroupResponseApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for GroupsAddGroupResponseApplicationJson.
+  static Serializer<GroupsAddGroupResponseApplicationJson> get serializer =>
+      _$groupsAddGroupResponseApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(GroupsAddGroupResponseApplicationJsonBuilder b) {
+    $GroupsAddGroupResponseApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(GroupsAddGroupResponseApplicationJsonBuilder b) {
+    $GroupsAddGroupResponseApplicationJsonInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $GroupsGetGroupResponseApplicationJson_Ocs_DataInterface {
   BuiltList<String> get users;
 
@@ -5790,6 +6910,326 @@ abstract class GroupsGetGroupResponseApplicationJson
   @BuiltValueHook(finalizeBuilder: true)
   static void _validate(GroupsGetGroupResponseApplicationJsonBuilder b) {
     $GroupsGetGroupResponseApplicationJsonInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $GroupsUpdateGroupRequestApplicationJsonInterface {
+  /// Key to update, only 'displayname'.
+  String get key;
+
+  /// New value for the key.
+  String get value;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$GroupsUpdateGroupRequestApplicationJsonInterfaceBuilder].
+  $GroupsUpdateGroupRequestApplicationJsonInterface rebuild(
+    void Function($GroupsUpdateGroupRequestApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$GroupsUpdateGroupRequestApplicationJsonInterfaceBuilder].
+  $GroupsUpdateGroupRequestApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($GroupsUpdateGroupRequestApplicationJsonInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($GroupsUpdateGroupRequestApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class GroupsUpdateGroupRequestApplicationJson
+    implements
+        $GroupsUpdateGroupRequestApplicationJsonInterface,
+        Built<GroupsUpdateGroupRequestApplicationJson, GroupsUpdateGroupRequestApplicationJsonBuilder> {
+  /// Creates a new GroupsUpdateGroupRequestApplicationJson object using the builder pattern.
+  factory GroupsUpdateGroupRequestApplicationJson([void Function(GroupsUpdateGroupRequestApplicationJsonBuilder)? b]) =
+      _$GroupsUpdateGroupRequestApplicationJson;
+
+  // coverage:ignore-start
+  const GroupsUpdateGroupRequestApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory GroupsUpdateGroupRequestApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for GroupsUpdateGroupRequestApplicationJson.
+  static Serializer<GroupsUpdateGroupRequestApplicationJson> get serializer =>
+      _$groupsUpdateGroupRequestApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(GroupsUpdateGroupRequestApplicationJsonBuilder b) {
+    $GroupsUpdateGroupRequestApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(GroupsUpdateGroupRequestApplicationJsonBuilder b) {
+    $GroupsUpdateGroupRequestApplicationJsonInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $GroupsUpdateGroupResponseApplicationJson_OcsInterface {
+  OCSMeta get meta;
+  JsonObject get data;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$GroupsUpdateGroupResponseApplicationJson_OcsInterfaceBuilder].
+  $GroupsUpdateGroupResponseApplicationJson_OcsInterface rebuild(
+    void Function($GroupsUpdateGroupResponseApplicationJson_OcsInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$GroupsUpdateGroupResponseApplicationJson_OcsInterfaceBuilder].
+  $GroupsUpdateGroupResponseApplicationJson_OcsInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($GroupsUpdateGroupResponseApplicationJson_OcsInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($GroupsUpdateGroupResponseApplicationJson_OcsInterfaceBuilder b) {}
+}
+
+abstract class GroupsUpdateGroupResponseApplicationJson_Ocs
+    implements
+        $GroupsUpdateGroupResponseApplicationJson_OcsInterface,
+        Built<GroupsUpdateGroupResponseApplicationJson_Ocs, GroupsUpdateGroupResponseApplicationJson_OcsBuilder> {
+  /// Creates a new GroupsUpdateGroupResponseApplicationJson_Ocs object using the builder pattern.
+  factory GroupsUpdateGroupResponseApplicationJson_Ocs([
+    void Function(GroupsUpdateGroupResponseApplicationJson_OcsBuilder)? b,
+  ]) = _$GroupsUpdateGroupResponseApplicationJson_Ocs;
+
+  // coverage:ignore-start
+  const GroupsUpdateGroupResponseApplicationJson_Ocs._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory GroupsUpdateGroupResponseApplicationJson_Ocs.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for GroupsUpdateGroupResponseApplicationJson_Ocs.
+  static Serializer<GroupsUpdateGroupResponseApplicationJson_Ocs> get serializer =>
+      _$groupsUpdateGroupResponseApplicationJsonOcsSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(GroupsUpdateGroupResponseApplicationJson_OcsBuilder b) {
+    $GroupsUpdateGroupResponseApplicationJson_OcsInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(GroupsUpdateGroupResponseApplicationJson_OcsBuilder b) {
+    $GroupsUpdateGroupResponseApplicationJson_OcsInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $GroupsUpdateGroupResponseApplicationJsonInterface {
+  GroupsUpdateGroupResponseApplicationJson_Ocs get ocs;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$GroupsUpdateGroupResponseApplicationJsonInterfaceBuilder].
+  $GroupsUpdateGroupResponseApplicationJsonInterface rebuild(
+    void Function($GroupsUpdateGroupResponseApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$GroupsUpdateGroupResponseApplicationJsonInterfaceBuilder].
+  $GroupsUpdateGroupResponseApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($GroupsUpdateGroupResponseApplicationJsonInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($GroupsUpdateGroupResponseApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class GroupsUpdateGroupResponseApplicationJson
+    implements
+        $GroupsUpdateGroupResponseApplicationJsonInterface,
+        Built<GroupsUpdateGroupResponseApplicationJson, GroupsUpdateGroupResponseApplicationJsonBuilder> {
+  /// Creates a new GroupsUpdateGroupResponseApplicationJson object using the builder pattern.
+  factory GroupsUpdateGroupResponseApplicationJson([
+    void Function(GroupsUpdateGroupResponseApplicationJsonBuilder)? b,
+  ]) = _$GroupsUpdateGroupResponseApplicationJson;
+
+  // coverage:ignore-start
+  const GroupsUpdateGroupResponseApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory GroupsUpdateGroupResponseApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for GroupsUpdateGroupResponseApplicationJson.
+  static Serializer<GroupsUpdateGroupResponseApplicationJson> get serializer =>
+      _$groupsUpdateGroupResponseApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(GroupsUpdateGroupResponseApplicationJsonBuilder b) {
+    $GroupsUpdateGroupResponseApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(GroupsUpdateGroupResponseApplicationJsonBuilder b) {
+    $GroupsUpdateGroupResponseApplicationJsonInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $GroupsDeleteGroupResponseApplicationJson_OcsInterface {
+  OCSMeta get meta;
+  JsonObject get data;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$GroupsDeleteGroupResponseApplicationJson_OcsInterfaceBuilder].
+  $GroupsDeleteGroupResponseApplicationJson_OcsInterface rebuild(
+    void Function($GroupsDeleteGroupResponseApplicationJson_OcsInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$GroupsDeleteGroupResponseApplicationJson_OcsInterfaceBuilder].
+  $GroupsDeleteGroupResponseApplicationJson_OcsInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($GroupsDeleteGroupResponseApplicationJson_OcsInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($GroupsDeleteGroupResponseApplicationJson_OcsInterfaceBuilder b) {}
+}
+
+abstract class GroupsDeleteGroupResponseApplicationJson_Ocs
+    implements
+        $GroupsDeleteGroupResponseApplicationJson_OcsInterface,
+        Built<GroupsDeleteGroupResponseApplicationJson_Ocs, GroupsDeleteGroupResponseApplicationJson_OcsBuilder> {
+  /// Creates a new GroupsDeleteGroupResponseApplicationJson_Ocs object using the builder pattern.
+  factory GroupsDeleteGroupResponseApplicationJson_Ocs([
+    void Function(GroupsDeleteGroupResponseApplicationJson_OcsBuilder)? b,
+  ]) = _$GroupsDeleteGroupResponseApplicationJson_Ocs;
+
+  // coverage:ignore-start
+  const GroupsDeleteGroupResponseApplicationJson_Ocs._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory GroupsDeleteGroupResponseApplicationJson_Ocs.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for GroupsDeleteGroupResponseApplicationJson_Ocs.
+  static Serializer<GroupsDeleteGroupResponseApplicationJson_Ocs> get serializer =>
+      _$groupsDeleteGroupResponseApplicationJsonOcsSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(GroupsDeleteGroupResponseApplicationJson_OcsBuilder b) {
+    $GroupsDeleteGroupResponseApplicationJson_OcsInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(GroupsDeleteGroupResponseApplicationJson_OcsBuilder b) {
+    $GroupsDeleteGroupResponseApplicationJson_OcsInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $GroupsDeleteGroupResponseApplicationJsonInterface {
+  GroupsDeleteGroupResponseApplicationJson_Ocs get ocs;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$GroupsDeleteGroupResponseApplicationJsonInterfaceBuilder].
+  $GroupsDeleteGroupResponseApplicationJsonInterface rebuild(
+    void Function($GroupsDeleteGroupResponseApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$GroupsDeleteGroupResponseApplicationJsonInterfaceBuilder].
+  $GroupsDeleteGroupResponseApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($GroupsDeleteGroupResponseApplicationJsonInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($GroupsDeleteGroupResponseApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class GroupsDeleteGroupResponseApplicationJson
+    implements
+        $GroupsDeleteGroupResponseApplicationJsonInterface,
+        Built<GroupsDeleteGroupResponseApplicationJson, GroupsDeleteGroupResponseApplicationJsonBuilder> {
+  /// Creates a new GroupsDeleteGroupResponseApplicationJson object using the builder pattern.
+  factory GroupsDeleteGroupResponseApplicationJson([
+    void Function(GroupsDeleteGroupResponseApplicationJsonBuilder)? b,
+  ]) = _$GroupsDeleteGroupResponseApplicationJson;
+
+  // coverage:ignore-start
+  const GroupsDeleteGroupResponseApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory GroupsDeleteGroupResponseApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for GroupsDeleteGroupResponseApplicationJson.
+  static Serializer<GroupsDeleteGroupResponseApplicationJson> get serializer =>
+      _$groupsDeleteGroupResponseApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(GroupsDeleteGroupResponseApplicationJsonBuilder b) {
+    $GroupsDeleteGroupResponseApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(GroupsDeleteGroupResponseApplicationJsonBuilder b) {
+    $GroupsDeleteGroupResponseApplicationJsonInterface._validate(b);
   }
 }
 
@@ -6260,15 +7700,6 @@ class UserDetailsScope extends EnumClass {
   @BuiltValueEnumConst(wireName: 'v2-published')
   static const UserDetailsScope v2Published = _$userDetailsScopeV2Published;
 
-  /// `private`
-  static const UserDetailsScope private = _$userDetailsScopePrivate;
-
-  /// `contacts`
-  static const UserDetailsScope contacts = _$userDetailsScopeContacts;
-
-  /// `public`
-  static const UserDetailsScope public = _$userDetailsScopePublic;
-
   /// Returns a set with all values this enum contains.
   // coverage:ignore-start
   static BuiltSet<UserDetailsScope> get values => _$userDetailsScopeValues;
@@ -6293,9 +7724,6 @@ class _$UserDetailsScopeSerializer implements PrimitiveSerializer<UserDetailsSco
     UserDetailsScope.v2Local: 'v2-local',
     UserDetailsScope.v2Federated: 'v2-federated',
     UserDetailsScope.v2Published: 'v2-published',
-    UserDetailsScope.private: 'private',
-    UserDetailsScope.contacts: 'contacts',
-    UserDetailsScope.public: 'public',
   };
 
   static const Map<Object, UserDetailsScope> _fromWire = <Object, UserDetailsScope>{
@@ -6303,9 +7731,6 @@ class _$UserDetailsScopeSerializer implements PrimitiveSerializer<UserDetailsSco
     'v2-local': UserDetailsScope.v2Local,
     'v2-federated': UserDetailsScope.v2Federated,
     'v2-published': UserDetailsScope.v2Published,
-    'private': UserDetailsScope.private,
-    'contacts': UserDetailsScope.contacts,
-    'public': UserDetailsScope.public,
   };
 
   @override
@@ -6501,8 +7926,11 @@ sealed class $UserDetailsInterface {
   UserDetailsScope? get roleScope;
   String? get storageLocation;
   BuiltList<String> get subadmin;
+  String? get timezone;
   String get twitter;
   UserDetailsScope? get twitterScope;
+  String? get bluesky;
+  UserDetailsScope? get blueskyScope;
   String get website;
   UserDetailsScope? get websiteScope;
 
@@ -12747,6 +14175,21 @@ final Serializers _$serializers = (Serializers().toBuilder()
       )
       ..add(AppConfigGetKeysResponseApplicationJson_Ocs_Data.serializer)
       ..addBuilderFactory(
+        const FullType(AppConfigGetValueResponseApplicationJson),
+        AppConfigGetValueResponseApplicationJsonBuilder.new,
+      )
+      ..add(AppConfigGetValueResponseApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(AppConfigGetValueResponseApplicationJson_Ocs),
+        AppConfigGetValueResponseApplicationJson_OcsBuilder.new,
+      )
+      ..add(AppConfigGetValueResponseApplicationJson_Ocs.serializer)
+      ..addBuilderFactory(
+        const FullType(AppConfigGetValueResponseApplicationJson_Ocs_Data),
+        AppConfigGetValueResponseApplicationJson_Ocs_DataBuilder.new,
+      )
+      ..add(AppConfigGetValueResponseApplicationJson_Ocs_Data.serializer)
+      ..addBuilderFactory(
         const FullType(AppConfigSetValueRequestApplicationJson),
         AppConfigSetValueRequestApplicationJsonBuilder.new,
       )
@@ -12761,6 +14204,16 @@ final Serializers _$serializers = (Serializers().toBuilder()
         AppConfigSetValueResponseApplicationJson_OcsBuilder.new,
       )
       ..add(AppConfigSetValueResponseApplicationJson_Ocs.serializer)
+      ..addBuilderFactory(
+        const FullType(AppConfigDeleteKeyResponseApplicationJson),
+        AppConfigDeleteKeyResponseApplicationJsonBuilder.new,
+      )
+      ..add(AppConfigDeleteKeyResponseApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(AppConfigDeleteKeyResponseApplicationJson_Ocs),
+        AppConfigDeleteKeyResponseApplicationJson_OcsBuilder.new,
+      )
+      ..add(AppConfigDeleteKeyResponseApplicationJson_Ocs.serializer)
       ..addBuilderFactory(
         const FullType(AppsGetAppsResponseApplicationJson),
         AppsGetAppsResponseApplicationJsonBuilder.new,
@@ -12836,6 +14289,21 @@ final Serializers _$serializers = (Serializers().toBuilder()
       )
       ..add(GroupsGetGroupsResponseApplicationJson_Ocs_Data.serializer)
       ..addBuilderFactory(
+        const FullType(GroupsAddGroupRequestApplicationJson),
+        GroupsAddGroupRequestApplicationJsonBuilder.new,
+      )
+      ..add(GroupsAddGroupRequestApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(GroupsAddGroupResponseApplicationJson),
+        GroupsAddGroupResponseApplicationJsonBuilder.new,
+      )
+      ..add(GroupsAddGroupResponseApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(GroupsAddGroupResponseApplicationJson_Ocs),
+        GroupsAddGroupResponseApplicationJson_OcsBuilder.new,
+      )
+      ..add(GroupsAddGroupResponseApplicationJson_Ocs.serializer)
+      ..addBuilderFactory(
         const FullType(GroupsGetGroupResponseApplicationJson),
         GroupsGetGroupResponseApplicationJsonBuilder.new,
       )
@@ -12850,6 +14318,31 @@ final Serializers _$serializers = (Serializers().toBuilder()
         GroupsGetGroupResponseApplicationJson_Ocs_DataBuilder.new,
       )
       ..add(GroupsGetGroupResponseApplicationJson_Ocs_Data.serializer)
+      ..addBuilderFactory(
+        const FullType(GroupsUpdateGroupRequestApplicationJson),
+        GroupsUpdateGroupRequestApplicationJsonBuilder.new,
+      )
+      ..add(GroupsUpdateGroupRequestApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(GroupsUpdateGroupResponseApplicationJson),
+        GroupsUpdateGroupResponseApplicationJsonBuilder.new,
+      )
+      ..add(GroupsUpdateGroupResponseApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(GroupsUpdateGroupResponseApplicationJson_Ocs),
+        GroupsUpdateGroupResponseApplicationJson_OcsBuilder.new,
+      )
+      ..add(GroupsUpdateGroupResponseApplicationJson_Ocs.serializer)
+      ..addBuilderFactory(
+        const FullType(GroupsDeleteGroupResponseApplicationJson),
+        GroupsDeleteGroupResponseApplicationJsonBuilder.new,
+      )
+      ..add(GroupsDeleteGroupResponseApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(GroupsDeleteGroupResponseApplicationJson_Ocs),
+        GroupsDeleteGroupResponseApplicationJson_OcsBuilder.new,
+      )
+      ..add(GroupsDeleteGroupResponseApplicationJson_Ocs.serializer)
       ..addBuilderFactory(
         const FullType(GroupsGetGroupsDetailsResponseApplicationJson),
         GroupsGetGroupsDetailsResponseApplicationJsonBuilder.new,

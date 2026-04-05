@@ -72,6 +72,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Widget items returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getWidgetItems] for a method executing this request and parsing the response.
@@ -132,6 +133,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Widget items returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getWidgetItems_Request] for the request send by this method.
@@ -180,6 +182,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Widget items returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getWidgetItemsV2] for a method executing this request and parsing the response.
@@ -245,6 +248,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Widget items returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getWidgetItemsV2_Request] for the request send by this method.
@@ -290,6 +294,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Widgets returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getWidgets] for a method executing this request and parsing the response.
@@ -332,6 +337,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Widgets returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getWidgets_Request] for the request send by this method.
@@ -367,6 +373,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Layout returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getLayout] for a method executing this request and parsing the response.
@@ -409,6 +416,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Layout returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getLayout_Request] for the request send by this method.
@@ -444,6 +452,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Statuses updated successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [updateLayout] for a method executing this request and parsing the response.
@@ -493,6 +502,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Statuses updated successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$updateLayout_Request] for the request send by this method.
@@ -529,6 +539,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Statuses returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getStatuses] for a method executing this request and parsing the response.
@@ -571,6 +582,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Statuses returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getStatuses_Request] for the request send by this method.
@@ -606,6 +618,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Statuses updated successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [updateStatuses] for a method executing this request and parsing the response.
@@ -658,6 +671,7 @@ class $DashboardApiClient {
   ///
   /// Status codes:
   ///   * 200: Statuses updated successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$updateStatuses_Request] for the request send by this method.

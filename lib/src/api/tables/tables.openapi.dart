@@ -502,7 +502,7 @@ class $Api1Client {
   ///   * [tableId] Table ID.
   ///
   /// Status codes:
-  ///   * 200: Table returned
+  ///   * 200: Scheme returned
   ///   * 403: No permissions
   ///   * 500
   ///   * 404: Not found
@@ -550,7 +550,7 @@ class $Api1Client {
   ///   * [tableId] Table ID.
   ///
   /// Status codes:
-  ///   * 200: Table returned
+  ///   * 200: Scheme returned
   ///   * 403: No permissions
   ///   * 500
   ///   * 404: Not found
@@ -1849,6 +1849,7 @@ class $Api1Client {
   ///   * 403: No permissions
   ///   * 500
   ///   * 404: Not found
+  ///   * 400: Bad request
   ///   * 401: Current user is not logged in
   ///
   /// See:
@@ -1904,6 +1905,7 @@ class $Api1Client {
   ///   * 403: No permissions
   ///   * 500
   ///   * 404: Not found
+  ///   * 400: Bad request
   ///   * 401: Current user is not logged in
   ///
   /// See:
@@ -2028,7 +2030,7 @@ class $Api1Client {
   ///   * 403: No permissions
   ///   * 500
   ///   * 404: Not found
-  ///   * 400: Invalid arguments
+  ///   * 400: Invalid input data
   ///   * 401: Current user is not logged in
   ///
   /// See:
@@ -2074,7 +2076,7 @@ class $Api1Client {
   ///   * 403: No permissions
   ///   * 500
   ///   * 404: Not found
-  ///   * 400: Invalid arguments
+  ///   * 400: Invalid input data
   ///   * 401: Current user is not logged in
   ///
   /// See:
@@ -2198,8 +2200,8 @@ class $Api1Client {
   ///
   /// Status codes:
   ///   * 200: Updated column
-  ///   * 500
-  ///   * 400: Invalid arguments
+  ///   * 400: Validation error
+  ///   * 500: Internal error
   ///   * 401: Current user is not logged in
   ///
   /// See:
@@ -2249,8 +2251,8 @@ class $Api1Client {
   ///
   /// Status codes:
   ///   * 200: Updated column
-  ///   * 500
-  ///   * 400: Invalid arguments
+  ///   * 400: Validation error
+  ///   * 500: Internal error
   ///   * 401: Current user is not logged in
   ///
   /// See:
@@ -2580,6 +2582,7 @@ class $Api1Client {
   /// Status codes:
   ///   * 200: Row returned
   ///   * 403: No permissions
+  ///   * 400: Validation error
   ///   * 404: Not found
   ///   * 500
   ///   * 401: Current user is not logged in
@@ -2635,6 +2638,7 @@ class $Api1Client {
   /// Status codes:
   ///   * 200: Row returned
   ///   * 403: No permissions
+  ///   * 400: Validation error
   ///   * 404: Not found
   ///   * 500
   ///   * 401: Current user is not logged in
@@ -2778,6 +2782,7 @@ class $Api1Client {
   /// Status codes:
   ///   * 200: Row returned
   ///   * 403: No permissions
+  ///   * 400: Validation error
   ///   * 500
   ///   * 401: Current user is not logged in
   ///
@@ -2832,6 +2837,7 @@ class $Api1Client {
   /// Status codes:
   ///   * 200: Row returned
   ///   * 403: No permissions
+  ///   * 400: Validation error
   ///   * 500
   ///   * 401: Current user is not logged in
   ///
@@ -2958,6 +2964,7 @@ class $Api1Client {
   /// Status codes:
   ///   * 200: Updated row returned
   ///   * 403: No permissions
+  ///   * 400: Validation error
   ///   * 500
   ///   * 404: Not found
   ///   * 401: Current user is not logged in
@@ -3010,6 +3017,7 @@ class $Api1Client {
   /// Status codes:
   ///   * 200: Updated row returned
   ///   * 403: No permissions
+  ///   * 400: Validation error
   ///   * 500
   ///   * 404: Not found
   ///   * 401: Current user is not logged in
@@ -5424,6 +5432,7 @@ class $ContextClient {
   ///   * 500
   ///   * 404: Not found
   ///   * 403: No permissions
+  ///   * 400: bad request
   ///   * 401: Current user is not logged in
   ///
   /// See:
@@ -5490,6 +5499,7 @@ class $ContextClient {
   ///   * 500
   ///   * 404: Not found
   ///   * 403: No permissions
+  ///   * 400: bad request
   ///   * 401: Current user is not logged in
   ///
   /// See:
@@ -6016,6 +6026,7 @@ abstract class Table_OnSharePermissions
 sealed class $View_ColumnSettingsInterface {
   int get columnId;
   int get order;
+  bool get readonly;
 
   /// Rebuilds the instance.
   ///
@@ -6197,9 +6208,17 @@ class View_Filter_Operator extends EnumClass {
   /// `contains`
   static const View_Filter_Operator contains = _$viewFilterOperatorContains;
 
+  /// `does-not-contain`
+  @BuiltValueEnumConst(wireName: 'does-not-contain')
+  static const View_Filter_Operator doesNotContain = _$viewFilterOperatorDoesNotContain;
+
   /// `is-equal`
   @BuiltValueEnumConst(wireName: 'is-equal')
   static const View_Filter_Operator isEqual = _$viewFilterOperatorIsEqual;
+
+  /// `is-not-equal`
+  @BuiltValueEnumConst(wireName: 'is-not-equal')
+  static const View_Filter_Operator isNotEqual = _$viewFilterOperatorIsNotEqual;
 
   /// `is-greater-than`
   @BuiltValueEnumConst(wireName: 'is-greater-than')
@@ -6244,7 +6263,9 @@ class _$View_Filter_OperatorSerializer implements PrimitiveSerializer<View_Filte
     View_Filter_Operator.beginsWith: 'begins-with',
     View_Filter_Operator.endsWith: 'ends-with',
     View_Filter_Operator.contains: 'contains',
+    View_Filter_Operator.doesNotContain: 'does-not-contain',
     View_Filter_Operator.isEqual: 'is-equal',
+    View_Filter_Operator.isNotEqual: 'is-not-equal',
     View_Filter_Operator.isGreaterThan: 'is-greater-than',
     View_Filter_Operator.isGreaterThanOrEqual: 'is-greater-than-or-equal',
     View_Filter_Operator.isLowerThan: 'is-lower-than',
@@ -6256,7 +6277,9 @@ class _$View_Filter_OperatorSerializer implements PrimitiveSerializer<View_Filte
     'begins-with': View_Filter_Operator.beginsWith,
     'ends-with': View_Filter_Operator.endsWith,
     'contains': View_Filter_Operator.contains,
+    'does-not-contain': View_Filter_Operator.doesNotContain,
     'is-equal': View_Filter_Operator.isEqual,
+    'is-not-equal': View_Filter_Operator.isNotEqual,
     'is-greater-than': View_Filter_Operator.isGreaterThan,
     'is-greater-than-or-equal': View_Filter_Operator.isGreaterThanOrEqual,
     'is-lower-than': View_Filter_Operator.isLowerThan,
@@ -6823,120 +6846,48 @@ abstract class Api1CreateViewRequestApplicationJson
   }
 }
 
-class Api1UpdateViewRequestApplicationJson_Data0_Key extends EnumClass {
-  const Api1UpdateViewRequestApplicationJson_Data0_Key._(super.name);
-
-  /// `title`
-  static const Api1UpdateViewRequestApplicationJson_Data0_Key title =
-      _$api1UpdateViewRequestApplicationJsonData0KeyTitle;
-
-  /// `emoji`
-  static const Api1UpdateViewRequestApplicationJson_Data0_Key emoji =
-      _$api1UpdateViewRequestApplicationJsonData0KeyEmoji;
-
-  /// `description`
-  static const Api1UpdateViewRequestApplicationJson_Data0_Key description =
-      _$api1UpdateViewRequestApplicationJsonData0KeyDescription;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<Api1UpdateViewRequestApplicationJson_Data0_Key> get values =>
-      _$api1UpdateViewRequestApplicationJsonData0KeyValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static Api1UpdateViewRequestApplicationJson_Data0_Key valueOf(String name) =>
-      _$valueOfApi1UpdateViewRequestApplicationJson_Data0_Key(name);
-
-  /// Returns the serialized value of this enum value.
-  String get value => _$jsonSerializers.serializeWith(serializer, this)! as String;
-
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data0_Key.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data0_Key> get serializer =>
-      const _$Api1UpdateViewRequestApplicationJson_Data0_KeySerializer();
-}
-
-class _$Api1UpdateViewRequestApplicationJson_Data0_KeySerializer
-    implements PrimitiveSerializer<Api1UpdateViewRequestApplicationJson_Data0_Key> {
-  const _$Api1UpdateViewRequestApplicationJson_Data0_KeySerializer();
-
-  static const Map<Api1UpdateViewRequestApplicationJson_Data0_Key, Object> _toWire =
-      <Api1UpdateViewRequestApplicationJson_Data0_Key, Object>{
-    Api1UpdateViewRequestApplicationJson_Data0_Key.title: 'title',
-    Api1UpdateViewRequestApplicationJson_Data0_Key.emoji: 'emoji',
-    Api1UpdateViewRequestApplicationJson_Data0_Key.description: 'description',
-  };
-
-  static const Map<Object, Api1UpdateViewRequestApplicationJson_Data0_Key> _fromWire =
-      <Object, Api1UpdateViewRequestApplicationJson_Data0_Key>{
-    'title': Api1UpdateViewRequestApplicationJson_Data0_Key.title,
-    'emoji': Api1UpdateViewRequestApplicationJson_Data0_Key.emoji,
-    'description': Api1UpdateViewRequestApplicationJson_Data0_Key.description,
-  };
-
-  @override
-  Iterable<Type> get types => const [Api1UpdateViewRequestApplicationJson_Data0_Key];
-
-  @override
-  String get wireName => 'Api1UpdateViewRequestApplicationJson_Data0_Key';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    Api1UpdateViewRequestApplicationJson_Data0_Key object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  Api1UpdateViewRequestApplicationJson_Data0_Key deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
 @BuiltValue(instantiable: false)
-sealed class $Api1UpdateViewRequestApplicationJson_Data0Interface {
-  Api1UpdateViewRequestApplicationJson_Data0_Key get key;
-  String get value;
+sealed class $Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterface {
+  int? get columnId;
+  int? get order;
+  bool? get readonly;
+  bool? get mandatory;
 
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
-  /// [updates] is a function that takes a builder [$Api1UpdateViewRequestApplicationJson_Data0InterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data0Interface rebuild(
-    void Function($Api1UpdateViewRequestApplicationJson_Data0InterfaceBuilder) updates,
+  /// [updates] is a function that takes a builder [$Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterfaceBuilder].
+  $Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterface rebuild(
+    void Function($Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterfaceBuilder) updates,
   );
 
-  /// Converts the instance to a builder [$Api1UpdateViewRequestApplicationJson_Data0InterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data0InterfaceBuilder toBuilder();
+  /// Converts the instance to a builder [$Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterfaceBuilder].
+  $Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterfaceBuilder toBuilder();
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($Api1UpdateViewRequestApplicationJson_Data0InterfaceBuilder b) {}
+  static void _defaults($Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterfaceBuilder b) {}
   @BuiltValueHook(finalizeBuilder: true)
-  static void _validate($Api1UpdateViewRequestApplicationJson_Data0InterfaceBuilder b) {}
+  static void _validate($Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterfaceBuilder b) {}
 }
 
-abstract class Api1UpdateViewRequestApplicationJson_Data0
+abstract class Api1UpdateViewRequestApplicationJson_Data_ColumnSettings
     implements
-        $Api1UpdateViewRequestApplicationJson_Data0Interface,
-        Built<Api1UpdateViewRequestApplicationJson_Data0, Api1UpdateViewRequestApplicationJson_Data0Builder> {
-  /// Creates a new Api1UpdateViewRequestApplicationJson_Data0 object using the builder pattern.
-  factory Api1UpdateViewRequestApplicationJson_Data0([
-    void Function(Api1UpdateViewRequestApplicationJson_Data0Builder)? b,
-  ]) = _$Api1UpdateViewRequestApplicationJson_Data0;
+        $Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterface,
+        Built<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings,
+            Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder> {
+  /// Creates a new Api1UpdateViewRequestApplicationJson_Data_ColumnSettings object using the builder pattern.
+  factory Api1UpdateViewRequestApplicationJson_Data_ColumnSettings([
+    void Function(Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder)? b,
+  ]) = _$Api1UpdateViewRequestApplicationJson_Data_ColumnSettings;
 
   // coverage:ignore-start
-  const Api1UpdateViewRequestApplicationJson_Data0._();
+  const Api1UpdateViewRequestApplicationJson_Data_ColumnSettings._();
   // coverage:ignore-end
 
   /// Creates a new object from the given [json] data.
   ///
   /// Use [toJson] to serialize it back into json.
   // coverage:ignore-start
-  factory Api1UpdateViewRequestApplicationJson_Data0.fromJson(Map<String, dynamic> json) =>
+  factory Api1UpdateViewRequestApplicationJson_Data_ColumnSettings.fromJson(Map<String, dynamic> json) =>
       _$jsonSerializers.deserializeWith(serializer, json)!;
   // coverage:ignore-end
 
@@ -6947,274 +6898,85 @@ abstract class Api1UpdateViewRequestApplicationJson_Data0
   Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
   // coverage:ignore-end
 
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data0.
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data0> get serializer =>
-      _$api1UpdateViewRequestApplicationJsonData0Serializer;
+  /// Serializer for Api1UpdateViewRequestApplicationJson_Data_ColumnSettings.
+  static Serializer<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings> get serializer =>
+      _$api1UpdateViewRequestApplicationJsonDataColumnSettingsSerializer;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(Api1UpdateViewRequestApplicationJson_Data0Builder b) {
-    $Api1UpdateViewRequestApplicationJson_Data0Interface._defaults(b);
+  static void _defaults(Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder b) {
+    $Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterface._defaults(b);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
-  static void _validate(Api1UpdateViewRequestApplicationJson_Data0Builder b) {
-    $Api1UpdateViewRequestApplicationJson_Data0Interface._validate(b);
+  static void _validate(Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder b) {
+    $Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsInterface._validate(b);
   }
 }
 
-class Api1UpdateViewRequestApplicationJson_Data1_Key extends EnumClass {
-  const Api1UpdateViewRequestApplicationJson_Data1_Key._(super.name);
-
-  /// `columns`
-  static const Api1UpdateViewRequestApplicationJson_Data1_Key columns =
-      _$api1UpdateViewRequestApplicationJsonData1KeyColumns;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<Api1UpdateViewRequestApplicationJson_Data1_Key> get values =>
-      _$api1UpdateViewRequestApplicationJsonData1KeyValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static Api1UpdateViewRequestApplicationJson_Data1_Key valueOf(String name) =>
-      _$valueOfApi1UpdateViewRequestApplicationJson_Data1_Key(name);
-
-  /// Returns the serialized value of this enum value.
-  String get value => _$jsonSerializers.serializeWith(serializer, this)! as String;
-
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data1_Key.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data1_Key> get serializer =>
-      const _$Api1UpdateViewRequestApplicationJson_Data1_KeySerializer();
-}
-
-class _$Api1UpdateViewRequestApplicationJson_Data1_KeySerializer
-    implements PrimitiveSerializer<Api1UpdateViewRequestApplicationJson_Data1_Key> {
-  const _$Api1UpdateViewRequestApplicationJson_Data1_KeySerializer();
-
-  static const Map<Api1UpdateViewRequestApplicationJson_Data1_Key, Object> _toWire =
-      <Api1UpdateViewRequestApplicationJson_Data1_Key, Object>{
-    Api1UpdateViewRequestApplicationJson_Data1_Key.columns: 'columns',
-  };
-
-  static const Map<Object, Api1UpdateViewRequestApplicationJson_Data1_Key> _fromWire =
-      <Object, Api1UpdateViewRequestApplicationJson_Data1_Key>{
-    'columns': Api1UpdateViewRequestApplicationJson_Data1_Key.columns,
-  };
-
-  @override
-  Iterable<Type> get types => const [Api1UpdateViewRequestApplicationJson_Data1_Key];
-
-  @override
-  String get wireName => 'Api1UpdateViewRequestApplicationJson_Data1_Key';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    Api1UpdateViewRequestApplicationJson_Data1_Key object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  Api1UpdateViewRequestApplicationJson_Data1_Key deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-@BuiltValue(instantiable: false)
-sealed class $Api1UpdateViewRequestApplicationJson_Data1Interface {
-  Api1UpdateViewRequestApplicationJson_Data1_Key get key;
-  BuiltList<int> get value;
-
-  /// Rebuilds the instance.
-  ///
-  /// The result is the same as this instance but with [updates] applied.
-  /// [updates] is a function that takes a builder [$Api1UpdateViewRequestApplicationJson_Data1InterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data1Interface rebuild(
-    void Function($Api1UpdateViewRequestApplicationJson_Data1InterfaceBuilder) updates,
-  );
-
-  /// Converts the instance to a builder [$Api1UpdateViewRequestApplicationJson_Data1InterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data1InterfaceBuilder toBuilder();
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($Api1UpdateViewRequestApplicationJson_Data1InterfaceBuilder b) {}
-  @BuiltValueHook(finalizeBuilder: true)
-  static void _validate($Api1UpdateViewRequestApplicationJson_Data1InterfaceBuilder b) {}
-}
-
-abstract class Api1UpdateViewRequestApplicationJson_Data1
-    implements
-        $Api1UpdateViewRequestApplicationJson_Data1Interface,
-        Built<Api1UpdateViewRequestApplicationJson_Data1, Api1UpdateViewRequestApplicationJson_Data1Builder> {
-  /// Creates a new Api1UpdateViewRequestApplicationJson_Data1 object using the builder pattern.
-  factory Api1UpdateViewRequestApplicationJson_Data1([
-    void Function(Api1UpdateViewRequestApplicationJson_Data1Builder)? b,
-  ]) = _$Api1UpdateViewRequestApplicationJson_Data1;
-
-  // coverage:ignore-start
-  const Api1UpdateViewRequestApplicationJson_Data1._();
-  // coverage:ignore-end
-
-  /// Creates a new object from the given [json] data.
-  ///
-  /// Use [toJson] to serialize it back into json.
-  // coverage:ignore-start
-  factory Api1UpdateViewRequestApplicationJson_Data1.fromJson(Map<String, dynamic> json) =>
-      _$jsonSerializers.deserializeWith(serializer, json)!;
-  // coverage:ignore-end
-
-  /// Parses this object into a json like map.
-  ///
-  /// Use the fromJson factory to revive it again.
-  // coverage:ignore-start
-  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
-  // coverage:ignore-end
-
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data1.
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data1> get serializer =>
-      _$api1UpdateViewRequestApplicationJsonData1Serializer;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(Api1UpdateViewRequestApplicationJson_Data1Builder b) {
-    $Api1UpdateViewRequestApplicationJson_Data1Interface._defaults(b);
-  }
-
-  @BuiltValueHook(finalizeBuilder: true)
-  static void _validate(Api1UpdateViewRequestApplicationJson_Data1Builder b) {
-    $Api1UpdateViewRequestApplicationJson_Data1Interface._validate(b);
-  }
-}
-
-class Api1UpdateViewRequestApplicationJson_Data2_Key extends EnumClass {
-  const Api1UpdateViewRequestApplicationJson_Data2_Key._(super.name);
-
-  /// `sort`
-  static const Api1UpdateViewRequestApplicationJson_Data2_Key sort = _$api1UpdateViewRequestApplicationJsonData2KeySort;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<Api1UpdateViewRequestApplicationJson_Data2_Key> get values =>
-      _$api1UpdateViewRequestApplicationJsonData2KeyValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static Api1UpdateViewRequestApplicationJson_Data2_Key valueOf(String name) =>
-      _$valueOfApi1UpdateViewRequestApplicationJson_Data2_Key(name);
-
-  /// Returns the serialized value of this enum value.
-  String get value => _$jsonSerializers.serializeWith(serializer, this)! as String;
-
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data2_Key.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data2_Key> get serializer =>
-      const _$Api1UpdateViewRequestApplicationJson_Data2_KeySerializer();
-}
-
-class _$Api1UpdateViewRequestApplicationJson_Data2_KeySerializer
-    implements PrimitiveSerializer<Api1UpdateViewRequestApplicationJson_Data2_Key> {
-  const _$Api1UpdateViewRequestApplicationJson_Data2_KeySerializer();
-
-  static const Map<Api1UpdateViewRequestApplicationJson_Data2_Key, Object> _toWire =
-      <Api1UpdateViewRequestApplicationJson_Data2_Key, Object>{
-    Api1UpdateViewRequestApplicationJson_Data2_Key.sort: 'sort',
-  };
-
-  static const Map<Object, Api1UpdateViewRequestApplicationJson_Data2_Key> _fromWire =
-      <Object, Api1UpdateViewRequestApplicationJson_Data2_Key>{
-    'sort': Api1UpdateViewRequestApplicationJson_Data2_Key.sort,
-  };
-
-  @override
-  Iterable<Type> get types => const [Api1UpdateViewRequestApplicationJson_Data2_Key];
-
-  @override
-  String get wireName => 'Api1UpdateViewRequestApplicationJson_Data2_Key';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    Api1UpdateViewRequestApplicationJson_Data2_Key object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  Api1UpdateViewRequestApplicationJson_Data2_Key deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-class Api1UpdateViewRequestApplicationJson_Data2_Value_Mode extends EnumClass {
-  const Api1UpdateViewRequestApplicationJson_Data2_Value_Mode._(super.name);
+class Api1UpdateViewRequestApplicationJson_Data_Sort_Mode extends EnumClass {
+  const Api1UpdateViewRequestApplicationJson_Data_Sort_Mode._(super.name);
 
   /// `ASC`
   @BuiltValueEnumConst(wireName: 'ASC')
-  static const Api1UpdateViewRequestApplicationJson_Data2_Value_Mode aSC =
-      _$api1UpdateViewRequestApplicationJsonData2ValueModeASC;
+  static const Api1UpdateViewRequestApplicationJson_Data_Sort_Mode aSC =
+      _$api1UpdateViewRequestApplicationJsonDataSortModeASC;
 
   /// `DESC`
   @BuiltValueEnumConst(wireName: 'DESC')
-  static const Api1UpdateViewRequestApplicationJson_Data2_Value_Mode dESC =
-      _$api1UpdateViewRequestApplicationJsonData2ValueModeDESC;
+  static const Api1UpdateViewRequestApplicationJson_Data_Sort_Mode dESC =
+      _$api1UpdateViewRequestApplicationJsonDataSortModeDESC;
 
   /// Returns a set with all values this enum contains.
   // coverage:ignore-start
-  static BuiltSet<Api1UpdateViewRequestApplicationJson_Data2_Value_Mode> get values =>
-      _$api1UpdateViewRequestApplicationJsonData2ValueModeValues;
+  static BuiltSet<Api1UpdateViewRequestApplicationJson_Data_Sort_Mode> get values =>
+      _$api1UpdateViewRequestApplicationJsonDataSortModeValues;
   // coverage:ignore-end
 
   /// Returns the enum value associated to the [name].
-  static Api1UpdateViewRequestApplicationJson_Data2_Value_Mode valueOf(String name) =>
-      _$valueOfApi1UpdateViewRequestApplicationJson_Data2_Value_Mode(name);
+  static Api1UpdateViewRequestApplicationJson_Data_Sort_Mode valueOf(String name) =>
+      _$valueOfApi1UpdateViewRequestApplicationJson_Data_Sort_Mode(name);
 
   /// Returns the serialized value of this enum value.
   String get value => _$jsonSerializers.serializeWith(serializer, this)! as String;
 
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data2_Value_Mode.
+  /// Serializer for Api1UpdateViewRequestApplicationJson_Data_Sort_Mode.
   @BuiltValueSerializer(custom: true)
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data2_Value_Mode> get serializer =>
-      const _$Api1UpdateViewRequestApplicationJson_Data2_Value_ModeSerializer();
+  static Serializer<Api1UpdateViewRequestApplicationJson_Data_Sort_Mode> get serializer =>
+      const _$Api1UpdateViewRequestApplicationJson_Data_Sort_ModeSerializer();
 }
 
-class _$Api1UpdateViewRequestApplicationJson_Data2_Value_ModeSerializer
-    implements PrimitiveSerializer<Api1UpdateViewRequestApplicationJson_Data2_Value_Mode> {
-  const _$Api1UpdateViewRequestApplicationJson_Data2_Value_ModeSerializer();
+class _$Api1UpdateViewRequestApplicationJson_Data_Sort_ModeSerializer
+    implements PrimitiveSerializer<Api1UpdateViewRequestApplicationJson_Data_Sort_Mode> {
+  const _$Api1UpdateViewRequestApplicationJson_Data_Sort_ModeSerializer();
 
-  static const Map<Api1UpdateViewRequestApplicationJson_Data2_Value_Mode, Object> _toWire =
-      <Api1UpdateViewRequestApplicationJson_Data2_Value_Mode, Object>{
-    Api1UpdateViewRequestApplicationJson_Data2_Value_Mode.aSC: 'ASC',
-    Api1UpdateViewRequestApplicationJson_Data2_Value_Mode.dESC: 'DESC',
+  static const Map<Api1UpdateViewRequestApplicationJson_Data_Sort_Mode, Object> _toWire =
+      <Api1UpdateViewRequestApplicationJson_Data_Sort_Mode, Object>{
+    Api1UpdateViewRequestApplicationJson_Data_Sort_Mode.aSC: 'ASC',
+    Api1UpdateViewRequestApplicationJson_Data_Sort_Mode.dESC: 'DESC',
   };
 
-  static const Map<Object, Api1UpdateViewRequestApplicationJson_Data2_Value_Mode> _fromWire =
-      <Object, Api1UpdateViewRequestApplicationJson_Data2_Value_Mode>{
-    'ASC': Api1UpdateViewRequestApplicationJson_Data2_Value_Mode.aSC,
-    'DESC': Api1UpdateViewRequestApplicationJson_Data2_Value_Mode.dESC,
+  static const Map<Object, Api1UpdateViewRequestApplicationJson_Data_Sort_Mode> _fromWire =
+      <Object, Api1UpdateViewRequestApplicationJson_Data_Sort_Mode>{
+    'ASC': Api1UpdateViewRequestApplicationJson_Data_Sort_Mode.aSC,
+    'DESC': Api1UpdateViewRequestApplicationJson_Data_Sort_Mode.dESC,
   };
 
   @override
-  Iterable<Type> get types => const [Api1UpdateViewRequestApplicationJson_Data2_Value_Mode];
+  Iterable<Type> get types => const [Api1UpdateViewRequestApplicationJson_Data_Sort_Mode];
 
   @override
-  String get wireName => 'Api1UpdateViewRequestApplicationJson_Data2_Value_Mode';
+  String get wireName => 'Api1UpdateViewRequestApplicationJson_Data_Sort_Mode';
 
   @override
   Object serialize(
     Serializers serializers,
-    Api1UpdateViewRequestApplicationJson_Data2_Value_Mode object, {
+    Api1UpdateViewRequestApplicationJson_Data_Sort_Mode object, {
     FullType specifiedType = FullType.unspecified,
   }) =>
       _toWire[object]!;
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data2_Value_Mode deserialize(
+  Api1UpdateViewRequestApplicationJson_Data_Sort_Mode deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
@@ -7223,45 +6985,44 @@ class _$Api1UpdateViewRequestApplicationJson_Data2_Value_ModeSerializer
 }
 
 @BuiltValue(instantiable: false)
-sealed class $Api1UpdateViewRequestApplicationJson_Data2_ValueInterface {
+sealed class $Api1UpdateViewRequestApplicationJson_Data_SortInterface {
   int get columnId;
-  Api1UpdateViewRequestApplicationJson_Data2_Value_Mode get mode;
+  Api1UpdateViewRequestApplicationJson_Data_Sort_Mode get mode;
 
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
-  /// [updates] is a function that takes a builder [$Api1UpdateViewRequestApplicationJson_Data2_ValueInterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data2_ValueInterface rebuild(
-    void Function($Api1UpdateViewRequestApplicationJson_Data2_ValueInterfaceBuilder) updates,
+  /// [updates] is a function that takes a builder [$Api1UpdateViewRequestApplicationJson_Data_SortInterfaceBuilder].
+  $Api1UpdateViewRequestApplicationJson_Data_SortInterface rebuild(
+    void Function($Api1UpdateViewRequestApplicationJson_Data_SortInterfaceBuilder) updates,
   );
 
-  /// Converts the instance to a builder [$Api1UpdateViewRequestApplicationJson_Data2_ValueInterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data2_ValueInterfaceBuilder toBuilder();
+  /// Converts the instance to a builder [$Api1UpdateViewRequestApplicationJson_Data_SortInterfaceBuilder].
+  $Api1UpdateViewRequestApplicationJson_Data_SortInterfaceBuilder toBuilder();
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($Api1UpdateViewRequestApplicationJson_Data2_ValueInterfaceBuilder b) {}
+  static void _defaults($Api1UpdateViewRequestApplicationJson_Data_SortInterfaceBuilder b) {}
   @BuiltValueHook(finalizeBuilder: true)
-  static void _validate($Api1UpdateViewRequestApplicationJson_Data2_ValueInterfaceBuilder b) {}
+  static void _validate($Api1UpdateViewRequestApplicationJson_Data_SortInterfaceBuilder b) {}
 }
 
-abstract class Api1UpdateViewRequestApplicationJson_Data2_Value
+abstract class Api1UpdateViewRequestApplicationJson_Data_Sort
     implements
-        $Api1UpdateViewRequestApplicationJson_Data2_ValueInterface,
-        Built<Api1UpdateViewRequestApplicationJson_Data2_Value,
-            Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder> {
-  /// Creates a new Api1UpdateViewRequestApplicationJson_Data2_Value object using the builder pattern.
-  factory Api1UpdateViewRequestApplicationJson_Data2_Value([
-    void Function(Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder)? b,
-  ]) = _$Api1UpdateViewRequestApplicationJson_Data2_Value;
+        $Api1UpdateViewRequestApplicationJson_Data_SortInterface,
+        Built<Api1UpdateViewRequestApplicationJson_Data_Sort, Api1UpdateViewRequestApplicationJson_Data_SortBuilder> {
+  /// Creates a new Api1UpdateViewRequestApplicationJson_Data_Sort object using the builder pattern.
+  factory Api1UpdateViewRequestApplicationJson_Data_Sort([
+    void Function(Api1UpdateViewRequestApplicationJson_Data_SortBuilder)? b,
+  ]) = _$Api1UpdateViewRequestApplicationJson_Data_Sort;
 
   // coverage:ignore-start
-  const Api1UpdateViewRequestApplicationJson_Data2_Value._();
+  const Api1UpdateViewRequestApplicationJson_Data_Sort._();
   // coverage:ignore-end
 
   /// Creates a new object from the given [json] data.
   ///
   /// Use [toJson] to serialize it back into json.
   // coverage:ignore-start
-  factory Api1UpdateViewRequestApplicationJson_Data2_Value.fromJson(Map<String, dynamic> json) =>
+  factory Api1UpdateViewRequestApplicationJson_Data_Sort.fromJson(Map<String, dynamic> json) =>
       _$jsonSerializers.deserializeWith(serializer, json)!;
   // coverage:ignore-end
 
@@ -7272,260 +7033,147 @@ abstract class Api1UpdateViewRequestApplicationJson_Data2_Value
   Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
   // coverage:ignore-end
 
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data2_Value.
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data2_Value> get serializer =>
-      _$api1UpdateViewRequestApplicationJsonData2ValueSerializer;
+  /// Serializer for Api1UpdateViewRequestApplicationJson_Data_Sort.
+  static Serializer<Api1UpdateViewRequestApplicationJson_Data_Sort> get serializer =>
+      _$api1UpdateViewRequestApplicationJsonDataSortSerializer;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder b) {
-    $Api1UpdateViewRequestApplicationJson_Data2_ValueInterface._defaults(b);
+  static void _defaults(Api1UpdateViewRequestApplicationJson_Data_SortBuilder b) {
+    $Api1UpdateViewRequestApplicationJson_Data_SortInterface._defaults(b);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
-  static void _validate(Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder b) {
-    $Api1UpdateViewRequestApplicationJson_Data2_ValueInterface._validate(b);
+  static void _validate(Api1UpdateViewRequestApplicationJson_Data_SortBuilder b) {
+    $Api1UpdateViewRequestApplicationJson_Data_SortInterface._validate(b);
   }
 }
 
-@BuiltValue(instantiable: false)
-sealed class $Api1UpdateViewRequestApplicationJson_Data2Interface {
-  Api1UpdateViewRequestApplicationJson_Data2_Key get key;
-  Api1UpdateViewRequestApplicationJson_Data2_Value get value;
-
-  /// Rebuilds the instance.
-  ///
-  /// The result is the same as this instance but with [updates] applied.
-  /// [updates] is a function that takes a builder [$Api1UpdateViewRequestApplicationJson_Data2InterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data2Interface rebuild(
-    void Function($Api1UpdateViewRequestApplicationJson_Data2InterfaceBuilder) updates,
-  );
-
-  /// Converts the instance to a builder [$Api1UpdateViewRequestApplicationJson_Data2InterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data2InterfaceBuilder toBuilder();
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($Api1UpdateViewRequestApplicationJson_Data2InterfaceBuilder b) {}
-  @BuiltValueHook(finalizeBuilder: true)
-  static void _validate($Api1UpdateViewRequestApplicationJson_Data2InterfaceBuilder b) {}
-}
-
-abstract class Api1UpdateViewRequestApplicationJson_Data2
-    implements
-        $Api1UpdateViewRequestApplicationJson_Data2Interface,
-        Built<Api1UpdateViewRequestApplicationJson_Data2, Api1UpdateViewRequestApplicationJson_Data2Builder> {
-  /// Creates a new Api1UpdateViewRequestApplicationJson_Data2 object using the builder pattern.
-  factory Api1UpdateViewRequestApplicationJson_Data2([
-    void Function(Api1UpdateViewRequestApplicationJson_Data2Builder)? b,
-  ]) = _$Api1UpdateViewRequestApplicationJson_Data2;
-
-  // coverage:ignore-start
-  const Api1UpdateViewRequestApplicationJson_Data2._();
-  // coverage:ignore-end
-
-  /// Creates a new object from the given [json] data.
-  ///
-  /// Use [toJson] to serialize it back into json.
-  // coverage:ignore-start
-  factory Api1UpdateViewRequestApplicationJson_Data2.fromJson(Map<String, dynamic> json) =>
-      _$jsonSerializers.deserializeWith(serializer, json)!;
-  // coverage:ignore-end
-
-  /// Parses this object into a json like map.
-  ///
-  /// Use the fromJson factory to revive it again.
-  // coverage:ignore-start
-  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
-  // coverage:ignore-end
-
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data2.
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data2> get serializer =>
-      _$api1UpdateViewRequestApplicationJsonData2Serializer;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(Api1UpdateViewRequestApplicationJson_Data2Builder b) {
-    $Api1UpdateViewRequestApplicationJson_Data2Interface._defaults(b);
-  }
-
-  @BuiltValueHook(finalizeBuilder: true)
-  static void _validate(Api1UpdateViewRequestApplicationJson_Data2Builder b) {
-    $Api1UpdateViewRequestApplicationJson_Data2Interface._validate(b);
-  }
-}
-
-class Api1UpdateViewRequestApplicationJson_Data3_Key extends EnumClass {
-  const Api1UpdateViewRequestApplicationJson_Data3_Key._(super.name);
-
-  /// `filter`
-  static const Api1UpdateViewRequestApplicationJson_Data3_Key filter =
-      _$api1UpdateViewRequestApplicationJsonData3KeyFilter;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<Api1UpdateViewRequestApplicationJson_Data3_Key> get values =>
-      _$api1UpdateViewRequestApplicationJsonData3KeyValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static Api1UpdateViewRequestApplicationJson_Data3_Key valueOf(String name) =>
-      _$valueOfApi1UpdateViewRequestApplicationJson_Data3_Key(name);
-
-  /// Returns the serialized value of this enum value.
-  String get value => _$jsonSerializers.serializeWith(serializer, this)! as String;
-
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data3_Key.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data3_Key> get serializer =>
-      const _$Api1UpdateViewRequestApplicationJson_Data3_KeySerializer();
-}
-
-class _$Api1UpdateViewRequestApplicationJson_Data3_KeySerializer
-    implements PrimitiveSerializer<Api1UpdateViewRequestApplicationJson_Data3_Key> {
-  const _$Api1UpdateViewRequestApplicationJson_Data3_KeySerializer();
-
-  static const Map<Api1UpdateViewRequestApplicationJson_Data3_Key, Object> _toWire =
-      <Api1UpdateViewRequestApplicationJson_Data3_Key, Object>{
-    Api1UpdateViewRequestApplicationJson_Data3_Key.filter: 'filter',
-  };
-
-  static const Map<Object, Api1UpdateViewRequestApplicationJson_Data3_Key> _fromWire =
-      <Object, Api1UpdateViewRequestApplicationJson_Data3_Key>{
-    'filter': Api1UpdateViewRequestApplicationJson_Data3_Key.filter,
-  };
-
-  @override
-  Iterable<Type> get types => const [Api1UpdateViewRequestApplicationJson_Data3_Key];
-
-  @override
-  String get wireName => 'Api1UpdateViewRequestApplicationJson_Data3_Key';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    Api1UpdateViewRequestApplicationJson_Data3_Key object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  Api1UpdateViewRequestApplicationJson_Data3_Key deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-class Api1UpdateViewRequestApplicationJson_Data3_Value_Operator extends EnumClass {
-  const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator._(super.name);
+class Api1UpdateViewRequestApplicationJson_Data_Filter_Operator extends EnumClass {
+  const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator._(super.name);
 
   /// `begins-with`
   @BuiltValueEnumConst(wireName: 'begins-with')
-  static const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator beginsWith =
-      _$api1UpdateViewRequestApplicationJsonData3ValueOperatorBeginsWith;
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator beginsWith =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorBeginsWith;
 
   /// `ends-with`
   @BuiltValueEnumConst(wireName: 'ends-with')
-  static const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator endsWith =
-      _$api1UpdateViewRequestApplicationJsonData3ValueOperatorEndsWith;
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator endsWith =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorEndsWith;
 
   /// `contains`
-  static const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator contains =
-      _$api1UpdateViewRequestApplicationJsonData3ValueOperatorContains;
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator contains =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorContains;
+
+  /// `does-not-contain`
+  @BuiltValueEnumConst(wireName: 'does-not-contain')
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator doesNotContain =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorDoesNotContain;
 
   /// `is-equal`
   @BuiltValueEnumConst(wireName: 'is-equal')
-  static const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator isEqual =
-      _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsEqual;
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator isEqual =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsEqual;
+
+  /// `is-not-equal`
+  @BuiltValueEnumConst(wireName: 'is-not-equal')
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator isNotEqual =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsNotEqual;
 
   /// `is-greater-than`
   @BuiltValueEnumConst(wireName: 'is-greater-than')
-  static const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator isGreaterThan =
-      _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsGreaterThan;
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator isGreaterThan =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsGreaterThan;
 
   /// `is-greater-than-or-equal`
   @BuiltValueEnumConst(wireName: 'is-greater-than-or-equal')
-  static const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator isGreaterThanOrEqual =
-      _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsGreaterThanOrEqual;
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator isGreaterThanOrEqual =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsGreaterThanOrEqual;
 
   /// `is-lower-than`
   @BuiltValueEnumConst(wireName: 'is-lower-than')
-  static const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator isLowerThan =
-      _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsLowerThan;
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator isLowerThan =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsLowerThan;
 
   /// `is-lower-than-or-equal`
   @BuiltValueEnumConst(wireName: 'is-lower-than-or-equal')
-  static const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator isLowerThanOrEqual =
-      _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsLowerThanOrEqual;
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator isLowerThanOrEqual =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsLowerThanOrEqual;
 
   /// `is-empty`
   @BuiltValueEnumConst(wireName: 'is-empty')
-  static const Api1UpdateViewRequestApplicationJson_Data3_Value_Operator isEmpty =
-      _$api1UpdateViewRequestApplicationJsonData3ValueOperatorIsEmpty;
+  static const Api1UpdateViewRequestApplicationJson_Data_Filter_Operator isEmpty =
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorIsEmpty;
 
   /// Returns a set with all values this enum contains.
   // coverage:ignore-start
-  static BuiltSet<Api1UpdateViewRequestApplicationJson_Data3_Value_Operator> get values =>
-      _$api1UpdateViewRequestApplicationJsonData3ValueOperatorValues;
+  static BuiltSet<Api1UpdateViewRequestApplicationJson_Data_Filter_Operator> get values =>
+      _$api1UpdateViewRequestApplicationJsonDataFilterOperatorValues;
   // coverage:ignore-end
 
   /// Returns the enum value associated to the [name].
-  static Api1UpdateViewRequestApplicationJson_Data3_Value_Operator valueOf(String name) =>
-      _$valueOfApi1UpdateViewRequestApplicationJson_Data3_Value_Operator(name);
+  static Api1UpdateViewRequestApplicationJson_Data_Filter_Operator valueOf(String name) =>
+      _$valueOfApi1UpdateViewRequestApplicationJson_Data_Filter_Operator(name);
 
   /// Returns the serialized value of this enum value.
   String get value => _$jsonSerializers.serializeWith(serializer, this)! as String;
 
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.
+  /// Serializer for Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.
   @BuiltValueSerializer(custom: true)
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data3_Value_Operator> get serializer =>
-      const _$Api1UpdateViewRequestApplicationJson_Data3_Value_OperatorSerializer();
+  static Serializer<Api1UpdateViewRequestApplicationJson_Data_Filter_Operator> get serializer =>
+      const _$Api1UpdateViewRequestApplicationJson_Data_Filter_OperatorSerializer();
 }
 
-class _$Api1UpdateViewRequestApplicationJson_Data3_Value_OperatorSerializer
-    implements PrimitiveSerializer<Api1UpdateViewRequestApplicationJson_Data3_Value_Operator> {
-  const _$Api1UpdateViewRequestApplicationJson_Data3_Value_OperatorSerializer();
+class _$Api1UpdateViewRequestApplicationJson_Data_Filter_OperatorSerializer
+    implements PrimitiveSerializer<Api1UpdateViewRequestApplicationJson_Data_Filter_Operator> {
+  const _$Api1UpdateViewRequestApplicationJson_Data_Filter_OperatorSerializer();
 
-  static const Map<Api1UpdateViewRequestApplicationJson_Data3_Value_Operator, Object> _toWire =
-      <Api1UpdateViewRequestApplicationJson_Data3_Value_Operator, Object>{
-    Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.beginsWith: 'begins-with',
-    Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.endsWith: 'ends-with',
-    Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.contains: 'contains',
-    Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isEqual: 'is-equal',
-    Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isGreaterThan: 'is-greater-than',
-    Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isGreaterThanOrEqual: 'is-greater-than-or-equal',
-    Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isLowerThan: 'is-lower-than',
-    Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isLowerThanOrEqual: 'is-lower-than-or-equal',
-    Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isEmpty: 'is-empty',
+  static const Map<Api1UpdateViewRequestApplicationJson_Data_Filter_Operator, Object> _toWire =
+      <Api1UpdateViewRequestApplicationJson_Data_Filter_Operator, Object>{
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.beginsWith: 'begins-with',
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.endsWith: 'ends-with',
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.contains: 'contains',
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.doesNotContain: 'does-not-contain',
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isEqual: 'is-equal',
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isNotEqual: 'is-not-equal',
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isGreaterThan: 'is-greater-than',
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isGreaterThanOrEqual: 'is-greater-than-or-equal',
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isLowerThan: 'is-lower-than',
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isLowerThanOrEqual: 'is-lower-than-or-equal',
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isEmpty: 'is-empty',
   };
 
-  static const Map<Object, Api1UpdateViewRequestApplicationJson_Data3_Value_Operator> _fromWire =
-      <Object, Api1UpdateViewRequestApplicationJson_Data3_Value_Operator>{
-    'begins-with': Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.beginsWith,
-    'ends-with': Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.endsWith,
-    'contains': Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.contains,
-    'is-equal': Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isEqual,
-    'is-greater-than': Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isGreaterThan,
-    'is-greater-than-or-equal': Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isGreaterThanOrEqual,
-    'is-lower-than': Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isLowerThan,
-    'is-lower-than-or-equal': Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isLowerThanOrEqual,
-    'is-empty': Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.isEmpty,
+  static const Map<Object, Api1UpdateViewRequestApplicationJson_Data_Filter_Operator> _fromWire =
+      <Object, Api1UpdateViewRequestApplicationJson_Data_Filter_Operator>{
+    'begins-with': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.beginsWith,
+    'ends-with': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.endsWith,
+    'contains': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.contains,
+    'does-not-contain': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.doesNotContain,
+    'is-equal': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isEqual,
+    'is-not-equal': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isNotEqual,
+    'is-greater-than': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isGreaterThan,
+    'is-greater-than-or-equal': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isGreaterThanOrEqual,
+    'is-lower-than': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isLowerThan,
+    'is-lower-than-or-equal': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isLowerThanOrEqual,
+    'is-empty': Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.isEmpty,
   };
 
   @override
-  Iterable<Type> get types => const [Api1UpdateViewRequestApplicationJson_Data3_Value_Operator];
+  Iterable<Type> get types => const [Api1UpdateViewRequestApplicationJson_Data_Filter_Operator];
 
   @override
-  String get wireName => 'Api1UpdateViewRequestApplicationJson_Data3_Value_Operator';
+  String get wireName => 'Api1UpdateViewRequestApplicationJson_Data_Filter_Operator';
 
   @override
   Object serialize(
     Serializers serializers,
-    Api1UpdateViewRequestApplicationJson_Data3_Value_Operator object, {
+    Api1UpdateViewRequestApplicationJson_Data_Filter_Operator object, {
     FullType specifiedType = FullType.unspecified,
   }) =>
       _toWire[object]!;
 
   @override
-  Api1UpdateViewRequestApplicationJson_Data3_Value_Operator deserialize(
+  Api1UpdateViewRequestApplicationJson_Data_Filter_Operator deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
@@ -7533,52 +7181,52 @@ class _$Api1UpdateViewRequestApplicationJson_Data3_Value_OperatorSerializer
       _fromWire[serialized]!;
 }
 
-typedef Api1UpdateViewRequestApplicationJson_Data3_Value_Value = ({num? $num, String? string});
+typedef Api1UpdateViewRequestApplicationJson_Data_Filter_Value = ({num? $num, String? string});
 
 @BuiltValue(instantiable: false)
-sealed class $Api1UpdateViewRequestApplicationJson_Data3_ValueInterface {
+sealed class $Api1UpdateViewRequestApplicationJson_Data_FilterInterface {
   int get columnId;
   @BuiltValueField(wireName: 'operator')
-  Api1UpdateViewRequestApplicationJson_Data3_Value_Operator get $operator;
-  Api1UpdateViewRequestApplicationJson_Data3_Value_Value get value;
+  Api1UpdateViewRequestApplicationJson_Data_Filter_Operator get $operator;
+  Api1UpdateViewRequestApplicationJson_Data_Filter_Value get value;
 
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
-  /// [updates] is a function that takes a builder [$Api1UpdateViewRequestApplicationJson_Data3_ValueInterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data3_ValueInterface rebuild(
-    void Function($Api1UpdateViewRequestApplicationJson_Data3_ValueInterfaceBuilder) updates,
+  /// [updates] is a function that takes a builder [$Api1UpdateViewRequestApplicationJson_Data_FilterInterfaceBuilder].
+  $Api1UpdateViewRequestApplicationJson_Data_FilterInterface rebuild(
+    void Function($Api1UpdateViewRequestApplicationJson_Data_FilterInterfaceBuilder) updates,
   );
 
-  /// Converts the instance to a builder [$Api1UpdateViewRequestApplicationJson_Data3_ValueInterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data3_ValueInterfaceBuilder toBuilder();
+  /// Converts the instance to a builder [$Api1UpdateViewRequestApplicationJson_Data_FilterInterfaceBuilder].
+  $Api1UpdateViewRequestApplicationJson_Data_FilterInterfaceBuilder toBuilder();
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($Api1UpdateViewRequestApplicationJson_Data3_ValueInterfaceBuilder b) {}
+  static void _defaults($Api1UpdateViewRequestApplicationJson_Data_FilterInterfaceBuilder b) {}
   @BuiltValueHook(finalizeBuilder: true)
-  static void _validate($Api1UpdateViewRequestApplicationJson_Data3_ValueInterfaceBuilder b) {
+  static void _validate($Api1UpdateViewRequestApplicationJson_Data_FilterInterfaceBuilder b) {
     b.value?.validateAnyOf();
   }
 }
 
-abstract class Api1UpdateViewRequestApplicationJson_Data3_Value
+abstract class Api1UpdateViewRequestApplicationJson_Data_Filter
     implements
-        $Api1UpdateViewRequestApplicationJson_Data3_ValueInterface,
-        Built<Api1UpdateViewRequestApplicationJson_Data3_Value,
-            Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder> {
-  /// Creates a new Api1UpdateViewRequestApplicationJson_Data3_Value object using the builder pattern.
-  factory Api1UpdateViewRequestApplicationJson_Data3_Value([
-    void Function(Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder)? b,
-  ]) = _$Api1UpdateViewRequestApplicationJson_Data3_Value;
+        $Api1UpdateViewRequestApplicationJson_Data_FilterInterface,
+        Built<Api1UpdateViewRequestApplicationJson_Data_Filter,
+            Api1UpdateViewRequestApplicationJson_Data_FilterBuilder> {
+  /// Creates a new Api1UpdateViewRequestApplicationJson_Data_Filter object using the builder pattern.
+  factory Api1UpdateViewRequestApplicationJson_Data_Filter([
+    void Function(Api1UpdateViewRequestApplicationJson_Data_FilterBuilder)? b,
+  ]) = _$Api1UpdateViewRequestApplicationJson_Data_Filter;
 
   // coverage:ignore-start
-  const Api1UpdateViewRequestApplicationJson_Data3_Value._();
+  const Api1UpdateViewRequestApplicationJson_Data_Filter._();
   // coverage:ignore-end
 
   /// Creates a new object from the given [json] data.
   ///
   /// Use [toJson] to serialize it back into json.
   // coverage:ignore-start
-  factory Api1UpdateViewRequestApplicationJson_Data3_Value.fromJson(Map<String, dynamic> json) =>
+  factory Api1UpdateViewRequestApplicationJson_Data_Filter.fromJson(Map<String, dynamic> json) =>
       _$jsonSerializers.deserializeWith(serializer, json)!;
   // coverage:ignore-end
 
@@ -7589,60 +7237,67 @@ abstract class Api1UpdateViewRequestApplicationJson_Data3_Value
   Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
   // coverage:ignore-end
 
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data3_Value.
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data3_Value> get serializer =>
-      _$api1UpdateViewRequestApplicationJsonData3ValueSerializer;
+  /// Serializer for Api1UpdateViewRequestApplicationJson_Data_Filter.
+  static Serializer<Api1UpdateViewRequestApplicationJson_Data_Filter> get serializer =>
+      _$api1UpdateViewRequestApplicationJsonDataFilterSerializer;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder b) {
-    $Api1UpdateViewRequestApplicationJson_Data3_ValueInterface._defaults(b);
+  static void _defaults(Api1UpdateViewRequestApplicationJson_Data_FilterBuilder b) {
+    $Api1UpdateViewRequestApplicationJson_Data_FilterInterface._defaults(b);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
-  static void _validate(Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder b) {
-    $Api1UpdateViewRequestApplicationJson_Data3_ValueInterface._validate(b);
+  static void _validate(Api1UpdateViewRequestApplicationJson_Data_FilterBuilder b) {
+    $Api1UpdateViewRequestApplicationJson_Data_FilterInterface._validate(b);
   }
 }
 
+/// fields of the view with their new values.
 @BuiltValue(instantiable: false)
-sealed class $Api1UpdateViewRequestApplicationJson_Data3Interface {
-  Api1UpdateViewRequestApplicationJson_Data3_Key get key;
-  Api1UpdateViewRequestApplicationJson_Data3_Value get value;
+sealed class $Api1UpdateViewRequestApplicationJson_DataInterface {
+  String? get title;
+  String? get emoji;
+  String? get description;
+  BuiltList<int>? get columns;
+  BuiltList<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings>? get columnSettings;
+  BuiltList<Api1UpdateViewRequestApplicationJson_Data_Sort>? get sort;
+  BuiltList<BuiltList<Api1UpdateViewRequestApplicationJson_Data_Filter>>? get filter;
 
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
-  /// [updates] is a function that takes a builder [$Api1UpdateViewRequestApplicationJson_Data3InterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data3Interface rebuild(
-    void Function($Api1UpdateViewRequestApplicationJson_Data3InterfaceBuilder) updates,
+  /// [updates] is a function that takes a builder [$Api1UpdateViewRequestApplicationJson_DataInterfaceBuilder].
+  $Api1UpdateViewRequestApplicationJson_DataInterface rebuild(
+    void Function($Api1UpdateViewRequestApplicationJson_DataInterfaceBuilder) updates,
   );
 
-  /// Converts the instance to a builder [$Api1UpdateViewRequestApplicationJson_Data3InterfaceBuilder].
-  $Api1UpdateViewRequestApplicationJson_Data3InterfaceBuilder toBuilder();
+  /// Converts the instance to a builder [$Api1UpdateViewRequestApplicationJson_DataInterfaceBuilder].
+  $Api1UpdateViewRequestApplicationJson_DataInterfaceBuilder toBuilder();
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($Api1UpdateViewRequestApplicationJson_Data3InterfaceBuilder b) {}
+  static void _defaults($Api1UpdateViewRequestApplicationJson_DataInterfaceBuilder b) {}
   @BuiltValueHook(finalizeBuilder: true)
-  static void _validate($Api1UpdateViewRequestApplicationJson_Data3InterfaceBuilder b) {}
+  static void _validate($Api1UpdateViewRequestApplicationJson_DataInterfaceBuilder b) {}
 }
 
-abstract class Api1UpdateViewRequestApplicationJson_Data3
+/// fields of the view with their new values.
+abstract class Api1UpdateViewRequestApplicationJson_Data
     implements
-        $Api1UpdateViewRequestApplicationJson_Data3Interface,
-        Built<Api1UpdateViewRequestApplicationJson_Data3, Api1UpdateViewRequestApplicationJson_Data3Builder> {
-  /// Creates a new Api1UpdateViewRequestApplicationJson_Data3 object using the builder pattern.
-  factory Api1UpdateViewRequestApplicationJson_Data3([
-    void Function(Api1UpdateViewRequestApplicationJson_Data3Builder)? b,
-  ]) = _$Api1UpdateViewRequestApplicationJson_Data3;
+        $Api1UpdateViewRequestApplicationJson_DataInterface,
+        Built<Api1UpdateViewRequestApplicationJson_Data, Api1UpdateViewRequestApplicationJson_DataBuilder> {
+  /// Creates a new Api1UpdateViewRequestApplicationJson_Data object using the builder pattern.
+  factory Api1UpdateViewRequestApplicationJson_Data([
+    void Function(Api1UpdateViewRequestApplicationJson_DataBuilder)? b,
+  ]) = _$Api1UpdateViewRequestApplicationJson_Data;
 
   // coverage:ignore-start
-  const Api1UpdateViewRequestApplicationJson_Data3._();
+  const Api1UpdateViewRequestApplicationJson_Data._();
   // coverage:ignore-end
 
   /// Creates a new object from the given [json] data.
   ///
   /// Use [toJson] to serialize it back into json.
   // coverage:ignore-start
-  factory Api1UpdateViewRequestApplicationJson_Data3.fromJson(Map<String, dynamic> json) =>
+  factory Api1UpdateViewRequestApplicationJson_Data.fromJson(Map<String, dynamic> json) =>
       _$jsonSerializers.deserializeWith(serializer, json)!;
   // coverage:ignore-end
 
@@ -7653,32 +7308,24 @@ abstract class Api1UpdateViewRequestApplicationJson_Data3
   Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
   // coverage:ignore-end
 
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data3.
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data3> get serializer =>
-      _$api1UpdateViewRequestApplicationJsonData3Serializer;
+  /// Serializer for Api1UpdateViewRequestApplicationJson_Data.
+  static Serializer<Api1UpdateViewRequestApplicationJson_Data> get serializer =>
+      _$api1UpdateViewRequestApplicationJsonDataSerializer;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(Api1UpdateViewRequestApplicationJson_Data3Builder b) {
-    $Api1UpdateViewRequestApplicationJson_Data3Interface._defaults(b);
+  static void _defaults(Api1UpdateViewRequestApplicationJson_DataBuilder b) {
+    $Api1UpdateViewRequestApplicationJson_DataInterface._defaults(b);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
-  static void _validate(Api1UpdateViewRequestApplicationJson_Data3Builder b) {
-    $Api1UpdateViewRequestApplicationJson_Data3Interface._validate(b);
+  static void _validate(Api1UpdateViewRequestApplicationJson_DataBuilder b) {
+    $Api1UpdateViewRequestApplicationJson_DataInterface._validate(b);
   }
 }
 
-/// key-value pairs.
-typedef Api1UpdateViewRequestApplicationJson_Data = ({
-  Api1UpdateViewRequestApplicationJson_Data0? api1UpdateViewRequestApplicationJsonData0,
-  Api1UpdateViewRequestApplicationJson_Data1? api1UpdateViewRequestApplicationJsonData1,
-  Api1UpdateViewRequestApplicationJson_Data2? api1UpdateViewRequestApplicationJsonData2,
-  Api1UpdateViewRequestApplicationJson_Data3? api1UpdateViewRequestApplicationJsonData3,
-});
-
 @BuiltValue(instantiable: false)
 sealed class $Api1UpdateViewRequestApplicationJsonInterface {
-  /// key-value pairs.
+  /// fields of the view with their new values.
   Api1UpdateViewRequestApplicationJson_Data get data;
 
   /// Rebuilds the instance.
@@ -7694,9 +7341,7 @@ sealed class $Api1UpdateViewRequestApplicationJsonInterface {
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults($Api1UpdateViewRequestApplicationJsonInterfaceBuilder b) {}
   @BuiltValueHook(finalizeBuilder: true)
-  static void _validate($Api1UpdateViewRequestApplicationJsonInterfaceBuilder b) {
-    b.data?.validateAnyOf();
-  }
+  static void _validate($Api1UpdateViewRequestApplicationJsonInterfaceBuilder b) {}
 }
 
 abstract class Api1UpdateViewRequestApplicationJson
@@ -8494,6 +8139,124 @@ abstract class ContextNavigation
 }
 
 @BuiltValue(instantiable: false)
+sealed class $Column_ViewColumnInformationInterface {
+  int get columnId;
+  int get order;
+  bool get readonly;
+  bool get mandatory;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$Column_ViewColumnInformationInterfaceBuilder].
+  $Column_ViewColumnInformationInterface rebuild(void Function($Column_ViewColumnInformationInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$Column_ViewColumnInformationInterfaceBuilder].
+  $Column_ViewColumnInformationInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($Column_ViewColumnInformationInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($Column_ViewColumnInformationInterfaceBuilder b) {}
+}
+
+abstract class Column_ViewColumnInformation
+    implements
+        $Column_ViewColumnInformationInterface,
+        Built<Column_ViewColumnInformation, Column_ViewColumnInformationBuilder> {
+  /// Creates a new Column_ViewColumnInformation object using the builder pattern.
+  factory Column_ViewColumnInformation([void Function(Column_ViewColumnInformationBuilder)? b]) =
+      _$Column_ViewColumnInformation;
+
+  // coverage:ignore-start
+  const Column_ViewColumnInformation._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory Column_ViewColumnInformation.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for Column_ViewColumnInformation.
+  static Serializer<Column_ViewColumnInformation> get serializer => _$columnViewColumnInformationSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(Column_ViewColumnInformationBuilder b) {
+    $Column_ViewColumnInformationInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(Column_ViewColumnInformationBuilder b) {
+    $Column_ViewColumnInformationInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $Column_CustomSettingsInterface {
+  int get width;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$Column_CustomSettingsInterfaceBuilder].
+  $Column_CustomSettingsInterface rebuild(void Function($Column_CustomSettingsInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$Column_CustomSettingsInterfaceBuilder].
+  $Column_CustomSettingsInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($Column_CustomSettingsInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($Column_CustomSettingsInterfaceBuilder b) {}
+}
+
+abstract class Column_CustomSettings
+    implements $Column_CustomSettingsInterface, Built<Column_CustomSettings, Column_CustomSettingsBuilder> {
+  /// Creates a new Column_CustomSettings object using the builder pattern.
+  factory Column_CustomSettings([void Function(Column_CustomSettingsBuilder)? b]) = _$Column_CustomSettings;
+
+  // coverage:ignore-start
+  const Column_CustomSettings._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory Column_CustomSettings.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for Column_CustomSettings.
+  static Serializer<Column_CustomSettings> get serializer => _$columnCustomSettingsSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(Column_CustomSettingsBuilder b) {
+    $Column_CustomSettingsInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(Column_CustomSettingsBuilder b) {
+    $Column_CustomSettingsInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $ColumnInterface {
   int get id;
   String get title;
@@ -8516,6 +8279,7 @@ sealed class $ColumnInterface {
   String get textDefault;
   String get textAllowedPattern;
   int get textMaxLength;
+  bool get textUnique;
   String get selectionOptions;
   String get selectionDefault;
   String get datetimeDefault;
@@ -8525,6 +8289,8 @@ sealed class $ColumnInterface {
   bool get usergroupSelectGroups;
   bool get usergroupSelectTeams;
   bool get showUserStatus;
+  Column_ViewColumnInformation? get viewColumnInformation;
+  Column_CustomSettings? get customSettings;
 
   /// Rebuilds the instance.
   ///
@@ -8677,6 +8443,11 @@ sealed class $Api1CreateTableColumnRequestApplicationJsonInterface {
   static final _$selectedViewIds = _$jsonSerializers
       .deserialize(const [], specifiedType: const FullType(BuiltList, [FullType(int)]))! as BuiltList<int>;
 
+  static final _$customSettings = _$jsonSerializers.deserialize(
+    const {},
+    specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+  )! as BuiltMap<String, JsonObject>;
+
   /// Title.
   String get title;
 
@@ -8719,6 +8490,9 @@ sealed class $Api1CreateTableColumnRequestApplicationJsonInterface {
   /// Max length, if column is a text.
   int? get textMaxLength;
 
+  /// Whether the text value must be unique, if column is a text.
+  bool? get textUnique;
+
   /// Options for a selection (json array{id: int, label: string}).
   String? get selectionOptions;
 
@@ -8749,6 +8523,9 @@ sealed class $Api1CreateTableColumnRequestApplicationJsonInterface {
   /// View IDs where this column should be added to be presented.
   BuiltList<int>? get selectedViewIds;
 
+  /// Custom settings for the column.
+  BuiltMap<String, JsonObject> get customSettings;
+
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
@@ -8766,6 +8543,7 @@ sealed class $Api1CreateTableColumnRequestApplicationJsonInterface {
     b.datetimeDefault = _$datetimeDefault;
     b.usergroupDefault = _$usergroupDefault;
     b.selectedViewIds.replace(_$selectedViewIds);
+    b.customSettings.replace(_$customSettings);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
@@ -8902,6 +8680,8 @@ class _$Api1CreateColumnRequestApplicationJson_TypeSerializer
 
 @BuiltValue(instantiable: false)
 sealed class $Api1CreateColumnRequestApplicationJsonInterface {
+  static final _$textUnique = _$jsonSerializers.deserialize(false, specifiedType: const FullType(bool))! as bool;
+
   static final _$selectionOptions = _$jsonSerializers.deserialize('', specifiedType: const FullType(String))! as String;
 
   static final _$selectionDefault = _$jsonSerializers.deserialize('', specifiedType: const FullType(String))! as String;
@@ -8912,6 +8692,11 @@ sealed class $Api1CreateColumnRequestApplicationJsonInterface {
 
   static final _$selectedViewIds = _$jsonSerializers
       .deserialize(const [], specifiedType: const FullType(BuiltList, [FullType(int)]))! as BuiltList<int>;
+
+  static final _$customSettings = _$jsonSerializers.deserialize(
+    const {},
+    specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+  )! as BuiltMap<String, JsonObject>;
 
   /// Table ID.
   int? get tableId;
@@ -8961,6 +8746,9 @@ sealed class $Api1CreateColumnRequestApplicationJsonInterface {
   /// Max length, if column is a text.
   int? get textMaxLength;
 
+  /// Whether the text value must be unique, if column is a text.
+  bool? get textUnique;
+
   /// Options for a selection (json array{id: int, label: string}).
   String? get selectionOptions;
 
@@ -8991,6 +8779,9 @@ sealed class $Api1CreateColumnRequestApplicationJsonInterface {
   /// View IDs where this column should be added to be presented.
   BuiltList<int>? get selectedViewIds;
 
+  /// Custom settings for the column.
+  BuiltMap<String, JsonObject> get customSettings;
+
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
@@ -9003,11 +8794,13 @@ sealed class $Api1CreateColumnRequestApplicationJsonInterface {
   $Api1CreateColumnRequestApplicationJsonInterfaceBuilder toBuilder();
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults($Api1CreateColumnRequestApplicationJsonInterfaceBuilder b) {
+    b.textUnique = _$textUnique;
     b.selectionOptions = _$selectionOptions;
     b.selectionDefault = _$selectionDefault;
     b.datetimeDefault = _$datetimeDefault;
     b.usergroupDefault = _$usergroupDefault;
     b.selectedViewIds.replace(_$selectedViewIds);
+    b.customSettings.replace(_$customSettings);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
@@ -9058,6 +8851,11 @@ abstract class Api1CreateColumnRequestApplicationJson
 
 @BuiltValue(instantiable: false)
 sealed class $Api1UpdateColumnRequestApplicationJsonInterface {
+  static final _$customSettings = _$jsonSerializers.deserialize(
+    const {},
+    specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+  )! as BuiltMap<String, JsonObject>;
+
   /// Title.
   String? get title;
 
@@ -9097,6 +8895,9 @@ sealed class $Api1UpdateColumnRequestApplicationJsonInterface {
   /// Max length, if column is a text.
   int? get textMaxLength;
 
+  /// Whether the text value must be unique, if column is a text.
+  bool? get textUnique;
+
   /// Options for a selection (json array{id: int, label: string}).
   String? get selectionOptions;
 
@@ -9124,6 +8925,9 @@ sealed class $Api1UpdateColumnRequestApplicationJsonInterface {
   /// Whether to show the user's status, if column type is usergroup.
   bool? get usergroupShowUserStatus;
 
+  /// Custom settings for the column.
+  BuiltMap<String, JsonObject> get customSettings;
+
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
@@ -9135,7 +8939,10 @@ sealed class $Api1UpdateColumnRequestApplicationJsonInterface {
   /// Converts the instance to a builder [$Api1UpdateColumnRequestApplicationJsonInterfaceBuilder].
   $Api1UpdateColumnRequestApplicationJsonInterfaceBuilder toBuilder();
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($Api1UpdateColumnRequestApplicationJsonInterfaceBuilder b) {}
+  static void _defaults($Api1UpdateColumnRequestApplicationJsonInterfaceBuilder b) {
+    b.customSettings.replace(_$customSettings);
+  }
+
   @BuiltValueHook(finalizeBuilder: true)
   static void _validate($Api1UpdateColumnRequestApplicationJsonInterfaceBuilder b) {}
 }
@@ -9597,6 +9404,8 @@ sealed class $ImportStateInterface {
   int get createdColumnsCount;
   @BuiltValueField(wireName: 'inserted_rows_count')
   int get insertedRowsCount;
+  @BuiltValueField(wireName: 'updated_rows_count')
+  int get updatedRowsCount;
   @BuiltValueField(wireName: 'errors_parsing_count')
   int get errorsParsingCount;
   @BuiltValueField(wireName: 'errors_count')
@@ -10247,6 +10056,11 @@ sealed class $ApiColumnsCreateNumberColumnRequestApplicationJsonInterface {
     specifiedType: const FullType(ApiColumnsCreateNumberColumnRequestApplicationJson_BaseNodeType),
   )! as ApiColumnsCreateNumberColumnRequestApplicationJson_BaseNodeType;
 
+  static final _$customSettings = _$jsonSerializers.deserialize(
+    const {},
+    specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+  )! as BuiltMap<String, JsonObject>;
+
   /// Context of the column creation.
   int get baseNodeId;
 
@@ -10286,6 +10100,9 @@ sealed class $ApiColumnsCreateNumberColumnRequestApplicationJsonInterface {
   /// Context type of the column creation.
   ApiColumnsCreateNumberColumnRequestApplicationJson_BaseNodeType get baseNodeType;
 
+  /// Custom settings for the column.
+  BuiltMap<String, JsonObject> get customSettings;
+
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
@@ -10301,6 +10118,7 @@ sealed class $ApiColumnsCreateNumberColumnRequestApplicationJsonInterface {
     b.selectedViewIds.replace(_$selectedViewIds);
     b.mandatory = _$mandatory;
     b.baseNodeType = _$baseNodeType;
+    b.customSettings.replace(_$customSettings);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
@@ -10622,6 +10440,8 @@ class _$ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeTypeSerializer
 
 @BuiltValue(instantiable: false)
 sealed class $ApiColumnsCreateTextColumnRequestApplicationJsonInterface {
+  static final _$textUnique = _$jsonSerializers.deserialize(false, specifiedType: const FullType(bool))! as bool;
+
   static final _$selectedViewIds = _$jsonSerializers
       .deserialize(const [], specifiedType: const FullType(BuiltList, [FullType(int)]))! as BuiltList<int>;
 
@@ -10631,6 +10451,11 @@ sealed class $ApiColumnsCreateTextColumnRequestApplicationJsonInterface {
     'table',
     specifiedType: const FullType(ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeType),
   )! as ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeType;
+
+  static final _$customSettings = _$jsonSerializers.deserialize(
+    const {},
+    specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+  )! as BuiltMap<String, JsonObject>;
 
   /// Context of the column creation.
   int get baseNodeId;
@@ -10647,6 +10472,9 @@ sealed class $ApiColumnsCreateTextColumnRequestApplicationJsonInterface {
   /// Max raw text length.
   int? get textMaxLength;
 
+  /// Whether the text value must be unique, if column is a text.
+  bool? get textUnique;
+
   /// Subtype for the new column.
   ApiColumnsCreateTextColumnRequestApplicationJson_Subtype? get subtype;
 
@@ -10662,6 +10490,9 @@ sealed class $ApiColumnsCreateTextColumnRequestApplicationJsonInterface {
   /// Context type of the column creation.
   ApiColumnsCreateTextColumnRequestApplicationJson_BaseNodeType get baseNodeType;
 
+  /// Custom settings for the column.
+  BuiltMap<String, JsonObject> get customSettings;
+
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
@@ -10674,9 +10505,11 @@ sealed class $ApiColumnsCreateTextColumnRequestApplicationJsonInterface {
   $ApiColumnsCreateTextColumnRequestApplicationJsonInterfaceBuilder toBuilder();
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults($ApiColumnsCreateTextColumnRequestApplicationJsonInterfaceBuilder b) {
+    b.textUnique = _$textUnique;
     b.selectedViewIds.replace(_$selectedViewIds);
     b.mandatory = _$mandatory;
     b.baseNodeType = _$baseNodeType;
+    b.customSettings.replace(_$customSettings);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
@@ -11008,6 +10841,11 @@ sealed class $ApiColumnsCreateSelectionColumnRequestApplicationJsonInterface {
     specifiedType: const FullType(ApiColumnsCreateSelectionColumnRequestApplicationJson_BaseNodeType),
   )! as ApiColumnsCreateSelectionColumnRequestApplicationJson_BaseNodeType;
 
+  static final _$customSettings = _$jsonSerializers.deserialize(
+    const {},
+    specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+  )! as BuiltMap<String, JsonObject>;
+
   /// Context of the column creation.
   int get baseNodeId;
 
@@ -11035,6 +10873,9 @@ sealed class $ApiColumnsCreateSelectionColumnRequestApplicationJsonInterface {
   /// Context type of the column creation.
   ApiColumnsCreateSelectionColumnRequestApplicationJson_BaseNodeType get baseNodeType;
 
+  /// Custom settings for the column.
+  BuiltMap<String, JsonObject> get customSettings;
+
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
@@ -11050,6 +10891,7 @@ sealed class $ApiColumnsCreateSelectionColumnRequestApplicationJsonInterface {
     b.selectedViewIds.replace(_$selectedViewIds);
     b.mandatory = _$mandatory;
     b.baseNodeType = _$baseNodeType;
+    b.customSettings.replace(_$customSettings);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
@@ -11451,6 +11293,11 @@ sealed class $ApiColumnsCreateDatetimeColumnRequestApplicationJsonInterface {
     specifiedType: const FullType(ApiColumnsCreateDatetimeColumnRequestApplicationJson_BaseNodeType),
   )! as ApiColumnsCreateDatetimeColumnRequestApplicationJson_BaseNodeType;
 
+  static final _$customSettings = _$jsonSerializers.deserialize(
+    const {},
+    specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+  )! as BuiltMap<String, JsonObject>;
+
   /// Context of the column creation.
   int get baseNodeId;
 
@@ -11475,6 +11322,9 @@ sealed class $ApiColumnsCreateDatetimeColumnRequestApplicationJsonInterface {
   /// Context type of the column creation.
   ApiColumnsCreateDatetimeColumnRequestApplicationJson_BaseNodeType get baseNodeType;
 
+  /// Custom settings for the column.
+  BuiltMap<String, JsonObject> get customSettings;
+
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
@@ -11490,6 +11340,7 @@ sealed class $ApiColumnsCreateDatetimeColumnRequestApplicationJsonInterface {
     b.selectedViewIds.replace(_$selectedViewIds);
     b.mandatory = _$mandatory;
     b.baseNodeType = _$baseNodeType;
+    b.customSettings.replace(_$customSettings);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
@@ -11751,6 +11602,11 @@ sealed class $ApiColumnsCreateUsergroupColumnRequestApplicationJsonInterface {
     specifiedType: const FullType(ApiColumnsCreateUsergroupColumnRequestApplicationJson_BaseNodeType),
   )! as ApiColumnsCreateUsergroupColumnRequestApplicationJson_BaseNodeType;
 
+  static final _$customSettings = _$jsonSerializers.deserialize(
+    const {},
+    specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+  )! as BuiltMap<String, JsonObject>;
+
   /// Context of the column creation.
   int get baseNodeId;
 
@@ -11787,6 +11643,9 @@ sealed class $ApiColumnsCreateUsergroupColumnRequestApplicationJsonInterface {
   /// Context type of the column creation.
   ApiColumnsCreateUsergroupColumnRequestApplicationJson_BaseNodeType get baseNodeType;
 
+  /// Custom settings for the column.
+  BuiltMap<String, JsonObject> get customSettings;
+
   /// Rebuilds the instance.
   ///
   /// The result is the same as this instance but with [updates] applied.
@@ -11802,6 +11661,7 @@ sealed class $ApiColumnsCreateUsergroupColumnRequestApplicationJsonInterface {
     b.selectedViewIds.replace(_$selectedViewIds);
     b.mandatory = _$mandatory;
     b.baseNodeType = _$baseNodeType;
+    b.customSettings.replace(_$customSettings);
   }
 
   @BuiltValueHook(finalizeBuilder: true)
@@ -15537,33 +15397,19 @@ extension $View_Filter_ValueExtension on View_Filter_Value {
   static View_Filter_Value fromJson(Object? json) => $b6d67dc2a96424d2f407f8e51557f3deExtension._fromJson(json);
 }
 
-/// Serialization extension for `Api1UpdateViewRequestApplicationJson_Data3_Value_Value`.
-extension $Api1UpdateViewRequestApplicationJson_Data3_Value_ValueExtension
-    on Api1UpdateViewRequestApplicationJson_Data3_Value_Value {
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data3_Value_Value.
+/// Serialization extension for `Api1UpdateViewRequestApplicationJson_Data_Filter_Value`.
+extension $Api1UpdateViewRequestApplicationJson_Data_Filter_ValueExtension
+    on Api1UpdateViewRequestApplicationJson_Data_Filter_Value {
+  /// Serializer for Api1UpdateViewRequestApplicationJson_Data_Filter_Value.
   @BuiltValueSerializer(custom: true)
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data3_Value_Value> get serializer =>
+  static Serializer<Api1UpdateViewRequestApplicationJson_Data_Filter_Value> get serializer =>
       $b6d67dc2a96424d2f407f8e51557f3deExtension._serializer;
 
   /// Creates a new object from the given [json] data.
   ///
   /// Use `toJson` to serialize it back into json.
-  static Api1UpdateViewRequestApplicationJson_Data3_Value_Value fromJson(Object? json) =>
+  static Api1UpdateViewRequestApplicationJson_Data_Filter_Value fromJson(Object? json) =>
       $b6d67dc2a96424d2f407f8e51557f3deExtension._fromJson(json);
-}
-
-/// Serialization extension for `Api1UpdateViewRequestApplicationJson_Data`.
-extension $Api1UpdateViewRequestApplicationJson_DataExtension on Api1UpdateViewRequestApplicationJson_Data {
-  /// Serializer for Api1UpdateViewRequestApplicationJson_Data.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Api1UpdateViewRequestApplicationJson_Data> get serializer =>
-      $8518b50581163640f148d1e5a6a7db2cExtension._serializer;
-
-  /// Creates a new object from the given [json] data.
-  ///
-  /// Use `toJson` to serialize it back into json.
-  static Api1UpdateViewRequestApplicationJson_Data fromJson(Object? json) =>
-      $8518b50581163640f148d1e5a6a7db2cExtension._fromJson(json);
 }
 
 /// Serialization extension for `Api1CreateRowInTableRequestApplicationJson_Data`.
@@ -15692,123 +15538,6 @@ class _$b6d67dc2a96424d2f407f8e51557f3deSerializer implements PrimitiveSerialize
       string = serializers.deserialize(data, specifiedType: const FullType(String))! as String;
     } catch (_) {}
     return ($num: $num, string: string);
-  }
-}
-
-typedef _$8518b50581163640f148d1e5a6a7db2c = ({
-  Api1UpdateViewRequestApplicationJson_Data0? api1UpdateViewRequestApplicationJsonData0,
-  Api1UpdateViewRequestApplicationJson_Data1? api1UpdateViewRequestApplicationJsonData1,
-  Api1UpdateViewRequestApplicationJson_Data2? api1UpdateViewRequestApplicationJsonData2,
-  Api1UpdateViewRequestApplicationJson_Data3? api1UpdateViewRequestApplicationJsonData3,
-});
-
-/// @nodoc
-// ignore: library_private_types_in_public_api
-extension $8518b50581163640f148d1e5a6a7db2cExtension on _$8518b50581163640f148d1e5a6a7db2c {
-  List<dynamic> get _values => [
-        api1UpdateViewRequestApplicationJsonData0,
-        api1UpdateViewRequestApplicationJsonData1,
-        api1UpdateViewRequestApplicationJsonData2,
-        api1UpdateViewRequestApplicationJsonData3,
-      ];
-
-  List<String> get _names => const [
-        'api1UpdateViewRequestApplicationJsonData0',
-        'api1UpdateViewRequestApplicationJsonData1',
-        'api1UpdateViewRequestApplicationJsonData2',
-        'api1UpdateViewRequestApplicationJsonData3',
-      ];
-
-  /// {@macro Dynamite.validateOneOf}
-  void validateOneOf() => _i6.validateOneOf(_values, _names);
-
-  /// {@macro Dynamite.validateAnyOf}
-  void validateAnyOf() => _i6.validateAnyOf(_values, _names);
-
-  static Serializer<_$8518b50581163640f148d1e5a6a7db2c> get _serializer =>
-      const _$8518b50581163640f148d1e5a6a7db2cSerializer();
-
-  static _$8518b50581163640f148d1e5a6a7db2c _fromJson(Object? json) =>
-      _$jsonSerializers.deserializeWith(_serializer, json)!;
-
-  /// Parses this object into a json like map.
-  ///
-  /// Use the fromJson factory to revive it again.
-  Object? toJson() => _$jsonSerializers.serializeWith(_serializer, this);
-}
-
-class _$8518b50581163640f148d1e5a6a7db2cSerializer implements PrimitiveSerializer<_$8518b50581163640f148d1e5a6a7db2c> {
-  const _$8518b50581163640f148d1e5a6a7db2cSerializer();
-
-  @override
-  Iterable<Type> get types => const [_$8518b50581163640f148d1e5a6a7db2c];
-
-  @override
-  String get wireName => r'_$8518b50581163640f148d1e5a6a7db2c';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    _$8518b50581163640f148d1e5a6a7db2c object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    dynamic value;
-    value = object.api1UpdateViewRequestApplicationJsonData0;
-    if (value != null) {
-      return serializers.serialize(value, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data0))!;
-    }
-    value = object.api1UpdateViewRequestApplicationJsonData1;
-    if (value != null) {
-      return serializers.serialize(value, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data1))!;
-    }
-    value = object.api1UpdateViewRequestApplicationJsonData2;
-    if (value != null) {
-      return serializers.serialize(value, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data2))!;
-    }
-    value = object.api1UpdateViewRequestApplicationJsonData3;
-    if (value != null) {
-      return serializers.serialize(value, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data3))!;
-    }
-    // Should not be possible after validation.
-    throw StateError('Tried to serialize without any value.');
-  }
-
-  @override
-  _$8518b50581163640f148d1e5a6a7db2c deserialize(
-    Serializers serializers,
-    Object data, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    Api1UpdateViewRequestApplicationJson_Data0? api1UpdateViewRequestApplicationJsonData0;
-    try {
-      api1UpdateViewRequestApplicationJsonData0 =
-          serializers.deserialize(data, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data0))!
-              as Api1UpdateViewRequestApplicationJson_Data0;
-    } catch (_) {}
-    Api1UpdateViewRequestApplicationJson_Data1? api1UpdateViewRequestApplicationJsonData1;
-    try {
-      api1UpdateViewRequestApplicationJsonData1 =
-          serializers.deserialize(data, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data1))!
-              as Api1UpdateViewRequestApplicationJson_Data1;
-    } catch (_) {}
-    Api1UpdateViewRequestApplicationJson_Data2? api1UpdateViewRequestApplicationJsonData2;
-    try {
-      api1UpdateViewRequestApplicationJsonData2 =
-          serializers.deserialize(data, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data2))!
-              as Api1UpdateViewRequestApplicationJson_Data2;
-    } catch (_) {}
-    Api1UpdateViewRequestApplicationJson_Data3? api1UpdateViewRequestApplicationJsonData3;
-    try {
-      api1UpdateViewRequestApplicationJsonData3 =
-          serializers.deserialize(data, specifiedType: const FullType(Api1UpdateViewRequestApplicationJson_Data3))!
-              as Api1UpdateViewRequestApplicationJson_Data3;
-    } catch (_) {}
-    return (
-      api1UpdateViewRequestApplicationJsonData0: api1UpdateViewRequestApplicationJsonData0,
-      api1UpdateViewRequestApplicationJsonData1: api1UpdateViewRequestApplicationJsonData1,
-      api1UpdateViewRequestApplicationJsonData2: api1UpdateViewRequestApplicationJsonData2,
-      api1UpdateViewRequestApplicationJsonData3: api1UpdateViewRequestApplicationJsonData3,
-    );
   }
 }
 
@@ -15954,42 +15683,45 @@ final Serializers _$serializers = (Serializers().toBuilder()
       )
       ..add(Api1UpdateViewRequestApplicationJson.serializer)
       ..addBuilderFactory(
-        const FullType(Api1UpdateViewRequestApplicationJson_Data0),
-        Api1UpdateViewRequestApplicationJson_Data0Builder.new,
+        const FullType(Api1UpdateViewRequestApplicationJson_Data),
+        Api1UpdateViewRequestApplicationJson_DataBuilder.new,
       )
-      ..add(Api1UpdateViewRequestApplicationJson_Data0.serializer)
-      ..add(Api1UpdateViewRequestApplicationJson_Data0_Key.serializer)
+      ..add(Api1UpdateViewRequestApplicationJson_Data.serializer)
       ..addBuilderFactory(
-        const FullType(Api1UpdateViewRequestApplicationJson_Data1),
-        Api1UpdateViewRequestApplicationJson_Data1Builder.new,
+        const FullType(Api1UpdateViewRequestApplicationJson_Data_ColumnSettings),
+        Api1UpdateViewRequestApplicationJson_Data_ColumnSettingsBuilder.new,
       )
-      ..add(Api1UpdateViewRequestApplicationJson_Data1.serializer)
-      ..add(Api1UpdateViewRequestApplicationJson_Data1_Key.serializer)
+      ..add(Api1UpdateViewRequestApplicationJson_Data_ColumnSettings.serializer)
       ..addBuilderFactory(
-        const FullType(Api1UpdateViewRequestApplicationJson_Data2),
-        Api1UpdateViewRequestApplicationJson_Data2Builder.new,
+        const FullType(BuiltList, [FullType(Api1UpdateViewRequestApplicationJson_Data_ColumnSettings)]),
+        ListBuilder<Api1UpdateViewRequestApplicationJson_Data_ColumnSettings>.new,
       )
-      ..add(Api1UpdateViewRequestApplicationJson_Data2.serializer)
-      ..add(Api1UpdateViewRequestApplicationJson_Data2_Key.serializer)
       ..addBuilderFactory(
-        const FullType(Api1UpdateViewRequestApplicationJson_Data2_Value),
-        Api1UpdateViewRequestApplicationJson_Data2_ValueBuilder.new,
+        const FullType(Api1UpdateViewRequestApplicationJson_Data_Sort),
+        Api1UpdateViewRequestApplicationJson_Data_SortBuilder.new,
       )
-      ..add(Api1UpdateViewRequestApplicationJson_Data2_Value.serializer)
-      ..add(Api1UpdateViewRequestApplicationJson_Data2_Value_Mode.serializer)
+      ..add(Api1UpdateViewRequestApplicationJson_Data_Sort.serializer)
+      ..add(Api1UpdateViewRequestApplicationJson_Data_Sort_Mode.serializer)
       ..addBuilderFactory(
-        const FullType(Api1UpdateViewRequestApplicationJson_Data3),
-        Api1UpdateViewRequestApplicationJson_Data3Builder.new,
+        const FullType(BuiltList, [FullType(Api1UpdateViewRequestApplicationJson_Data_Sort)]),
+        ListBuilder<Api1UpdateViewRequestApplicationJson_Data_Sort>.new,
       )
-      ..add(Api1UpdateViewRequestApplicationJson_Data3.serializer)
-      ..add(Api1UpdateViewRequestApplicationJson_Data3_Key.serializer)
       ..addBuilderFactory(
-        const FullType(Api1UpdateViewRequestApplicationJson_Data3_Value),
-        Api1UpdateViewRequestApplicationJson_Data3_ValueBuilder.new,
+        const FullType(Api1UpdateViewRequestApplicationJson_Data_Filter),
+        Api1UpdateViewRequestApplicationJson_Data_FilterBuilder.new,
       )
-      ..add(Api1UpdateViewRequestApplicationJson_Data3_Value.serializer)
-      ..add(Api1UpdateViewRequestApplicationJson_Data3_Value_Operator.serializer)
-      ..add($8518b50581163640f148d1e5a6a7db2cExtension._serializer)
+      ..add(Api1UpdateViewRequestApplicationJson_Data_Filter.serializer)
+      ..add(Api1UpdateViewRequestApplicationJson_Data_Filter_Operator.serializer)
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Api1UpdateViewRequestApplicationJson_Data_Filter)]),
+        ListBuilder<Api1UpdateViewRequestApplicationJson_Data_Filter>.new,
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [
+          FullType(BuiltList, [FullType(Api1UpdateViewRequestApplicationJson_Data_Filter)]),
+        ]),
+        ListBuilder<BuiltList<Api1UpdateViewRequestApplicationJson_Data_Filter>>.new,
+      )
       ..addBuilderFactory(const FullType(Share), ShareBuilder.new)
       ..add(Share.serializer)
       ..addBuilderFactory(
@@ -16021,6 +15753,10 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..add(ContextNavigation.serializer)
       ..addBuilderFactory(const FullType(Column), ColumnBuilder.new)
       ..add(Column.serializer)
+      ..addBuilderFactory(const FullType(Column_ViewColumnInformation), Column_ViewColumnInformationBuilder.new)
+      ..add(Column_ViewColumnInformation.serializer)
+      ..addBuilderFactory(const FullType(Column_CustomSettings), Column_CustomSettingsBuilder.new)
+      ..add(Column_CustomSettings.serializer)
       ..addBuilderFactory(const FullType(BuiltList, [FullType(Column)]), ListBuilder<Column>.new)
       ..addBuilderFactory(
         const FullType(Api1CreateTableColumnRequestApplicationJson),
@@ -16028,6 +15764,10 @@ final Serializers _$serializers = (Serializers().toBuilder()
       )
       ..add(Api1CreateTableColumnRequestApplicationJson.serializer)
       ..add(Api1CreateTableColumnRequestApplicationJson_Type.serializer)
+      ..addBuilderFactory(
+        const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+        MapBuilder<String, JsonObject>.new,
+      )
       ..addBuilderFactory(
         const FullType(Api1CreateColumnRequestApplicationJson),
         Api1CreateColumnRequestApplicationJsonBuilder.new,
@@ -16050,10 +15790,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
         Api1CreateRowInTableRequestApplicationJsonBuilder.new,
       )
       ..add(Api1CreateRowInTableRequestApplicationJson.serializer)
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-        MapBuilder<String, JsonObject>.new,
-      )
       ..add($3f5057013fe375112018fdacdf7c966aExtension._serializer)
       ..addBuilderFactory(
         const FullType(Api1CreateRowInViewRequestApplicationJson),
@@ -16461,11 +16197,7 @@ final Serializers _$jsonSerializers = (_$serializers.toBuilder()
       ..add(_i7.DynamiteDoubleSerializer())
       ..addPlugin(
         _i8.StandardJsonPlugin(
-          typesToLeaveAsList: const {
-            _$b6d67dc2a96424d2f407f8e51557f3de,
-            _$8518b50581163640f148d1e5a6a7db2c,
-            _$3f5057013fe375112018fdacdf7c966a,
-          },
+          typesToLeaveAsList: const {_$b6d67dc2a96424d2f407f8e51557f3de, _$3f5057013fe375112018fdacdf7c966a},
         ),
       )
       ..addPlugin(const _i7.HeaderPlugin())

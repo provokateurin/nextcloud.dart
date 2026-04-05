@@ -51,6 +51,7 @@ function generate_spec() {
   cd external/nextcloud-drop_account
   composer install
   generate_spec "." "drop_account"
+  git clean -fd
 )
 (
   cd external/nextcloud-tables

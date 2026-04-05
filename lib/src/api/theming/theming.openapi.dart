@@ -44,8 +44,7 @@ class $Client extends _i1.DynamiteClient {
 
   late final $IconClient icon = $IconClient(this);
 
-  /// Class ThemingController.
-  /// handle ajax requests to update the theme.
+  /// Class ThemingController handle ajax requests to update the theme.
   late final $ThemingClient theming = $ThemingClient(this);
 
   late final $UserThemeClient userTheme = $UserThemeClient(this);
@@ -294,8 +293,7 @@ class $IconClient {
   }
 }
 
-/// Class ThemingController.
-/// handle ajax requests to update the theme.
+/// Class ThemingController handle ajax requests to update the theme.
 class $ThemingClient {
   /// Creates a new `DynamiteClient` for theming requests.
   $ThemingClient(this._rootClient);
@@ -318,8 +316,8 @@ class $ThemingClient {
   ///
   /// Parameters:
   ///   * [themeId] ID of the theme.
-  ///   * [plain] Let the browser decide the CSS priority. Defaults to `0`.
-  ///   * [withCustomCss] Include custom CSS. Defaults to `0`.
+  ///   * [plain] Let the browser decide the CSS priority. Defaults to `false`.
+  ///   * [withCustomCss] Include custom CSS. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Stylesheet returned
@@ -329,24 +327,17 @@ class $ThemingClient {
   ///  * [getThemeStylesheet] for a method executing this request and parsing the response.
   ///  * [$getThemeStylesheet_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $getThemeStylesheet_Request({
-    required String themeId,
-    ThemingGetThemeStylesheetPlain? plain,
-    ThemingGetThemeStylesheetWithCustomCss? withCustomCss,
-  }) {
+  _i3.Request $getThemeStylesheet_Request({required String themeId, bool? plain, bool? withCustomCss}) {
     final _parameters = <String, Object?>{};
     final __themeId = _$jsonSerializers.serialize(themeId, specifiedType: const FullType(String));
     _parameters['themeId'] = __themeId;
 
-    var __plain = _$jsonSerializers.serialize(plain, specifiedType: const FullType(ThemingGetThemeStylesheetPlain));
-    __plain ??= 0;
+    var __plain = _$jsonSerializers.serialize(plain, specifiedType: const FullType(bool));
+    __plain ??= false;
     _parameters['plain'] = __plain;
 
-    var __withCustomCss = _$jsonSerializers.serialize(
-      withCustomCss,
-      specifiedType: const FullType(ThemingGetThemeStylesheetWithCustomCss),
-    );
-    __withCustomCss ??= 0;
+    var __withCustomCss = _$jsonSerializers.serialize(withCustomCss, specifiedType: const FullType(bool));
+    __withCustomCss ??= false;
     _parameters['withCustomCss'] = __withCustomCss;
 
     final _path = _i4.UriTemplate(
@@ -378,8 +369,8 @@ class $ThemingClient {
   ///
   /// Parameters:
   ///   * [themeId] ID of the theme.
-  ///   * [plain] Let the browser decide the CSS priority. Defaults to `0`.
-  ///   * [withCustomCss] Include custom CSS. Defaults to `0`.
+  ///   * [plain] Let the browser decide the CSS priority. Defaults to `false`.
+  ///   * [withCustomCss] Include custom CSS. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Stylesheet returned
@@ -390,8 +381,8 @@ class $ThemingClient {
   ///  * [$getThemeStylesheet_Serializer] for a converter to parse the `Response` from an executed request.
   Future<_i1.DynamiteResponse<String, void>> getThemeStylesheet({
     required String themeId,
-    ThemingGetThemeStylesheetPlain? plain,
-    ThemingGetThemeStylesheetWithCustomCss? withCustomCss,
+    bool? plain,
+    bool? withCustomCss,
   }) async {
     final _request = $getThemeStylesheet_Request(themeId: themeId, plain: plain, withCustomCss: withCustomCss);
     final _streamedResponse = await _rootClient.httpClient.send(_request);
@@ -417,7 +408,7 @@ class $ThemingClient {
   ///
   /// Parameters:
   ///   * [key] Key of the image.
-  ///   * [useSvg] Return image as SVG. Defaults to `1`.
+  ///   * [useSvg] Return image as SVG. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Image returned
@@ -428,13 +419,13 @@ class $ThemingClient {
   ///  * [getImage] for a method executing this request and parsing the response.
   ///  * [$getImage_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $getImage_Request({required String key, ThemingGetImageUseSvg? useSvg}) {
+  _i3.Request $getImage_Request({required String key, bool? useSvg}) {
     final _parameters = <String, Object?>{};
     final __key = _$jsonSerializers.serialize(key, specifiedType: const FullType(String));
     _parameters['key'] = __key;
 
-    var __useSvg = _$jsonSerializers.serialize(useSvg, specifiedType: const FullType(ThemingGetImageUseSvg));
-    __useSvg ??= 1;
+    var __useSvg = _$jsonSerializers.serialize(useSvg, specifiedType: const FullType(bool));
+    __useSvg ??= true;
     _parameters['useSvg'] = __useSvg;
 
     final _path = _i4.UriTemplate('/index.php/apps/theming/image/{key}{?useSvg*}').expand(_parameters);
@@ -464,7 +455,7 @@ class $ThemingClient {
   ///
   /// Parameters:
   ///   * [key] Key of the image.
-  ///   * [useSvg] Return image as SVG. Defaults to `1`.
+  ///   * [useSvg] Return image as SVG. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Image returned
@@ -474,7 +465,7 @@ class $ThemingClient {
   /// See:
   ///  * [$getImage_Request] for the request send by this method.
   ///  * [$getImage_Serializer] for a converter to parse the `Response` from an executed request.
-  Future<_i1.DynamiteResponse<Uint8List, void>> getImage({required String key, ThemingGetImageUseSvg? useSvg}) async {
+  Future<_i1.DynamiteResponse<Uint8List, void>> getImage({required String key, bool? useSvg}) async {
     final _request = $getImage_Request(key: key, useSvg: useSvg);
     final _streamedResponse = await _rootClient.httpClient.send(_request);
     final _response = await _i3.Response.fromStream(_streamedResponse);
@@ -586,6 +577,7 @@ class $UserThemeClient {
   /// Status codes:
   ///   * 200: Background image returned
   ///   * 404: Background image not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getBackground] for a method executing this request and parsing the response.
@@ -629,6 +621,7 @@ class $UserThemeClient {
   /// Status codes:
   ///   * 200: Background image returned
   ///   * 404: Background image not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getBackground_Request] for the request send by this method.
@@ -664,6 +657,7 @@ class $UserThemeClient {
   ///   * 200: Background set successfully
   ///   * 400: Setting background is not possible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setBackground] for a method executing this request and parsing the response.
@@ -731,6 +725,7 @@ class $UserThemeClient {
   ///   * 200: Background set successfully
   ///   * 400: Setting background is not possible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setBackground_Request] for the request send by this method.
@@ -767,6 +762,7 @@ class $UserThemeClient {
   ///
   /// Status codes:
   ///   * 200: Background deleted successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteBackground] for a method executing this request and parsing the response.
@@ -809,6 +805,7 @@ class $UserThemeClient {
   ///
   /// Status codes:
   ///   * 200: Background deleted successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteBackground_Request] for the request send by this method.
@@ -829,7 +826,7 @@ class $UserThemeClient {
         bodyType: const FullType(UserThemeEnableThemeResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 400},
+        validStatuses: const {200, 400, 401},
       );
 
   /// Enable theme.
@@ -845,6 +842,7 @@ class $UserThemeClient {
   ///   * 200: Theme enabled successfully
   ///   * 400: Enabling theme is not possible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [enableTheme] for a method executing this request and parsing the response.
@@ -894,6 +892,7 @@ class $UserThemeClient {
   ///   * 200: Theme enabled successfully
   ///   * 400: Enabling theme is not possible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$enableTheme_Request] for the request send by this method.
@@ -917,7 +916,7 @@ class $UserThemeClient {
         bodyType: const FullType(UserThemeDisableThemeResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 400},
+        validStatuses: const {200, 400, 401},
       );
 
   /// Disable theme.
@@ -933,6 +932,7 @@ class $UserThemeClient {
   ///   * 200: Theme disabled successfully
   ///   * 400: Disabling theme is not possible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [disableTheme] for a method executing this request and parsing the response.
@@ -982,6 +982,7 @@ class $UserThemeClient {
   ///   * 200: Theme disabled successfully
   ///   * 400: Disabling theme is not possible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$disableTheme_Request] for the request send by this method.
@@ -997,201 +998,6 @@ class $UserThemeClient {
     final _serializer = $disableTheme_Serializer();
     return _i1.ResponseConverter<UserThemeDisableThemeResponseApplicationJson, void>(_serializer).convert(_response);
   }
-}
-
-class ThemingGetThemeStylesheetPlain extends EnumClass {
-  const ThemingGetThemeStylesheetPlain._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const ThemingGetThemeStylesheetPlain $0 = _$themingGetThemeStylesheetPlain$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const ThemingGetThemeStylesheetPlain $1 = _$themingGetThemeStylesheetPlain$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<ThemingGetThemeStylesheetPlain> get values => _$themingGetThemeStylesheetPlainValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static ThemingGetThemeStylesheetPlain valueOf(String name) => _$valueOfThemingGetThemeStylesheetPlain(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for ThemingGetThemeStylesheetPlain.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ThemingGetThemeStylesheetPlain> get serializer =>
-      const _$ThemingGetThemeStylesheetPlainSerializer();
-}
-
-class _$ThemingGetThemeStylesheetPlainSerializer implements PrimitiveSerializer<ThemingGetThemeStylesheetPlain> {
-  const _$ThemingGetThemeStylesheetPlainSerializer();
-
-  static const Map<ThemingGetThemeStylesheetPlain, Object> _toWire = <ThemingGetThemeStylesheetPlain, Object>{
-    ThemingGetThemeStylesheetPlain.$0: 0,
-    ThemingGetThemeStylesheetPlain.$1: 1,
-  };
-
-  static const Map<Object, ThemingGetThemeStylesheetPlain> _fromWire = <Object, ThemingGetThemeStylesheetPlain>{
-    0: ThemingGetThemeStylesheetPlain.$0,
-    1: ThemingGetThemeStylesheetPlain.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [ThemingGetThemeStylesheetPlain];
-
-  @override
-  String get wireName => 'ThemingGetThemeStylesheetPlain';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    ThemingGetThemeStylesheetPlain object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  ThemingGetThemeStylesheetPlain deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-class ThemingGetThemeStylesheetWithCustomCss extends EnumClass {
-  const ThemingGetThemeStylesheetWithCustomCss._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const ThemingGetThemeStylesheetWithCustomCss $0 = _$themingGetThemeStylesheetWithCustomCss$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const ThemingGetThemeStylesheetWithCustomCss $1 = _$themingGetThemeStylesheetWithCustomCss$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<ThemingGetThemeStylesheetWithCustomCss> get values => _$themingGetThemeStylesheetWithCustomCssValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static ThemingGetThemeStylesheetWithCustomCss valueOf(String name) =>
-      _$valueOfThemingGetThemeStylesheetWithCustomCss(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for ThemingGetThemeStylesheetWithCustomCss.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ThemingGetThemeStylesheetWithCustomCss> get serializer =>
-      const _$ThemingGetThemeStylesheetWithCustomCssSerializer();
-}
-
-class _$ThemingGetThemeStylesheetWithCustomCssSerializer
-    implements PrimitiveSerializer<ThemingGetThemeStylesheetWithCustomCss> {
-  const _$ThemingGetThemeStylesheetWithCustomCssSerializer();
-
-  static const Map<ThemingGetThemeStylesheetWithCustomCss, Object> _toWire =
-      <ThemingGetThemeStylesheetWithCustomCss, Object>{
-    ThemingGetThemeStylesheetWithCustomCss.$0: 0,
-    ThemingGetThemeStylesheetWithCustomCss.$1: 1,
-  };
-
-  static const Map<Object, ThemingGetThemeStylesheetWithCustomCss> _fromWire =
-      <Object, ThemingGetThemeStylesheetWithCustomCss>{
-    0: ThemingGetThemeStylesheetWithCustomCss.$0,
-    1: ThemingGetThemeStylesheetWithCustomCss.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [ThemingGetThemeStylesheetWithCustomCss];
-
-  @override
-  String get wireName => 'ThemingGetThemeStylesheetWithCustomCss';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    ThemingGetThemeStylesheetWithCustomCss object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  ThemingGetThemeStylesheetWithCustomCss deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-class ThemingGetImageUseSvg extends EnumClass {
-  const ThemingGetImageUseSvg._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const ThemingGetImageUseSvg $0 = _$themingGetImageUseSvg$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const ThemingGetImageUseSvg $1 = _$themingGetImageUseSvg$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<ThemingGetImageUseSvg> get values => _$themingGetImageUseSvgValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static ThemingGetImageUseSvg valueOf(String name) => _$valueOfThemingGetImageUseSvg(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for ThemingGetImageUseSvg.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ThemingGetImageUseSvg> get serializer => const _$ThemingGetImageUseSvgSerializer();
-}
-
-class _$ThemingGetImageUseSvgSerializer implements PrimitiveSerializer<ThemingGetImageUseSvg> {
-  const _$ThemingGetImageUseSvgSerializer();
-
-  static const Map<ThemingGetImageUseSvg, Object> _toWire = <ThemingGetImageUseSvg, Object>{
-    ThemingGetImageUseSvg.$0: 0,
-    ThemingGetImageUseSvg.$1: 1,
-  };
-
-  static const Map<Object, ThemingGetImageUseSvg> _fromWire = <Object, ThemingGetImageUseSvg>{
-    0: ThemingGetImageUseSvg.$0,
-    1: ThemingGetImageUseSvg.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [ThemingGetImageUseSvg];
-
-  @override
-  String get wireName => 'ThemingGetImageUseSvg';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    ThemingGetImageUseSvg object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  ThemingGetImageUseSvg deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
 }
 
 @BuiltValue(instantiable: false)
@@ -1274,6 +1080,8 @@ sealed class $ThemingGetManifestResponseApplicationJsonInterface {
   String get backgroundColor;
   String get description;
   BuiltList<ThemingGetManifestResponseApplicationJson_Icons> get icons;
+  @BuiltValueField(wireName: 'display_override')
+  BuiltList<String> get displayOverride;
   String get display;
 
   /// Rebuilds the instance.
@@ -1922,9 +1730,6 @@ abstract class PublicCapabilities
 @_i2.visibleForTesting
 final Serializers $serializers = _$serializers;
 final Serializers _$serializers = (Serializers().toBuilder()
-      ..add(ThemingGetThemeStylesheetPlain.serializer)
-      ..add(ThemingGetThemeStylesheetWithCustomCss.serializer)
-      ..add(ThemingGetImageUseSvg.serializer)
       ..addBuilderFactory(
         const FullType(ThemingGetManifestResponseApplicationJson),
         ThemingGetManifestResponseApplicationJsonBuilder.new,
@@ -1939,6 +1744,7 @@ final Serializers _$serializers = (Serializers().toBuilder()
         const FullType(BuiltList, [FullType(ThemingGetManifestResponseApplicationJson_Icons)]),
         ListBuilder<ThemingGetManifestResponseApplicationJson_Icons>.new,
       )
+      ..addBuilderFactory(const FullType(BuiltList, [FullType(String)]), ListBuilder<String>.new)
       ..addBuilderFactory(
         const FullType(UserThemeSetBackgroundRequestApplicationJson),
         UserThemeSetBackgroundRequestApplicationJsonBuilder.new,

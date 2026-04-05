@@ -81,6 +81,7 @@ class $DeletedShareapiClient {
   ///
   /// Status codes:
   ///   * 200: Deleted shares returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [index] for a method executing this request and parsing the response.
@@ -123,6 +124,7 @@ class $DeletedShareapiClient {
   ///
   /// Status codes:
   ///   * 200: Deleted shares returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$index_Request] for the request send by this method.
@@ -143,7 +145,7 @@ class $DeletedShareapiClient {
         bodyType: const FullType(DeletedShareapiUndeleteResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 404},
+        validStatuses: const {200, 404, 401},
       );
 
   /// Undelete a deleted share.
@@ -158,6 +160,7 @@ class $DeletedShareapiClient {
   /// Status codes:
   ///   * 200: Share undeleted successfully
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [undelete] for a method executing this request and parsing the response.
@@ -206,6 +209,7 @@ class $DeletedShareapiClient {
   /// Status codes:
   ///   * 200: Share undeleted successfully
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$undelete_Request] for the request send by this method.
@@ -326,8 +330,9 @@ class $PublicPreviewClient {
   ///   * [file] File in the share. Defaults to `""`.
   ///   * [x] Width of the preview. Defaults to `32`.
   ///   * [y] Height of the preview. Defaults to `32`.
-  ///   * [a] Whether to not crop the preview. Defaults to `0`.
-  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `0`.
+  ///   * [a] Whether to not crop the preview. Defaults to `false`.
+  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `false`.
+  ///   * [xNcPreview]
   ///
   /// Status codes:
   ///   * 200: Preview returned
@@ -345,8 +350,9 @@ class $PublicPreviewClient {
     String? file,
     int? x,
     int? y,
-    PublicPreviewGetPreviewA? a,
-    PublicPreviewGetPreviewMimeFallback? mimeFallback,
+    bool? a,
+    bool? mimeFallback,
+    String? xNcPreview,
   }) {
     final _parameters = <String, Object?>{};
     final __token = _$jsonSerializers.serialize(token, specifiedType: const FullType(String));
@@ -364,15 +370,12 @@ class $PublicPreviewClient {
     __y ??= 32;
     _parameters['y'] = __y;
 
-    var __a = _$jsonSerializers.serialize(a, specifiedType: const FullType(PublicPreviewGetPreviewA));
-    __a ??= 0;
+    var __a = _$jsonSerializers.serialize(a, specifiedType: const FullType(bool));
+    __a ??= false;
     _parameters['a'] = __a;
 
-    var __mimeFallback = _$jsonSerializers.serialize(
-      mimeFallback,
-      specifiedType: const FullType(PublicPreviewGetPreviewMimeFallback),
-    );
-    __mimeFallback ??= 0;
+    var __mimeFallback = _$jsonSerializers.serialize(mimeFallback, specifiedType: const FullType(bool));
+    __mimeFallback ??= false;
     _parameters['mimeFallback'] = __mimeFallback;
 
     final _path = _i6.UriTemplate(
@@ -394,6 +397,11 @@ class $PublicPreviewClient {
     }
 
     // coverage:ignore-end
+    final __xNcPreview = _$jsonSerializers.serialize(xNcPreview, specifiedType: const FullType(String));
+    if (__xNcPreview != null) {
+      _request.headers['x-nc-preview'] = const _i5.HeaderEncoder().convert(__xNcPreview);
+    }
+
     return _request;
   }
 
@@ -407,8 +415,9 @@ class $PublicPreviewClient {
   ///   * [file] File in the share. Defaults to `""`.
   ///   * [x] Width of the preview. Defaults to `32`.
   ///   * [y] Height of the preview. Defaults to `32`.
-  ///   * [a] Whether to not crop the preview. Defaults to `0`.
-  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `0`.
+  ///   * [a] Whether to not crop the preview. Defaults to `false`.
+  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `false`.
+  ///   * [xNcPreview]
   ///
   /// Status codes:
   ///   * 200: Preview returned
@@ -425,10 +434,19 @@ class $PublicPreviewClient {
     String? file,
     int? x,
     int? y,
-    PublicPreviewGetPreviewA? a,
-    PublicPreviewGetPreviewMimeFallback? mimeFallback,
+    bool? a,
+    bool? mimeFallback,
+    String? xNcPreview,
   }) async {
-    final _request = $getPreview_Request(token: token, file: file, x: x, y: y, a: a, mimeFallback: mimeFallback);
+    final _request = $getPreview_Request(
+      token: token,
+      file: file,
+      x: x,
+      y: y,
+      a: a,
+      mimeFallback: mimeFallback,
+      xNcPreview: xNcPreview,
+    );
     final _streamedResponse = await _rootClient.httpClient.send(_request);
     final _response = await _i3.Response.fromStream(_streamedResponse);
 
@@ -463,6 +481,7 @@ class $RemoteClient {
   ///
   /// Status codes:
   ///   * 200: Accepted remote shares returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getShares] for a method executing this request and parsing the response.
@@ -505,6 +524,7 @@ class $RemoteClient {
   ///
   /// Status codes:
   ///   * 200: Accepted remote shares returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getShares_Request] for the request send by this method.
@@ -538,6 +558,7 @@ class $RemoteClient {
   ///
   /// Status codes:
   ///   * 200: Pending remote shares returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getOpenShares] for a method executing this request and parsing the response.
@@ -580,6 +601,7 @@ class $RemoteClient {
   ///
   /// Status codes:
   ///   * 200: Pending remote shares returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getOpenShares_Request] for the request send by this method.
@@ -602,7 +624,7 @@ class $RemoteClient {
         bodyType: const FullType(RemoteAcceptShareResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 404},
+        validStatuses: const {200, 404, 401},
       );
 
   /// Accept a remote share.
@@ -617,6 +639,7 @@ class $RemoteClient {
   /// Status codes:
   ///   * 200: Share accepted successfully
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [acceptShare] for a method executing this request and parsing the response.
@@ -667,6 +690,7 @@ class $RemoteClient {
   /// Status codes:
   ///   * 200: Share accepted successfully
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$acceptShare_Request] for the request send by this method.
@@ -690,7 +714,7 @@ class $RemoteClient {
         bodyType: const FullType(RemoteDeclineShareResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 404},
+        validStatuses: const {200, 404, 401},
       );
 
   /// Decline a remote share.
@@ -705,6 +729,7 @@ class $RemoteClient {
   /// Status codes:
   ///   * 200: Share declined successfully
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [declineShare] for a method executing this request and parsing the response.
@@ -755,6 +780,7 @@ class $RemoteClient {
   /// Status codes:
   ///   * 200: Share declined successfully
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$declineShare_Request] for the request send by this method.
@@ -792,6 +818,7 @@ class $RemoteClient {
   /// Status codes:
   ///   * 200: Share returned
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getShare] for a method executing this request and parsing the response.
@@ -840,6 +867,7 @@ class $RemoteClient {
   /// Status codes:
   ///   * 200: Share returned
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getShare_Request] for the request send by this method.
@@ -862,7 +890,7 @@ class $RemoteClient {
         bodyType: const FullType(RemoteUnshareResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 404, 403},
+        validStatuses: const {200, 404, 403, 401},
       );
 
   /// Unshare a remote share.
@@ -878,6 +906,7 @@ class $RemoteClient {
   ///   * 200: Share unshared successfully
   ///   * 404: Share not found
   ///   * 403: Unsharing is not possible
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [unshare] for a method executing this request and parsing the response.
@@ -927,6 +956,7 @@ class $RemoteClient {
   ///   * 200: Share unshared successfully
   ///   * 404: Share not found
   ///   * 403: Unsharing is not possible
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$unshare_Request] for the request send by this method.
@@ -1053,6 +1083,7 @@ class $ShareapiClient {
   /// Status codes:
   ///   * 200: Shares returned
   ///   * 404: The folder was not found or is inaccessible
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getShares] for a method executing this request and parsing the response.
@@ -1131,6 +1162,7 @@ class $ShareapiClient {
   /// Status codes:
   ///   * 200: Shares returned
   ///   * 404: The folder was not found or is inaccessible
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getShares_Request] for the request send by this method.
@@ -1181,6 +1213,7 @@ class $ShareapiClient {
   ///   * 400: Unknown share type
   ///   * 403: Creating the share is not allowed
   ///   * 404: Creating the share failed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [createShare] for a method executing this request and parsing the response.
@@ -1240,6 +1273,7 @@ class $ShareapiClient {
   ///   * 400: Unknown share type
   ///   * 403: Creating the share is not allowed
   ///   * 404: Creating the share failed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$createShare_Request] for the request send by this method.
@@ -1279,6 +1313,7 @@ class $ShareapiClient {
   ///   * 200: Shares returned
   ///   * 500
   ///   * 404: The given path is invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getInheritedShares] for a method executing this request and parsing the response.
@@ -1328,6 +1363,7 @@ class $ShareapiClient {
   ///   * 200: Shares returned
   ///   * 500
   ///   * 404: The given path is invalid
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getInheritedShares_Request] for the request send by this method.
@@ -1366,6 +1402,7 @@ class $ShareapiClient {
   ///
   /// Status codes:
   ///   * 200: Pending shares returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [pendingShares] for a method executing this request and parsing the response.
@@ -1408,6 +1445,7 @@ class $ShareapiClient {
   ///
   /// Status codes:
   ///   * 200: Pending shares returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$pendingShares_Request] for the request send by this method.
@@ -1440,27 +1478,25 @@ class $ShareapiClient {
   ///
   /// Parameters:
   ///   * [id] ID of the share.
-  ///   * [includeTags] Include tags in the share. Defaults to `0`.
+  ///   * [includeTags] Include tags in the share. Defaults to `false`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Share returned
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getShare] for a method executing this request and parsing the response.
   ///  * [$getShare_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $getShare_Request({required String id, ShareapiGetShareIncludeTags? includeTags, bool? oCSAPIRequest}) {
+  _i3.Request $getShare_Request({required String id, bool? includeTags, bool? oCSAPIRequest}) {
     final _parameters = <String, Object?>{};
     final __id = _$jsonSerializers.serialize(id, specifiedType: const FullType(String));
     _parameters['id'] = __id;
 
-    var __includeTags = _$jsonSerializers.serialize(
-      includeTags,
-      specifiedType: const FullType(ShareapiGetShareIncludeTags),
-    );
-    __includeTags ??= 0;
+    var __includeTags = _$jsonSerializers.serialize(includeTags, specifiedType: const FullType(bool));
+    __includeTags ??= false;
     _parameters['include_tags'] = __includeTags;
 
     final _path = _i6.UriTemplate(
@@ -1498,19 +1534,20 @@ class $ShareapiClient {
   ///
   /// Parameters:
   ///   * [id] ID of the share.
-  ///   * [includeTags] Include tags in the share. Defaults to `0`.
+  ///   * [includeTags] Include tags in the share. Defaults to `false`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Share returned
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getShare_Request] for the request send by this method.
   ///  * [$getShare_Serializer] for a converter to parse the `Response` from an executed request.
   Future<_i1.DynamiteResponse<ShareapiGetShareResponseApplicationJson, void>> getShare({
     required String id,
-    ShareapiGetShareIncludeTags? includeTags,
+    bool? includeTags,
     bool? oCSAPIRequest,
   }) async {
     final _request = $getShare_Request(id: id, includeTags: includeTags, oCSAPIRequest: oCSAPIRequest);
@@ -1545,6 +1582,7 @@ class $ShareapiClient {
   ///   * 400: Share could not be updated because the requested changes are invalid
   ///   * 403: Missing permissions to update the share
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [updateShare] for a method executing this request and parsing the response.
@@ -1613,6 +1651,7 @@ class $ShareapiClient {
   ///   * 400: Share could not be updated because the requested changes are invalid
   ///   * 403: Missing permissions to update the share
   ///   * 404: Share not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$updateShare_Request] for the request send by this method.
@@ -1637,7 +1676,7 @@ class $ShareapiClient {
         bodyType: const FullType(ShareapiDeleteShareResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 404, 403},
+        validStatuses: const {200, 404, 403, 401},
       );
 
   /// Delete a share.
@@ -1653,6 +1692,7 @@ class $ShareapiClient {
   ///   * 200: Share deleted successfully
   ///   * 404: Share not found
   ///   * 403: Missing permissions to delete the share
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteShare] for a method executing this request and parsing the response.
@@ -1702,6 +1742,7 @@ class $ShareapiClient {
   ///   * 200: Share deleted successfully
   ///   * 404: Share not found
   ///   * 403: Missing permissions to delete the share
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteShare_Request] for the request send by this method.
@@ -1725,7 +1766,7 @@ class $ShareapiClient {
         bodyType: const FullType(ShareapiSendShareEmailResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {404, 403, 400, 200},
+        validStatuses: const {404, 403, 400, 200, 401},
       );
 
   /// Send a mail notification again for a share. The mail_send option must be enabled for the given share.
@@ -1742,6 +1783,7 @@ class $ShareapiClient {
   ///   * 403: You are not allowed to send mail notifications
   ///   * 400: Invalid request or wrong password
   ///   * 200: The email notification was sent successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [sendShareEmail] for a method executing this request and parsing the response.
@@ -1810,6 +1852,7 @@ class $ShareapiClient {
   ///   * 403: You are not allowed to send mail notifications
   ///   * 400: Invalid request or wrong password
   ///   * 200: The email notification was sent successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$sendShareEmail_Request] for the request send by this method.
@@ -1834,7 +1877,7 @@ class $ShareapiClient {
         bodyType: const FullType(ShareapiAcceptShareResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 404, 400},
+        validStatuses: const {200, 404, 400, 401},
       );
 
   /// Accept a share.
@@ -1850,6 +1893,7 @@ class $ShareapiClient {
   ///   * 200: Share accepted successfully
   ///   * 404: Share not found
   ///   * 400: Share could not be accepted
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [acceptShare] for a method executing this request and parsing the response.
@@ -1899,6 +1943,7 @@ class $ShareapiClient {
   ///   * 200: Share accepted successfully
   ///   * 404: Share not found
   ///   * 400: Share could not be accepted
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$acceptShare_Request] for the request send by this method.
@@ -1935,6 +1980,7 @@ class $ShareapiClient {
   ///
   /// Status codes:
   ///   * 200: Token generated successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [generateToken] for a method executing this request and parsing the response.
@@ -1977,6 +2023,7 @@ class $ShareapiClient {
   ///
   /// Status codes:
   ///   * 200: Token generated successfully
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$generateToken_Request] for the request send by this method.
@@ -2020,12 +2067,13 @@ class $ShareesapiClient {
   ///   * [page] Page offset for searching. Defaults to `1`.
   ///   * [perPage] Limit amount of search results per page. Defaults to `200`.
   ///   * [shareType] Limit to specific share types.
-  ///   * [lookup] If a global lookup should be performed too. Defaults to `0`.
+  ///   * [lookup] If a global lookup should be performed too. Defaults to `false`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Sharees search result returned
   ///   * 400: Invalid search parameters
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [search] for a method executing this request and parsing the response.
@@ -2037,7 +2085,7 @@ class $ShareesapiClient {
     int? page,
     int? perPage,
     ShareesapiSearchShareType? shareType,
-    ShareesapiSearchLookup? lookup,
+    bool? lookup,
     bool? oCSAPIRequest,
   }) {
     final _parameters = <String, Object?>{};
@@ -2062,8 +2110,8 @@ class $ShareesapiClient {
     );
     _parameters['shareType'] = __shareType;
 
-    var __lookup = _$jsonSerializers.serialize(lookup, specifiedType: const FullType(ShareesapiSearchLookup));
-    __lookup ??= 0;
+    var __lookup = _$jsonSerializers.serialize(lookup, specifiedType: const FullType(bool));
+    __lookup ??= false;
     _parameters['lookup'] = __lookup;
 
     final _path = _i6.UriTemplate(
@@ -2105,12 +2153,13 @@ class $ShareesapiClient {
   ///   * [page] Page offset for searching. Defaults to `1`.
   ///   * [perPage] Limit amount of search results per page. Defaults to `200`.
   ///   * [shareType] Limit to specific share types.
-  ///   * [lookup] If a global lookup should be performed too. Defaults to `0`.
+  ///   * [lookup] If a global lookup should be performed too. Defaults to `false`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Sharees search result returned
   ///   * 400: Invalid search parameters
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$search_Request] for the request send by this method.
@@ -2121,7 +2170,7 @@ class $ShareesapiClient {
     int? page,
     int? perPage,
     ShareesapiSearchShareType? shareType,
-    ShareesapiSearchLookup? lookup,
+    bool? lookup,
     bool? oCSAPIRequest,
   }) async {
     final _request = $search_Request(
@@ -2164,6 +2213,7 @@ class $ShareesapiClient {
   ///
   /// Status codes:
   ///   * 200: Recommended sharees returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [findRecommended] for a method executing this request and parsing the response.
@@ -2224,6 +2274,7 @@ class $ShareesapiClient {
   ///
   /// Status codes:
   ///   * 200: Recommended sharees returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$findRecommended_Request] for the request send by this method.
@@ -2641,135 +2692,6 @@ abstract class DeletedShareapiUndeleteResponseApplicationJson
   static void _validate(DeletedShareapiUndeleteResponseApplicationJsonBuilder b) {
     $DeletedShareapiUndeleteResponseApplicationJsonInterface._validate(b);
   }
-}
-
-class PublicPreviewGetPreviewA extends EnumClass {
-  const PublicPreviewGetPreviewA._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const PublicPreviewGetPreviewA $0 = _$publicPreviewGetPreviewA$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const PublicPreviewGetPreviewA $1 = _$publicPreviewGetPreviewA$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<PublicPreviewGetPreviewA> get values => _$publicPreviewGetPreviewAValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static PublicPreviewGetPreviewA valueOf(String name) => _$valueOfPublicPreviewGetPreviewA(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for PublicPreviewGetPreviewA.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PublicPreviewGetPreviewA> get serializer => const _$PublicPreviewGetPreviewASerializer();
-}
-
-class _$PublicPreviewGetPreviewASerializer implements PrimitiveSerializer<PublicPreviewGetPreviewA> {
-  const _$PublicPreviewGetPreviewASerializer();
-
-  static const Map<PublicPreviewGetPreviewA, Object> _toWire = <PublicPreviewGetPreviewA, Object>{
-    PublicPreviewGetPreviewA.$0: 0,
-    PublicPreviewGetPreviewA.$1: 1,
-  };
-
-  static const Map<Object, PublicPreviewGetPreviewA> _fromWire = <Object, PublicPreviewGetPreviewA>{
-    0: PublicPreviewGetPreviewA.$0,
-    1: PublicPreviewGetPreviewA.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [PublicPreviewGetPreviewA];
-
-  @override
-  String get wireName => 'PublicPreviewGetPreviewA';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    PublicPreviewGetPreviewA object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  PublicPreviewGetPreviewA deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-class PublicPreviewGetPreviewMimeFallback extends EnumClass {
-  const PublicPreviewGetPreviewMimeFallback._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const PublicPreviewGetPreviewMimeFallback $0 = _$publicPreviewGetPreviewMimeFallback$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const PublicPreviewGetPreviewMimeFallback $1 = _$publicPreviewGetPreviewMimeFallback$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<PublicPreviewGetPreviewMimeFallback> get values => _$publicPreviewGetPreviewMimeFallbackValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static PublicPreviewGetPreviewMimeFallback valueOf(String name) => _$valueOfPublicPreviewGetPreviewMimeFallback(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for PublicPreviewGetPreviewMimeFallback.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PublicPreviewGetPreviewMimeFallback> get serializer =>
-      const _$PublicPreviewGetPreviewMimeFallbackSerializer();
-}
-
-class _$PublicPreviewGetPreviewMimeFallbackSerializer
-    implements PrimitiveSerializer<PublicPreviewGetPreviewMimeFallback> {
-  const _$PublicPreviewGetPreviewMimeFallbackSerializer();
-
-  static const Map<PublicPreviewGetPreviewMimeFallback, Object> _toWire = <PublicPreviewGetPreviewMimeFallback, Object>{
-    PublicPreviewGetPreviewMimeFallback.$0: 0,
-    PublicPreviewGetPreviewMimeFallback.$1: 1,
-  };
-
-  static const Map<Object, PublicPreviewGetPreviewMimeFallback> _fromWire =
-      <Object, PublicPreviewGetPreviewMimeFallback>{
-    0: PublicPreviewGetPreviewMimeFallback.$0,
-    1: PublicPreviewGetPreviewMimeFallback.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [PublicPreviewGetPreviewMimeFallback];
-
-  @override
-  String get wireName => 'PublicPreviewGetPreviewMimeFallback';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    PublicPreviewGetPreviewMimeFallback object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  PublicPreviewGetPreviewMimeFallback deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
 }
 
 @BuiltValue(instantiable: false)
@@ -4872,69 +4794,6 @@ abstract class ShareapiPendingSharesResponseApplicationJson
   }
 }
 
-class ShareapiGetShareIncludeTags extends EnumClass {
-  const ShareapiGetShareIncludeTags._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const ShareapiGetShareIncludeTags $0 = _$shareapiGetShareIncludeTags$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const ShareapiGetShareIncludeTags $1 = _$shareapiGetShareIncludeTags$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<ShareapiGetShareIncludeTags> get values => _$shareapiGetShareIncludeTagsValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static ShareapiGetShareIncludeTags valueOf(String name) => _$valueOfShareapiGetShareIncludeTags(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for ShareapiGetShareIncludeTags.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ShareapiGetShareIncludeTags> get serializer => const _$ShareapiGetShareIncludeTagsSerializer();
-}
-
-class _$ShareapiGetShareIncludeTagsSerializer implements PrimitiveSerializer<ShareapiGetShareIncludeTags> {
-  const _$ShareapiGetShareIncludeTagsSerializer();
-
-  static const Map<ShareapiGetShareIncludeTags, Object> _toWire = <ShareapiGetShareIncludeTags, Object>{
-    ShareapiGetShareIncludeTags.$0: 0,
-    ShareapiGetShareIncludeTags.$1: 1,
-  };
-
-  static const Map<Object, ShareapiGetShareIncludeTags> _fromWire = <Object, ShareapiGetShareIncludeTags>{
-    0: ShareapiGetShareIncludeTags.$0,
-    1: ShareapiGetShareIncludeTags.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [ShareapiGetShareIncludeTags];
-
-  @override
-  String get wireName => 'ShareapiGetShareIncludeTags';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    ShareapiGetShareIncludeTags object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  ShareapiGetShareIncludeTags deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
 @BuiltValue(instantiable: false)
 sealed class $ShareapiGetShareResponseApplicationJson_OcsInterface {
   OCSMeta get meta;
@@ -5927,69 +5786,6 @@ abstract class ShareapiGenerateTokenResponseApplicationJson
 
 typedef ShareesapiSearchShareType = ({BuiltList<int>? builtListInt, int? $int});
 
-class ShareesapiSearchLookup extends EnumClass {
-  const ShareesapiSearchLookup._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const ShareesapiSearchLookup $0 = _$shareesapiSearchLookup$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const ShareesapiSearchLookup $1 = _$shareesapiSearchLookup$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<ShareesapiSearchLookup> get values => _$shareesapiSearchLookupValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static ShareesapiSearchLookup valueOf(String name) => _$valueOfShareesapiSearchLookup(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for ShareesapiSearchLookup.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ShareesapiSearchLookup> get serializer => const _$ShareesapiSearchLookupSerializer();
-}
-
-class _$ShareesapiSearchLookupSerializer implements PrimitiveSerializer<ShareesapiSearchLookup> {
-  const _$ShareesapiSearchLookupSerializer();
-
-  static const Map<ShareesapiSearchLookup, Object> _toWire = <ShareesapiSearchLookup, Object>{
-    ShareesapiSearchLookup.$0: 0,
-    ShareesapiSearchLookup.$1: 1,
-  };
-
-  static const Map<Object, ShareesapiSearchLookup> _fromWire = <Object, ShareesapiSearchLookup>{
-    0: ShareesapiSearchLookup.$0,
-    1: ShareesapiSearchLookup.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [ShareesapiSearchLookup];
-
-  @override
-  String get wireName => 'ShareesapiSearchLookup';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    ShareesapiSearchLookup object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  ShareesapiSearchLookup deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
 @BuiltValue(instantiable: false)
 sealed class $ShareeInterface {
   String get label;
@@ -6907,19 +6703,589 @@ abstract class Lookup implements $LookupInterface, Built<Lookup, LookupBuilder> 
 }
 
 @BuiltValue(instantiable: false)
+sealed class $ShareeLookup_Extra_NameInterface implements $LookupInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ShareeLookup_Extra_NameInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_NameInterface rebuild(void Function($ShareeLookup_Extra_NameInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$ShareeLookup_Extra_NameInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_NameInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ShareeLookup_Extra_NameInterfaceBuilder b) {
+    $LookupInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ShareeLookup_Extra_NameInterfaceBuilder b) {
+    $LookupInterface._validate(b);
+  }
+}
+
+abstract class ShareeLookup_Extra_Name
+    implements $ShareeLookup_Extra_NameInterface, Built<ShareeLookup_Extra_Name, ShareeLookup_Extra_NameBuilder> {
+  /// Creates a new ShareeLookup_Extra_Name object using the builder pattern.
+  factory ShareeLookup_Extra_Name([void Function(ShareeLookup_Extra_NameBuilder)? b]) = _$ShareeLookup_Extra_Name;
+
+  // coverage:ignore-start
+  const ShareeLookup_Extra_Name._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ShareeLookup_Extra_Name.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ShareeLookup_Extra_Name.
+  static Serializer<ShareeLookup_Extra_Name> get serializer => _$shareeLookupExtraNameSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ShareeLookup_Extra_NameBuilder b) {
+    $ShareeLookup_Extra_NameInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ShareeLookup_Extra_NameBuilder b) {
+    $ShareeLookup_Extra_NameInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $ShareeLookup_Extra_EmailInterface implements $LookupInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ShareeLookup_Extra_EmailInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_EmailInterface rebuild(void Function($ShareeLookup_Extra_EmailInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$ShareeLookup_Extra_EmailInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_EmailInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ShareeLookup_Extra_EmailInterfaceBuilder b) {
+    $LookupInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ShareeLookup_Extra_EmailInterfaceBuilder b) {
+    $LookupInterface._validate(b);
+  }
+}
+
+abstract class ShareeLookup_Extra_Email
+    implements $ShareeLookup_Extra_EmailInterface, Built<ShareeLookup_Extra_Email, ShareeLookup_Extra_EmailBuilder> {
+  /// Creates a new ShareeLookup_Extra_Email object using the builder pattern.
+  factory ShareeLookup_Extra_Email([void Function(ShareeLookup_Extra_EmailBuilder)? b]) = _$ShareeLookup_Extra_Email;
+
+  // coverage:ignore-start
+  const ShareeLookup_Extra_Email._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ShareeLookup_Extra_Email.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ShareeLookup_Extra_Email.
+  static Serializer<ShareeLookup_Extra_Email> get serializer => _$shareeLookupExtraEmailSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ShareeLookup_Extra_EmailBuilder b) {
+    $ShareeLookup_Extra_EmailInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ShareeLookup_Extra_EmailBuilder b) {
+    $ShareeLookup_Extra_EmailInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $ShareeLookup_Extra_AddressInterface implements $LookupInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ShareeLookup_Extra_AddressInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_AddressInterface rebuild(void Function($ShareeLookup_Extra_AddressInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$ShareeLookup_Extra_AddressInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_AddressInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ShareeLookup_Extra_AddressInterfaceBuilder b) {
+    $LookupInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ShareeLookup_Extra_AddressInterfaceBuilder b) {
+    $LookupInterface._validate(b);
+  }
+}
+
+abstract class ShareeLookup_Extra_Address
+    implements
+        $ShareeLookup_Extra_AddressInterface,
+        Built<ShareeLookup_Extra_Address, ShareeLookup_Extra_AddressBuilder> {
+  /// Creates a new ShareeLookup_Extra_Address object using the builder pattern.
+  factory ShareeLookup_Extra_Address([void Function(ShareeLookup_Extra_AddressBuilder)? b]) =
+      _$ShareeLookup_Extra_Address;
+
+  // coverage:ignore-start
+  const ShareeLookup_Extra_Address._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ShareeLookup_Extra_Address.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ShareeLookup_Extra_Address.
+  static Serializer<ShareeLookup_Extra_Address> get serializer => _$shareeLookupExtraAddressSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ShareeLookup_Extra_AddressBuilder b) {
+    $ShareeLookup_Extra_AddressInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ShareeLookup_Extra_AddressBuilder b) {
+    $ShareeLookup_Extra_AddressInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $ShareeLookup_Extra_WebsiteInterface implements $LookupInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ShareeLookup_Extra_WebsiteInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_WebsiteInterface rebuild(void Function($ShareeLookup_Extra_WebsiteInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$ShareeLookup_Extra_WebsiteInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_WebsiteInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ShareeLookup_Extra_WebsiteInterfaceBuilder b) {
+    $LookupInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ShareeLookup_Extra_WebsiteInterfaceBuilder b) {
+    $LookupInterface._validate(b);
+  }
+}
+
+abstract class ShareeLookup_Extra_Website
+    implements
+        $ShareeLookup_Extra_WebsiteInterface,
+        Built<ShareeLookup_Extra_Website, ShareeLookup_Extra_WebsiteBuilder> {
+  /// Creates a new ShareeLookup_Extra_Website object using the builder pattern.
+  factory ShareeLookup_Extra_Website([void Function(ShareeLookup_Extra_WebsiteBuilder)? b]) =
+      _$ShareeLookup_Extra_Website;
+
+  // coverage:ignore-start
+  const ShareeLookup_Extra_Website._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ShareeLookup_Extra_Website.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ShareeLookup_Extra_Website.
+  static Serializer<ShareeLookup_Extra_Website> get serializer => _$shareeLookupExtraWebsiteSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ShareeLookup_Extra_WebsiteBuilder b) {
+    $ShareeLookup_Extra_WebsiteInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ShareeLookup_Extra_WebsiteBuilder b) {
+    $ShareeLookup_Extra_WebsiteInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $ShareeLookup_Extra_TwitterInterface implements $LookupInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ShareeLookup_Extra_TwitterInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_TwitterInterface rebuild(void Function($ShareeLookup_Extra_TwitterInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$ShareeLookup_Extra_TwitterInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_TwitterInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ShareeLookup_Extra_TwitterInterfaceBuilder b) {
+    $LookupInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ShareeLookup_Extra_TwitterInterfaceBuilder b) {
+    $LookupInterface._validate(b);
+  }
+}
+
+abstract class ShareeLookup_Extra_Twitter
+    implements
+        $ShareeLookup_Extra_TwitterInterface,
+        Built<ShareeLookup_Extra_Twitter, ShareeLookup_Extra_TwitterBuilder> {
+  /// Creates a new ShareeLookup_Extra_Twitter object using the builder pattern.
+  factory ShareeLookup_Extra_Twitter([void Function(ShareeLookup_Extra_TwitterBuilder)? b]) =
+      _$ShareeLookup_Extra_Twitter;
+
+  // coverage:ignore-start
+  const ShareeLookup_Extra_Twitter._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ShareeLookup_Extra_Twitter.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ShareeLookup_Extra_Twitter.
+  static Serializer<ShareeLookup_Extra_Twitter> get serializer => _$shareeLookupExtraTwitterSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ShareeLookup_Extra_TwitterBuilder b) {
+    $ShareeLookup_Extra_TwitterInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ShareeLookup_Extra_TwitterBuilder b) {
+    $ShareeLookup_Extra_TwitterInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $ShareeLookup_Extra_PhoneInterface implements $LookupInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ShareeLookup_Extra_PhoneInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_PhoneInterface rebuild(void Function($ShareeLookup_Extra_PhoneInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$ShareeLookup_Extra_PhoneInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_PhoneInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ShareeLookup_Extra_PhoneInterfaceBuilder b) {
+    $LookupInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ShareeLookup_Extra_PhoneInterfaceBuilder b) {
+    $LookupInterface._validate(b);
+  }
+}
+
+abstract class ShareeLookup_Extra_Phone
+    implements $ShareeLookup_Extra_PhoneInterface, Built<ShareeLookup_Extra_Phone, ShareeLookup_Extra_PhoneBuilder> {
+  /// Creates a new ShareeLookup_Extra_Phone object using the builder pattern.
+  factory ShareeLookup_Extra_Phone([void Function(ShareeLookup_Extra_PhoneBuilder)? b]) = _$ShareeLookup_Extra_Phone;
+
+  // coverage:ignore-start
+  const ShareeLookup_Extra_Phone._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ShareeLookup_Extra_Phone.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ShareeLookup_Extra_Phone.
+  static Serializer<ShareeLookup_Extra_Phone> get serializer => _$shareeLookupExtraPhoneSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ShareeLookup_Extra_PhoneBuilder b) {
+    $ShareeLookup_Extra_PhoneInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ShareeLookup_Extra_PhoneBuilder b) {
+    $ShareeLookup_Extra_PhoneInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $ShareeLookup_Extra_TwitterSignatureInterface implements $LookupInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ShareeLookup_Extra_TwitterSignatureInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_TwitterSignatureInterface rebuild(
+    void Function($ShareeLookup_Extra_TwitterSignatureInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$ShareeLookup_Extra_TwitterSignatureInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_TwitterSignatureInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ShareeLookup_Extra_TwitterSignatureInterfaceBuilder b) {
+    $LookupInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ShareeLookup_Extra_TwitterSignatureInterfaceBuilder b) {
+    $LookupInterface._validate(b);
+  }
+}
+
+abstract class ShareeLookup_Extra_TwitterSignature
+    implements
+        $ShareeLookup_Extra_TwitterSignatureInterface,
+        Built<ShareeLookup_Extra_TwitterSignature, ShareeLookup_Extra_TwitterSignatureBuilder> {
+  /// Creates a new ShareeLookup_Extra_TwitterSignature object using the builder pattern.
+  factory ShareeLookup_Extra_TwitterSignature([void Function(ShareeLookup_Extra_TwitterSignatureBuilder)? b]) =
+      _$ShareeLookup_Extra_TwitterSignature;
+
+  // coverage:ignore-start
+  const ShareeLookup_Extra_TwitterSignature._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ShareeLookup_Extra_TwitterSignature.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ShareeLookup_Extra_TwitterSignature.
+  static Serializer<ShareeLookup_Extra_TwitterSignature> get serializer =>
+      _$shareeLookupExtraTwitterSignatureSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ShareeLookup_Extra_TwitterSignatureBuilder b) {
+    $ShareeLookup_Extra_TwitterSignatureInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ShareeLookup_Extra_TwitterSignatureBuilder b) {
+    $ShareeLookup_Extra_TwitterSignatureInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $ShareeLookup_Extra_WebsiteSignatureInterface implements $LookupInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ShareeLookup_Extra_WebsiteSignatureInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_WebsiteSignatureInterface rebuild(
+    void Function($ShareeLookup_Extra_WebsiteSignatureInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$ShareeLookup_Extra_WebsiteSignatureInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_WebsiteSignatureInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ShareeLookup_Extra_WebsiteSignatureInterfaceBuilder b) {
+    $LookupInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ShareeLookup_Extra_WebsiteSignatureInterfaceBuilder b) {
+    $LookupInterface._validate(b);
+  }
+}
+
+abstract class ShareeLookup_Extra_WebsiteSignature
+    implements
+        $ShareeLookup_Extra_WebsiteSignatureInterface,
+        Built<ShareeLookup_Extra_WebsiteSignature, ShareeLookup_Extra_WebsiteSignatureBuilder> {
+  /// Creates a new ShareeLookup_Extra_WebsiteSignature object using the builder pattern.
+  factory ShareeLookup_Extra_WebsiteSignature([void Function(ShareeLookup_Extra_WebsiteSignatureBuilder)? b]) =
+      _$ShareeLookup_Extra_WebsiteSignature;
+
+  // coverage:ignore-start
+  const ShareeLookup_Extra_WebsiteSignature._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ShareeLookup_Extra_WebsiteSignature.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ShareeLookup_Extra_WebsiteSignature.
+  static Serializer<ShareeLookup_Extra_WebsiteSignature> get serializer =>
+      _$shareeLookupExtraWebsiteSignatureSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ShareeLookup_Extra_WebsiteSignatureBuilder b) {
+    $ShareeLookup_Extra_WebsiteSignatureInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ShareeLookup_Extra_WebsiteSignatureBuilder b) {
+    $ShareeLookup_Extra_WebsiteSignatureInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $ShareeLookup_Extra_UseridInterface implements $LookupInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ShareeLookup_Extra_UseridInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_UseridInterface rebuild(void Function($ShareeLookup_Extra_UseridInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$ShareeLookup_Extra_UseridInterfaceBuilder].
+  @override
+  $ShareeLookup_Extra_UseridInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ShareeLookup_Extra_UseridInterfaceBuilder b) {
+    $LookupInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ShareeLookup_Extra_UseridInterfaceBuilder b) {
+    $LookupInterface._validate(b);
+  }
+}
+
+abstract class ShareeLookup_Extra_Userid
+    implements $ShareeLookup_Extra_UseridInterface, Built<ShareeLookup_Extra_Userid, ShareeLookup_Extra_UseridBuilder> {
+  /// Creates a new ShareeLookup_Extra_Userid object using the builder pattern.
+  factory ShareeLookup_Extra_Userid([void Function(ShareeLookup_Extra_UseridBuilder)? b]) = _$ShareeLookup_Extra_Userid;
+
+  // coverage:ignore-start
+  const ShareeLookup_Extra_Userid._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ShareeLookup_Extra_Userid.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ShareeLookup_Extra_Userid.
+  static Serializer<ShareeLookup_Extra_Userid> get serializer => _$shareeLookupExtraUseridSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ShareeLookup_Extra_UseridBuilder b) {
+    $ShareeLookup_Extra_UseridInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ShareeLookup_Extra_UseridBuilder b) {
+    $ShareeLookup_Extra_UseridInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $ShareeLookup_ExtraInterface {
   String get federationId;
-  Lookup? get name;
-  Lookup? get email;
-  Lookup? get address;
-  Lookup? get website;
-  Lookup? get twitter;
-  Lookup? get phone;
+  ShareeLookup_Extra_Name? get name;
+  ShareeLookup_Extra_Email? get email;
+  ShareeLookup_Extra_Address? get address;
+  ShareeLookup_Extra_Website? get website;
+  ShareeLookup_Extra_Twitter? get twitter;
+  ShareeLookup_Extra_Phone? get phone;
   @BuiltValueField(wireName: 'twitter_signature')
-  Lookup? get twitterSignature;
+  ShareeLookup_Extra_TwitterSignature? get twitterSignature;
   @BuiltValueField(wireName: 'website_signature')
-  Lookup? get websiteSignature;
-  Lookup? get userid;
+  ShareeLookup_Extra_WebsiteSignature? get websiteSignature;
+  ShareeLookup_Extra_Userid? get userid;
 
   /// Rebuilds the instance.
   ///
@@ -8714,8 +9080,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
         DeletedShareapiUndeleteResponseApplicationJson_OcsBuilder.new,
       )
       ..add(DeletedShareapiUndeleteResponseApplicationJson_Ocs.serializer)
-      ..add(PublicPreviewGetPreviewA.serializer)
-      ..add(PublicPreviewGetPreviewMimeFallback.serializer)
       ..addBuilderFactory(
         const FullType(RemoteGetSharesResponseApplicationJson),
         RemoteGetSharesResponseApplicationJsonBuilder.new,
@@ -8851,7 +9215,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
         ShareapiPendingSharesResponseApplicationJson_OcsBuilder.new,
       )
       ..add(ShareapiPendingSharesResponseApplicationJson_Ocs.serializer)
-      ..add(ShareapiGetShareIncludeTags.serializer)
       ..addBuilderFactory(
         const FullType(ShareapiGetShareResponseApplicationJson),
         ShareapiGetShareResponseApplicationJsonBuilder.new,
@@ -8929,7 +9292,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..add(ShareapiGenerateTokenResponseApplicationJson_Ocs_Data.serializer)
       ..addBuilderFactory(const FullType(BuiltList, [FullType(int)]), ListBuilder<int>.new)
       ..add($07eaa0304017ba8abe7f9f20d6a736f3Extension._serializer)
-      ..add(ShareesapiSearchLookup.serializer)
       ..addBuilderFactory(
         const FullType(ShareesapiSearchResponseApplicationJson),
         ShareesapiSearchResponseApplicationJsonBuilder.new,
@@ -8984,8 +9346,32 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..add(ShareeLookup.serializer)
       ..addBuilderFactory(const FullType(ShareeLookup_Extra), ShareeLookup_ExtraBuilder.new)
       ..add(ShareeLookup_Extra.serializer)
+      ..addBuilderFactory(const FullType(ShareeLookup_Extra_Name), ShareeLookup_Extra_NameBuilder.new)
+      ..add(ShareeLookup_Extra_Name.serializer)
       ..addBuilderFactory(const FullType(Lookup), LookupBuilder.new)
       ..add(Lookup.serializer)
+      ..addBuilderFactory(const FullType(ShareeLookup_Extra_Email), ShareeLookup_Extra_EmailBuilder.new)
+      ..add(ShareeLookup_Extra_Email.serializer)
+      ..addBuilderFactory(const FullType(ShareeLookup_Extra_Address), ShareeLookup_Extra_AddressBuilder.new)
+      ..add(ShareeLookup_Extra_Address.serializer)
+      ..addBuilderFactory(const FullType(ShareeLookup_Extra_Website), ShareeLookup_Extra_WebsiteBuilder.new)
+      ..add(ShareeLookup_Extra_Website.serializer)
+      ..addBuilderFactory(const FullType(ShareeLookup_Extra_Twitter), ShareeLookup_Extra_TwitterBuilder.new)
+      ..add(ShareeLookup_Extra_Twitter.serializer)
+      ..addBuilderFactory(const FullType(ShareeLookup_Extra_Phone), ShareeLookup_Extra_PhoneBuilder.new)
+      ..add(ShareeLookup_Extra_Phone.serializer)
+      ..addBuilderFactory(
+        const FullType(ShareeLookup_Extra_TwitterSignature),
+        ShareeLookup_Extra_TwitterSignatureBuilder.new,
+      )
+      ..add(ShareeLookup_Extra_TwitterSignature.serializer)
+      ..addBuilderFactory(
+        const FullType(ShareeLookup_Extra_WebsiteSignature),
+        ShareeLookup_Extra_WebsiteSignatureBuilder.new,
+      )
+      ..add(ShareeLookup_Extra_WebsiteSignature.serializer)
+      ..addBuilderFactory(const FullType(ShareeLookup_Extra_Userid), ShareeLookup_Extra_UseridBuilder.new)
+      ..add(ShareeLookup_Extra_Userid.serializer)
       ..addBuilderFactory(const FullType(ShareeLookup_Value), ShareeLookup_ValueBuilder.new)
       ..add(ShareeLookup_Value.serializer)
       ..addBuilderFactory(const FullType(BuiltList, [FullType(ShareeLookup)]), ListBuilder<ShareeLookup>.new)

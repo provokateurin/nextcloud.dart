@@ -166,17 +166,19 @@ class $AppPasswordClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
+  ///   * [userAgent]
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: App password returned
   ///   * 403: Creating app password is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getAppPassword] for a method executing this request and parsing the response.
   ///  * [$getAppPassword_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $getAppPassword_Request({bool? oCSAPIRequest}) {
+  _i3.Request $getAppPassword_Request({String? userAgent, bool? oCSAPIRequest}) {
     const _path = '/ocs/v2.php/core/getapppassword';
     final _uri = Uri.parse('${_rootClient.baseURL}$_path');
     final _request = _i3.Request('get', _uri);
@@ -196,6 +198,11 @@ class $AppPasswordClient {
     }
 
     // coverage:ignore-end
+    final __userAgent = _$jsonSerializers.serialize(userAgent, specifiedType: const FullType(String));
+    if (__userAgent != null) {
+      _request.headers['user-agent'] = const _i5.HeaderEncoder().convert(__userAgent);
+    }
+
     var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
     __oCSAPIRequest ??= true;
     _request.headers['OCS-APIRequest'] = const _i5.HeaderEncoder().convert(__oCSAPIRequest);
@@ -211,19 +218,22 @@ class $AppPasswordClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
+  ///   * [userAgent]
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: App password returned
   ///   * 403: Creating app password is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getAppPassword_Request] for the request send by this method.
   ///  * [$getAppPassword_Serializer] for a converter to parse the `Response` from an executed request.
   Future<_i1.DynamiteResponse<AppPasswordGetAppPasswordResponseApplicationJson, void>> getAppPassword({
+    String? userAgent,
     bool? oCSAPIRequest,
   }) async {
-    final _request = $getAppPassword_Request(oCSAPIRequest: oCSAPIRequest);
+    final _request = $getAppPassword_Request(userAgent: userAgent, oCSAPIRequest: oCSAPIRequest);
     final _streamedResponse = await _rootClient.httpClient.send(_request);
     final _response = await _i3.Response.fromStream(_streamedResponse);
 
@@ -240,7 +250,7 @@ class $AppPasswordClient {
         bodyType: const FullType(AppPasswordDeleteAppPasswordResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 403},
+        validStatuses: const {200, 403, 401},
       );
 
   /// Delete app password.
@@ -254,6 +264,7 @@ class $AppPasswordClient {
   /// Status codes:
   ///   * 200: App password deleted successfully
   ///   * 403: Deleting app password is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteAppPassword] for a method executing this request and parsing the response.
@@ -297,6 +308,7 @@ class $AppPasswordClient {
   /// Status codes:
   ///   * 200: App password deleted successfully
   ///   * 403: Deleting app password is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteAppPassword_Request] for the request send by this method.
@@ -335,6 +347,7 @@ class $AppPasswordClient {
   /// Status codes:
   ///   * 200: App password returned
   ///   * 403: Rotating app password is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [rotateAppPassword] for a method executing this request and parsing the response.
@@ -378,6 +391,7 @@ class $AppPasswordClient {
   /// Status codes:
   ///   * 200: App password returned
   ///   * 403: Rotating app password is not allowed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$rotateAppPassword_Request] for the request send by this method.
@@ -416,6 +430,7 @@ class $AppPasswordClient {
   /// Status codes:
   ///   * 200: Password confirmation succeeded
   ///   * 403: Password confirmation failed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [confirmUserPassword] for a method executing this request and parsing the response.
@@ -469,6 +484,7 @@ class $AppPasswordClient {
   /// Status codes:
   ///   * 200: Password confirmation succeeded
   ///   * 403: Password confirmation failed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$confirmUserPassword_Request] for the request send by this method.
@@ -519,6 +535,7 @@ class $AutoCompleteClient {
   ///
   /// Status codes:
   ///   * 200: Autocomplete results returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$get] for a method executing this request and parsing the response.
@@ -601,6 +618,7 @@ class $AutoCompleteClient {
   ///
   /// Status codes:
   ///   * 200: Autocomplete results returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$$get_Request] for the request send by this method.
@@ -656,7 +674,7 @@ class $AvatarClient {
   /// Parameters:
   ///   * [userId] ID of the user.
   ///   * [size] Size of the avatar.
-  ///   * [guestFallback] Fallback to guest avatar if not found. Defaults to `0`.
+  ///   * [guestFallback] Fallback to guest avatar if not found. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Avatar returned
@@ -671,7 +689,7 @@ class $AvatarClient {
   _i3.Request $getAvatarDark_Request({
     required String userId,
     required AvatarGetAvatarDarkSize size,
-    AvatarGetAvatarDarkGuestFallback? guestFallback,
+    bool? guestFallback,
   }) {
     final _parameters = <String, Object?>{};
     final __userId = _$jsonSerializers.serialize(userId, specifiedType: const FullType(String));
@@ -680,11 +698,8 @@ class $AvatarClient {
     final __size = _$jsonSerializers.serialize(size, specifiedType: const FullType(AvatarGetAvatarDarkSize));
     _parameters['size'] = __size;
 
-    var __guestFallback = _$jsonSerializers.serialize(
-      guestFallback,
-      specifiedType: const FullType(AvatarGetAvatarDarkGuestFallback),
-    );
-    __guestFallback ??= 0;
+    var __guestFallback = _$jsonSerializers.serialize(guestFallback, specifiedType: const FullType(bool));
+    __guestFallback ??= false;
     _parameters['guestFallback'] = __guestFallback;
 
     final _path = _i6.UriTemplate('/index.php/avatar/{userId}/{size}/dark{?guestFallback*}').expand(_parameters);
@@ -715,7 +730,7 @@ class $AvatarClient {
   /// Parameters:
   ///   * [userId] ID of the user.
   ///   * [size] Size of the avatar.
-  ///   * [guestFallback] Fallback to guest avatar if not found. Defaults to `0`.
+  ///   * [guestFallback] Fallback to guest avatar if not found. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Avatar returned
@@ -729,7 +744,7 @@ class $AvatarClient {
   Future<_i1.DynamiteResponse<Uint8List, AvatarAvatarGetAvatarDarkHeaders>> getAvatarDark({
     required String userId,
     required AvatarGetAvatarDarkSize size,
-    AvatarGetAvatarDarkGuestFallback? guestFallback,
+    bool? guestFallback,
   }) async {
     final _request = $getAvatarDark_Request(userId: userId, size: size, guestFallback: guestFallback);
     final _streamedResponse = await _rootClient.httpClient.send(_request);
@@ -756,7 +771,7 @@ class $AvatarClient {
   /// Parameters:
   ///   * [userId] ID of the user.
   ///   * [size] Size of the avatar.
-  ///   * [guestFallback] Fallback to guest avatar if not found. Defaults to `0`.
+  ///   * [guestFallback] Fallback to guest avatar if not found. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Avatar returned
@@ -768,11 +783,7 @@ class $AvatarClient {
   ///  * [getAvatar] for a method executing this request and parsing the response.
   ///  * [$getAvatar_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $getAvatar_Request({
-    required String userId,
-    required AvatarGetAvatarSize size,
-    AvatarGetAvatarGuestFallback? guestFallback,
-  }) {
+  _i3.Request $getAvatar_Request({required String userId, required AvatarGetAvatarSize size, bool? guestFallback}) {
     final _parameters = <String, Object?>{};
     final __userId = _$jsonSerializers.serialize(userId, specifiedType: const FullType(String));
     _parameters['userId'] = __userId;
@@ -780,11 +791,8 @@ class $AvatarClient {
     final __size = _$jsonSerializers.serialize(size, specifiedType: const FullType(AvatarGetAvatarSize));
     _parameters['size'] = __size;
 
-    var __guestFallback = _$jsonSerializers.serialize(
-      guestFallback,
-      specifiedType: const FullType(AvatarGetAvatarGuestFallback),
-    );
-    __guestFallback ??= 0;
+    var __guestFallback = _$jsonSerializers.serialize(guestFallback, specifiedType: const FullType(bool));
+    __guestFallback ??= false;
     _parameters['guestFallback'] = __guestFallback;
 
     final _path = _i6.UriTemplate('/index.php/avatar/{userId}/{size}{?guestFallback*}').expand(_parameters);
@@ -815,7 +823,7 @@ class $AvatarClient {
   /// Parameters:
   ///   * [userId] ID of the user.
   ///   * [size] Size of the avatar.
-  ///   * [guestFallback] Fallback to guest avatar if not found. Defaults to `0`.
+  ///   * [guestFallback] Fallback to guest avatar if not found. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Avatar returned
@@ -829,7 +837,7 @@ class $AvatarClient {
   Future<_i1.DynamiteResponse<Uint8List, AvatarAvatarGetAvatarHeaders>> getAvatar({
     required String userId,
     required AvatarGetAvatarSize size,
-    AvatarGetAvatarGuestFallback? guestFallback,
+    bool? guestFallback,
   }) async {
     final _request = $getAvatar_Request(userId: userId, size: size, guestFallback: guestFallback);
     final _streamedResponse = await _rootClient.httpClient.send(_request);
@@ -930,6 +938,9 @@ class $ClientFlowLoginV2Client {
   /// Returns a `DynamiteRequest` backing the [init] operation.
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
+  /// Parameters:
+  ///   * [userAgent]
+  ///
   /// Status codes:
   ///   * 200: Login flow init returned
   ///
@@ -937,7 +948,7 @@ class $ClientFlowLoginV2Client {
   ///  * [init] for a method executing this request and parsing the response.
   ///  * [$init_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $init_Request() {
+  _i3.Request $init_Request({String? userAgent}) {
     const _path = '/index.php/login/v2';
     final _uri = Uri.parse('${_rootClient.baseURL}$_path');
     final _request = _i3.Request('post', _uri);
@@ -955,6 +966,11 @@ class $ClientFlowLoginV2Client {
     }
 
     // coverage:ignore-end
+    final __userAgent = _$jsonSerializers.serialize(userAgent, specifiedType: const FullType(String));
+    if (__userAgent != null) {
+      _request.headers['user-agent'] = const _i5.HeaderEncoder().convert(__userAgent);
+    }
+
     return _request;
   }
 
@@ -963,14 +979,17 @@ class $ClientFlowLoginV2Client {
   /// Returns a [Future] containing a `DynamiteResponse` with the status code, deserialized body and headers.
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
+  /// Parameters:
+  ///   * [userAgent]
+  ///
   /// Status codes:
   ///   * 200: Login flow init returned
   ///
   /// See:
   ///  * [$init_Request] for the request send by this method.
   ///  * [$init_Serializer] for a converter to parse the `Response` from an executed request.
-  Future<_i1.DynamiteResponse<LoginFlowV2, void>> init() async {
-    final _request = $init_Request();
+  Future<_i1.DynamiteResponse<LoginFlowV2, void>> init({String? userAgent}) async {
+    final _request = $init_Request(userAgent: userAgent);
     final _streamedResponse = await _rootClient.httpClient.send(_request);
     final _response = await _i3.Response.fromStream(_streamedResponse);
 
@@ -1008,6 +1027,7 @@ class $CollaborationResourcesClient {
   ///   * 200: Collection returned
   ///   * 404: Collection not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [listCollection] for a method executing this request and parsing the response.
@@ -1057,6 +1077,7 @@ class $CollaborationResourcesClient {
   ///   * 200: Collection returned
   ///   * 404: Collection not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$listCollection_Request] for the request send by this method.
@@ -1098,6 +1119,7 @@ class $CollaborationResourcesClient {
   ///   * 200: Collection returned
   ///   * 404: Collection not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [renameCollection] for a method executing this request and parsing the response.
@@ -1158,6 +1180,7 @@ class $CollaborationResourcesClient {
   ///   * 200: Collection returned
   ///   * 404: Collection not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$renameCollection_Request] for the request send by this method.
@@ -1200,6 +1223,7 @@ class $CollaborationResourcesClient {
   ///   * 200: Collection returned
   ///   * 404: Collection not found or resource inaccessible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [addResource] for a method executing this request and parsing the response.
@@ -1260,6 +1284,7 @@ class $CollaborationResourcesClient {
   ///   * 200: Collection returned
   ///   * 404: Collection not found or resource inaccessible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$addResource_Request] for the request send by this method.
@@ -1304,6 +1329,7 @@ class $CollaborationResourcesClient {
   ///   * 200: Collection returned
   ///   * 404: Collection or resource not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [removeResource] for a method executing this request and parsing the response.
@@ -1368,6 +1394,7 @@ class $CollaborationResourcesClient {
   ///   * 200: Collection returned
   ///   * 404: Collection or resource not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$removeResource_Request] for the request send by this method.
@@ -1415,6 +1442,7 @@ class $CollaborationResourcesClient {
   /// Status codes:
   ///   * 200: Collections returned
   ///   * 404: Collection not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [searchCollections] for a method executing this request and parsing the response.
@@ -1465,6 +1493,7 @@ class $CollaborationResourcesClient {
   /// Status codes:
   ///   * 200: Collections returned
   ///   * 404: Collection not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$searchCollections_Request] for the request send by this method.
@@ -1506,6 +1535,7 @@ class $CollaborationResourcesClient {
   /// Status codes:
   ///   * 200: Collections returned
   ///   * 404: Resource not accessible
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getCollectionsByResource] for a method executing this request and parsing the response.
@@ -1564,6 +1594,7 @@ class $CollaborationResourcesClient {
   /// Status codes:
   ///   * 200: Collections returned
   ///   * 404: Resource not accessible
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getCollectionsByResource_Request] for the request send by this method.
@@ -1609,6 +1640,7 @@ class $CollaborationResourcesClient {
   ///   * 400: Creating collection is not possible
   ///   * 404: Resource inaccessible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [createCollectionOnResource] for a method executing this request and parsing the response.
@@ -1677,6 +1709,7 @@ class $CollaborationResourcesClient {
   ///   * 400: Creating collection is not possible
   ///   * 404: Resource inaccessible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$createCollectionOnResource_Request] for the request send by this method.
@@ -1800,7 +1833,7 @@ class $GuestAvatarClient {
   /// Parameters:
   ///   * [guestName] The guest name, e.g. "Albert".
   ///   * [size] The desired avatar size, e.g. 64 for 64x64px.
-  ///   * [darkTheme] Return dark avatar. Defaults to `0`.
+  ///   * [darkTheme] Return dark avatar. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Custom avatar returned
@@ -1811,11 +1844,7 @@ class $GuestAvatarClient {
   ///  * [getAvatar] for a method executing this request and parsing the response.
   ///  * [$getAvatar_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $getAvatar_Request({
-    required String guestName,
-    required GuestAvatarGetAvatarSize size,
-    GuestAvatarGetAvatarDarkTheme? darkTheme,
-  }) {
+  _i3.Request $getAvatar_Request({required String guestName, required GuestAvatarGetAvatarSize size, bool? darkTheme}) {
     final _parameters = <String, Object?>{};
     final __guestName = _$jsonSerializers.serialize(guestName, specifiedType: const FullType(String));
     _parameters['guestName'] = __guestName;
@@ -1823,11 +1852,8 @@ class $GuestAvatarClient {
     final __size = _$jsonSerializers.serialize(size, specifiedType: const FullType(GuestAvatarGetAvatarSize));
     _parameters['size'] = __size;
 
-    var __darkTheme = _$jsonSerializers.serialize(
-      darkTheme,
-      specifiedType: const FullType(GuestAvatarGetAvatarDarkTheme),
-    );
-    __darkTheme ??= 0;
+    var __darkTheme = _$jsonSerializers.serialize(darkTheme, specifiedType: const FullType(bool));
+    __darkTheme ??= false;
     _parameters['darkTheme'] = __darkTheme;
 
     final _path = _i6.UriTemplate('/index.php/avatar/guest/{guestName}/{size}{?darkTheme*}').expand(_parameters);
@@ -1858,7 +1884,7 @@ class $GuestAvatarClient {
   /// Parameters:
   ///   * [guestName] The guest name, e.g. "Albert".
   ///   * [size] The desired avatar size, e.g. 64 for 64x64px.
-  ///   * [darkTheme] Return dark avatar. Defaults to `0`.
+  ///   * [darkTheme] Return dark avatar. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Custom avatar returned
@@ -1871,7 +1897,7 @@ class $GuestAvatarClient {
   Future<_i1.DynamiteResponse<Uint8List, GuestAvatarGuestAvatarGetAvatarHeaders>> getAvatar({
     required String guestName,
     required GuestAvatarGetAvatarSize size,
-    GuestAvatarGetAvatarDarkTheme? darkTheme,
+    bool? darkTheme,
   }) async {
     final _request = $getAvatar_Request(guestName: guestName, size: size, darkTheme: darkTheme);
     final _streamedResponse = await _rootClient.httpClient.send(_request);
@@ -1994,6 +2020,7 @@ class $HoverCardClient {
   /// Status codes:
   ///   * 200: Account details returned
   ///   * 404: Account not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getUser] for a method executing this request and parsing the response.
@@ -2042,6 +2069,7 @@ class $HoverCardClient {
   /// Status codes:
   ///   * 200: Account details returned
   ///   * 404: Account not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getUser_Request] for the request send by this method.
@@ -2083,6 +2111,7 @@ class $LoginClient {
   /// Status codes:
   ///   * 200: Password confirmation succeeded
   ///   * 403: Password confirmation failed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [confirmPassword] for a method executing this request and parsing the response.
@@ -2123,6 +2152,7 @@ class $LoginClient {
   /// Status codes:
   ///   * 200: Password confirmation succeeded
   ///   * 403: Password confirmation failed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$confirmPassword_Request] for the request send by this method.
@@ -2161,24 +2191,22 @@ class $NavigationClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
-  ///   * [absolute] Rewrite URLs to absolute ones. Defaults to `0`.
+  ///   * [absolute] Rewrite URLs to absolute ones. Defaults to `false`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Apps navigation returned
   ///   * 304: No apps navigation changed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getAppsNavigation] for a method executing this request and parsing the response.
   ///  * [$getAppsNavigation_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $getAppsNavigation_Request({NavigationGetAppsNavigationAbsolute? absolute, bool? oCSAPIRequest}) {
+  _i3.Request $getAppsNavigation_Request({bool? absolute, bool? oCSAPIRequest}) {
     final _parameters = <String, Object?>{};
-    var __absolute = _$jsonSerializers.serialize(
-      absolute,
-      specifiedType: const FullType(NavigationGetAppsNavigationAbsolute),
-    );
-    __absolute ??= 0;
+    var __absolute = _$jsonSerializers.serialize(absolute, specifiedType: const FullType(bool));
+    __absolute ??= false;
     _parameters['absolute'] = __absolute;
 
     final _path = _i6.UriTemplate('/ocs/v2.php/core/navigation/apps{?absolute*}').expand(_parameters);
@@ -2213,18 +2241,19 @@ class $NavigationClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
-  ///   * [absolute] Rewrite URLs to absolute ones. Defaults to `0`.
+  ///   * [absolute] Rewrite URLs to absolute ones. Defaults to `false`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Apps navigation returned
   ///   * 304: No apps navigation changed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getAppsNavigation_Request] for the request send by this method.
   ///  * [$getAppsNavigation_Serializer] for a converter to parse the `Response` from an executed request.
   Future<_i1.DynamiteResponse<NavigationGetAppsNavigationResponseApplicationJson, void>> getAppsNavigation({
-    NavigationGetAppsNavigationAbsolute? absolute,
+    bool? absolute,
     bool? oCSAPIRequest,
   }) async {
     final _request = $getAppsNavigation_Request(absolute: absolute, oCSAPIRequest: oCSAPIRequest);
@@ -2253,24 +2282,22 @@ class $NavigationClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
-  ///   * [absolute] Rewrite URLs to absolute ones. Defaults to `0`.
+  ///   * [absolute] Rewrite URLs to absolute ones. Defaults to `false`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Apps navigation returned
   ///   * 304: No apps navigation changed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getSettingsNavigation] for a method executing this request and parsing the response.
   ///  * [$getSettingsNavigation_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $getSettingsNavigation_Request({NavigationGetSettingsNavigationAbsolute? absolute, bool? oCSAPIRequest}) {
+  _i3.Request $getSettingsNavigation_Request({bool? absolute, bool? oCSAPIRequest}) {
     final _parameters = <String, Object?>{};
-    var __absolute = _$jsonSerializers.serialize(
-      absolute,
-      specifiedType: const FullType(NavigationGetSettingsNavigationAbsolute),
-    );
-    __absolute ??= 0;
+    var __absolute = _$jsonSerializers.serialize(absolute, specifiedType: const FullType(bool));
+    __absolute ??= false;
     _parameters['absolute'] = __absolute;
 
     final _path = _i6.UriTemplate('/ocs/v2.php/core/navigation/settings{?absolute*}').expand(_parameters);
@@ -2305,18 +2332,19 @@ class $NavigationClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
-  ///   * [absolute] Rewrite URLs to absolute ones. Defaults to `0`.
+  ///   * [absolute] Rewrite URLs to absolute ones. Defaults to `false`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
   ///   * 200: Apps navigation returned
   ///   * 304: No apps navigation changed
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getSettingsNavigation_Request] for the request send by this method.
   ///  * [$getSettingsNavigation_Serializer] for a converter to parse the `Response` from an executed request.
   Future<_i1.DynamiteResponse<NavigationGetSettingsNavigationResponseApplicationJson, void>> getSettingsNavigation({
-    NavigationGetSettingsNavigationAbsolute? absolute,
+    bool? absolute,
     bool? oCSAPIRequest,
   }) async {
     final _request = $getSettingsNavigation_Request(absolute: absolute, oCSAPIRequest: oCSAPIRequest);
@@ -2511,10 +2539,10 @@ class $PreviewClient {
   ///   * [file] Path of the file. Defaults to `""`.
   ///   * [x] Width of the preview. A width of -1 will use the original image width. Defaults to `32`.
   ///   * [y] Height of the preview. A height of -1 will use the original image height. Defaults to `32`.
-  ///   * [a] Preserve the aspect ratio. Defaults to `0`.
-  ///   * [forceIcon] Force returning an icon. Defaults to `1`.
+  ///   * [a] Preserve the aspect ratio. Defaults to `false`.
+  ///   * [forceIcon] Force returning an icon. Defaults to `true`.
   ///   * [mode] How to crop the image. Defaults to `"fill"`.
-  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `0`.
+  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Preview returned
@@ -2522,6 +2550,7 @@ class $PreviewClient {
   ///   * 403: Getting preview is not allowed
   ///   * 404: Preview not found
   ///   * 303: Redirect to the mime icon url if mimeFallback is true
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getPreview] for a method executing this request and parsing the response.
@@ -2531,10 +2560,10 @@ class $PreviewClient {
     String? file,
     int? x,
     int? y,
-    PreviewGetPreviewA? a,
-    PreviewGetPreviewForceIcon? forceIcon,
+    bool? a,
+    bool? forceIcon,
     PreviewGetPreviewMode? mode,
-    PreviewGetPreviewMimeFallback? mimeFallback,
+    bool? mimeFallback,
   }) {
     final _parameters = <String, Object?>{};
     var __file = _$jsonSerializers.serialize(file, specifiedType: const FullType(String));
@@ -2549,23 +2578,20 @@ class $PreviewClient {
     __y ??= 32;
     _parameters['y'] = __y;
 
-    var __a = _$jsonSerializers.serialize(a, specifiedType: const FullType(PreviewGetPreviewA));
-    __a ??= 0;
+    var __a = _$jsonSerializers.serialize(a, specifiedType: const FullType(bool));
+    __a ??= false;
     _parameters['a'] = __a;
 
-    var __forceIcon = _$jsonSerializers.serialize(forceIcon, specifiedType: const FullType(PreviewGetPreviewForceIcon));
-    __forceIcon ??= 1;
+    var __forceIcon = _$jsonSerializers.serialize(forceIcon, specifiedType: const FullType(bool));
+    __forceIcon ??= true;
     _parameters['forceIcon'] = __forceIcon;
 
     var __mode = _$jsonSerializers.serialize(mode, specifiedType: const FullType(PreviewGetPreviewMode));
     __mode ??= 'fill';
     _parameters['mode'] = __mode;
 
-    var __mimeFallback = _$jsonSerializers.serialize(
-      mimeFallback,
-      specifiedType: const FullType(PreviewGetPreviewMimeFallback),
-    );
-    __mimeFallback ??= 0;
+    var __mimeFallback = _$jsonSerializers.serialize(mimeFallback, specifiedType: const FullType(bool));
+    __mimeFallback ??= false;
     _parameters['mimeFallback'] = __mimeFallback;
 
     final _path = _i6.UriTemplate(
@@ -2601,10 +2627,10 @@ class $PreviewClient {
   ///   * [file] Path of the file. Defaults to `""`.
   ///   * [x] Width of the preview. A width of -1 will use the original image width. Defaults to `32`.
   ///   * [y] Height of the preview. A height of -1 will use the original image height. Defaults to `32`.
-  ///   * [a] Preserve the aspect ratio. Defaults to `0`.
-  ///   * [forceIcon] Force returning an icon. Defaults to `1`.
+  ///   * [a] Preserve the aspect ratio. Defaults to `false`.
+  ///   * [forceIcon] Force returning an icon. Defaults to `true`.
   ///   * [mode] How to crop the image. Defaults to `"fill"`.
-  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `0`.
+  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Preview returned
@@ -2612,6 +2638,7 @@ class $PreviewClient {
   ///   * 403: Getting preview is not allowed
   ///   * 404: Preview not found
   ///   * 303: Redirect to the mime icon url if mimeFallback is true
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getPreview_Request] for the request send by this method.
@@ -2620,10 +2647,10 @@ class $PreviewClient {
     String? file,
     int? x,
     int? y,
-    PreviewGetPreviewA? a,
-    PreviewGetPreviewForceIcon? forceIcon,
+    bool? a,
+    bool? forceIcon,
     PreviewGetPreviewMode? mode,
-    PreviewGetPreviewMimeFallback? mimeFallback,
+    bool? mimeFallback,
   }) async {
     final _request = $getPreview_Request(
       file: file,
@@ -2659,10 +2686,10 @@ class $PreviewClient {
   ///   * [fileId] ID of the file. Defaults to `-1`.
   ///   * [x] Width of the preview. A width of -1 will use the original image width. Defaults to `32`.
   ///   * [y] Height of the preview. A height of -1 will use the original image height. Defaults to `32`.
-  ///   * [a] Preserve the aspect ratio. Defaults to `0`.
-  ///   * [forceIcon] Force returning an icon. Defaults to `1`.
+  ///   * [a] Preserve the aspect ratio. Defaults to `false`.
+  ///   * [forceIcon] Force returning an icon. Defaults to `true`.
   ///   * [mode] How to crop the image. Defaults to `"fill"`.
-  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `0`.
+  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Preview returned
@@ -2670,6 +2697,7 @@ class $PreviewClient {
   ///   * 403: Getting preview is not allowed
   ///   * 404: Preview not found
   ///   * 303: Redirect to the mime icon url if mimeFallback is true
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getPreviewByFileId] for a method executing this request and parsing the response.
@@ -2679,10 +2707,10 @@ class $PreviewClient {
     int? fileId,
     int? x,
     int? y,
-    PreviewGetPreviewByFileIdA? a,
-    PreviewGetPreviewByFileIdForceIcon? forceIcon,
+    bool? a,
+    bool? forceIcon,
     PreviewGetPreviewByFileIdMode? mode,
-    PreviewGetPreviewByFileIdMimeFallback? mimeFallback,
+    bool? mimeFallback,
   }) {
     final _parameters = <String, Object?>{};
     var __fileId = _$jsonSerializers.serialize(fileId, specifiedType: const FullType(int));
@@ -2697,26 +2725,20 @@ class $PreviewClient {
     __y ??= 32;
     _parameters['y'] = __y;
 
-    var __a = _$jsonSerializers.serialize(a, specifiedType: const FullType(PreviewGetPreviewByFileIdA));
-    __a ??= 0;
+    var __a = _$jsonSerializers.serialize(a, specifiedType: const FullType(bool));
+    __a ??= false;
     _parameters['a'] = __a;
 
-    var __forceIcon = _$jsonSerializers.serialize(
-      forceIcon,
-      specifiedType: const FullType(PreviewGetPreviewByFileIdForceIcon),
-    );
-    __forceIcon ??= 1;
+    var __forceIcon = _$jsonSerializers.serialize(forceIcon, specifiedType: const FullType(bool));
+    __forceIcon ??= true;
     _parameters['forceIcon'] = __forceIcon;
 
     var __mode = _$jsonSerializers.serialize(mode, specifiedType: const FullType(PreviewGetPreviewByFileIdMode));
     __mode ??= 'fill';
     _parameters['mode'] = __mode;
 
-    var __mimeFallback = _$jsonSerializers.serialize(
-      mimeFallback,
-      specifiedType: const FullType(PreviewGetPreviewByFileIdMimeFallback),
-    );
-    __mimeFallback ??= 0;
+    var __mimeFallback = _$jsonSerializers.serialize(mimeFallback, specifiedType: const FullType(bool));
+    __mimeFallback ??= false;
     _parameters['mimeFallback'] = __mimeFallback;
 
     final _path = _i6.UriTemplate(
@@ -2752,10 +2774,10 @@ class $PreviewClient {
   ///   * [fileId] ID of the file. Defaults to `-1`.
   ///   * [x] Width of the preview. A width of -1 will use the original image width. Defaults to `32`.
   ///   * [y] Height of the preview. A height of -1 will use the original image height. Defaults to `32`.
-  ///   * [a] Preserve the aspect ratio. Defaults to `0`.
-  ///   * [forceIcon] Force returning an icon. Defaults to `1`.
+  ///   * [a] Preserve the aspect ratio. Defaults to `false`.
+  ///   * [forceIcon] Force returning an icon. Defaults to `true`.
   ///   * [mode] How to crop the image. Defaults to `"fill"`.
-  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `0`.
+  ///   * [mimeFallback] Whether to fallback to the mime icon if no preview is available. Defaults to `false`.
   ///
   /// Status codes:
   ///   * 200: Preview returned
@@ -2763,6 +2785,7 @@ class $PreviewClient {
   ///   * 403: Getting preview is not allowed
   ///   * 404: Preview not found
   ///   * 303: Redirect to the mime icon url if mimeFallback is true
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getPreviewByFileId_Request] for the request send by this method.
@@ -2771,10 +2794,10 @@ class $PreviewClient {
     int? fileId,
     int? x,
     int? y,
-    PreviewGetPreviewByFileIdA? a,
-    PreviewGetPreviewByFileIdForceIcon? forceIcon,
+    bool? a,
+    bool? forceIcon,
     PreviewGetPreviewByFileIdMode? mode,
-    PreviewGetPreviewByFileIdMimeFallback? mimeFallback,
+    bool? mimeFallback,
   }) async {
     final _request = $getPreviewByFileId_Request(
       fileId: fileId,
@@ -2895,6 +2918,7 @@ class $ProfileApiClient {
   ///   * 200: Profile data returned successfully
   ///   * 400: Profile is disabled
   ///   * 404: Account not found or disabled
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getProfileFields] for a method executing this request and parsing the response.
@@ -2944,6 +2968,7 @@ class $ProfileApiClient {
   ///   * 200: Profile data returned successfully
   ///   * 400: Profile is disabled
   ///   * 404: Account not found or disabled
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getProfileFields_Request] for the request send by this method.
@@ -2969,7 +2994,7 @@ class $ProfileApiClient {
         bodyType: const FullType(ProfileApiSetVisibilityResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200, 400, 403, 404},
+        validStatuses: const {200, 400, 403, 404, 401},
       );
 
   /// Update the visibility of a parameter.
@@ -2988,6 +3013,7 @@ class $ProfileApiClient {
   ///   * 400: Updating visibility is not possible
   ///   * 403: Not allowed to edit other users visibility
   ///   * 404: Account not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setVisibility] for a method executing this request and parsing the response.
@@ -3048,6 +3074,7 @@ class $ProfileApiClient {
   ///   * 400: Updating visibility is not possible
   ///   * 403: Not allowed to edit other users visibility
   ///   * 404: Account not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setVisibility_Request] for the request send by this method.
@@ -3173,6 +3200,7 @@ class $ReferenceApiClient {
   ///
   /// Status codes:
   ///   * 200: References returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [extract] for a method executing this request and parsing the response.
@@ -3219,6 +3247,7 @@ class $ReferenceApiClient {
   ///
   /// Status codes:
   ///   * 200: References returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$extract_Request] for the request send by this method.
@@ -3344,6 +3373,7 @@ class $ReferenceApiClient {
   ///
   /// Status codes:
   ///   * 200: Reference returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [resolveOne] for a method executing this request and parsing the response.
@@ -3391,6 +3421,7 @@ class $ReferenceApiClient {
   ///
   /// Status codes:
   ///   * 200: Reference returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$resolveOne_Request] for the request send by this method.
@@ -3427,6 +3458,7 @@ class $ReferenceApiClient {
   ///
   /// Status codes:
   ///   * 200: References returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [resolve] for a method executing this request and parsing the response.
@@ -3473,6 +3505,7 @@ class $ReferenceApiClient {
   ///
   /// Status codes:
   ///   * 200: References returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$resolve_Request] for the request send by this method.
@@ -3697,6 +3730,7 @@ class $ReferenceApiClient {
   ///
   /// Status codes:
   ///   * 200: Providers returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getProvidersInfo] for a method executing this request and parsing the response.
@@ -3739,6 +3773,7 @@ class $ReferenceApiClient {
   ///
   /// Status codes:
   ///   * 200: Providers returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getProvidersInfo_Request] for the request send by this method.
@@ -3777,6 +3812,7 @@ class $ReferenceApiClient {
   ///
   /// Status codes:
   ///   * 200: Provider touched
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [touchProvider] for a method executing this request and parsing the response.
@@ -3842,6 +3878,7 @@ class $ReferenceApiClient {
   ///
   /// Status codes:
   ///   * 200: Provider touched
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$touchProvider_Request] for the request send by this method.
@@ -3888,6 +3925,7 @@ class $TaskProcessingApiClient {
   ///
   /// Status codes:
   ///   * 200: Task types returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [taskTypes] for a method executing this request and parsing the response.
@@ -3930,6 +3968,7 @@ class $TaskProcessingApiClient {
   ///
   /// Status codes:
   ///   * 200: Task types returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$taskTypes_Request] for the request send by this method.
@@ -4067,6 +4106,7 @@ class $TaskProcessingApiClient {
   ///   * 200: Task returned
   ///   * 404: Task not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getTask] for a method executing this request and parsing the response.
@@ -4118,6 +4158,7 @@ class $TaskProcessingApiClient {
   ///   * 200: Task returned
   ///   * 404: Task not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getTask_Request] for the request send by this method.
@@ -4156,6 +4197,7 @@ class $TaskProcessingApiClient {
   /// Status codes:
   ///   * 200: Task deleted
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteTask] for a method executing this request and parsing the response.
@@ -4204,6 +4246,7 @@ class $TaskProcessingApiClient {
   /// Status codes:
   ///   * 200: Task deleted
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteTask_Request] for the request send by this method.
@@ -4245,6 +4288,7 @@ class $TaskProcessingApiClient {
   /// Status codes:
   ///   * 200: Tasks returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [listTasksByApp] for a method executing this request and parsing the response.
@@ -4297,6 +4341,7 @@ class $TaskProcessingApiClient {
   /// Status codes:
   ///   * 200: Tasks returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$listTasksByApp_Request] for the request send by this method.
@@ -4339,6 +4384,7 @@ class $TaskProcessingApiClient {
   /// Status codes:
   ///   * 200: Tasks returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [listTasks] for a method executing this request and parsing the response.
@@ -4391,6 +4437,7 @@ class $TaskProcessingApiClient {
   /// Status codes:
   ///   * 200: Tasks returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$listTasks_Request] for the request send by this method.
@@ -4433,6 +4480,7 @@ class $TaskProcessingApiClient {
   ///   * 200: File content returned
   ///   * 500
   ///   * 404: Task or file not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getFileContents] for a method executing this request and parsing the response.
@@ -4486,6 +4534,7 @@ class $TaskProcessingApiClient {
   ///   * 200: File content returned
   ///   * 500
   ///   * 404: Task or file not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getFileContents_Request] for the request send by this method.
@@ -4526,6 +4575,7 @@ class $TaskProcessingApiClient {
   ///   * 200: Task canceled successfully
   ///   * 500
   ///   * 404: Task not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [cancelTask] for a method executing this request and parsing the response.
@@ -4575,6 +4625,7 @@ class $TaskProcessingApiClient {
   ///   * 200: Task canceled successfully
   ///   * 500
   ///   * 404: Task not found
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$cancelTask_Request] for the request send by this method.
@@ -4618,6 +4669,8 @@ class $TaskProcessingApiClient {
   ///   * 200: File content returned
   ///   * 500
   ///   * 404: Task or file not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [getFileContentsExApp] for a method executing this request and parsing the response.
@@ -4675,6 +4728,8 @@ class $TaskProcessingApiClient {
   ///   * 200: File content returned
   ///   * 500
   ///   * 404: Task or file not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$getFileContentsExApp_Request] for the request send by this method.
@@ -4719,6 +4774,8 @@ class $TaskProcessingApiClient {
   ///   * 400: File upload failed or no file was uploaded
   ///   * 500
   ///   * 404: Task not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [setFileContentsExApp] for a method executing this request and parsing the response.
@@ -4772,6 +4829,8 @@ class $TaskProcessingApiClient {
   ///   * 400: File upload failed or no file was uploaded
   ///   * 500
   ///   * 404: Task not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$setFileContentsExApp_Request] for the request send by this method.
@@ -4816,6 +4875,8 @@ class $TaskProcessingApiClient {
   ///   * 200: Progress updated successfully
   ///   * 500
   ///   * 404: Task not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [setProgress] for a method executing this request and parsing the response.
@@ -4878,6 +4939,8 @@ class $TaskProcessingApiClient {
   ///   * 200: Progress updated successfully
   ///   * 500
   ///   * 404: Task not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$setProgress_Request] for the request send by this method.
@@ -4922,6 +4985,8 @@ class $TaskProcessingApiClient {
   ///   * 200: Result updated successfully
   ///   * 500
   ///   * 404: Task not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [setResult] for a method executing this request and parsing the response.
@@ -4991,6 +5056,8 @@ class $TaskProcessingApiClient {
   ///   * 200: Result updated successfully
   ///   * 500
   ///   * 404: Task not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$setResult_Request] for the request send by this method.
@@ -5036,6 +5103,8 @@ class $TaskProcessingApiClient {
   ///   * 200: Task returned
   ///   * 204: No task found
   ///   * 500
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [getNextScheduledTask] for a method executing this request and parsing the response.
@@ -5103,6 +5172,8 @@ class $TaskProcessingApiClient {
   ///   * 200: Task returned
   ///   * 204: No task found
   ///   * 500
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$getNextScheduledTask_Request] for the request send by this method.
@@ -5155,6 +5226,7 @@ class $TeamsApiClient {
   ///
   /// Status codes:
   ///   * 200: Resources returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [resolveOne] for a method executing this request and parsing the response.
@@ -5202,6 +5274,7 @@ class $TeamsApiClient {
   ///
   /// Status codes:
   ///   * 200: Resources returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$resolveOne_Request] for the request send by this method.
@@ -5240,6 +5313,7 @@ class $TeamsApiClient {
   ///
   /// Status codes:
   ///   * 200: Teams returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [listTeams] for a method executing this request and parsing the response.
@@ -5291,6 +5365,7 @@ class $TeamsApiClient {
   ///
   /// Status codes:
   ///   * 200: Teams returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$listTeams_Request] for the request send by this method.
@@ -5415,6 +5490,7 @@ class $TextProcessingApiClient {
   ///   * 500
   ///   * 400: Scheduling task is not possible
   ///   * 412: Scheduling task is not possible
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [schedule] for a method executing this request and parsing the response.
@@ -5467,6 +5543,7 @@ class $TextProcessingApiClient {
   ///   * 500
   ///   * 400: Scheduling task is not possible
   ///   * 412: Scheduling task is not possible
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$schedule_Request] for the request send by this method.
@@ -5508,6 +5585,7 @@ class $TextProcessingApiClient {
   ///   * 200: Task returned
   ///   * 404: Task not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getTask] for a method executing this request and parsing the response.
@@ -5557,6 +5635,7 @@ class $TextProcessingApiClient {
   ///   * 200: Task returned
   ///   * 404: Task not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getTask_Request] for the request send by this method.
@@ -5596,6 +5675,7 @@ class $TextProcessingApiClient {
   ///   * 200: Task returned
   ///   * 404: Task not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteTask] for a method executing this request and parsing the response.
@@ -5645,6 +5725,7 @@ class $TextProcessingApiClient {
   ///   * 200: Task returned
   ///   * 404: Task not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteTask_Request] for the request send by this method.
@@ -5686,6 +5767,7 @@ class $TextProcessingApiClient {
   /// Status codes:
   ///   * 200: Task list returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [listTasksByApp] for a method executing this request and parsing the response.
@@ -5738,6 +5820,7 @@ class $TextProcessingApiClient {
   /// Status codes:
   ///   * 200: Task list returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$listTasksByApp_Request] for the request send by this method.
@@ -5784,6 +5867,7 @@ class $TextToImageApiClient {
   ///
   /// Status codes:
   ///   * 200: Returns availability status
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [isAvailable] for a method executing this request and parsing the response.
@@ -5826,6 +5910,7 @@ class $TextToImageApiClient {
   ///
   /// Status codes:
   ///   * 200: Returns availability status
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$isAvailable_Request] for the request send by this method.
@@ -5865,6 +5950,7 @@ class $TextToImageApiClient {
   ///   * 200: Task scheduled successfully
   ///   * 412: Scheduling task is not possible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [schedule] for a method executing this request and parsing the response.
@@ -5913,6 +5999,7 @@ class $TextToImageApiClient {
   ///   * 200: Task scheduled successfully
   ///   * 412: Scheduling task is not possible
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$schedule_Request] for the request send by this method.
@@ -5952,6 +6039,7 @@ class $TextToImageApiClient {
   ///   * 200: Task returned
   ///   * 404: Task not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getTask] for a method executing this request and parsing the response.
@@ -6001,6 +6089,7 @@ class $TextToImageApiClient {
   ///   * 200: Task returned
   ///   * 404: Task not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getTask_Request] for the request send by this method.
@@ -6040,6 +6129,7 @@ class $TextToImageApiClient {
   ///   * 200: Task returned
   ///   * 404: Task not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [deleteTask] for a method executing this request and parsing the response.
@@ -6089,6 +6179,7 @@ class $TextToImageApiClient {
   ///   * 200: Task returned
   ///   * 404: Task not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$deleteTask_Request] for the request send by this method.
@@ -6128,6 +6219,7 @@ class $TextToImageApiClient {
   ///   * 200: Image returned
   ///   * 404: Task or image not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getImage] for a method executing this request and parsing the response.
@@ -6181,6 +6273,7 @@ class $TextToImageApiClient {
   ///   * 200: Image returned
   ///   * 404: Task or image not found
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getImage_Request] for the request send by this method.
@@ -6221,6 +6314,7 @@ class $TextToImageApiClient {
   /// Status codes:
   ///   * 200: Task list returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [listTasksByApp] for a method executing this request and parsing the response.
@@ -6273,6 +6367,7 @@ class $TextToImageApiClient {
   /// Status codes:
   ///   * 200: Task list returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$listTasksByApp_Request] for the request send by this method.
@@ -6490,6 +6585,8 @@ class $TwoFactorApiClient {
   /// Status codes:
   ///   * 200: provider states
   ///   * 404: user not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [state] for a method executing this request and parsing the response.
@@ -6540,6 +6637,8 @@ class $TwoFactorApiClient {
   /// Status codes:
   ///   * 200: provider states
   ///   * 404: user not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$state_Request] for the request send by this method.
@@ -6579,6 +6678,8 @@ class $TwoFactorApiClient {
   /// Status codes:
   ///   * 200: provider states
   ///   * 404: user not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [enable] for a method executing this request and parsing the response.
@@ -6628,6 +6729,8 @@ class $TwoFactorApiClient {
   /// Status codes:
   ///   * 200: provider states
   ///   * 404: user not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$enable_Request] for the request send by this method.
@@ -6667,6 +6770,8 @@ class $TwoFactorApiClient {
   /// Status codes:
   ///   * 200: provider states
   ///   * 404: user not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [disable] for a method executing this request and parsing the response.
@@ -6716,6 +6821,8 @@ class $TwoFactorApiClient {
   /// Status codes:
   ///   * 200: provider states
   ///   * 404: user not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$disable_Request] for the request send by this method.
@@ -6760,6 +6867,7 @@ class $UnifiedSearchClient {
   ///
   /// Status codes:
   ///   * 200: Providers returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getProviders] for a method executing this request and parsing the response.
@@ -6808,6 +6916,7 @@ class $UnifiedSearchClient {
   ///
   /// Status codes:
   ///   * 200: Providers returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getProviders_Request] for the request send by this method.
@@ -6855,6 +6964,7 @@ class $UnifiedSearchClient {
   /// Status codes:
   ///   * 200: Search entries returned
   ///   * 400: Searching is not possible
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [search] for a method executing this request and parsing the response.
@@ -6937,6 +7047,7 @@ class $UnifiedSearchClient {
   /// Status codes:
   ///   * 200: Search entries returned
   ///   * 400: Searching is not possible
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$search_Request] for the request send by this method.
@@ -6993,6 +7104,7 @@ class $WhatsNewClient {
   /// Status codes:
   ///   * 200: Changes returned
   ///   * 204: No changes
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$get] for a method executing this request and parsing the response.
@@ -7036,6 +7148,7 @@ class $WhatsNewClient {
   /// Status codes:
   ///   * 200: Changes returned
   ///   * 204: No changes
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$$get_Request] for the request send by this method.
@@ -7055,7 +7168,7 @@ class $WhatsNewClient {
         bodyType: const FullType(WhatsNewDismissResponseApplicationJson),
         headersType: null,
         serializers: _$jsonSerializers,
-        validStatuses: const {200},
+        validStatuses: const {200, 401},
       );
 
   /// Dismiss the changes.
@@ -7069,6 +7182,7 @@ class $WhatsNewClient {
   /// Status codes:
   ///   * 200: Changes dismissed
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [dismiss] for a method executing this request and parsing the response.
@@ -7116,6 +7230,7 @@ class $WhatsNewClient {
   /// Status codes:
   ///   * 200: Changes dismissed
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$dismiss_Request] for the request send by this method.
@@ -8487,70 +8602,6 @@ class _$AvatarGetAvatarDarkSizeSerializer implements PrimitiveSerializer<AvatarG
       _fromWire[serialized]!;
 }
 
-class AvatarGetAvatarDarkGuestFallback extends EnumClass {
-  const AvatarGetAvatarDarkGuestFallback._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const AvatarGetAvatarDarkGuestFallback $0 = _$avatarGetAvatarDarkGuestFallback$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const AvatarGetAvatarDarkGuestFallback $1 = _$avatarGetAvatarDarkGuestFallback$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<AvatarGetAvatarDarkGuestFallback> get values => _$avatarGetAvatarDarkGuestFallbackValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static AvatarGetAvatarDarkGuestFallback valueOf(String name) => _$valueOfAvatarGetAvatarDarkGuestFallback(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for AvatarGetAvatarDarkGuestFallback.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AvatarGetAvatarDarkGuestFallback> get serializer =>
-      const _$AvatarGetAvatarDarkGuestFallbackSerializer();
-}
-
-class _$AvatarGetAvatarDarkGuestFallbackSerializer implements PrimitiveSerializer<AvatarGetAvatarDarkGuestFallback> {
-  const _$AvatarGetAvatarDarkGuestFallbackSerializer();
-
-  static const Map<AvatarGetAvatarDarkGuestFallback, Object> _toWire = <AvatarGetAvatarDarkGuestFallback, Object>{
-    AvatarGetAvatarDarkGuestFallback.$0: 0,
-    AvatarGetAvatarDarkGuestFallback.$1: 1,
-  };
-
-  static const Map<Object, AvatarGetAvatarDarkGuestFallback> _fromWire = <Object, AvatarGetAvatarDarkGuestFallback>{
-    0: AvatarGetAvatarDarkGuestFallback.$0,
-    1: AvatarGetAvatarDarkGuestFallback.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [AvatarGetAvatarDarkGuestFallback];
-
-  @override
-  String get wireName => 'AvatarGetAvatarDarkGuestFallback';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    AvatarGetAvatarDarkGuestFallback object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  AvatarGetAvatarDarkGuestFallback deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
 @BuiltValue(instantiable: false)
 sealed class $AvatarAvatarGetAvatarDarkHeadersInterface {
   @BuiltValueField(wireName: 'x-nc-iscustomavatar')
@@ -8669,69 +8720,6 @@ class _$AvatarGetAvatarSizeSerializer implements PrimitiveSerializer<AvatarGetAv
 
   @override
   AvatarGetAvatarSize deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-class AvatarGetAvatarGuestFallback extends EnumClass {
-  const AvatarGetAvatarGuestFallback._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const AvatarGetAvatarGuestFallback $0 = _$avatarGetAvatarGuestFallback$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const AvatarGetAvatarGuestFallback $1 = _$avatarGetAvatarGuestFallback$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<AvatarGetAvatarGuestFallback> get values => _$avatarGetAvatarGuestFallbackValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static AvatarGetAvatarGuestFallback valueOf(String name) => _$valueOfAvatarGetAvatarGuestFallback(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for AvatarGetAvatarGuestFallback.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AvatarGetAvatarGuestFallback> get serializer => const _$AvatarGetAvatarGuestFallbackSerializer();
-}
-
-class _$AvatarGetAvatarGuestFallbackSerializer implements PrimitiveSerializer<AvatarGetAvatarGuestFallback> {
-  const _$AvatarGetAvatarGuestFallbackSerializer();
-
-  static const Map<AvatarGetAvatarGuestFallback, Object> _toWire = <AvatarGetAvatarGuestFallback, Object>{
-    AvatarGetAvatarGuestFallback.$0: 0,
-    AvatarGetAvatarGuestFallback.$1: 1,
-  };
-
-  static const Map<Object, AvatarGetAvatarGuestFallback> _fromWire = <Object, AvatarGetAvatarGuestFallback>{
-    0: AvatarGetAvatarGuestFallback.$0,
-    1: AvatarGetAvatarGuestFallback.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [AvatarGetAvatarGuestFallback];
-
-  @override
-  String get wireName => 'AvatarGetAvatarGuestFallback';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    AvatarGetAvatarGuestFallback object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  AvatarGetAvatarGuestFallback deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
@@ -10437,69 +10425,6 @@ class _$GuestAvatarGetAvatarSizeSerializer implements PrimitiveSerializer<GuestA
       _fromWire[serialized]!;
 }
 
-class GuestAvatarGetAvatarDarkTheme extends EnumClass {
-  const GuestAvatarGetAvatarDarkTheme._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const GuestAvatarGetAvatarDarkTheme $0 = _$guestAvatarGetAvatarDarkTheme$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const GuestAvatarGetAvatarDarkTheme $1 = _$guestAvatarGetAvatarDarkTheme$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<GuestAvatarGetAvatarDarkTheme> get values => _$guestAvatarGetAvatarDarkThemeValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static GuestAvatarGetAvatarDarkTheme valueOf(String name) => _$valueOfGuestAvatarGetAvatarDarkTheme(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for GuestAvatarGetAvatarDarkTheme.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<GuestAvatarGetAvatarDarkTheme> get serializer => const _$GuestAvatarGetAvatarDarkThemeSerializer();
-}
-
-class _$GuestAvatarGetAvatarDarkThemeSerializer implements PrimitiveSerializer<GuestAvatarGetAvatarDarkTheme> {
-  const _$GuestAvatarGetAvatarDarkThemeSerializer();
-
-  static const Map<GuestAvatarGetAvatarDarkTheme, Object> _toWire = <GuestAvatarGetAvatarDarkTheme, Object>{
-    GuestAvatarGetAvatarDarkTheme.$0: 0,
-    GuestAvatarGetAvatarDarkTheme.$1: 1,
-  };
-
-  static const Map<Object, GuestAvatarGetAvatarDarkTheme> _fromWire = <Object, GuestAvatarGetAvatarDarkTheme>{
-    0: GuestAvatarGetAvatarDarkTheme.$0,
-    1: GuestAvatarGetAvatarDarkTheme.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [GuestAvatarGetAvatarDarkTheme];
-
-  @override
-  String get wireName => 'GuestAvatarGetAvatarDarkTheme';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    GuestAvatarGetAvatarDarkTheme object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  GuestAvatarGetAvatarDarkTheme deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
 @BuiltValue(instantiable: false)
 sealed class $GuestAvatarGuestAvatarGetAvatarHeadersInterface {
   @BuiltValueField(wireName: 'x-nc-iscustomavatar')
@@ -11066,72 +10991,6 @@ abstract class LoginConfirmPasswordResponseApplicationJson
   }
 }
 
-class NavigationGetAppsNavigationAbsolute extends EnumClass {
-  const NavigationGetAppsNavigationAbsolute._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const NavigationGetAppsNavigationAbsolute $0 = _$navigationGetAppsNavigationAbsolute$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const NavigationGetAppsNavigationAbsolute $1 = _$navigationGetAppsNavigationAbsolute$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<NavigationGetAppsNavigationAbsolute> get values => _$navigationGetAppsNavigationAbsoluteValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static NavigationGetAppsNavigationAbsolute valueOf(String name) => _$valueOfNavigationGetAppsNavigationAbsolute(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for NavigationGetAppsNavigationAbsolute.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<NavigationGetAppsNavigationAbsolute> get serializer =>
-      const _$NavigationGetAppsNavigationAbsoluteSerializer();
-}
-
-class _$NavigationGetAppsNavigationAbsoluteSerializer
-    implements PrimitiveSerializer<NavigationGetAppsNavigationAbsolute> {
-  const _$NavigationGetAppsNavigationAbsoluteSerializer();
-
-  static const Map<NavigationGetAppsNavigationAbsolute, Object> _toWire = <NavigationGetAppsNavigationAbsolute, Object>{
-    NavigationGetAppsNavigationAbsolute.$0: 0,
-    NavigationGetAppsNavigationAbsolute.$1: 1,
-  };
-
-  static const Map<Object, NavigationGetAppsNavigationAbsolute> _fromWire =
-      <Object, NavigationGetAppsNavigationAbsolute>{
-    0: NavigationGetAppsNavigationAbsolute.$0,
-    1: NavigationGetAppsNavigationAbsolute.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [NavigationGetAppsNavigationAbsolute];
-
-  @override
-  String get wireName => 'NavigationGetAppsNavigationAbsolute';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    NavigationGetAppsNavigationAbsolute object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  NavigationGetAppsNavigationAbsolute deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
 @BuiltValue(instantiable: false)
 sealed class $NavigationEntryInterface {
   String get id;
@@ -11324,75 +11183,6 @@ abstract class NavigationGetAppsNavigationResponseApplicationJson
   static void _validate(NavigationGetAppsNavigationResponseApplicationJsonBuilder b) {
     $NavigationGetAppsNavigationResponseApplicationJsonInterface._validate(b);
   }
-}
-
-class NavigationGetSettingsNavigationAbsolute extends EnumClass {
-  const NavigationGetSettingsNavigationAbsolute._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const NavigationGetSettingsNavigationAbsolute $0 = _$navigationGetSettingsNavigationAbsolute$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const NavigationGetSettingsNavigationAbsolute $1 = _$navigationGetSettingsNavigationAbsolute$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<NavigationGetSettingsNavigationAbsolute> get values =>
-      _$navigationGetSettingsNavigationAbsoluteValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static NavigationGetSettingsNavigationAbsolute valueOf(String name) =>
-      _$valueOfNavigationGetSettingsNavigationAbsolute(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for NavigationGetSettingsNavigationAbsolute.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<NavigationGetSettingsNavigationAbsolute> get serializer =>
-      const _$NavigationGetSettingsNavigationAbsoluteSerializer();
-}
-
-class _$NavigationGetSettingsNavigationAbsoluteSerializer
-    implements PrimitiveSerializer<NavigationGetSettingsNavigationAbsolute> {
-  const _$NavigationGetSettingsNavigationAbsoluteSerializer();
-
-  static const Map<NavigationGetSettingsNavigationAbsolute, Object> _toWire =
-      <NavigationGetSettingsNavigationAbsolute, Object>{
-    NavigationGetSettingsNavigationAbsolute.$0: 0,
-    NavigationGetSettingsNavigationAbsolute.$1: 1,
-  };
-
-  static const Map<Object, NavigationGetSettingsNavigationAbsolute> _fromWire =
-      <Object, NavigationGetSettingsNavigationAbsolute>{
-    0: NavigationGetSettingsNavigationAbsolute.$0,
-    1: NavigationGetSettingsNavigationAbsolute.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [NavigationGetSettingsNavigationAbsolute];
-
-  @override
-  String get wireName => 'NavigationGetSettingsNavigationAbsolute';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    NavigationGetSettingsNavigationAbsolute object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  NavigationGetSettingsNavigationAbsolute deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
 }
 
 @BuiltValue(instantiable: false)
@@ -11910,6 +11700,67 @@ abstract class OcsGetCapabilitiesResponseApplicationJson_Ocs_Data_Version
 }
 
 @BuiltValue(instantiable: false)
+sealed class $CoreCapabilities_Core_UserInterface {
+  String get language;
+  String get locale;
+  String get timezone;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$CoreCapabilities_Core_UserInterfaceBuilder].
+  $CoreCapabilities_Core_UserInterface rebuild(void Function($CoreCapabilities_Core_UserInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$CoreCapabilities_Core_UserInterfaceBuilder].
+  $CoreCapabilities_Core_UserInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($CoreCapabilities_Core_UserInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($CoreCapabilities_Core_UserInterfaceBuilder b) {}
+}
+
+abstract class CoreCapabilities_Core_User
+    implements
+        $CoreCapabilities_Core_UserInterface,
+        Built<CoreCapabilities_Core_User, CoreCapabilities_Core_UserBuilder> {
+  /// Creates a new CoreCapabilities_Core_User object using the builder pattern.
+  factory CoreCapabilities_Core_User([void Function(CoreCapabilities_Core_UserBuilder)? b]) =
+      _$CoreCapabilities_Core_User;
+
+  // coverage:ignore-start
+  const CoreCapabilities_Core_User._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory CoreCapabilities_Core_User.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for CoreCapabilities_Core_User.
+  static Serializer<CoreCapabilities_Core_User> get serializer => _$coreCapabilitiesCoreUserSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(CoreCapabilities_Core_UserBuilder b) {
+    $CoreCapabilities_Core_UserInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(CoreCapabilities_Core_UserBuilder b) {
+    $CoreCapabilities_Core_UserInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $CoreCapabilities_CoreInterface {
   int get pollinterval;
   @BuiltValueField(wireName: 'webdav-root')
@@ -11920,6 +11771,7 @@ sealed class $CoreCapabilities_CoreInterface {
   String get referenceRegex;
   @BuiltValueField(wireName: 'mod-rewrite-working')
   bool get modRewriteWorking;
+  CoreCapabilities_Core_User? get user;
 
   /// Rebuilds the instance.
   ///
@@ -12265,6 +12117,14 @@ abstract class CommentsCapabilities
 @BuiltValue(instantiable: false)
 sealed class $DavCapabilities_DavInterface {
   String get chunking;
+  @BuiltValueField(wireName: 'public_shares_chunking')
+  bool get publicSharesChunking;
+  @BuiltValueField(wireName: 'search_supports_creation_time')
+  bool get searchSupportsCreationTime;
+  @BuiltValueField(wireName: 'search_supports_upload_time')
+  bool get searchSupportsUploadTime;
+  @BuiltValueField(wireName: 'search_supports_last_activity')
+  bool get searchSupportsLastActivity;
   String? get bulkupload;
   @BuiltValueField(wireName: 'absence-supported')
   bool? get absenceSupported;
@@ -12761,6 +12621,8 @@ abstract class FilesCapabilities_Files_DirectEditing
 
 @BuiltValue(instantiable: false)
 sealed class $FilesCapabilities_FilesInterface {
+  @BuiltValueField(wireName: 'windows_compatible_filenames')
+  bool? get windowsCompatibleFilenames;
   @BuiltValueField(wireName: r'$comment')
   String? get comment;
   bool get bigfilechunking;
@@ -15109,6 +14971,8 @@ sealed class $SpreedCapabilities_Config_CallInterface {
   bool get sipEnabled;
   @BuiltValueField(wireName: 'sip-dialout-enabled')
   bool get sipDialoutEnabled;
+  @BuiltValueField(wireName: 'default-phone-region')
+  String? get defaultPhoneRegion;
   @BuiltValueField(wireName: 'can-enable-sip')
   bool get canEnableSip;
   @BuiltValueField(wireName: 'start-without-media')
@@ -15119,6 +14983,14 @@ sealed class $SpreedCapabilities_Config_CallInterface {
   bool? get blurVirtualBackground;
   @BuiltValueField(wireName: 'end-to-end-encryption')
   bool? get endToEndEncryption;
+  @BuiltValueField(wireName: 'live-transcription')
+  bool? get liveTranscription;
+  @BuiltValueField(wireName: 'play-sounds')
+  bool? get playSounds;
+  @BuiltValueField(wireName: 'grid-limit')
+  int? get gridLimit;
+  @BuiltValueField(wireName: 'grid-limit-enforced')
+  bool? get gridLimitEnforced;
 
   /// Rebuilds the instance.
   ///
@@ -15191,6 +15063,8 @@ sealed class $SpreedCapabilities_Config_ChatInterface {
   int get typingPrivacy;
   @BuiltValueField(wireName: 'summary-threshold')
   int? get summaryThreshold;
+  @BuiltValueField(wireName: 'matterbridge-enabled')
+  bool? get matterbridgeEnabled;
 
   /// Rebuilds the instance.
   ///
@@ -15531,10 +15405,85 @@ abstract class SpreedCapabilities_Config_Previews
   }
 }
 
+class SpreedCapabilities_Config_Signaling_Mode extends EnumClass {
+  const SpreedCapabilities_Config_Signaling_Mode._(super.name);
+
+  /// `internal`
+  static const SpreedCapabilities_Config_Signaling_Mode internal = _$spreedCapabilitiesConfigSignalingModeInternal;
+
+  /// `external`
+  @BuiltValueEnumConst(wireName: 'external')
+  static const SpreedCapabilities_Config_Signaling_Mode $external = _$spreedCapabilitiesConfigSignalingMode$external;
+
+  /// `conversation_cluster`
+  @BuiltValueEnumConst(wireName: 'conversation_cluster')
+  static const SpreedCapabilities_Config_Signaling_Mode conversationCluster =
+      _$spreedCapabilitiesConfigSignalingModeConversationCluster;
+
+  /// Returns a set with all values this enum contains.
+  // coverage:ignore-start
+  static BuiltSet<SpreedCapabilities_Config_Signaling_Mode> get values => _$spreedCapabilitiesConfigSignalingModeValues;
+  // coverage:ignore-end
+
+  /// Returns the enum value associated to the [name].
+  static SpreedCapabilities_Config_Signaling_Mode valueOf(String name) =>
+      _$valueOfSpreedCapabilities_Config_Signaling_Mode(name);
+
+  /// Returns the serialized value of this enum value.
+  String get value => _$jsonSerializers.serializeWith(serializer, this)! as String;
+
+  /// Serializer for SpreedCapabilities_Config_Signaling_Mode.
+  @BuiltValueSerializer(custom: true)
+  static Serializer<SpreedCapabilities_Config_Signaling_Mode> get serializer =>
+      const _$SpreedCapabilities_Config_Signaling_ModeSerializer();
+}
+
+class _$SpreedCapabilities_Config_Signaling_ModeSerializer
+    implements PrimitiveSerializer<SpreedCapabilities_Config_Signaling_Mode> {
+  const _$SpreedCapabilities_Config_Signaling_ModeSerializer();
+
+  static const Map<SpreedCapabilities_Config_Signaling_Mode, Object> _toWire =
+      <SpreedCapabilities_Config_Signaling_Mode, Object>{
+    SpreedCapabilities_Config_Signaling_Mode.internal: 'internal',
+    SpreedCapabilities_Config_Signaling_Mode.$external: 'external',
+    SpreedCapabilities_Config_Signaling_Mode.conversationCluster: 'conversation_cluster',
+  };
+
+  static const Map<Object, SpreedCapabilities_Config_Signaling_Mode> _fromWire =
+      <Object, SpreedCapabilities_Config_Signaling_Mode>{
+    'internal': SpreedCapabilities_Config_Signaling_Mode.internal,
+    'external': SpreedCapabilities_Config_Signaling_Mode.$external,
+    'conversation_cluster': SpreedCapabilities_Config_Signaling_Mode.conversationCluster,
+  };
+
+  @override
+  Iterable<Type> get types => const [SpreedCapabilities_Config_Signaling_Mode];
+
+  @override
+  String get wireName => 'SpreedCapabilities_Config_Signaling_Mode';
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    SpreedCapabilities_Config_Signaling_Mode object, {
+    FullType specifiedType = FullType.unspecified,
+  }) =>
+      _toWire[object]!;
+
+  @override
+  SpreedCapabilities_Config_Signaling_Mode deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) =>
+      _fromWire[serialized]!;
+}
+
 @BuiltValue(instantiable: false)
 sealed class $SpreedCapabilities_Config_SignalingInterface {
   @BuiltValueField(wireName: 'session-ping-limit')
   int get sessionPingLimit;
+  SpreedCapabilities_Config_Signaling_Mode get mode;
   @BuiltValueField(wireName: 'hello-v2-token-key')
   String? get helloV2TokenKey;
 
@@ -15661,6 +15610,73 @@ abstract class SpreedCapabilities_Config_Experiments
 }
 
 @BuiltValue(instantiable: false)
+sealed class $SpreedCapabilities_Config_PermissionsInterface {
+  @BuiltValueField(wireName: 'max-default')
+  int get maxDefault;
+  @BuiltValueField(wireName: 'max-custom')
+  int get maxCustom;
+  @BuiltValueField(wireName: 'default')
+  int get $default;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$SpreedCapabilities_Config_PermissionsInterfaceBuilder].
+  $SpreedCapabilities_Config_PermissionsInterface rebuild(
+    void Function($SpreedCapabilities_Config_PermissionsInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$SpreedCapabilities_Config_PermissionsInterfaceBuilder].
+  $SpreedCapabilities_Config_PermissionsInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($SpreedCapabilities_Config_PermissionsInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($SpreedCapabilities_Config_PermissionsInterfaceBuilder b) {}
+}
+
+abstract class SpreedCapabilities_Config_Permissions
+    implements
+        $SpreedCapabilities_Config_PermissionsInterface,
+        Built<SpreedCapabilities_Config_Permissions, SpreedCapabilities_Config_PermissionsBuilder> {
+  /// Creates a new SpreedCapabilities_Config_Permissions object using the builder pattern.
+  factory SpreedCapabilities_Config_Permissions([void Function(SpreedCapabilities_Config_PermissionsBuilder)? b]) =
+      _$SpreedCapabilities_Config_Permissions;
+
+  // coverage:ignore-start
+  const SpreedCapabilities_Config_Permissions._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory SpreedCapabilities_Config_Permissions.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for SpreedCapabilities_Config_Permissions.
+  static Serializer<SpreedCapabilities_Config_Permissions> get serializer =>
+      _$spreedCapabilitiesConfigPermissionsSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(SpreedCapabilities_Config_PermissionsBuilder b) {
+    $SpreedCapabilities_Config_PermissionsInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(SpreedCapabilities_Config_PermissionsBuilder b) {
+    $SpreedCapabilities_Config_PermissionsInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $SpreedCapabilities_ConfigInterface {
   SpreedCapabilities_Config_Attachments get attachments;
   SpreedCapabilities_Config_Call get call;
@@ -15670,6 +15686,7 @@ sealed class $SpreedCapabilities_ConfigInterface {
   SpreedCapabilities_Config_Previews get previews;
   SpreedCapabilities_Config_Signaling get signaling;
   SpreedCapabilities_Config_Experiments? get experiments;
+  SpreedCapabilities_Config_Permissions? get permissions;
 
   /// Rebuilds the instance.
   ///
@@ -16474,6 +16491,8 @@ sealed class $UserStatusCapabilities_UserStatusInterface {
   bool get restore;
   @BuiltValueField(wireName: 'supports_emoji')
   bool get supportsEmoji;
+  @BuiltValueField(wireName: 'supports_busy')
+  bool get supportsBusy;
 
   /// Rebuilds the instance.
   ///
@@ -17040,132 +17059,6 @@ abstract class OcsGetCapabilitiesResponseApplicationJson
   }
 }
 
-class PreviewGetPreviewA extends EnumClass {
-  const PreviewGetPreviewA._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const PreviewGetPreviewA $0 = _$previewGetPreviewA$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const PreviewGetPreviewA $1 = _$previewGetPreviewA$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<PreviewGetPreviewA> get values => _$previewGetPreviewAValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static PreviewGetPreviewA valueOf(String name) => _$valueOfPreviewGetPreviewA(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for PreviewGetPreviewA.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PreviewGetPreviewA> get serializer => const _$PreviewGetPreviewASerializer();
-}
-
-class _$PreviewGetPreviewASerializer implements PrimitiveSerializer<PreviewGetPreviewA> {
-  const _$PreviewGetPreviewASerializer();
-
-  static const Map<PreviewGetPreviewA, Object> _toWire = <PreviewGetPreviewA, Object>{
-    PreviewGetPreviewA.$0: 0,
-    PreviewGetPreviewA.$1: 1,
-  };
-
-  static const Map<Object, PreviewGetPreviewA> _fromWire = <Object, PreviewGetPreviewA>{
-    0: PreviewGetPreviewA.$0,
-    1: PreviewGetPreviewA.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [PreviewGetPreviewA];
-
-  @override
-  String get wireName => 'PreviewGetPreviewA';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    PreviewGetPreviewA object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  PreviewGetPreviewA deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-class PreviewGetPreviewForceIcon extends EnumClass {
-  const PreviewGetPreviewForceIcon._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const PreviewGetPreviewForceIcon $0 = _$previewGetPreviewForceIcon$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const PreviewGetPreviewForceIcon $1 = _$previewGetPreviewForceIcon$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<PreviewGetPreviewForceIcon> get values => _$previewGetPreviewForceIconValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static PreviewGetPreviewForceIcon valueOf(String name) => _$valueOfPreviewGetPreviewForceIcon(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for PreviewGetPreviewForceIcon.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PreviewGetPreviewForceIcon> get serializer => const _$PreviewGetPreviewForceIconSerializer();
-}
-
-class _$PreviewGetPreviewForceIconSerializer implements PrimitiveSerializer<PreviewGetPreviewForceIcon> {
-  const _$PreviewGetPreviewForceIconSerializer();
-
-  static const Map<PreviewGetPreviewForceIcon, Object> _toWire = <PreviewGetPreviewForceIcon, Object>{
-    PreviewGetPreviewForceIcon.$0: 0,
-    PreviewGetPreviewForceIcon.$1: 1,
-  };
-
-  static const Map<Object, PreviewGetPreviewForceIcon> _fromWire = <Object, PreviewGetPreviewForceIcon>{
-    0: PreviewGetPreviewForceIcon.$0,
-    1: PreviewGetPreviewForceIcon.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [PreviewGetPreviewForceIcon];
-
-  @override
-  String get wireName => 'PreviewGetPreviewForceIcon';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    PreviewGetPreviewForceIcon object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  PreviewGetPreviewForceIcon deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
 class PreviewGetPreviewMode extends EnumClass {
   const PreviewGetPreviewMode._(super.name);
 
@@ -17227,197 +17120,6 @@ class _$PreviewGetPreviewModeSerializer implements PrimitiveSerializer<PreviewGe
       _fromWire[serialized]!;
 }
 
-class PreviewGetPreviewMimeFallback extends EnumClass {
-  const PreviewGetPreviewMimeFallback._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const PreviewGetPreviewMimeFallback $0 = _$previewGetPreviewMimeFallback$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const PreviewGetPreviewMimeFallback $1 = _$previewGetPreviewMimeFallback$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<PreviewGetPreviewMimeFallback> get values => _$previewGetPreviewMimeFallbackValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static PreviewGetPreviewMimeFallback valueOf(String name) => _$valueOfPreviewGetPreviewMimeFallback(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for PreviewGetPreviewMimeFallback.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PreviewGetPreviewMimeFallback> get serializer => const _$PreviewGetPreviewMimeFallbackSerializer();
-}
-
-class _$PreviewGetPreviewMimeFallbackSerializer implements PrimitiveSerializer<PreviewGetPreviewMimeFallback> {
-  const _$PreviewGetPreviewMimeFallbackSerializer();
-
-  static const Map<PreviewGetPreviewMimeFallback, Object> _toWire = <PreviewGetPreviewMimeFallback, Object>{
-    PreviewGetPreviewMimeFallback.$0: 0,
-    PreviewGetPreviewMimeFallback.$1: 1,
-  };
-
-  static const Map<Object, PreviewGetPreviewMimeFallback> _fromWire = <Object, PreviewGetPreviewMimeFallback>{
-    0: PreviewGetPreviewMimeFallback.$0,
-    1: PreviewGetPreviewMimeFallback.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [PreviewGetPreviewMimeFallback];
-
-  @override
-  String get wireName => 'PreviewGetPreviewMimeFallback';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    PreviewGetPreviewMimeFallback object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  PreviewGetPreviewMimeFallback deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-class PreviewGetPreviewByFileIdA extends EnumClass {
-  const PreviewGetPreviewByFileIdA._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const PreviewGetPreviewByFileIdA $0 = _$previewGetPreviewByFileIdA$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const PreviewGetPreviewByFileIdA $1 = _$previewGetPreviewByFileIdA$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<PreviewGetPreviewByFileIdA> get values => _$previewGetPreviewByFileIdAValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static PreviewGetPreviewByFileIdA valueOf(String name) => _$valueOfPreviewGetPreviewByFileIdA(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for PreviewGetPreviewByFileIdA.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PreviewGetPreviewByFileIdA> get serializer => const _$PreviewGetPreviewByFileIdASerializer();
-}
-
-class _$PreviewGetPreviewByFileIdASerializer implements PrimitiveSerializer<PreviewGetPreviewByFileIdA> {
-  const _$PreviewGetPreviewByFileIdASerializer();
-
-  static const Map<PreviewGetPreviewByFileIdA, Object> _toWire = <PreviewGetPreviewByFileIdA, Object>{
-    PreviewGetPreviewByFileIdA.$0: 0,
-    PreviewGetPreviewByFileIdA.$1: 1,
-  };
-
-  static const Map<Object, PreviewGetPreviewByFileIdA> _fromWire = <Object, PreviewGetPreviewByFileIdA>{
-    0: PreviewGetPreviewByFileIdA.$0,
-    1: PreviewGetPreviewByFileIdA.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [PreviewGetPreviewByFileIdA];
-
-  @override
-  String get wireName => 'PreviewGetPreviewByFileIdA';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    PreviewGetPreviewByFileIdA object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  PreviewGetPreviewByFileIdA deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-class PreviewGetPreviewByFileIdForceIcon extends EnumClass {
-  const PreviewGetPreviewByFileIdForceIcon._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const PreviewGetPreviewByFileIdForceIcon $0 = _$previewGetPreviewByFileIdForceIcon$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const PreviewGetPreviewByFileIdForceIcon $1 = _$previewGetPreviewByFileIdForceIcon$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<PreviewGetPreviewByFileIdForceIcon> get values => _$previewGetPreviewByFileIdForceIconValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static PreviewGetPreviewByFileIdForceIcon valueOf(String name) => _$valueOfPreviewGetPreviewByFileIdForceIcon(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for PreviewGetPreviewByFileIdForceIcon.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PreviewGetPreviewByFileIdForceIcon> get serializer =>
-      const _$PreviewGetPreviewByFileIdForceIconSerializer();
-}
-
-class _$PreviewGetPreviewByFileIdForceIconSerializer
-    implements PrimitiveSerializer<PreviewGetPreviewByFileIdForceIcon> {
-  const _$PreviewGetPreviewByFileIdForceIconSerializer();
-
-  static const Map<PreviewGetPreviewByFileIdForceIcon, Object> _toWire = <PreviewGetPreviewByFileIdForceIcon, Object>{
-    PreviewGetPreviewByFileIdForceIcon.$0: 0,
-    PreviewGetPreviewByFileIdForceIcon.$1: 1,
-  };
-
-  static const Map<Object, PreviewGetPreviewByFileIdForceIcon> _fromWire = <Object, PreviewGetPreviewByFileIdForceIcon>{
-    0: PreviewGetPreviewByFileIdForceIcon.$0,
-    1: PreviewGetPreviewByFileIdForceIcon.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [PreviewGetPreviewByFileIdForceIcon];
-
-  @override
-  String get wireName => 'PreviewGetPreviewByFileIdForceIcon';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    PreviewGetPreviewByFileIdForceIcon object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  PreviewGetPreviewByFileIdForceIcon deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
 class PreviewGetPreviewByFileIdMode extends EnumClass {
   const PreviewGetPreviewByFileIdMode._(super.name);
 
@@ -17472,74 +17174,6 @@ class _$PreviewGetPreviewByFileIdModeSerializer implements PrimitiveSerializer<P
 
   @override
   PreviewGetPreviewByFileIdMode deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _fromWire[serialized]!;
-}
-
-class PreviewGetPreviewByFileIdMimeFallback extends EnumClass {
-  const PreviewGetPreviewByFileIdMimeFallback._(super.name);
-
-  /// `0`
-  @BuiltValueEnumConst(wireName: '0')
-  static const PreviewGetPreviewByFileIdMimeFallback $0 = _$previewGetPreviewByFileIdMimeFallback$0;
-
-  /// `1`
-  @BuiltValueEnumConst(wireName: '1')
-  static const PreviewGetPreviewByFileIdMimeFallback $1 = _$previewGetPreviewByFileIdMimeFallback$1;
-
-  /// Returns a set with all values this enum contains.
-  // coverage:ignore-start
-  static BuiltSet<PreviewGetPreviewByFileIdMimeFallback> get values => _$previewGetPreviewByFileIdMimeFallbackValues;
-  // coverage:ignore-end
-
-  /// Returns the enum value associated to the [name].
-  static PreviewGetPreviewByFileIdMimeFallback valueOf(String name) =>
-      _$valueOfPreviewGetPreviewByFileIdMimeFallback(name);
-
-  /// Returns the serialized value of this enum value.
-  int get value => _$jsonSerializers.serializeWith(serializer, this)! as int;
-
-  /// Serializer for PreviewGetPreviewByFileIdMimeFallback.
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PreviewGetPreviewByFileIdMimeFallback> get serializer =>
-      const _$PreviewGetPreviewByFileIdMimeFallbackSerializer();
-}
-
-class _$PreviewGetPreviewByFileIdMimeFallbackSerializer
-    implements PrimitiveSerializer<PreviewGetPreviewByFileIdMimeFallback> {
-  const _$PreviewGetPreviewByFileIdMimeFallbackSerializer();
-
-  static const Map<PreviewGetPreviewByFileIdMimeFallback, Object> _toWire =
-      <PreviewGetPreviewByFileIdMimeFallback, Object>{
-    PreviewGetPreviewByFileIdMimeFallback.$0: 0,
-    PreviewGetPreviewByFileIdMimeFallback.$1: 1,
-  };
-
-  static const Map<Object, PreviewGetPreviewByFileIdMimeFallback> _fromWire =
-      <Object, PreviewGetPreviewByFileIdMimeFallback>{
-    0: PreviewGetPreviewByFileIdMimeFallback.$0,
-    1: PreviewGetPreviewByFileIdMimeFallback.$1,
-  };
-
-  @override
-  Iterable<Type> get types => const [PreviewGetPreviewByFileIdMimeFallback];
-
-  @override
-  String get wireName => 'PreviewGetPreviewByFileIdMimeFallback';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    PreviewGetPreviewByFileIdMimeFallback object, {
-    FullType specifiedType = FullType.unspecified,
-  }) =>
-      _toWire[object]!;
-
-  @override
-  PreviewGetPreviewByFileIdMimeFallback deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
@@ -17731,7 +17365,10 @@ abstract class ProfileFields implements $ProfileFieldsInterface, Built<ProfileFi
 
 @BuiltValue(instantiable: false)
 sealed class $ProfileDataInterface implements $ProfileFieldsInterface {
+  /// Timezone identifier like Europe/Berlin or America/North_Dakota/Beulah.
   String get timezone;
+
+  /// Offset in seconds, negative when behind UTC, positive otherwise.
   int get timezoneOffset;
 
   /// Rebuilds the instance.
@@ -18251,8 +17888,77 @@ abstract class Reference implements $ReferenceInterface, Built<Reference, Refere
 }
 
 @BuiltValue(instantiable: false)
+sealed class $ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterface implements $ReferenceInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterface rebuild(
+    void Function($ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._validate(b);
+  }
+}
+
+abstract class ReferenceApiExtractResponseApplicationJson_Ocs_Data_References
+    implements
+        $ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterface,
+        Built<ReferenceApiExtractResponseApplicationJson_Ocs_Data_References,
+            ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesBuilder> {
+  /// Creates a new ReferenceApiExtractResponseApplicationJson_Ocs_Data_References object using the builder pattern.
+  factory ReferenceApiExtractResponseApplicationJson_Ocs_Data_References([
+    void Function(ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesBuilder)? b,
+  ]) = _$ReferenceApiExtractResponseApplicationJson_Ocs_Data_References;
+
+  // coverage:ignore-start
+  const ReferenceApiExtractResponseApplicationJson_Ocs_Data_References._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ReferenceApiExtractResponseApplicationJson_Ocs_Data_References.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ReferenceApiExtractResponseApplicationJson_Ocs_Data_References.
+  static Serializer<ReferenceApiExtractResponseApplicationJson_Ocs_Data_References> get serializer =>
+      _$referenceApiExtractResponseApplicationJsonOcsDataReferencesSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $ReferenceApiExtractResponseApplicationJson_Ocs_DataInterface {
-  BuiltMap<String, Reference?> get references;
+  BuiltMap<String, ReferenceApiExtractResponseApplicationJson_Ocs_Data_References?> get references;
 
   /// Rebuilds the instance.
   ///
@@ -18523,8 +18229,78 @@ abstract class ReferenceApiExtractPublicRequestApplicationJson
 }
 
 @BuiltValue(instantiable: false)
+sealed class $ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterface
+    implements $ReferenceInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterface rebuild(
+    void Function($ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._validate(b);
+  }
+}
+
+abstract class ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References
+    implements
+        $ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterface,
+        Built<ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References,
+            ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesBuilder> {
+  /// Creates a new ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References object using the builder pattern.
+  factory ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References([
+    void Function(ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesBuilder)? b,
+  ]) = _$ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References;
+
+  // coverage:ignore-start
+  const ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References.
+  static Serializer<ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References> get serializer =>
+      _$referenceApiExtractPublicResponseApplicationJsonOcsDataReferencesSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $ReferenceApiExtractPublicResponseApplicationJson_Ocs_DataInterface {
-  BuiltMap<String, Reference?> get references;
+  BuiltMap<String, ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References?> get references;
 
   /// Rebuilds the instance.
   ///
@@ -18716,8 +18492,78 @@ abstract class ReferenceApiExtractPublicResponseApplicationJson
 }
 
 @BuiltValue(instantiable: false)
+sealed class $ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterface
+    implements $ReferenceInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterface rebuild(
+    void Function($ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._validate(b);
+  }
+}
+
+abstract class ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References
+    implements
+        $ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterface,
+        Built<ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References,
+            ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesBuilder> {
+  /// Creates a new ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References object using the builder pattern.
+  factory ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References([
+    void Function(ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesBuilder)? b,
+  ]) = _$ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References;
+
+  // coverage:ignore-start
+  const ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References.
+  static Serializer<ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References> get serializer =>
+      _$referenceApiResolveOneResponseApplicationJsonOcsDataReferencesSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $ReferenceApiResolveOneResponseApplicationJson_Ocs_DataInterface {
-  BuiltMap<String, Reference?> get references;
+  BuiltMap<String, ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References?> get references;
 
   /// Rebuilds the instance.
   ///
@@ -18980,8 +18826,77 @@ abstract class ReferenceApiResolveRequestApplicationJson
 }
 
 @BuiltValue(instantiable: false)
+sealed class $ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterface implements $ReferenceInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterface rebuild(
+    void Function($ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._validate(b);
+  }
+}
+
+abstract class ReferenceApiResolveResponseApplicationJson_Ocs_Data_References
+    implements
+        $ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterface,
+        Built<ReferenceApiResolveResponseApplicationJson_Ocs_Data_References,
+            ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesBuilder> {
+  /// Creates a new ReferenceApiResolveResponseApplicationJson_Ocs_Data_References object using the builder pattern.
+  factory ReferenceApiResolveResponseApplicationJson_Ocs_Data_References([
+    void Function(ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesBuilder)? b,
+  ]) = _$ReferenceApiResolveResponseApplicationJson_Ocs_Data_References;
+
+  // coverage:ignore-start
+  const ReferenceApiResolveResponseApplicationJson_Ocs_Data_References._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ReferenceApiResolveResponseApplicationJson_Ocs_Data_References.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ReferenceApiResolveResponseApplicationJson_Ocs_Data_References.
+  static Serializer<ReferenceApiResolveResponseApplicationJson_Ocs_Data_References> get serializer =>
+      _$referenceApiResolveResponseApplicationJsonOcsDataReferencesSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $ReferenceApiResolveResponseApplicationJson_Ocs_DataInterface {
-  BuiltMap<String, Reference?> get references;
+  BuiltMap<String, ReferenceApiResolveResponseApplicationJson_Ocs_Data_References?> get references;
 
   /// Rebuilds the instance.
   ///
@@ -19171,8 +19086,78 @@ abstract class ReferenceApiResolveResponseApplicationJson
 }
 
 @BuiltValue(instantiable: false)
+sealed class $ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterface
+    implements $ReferenceInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterface rebuild(
+    void Function($ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._validate(b);
+  }
+}
+
+abstract class ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References
+    implements
+        $ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterface,
+        Built<ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References,
+            ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesBuilder> {
+  /// Creates a new ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References object using the builder pattern.
+  factory ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References([
+    void Function(ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesBuilder)? b,
+  ]) = _$ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References;
+
+  // coverage:ignore-start
+  const ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References.
+  static Serializer<ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References> get serializer =>
+      _$referenceApiResolveOnePublicResponseApplicationJsonOcsDataReferencesSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_DataInterface {
-  BuiltMap<String, Reference?> get references;
+  BuiltMap<String, ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References?> get references;
 
   /// Rebuilds the instance.
   ///
@@ -19439,8 +19424,78 @@ abstract class ReferenceApiResolvePublicRequestApplicationJson
 }
 
 @BuiltValue(instantiable: false)
+sealed class $ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterface
+    implements $ReferenceInterface {
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterface rebuild(
+    void Function($ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder].
+  @override
+  $ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterfaceBuilder b) {
+    $ReferenceInterface._validate(b);
+  }
+}
+
+abstract class ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References
+    implements
+        $ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterface,
+        Built<ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References,
+            ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesBuilder> {
+  /// Creates a new ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References object using the builder pattern.
+  factory ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References([
+    void Function(ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesBuilder)? b,
+  ]) = _$ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References;
+
+  // coverage:ignore-start
+  const ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References.
+  static Serializer<ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References> get serializer =>
+      _$referenceApiResolvePublicResponseApplicationJsonOcsDataReferencesSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesBuilder b) {
+    $ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $ReferenceApiResolvePublicResponseApplicationJson_Ocs_DataInterface {
-  BuiltMap<String, Reference?> get references;
+  BuiltMap<String, ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References?> get references;
 
   /// Rebuilds the instance.
   ///
@@ -20966,6 +21021,63 @@ typedef TaskProcessingIO = ({
 });
 
 @BuiltValue(instantiable: false)
+sealed class $TaskProcessingTask_OutputInterface {
+  @BuiltValueField(wireName: 'BuiltMap')
+  BuiltMap<String, TaskProcessingIO> get builtMap;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$TaskProcessingTask_OutputInterfaceBuilder].
+  $TaskProcessingTask_OutputInterface rebuild(void Function($TaskProcessingTask_OutputInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$TaskProcessingTask_OutputInterfaceBuilder].
+  $TaskProcessingTask_OutputInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($TaskProcessingTask_OutputInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($TaskProcessingTask_OutputInterfaceBuilder b) {}
+}
+
+abstract class TaskProcessingTask_Output
+    implements $TaskProcessingTask_OutputInterface, Built<TaskProcessingTask_Output, TaskProcessingTask_OutputBuilder> {
+  /// Creates a new TaskProcessingTask_Output object using the builder pattern.
+  factory TaskProcessingTask_Output([void Function(TaskProcessingTask_OutputBuilder)? b]) = _$TaskProcessingTask_Output;
+
+  // coverage:ignore-start
+  const TaskProcessingTask_Output._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory TaskProcessingTask_Output.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for TaskProcessingTask_Output.
+  static Serializer<TaskProcessingTask_Output> get serializer => _$taskProcessingTaskOutputSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(TaskProcessingTask_OutputBuilder b) {
+    $TaskProcessingTask_OutputInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(TaskProcessingTask_OutputBuilder b) {
+    $TaskProcessingTask_OutputInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $TaskProcessingTaskInterface {
   int get id;
   int get lastUpdated;
@@ -20974,13 +21086,14 @@ sealed class $TaskProcessingTaskInterface {
   String? get userId;
   String get appId;
   BuiltMap<String, TaskProcessingIO> get input;
-  BuiltMap<String, TaskProcessingIO>? get output;
+  TaskProcessingTask_Output? get output;
   String? get customId;
   int? get completionExpectedAt;
   double? get progress;
   int? get scheduledAt;
   int? get startedAt;
   int? get endedAt;
+  bool get allowCleanup;
 
   /// Rebuilds the instance.
   ///
@@ -27217,6 +27330,7 @@ sealed class $UnifiedSearchProviderInterface {
   String get name;
   String get icon;
   int get order;
+  bool get isExternalProvider;
   BuiltList<String> get triggers;
   BuiltMap<String, String> get filters;
   bool get inAppSearch;
@@ -28290,6 +28404,64 @@ abstract class WipeWipeDoneRequestApplicationJson
 }
 
 @BuiltValue(instantiable: false)
+sealed class $Capabilities_Core_UserInterface {
+  String get language;
+  String get locale;
+  String get timezone;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$Capabilities_Core_UserInterfaceBuilder].
+  $Capabilities_Core_UserInterface rebuild(void Function($Capabilities_Core_UserInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$Capabilities_Core_UserInterfaceBuilder].
+  $Capabilities_Core_UserInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($Capabilities_Core_UserInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($Capabilities_Core_UserInterfaceBuilder b) {}
+}
+
+abstract class Capabilities_Core_User
+    implements $Capabilities_Core_UserInterface, Built<Capabilities_Core_User, Capabilities_Core_UserBuilder> {
+  /// Creates a new Capabilities_Core_User object using the builder pattern.
+  factory Capabilities_Core_User([void Function(Capabilities_Core_UserBuilder)? b]) = _$Capabilities_Core_User;
+
+  // coverage:ignore-start
+  const Capabilities_Core_User._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory Capabilities_Core_User.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for Capabilities_Core_User.
+  static Serializer<Capabilities_Core_User> get serializer => _$capabilitiesCoreUserSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(Capabilities_Core_UserBuilder b) {
+    $Capabilities_Core_UserInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(Capabilities_Core_UserBuilder b) {
+    $Capabilities_Core_UserInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $Capabilities_CoreInterface {
   int get pollinterval;
   @BuiltValueField(wireName: 'webdav-root')
@@ -28300,6 +28472,7 @@ sealed class $Capabilities_CoreInterface {
   String get referenceRegex;
   @BuiltValueField(wireName: 'mod-rewrite-working')
   bool get modRewriteWorking;
+  Capabilities_Core_User? get user;
 
   /// Rebuilds the instance.
   ///
@@ -29711,7 +29884,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
         ListBuilder<AutocompleteResult>.new,
       )
       ..add(AvatarGetAvatarDarkSize.serializer)
-      ..add(AvatarGetAvatarDarkGuestFallback.serializer)
       ..addBuilderFactory(
         const FullType(AvatarAvatarGetAvatarDarkHeaders),
         AvatarAvatarGetAvatarDarkHeadersBuilder.new,
@@ -29720,7 +29892,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(const FullType(Header, [FullType.nullable(int)]), HeaderBuilder<int?>.new)
       ..add(Header.serializer)
       ..add(AvatarGetAvatarSize.serializer)
-      ..add(AvatarGetAvatarGuestFallback.serializer)
       ..addBuilderFactory(const FullType(AvatarAvatarGetAvatarHeaders), AvatarAvatarGetAvatarHeadersBuilder.new)
       ..add(AvatarAvatarGetAvatarHeaders.serializer)
       ..addBuilderFactory(
@@ -29837,7 +30008,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
       )
       ..add(CsrfTokenIndexResponseApplicationJson.serializer)
       ..add(GuestAvatarGetAvatarSize.serializer)
-      ..add(GuestAvatarGetAvatarDarkTheme.serializer)
       ..addBuilderFactory(
         const FullType(GuestAvatarGuestAvatarGetAvatarHeaders),
         GuestAvatarGuestAvatarGetAvatarHeadersBuilder.new,
@@ -29877,7 +30047,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
         LoginConfirmPasswordResponseApplicationJsonBuilder.new,
       )
       ..add(LoginConfirmPasswordResponseApplicationJson.serializer)
-      ..add(NavigationGetAppsNavigationAbsolute.serializer)
       ..addBuilderFactory(
         const FullType(NavigationGetAppsNavigationResponseApplicationJson),
         NavigationGetAppsNavigationResponseApplicationJsonBuilder.new,
@@ -29891,7 +30060,6 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(const FullType(NavigationEntry), NavigationEntryBuilder.new)
       ..add(NavigationEntry.serializer)
       ..addBuilderFactory(const FullType(BuiltList, [FullType(NavigationEntry)]), ListBuilder<NavigationEntry>.new)
-      ..add(NavigationGetSettingsNavigationAbsolute.serializer)
       ..addBuilderFactory(
         const FullType(NavigationGetSettingsNavigationResponseApplicationJson),
         NavigationGetSettingsNavigationResponseApplicationJsonBuilder.new,
@@ -29953,6 +30121,8 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..add(CoreCapabilities.serializer)
       ..addBuilderFactory(const FullType(CoreCapabilities_Core), CoreCapabilities_CoreBuilder.new)
       ..add(CoreCapabilities_Core.serializer)
+      ..addBuilderFactory(const FullType(CoreCapabilities_Core_User), CoreCapabilities_Core_UserBuilder.new)
+      ..add(CoreCapabilities_Core_User.serializer)
       ..addBuilderFactory(const FullType(CorePublicCapabilities), CorePublicCapabilitiesBuilder.new)
       ..add(CorePublicCapabilities.serializer)
       ..addBuilderFactory(
@@ -30186,11 +30356,17 @@ final Serializers _$serializers = (Serializers().toBuilder()
         SpreedCapabilities_Config_SignalingBuilder.new,
       )
       ..add(SpreedCapabilities_Config_Signaling.serializer)
+      ..add(SpreedCapabilities_Config_Signaling_Mode.serializer)
       ..addBuilderFactory(
         const FullType(SpreedCapabilities_Config_Experiments),
         SpreedCapabilities_Config_ExperimentsBuilder.new,
       )
       ..add(SpreedCapabilities_Config_Experiments.serializer)
+      ..addBuilderFactory(
+        const FullType(SpreedCapabilities_Config_Permissions),
+        SpreedCapabilities_Config_PermissionsBuilder.new,
+      )
+      ..add(SpreedCapabilities_Config_Permissions.serializer)
       ..addBuilderFactory(
         const FullType(BuiltMap, [
           FullType(String),
@@ -30249,14 +30425,8 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(const FullType(NotesCapabilities_Notes), NotesCapabilities_NotesBuilder.new)
       ..add(NotesCapabilities_Notes.serializer)
       ..add($d133a6ea76c2cb6bb2f7f6f4c3fdf958Extension._serializer)
-      ..add(PreviewGetPreviewA.serializer)
-      ..add(PreviewGetPreviewForceIcon.serializer)
       ..add(PreviewGetPreviewMode.serializer)
-      ..add(PreviewGetPreviewMimeFallback.serializer)
-      ..add(PreviewGetPreviewByFileIdA.serializer)
-      ..add(PreviewGetPreviewByFileIdForceIcon.serializer)
       ..add(PreviewGetPreviewByFileIdMode.serializer)
-      ..add(PreviewGetPreviewByFileIdMimeFallback.serializer)
       ..addBuilderFactory(
         const FullType(PreviewPreviewGetMimeIconUrlHeaders),
         PreviewPreviewGetMimeIconUrlHeadersBuilder.new,
@@ -30314,11 +30484,19 @@ final Serializers _$serializers = (Serializers().toBuilder()
         ReferenceApiExtractResponseApplicationJson_Ocs_DataBuilder.new,
       )
       ..add(ReferenceApiExtractResponseApplicationJson_Ocs_Data.serializer)
+      ..addBuilderFactory(
+        const FullType(ReferenceApiExtractResponseApplicationJson_Ocs_Data_References),
+        ReferenceApiExtractResponseApplicationJson_Ocs_Data_ReferencesBuilder.new,
+      )
+      ..add(ReferenceApiExtractResponseApplicationJson_Ocs_Data_References.serializer)
       ..addBuilderFactory(const FullType(Reference), ReferenceBuilder.new)
       ..add(Reference.serializer)
       ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType.nullable(Reference)]),
-        MapBuilder<String, Reference?>.new,
+        const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(ReferenceApiExtractResponseApplicationJson_Ocs_Data_References),
+        ]),
+        MapBuilder<String, ReferenceApiExtractResponseApplicationJson_Ocs_Data_References?>.new,
       )
       ..addBuilderFactory(
         const FullType(ReferenceApiExtractPublicRequestApplicationJson),
@@ -30341,6 +30519,18 @@ final Serializers _$serializers = (Serializers().toBuilder()
       )
       ..add(ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data.serializer)
       ..addBuilderFactory(
+        const FullType(ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References),
+        ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_ReferencesBuilder.new,
+      )
+      ..add(ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References.serializer)
+      ..addBuilderFactory(
+        const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References),
+        ]),
+        MapBuilder<String, ReferenceApiExtractPublicResponseApplicationJson_Ocs_Data_References?>.new,
+      )
+      ..addBuilderFactory(
         const FullType(ReferenceApiResolveOneResponseApplicationJson),
         ReferenceApiResolveOneResponseApplicationJsonBuilder.new,
       )
@@ -30355,6 +30545,18 @@ final Serializers _$serializers = (Serializers().toBuilder()
         ReferenceApiResolveOneResponseApplicationJson_Ocs_DataBuilder.new,
       )
       ..add(ReferenceApiResolveOneResponseApplicationJson_Ocs_Data.serializer)
+      ..addBuilderFactory(
+        const FullType(ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References),
+        ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_ReferencesBuilder.new,
+      )
+      ..add(ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References.serializer)
+      ..addBuilderFactory(
+        const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References),
+        ]),
+        MapBuilder<String, ReferenceApiResolveOneResponseApplicationJson_Ocs_Data_References?>.new,
+      )
       ..addBuilderFactory(
         const FullType(ReferenceApiResolveRequestApplicationJson),
         ReferenceApiResolveRequestApplicationJsonBuilder.new,
@@ -30376,6 +30578,18 @@ final Serializers _$serializers = (Serializers().toBuilder()
       )
       ..add(ReferenceApiResolveResponseApplicationJson_Ocs_Data.serializer)
       ..addBuilderFactory(
+        const FullType(ReferenceApiResolveResponseApplicationJson_Ocs_Data_References),
+        ReferenceApiResolveResponseApplicationJson_Ocs_Data_ReferencesBuilder.new,
+      )
+      ..add(ReferenceApiResolveResponseApplicationJson_Ocs_Data_References.serializer)
+      ..addBuilderFactory(
+        const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(ReferenceApiResolveResponseApplicationJson_Ocs_Data_References),
+        ]),
+        MapBuilder<String, ReferenceApiResolveResponseApplicationJson_Ocs_Data_References?>.new,
+      )
+      ..addBuilderFactory(
         const FullType(ReferenceApiResolveOnePublicResponseApplicationJson),
         ReferenceApiResolveOnePublicResponseApplicationJsonBuilder.new,
       )
@@ -30390,6 +30604,18 @@ final Serializers _$serializers = (Serializers().toBuilder()
         ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_DataBuilder.new,
       )
       ..add(ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data.serializer)
+      ..addBuilderFactory(
+        const FullType(ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References),
+        ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_ReferencesBuilder.new,
+      )
+      ..add(ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References.serializer)
+      ..addBuilderFactory(
+        const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References),
+        ]),
+        MapBuilder<String, ReferenceApiResolveOnePublicResponseApplicationJson_Ocs_Data_References?>.new,
+      )
       ..addBuilderFactory(
         const FullType(ReferenceApiResolvePublicRequestApplicationJson),
         ReferenceApiResolvePublicRequestApplicationJsonBuilder.new,
@@ -30410,6 +30636,18 @@ final Serializers _$serializers = (Serializers().toBuilder()
         ReferenceApiResolvePublicResponseApplicationJson_Ocs_DataBuilder.new,
       )
       ..add(ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data.serializer)
+      ..addBuilderFactory(
+        const FullType(ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References),
+        ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_ReferencesBuilder.new,
+      )
+      ..add(ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References.serializer)
+      ..addBuilderFactory(
+        const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References),
+        ]),
+        MapBuilder<String, ReferenceApiResolvePublicResponseApplicationJson_Ocs_Data_References?>.new,
+      )
       ..addBuilderFactory(
         const FullType(ReferenceApiGetProvidersInfoResponseApplicationJson),
         ReferenceApiGetProvidersInfoResponseApplicationJsonBuilder.new,
@@ -30580,6 +30818,8 @@ final Serializers _$serializers = (Serializers().toBuilder()
         const FullType(BuiltMap, [FullType(String), FullType(TaskProcessingIO)]),
         MapBuilder<String, TaskProcessingIO>.new,
       )
+      ..addBuilderFactory(const FullType(TaskProcessingTask_Output), TaskProcessingTask_OutputBuilder.new)
+      ..add(TaskProcessingTask_Output.serializer)
       ..addBuilderFactory(
         const FullType(TaskProcessingApiGetTaskResponseApplicationJson),
         TaskProcessingApiGetTaskResponseApplicationJsonBuilder.new,
@@ -31133,6 +31373,8 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..add(Capabilities.serializer)
       ..addBuilderFactory(const FullType(Capabilities_Core), Capabilities_CoreBuilder.new)
       ..add(Capabilities_Core.serializer)
+      ..addBuilderFactory(const FullType(Capabilities_Core_User), Capabilities_Core_UserBuilder.new)
+      ..add(Capabilities_Core_User.serializer)
       ..addBuilderFactory(const FullType(PublicCapabilities), PublicCapabilitiesBuilder.new)
       ..add(PublicCapabilities.serializer)
       ..addBuilderFactory(const FullType(PublicCapabilities_Bruteforce), PublicCapabilities_BruteforceBuilder.new)

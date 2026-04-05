@@ -71,6 +71,8 @@ class $ApiClient {
   /// Status codes:
   ///   * 200: Apps returned
   ///   * 404: New versions not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [getAppList] for a method executing this request and parsing the response.
@@ -132,6 +134,8 @@ class $ApiClient {
   /// Status codes:
   ///   * 200: Apps returned
   ///   * 404: New versions not found
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$getAppList_Request] for the request send by this method.
@@ -176,6 +180,8 @@ class $ApiClient {
   ///   * 200: Changelog entry returned
   ///   * 404: No changelog found
   ///   * 400: The `version` parameter is not a valid version format
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [getAppChangelogEntry] for a method executing this request and parsing the response.
@@ -246,6 +252,8 @@ class $ApiClient {
   ///   * 200: Changelog entry returned
   ///   * 404: No changelog found
   ///   * 400: The `version` parameter is not a valid version format
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$getAppChangelogEntry_Request] for the request send by this method.

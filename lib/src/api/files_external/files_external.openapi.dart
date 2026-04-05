@@ -67,6 +67,7 @@ class $ApiClient {
   ///
   /// Status codes:
   ///   * 200: User mounts returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getUserMounts] for a method executing this request and parsing the response.
@@ -109,6 +110,7 @@ class $ApiClient {
   ///
   /// Status codes:
   ///   * 200: User mounts returned
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getUserMounts_Request] for the request send by this method.

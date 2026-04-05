@@ -170,22 +170,6 @@ final BuiltSet<PushRemoveDeviceApiVersion> _$pushRemoveDeviceApiVersionValues =
   _$pushRemoveDeviceApiVersionV2,
 ]);
 
-const SettingsPersonalApiVersion _$settingsPersonalApiVersionV2 = const SettingsPersonalApiVersion._('v2');
-
-SettingsPersonalApiVersion _$valueOfSettingsPersonalApiVersion(String name) {
-  switch (name) {
-    case 'v2':
-      return _$settingsPersonalApiVersionV2;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<SettingsPersonalApiVersion> _$settingsPersonalApiVersionValues =
-    BuiltSet<SettingsPersonalApiVersion>(const <SettingsPersonalApiVersion>[
-  _$settingsPersonalApiVersionV2,
-]);
-
 const SettingsAdminApiVersion _$settingsAdminApiVersionV2 = const SettingsAdminApiVersion._('v2');
 
 SettingsAdminApiVersion _$valueOfSettingsAdminApiVersion(String name) {
@@ -200,6 +184,22 @@ SettingsAdminApiVersion _$valueOfSettingsAdminApiVersion(String name) {
 final BuiltSet<SettingsAdminApiVersion> _$settingsAdminApiVersionValues =
     BuiltSet<SettingsAdminApiVersion>(const <SettingsAdminApiVersion>[
   _$settingsAdminApiVersionV2,
+]);
+
+const SettingsPersonalApiVersion _$settingsPersonalApiVersionV2 = const SettingsPersonalApiVersion._('v2');
+
+SettingsPersonalApiVersion _$valueOfSettingsPersonalApiVersion(String name) {
+  switch (name) {
+    case 'v2':
+      return _$settingsPersonalApiVersionV2;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<SettingsPersonalApiVersion> _$settingsPersonalApiVersionValues =
+    BuiltSet<SettingsPersonalApiVersion>(const <SettingsPersonalApiVersion>[
+  _$settingsPersonalApiVersionV2,
 ]);
 
 Serializer<ApiGenerateNotificationRequestApplicationJson> _$apiGenerateNotificationRequestApplicationJsonSerializer =
@@ -275,18 +275,18 @@ Serializer<PushRemoveDeviceResponseApplicationJson_Ocs> _$pushRemoveDeviceRespon
     _$PushRemoveDeviceResponseApplicationJson_OcsSerializer();
 Serializer<PushRemoveDeviceResponseApplicationJson> _$pushRemoveDeviceResponseApplicationJsonSerializer =
     _$PushRemoveDeviceResponseApplicationJsonSerializer();
-Serializer<SettingsPersonalRequestApplicationJson> _$settingsPersonalRequestApplicationJsonSerializer =
-    _$SettingsPersonalRequestApplicationJsonSerializer();
-Serializer<SettingsPersonalResponseApplicationJson_Ocs> _$settingsPersonalResponseApplicationJsonOcsSerializer =
-    _$SettingsPersonalResponseApplicationJson_OcsSerializer();
-Serializer<SettingsPersonalResponseApplicationJson> _$settingsPersonalResponseApplicationJsonSerializer =
-    _$SettingsPersonalResponseApplicationJsonSerializer();
 Serializer<SettingsAdminRequestApplicationJson> _$settingsAdminRequestApplicationJsonSerializer =
     _$SettingsAdminRequestApplicationJsonSerializer();
 Serializer<SettingsAdminResponseApplicationJson_Ocs> _$settingsAdminResponseApplicationJsonOcsSerializer =
     _$SettingsAdminResponseApplicationJson_OcsSerializer();
 Serializer<SettingsAdminResponseApplicationJson> _$settingsAdminResponseApplicationJsonSerializer =
     _$SettingsAdminResponseApplicationJsonSerializer();
+Serializer<SettingsPersonalRequestApplicationJson> _$settingsPersonalRequestApplicationJsonSerializer =
+    _$SettingsPersonalRequestApplicationJsonSerializer();
+Serializer<SettingsPersonalResponseApplicationJson_Ocs> _$settingsPersonalResponseApplicationJsonOcsSerializer =
+    _$SettingsPersonalResponseApplicationJson_OcsSerializer();
+Serializer<SettingsPersonalResponseApplicationJson> _$settingsPersonalResponseApplicationJsonSerializer =
+    _$SettingsPersonalResponseApplicationJsonSerializer();
 Serializer<Capabilities_Notifications> _$capabilitiesNotificationsSerializer = _$Capabilities_NotificationsSerializer();
 Serializer<Capabilities> _$capabilitiesSerializer = _$CapabilitiesSerializer();
 
@@ -735,6 +735,8 @@ class _$ApiSelfTestPushResponseApplicationJson_Ocs_DataSerializer
     final result = <Object?>[
       'message',
       serializers.serialize(object.message, specifiedType: const FullType(String)),
+      'nid',
+      serializers.serialize(object.nid, specifiedType: const FullType(int)),
     ];
 
     return result;
@@ -753,6 +755,9 @@ class _$ApiSelfTestPushResponseApplicationJson_Ocs_DataSerializer
       switch (key) {
         case 'message':
           result.message = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'nid':
+          result.nid = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
       }
     }
@@ -1901,6 +1906,143 @@ class _$PushRemoveDeviceResponseApplicationJsonSerializer
   }
 }
 
+class _$SettingsAdminRequestApplicationJsonSerializer
+    implements StructuredSerializer<SettingsAdminRequestApplicationJson> {
+  @override
+  final Iterable<Type> types = const [SettingsAdminRequestApplicationJson, _$SettingsAdminRequestApplicationJson];
+  @override
+  final String wireName = 'SettingsAdminRequestApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, SettingsAdminRequestApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'batchSetting',
+      serializers.serialize(object.batchSetting, specifiedType: const FullType(int)),
+      'soundNotification',
+      serializers.serialize(object.soundNotification, specifiedType: const FullType(String)),
+      'soundTalk',
+      serializers.serialize(object.soundTalk, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  SettingsAdminRequestApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = SettingsAdminRequestApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'batchSetting':
+          result.batchSetting = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          break;
+        case 'soundNotification':
+          result.soundNotification = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'soundTalk':
+          result.soundTalk = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$SettingsAdminResponseApplicationJson_OcsSerializer
+    implements StructuredSerializer<SettingsAdminResponseApplicationJson_Ocs> {
+  @override
+  final Iterable<Type> types = const [
+    SettingsAdminResponseApplicationJson_Ocs,
+    _$SettingsAdminResponseApplicationJson_Ocs
+  ];
+  @override
+  final String wireName = 'SettingsAdminResponseApplicationJson_Ocs';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, SettingsAdminResponseApplicationJson_Ocs object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'meta',
+      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
+      'data',
+      serializers.serialize(object.data, specifiedType: const FullType(JsonObject)),
+    ];
+
+    return result;
+  }
+
+  @override
+  SettingsAdminResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = SettingsAdminResponseApplicationJson_OcsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'meta':
+          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
+          break;
+        case 'data':
+          result.data = serializers.deserialize(value, specifiedType: const FullType(JsonObject))! as JsonObject;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$SettingsAdminResponseApplicationJsonSerializer
+    implements StructuredSerializer<SettingsAdminResponseApplicationJson> {
+  @override
+  final Iterable<Type> types = const [SettingsAdminResponseApplicationJson, _$SettingsAdminResponseApplicationJson];
+  @override
+  final String wireName = 'SettingsAdminResponseApplicationJson';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, SettingsAdminResponseApplicationJson object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'ocs',
+      serializers.serialize(object.ocs, specifiedType: const FullType(SettingsAdminResponseApplicationJson_Ocs)),
+    ];
+
+    return result;
+  }
+
+  @override
+  SettingsAdminResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = SettingsAdminResponseApplicationJsonBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'ocs':
+          result.ocs.replace(
+              serializers.deserialize(value, specifiedType: const FullType(SettingsAdminResponseApplicationJson_Ocs))!
+                  as SettingsAdminResponseApplicationJson_Ocs);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$SettingsPersonalRequestApplicationJsonSerializer
     implements StructuredSerializer<SettingsPersonalRequestApplicationJson> {
   @override
@@ -2033,143 +2175,6 @@ class _$SettingsPersonalResponseApplicationJsonSerializer
           result.ocs.replace(serializers.deserialize(value,
                   specifiedType: const FullType(SettingsPersonalResponseApplicationJson_Ocs))!
               as SettingsPersonalResponseApplicationJson_Ocs);
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$SettingsAdminRequestApplicationJsonSerializer
-    implements StructuredSerializer<SettingsAdminRequestApplicationJson> {
-  @override
-  final Iterable<Type> types = const [SettingsAdminRequestApplicationJson, _$SettingsAdminRequestApplicationJson];
-  @override
-  final String wireName = 'SettingsAdminRequestApplicationJson';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, SettingsAdminRequestApplicationJson object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'batchSetting',
-      serializers.serialize(object.batchSetting, specifiedType: const FullType(int)),
-      'soundNotification',
-      serializers.serialize(object.soundNotification, specifiedType: const FullType(String)),
-      'soundTalk',
-      serializers.serialize(object.soundTalk, specifiedType: const FullType(String)),
-    ];
-
-    return result;
-  }
-
-  @override
-  SettingsAdminRequestApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = SettingsAdminRequestApplicationJsonBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'batchSetting':
-          result.batchSetting = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
-          break;
-        case 'soundNotification':
-          result.soundNotification = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
-          break;
-        case 'soundTalk':
-          result.soundTalk = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$SettingsAdminResponseApplicationJson_OcsSerializer
-    implements StructuredSerializer<SettingsAdminResponseApplicationJson_Ocs> {
-  @override
-  final Iterable<Type> types = const [
-    SettingsAdminResponseApplicationJson_Ocs,
-    _$SettingsAdminResponseApplicationJson_Ocs
-  ];
-  @override
-  final String wireName = 'SettingsAdminResponseApplicationJson_Ocs';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, SettingsAdminResponseApplicationJson_Ocs object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'meta',
-      serializers.serialize(object.meta, specifiedType: const FullType(OCSMeta)),
-      'data',
-      serializers.serialize(object.data, specifiedType: const FullType(JsonObject)),
-    ];
-
-    return result;
-  }
-
-  @override
-  SettingsAdminResponseApplicationJson_Ocs deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = SettingsAdminResponseApplicationJson_OcsBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'meta':
-          result.meta.replace(serializers.deserialize(value, specifiedType: const FullType(OCSMeta))! as OCSMeta);
-          break;
-        case 'data':
-          result.data = serializers.deserialize(value, specifiedType: const FullType(JsonObject))! as JsonObject;
-          break;
-      }
-    }
-
-    return result.build();
-  }
-}
-
-class _$SettingsAdminResponseApplicationJsonSerializer
-    implements StructuredSerializer<SettingsAdminResponseApplicationJson> {
-  @override
-  final Iterable<Type> types = const [SettingsAdminResponseApplicationJson, _$SettingsAdminResponseApplicationJson];
-  @override
-  final String wireName = 'SettingsAdminResponseApplicationJson';
-
-  @override
-  Iterable<Object?> serialize(Serializers serializers, SettingsAdminResponseApplicationJson object,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[
-      'ocs',
-      serializers.serialize(object.ocs, specifiedType: const FullType(SettingsAdminResponseApplicationJson_Ocs)),
-    ];
-
-    return result;
-  }
-
-  @override
-  SettingsAdminResponseApplicationJson deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = SettingsAdminResponseApplicationJsonBuilder();
-
-    final iterator = serialized.iterator;
-    while (iterator.moveNext()) {
-      final key = iterator.current! as String;
-      iterator.moveNext();
-      final Object? value = iterator.current;
-      switch (key) {
-        case 'ocs':
-          result.ocs.replace(
-              serializers.deserialize(value, specifiedType: const FullType(SettingsAdminResponseApplicationJson_Ocs))!
-                  as SettingsAdminResponseApplicationJson_Ocs);
           break;
       }
     }
@@ -3249,17 +3254,22 @@ abstract mixin class $ApiSelfTestPushResponseApplicationJson_Ocs_DataInterfaceBu
   void update(void Function($ApiSelfTestPushResponseApplicationJson_Ocs_DataInterfaceBuilder) updates);
   String? get message;
   set message(String? message);
+
+  int? get nid;
+  set nid(int? nid);
 }
 
 class _$ApiSelfTestPushResponseApplicationJson_Ocs_Data extends ApiSelfTestPushResponseApplicationJson_Ocs_Data {
   @override
   final String message;
+  @override
+  final int nid;
 
   factory _$ApiSelfTestPushResponseApplicationJson_Ocs_Data(
           [void Function(ApiSelfTestPushResponseApplicationJson_Ocs_DataBuilder)? updates]) =>
       (ApiSelfTestPushResponseApplicationJson_Ocs_DataBuilder()..update(updates))._build();
 
-  _$ApiSelfTestPushResponseApplicationJson_Ocs_Data._({required this.message}) : super._();
+  _$ApiSelfTestPushResponseApplicationJson_Ocs_Data._({required this.message, required this.nid}) : super._();
   @override
   ApiSelfTestPushResponseApplicationJson_Ocs_Data rebuild(
           void Function(ApiSelfTestPushResponseApplicationJson_Ocs_DataBuilder) updates) =>
@@ -3272,20 +3282,23 @@ class _$ApiSelfTestPushResponseApplicationJson_Ocs_Data extends ApiSelfTestPushR
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ApiSelfTestPushResponseApplicationJson_Ocs_Data && message == other.message;
+    return other is ApiSelfTestPushResponseApplicationJson_Ocs_Data && message == other.message && nid == other.nid;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, nid.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ApiSelfTestPushResponseApplicationJson_Ocs_Data')..add('message', message))
+    return (newBuiltValueToStringHelper(r'ApiSelfTestPushResponseApplicationJson_Ocs_Data')
+          ..add('message', message)
+          ..add('nid', nid))
         .toString();
   }
 }
@@ -3301,6 +3314,10 @@ class ApiSelfTestPushResponseApplicationJson_Ocs_DataBuilder
   String? get message => _$this._message;
   set message(covariant String? message) => _$this._message = message;
 
+  int? _nid;
+  int? get nid => _$this._nid;
+  set nid(covariant int? nid) => _$this._nid = nid;
+
   ApiSelfTestPushResponseApplicationJson_Ocs_DataBuilder() {
     ApiSelfTestPushResponseApplicationJson_Ocs_Data._defaults(this);
   }
@@ -3309,6 +3326,7 @@ class ApiSelfTestPushResponseApplicationJson_Ocs_DataBuilder
     final $v = _$v;
     if ($v != null) {
       _message = $v.message;
+      _nid = $v.nid;
       _$v = null;
     }
     return this;
@@ -3333,6 +3351,7 @@ class ApiSelfTestPushResponseApplicationJson_Ocs_DataBuilder
         _$ApiSelfTestPushResponseApplicationJson_Ocs_Data._(
           message: BuiltValueNullFieldError.checkNotNull(
               message, r'ApiSelfTestPushResponseApplicationJson_Ocs_Data', 'message'),
+          nid: BuiltValueNullFieldError.checkNotNull(nid, r'ApiSelfTestPushResponseApplicationJson_Ocs_Data', 'nid'),
         );
     replace(_$result);
     return _$result;
@@ -6089,6 +6108,354 @@ class PushRemoveDeviceResponseApplicationJsonBuilder
   }
 }
 
+abstract mixin class $SettingsAdminRequestApplicationJsonInterfaceBuilder {
+  void replace($SettingsAdminRequestApplicationJsonInterface other);
+  void update(void Function($SettingsAdminRequestApplicationJsonInterfaceBuilder) updates);
+  int? get batchSetting;
+  set batchSetting(int? batchSetting);
+
+  String? get soundNotification;
+  set soundNotification(String? soundNotification);
+
+  String? get soundTalk;
+  set soundTalk(String? soundTalk);
+}
+
+class _$SettingsAdminRequestApplicationJson extends SettingsAdminRequestApplicationJson {
+  @override
+  final int batchSetting;
+  @override
+  final String soundNotification;
+  @override
+  final String soundTalk;
+
+  factory _$SettingsAdminRequestApplicationJson([void Function(SettingsAdminRequestApplicationJsonBuilder)? updates]) =>
+      (SettingsAdminRequestApplicationJsonBuilder()..update(updates))._build();
+
+  _$SettingsAdminRequestApplicationJson._(
+      {required this.batchSetting, required this.soundNotification, required this.soundTalk})
+      : super._();
+  @override
+  SettingsAdminRequestApplicationJson rebuild(void Function(SettingsAdminRequestApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  SettingsAdminRequestApplicationJsonBuilder toBuilder() => SettingsAdminRequestApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is SettingsAdminRequestApplicationJson &&
+        batchSetting == other.batchSetting &&
+        soundNotification == other.soundNotification &&
+        soundTalk == other.soundTalk;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, batchSetting.hashCode);
+    _$hash = $jc(_$hash, soundNotification.hashCode);
+    _$hash = $jc(_$hash, soundTalk.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'SettingsAdminRequestApplicationJson')
+          ..add('batchSetting', batchSetting)
+          ..add('soundNotification', soundNotification)
+          ..add('soundTalk', soundTalk))
+        .toString();
+  }
+}
+
+class SettingsAdminRequestApplicationJsonBuilder
+    implements
+        Builder<SettingsAdminRequestApplicationJson, SettingsAdminRequestApplicationJsonBuilder>,
+        $SettingsAdminRequestApplicationJsonInterfaceBuilder {
+  _$SettingsAdminRequestApplicationJson? _$v;
+
+  int? _batchSetting;
+  int? get batchSetting => _$this._batchSetting;
+  set batchSetting(covariant int? batchSetting) => _$this._batchSetting = batchSetting;
+
+  String? _soundNotification;
+  String? get soundNotification => _$this._soundNotification;
+  set soundNotification(covariant String? soundNotification) => _$this._soundNotification = soundNotification;
+
+  String? _soundTalk;
+  String? get soundTalk => _$this._soundTalk;
+  set soundTalk(covariant String? soundTalk) => _$this._soundTalk = soundTalk;
+
+  SettingsAdminRequestApplicationJsonBuilder() {
+    SettingsAdminRequestApplicationJson._defaults(this);
+  }
+
+  SettingsAdminRequestApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _batchSetting = $v.batchSetting;
+      _soundNotification = $v.soundNotification;
+      _soundTalk = $v.soundTalk;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant SettingsAdminRequestApplicationJson other) {
+    _$v = other as _$SettingsAdminRequestApplicationJson;
+  }
+
+  @override
+  void update(void Function(SettingsAdminRequestApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  SettingsAdminRequestApplicationJson build() => _build();
+
+  _$SettingsAdminRequestApplicationJson _build() {
+    SettingsAdminRequestApplicationJson._validate(this);
+    final _$result = _$v ??
+        _$SettingsAdminRequestApplicationJson._(
+          batchSetting: BuiltValueNullFieldError.checkNotNull(
+              batchSetting, r'SettingsAdminRequestApplicationJson', 'batchSetting'),
+          soundNotification: BuiltValueNullFieldError.checkNotNull(
+              soundNotification, r'SettingsAdminRequestApplicationJson', 'soundNotification'),
+          soundTalk:
+              BuiltValueNullFieldError.checkNotNull(soundTalk, r'SettingsAdminRequestApplicationJson', 'soundTalk'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $SettingsAdminResponseApplicationJson_OcsInterfaceBuilder {
+  void replace($SettingsAdminResponseApplicationJson_OcsInterface other);
+  void update(void Function($SettingsAdminResponseApplicationJson_OcsInterfaceBuilder) updates);
+  OCSMetaBuilder get meta;
+  set meta(OCSMetaBuilder? meta);
+
+  JsonObject? get data;
+  set data(JsonObject? data);
+}
+
+class _$SettingsAdminResponseApplicationJson_Ocs extends SettingsAdminResponseApplicationJson_Ocs {
+  @override
+  final OCSMeta meta;
+  @override
+  final JsonObject data;
+
+  factory _$SettingsAdminResponseApplicationJson_Ocs(
+          [void Function(SettingsAdminResponseApplicationJson_OcsBuilder)? updates]) =>
+      (SettingsAdminResponseApplicationJson_OcsBuilder()..update(updates))._build();
+
+  _$SettingsAdminResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
+  @override
+  SettingsAdminResponseApplicationJson_Ocs rebuild(
+          void Function(SettingsAdminResponseApplicationJson_OcsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  SettingsAdminResponseApplicationJson_OcsBuilder toBuilder() =>
+      SettingsAdminResponseApplicationJson_OcsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is SettingsAdminResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, meta.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'SettingsAdminResponseApplicationJson_Ocs')
+          ..add('meta', meta)
+          ..add('data', data))
+        .toString();
+  }
+}
+
+class SettingsAdminResponseApplicationJson_OcsBuilder
+    implements
+        Builder<SettingsAdminResponseApplicationJson_Ocs, SettingsAdminResponseApplicationJson_OcsBuilder>,
+        $SettingsAdminResponseApplicationJson_OcsInterfaceBuilder {
+  _$SettingsAdminResponseApplicationJson_Ocs? _$v;
+
+  OCSMetaBuilder? _meta;
+  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
+  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(covariant JsonObject? data) => _$this._data = data;
+
+  SettingsAdminResponseApplicationJson_OcsBuilder() {
+    SettingsAdminResponseApplicationJson_Ocs._defaults(this);
+  }
+
+  SettingsAdminResponseApplicationJson_OcsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _meta = $v.meta.toBuilder();
+      _data = $v.data;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant SettingsAdminResponseApplicationJson_Ocs other) {
+    _$v = other as _$SettingsAdminResponseApplicationJson_Ocs;
+  }
+
+  @override
+  void update(void Function(SettingsAdminResponseApplicationJson_OcsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  SettingsAdminResponseApplicationJson_Ocs build() => _build();
+
+  _$SettingsAdminResponseApplicationJson_Ocs _build() {
+    SettingsAdminResponseApplicationJson_Ocs._validate(this);
+    _$SettingsAdminResponseApplicationJson_Ocs _$result;
+    try {
+      _$result = _$v ??
+          _$SettingsAdminResponseApplicationJson_Ocs._(
+            meta: meta.build(),
+            data: BuiltValueNullFieldError.checkNotNull(data, r'SettingsAdminResponseApplicationJson_Ocs', 'data'),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'meta';
+        meta.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'SettingsAdminResponseApplicationJson_Ocs', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $SettingsAdminResponseApplicationJsonInterfaceBuilder {
+  void replace($SettingsAdminResponseApplicationJsonInterface other);
+  void update(void Function($SettingsAdminResponseApplicationJsonInterfaceBuilder) updates);
+  SettingsAdminResponseApplicationJson_OcsBuilder get ocs;
+  set ocs(SettingsAdminResponseApplicationJson_OcsBuilder? ocs);
+}
+
+class _$SettingsAdminResponseApplicationJson extends SettingsAdminResponseApplicationJson {
+  @override
+  final SettingsAdminResponseApplicationJson_Ocs ocs;
+
+  factory _$SettingsAdminResponseApplicationJson(
+          [void Function(SettingsAdminResponseApplicationJsonBuilder)? updates]) =>
+      (SettingsAdminResponseApplicationJsonBuilder()..update(updates))._build();
+
+  _$SettingsAdminResponseApplicationJson._({required this.ocs}) : super._();
+  @override
+  SettingsAdminResponseApplicationJson rebuild(void Function(SettingsAdminResponseApplicationJsonBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  SettingsAdminResponseApplicationJsonBuilder toBuilder() =>
+      SettingsAdminResponseApplicationJsonBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is SettingsAdminResponseApplicationJson && ocs == other.ocs;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ocs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'SettingsAdminResponseApplicationJson')..add('ocs', ocs)).toString();
+  }
+}
+
+class SettingsAdminResponseApplicationJsonBuilder
+    implements
+        Builder<SettingsAdminResponseApplicationJson, SettingsAdminResponseApplicationJsonBuilder>,
+        $SettingsAdminResponseApplicationJsonInterfaceBuilder {
+  _$SettingsAdminResponseApplicationJson? _$v;
+
+  SettingsAdminResponseApplicationJson_OcsBuilder? _ocs;
+  SettingsAdminResponseApplicationJson_OcsBuilder get ocs =>
+      _$this._ocs ??= SettingsAdminResponseApplicationJson_OcsBuilder();
+  set ocs(covariant SettingsAdminResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
+
+  SettingsAdminResponseApplicationJsonBuilder() {
+    SettingsAdminResponseApplicationJson._defaults(this);
+  }
+
+  SettingsAdminResponseApplicationJsonBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _ocs = $v.ocs.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant SettingsAdminResponseApplicationJson other) {
+    _$v = other as _$SettingsAdminResponseApplicationJson;
+  }
+
+  @override
+  void update(void Function(SettingsAdminResponseApplicationJsonBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  SettingsAdminResponseApplicationJson build() => _build();
+
+  _$SettingsAdminResponseApplicationJson _build() {
+    SettingsAdminResponseApplicationJson._validate(this);
+    _$SettingsAdminResponseApplicationJson _$result;
+    try {
+      _$result = _$v ??
+          _$SettingsAdminResponseApplicationJson._(
+            ocs: ocs.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'ocs';
+        ocs.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'SettingsAdminResponseApplicationJson', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $SettingsPersonalRequestApplicationJsonInterfaceBuilder {
   void replace($SettingsPersonalRequestApplicationJsonInterface other);
   void update(void Function($SettingsPersonalRequestApplicationJsonInterfaceBuilder) updates);
@@ -6433,354 +6800,6 @@ class SettingsPersonalResponseApplicationJsonBuilder
         ocs.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(r'SettingsPersonalResponseApplicationJson', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $SettingsAdminRequestApplicationJsonInterfaceBuilder {
-  void replace($SettingsAdminRequestApplicationJsonInterface other);
-  void update(void Function($SettingsAdminRequestApplicationJsonInterfaceBuilder) updates);
-  int? get batchSetting;
-  set batchSetting(int? batchSetting);
-
-  String? get soundNotification;
-  set soundNotification(String? soundNotification);
-
-  String? get soundTalk;
-  set soundTalk(String? soundTalk);
-}
-
-class _$SettingsAdminRequestApplicationJson extends SettingsAdminRequestApplicationJson {
-  @override
-  final int batchSetting;
-  @override
-  final String soundNotification;
-  @override
-  final String soundTalk;
-
-  factory _$SettingsAdminRequestApplicationJson([void Function(SettingsAdminRequestApplicationJsonBuilder)? updates]) =>
-      (SettingsAdminRequestApplicationJsonBuilder()..update(updates))._build();
-
-  _$SettingsAdminRequestApplicationJson._(
-      {required this.batchSetting, required this.soundNotification, required this.soundTalk})
-      : super._();
-  @override
-  SettingsAdminRequestApplicationJson rebuild(void Function(SettingsAdminRequestApplicationJsonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  SettingsAdminRequestApplicationJsonBuilder toBuilder() => SettingsAdminRequestApplicationJsonBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is SettingsAdminRequestApplicationJson &&
-        batchSetting == other.batchSetting &&
-        soundNotification == other.soundNotification &&
-        soundTalk == other.soundTalk;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, batchSetting.hashCode);
-    _$hash = $jc(_$hash, soundNotification.hashCode);
-    _$hash = $jc(_$hash, soundTalk.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'SettingsAdminRequestApplicationJson')
-          ..add('batchSetting', batchSetting)
-          ..add('soundNotification', soundNotification)
-          ..add('soundTalk', soundTalk))
-        .toString();
-  }
-}
-
-class SettingsAdminRequestApplicationJsonBuilder
-    implements
-        Builder<SettingsAdminRequestApplicationJson, SettingsAdminRequestApplicationJsonBuilder>,
-        $SettingsAdminRequestApplicationJsonInterfaceBuilder {
-  _$SettingsAdminRequestApplicationJson? _$v;
-
-  int? _batchSetting;
-  int? get batchSetting => _$this._batchSetting;
-  set batchSetting(covariant int? batchSetting) => _$this._batchSetting = batchSetting;
-
-  String? _soundNotification;
-  String? get soundNotification => _$this._soundNotification;
-  set soundNotification(covariant String? soundNotification) => _$this._soundNotification = soundNotification;
-
-  String? _soundTalk;
-  String? get soundTalk => _$this._soundTalk;
-  set soundTalk(covariant String? soundTalk) => _$this._soundTalk = soundTalk;
-
-  SettingsAdminRequestApplicationJsonBuilder() {
-    SettingsAdminRequestApplicationJson._defaults(this);
-  }
-
-  SettingsAdminRequestApplicationJsonBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _batchSetting = $v.batchSetting;
-      _soundNotification = $v.soundNotification;
-      _soundTalk = $v.soundTalk;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant SettingsAdminRequestApplicationJson other) {
-    _$v = other as _$SettingsAdminRequestApplicationJson;
-  }
-
-  @override
-  void update(void Function(SettingsAdminRequestApplicationJsonBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  SettingsAdminRequestApplicationJson build() => _build();
-
-  _$SettingsAdminRequestApplicationJson _build() {
-    SettingsAdminRequestApplicationJson._validate(this);
-    final _$result = _$v ??
-        _$SettingsAdminRequestApplicationJson._(
-          batchSetting: BuiltValueNullFieldError.checkNotNull(
-              batchSetting, r'SettingsAdminRequestApplicationJson', 'batchSetting'),
-          soundNotification: BuiltValueNullFieldError.checkNotNull(
-              soundNotification, r'SettingsAdminRequestApplicationJson', 'soundNotification'),
-          soundTalk:
-              BuiltValueNullFieldError.checkNotNull(soundTalk, r'SettingsAdminRequestApplicationJson', 'soundTalk'),
-        );
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $SettingsAdminResponseApplicationJson_OcsInterfaceBuilder {
-  void replace($SettingsAdminResponseApplicationJson_OcsInterface other);
-  void update(void Function($SettingsAdminResponseApplicationJson_OcsInterfaceBuilder) updates);
-  OCSMetaBuilder get meta;
-  set meta(OCSMetaBuilder? meta);
-
-  JsonObject? get data;
-  set data(JsonObject? data);
-}
-
-class _$SettingsAdminResponseApplicationJson_Ocs extends SettingsAdminResponseApplicationJson_Ocs {
-  @override
-  final OCSMeta meta;
-  @override
-  final JsonObject data;
-
-  factory _$SettingsAdminResponseApplicationJson_Ocs(
-          [void Function(SettingsAdminResponseApplicationJson_OcsBuilder)? updates]) =>
-      (SettingsAdminResponseApplicationJson_OcsBuilder()..update(updates))._build();
-
-  _$SettingsAdminResponseApplicationJson_Ocs._({required this.meta, required this.data}) : super._();
-  @override
-  SettingsAdminResponseApplicationJson_Ocs rebuild(
-          void Function(SettingsAdminResponseApplicationJson_OcsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  SettingsAdminResponseApplicationJson_OcsBuilder toBuilder() =>
-      SettingsAdminResponseApplicationJson_OcsBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is SettingsAdminResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, meta.hashCode);
-    _$hash = $jc(_$hash, data.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'SettingsAdminResponseApplicationJson_Ocs')
-          ..add('meta', meta)
-          ..add('data', data))
-        .toString();
-  }
-}
-
-class SettingsAdminResponseApplicationJson_OcsBuilder
-    implements
-        Builder<SettingsAdminResponseApplicationJson_Ocs, SettingsAdminResponseApplicationJson_OcsBuilder>,
-        $SettingsAdminResponseApplicationJson_OcsInterfaceBuilder {
-  _$SettingsAdminResponseApplicationJson_Ocs? _$v;
-
-  OCSMetaBuilder? _meta;
-  OCSMetaBuilder get meta => _$this._meta ??= OCSMetaBuilder();
-  set meta(covariant OCSMetaBuilder? meta) => _$this._meta = meta;
-
-  JsonObject? _data;
-  JsonObject? get data => _$this._data;
-  set data(covariant JsonObject? data) => _$this._data = data;
-
-  SettingsAdminResponseApplicationJson_OcsBuilder() {
-    SettingsAdminResponseApplicationJson_Ocs._defaults(this);
-  }
-
-  SettingsAdminResponseApplicationJson_OcsBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _meta = $v.meta.toBuilder();
-      _data = $v.data;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant SettingsAdminResponseApplicationJson_Ocs other) {
-    _$v = other as _$SettingsAdminResponseApplicationJson_Ocs;
-  }
-
-  @override
-  void update(void Function(SettingsAdminResponseApplicationJson_OcsBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  SettingsAdminResponseApplicationJson_Ocs build() => _build();
-
-  _$SettingsAdminResponseApplicationJson_Ocs _build() {
-    SettingsAdminResponseApplicationJson_Ocs._validate(this);
-    _$SettingsAdminResponseApplicationJson_Ocs _$result;
-    try {
-      _$result = _$v ??
-          _$SettingsAdminResponseApplicationJson_Ocs._(
-            meta: meta.build(),
-            data: BuiltValueNullFieldError.checkNotNull(data, r'SettingsAdminResponseApplicationJson_Ocs', 'data'),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'meta';
-        meta.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(r'SettingsAdminResponseApplicationJson_Ocs', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-abstract mixin class $SettingsAdminResponseApplicationJsonInterfaceBuilder {
-  void replace($SettingsAdminResponseApplicationJsonInterface other);
-  void update(void Function($SettingsAdminResponseApplicationJsonInterfaceBuilder) updates);
-  SettingsAdminResponseApplicationJson_OcsBuilder get ocs;
-  set ocs(SettingsAdminResponseApplicationJson_OcsBuilder? ocs);
-}
-
-class _$SettingsAdminResponseApplicationJson extends SettingsAdminResponseApplicationJson {
-  @override
-  final SettingsAdminResponseApplicationJson_Ocs ocs;
-
-  factory _$SettingsAdminResponseApplicationJson(
-          [void Function(SettingsAdminResponseApplicationJsonBuilder)? updates]) =>
-      (SettingsAdminResponseApplicationJsonBuilder()..update(updates))._build();
-
-  _$SettingsAdminResponseApplicationJson._({required this.ocs}) : super._();
-  @override
-  SettingsAdminResponseApplicationJson rebuild(void Function(SettingsAdminResponseApplicationJsonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  SettingsAdminResponseApplicationJsonBuilder toBuilder() =>
-      SettingsAdminResponseApplicationJsonBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is SettingsAdminResponseApplicationJson && ocs == other.ocs;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, ocs.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'SettingsAdminResponseApplicationJson')..add('ocs', ocs)).toString();
-  }
-}
-
-class SettingsAdminResponseApplicationJsonBuilder
-    implements
-        Builder<SettingsAdminResponseApplicationJson, SettingsAdminResponseApplicationJsonBuilder>,
-        $SettingsAdminResponseApplicationJsonInterfaceBuilder {
-  _$SettingsAdminResponseApplicationJson? _$v;
-
-  SettingsAdminResponseApplicationJson_OcsBuilder? _ocs;
-  SettingsAdminResponseApplicationJson_OcsBuilder get ocs =>
-      _$this._ocs ??= SettingsAdminResponseApplicationJson_OcsBuilder();
-  set ocs(covariant SettingsAdminResponseApplicationJson_OcsBuilder? ocs) => _$this._ocs = ocs;
-
-  SettingsAdminResponseApplicationJsonBuilder() {
-    SettingsAdminResponseApplicationJson._defaults(this);
-  }
-
-  SettingsAdminResponseApplicationJsonBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _ocs = $v.ocs.toBuilder();
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(covariant SettingsAdminResponseApplicationJson other) {
-    _$v = other as _$SettingsAdminResponseApplicationJson;
-  }
-
-  @override
-  void update(void Function(SettingsAdminResponseApplicationJsonBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  SettingsAdminResponseApplicationJson build() => _build();
-
-  _$SettingsAdminResponseApplicationJson _build() {
-    SettingsAdminResponseApplicationJson._validate(this);
-    _$SettingsAdminResponseApplicationJson _$result;
-    try {
-      _$result = _$v ??
-          _$SettingsAdminResponseApplicationJson._(
-            ocs: ocs.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'ocs';
-        ocs.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(r'SettingsAdminResponseApplicationJson', _$failedField, e.toString());
       }
       rethrow;
     }

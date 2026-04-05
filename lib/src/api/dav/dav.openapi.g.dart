@@ -70,10 +70,14 @@ class _$DirectGetUrlRequestApplicationJsonSerializer
     final result = <Object?>[
       'fileId',
       serializers.serialize(object.fileId, specifiedType: const FullType(int)),
-      'expirationTime',
-      serializers.serialize(object.expirationTime, specifiedType: const FullType(int)),
     ];
-
+    Object? value;
+    value = object.expirationTime;
+    if (value != null) {
+      result
+        ..add('expirationTime')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -92,7 +96,7 @@ class _$DirectGetUrlRequestApplicationJsonSerializer
           result.fileId = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
         case 'expirationTime':
-          result.expirationTime = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          result.expirationTime = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -1199,6 +1203,14 @@ class _$Capabilities_DavSerializer implements StructuredSerializer<Capabilities_
     final result = <Object?>[
       'chunking',
       serializers.serialize(object.chunking, specifiedType: const FullType(String)),
+      'public_shares_chunking',
+      serializers.serialize(object.publicSharesChunking, specifiedType: const FullType(bool)),
+      'search_supports_creation_time',
+      serializers.serialize(object.searchSupportsCreationTime, specifiedType: const FullType(bool)),
+      'search_supports_upload_time',
+      serializers.serialize(object.searchSupportsUploadTime, specifiedType: const FullType(bool)),
+      'search_supports_last_activity',
+      serializers.serialize(object.searchSupportsLastActivity, specifiedType: const FullType(bool)),
     ];
     Object? value;
     value = object.bulkupload;
@@ -1235,6 +1247,21 @@ class _$Capabilities_DavSerializer implements StructuredSerializer<Capabilities_
       switch (key) {
         case 'chunking':
           result.chunking = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'public_shares_chunking':
+          result.publicSharesChunking = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'search_supports_creation_time':
+          result.searchSupportsCreationTime =
+              serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'search_supports_upload_time':
+          result.searchSupportsUploadTime =
+              serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'search_supports_last_activity':
+          result.searchSupportsLastActivity =
+              serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
           break;
         case 'bulkupload':
           result.bulkupload = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
@@ -1305,12 +1332,12 @@ class _$DirectGetUrlRequestApplicationJson extends DirectGetUrlRequestApplicatio
   @override
   final int fileId;
   @override
-  final int expirationTime;
+  final int? expirationTime;
 
   factory _$DirectGetUrlRequestApplicationJson([void Function(DirectGetUrlRequestApplicationJsonBuilder)? updates]) =>
       (DirectGetUrlRequestApplicationJsonBuilder()..update(updates))._build();
 
-  _$DirectGetUrlRequestApplicationJson._({required this.fileId, required this.expirationTime}) : super._();
+  _$DirectGetUrlRequestApplicationJson._({required this.fileId, this.expirationTime}) : super._();
   @override
   DirectGetUrlRequestApplicationJson rebuild(void Function(DirectGetUrlRequestApplicationJsonBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -1390,8 +1417,7 @@ class DirectGetUrlRequestApplicationJsonBuilder
     final _$result = _$v ??
         _$DirectGetUrlRequestApplicationJson._(
           fileId: BuiltValueNullFieldError.checkNotNull(fileId, r'DirectGetUrlRequestApplicationJson', 'fileId'),
-          expirationTime: BuiltValueNullFieldError.checkNotNull(
-              expirationTime, r'DirectGetUrlRequestApplicationJson', 'expirationTime'),
+          expirationTime: expirationTime,
         );
     replace(_$result);
     return _$result;
@@ -3971,6 +3997,18 @@ abstract mixin class $Capabilities_DavInterfaceBuilder {
   String? get chunking;
   set chunking(String? chunking);
 
+  bool? get publicSharesChunking;
+  set publicSharesChunking(bool? publicSharesChunking);
+
+  bool? get searchSupportsCreationTime;
+  set searchSupportsCreationTime(bool? searchSupportsCreationTime);
+
+  bool? get searchSupportsUploadTime;
+  set searchSupportsUploadTime(bool? searchSupportsUploadTime);
+
+  bool? get searchSupportsLastActivity;
+  set searchSupportsLastActivity(bool? searchSupportsLastActivity);
+
   String? get bulkupload;
   set bulkupload(String? bulkupload);
 
@@ -3985,6 +4023,14 @@ class _$Capabilities_Dav extends Capabilities_Dav {
   @override
   final String chunking;
   @override
+  final bool publicSharesChunking;
+  @override
+  final bool searchSupportsCreationTime;
+  @override
+  final bool searchSupportsUploadTime;
+  @override
+  final bool searchSupportsLastActivity;
+  @override
   final String? bulkupload;
   @override
   final bool? absenceSupported;
@@ -3994,7 +4040,15 @@ class _$Capabilities_Dav extends Capabilities_Dav {
   factory _$Capabilities_Dav([void Function(Capabilities_DavBuilder)? updates]) =>
       (Capabilities_DavBuilder()..update(updates))._build();
 
-  _$Capabilities_Dav._({required this.chunking, this.bulkupload, this.absenceSupported, this.absenceReplacement})
+  _$Capabilities_Dav._(
+      {required this.chunking,
+      required this.publicSharesChunking,
+      required this.searchSupportsCreationTime,
+      required this.searchSupportsUploadTime,
+      required this.searchSupportsLastActivity,
+      this.bulkupload,
+      this.absenceSupported,
+      this.absenceReplacement})
       : super._();
   @override
   Capabilities_Dav rebuild(void Function(Capabilities_DavBuilder) updates) => (toBuilder()..update(updates)).build();
@@ -4007,6 +4061,10 @@ class _$Capabilities_Dav extends Capabilities_Dav {
     if (identical(other, this)) return true;
     return other is Capabilities_Dav &&
         chunking == other.chunking &&
+        publicSharesChunking == other.publicSharesChunking &&
+        searchSupportsCreationTime == other.searchSupportsCreationTime &&
+        searchSupportsUploadTime == other.searchSupportsUploadTime &&
+        searchSupportsLastActivity == other.searchSupportsLastActivity &&
         bulkupload == other.bulkupload &&
         absenceSupported == other.absenceSupported &&
         absenceReplacement == other.absenceReplacement;
@@ -4016,6 +4074,10 @@ class _$Capabilities_Dav extends Capabilities_Dav {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, chunking.hashCode);
+    _$hash = $jc(_$hash, publicSharesChunking.hashCode);
+    _$hash = $jc(_$hash, searchSupportsCreationTime.hashCode);
+    _$hash = $jc(_$hash, searchSupportsUploadTime.hashCode);
+    _$hash = $jc(_$hash, searchSupportsLastActivity.hashCode);
     _$hash = $jc(_$hash, bulkupload.hashCode);
     _$hash = $jc(_$hash, absenceSupported.hashCode);
     _$hash = $jc(_$hash, absenceReplacement.hashCode);
@@ -4027,6 +4089,10 @@ class _$Capabilities_Dav extends Capabilities_Dav {
   String toString() {
     return (newBuiltValueToStringHelper(r'Capabilities_Dav')
           ..add('chunking', chunking)
+          ..add('publicSharesChunking', publicSharesChunking)
+          ..add('searchSupportsCreationTime', searchSupportsCreationTime)
+          ..add('searchSupportsUploadTime', searchSupportsUploadTime)
+          ..add('searchSupportsLastActivity', searchSupportsLastActivity)
           ..add('bulkupload', bulkupload)
           ..add('absenceSupported', absenceSupported)
           ..add('absenceReplacement', absenceReplacement))
@@ -4041,6 +4107,25 @@ class Capabilities_DavBuilder
   String? _chunking;
   String? get chunking => _$this._chunking;
   set chunking(covariant String? chunking) => _$this._chunking = chunking;
+
+  bool? _publicSharesChunking;
+  bool? get publicSharesChunking => _$this._publicSharesChunking;
+  set publicSharesChunking(covariant bool? publicSharesChunking) => _$this._publicSharesChunking = publicSharesChunking;
+
+  bool? _searchSupportsCreationTime;
+  bool? get searchSupportsCreationTime => _$this._searchSupportsCreationTime;
+  set searchSupportsCreationTime(covariant bool? searchSupportsCreationTime) =>
+      _$this._searchSupportsCreationTime = searchSupportsCreationTime;
+
+  bool? _searchSupportsUploadTime;
+  bool? get searchSupportsUploadTime => _$this._searchSupportsUploadTime;
+  set searchSupportsUploadTime(covariant bool? searchSupportsUploadTime) =>
+      _$this._searchSupportsUploadTime = searchSupportsUploadTime;
+
+  bool? _searchSupportsLastActivity;
+  bool? get searchSupportsLastActivity => _$this._searchSupportsLastActivity;
+  set searchSupportsLastActivity(covariant bool? searchSupportsLastActivity) =>
+      _$this._searchSupportsLastActivity = searchSupportsLastActivity;
 
   String? _bulkupload;
   String? get bulkupload => _$this._bulkupload;
@@ -4062,6 +4147,10 @@ class Capabilities_DavBuilder
     final $v = _$v;
     if ($v != null) {
       _chunking = $v.chunking;
+      _publicSharesChunking = $v.publicSharesChunking;
+      _searchSupportsCreationTime = $v.searchSupportsCreationTime;
+      _searchSupportsUploadTime = $v.searchSupportsUploadTime;
+      _searchSupportsLastActivity = $v.searchSupportsLastActivity;
       _bulkupload = $v.bulkupload;
       _absenceSupported = $v.absenceSupported;
       _absenceReplacement = $v.absenceReplacement;
@@ -4088,6 +4177,14 @@ class Capabilities_DavBuilder
     final _$result = _$v ??
         _$Capabilities_Dav._(
           chunking: BuiltValueNullFieldError.checkNotNull(chunking, r'Capabilities_Dav', 'chunking'),
+          publicSharesChunking:
+              BuiltValueNullFieldError.checkNotNull(publicSharesChunking, r'Capabilities_Dav', 'publicSharesChunking'),
+          searchSupportsCreationTime: BuiltValueNullFieldError.checkNotNull(
+              searchSupportsCreationTime, r'Capabilities_Dav', 'searchSupportsCreationTime'),
+          searchSupportsUploadTime: BuiltValueNullFieldError.checkNotNull(
+              searchSupportsUploadTime, r'Capabilities_Dav', 'searchSupportsUploadTime'),
+          searchSupportsLastActivity: BuiltValueNullFieldError.checkNotNull(
+              searchSupportsLastActivity, r'Capabilities_Dav', 'searchSupportsLastActivity'),
           bulkupload: bulkupload,
           absenceSupported: absenceSupported,
           absenceReplacement: absenceReplacement,

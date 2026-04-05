@@ -74,6 +74,7 @@ class $DeclarativeSettingsClient {
   ///   * 200: Value set successfully
   ///   * 500: Not logged in or not an admin user
   ///   * 400: Invalid arguments to save value
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [setValue] for a method executing this request and parsing the response.
@@ -128,6 +129,7 @@ class $DeclarativeSettingsClient {
   ///   * 200: Value set successfully
   ///   * 500: Not logged in or not an admin user
   ///   * 400: Invalid arguments to save value
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$setValue_Request] for the request send by this method.
@@ -142,6 +144,106 @@ class $DeclarativeSettingsClient {
 
     final _serializer = $setValue_Serializer();
     return _i1.ResponseConverter<DeclarativeSettingsSetValueResponseApplicationJson, void>(
+      _serializer,
+    ).convert(_response);
+  }
+
+  /// Builds a serializer to parse the response of [$setSensitiveValue_Request].
+  @_i2.experimental
+  _i1.DynamiteSerializer<DeclarativeSettingsSetSensitiveValueResponseApplicationJson, void>
+      $setSensitiveValue_Serializer() => _i1.DynamiteSerializer(
+            bodyType: const FullType(DeclarativeSettingsSetSensitiveValueResponseApplicationJson),
+            headersType: null,
+            serializers: _$jsonSerializers,
+            validStatuses: const {200},
+          );
+
+  /// Sets a declarative settings value. Password confirmation is required for sensitive values.
+  ///
+  /// This endpoint requires password confirmation.
+  ///
+  /// Returns a `DynamiteRequest` backing the [setSensitiveValue] operation.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Value set successfully
+  ///   * 500: Not logged in or not an admin user
+  ///   * 400: Invalid arguments to save value
+  ///   * 401: Current user is not logged in
+  ///
+  /// See:
+  ///  * [setSensitiveValue] for a method executing this request and parsing the response.
+  ///  * [$setSensitiveValue_Serializer] for a converter to parse the `Response` from an executed this request.
+  @_i2.experimental
+  _i3.Request $setSensitiveValue_Request({
+    required DeclarativeSettingsSetSensitiveValueRequestApplicationJson $body,
+    bool? oCSAPIRequest,
+  }) {
+    const _path = '/ocs/v2.php/settings/api/declarative/value-sensitive';
+    final _uri = Uri.parse('${_rootClient.baseURL}$_path');
+    final _request = _i3.Request('post', _uri);
+    _request.headers['Accept'] = 'application/json';
+    // coverage:ignore-start
+    final authentication = _i4.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
+      (auth) => switch (auth) {
+        _i1.DynamiteHttpBearerAuthentication() || _i1.DynamiteHttpBasicAuthentication() => true,
+        _ => false,
+      },
+    );
+
+    if (authentication != null) {
+      _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
+    }
+
+    // coverage:ignore-end
+    var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
+    __oCSAPIRequest ??= true;
+    _request.headers['OCS-APIRequest'] = const _i5.HeaderEncoder().convert(__oCSAPIRequest);
+
+    _request.headers['Content-Type'] = 'application/json';
+    _request.body = json.encode(
+      _$jsonSerializers.serialize(
+        $body,
+        specifiedType: const FullType(DeclarativeSettingsSetSensitiveValueRequestApplicationJson),
+      ),
+    );
+    return _request;
+  }
+
+  /// Sets a declarative settings value. Password confirmation is required for sensitive values.
+  ///
+  /// This endpoint requires password confirmation.
+  ///
+  /// Returns a [Future] containing a `DynamiteResponse` with the status code, deserialized body and headers.
+  /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
+  ///
+  /// Parameters:
+  ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
+  ///
+  /// Status codes:
+  ///   * 200: Value set successfully
+  ///   * 500: Not logged in or not an admin user
+  ///   * 400: Invalid arguments to save value
+  ///   * 401: Current user is not logged in
+  ///
+  /// See:
+  ///  * [$setSensitiveValue_Request] for the request send by this method.
+  ///  * [$setSensitiveValue_Serializer] for a converter to parse the `Response` from an executed request.
+  Future<_i1.DynamiteResponse<DeclarativeSettingsSetSensitiveValueResponseApplicationJson, void>> setSensitiveValue({
+    required DeclarativeSettingsSetSensitiveValueRequestApplicationJson $body,
+    bool? oCSAPIRequest,
+  }) async {
+    final _request = $setSensitiveValue_Request(oCSAPIRequest: oCSAPIRequest, $body: $body);
+    final _streamedResponse = await _rootClient.httpClient.send(_request);
+    final _response = await _i3.Response.fromStream(_streamedResponse);
+
+    final _serializer = $setSensitiveValue_Serializer();
+    return _i1.ResponseConverter<DeclarativeSettingsSetSensitiveValueResponseApplicationJson, void>(
       _serializer,
     ).convert(_response);
   }
@@ -167,6 +269,7 @@ class $DeclarativeSettingsClient {
   /// Status codes:
   ///   * 200: Forms returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [getForms] for a method executing this request and parsing the response.
@@ -210,6 +313,7 @@ class $DeclarativeSettingsClient {
   /// Status codes:
   ///   * 200: Forms returned
   ///   * 500
+  ///   * 401: Current user is not logged in
   ///
   /// See:
   ///  * [$getForms_Request] for the request send by this method.
@@ -253,6 +357,8 @@ class $LogSettingsClient {
   ///
   /// Status codes:
   ///   * 200: Logfile returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [download] for a method executing this request and parsing the response.
@@ -290,6 +396,8 @@ class $LogSettingsClient {
   ///
   /// Status codes:
   ///   * 200: Logfile returned
+  ///   * 401: Current user is not logged in
+  ///   * 403: Logged in account must be an admin
   ///
   /// See:
   ///  * [$download_Request] for the request send by this method.
@@ -562,6 +670,209 @@ abstract class DeclarativeSettingsSetValueResponseApplicationJson
   @BuiltValueHook(finalizeBuilder: true)
   static void _validate(DeclarativeSettingsSetValueResponseApplicationJsonBuilder b) {
     $DeclarativeSettingsSetValueResponseApplicationJsonInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterface {
+  /// ID of the app.
+  String get app;
+
+  /// ID of the form.
+  String get formId;
+
+  /// ID of the field.
+  String get fieldId;
+
+  /// Value to be saved.
+  JsonObject get value;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterfaceBuilder].
+  $DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterface rebuild(
+    void Function($DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterfaceBuilder].
+  $DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class DeclarativeSettingsSetSensitiveValueRequestApplicationJson
+    implements
+        $DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterface,
+        Built<DeclarativeSettingsSetSensitiveValueRequestApplicationJson,
+            DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder> {
+  /// Creates a new DeclarativeSettingsSetSensitiveValueRequestApplicationJson object using the builder pattern.
+  factory DeclarativeSettingsSetSensitiveValueRequestApplicationJson([
+    void Function(DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder)? b,
+  ]) = _$DeclarativeSettingsSetSensitiveValueRequestApplicationJson;
+
+  // coverage:ignore-start
+  const DeclarativeSettingsSetSensitiveValueRequestApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory DeclarativeSettingsSetSensitiveValueRequestApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for DeclarativeSettingsSetSensitiveValueRequestApplicationJson.
+  static Serializer<DeclarativeSettingsSetSensitiveValueRequestApplicationJson> get serializer =>
+      _$declarativeSettingsSetSensitiveValueRequestApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder b) {
+    $DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder b) {
+    $DeclarativeSettingsSetSensitiveValueRequestApplicationJsonInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterface {
+  OCSMeta get meta;
+  JsonObject? get data;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterfaceBuilder].
+  $DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterface rebuild(
+    void Function($DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterfaceBuilder].
+  $DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterfaceBuilder b) {}
+}
+
+abstract class DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs
+    implements
+        $DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterface,
+        Built<DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs,
+            DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder> {
+  /// Creates a new DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs object using the builder pattern.
+  factory DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs([
+    void Function(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder)? b,
+  ]) = _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs;
+
+  // coverage:ignore-start
+  const DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs.
+  static Serializer<DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs> get serializer =>
+      _$declarativeSettingsSetSensitiveValueResponseApplicationJsonOcsSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder b) {
+    $DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder b) {
+    $DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
+sealed class $DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterface {
+  DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs get ocs;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterfaceBuilder].
+  $DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterface rebuild(
+    void Function($DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterfaceBuilder) updates,
+  );
+
+  /// Converts the instance to a builder [$DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterfaceBuilder].
+  $DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterfaceBuilder b) {}
+}
+
+abstract class DeclarativeSettingsSetSensitiveValueResponseApplicationJson
+    implements
+        $DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterface,
+        Built<DeclarativeSettingsSetSensitiveValueResponseApplicationJson,
+            DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder> {
+  /// Creates a new DeclarativeSettingsSetSensitiveValueResponseApplicationJson object using the builder pattern.
+  factory DeclarativeSettingsSetSensitiveValueResponseApplicationJson([
+    void Function(DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder)? b,
+  ]) = _$DeclarativeSettingsSetSensitiveValueResponseApplicationJson;
+
+  // coverage:ignore-start
+  const DeclarativeSettingsSetSensitiveValueResponseApplicationJson._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory DeclarativeSettingsSetSensitiveValueResponseApplicationJson.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for DeclarativeSettingsSetSensitiveValueResponseApplicationJson.
+  static Serializer<DeclarativeSettingsSetSensitiveValueResponseApplicationJson> get serializer =>
+      _$declarativeSettingsSetSensitiveValueResponseApplicationJsonSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder b) {
+    $DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder b) {
+    $DeclarativeSettingsSetSensitiveValueResponseApplicationJsonInterface._validate(b);
   }
 }
 
@@ -873,6 +1184,7 @@ sealed class $DeclarativeFormFieldInterface {
   JsonObject get $default;
   BuiltList<DeclarativeFormField_Options>? get options;
   DeclarativeFormField_Value get value;
+  bool? get sensitive;
 
   /// Rebuilds the instance.
   ///
@@ -1414,6 +1726,21 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..add(DeclarativeSettingsSetValueResponseApplicationJson_Ocs.serializer)
       ..addBuilderFactory(const FullType(OCSMeta), OCSMetaBuilder.new)
       ..add(OCSMeta.serializer)
+      ..addBuilderFactory(
+        const FullType(DeclarativeSettingsSetSensitiveValueRequestApplicationJson),
+        DeclarativeSettingsSetSensitiveValueRequestApplicationJsonBuilder.new,
+      )
+      ..add(DeclarativeSettingsSetSensitiveValueRequestApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(DeclarativeSettingsSetSensitiveValueResponseApplicationJson),
+        DeclarativeSettingsSetSensitiveValueResponseApplicationJsonBuilder.new,
+      )
+      ..add(DeclarativeSettingsSetSensitiveValueResponseApplicationJson.serializer)
+      ..addBuilderFactory(
+        const FullType(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs),
+        DeclarativeSettingsSetSensitiveValueResponseApplicationJson_OcsBuilder.new,
+      )
+      ..add(DeclarativeSettingsSetSensitiveValueResponseApplicationJson_Ocs.serializer)
       ..addBuilderFactory(
         const FullType(DeclarativeSettingsGetFormsResponseApplicationJson),
         DeclarativeSettingsGetFormsResponseApplicationJsonBuilder.new,

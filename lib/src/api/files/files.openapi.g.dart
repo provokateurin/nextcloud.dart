@@ -3226,6 +3226,12 @@ class _$Capabilities_FilesSerializer implements StructuredSerializer<Capabilitie
       serializers.serialize(object.directEditing, specifiedType: const FullType(Capabilities_Files_DirectEditing)),
     ];
     Object? value;
+    value = object.windowsCompatibleFilenames;
+    if (value != null) {
+      result
+        ..add('windows_compatible_filenames')
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.comment;
     if (value != null) {
       result
@@ -3259,6 +3265,10 @@ class _$Capabilities_FilesSerializer implements StructuredSerializer<Capabilitie
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'windows_compatible_filenames':
+          result.windowsCompatibleFilenames =
+              serializers.deserialize(value, specifiedType: const FullType(bool)) as bool?;
+          break;
         case '\$comment':
           result.comment = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
@@ -10726,6 +10736,9 @@ class Capabilities_Files_DirectEditingBuilder
 abstract mixin class $Capabilities_FilesInterfaceBuilder {
   void replace($Capabilities_FilesInterface other);
   void update(void Function($Capabilities_FilesInterfaceBuilder) updates);
+  bool? get windowsCompatibleFilenames;
+  set windowsCompatibleFilenames(bool? windowsCompatibleFilenames);
+
   String? get comment;
   set comment(String? comment);
 
@@ -10759,6 +10772,8 @@ abstract mixin class $Capabilities_FilesInterfaceBuilder {
 
 class _$Capabilities_Files extends Capabilities_Files {
   @override
+  final bool? windowsCompatibleFilenames;
+  @override
   final String? comment;
   @override
   final bool bigfilechunking;
@@ -10783,7 +10798,8 @@ class _$Capabilities_Files extends Capabilities_Files {
       (Capabilities_FilesBuilder()..update(updates))._build();
 
   _$Capabilities_Files._(
-      {this.comment,
+      {this.windowsCompatibleFilenames,
+      this.comment,
       required this.bigfilechunking,
       required this.blacklistedFiles,
       required this.forbiddenFilenames,
@@ -10805,6 +10821,7 @@ class _$Capabilities_Files extends Capabilities_Files {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Capabilities_Files &&
+        windowsCompatibleFilenames == other.windowsCompatibleFilenames &&
         comment == other.comment &&
         bigfilechunking == other.bigfilechunking &&
         blacklistedFiles == other.blacklistedFiles &&
@@ -10820,6 +10837,7 @@ class _$Capabilities_Files extends Capabilities_Files {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, windowsCompatibleFilenames.hashCode);
     _$hash = $jc(_$hash, comment.hashCode);
     _$hash = $jc(_$hash, bigfilechunking.hashCode);
     _$hash = $jc(_$hash, blacklistedFiles.hashCode);
@@ -10837,6 +10855,7 @@ class _$Capabilities_Files extends Capabilities_Files {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Capabilities_Files')
+          ..add('windowsCompatibleFilenames', windowsCompatibleFilenames)
           ..add('comment', comment)
           ..add('bigfilechunking', bigfilechunking)
           ..add('blacklistedFiles', blacklistedFiles)
@@ -10854,6 +10873,11 @@ class _$Capabilities_Files extends Capabilities_Files {
 class Capabilities_FilesBuilder
     implements Builder<Capabilities_Files, Capabilities_FilesBuilder>, $Capabilities_FilesInterfaceBuilder {
   _$Capabilities_Files? _$v;
+
+  bool? _windowsCompatibleFilenames;
+  bool? get windowsCompatibleFilenames => _$this._windowsCompatibleFilenames;
+  set windowsCompatibleFilenames(covariant bool? windowsCompatibleFilenames) =>
+      _$this._windowsCompatibleFilenames = windowsCompatibleFilenames;
 
   String? _comment;
   String? get comment => _$this._comment;
@@ -10913,6 +10937,7 @@ class Capabilities_FilesBuilder
   Capabilities_FilesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _windowsCompatibleFilenames = $v.windowsCompatibleFilenames;
       _comment = $v.comment;
       _bigfilechunking = $v.bigfilechunking;
       _blacklistedFiles = $v.blacklistedFiles.toBuilder();
@@ -10947,6 +10972,7 @@ class Capabilities_FilesBuilder
     try {
       _$result = _$v ??
           _$Capabilities_Files._(
+            windowsCompatibleFilenames: windowsCompatibleFilenames,
             comment: comment,
             bigfilechunking:
                 BuiltValueNullFieldError.checkNotNull(bigfilechunking, r'Capabilities_Files', 'bigfilechunking'),

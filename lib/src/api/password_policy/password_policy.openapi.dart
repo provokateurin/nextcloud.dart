@@ -21,13 +21,14 @@ import 'dart:convert';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:built_value/standard_json_plugin.dart' as _i7;
-import 'package:collection/collection.dart' as _i4;
-import 'package:dynamite_runtime/built_value.dart' as _i6;
+import 'package:built_value/standard_json_plugin.dart' as _i8;
+import 'package:collection/collection.dart' as _i5;
+import 'package:dynamite_runtime/built_value.dart' as _i7;
 import 'package:dynamite_runtime/http_client.dart' as _i1;
-import 'package:dynamite_runtime/utils.dart' as _i5;
+import 'package:dynamite_runtime/utils.dart' as _i6;
 import 'package:http/http.dart' as _i3;
 import 'package:meta/meta.dart' as _i2;
+import 'package:uri/uri.dart' as _i4;
 
 part 'password_policy.openapi.g.dart';
 
@@ -63,6 +64,7 @@ class $ApiClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
+  ///   * [context] The context for which the password is generated (account or sharing). Defaults to `"account"`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
@@ -73,13 +75,18 @@ class $ApiClient {
   ///  * [generate] for a method executing this request and parsing the response.
   ///  * [$generate_Serializer] for a converter to parse the `Response` from an executed this request.
   @_i2.experimental
-  _i3.Request $generate_Request({bool? oCSAPIRequest}) {
-    const _path = '/ocs/v2.php/apps/password_policy/api/v1/generate';
+  _i3.Request $generate_Request({String? context, bool? oCSAPIRequest}) {
+    final _parameters = <String, Object?>{};
+    var __context = _$jsonSerializers.serialize(context, specifiedType: const FullType(String));
+    __context ??= 'account';
+    _parameters['context'] = __context;
+
+    final _path = _i4.UriTemplate('/ocs/v2.php/apps/password_policy/api/v1/generate{?context*}').expand(_parameters);
     final _uri = Uri.parse('${_rootClient.baseURL}$_path');
     final _request = _i3.Request('get', _uri);
     _request.headers['Accept'] = 'application/json';
     // coverage:ignore-start
-    final authentication = _i4.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
+    final authentication = _i5.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
       (auth) => switch (auth) {
         _i1.DynamiteHttpBearerAuthentication() || _i1.DynamiteHttpBasicAuthentication() => true,
         _ => false,
@@ -95,7 +102,7 @@ class $ApiClient {
     // coverage:ignore-end
     var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
     __oCSAPIRequest ??= true;
-    _request.headers['OCS-APIRequest'] = const _i5.HeaderEncoder().convert(__oCSAPIRequest);
+    _request.headers['OCS-APIRequest'] = const _i6.HeaderEncoder().convert(__oCSAPIRequest);
 
     return _request;
   }
@@ -106,6 +113,7 @@ class $ApiClient {
   /// Throws a `DynamiteApiException` if the API call does not return an expected status code.
   ///
   /// Parameters:
+  ///   * [context] The context for which the password is generated (account or sharing). Defaults to `"account"`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
   ///
   /// Status codes:
@@ -115,8 +123,11 @@ class $ApiClient {
   /// See:
   ///  * [$generate_Request] for the request send by this method.
   ///  * [$generate_Serializer] for a converter to parse the `Response` from an executed request.
-  Future<_i1.DynamiteResponse<ApiGenerateResponseApplicationJson, void>> generate({bool? oCSAPIRequest}) async {
-    final _request = $generate_Request(oCSAPIRequest: oCSAPIRequest);
+  Future<_i1.DynamiteResponse<ApiGenerateResponseApplicationJson, void>> generate({
+    String? context,
+    bool? oCSAPIRequest,
+  }) async {
+    final _request = $generate_Request(context: context, oCSAPIRequest: oCSAPIRequest);
     final _streamedResponse = await _rootClient.httpClient.send(_request);
     final _response = await _i3.Response.fromStream(_streamedResponse);
 
@@ -154,7 +165,7 @@ class $ApiClient {
     final _request = _i3.Request('post', _uri);
     _request.headers['Accept'] = 'application/json';
     // coverage:ignore-start
-    final authentication = _i4.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
+    final authentication = _i5.IterableExtension(_rootClient.authentications)?.firstWhereOrNull(
       (auth) => switch (auth) {
         _i1.DynamiteHttpBearerAuthentication() || _i1.DynamiteHttpBasicAuthentication() => true,
         _ => false,
@@ -170,7 +181,7 @@ class $ApiClient {
     // coverage:ignore-end
     var __oCSAPIRequest = _$jsonSerializers.serialize(oCSAPIRequest, specifiedType: const FullType(bool));
     __oCSAPIRequest ??= true;
-    _request.headers['OCS-APIRequest'] = const _i5.HeaderEncoder().convert(__oCSAPIRequest);
+    _request.headers['OCS-APIRequest'] = const _i6.HeaderEncoder().convert(__oCSAPIRequest);
 
     _request.headers['Content-Type'] = 'application/json';
     _request.body = json.encode(
@@ -454,8 +465,13 @@ abstract class ApiGenerateResponseApplicationJson
 
 @BuiltValue(instantiable: false)
 sealed class $ApiValidateRequestApplicationJsonInterface {
+  static final _$context = _$jsonSerializers.deserialize('account', specifiedType: const FullType(String))! as String;
+
   /// The password to validate.
   String get password;
+
+  /// The context for which the password is validated (account or sharing).
+  String get context;
 
   /// Rebuilds the instance.
   ///
@@ -468,7 +484,10 @@ sealed class $ApiValidateRequestApplicationJsonInterface {
   /// Converts the instance to a builder [$ApiValidateRequestApplicationJsonInterfaceBuilder].
   $ApiValidateRequestApplicationJsonInterfaceBuilder toBuilder();
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults($ApiValidateRequestApplicationJsonInterfaceBuilder b) {}
+  static void _defaults($ApiValidateRequestApplicationJsonInterfaceBuilder b) {
+    b.context = _$context;
+  }
+
   @BuiltValueHook(finalizeBuilder: true)
   static void _validate($ApiValidateRequestApplicationJsonInterfaceBuilder b) {}
 }
@@ -788,7 +807,7 @@ sealed class $Capabilities_PasswordPolicy_PoliciesInterface {
   static void _defaults($Capabilities_PasswordPolicy_PoliciesInterfaceBuilder b) {}
   @BuiltValueHook(finalizeBuilder: true)
   static void _validate($Capabilities_PasswordPolicy_PoliciesInterfaceBuilder b) {
-    _i5.checkNumber(b.minLength, 'minLength', minimum: 0);
+    _i6.checkNumber(b.minLength, 'minLength', minimum: 0);
   }
 }
 
@@ -856,7 +875,7 @@ sealed class $Capabilities_PasswordPolicyInterface {
   static void _defaults($Capabilities_PasswordPolicyInterfaceBuilder b) {}
   @BuiltValueHook(finalizeBuilder: true)
   static void _validate($Capabilities_PasswordPolicyInterfaceBuilder b) {
-    _i5.checkNumber(b.minLength, 'minLength', minimum: 0);
+    _i6.checkNumber(b.minLength, 'minLength', minimum: 0);
   }
 }
 
@@ -1028,9 +1047,9 @@ final Serializers _$serializers = (Serializers().toBuilder()
 @_i2.visibleForTesting
 final Serializers $jsonSerializers = _$jsonSerializers;
 final Serializers _$jsonSerializers = (_$serializers.toBuilder()
-      ..add(_i6.DynamiteDoubleSerializer())
-      ..addPlugin(_i7.StandardJsonPlugin())
-      ..addPlugin(const _i6.HeaderPlugin())
-      ..addPlugin(const _i6.ContentStringPlugin()))
+      ..add(_i7.DynamiteDoubleSerializer())
+      ..addPlugin(_i8.StandardJsonPlugin())
+      ..addPlugin(const _i7.HeaderPlugin())
+      ..addPlugin(const _i7.ContentStringPlugin()))
     .build();
 // coverage:ignore-end
