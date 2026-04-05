@@ -1,0 +1,74 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices"
+  ],
+  "git-submodules": {
+    "enabled": true
+  },
+  "labels": [
+    "dependencies"
+  ],
+  "rangeStrategy": "bump",
+  "prConcurrentLimit": 0,
+  "packageRules": [
+    {
+      "matchManagers": ["pub"],
+      "matchDatasources": ["dart-version", "flutter-version"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["pub"],
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": "!/^0/",
+      "enabled": false
+    },
+    {
+      "matchManagers": ["pub"],
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "matchCurrentVersion": "/^0/",
+      "enabled": false
+    },
+    {
+      "matchManagers": ["git-submodules"],
+      "matchUpdateTypes": ["digest"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["pub"],
+      "matchPackageNames": ["timezone"],
+      "rangeStrategy": "bump",
+      "enabled": true
+    },
+    {
+      "groupName": "built_value",
+      "matchPackageNames": ["/^built/"]
+    },
+    {
+      "groupName": "xml_serializable",
+      "matchPackageNames": [
+        "xml_annotation",
+        "xml_serializable"
+      ]
+    },
+    {
+      "groupName": "test",
+      "matchPackageNames": [
+        "test",
+        "test_api",
+        "test_core"
+      ]
+    }
+  ]
+}
