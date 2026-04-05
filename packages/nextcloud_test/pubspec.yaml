@@ -11,16 +11,18 @@ dependencies:
   collection: ^1.0.0
   cookie_store:
     git:
-      url: https://github.com/nextcloud/neon
+      url: https://github.com/foldland/cookie_store
       path: packages/cookie_store
-      ref: 6ae0f81af522aedf0d0f8aa97ed90a3df395621f
+      tag_pattern: cookie_store-v{{version}}
+    version: ^0.1.0+1
   glob: ^2.1.2
   http: ^1.2.0
   interceptor_http_client:
     git:
-      url: https://github.com/nextcloud/neon
+      url: https://github.com/foldland/cookie_store
       path: packages/interceptor_http_client
-      ref: 6ae0f81af522aedf0d0f8aa97ed90a3df395621f
+      tag_pattern: interceptor_http_client-v{{version}}
+    version: ^0.1.0+1
   matcher: ^0.12.0
   meta: ^1.0.0
   nextcloud:
