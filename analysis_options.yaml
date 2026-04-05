@@ -232,4 +232,3 @@ linter:
     use_to_and_as_if_applicable: true
     valid_regexps: true
     void_checks: true
-    avoid_as: false

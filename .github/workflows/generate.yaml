@@ -20,7 +20,7 @@ jobs:
       - name: Install dart
         uses: dart-lang/setup-dart@e51d8e571e22473a2ddebf0ef8a2123f0ab2c02c # v1
         with:
-          sdk: 3.7
+          sdk: 3.11
       - name: Install php
         uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2
         with:
