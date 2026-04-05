@@ -562,10 +562,10 @@ void main() {
         expect(response.body.ocs.data.hideWarning, false);
         expect(response.body.ocs.data.server, '');
         expect(response.body.ocs.data.ticket, contains(':user1:'));
-        expect(response.body.ocs.data.helloAuthParams.$10.userid, 'user1');
-        expect(response.body.ocs.data.helloAuthParams.$10.ticket, contains(':user1:'));
+        expect(response.body.ocs.data.helloAuthParams?.$10.userid, 'user1');
+        expect(response.body.ocs.data.helloAuthParams?.$10.ticket, contains(':user1:'));
         expect(
-          response.body.ocs.data.helloAuthParams.$20.token.split('').where((x) => x == '.'),
+          response.body.ocs.data.helloAuthParams?.$20.token.split('').where((x) => x == '.'),
           hasLength(2),
         );
         expect(response.body.ocs.data.stunservers, hasLength(1));
