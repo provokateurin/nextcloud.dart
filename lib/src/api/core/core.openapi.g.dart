@@ -1224,6 +1224,7 @@ Serializer<TaskProcessingApiGetNextScheduledTaskResponseApplicationJson_Ocs>
 Serializer<TaskProcessingApiGetNextScheduledTaskResponseApplicationJson>
     _$taskProcessingApiGetNextScheduledTaskResponseApplicationJsonSerializer =
     _$TaskProcessingApiGetNextScheduledTaskResponseApplicationJsonSerializer();
+Serializer<TeamResource_Provider> _$teamResourceProviderSerializer = _$TeamResource_ProviderSerializer();
 Serializer<TeamResource> _$teamResourceSerializer = _$TeamResourceSerializer();
 Serializer<TeamsApiResolveOneResponseApplicationJson_Ocs_Data>
     _$teamsApiResolveOneResponseApplicationJsonOcsDataSerializer =
@@ -1233,6 +1234,7 @@ Serializer<TeamsApiResolveOneResponseApplicationJson_Ocs> _$teamsApiResolveOneRe
 Serializer<TeamsApiResolveOneResponseApplicationJson> _$teamsApiResolveOneResponseApplicationJsonSerializer =
     _$TeamsApiResolveOneResponseApplicationJsonSerializer();
 Serializer<Team> _$teamSerializer = _$TeamSerializer();
+Serializer<TeamWithResources> _$teamWithResourcesSerializer = _$TeamWithResourcesSerializer();
 Serializer<TeamsApiListTeamsResponseApplicationJson_Ocs_Data>
     _$teamsApiListTeamsResponseApplicationJsonOcsDataSerializer =
     _$TeamsApiListTeamsResponseApplicationJson_Ocs_DataSerializer();
@@ -8250,7 +8252,13 @@ class _$ThemingPublicCapabilities_ThemingSerializer implements StructuredSeriali
       'favicon',
       serializers.serialize(object.favicon, specifiedType: const FullType(String)),
     ];
-
+    Object? value;
+    value = object.productName;
+    if (value != null) {
+      result
+        ..add('productName')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -8267,6 +8275,9 @@ class _$ThemingPublicCapabilities_ThemingSerializer implements StructuredSeriali
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'productName':
+          result.productName = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'url':
           result.url = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
@@ -13069,6 +13080,54 @@ class _$TaskProcessingApiGetNextScheduledTaskResponseApplicationJsonSerializer
   }
 }
 
+class _$TeamResource_ProviderSerializer implements StructuredSerializer<TeamResource_Provider> {
+  @override
+  final Iterable<Type> types = const [TeamResource_Provider, _$TeamResource_Provider];
+  @override
+  final String wireName = 'TeamResource_Provider';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, TeamResource_Provider object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      'name',
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'icon',
+      serializers.serialize(object.icon, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  TeamResource_Provider deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = TeamResource_ProviderBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'icon':
+          result.icon = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$TeamResourceSerializer implements StructuredSerializer<TeamResource> {
   @override
   final Iterable<Type> types = const [TeamResource, _$TeamResource];
@@ -13080,11 +13139,13 @@ class _$TeamResourceSerializer implements StructuredSerializer<TeamResource> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(int)),
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'label',
       serializers.serialize(object.label, specifiedType: const FullType(String)),
       'url',
       serializers.serialize(object.url, specifiedType: const FullType(String)),
+      'provider',
+      serializers.serialize(object.provider, specifiedType: const FullType(TeamResource_Provider)),
     ];
     Object? value;
     value = object.iconSvg;
@@ -13120,7 +13181,7 @@ class _$TeamResourceSerializer implements StructuredSerializer<TeamResource> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'label':
           result.label = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
@@ -13136,6 +13197,10 @@ class _$TeamResourceSerializer implements StructuredSerializer<TeamResource> {
           break;
         case 'iconEmoji':
           result.iconEmoji = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+        case 'provider':
+          result.provider.replace(serializers.deserialize(value, specifiedType: const FullType(TeamResource_Provider))!
+              as TeamResource_Provider);
           break;
       }
     }
@@ -13291,14 +13356,18 @@ class _$TeamSerializer implements StructuredSerializer<Team> {
   @override
   Iterable<Object?> serialize(Serializers serializers, Team object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
-      'name',
-      serializers.serialize(object.name, specifiedType: const FullType(String)),
-      'icon',
-      serializers.serialize(object.icon, specifiedType: const FullType(String)),
+      'teamId',
+      serializers.serialize(object.teamId, specifiedType: const FullType(String)),
+      'displayName',
+      serializers.serialize(object.displayName, specifiedType: const FullType(String)),
     ];
-
+    Object? value;
+    value = object.link;
+    if (value != null) {
+      result
+        ..add('link')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -13313,14 +13382,73 @@ class _$TeamSerializer implements StructuredSerializer<Team> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'id':
-          result.id = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+        case 'teamId':
+          result.teamId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
-        case 'name':
-          result.name = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+        case 'displayName':
+          result.displayName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
-        case 'icon':
-          result.icon = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+        case 'link':
+          result.link = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$TeamWithResourcesSerializer implements StructuredSerializer<TeamWithResources> {
+  @override
+  final Iterable<Type> types = const [TeamWithResources, _$TeamWithResources];
+  @override
+  final String wireName = 'TeamWithResources';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, TeamWithResources object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'resources',
+      serializers.serialize(object.resources,
+          specifiedType: const FullType(BuiltList, const [const FullType(TeamResource)])),
+      'teamId',
+      serializers.serialize(object.teamId, specifiedType: const FullType(String)),
+      'displayName',
+      serializers.serialize(object.displayName, specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.link;
+    if (value != null) {
+      result
+        ..add('link')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  TeamWithResources deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = TeamWithResourcesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'resources':
+          result.resources.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [const FullType(TeamResource)]))! as BuiltList<Object?>);
+          break;
+        case 'teamId':
+          result.teamId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'displayName':
+          result.displayName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'link':
+          result.link = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -13344,7 +13472,8 @@ class _$TeamsApiListTeamsResponseApplicationJson_Ocs_DataSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'teams',
-      serializers.serialize(object.teams, specifiedType: const FullType(BuiltList, const [const FullType(Team)])),
+      serializers.serialize(object.teams,
+          specifiedType: const FullType(BuiltList, const [const FullType(TeamWithResources)])),
     ];
 
     return result;
@@ -13363,7 +13492,8 @@ class _$TeamsApiListTeamsResponseApplicationJson_Ocs_DataSerializer
       switch (key) {
         case 'teams':
           result.teams.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(Team)]))! as BuiltList<Object?>);
+                  specifiedType: const FullType(BuiltList, const [const FullType(TeamWithResources)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -33625,6 +33755,9 @@ abstract mixin class $ThemingPublicCapabilities_ThemingInterfaceBuilder {
   String? get name;
   set name(String? name);
 
+  String? get productName;
+  set productName(String? productName);
+
   String? get url;
   set url(String? url);
 
@@ -33672,6 +33805,8 @@ class _$ThemingPublicCapabilities_Theming extends ThemingPublicCapabilities_Them
   @override
   final String name;
   @override
+  final String? productName;
+  @override
   final String url;
   @override
   final String slogan;
@@ -33705,6 +33840,7 @@ class _$ThemingPublicCapabilities_Theming extends ThemingPublicCapabilities_Them
 
   _$ThemingPublicCapabilities_Theming._(
       {required this.name,
+      this.productName,
       required this.url,
       required this.slogan,
       required this.color,
@@ -33732,6 +33868,7 @@ class _$ThemingPublicCapabilities_Theming extends ThemingPublicCapabilities_Them
     if (identical(other, this)) return true;
     return other is ThemingPublicCapabilities_Theming &&
         name == other.name &&
+        productName == other.productName &&
         url == other.url &&
         slogan == other.slogan &&
         color == other.color &&
@@ -33752,6 +33889,7 @@ class _$ThemingPublicCapabilities_Theming extends ThemingPublicCapabilities_Them
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, productName.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jc(_$hash, slogan.hashCode);
     _$hash = $jc(_$hash, color.hashCode);
@@ -33774,6 +33912,7 @@ class _$ThemingPublicCapabilities_Theming extends ThemingPublicCapabilities_Them
   String toString() {
     return (newBuiltValueToStringHelper(r'ThemingPublicCapabilities_Theming')
           ..add('name', name)
+          ..add('productName', productName)
           ..add('url', url)
           ..add('slogan', slogan)
           ..add('color', color)
@@ -33801,6 +33940,10 @@ class ThemingPublicCapabilities_ThemingBuilder
   String? _name;
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
+
+  String? _productName;
+  String? get productName => _$this._productName;
+  set productName(covariant String? productName) => _$this._productName = productName;
 
   String? _url;
   String? get url => _$this._url;
@@ -33866,6 +34009,7 @@ class ThemingPublicCapabilities_ThemingBuilder
     final $v = _$v;
     if ($v != null) {
       _name = $v.name;
+      _productName = $v.productName;
       _url = $v.url;
       _slogan = $v.slogan;
       _color = $v.color;
@@ -33903,6 +34047,7 @@ class ThemingPublicCapabilities_ThemingBuilder
     final _$result = _$v ??
         _$ThemingPublicCapabilities_Theming._(
           name: BuiltValueNullFieldError.checkNotNull(name, r'ThemingPublicCapabilities_Theming', 'name'),
+          productName: productName,
           url: BuiltValueNullFieldError.checkNotNull(url, r'ThemingPublicCapabilities_Theming', 'url'),
           slogan: BuiltValueNullFieldError.checkNotNull(slogan, r'ThemingPublicCapabilities_Theming', 'slogan'),
           color: BuiltValueNullFieldError.checkNotNull(color, r'ThemingPublicCapabilities_Theming', 'color'),
@@ -45215,11 +45360,126 @@ class TaskProcessingApiGetNextScheduledTaskResponseApplicationJsonBuilder
   }
 }
 
+abstract mixin class $TeamResource_ProviderInterfaceBuilder {
+  void replace($TeamResource_ProviderInterface other);
+  void update(void Function($TeamResource_ProviderInterfaceBuilder) updates);
+  String? get id;
+  set id(String? id);
+
+  String? get name;
+  set name(String? name);
+
+  String? get icon;
+  set icon(String? icon);
+}
+
+class _$TeamResource_Provider extends TeamResource_Provider {
+  @override
+  final String id;
+  @override
+  final String name;
+  @override
+  final String icon;
+
+  factory _$TeamResource_Provider([void Function(TeamResource_ProviderBuilder)? updates]) =>
+      (TeamResource_ProviderBuilder()..update(updates))._build();
+
+  _$TeamResource_Provider._({required this.id, required this.name, required this.icon}) : super._();
+  @override
+  TeamResource_Provider rebuild(void Function(TeamResource_ProviderBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  TeamResource_ProviderBuilder toBuilder() => TeamResource_ProviderBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is TeamResource_Provider && id == other.id && name == other.name && icon == other.icon;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, icon.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'TeamResource_Provider')
+          ..add('id', id)
+          ..add('name', name)
+          ..add('icon', icon))
+        .toString();
+  }
+}
+
+class TeamResource_ProviderBuilder
+    implements Builder<TeamResource_Provider, TeamResource_ProviderBuilder>, $TeamResource_ProviderInterfaceBuilder {
+  _$TeamResource_Provider? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(covariant String? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(covariant String? name) => _$this._name = name;
+
+  String? _icon;
+  String? get icon => _$this._icon;
+  set icon(covariant String? icon) => _$this._icon = icon;
+
+  TeamResource_ProviderBuilder() {
+    TeamResource_Provider._defaults(this);
+  }
+
+  TeamResource_ProviderBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _name = $v.name;
+      _icon = $v.icon;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant TeamResource_Provider other) {
+    _$v = other as _$TeamResource_Provider;
+  }
+
+  @override
+  void update(void Function(TeamResource_ProviderBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  TeamResource_Provider build() => _build();
+
+  _$TeamResource_Provider _build() {
+    TeamResource_Provider._validate(this);
+    final _$result = _$v ??
+        _$TeamResource_Provider._(
+          id: BuiltValueNullFieldError.checkNotNull(id, r'TeamResource_Provider', 'id'),
+          name: BuiltValueNullFieldError.checkNotNull(name, r'TeamResource_Provider', 'name'),
+          icon: BuiltValueNullFieldError.checkNotNull(icon, r'TeamResource_Provider', 'icon'),
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
 abstract mixin class $TeamResourceInterfaceBuilder {
   void replace($TeamResourceInterface other);
   void update(void Function($TeamResourceInterfaceBuilder) updates);
-  int? get id;
-  set id(int? id);
+  String? get id;
+  set id(String? id);
 
   String? get label;
   set label(String? label);
@@ -45235,11 +45495,14 @@ abstract mixin class $TeamResourceInterfaceBuilder {
 
   String? get iconEmoji;
   set iconEmoji(String? iconEmoji);
+
+  TeamResource_ProviderBuilder get provider;
+  set provider(TeamResource_ProviderBuilder? provider);
 }
 
 class _$TeamResource extends TeamResource {
   @override
-  final int id;
+  final String id;
   @override
   final String label;
   @override
@@ -45250,12 +45513,20 @@ class _$TeamResource extends TeamResource {
   final String? iconURL;
   @override
   final String? iconEmoji;
+  @override
+  final TeamResource_Provider provider;
 
   factory _$TeamResource([void Function(TeamResourceBuilder)? updates]) =>
       (TeamResourceBuilder()..update(updates))._build();
 
   _$TeamResource._(
-      {required this.id, required this.label, required this.url, this.iconSvg, this.iconURL, this.iconEmoji})
+      {required this.id,
+      required this.label,
+      required this.url,
+      this.iconSvg,
+      this.iconURL,
+      this.iconEmoji,
+      required this.provider})
       : super._();
   @override
   TeamResource rebuild(void Function(TeamResourceBuilder) updates) => (toBuilder()..update(updates)).build();
@@ -45272,7 +45543,8 @@ class _$TeamResource extends TeamResource {
         url == other.url &&
         iconSvg == other.iconSvg &&
         iconURL == other.iconURL &&
-        iconEmoji == other.iconEmoji;
+        iconEmoji == other.iconEmoji &&
+        provider == other.provider;
   }
 
   @override
@@ -45284,6 +45556,7 @@ class _$TeamResource extends TeamResource {
     _$hash = $jc(_$hash, iconSvg.hashCode);
     _$hash = $jc(_$hash, iconURL.hashCode);
     _$hash = $jc(_$hash, iconEmoji.hashCode);
+    _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -45296,7 +45569,8 @@ class _$TeamResource extends TeamResource {
           ..add('url', url)
           ..add('iconSvg', iconSvg)
           ..add('iconURL', iconURL)
-          ..add('iconEmoji', iconEmoji))
+          ..add('iconEmoji', iconEmoji)
+          ..add('provider', provider))
         .toString();
   }
 }
@@ -45304,9 +45578,9 @@ class _$TeamResource extends TeamResource {
 class TeamResourceBuilder implements Builder<TeamResource, TeamResourceBuilder>, $TeamResourceInterfaceBuilder {
   _$TeamResource? _$v;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(covariant int? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(covariant String? id) => _$this._id = id;
 
   String? _label;
   String? get label => _$this._label;
@@ -45328,6 +45602,10 @@ class TeamResourceBuilder implements Builder<TeamResource, TeamResourceBuilder>,
   String? get iconEmoji => _$this._iconEmoji;
   set iconEmoji(covariant String? iconEmoji) => _$this._iconEmoji = iconEmoji;
 
+  TeamResource_ProviderBuilder? _provider;
+  TeamResource_ProviderBuilder get provider => _$this._provider ??= TeamResource_ProviderBuilder();
+  set provider(covariant TeamResource_ProviderBuilder? provider) => _$this._provider = provider;
+
   TeamResourceBuilder() {
     TeamResource._defaults(this);
   }
@@ -45341,6 +45619,7 @@ class TeamResourceBuilder implements Builder<TeamResource, TeamResourceBuilder>,
       _iconSvg = $v.iconSvg;
       _iconURL = $v.iconURL;
       _iconEmoji = $v.iconEmoji;
+      _provider = $v.provider.toBuilder();
       _$v = null;
     }
     return this;
@@ -45361,15 +45640,28 @@ class TeamResourceBuilder implements Builder<TeamResource, TeamResourceBuilder>,
 
   _$TeamResource _build() {
     TeamResource._validate(this);
-    final _$result = _$v ??
-        _$TeamResource._(
-          id: BuiltValueNullFieldError.checkNotNull(id, r'TeamResource', 'id'),
-          label: BuiltValueNullFieldError.checkNotNull(label, r'TeamResource', 'label'),
-          url: BuiltValueNullFieldError.checkNotNull(url, r'TeamResource', 'url'),
-          iconSvg: iconSvg,
-          iconURL: iconURL,
-          iconEmoji: iconEmoji,
-        );
+    _$TeamResource _$result;
+    try {
+      _$result = _$v ??
+          _$TeamResource._(
+            id: BuiltValueNullFieldError.checkNotNull(id, r'TeamResource', 'id'),
+            label: BuiltValueNullFieldError.checkNotNull(label, r'TeamResource', 'label'),
+            url: BuiltValueNullFieldError.checkNotNull(url, r'TeamResource', 'url'),
+            iconSvg: iconSvg,
+            iconURL: iconURL,
+            iconEmoji: iconEmoji,
+            provider: provider.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'provider';
+        provider.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'TeamResource', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
@@ -45713,27 +46005,27 @@ class TeamsApiResolveOneResponseApplicationJsonBuilder
 abstract mixin class $TeamInterfaceBuilder {
   void replace($TeamInterface other);
   void update(void Function($TeamInterfaceBuilder) updates);
-  String? get id;
-  set id(String? id);
+  String? get teamId;
+  set teamId(String? teamId);
 
-  String? get name;
-  set name(String? name);
+  String? get displayName;
+  set displayName(String? displayName);
 
-  String? get icon;
-  set icon(String? icon);
+  String? get link;
+  set link(String? link);
 }
 
 class _$Team extends Team {
   @override
-  final String id;
+  final String teamId;
   @override
-  final String name;
+  final String displayName;
   @override
-  final String icon;
+  final String? link;
 
   factory _$Team([void Function(TeamBuilder)? updates]) => (TeamBuilder()..update(updates))._build();
 
-  _$Team._({required this.id, required this.name, required this.icon}) : super._();
+  _$Team._({required this.teamId, required this.displayName, this.link}) : super._();
   @override
   Team rebuild(void Function(TeamBuilder) updates) => (toBuilder()..update(updates)).build();
 
@@ -45743,15 +46035,15 @@ class _$Team extends Team {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Team && id == other.id && name == other.name && icon == other.icon;
+    return other is Team && teamId == other.teamId && displayName == other.displayName && link == other.link;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, icon.hashCode);
+    _$hash = $jc(_$hash, teamId.hashCode);
+    _$hash = $jc(_$hash, displayName.hashCode);
+    _$hash = $jc(_$hash, link.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -45759,9 +46051,9 @@ class _$Team extends Team {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Team')
-          ..add('id', id)
-          ..add('name', name)
-          ..add('icon', icon))
+          ..add('teamId', teamId)
+          ..add('displayName', displayName)
+          ..add('link', link))
         .toString();
   }
 }
@@ -45769,17 +46061,17 @@ class _$Team extends Team {
 class TeamBuilder implements Builder<Team, TeamBuilder>, $TeamInterfaceBuilder {
   _$Team? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(covariant String? id) => _$this._id = id;
+  String? _teamId;
+  String? get teamId => _$this._teamId;
+  set teamId(covariant String? teamId) => _$this._teamId = teamId;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(covariant String? name) => _$this._name = name;
+  String? _displayName;
+  String? get displayName => _$this._displayName;
+  set displayName(covariant String? displayName) => _$this._displayName = displayName;
 
-  String? _icon;
-  String? get icon => _$this._icon;
-  set icon(covariant String? icon) => _$this._icon = icon;
+  String? _link;
+  String? get link => _$this._link;
+  set link(covariant String? link) => _$this._link = link;
 
   TeamBuilder() {
     Team._defaults(this);
@@ -45788,9 +46080,9 @@ class TeamBuilder implements Builder<Team, TeamBuilder>, $TeamInterfaceBuilder {
   TeamBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _name = $v.name;
-      _icon = $v.icon;
+      _teamId = $v.teamId;
+      _displayName = $v.displayName;
+      _link = $v.link;
       _$v = null;
     }
     return this;
@@ -45813,10 +46105,154 @@ class TeamBuilder implements Builder<Team, TeamBuilder>, $TeamInterfaceBuilder {
     Team._validate(this);
     final _$result = _$v ??
         _$Team._(
-          id: BuiltValueNullFieldError.checkNotNull(id, r'Team', 'id'),
-          name: BuiltValueNullFieldError.checkNotNull(name, r'Team', 'name'),
-          icon: BuiltValueNullFieldError.checkNotNull(icon, r'Team', 'icon'),
+          teamId: BuiltValueNullFieldError.checkNotNull(teamId, r'Team', 'teamId'),
+          displayName: BuiltValueNullFieldError.checkNotNull(displayName, r'Team', 'displayName'),
+          link: link,
         );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+abstract mixin class $TeamWithResourcesInterfaceBuilder implements $TeamInterfaceBuilder {
+  void replace(covariant $TeamWithResourcesInterface other);
+  void update(void Function($TeamWithResourcesInterfaceBuilder) updates);
+  ListBuilder<TeamResource> get resources;
+  set resources(covariant ListBuilder<TeamResource>? resources);
+
+  String? get teamId;
+  set teamId(covariant String? teamId);
+
+  String? get displayName;
+  set displayName(covariant String? displayName);
+
+  String? get link;
+  set link(covariant String? link);
+}
+
+class _$TeamWithResources extends TeamWithResources {
+  @override
+  final BuiltList<TeamResource> resources;
+  @override
+  final String teamId;
+  @override
+  final String displayName;
+  @override
+  final String? link;
+
+  factory _$TeamWithResources([void Function(TeamWithResourcesBuilder)? updates]) =>
+      (TeamWithResourcesBuilder()..update(updates))._build();
+
+  _$TeamWithResources._({required this.resources, required this.teamId, required this.displayName, this.link})
+      : super._();
+  @override
+  TeamWithResources rebuild(void Function(TeamWithResourcesBuilder) updates) => (toBuilder()..update(updates)).build();
+
+  @override
+  TeamWithResourcesBuilder toBuilder() => TeamWithResourcesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is TeamWithResources &&
+        resources == other.resources &&
+        teamId == other.teamId &&
+        displayName == other.displayName &&
+        link == other.link;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, resources.hashCode);
+    _$hash = $jc(_$hash, teamId.hashCode);
+    _$hash = $jc(_$hash, displayName.hashCode);
+    _$hash = $jc(_$hash, link.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'TeamWithResources')
+          ..add('resources', resources)
+          ..add('teamId', teamId)
+          ..add('displayName', displayName)
+          ..add('link', link))
+        .toString();
+  }
+}
+
+class TeamWithResourcesBuilder
+    implements Builder<TeamWithResources, TeamWithResourcesBuilder>, $TeamWithResourcesInterfaceBuilder {
+  _$TeamWithResources? _$v;
+
+  ListBuilder<TeamResource>? _resources;
+  ListBuilder<TeamResource> get resources => _$this._resources ??= ListBuilder<TeamResource>();
+  set resources(covariant ListBuilder<TeamResource>? resources) => _$this._resources = resources;
+
+  String? _teamId;
+  String? get teamId => _$this._teamId;
+  set teamId(covariant String? teamId) => _$this._teamId = teamId;
+
+  String? _displayName;
+  String? get displayName => _$this._displayName;
+  set displayName(covariant String? displayName) => _$this._displayName = displayName;
+
+  String? _link;
+  String? get link => _$this._link;
+  set link(covariant String? link) => _$this._link = link;
+
+  TeamWithResourcesBuilder() {
+    TeamWithResources._defaults(this);
+  }
+
+  TeamWithResourcesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _resources = $v.resources.toBuilder();
+      _teamId = $v.teamId;
+      _displayName = $v.displayName;
+      _link = $v.link;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(covariant TeamWithResources other) {
+    _$v = other as _$TeamWithResources;
+  }
+
+  @override
+  void update(void Function(TeamWithResourcesBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  TeamWithResources build() => _build();
+
+  _$TeamWithResources _build() {
+    TeamWithResources._validate(this);
+    _$TeamWithResources _$result;
+    try {
+      _$result = _$v ??
+          _$TeamWithResources._(
+            resources: resources.build(),
+            teamId: BuiltValueNullFieldError.checkNotNull(teamId, r'TeamWithResources', 'teamId'),
+            displayName: BuiltValueNullFieldError.checkNotNull(displayName, r'TeamWithResources', 'displayName'),
+            link: link,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'resources';
+        resources.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(r'TeamWithResources', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
@@ -45825,13 +46261,13 @@ class TeamBuilder implements Builder<Team, TeamBuilder>, $TeamInterfaceBuilder {
 abstract mixin class $TeamsApiListTeamsResponseApplicationJson_Ocs_DataInterfaceBuilder {
   void replace($TeamsApiListTeamsResponseApplicationJson_Ocs_DataInterface other);
   void update(void Function($TeamsApiListTeamsResponseApplicationJson_Ocs_DataInterfaceBuilder) updates);
-  ListBuilder<Team> get teams;
-  set teams(ListBuilder<Team>? teams);
+  ListBuilder<TeamWithResources> get teams;
+  set teams(ListBuilder<TeamWithResources>? teams);
 }
 
 class _$TeamsApiListTeamsResponseApplicationJson_Ocs_Data extends TeamsApiListTeamsResponseApplicationJson_Ocs_Data {
   @override
-  final BuiltList<Team> teams;
+  final BuiltList<TeamWithResources> teams;
 
   factory _$TeamsApiListTeamsResponseApplicationJson_Ocs_Data(
           [void Function(TeamsApiListTeamsResponseApplicationJson_Ocs_DataBuilder)? updates]) =>
@@ -45875,9 +46311,9 @@ class TeamsApiListTeamsResponseApplicationJson_Ocs_DataBuilder
         $TeamsApiListTeamsResponseApplicationJson_Ocs_DataInterfaceBuilder {
   _$TeamsApiListTeamsResponseApplicationJson_Ocs_Data? _$v;
 
-  ListBuilder<Team>? _teams;
-  ListBuilder<Team> get teams => _$this._teams ??= ListBuilder<Team>();
-  set teams(covariant ListBuilder<Team>? teams) => _$this._teams = teams;
+  ListBuilder<TeamWithResources>? _teams;
+  ListBuilder<TeamWithResources> get teams => _$this._teams ??= ListBuilder<TeamWithResources>();
+  set teams(covariant ListBuilder<TeamWithResources>? teams) => _$this._teams = teams;
 
   TeamsApiListTeamsResponseApplicationJson_Ocs_DataBuilder() {
     TeamsApiListTeamsResponseApplicationJson_Ocs_Data._defaults(this);

@@ -5435,6 +5435,8 @@ class $TextProcessingApiClient {
 
     if (authentication != null) {
       _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
     }
 
     // coverage:ignore-end
@@ -5530,6 +5532,8 @@ class $TextProcessingApiClient {
 
     if (authentication != null) {
       _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
     }
 
     // coverage:ignore-end
@@ -5800,6 +5804,8 @@ class $TextToImageApiClient {
 
     if (authentication != null) {
       _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
     }
 
     // coverage:ignore-end
@@ -5879,6 +5885,8 @@ class $TextToImageApiClient {
 
     if (authentication != null) {
       _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
     }
 
     // coverage:ignore-end
@@ -5968,6 +5976,8 @@ class $TextToImageApiClient {
 
     if (authentication != null) {
       _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
     }
 
     // coverage:ignore-end
@@ -6145,6 +6155,8 @@ class $TextToImageApiClient {
 
     if (authentication != null) {
       _request.headers.addAll(authentication.headers);
+    } else {
+      throw Exception('Missing authentication for bearer_auth or basic_auth');
     }
 
     // coverage:ignore-end
@@ -6835,7 +6847,7 @@ class $UnifiedSearchClient {
   ///   * [providerId] ID of the provider.
   ///   * [term] Term to search. Defaults to `""`.
   ///   * [sortOrder] Order of entries.
-  ///   * [limit] Maximum amount of entries, limited to 25.
+  ///   * [limit] Maximum amount of entries (capped by configurable unified-search.max-results-per-request, default: 25).
   ///   * [cursor] Offset for searching.
   ///   * [from] The current user URL. Defaults to `""`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
@@ -6917,7 +6929,7 @@ class $UnifiedSearchClient {
   ///   * [providerId] ID of the provider.
   ///   * [term] Term to search. Defaults to `""`.
   ///   * [sortOrder] Order of entries.
-  ///   * [limit] Maximum amount of entries, limited to 25.
+  ///   * [limit] Maximum amount of entries (capped by configurable unified-search.max-results-per-request, default: 25).
   ///   * [cursor] Offset for searching.
   ///   * [from] The current user URL. Defaults to `""`.
   ///   * [oCSAPIRequest] Required to be true for the API request to pass. Defaults to `true`.
@@ -16320,6 +16332,7 @@ abstract class TermsOfServicePublicCapabilities
 @BuiltValue(instantiable: false)
 sealed class $ThemingPublicCapabilities_ThemingInterface {
   String get name;
+  String? get productName;
   String get url;
   String get slogan;
   String get color;
@@ -23092,13 +23105,72 @@ abstract class TaskProcessingApiGetNextScheduledTaskResponseApplicationJson
 }
 
 @BuiltValue(instantiable: false)
+sealed class $TeamResource_ProviderInterface {
+  String get id;
+  String get name;
+  String get icon;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$TeamResource_ProviderInterfaceBuilder].
+  $TeamResource_ProviderInterface rebuild(void Function($TeamResource_ProviderInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$TeamResource_ProviderInterfaceBuilder].
+  $TeamResource_ProviderInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($TeamResource_ProviderInterfaceBuilder b) {}
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($TeamResource_ProviderInterfaceBuilder b) {}
+}
+
+abstract class TeamResource_Provider
+    implements $TeamResource_ProviderInterface, Built<TeamResource_Provider, TeamResource_ProviderBuilder> {
+  /// Creates a new TeamResource_Provider object using the builder pattern.
+  factory TeamResource_Provider([void Function(TeamResource_ProviderBuilder)? b]) = _$TeamResource_Provider;
+
+  // coverage:ignore-start
+  const TeamResource_Provider._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory TeamResource_Provider.fromJson(Map<String, dynamic> json) =>
+      _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for TeamResource_Provider.
+  static Serializer<TeamResource_Provider> get serializer => _$teamResourceProviderSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(TeamResource_ProviderBuilder b) {
+    $TeamResource_ProviderInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(TeamResource_ProviderBuilder b) {
+    $TeamResource_ProviderInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $TeamResourceInterface {
-  int get id;
+  String get id;
   String get label;
   String get url;
   String? get iconSvg;
   String? get iconURL;
   String? get iconEmoji;
+  TeamResource_Provider get provider;
 
   /// Rebuilds the instance.
   ///
@@ -23343,9 +23415,9 @@ abstract class TeamsApiResolveOneResponseApplicationJson
 
 @BuiltValue(instantiable: false)
 sealed class $TeamInterface {
-  String get id;
-  String get name;
-  String get icon;
+  String get teamId;
+  String get displayName;
+  String? get link;
 
   /// Rebuilds the instance.
   ///
@@ -23398,8 +23470,70 @@ abstract class Team implements $TeamInterface, Built<Team, TeamBuilder> {
 }
 
 @BuiltValue(instantiable: false)
+sealed class $TeamWithResourcesInterface implements $TeamInterface {
+  BuiltList<TeamResource> get resources;
+
+  /// Rebuilds the instance.
+  ///
+  /// The result is the same as this instance but with [updates] applied.
+  /// [updates] is a function that takes a builder [$TeamWithResourcesInterfaceBuilder].
+  @override
+  $TeamWithResourcesInterface rebuild(void Function($TeamWithResourcesInterfaceBuilder) updates);
+
+  /// Converts the instance to a builder [$TeamWithResourcesInterfaceBuilder].
+  @override
+  $TeamWithResourcesInterfaceBuilder toBuilder();
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults($TeamWithResourcesInterfaceBuilder b) {
+    $TeamInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate($TeamWithResourcesInterfaceBuilder b) {
+    $TeamInterface._validate(b);
+  }
+}
+
+abstract class TeamWithResources
+    implements $TeamWithResourcesInterface, Built<TeamWithResources, TeamWithResourcesBuilder> {
+  /// Creates a new TeamWithResources object using the builder pattern.
+  factory TeamWithResources([void Function(TeamWithResourcesBuilder)? b]) = _$TeamWithResources;
+
+  // coverage:ignore-start
+  const TeamWithResources._();
+  // coverage:ignore-end
+
+  /// Creates a new object from the given [json] data.
+  ///
+  /// Use [toJson] to serialize it back into json.
+  // coverage:ignore-start
+  factory TeamWithResources.fromJson(Map<String, dynamic> json) => _$jsonSerializers.deserializeWith(serializer, json)!;
+  // coverage:ignore-end
+
+  /// Parses this object into a json like map.
+  ///
+  /// Use the fromJson factory to revive it again.
+  // coverage:ignore-start
+  Map<String, dynamic> toJson() => _$jsonSerializers.serializeWith(serializer, this)! as Map<String, dynamic>;
+  // coverage:ignore-end
+
+  /// Serializer for TeamWithResources.
+  static Serializer<TeamWithResources> get serializer => _$teamWithResourcesSerializer;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(TeamWithResourcesBuilder b) {
+    $TeamWithResourcesInterface._defaults(b);
+  }
+
+  @BuiltValueHook(finalizeBuilder: true)
+  static void _validate(TeamWithResourcesBuilder b) {
+    $TeamWithResourcesInterface._validate(b);
+  }
+}
+
+@BuiltValue(instantiable: false)
 sealed class $TeamsApiListTeamsResponseApplicationJson_Ocs_DataInterface {
-  BuiltList<Team> get teams;
+  BuiltList<TeamWithResources> get teams;
 
   /// Rebuilds the instance.
   ///
@@ -30612,6 +30746,8 @@ final Serializers _$serializers = (Serializers().toBuilder()
       ..add(TeamsApiResolveOneResponseApplicationJson_Ocs_Data.serializer)
       ..addBuilderFactory(const FullType(TeamResource), TeamResourceBuilder.new)
       ..add(TeamResource.serializer)
+      ..addBuilderFactory(const FullType(TeamResource_Provider), TeamResource_ProviderBuilder.new)
+      ..add(TeamResource_Provider.serializer)
       ..addBuilderFactory(const FullType(BuiltList, [FullType(TeamResource)]), ListBuilder<TeamResource>.new)
       ..addBuilderFactory(
         const FullType(TeamsApiListTeamsResponseApplicationJson),
@@ -30628,9 +30764,14 @@ final Serializers _$serializers = (Serializers().toBuilder()
         TeamsApiListTeamsResponseApplicationJson_Ocs_DataBuilder.new,
       )
       ..add(TeamsApiListTeamsResponseApplicationJson_Ocs_Data.serializer)
+      ..addBuilderFactory(const FullType(TeamWithResources), TeamWithResourcesBuilder.new)
+      ..add(TeamWithResources.serializer)
       ..addBuilderFactory(const FullType(Team), TeamBuilder.new)
       ..add(Team.serializer)
-      ..addBuilderFactory(const FullType(BuiltList, [FullType(Team)]), ListBuilder<Team>.new)
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(TeamWithResources)]),
+        ListBuilder<TeamWithResources>.new,
+      )
       ..addBuilderFactory(
         const FullType(TextProcessingApiTaskTypesResponseApplicationJson),
         TextProcessingApiTaskTypesResponseApplicationJsonBuilder.new,
