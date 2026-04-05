@@ -20,7 +20,8 @@ final class DockerContainerFactory extends TestTargetFactory<DockerContainerInst
   /// Creates a new docker container and returns its representation.
   @override
   Future<DockerContainerInstance> spawn(Preset preset) async {
-    final dockerImageName = 'ghcr.io/nextcloud/neon/dev:${preset.name}-${preset.version.major}.${preset.version.minor}';
+    final dockerImageName =
+        'ghcr.io/provokateurin/nextcloud.dart/dev:${preset.name}-${preset.version.major}.${preset.version.minor}';
 
     var result = await runExecutableArguments(
       'docker',
