@@ -595,6 +595,8 @@ class _$PublicCapabilities_ThemingSerializer implements StructuredSerializer<Pub
     final result = <Object?>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'productName',
+      serializers.serialize(object.productName, specifiedType: const FullType(String)),
       'url',
       serializers.serialize(object.url, specifiedType: const FullType(String)),
       'slogan',
@@ -641,6 +643,9 @@ class _$PublicCapabilities_ThemingSerializer implements StructuredSerializer<Pub
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          break;
+        case 'productName':
+          result.productName = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'url':
           result.url = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
@@ -1919,6 +1924,9 @@ abstract mixin class $PublicCapabilities_ThemingInterfaceBuilder {
   String? get name;
   set name(String? name);
 
+  String? get productName;
+  set productName(String? productName);
+
   String? get url;
   set url(String? url);
 
@@ -1966,6 +1974,8 @@ class _$PublicCapabilities_Theming extends PublicCapabilities_Theming {
   @override
   final String name;
   @override
+  final String productName;
+  @override
   final String url;
   @override
   final String slogan;
@@ -1999,6 +2009,7 @@ class _$PublicCapabilities_Theming extends PublicCapabilities_Theming {
 
   _$PublicCapabilities_Theming._(
       {required this.name,
+      required this.productName,
       required this.url,
       required this.slogan,
       required this.color,
@@ -2026,6 +2037,7 @@ class _$PublicCapabilities_Theming extends PublicCapabilities_Theming {
     if (identical(other, this)) return true;
     return other is PublicCapabilities_Theming &&
         name == other.name &&
+        productName == other.productName &&
         url == other.url &&
         slogan == other.slogan &&
         color == other.color &&
@@ -2046,6 +2058,7 @@ class _$PublicCapabilities_Theming extends PublicCapabilities_Theming {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, productName.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jc(_$hash, slogan.hashCode);
     _$hash = $jc(_$hash, color.hashCode);
@@ -2068,6 +2081,7 @@ class _$PublicCapabilities_Theming extends PublicCapabilities_Theming {
   String toString() {
     return (newBuiltValueToStringHelper(r'PublicCapabilities_Theming')
           ..add('name', name)
+          ..add('productName', productName)
           ..add('url', url)
           ..add('slogan', slogan)
           ..add('color', color)
@@ -2095,6 +2109,10 @@ class PublicCapabilities_ThemingBuilder
   String? _name;
   String? get name => _$this._name;
   set name(covariant String? name) => _$this._name = name;
+
+  String? _productName;
+  String? get productName => _$this._productName;
+  set productName(covariant String? productName) => _$this._productName = productName;
 
   String? _url;
   String? get url => _$this._url;
@@ -2160,6 +2178,7 @@ class PublicCapabilities_ThemingBuilder
     final $v = _$v;
     if ($v != null) {
       _name = $v.name;
+      _productName = $v.productName;
       _url = $v.url;
       _slogan = $v.slogan;
       _color = $v.color;
@@ -2197,6 +2216,7 @@ class PublicCapabilities_ThemingBuilder
     final _$result = _$v ??
         _$PublicCapabilities_Theming._(
           name: BuiltValueNullFieldError.checkNotNull(name, r'PublicCapabilities_Theming', 'name'),
+          productName: BuiltValueNullFieldError.checkNotNull(productName, r'PublicCapabilities_Theming', 'productName'),
           url: BuiltValueNullFieldError.checkNotNull(url, r'PublicCapabilities_Theming', 'url'),
           slogan: BuiltValueNullFieldError.checkNotNull(slogan, r'PublicCapabilities_Theming', 'slogan'),
           color: BuiltValueNullFieldError.checkNotNull(color, r'PublicCapabilities_Theming', 'color'),

@@ -1,0 +1,23 @@
+[
+  {
+    "op": "replace",
+    "path": "/components/schemas/ThemingPublicCapabilities/properties/theming/required",
+    "value": [
+      "name",
+      "url",
+      "slogan",
+      "color",
+      "color-text",
+      "color-element",
+      "color-element-bright",
+      "color-element-dark",
+      "logo",
+      "background",
+      "background-text",
+      "background-plain",
+      "background-default",
+      "logoheader",
+      "favicon"
+    ]
+  }
+]

@@ -1780,6 +1780,7 @@ abstract class UserThemeDisableThemeResponseApplicationJson
 @BuiltValue(instantiable: false)
 sealed class $PublicCapabilities_ThemingInterface {
   String get name;
+  String get productName;
   String get url;
   String get slogan;
   String get color;
