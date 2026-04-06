@@ -61,3 +61,17 @@ platforms:
   android:
   ios:
   web:
+
+dependency_overrides:
+  xml_serializable:
+    git:
+      url: https://github.com/tnc1997/dart-xml-serializable
+      path: xml_serializable
+      ref: ff28c57bb0d722a2b170d086aa85ce2eab4c18f0
+  xml_annotation:
+    git:
+      url: https://github.com/tnc1997/dart-xml-serializable
+      path: xml_annotation
+      ref: ff28c57bb0d722a2b170d086aa85ce2eab4c18f0
+  build: ">=3.0.0 <5.0.0"
+  dart_style: ^3.0.0

@@ -5313,10 +5313,7 @@ class _$WeatherStatusGetForecastResponseApplicationJson_Ocs
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is WeatherStatusGetForecastResponseApplicationJson_Ocs &&
-        meta == other.meta &&
-        data == _$dynamicOther.data;
+    return other is WeatherStatusGetForecastResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
   }
 
   @override

@@ -9463,12 +9463,11 @@ class _$GroupDetails extends GroupDetails {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is GroupDetails &&
         id == other.id &&
         displayname == other.displayname &&
-        usercount == _$dynamicOther.usercount &&
-        disabled == _$dynamicOther.disabled &&
+        usercount == other.usercount &&
+        disabled == other.disabled &&
         canAdd == other.canAdd &&
         canRemove == other.canRemove;
   }
@@ -10401,10 +10400,9 @@ class _$UserDetailsQuota extends UserDetailsQuota {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is UserDetailsQuota &&
         free == other.free &&
-        quota == _$dynamicOther.quota &&
+        quota == other.quota &&
         relative == other.relative &&
         total == other.total &&
         used == other.used;
@@ -11411,8 +11409,7 @@ class _$GroupsGetGroupUsersDetailsResponseApplicationJson_Ocs_Data
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is GroupsGetGroupUsersDetailsResponseApplicationJson_Ocs_Data && users == _$dynamicOther.users;
+    return other is GroupsGetGroupUsersDetailsResponseApplicationJson_Ocs_Data && users == other.users;
   }
 
   @override
@@ -12989,8 +12986,7 @@ class _$UsersGetLastLoggedInUsersResponseApplicationJson_Ocs_Data
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is UsersGetLastLoggedInUsersResponseApplicationJson_Ocs_Data && users == _$dynamicOther.users;
+    return other is UsersGetLastLoggedInUsersResponseApplicationJson_Ocs_Data && users == other.users;
   }
 
   @override
@@ -15082,8 +15078,7 @@ class _$UsersGetUsersDetailsResponseApplicationJson_Ocs_Data
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is UsersGetUsersDetailsResponseApplicationJson_Ocs_Data && users == _$dynamicOther.users;
+    return other is UsersGetUsersDetailsResponseApplicationJson_Ocs_Data && users == other.users;
   }
 
   @override
@@ -15520,8 +15515,7 @@ class _$UsersGetDisabledUsersDetailsResponseApplicationJson_Ocs_Data
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is UsersGetDisabledUsersDetailsResponseApplicationJson_Ocs_Data && users == _$dynamicOther.users;
+    return other is UsersGetDisabledUsersDetailsResponseApplicationJson_Ocs_Data && users == other.users;
   }
 
   @override

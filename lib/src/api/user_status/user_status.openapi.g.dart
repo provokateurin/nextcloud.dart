@@ -2504,8 +2504,7 @@ class _$ClearAt extends ClearAt {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is ClearAt && type == other.type && time == _$dynamicOther.time;
+    return other is ClearAt && type == other.type && time == other.time;
   }
 
   @override
@@ -4906,10 +4905,7 @@ class _$UserStatusRevertStatusResponseApplicationJson_Ocs extends UserStatusReve
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is UserStatusRevertStatusResponseApplicationJson_Ocs &&
-        meta == other.meta &&
-        data == _$dynamicOther.data;
+    return other is UserStatusRevertStatusResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
   }
 
   @override
