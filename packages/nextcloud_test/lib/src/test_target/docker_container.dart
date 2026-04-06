@@ -23,14 +23,7 @@ final class DockerContainerFactory extends TestTargetFactory<DockerContainerInst
     final dockerImageName =
         'ghcr.io/provokateurin/nextcloud.dart/dev:${preset.name}-${preset.version.major}.${preset.version.minor}';
 
-    var result = await runExecutableArguments(
-      'docker',
-      [
-        'images',
-        '-q',
-        dockerImageName,
-      ],
-    );
+    var result = await runExecutableArguments('docker', ['images', '-q', dockerImageName]);
     if (result.exitCode != 0) {
       throw Exception('Querying docker image failed: ${result.stderr}');
     }
@@ -43,20 +36,17 @@ final class DockerContainerFactory extends TestTargetFactory<DockerContainerInst
 
     while (true) {
       port = _randomPort();
-      result = await runExecutableArguments(
-        'docker',
-        [
-          'run',
-          '--rm',
-          '-d',
-          '--network',
-          'host',
-          dockerImageName,
-          'php',
-          '-S',
-          '0.0.0.0:$port',
-        ],
-      );
+      result = await runExecutableArguments('docker', [
+        'run',
+        '--rm',
+        '-d',
+        '--network',
+        'host',
+        dockerImageName,
+        'php',
+        '-S',
+        '0.0.0.0:$port',
+      ]);
       // The command will not fail if the port is already allocated since we run in detached mode.
       if (result.exitCode != 0) {
         throw Exception('Failed to run docker container: ${result.stderr}');
@@ -65,24 +55,13 @@ final class DockerContainerFactory extends TestTargetFactory<DockerContainerInst
       id = result.stdout.toString().replaceAll('\n', '');
 
       // Ensure container is still up and didn't crash because the port was already allocated.
-      result = await runExecutableArguments(
-        'docker',
-        [
-          'exec',
-          '-i',
-          id,
-          'true',
-        ],
-      );
+      result = await runExecutableArguments('docker', ['exec', '-i', id, 'true']);
       if (result.exitCode == 0) {
         break;
       }
     }
 
-    return DockerContainerInstance(
-      id: id,
-      port: port,
-    );
+    return DockerContainerInstance(id: id, port: port);
   }
 
   @override
@@ -91,10 +70,7 @@ final class DockerContainerFactory extends TestTargetFactory<DockerContainerInst
 
     return BuiltListMultimap<String, Version>.build((b) {
       for (final file in files) {
-        b.add(
-          p.split(file.dirname).last,
-          Version.parse(file.basename),
-        );
+        b.add(p.split(file.dirname).last, Version.parse(file.basename));
       }
     });
   }
@@ -104,10 +80,7 @@ final class DockerContainerFactory extends TestTargetFactory<DockerContainerInst
 @internal
 final class DockerContainerInstance extends TestTargetInstance {
   /// Creates a new Docker container instance.
-  DockerContainerInstance({
-    required this.id,
-    required this.port,
-  });
+  DockerContainerInstance({required this.id, required this.port});
 
   /// ID of the docker container.
   final String id;
@@ -117,38 +90,24 @@ final class DockerContainerInstance extends TestTargetInstance {
 
   /// Removes the docker container from the system.
   @override
-  Future<void> destroy() => runExecutableArguments(
-        'docker',
-        [
-          'kill',
-          id,
-        ],
-      );
+  Future<void> destroy() => runExecutableArguments('docker', ['kill', id]);
 
   @override
-  late Uri url = Uri(
-    scheme: 'http',
-    host: 'localhost',
-    port: port,
-  );
+  late Uri url = Uri(scheme: 'http', host: 'localhost', port: port);
 
   @override
   Future<String> createAppPassword(String username) async {
     final inputStream = StreamController<List<int>>();
-    final process = runExecutableArguments(
-      'docker',
-      [
-        'exec',
-        '-i',
-        id,
-        'php',
-        '-f',
-        'occ',
-        'user:add-app-password',
-        username,
-      ],
-      stdin: inputStream.stream,
-    );
+    final process = runExecutableArguments('docker', [
+      'exec',
+      '-i',
+      id,
+      'php',
+      '-f',
+      'occ',
+      'user:add-app-password',
+      username,
+    ], stdin: inputStream.stream);
     inputStream.add(utf8.encode(username));
     await inputStream.close();
 
