@@ -8062,11 +8062,7 @@ class _$View_Filter extends View_Filter {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is View_Filter &&
-        columnId == other.columnId &&
-        $operator == other.$operator &&
-        value == _$dynamicOther.value;
+    return other is View_Filter && columnId == other.columnId && $operator == other.$operator && value == other.value;
   }
 
   @override
@@ -9979,11 +9975,10 @@ class _$Api1UpdateViewRequestApplicationJson_Data3_Value extends Api1UpdateViewR
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is Api1UpdateViewRequestApplicationJson_Data3_Value &&
         columnId == other.columnId &&
         $operator == other.$operator &&
-        value == _$dynamicOther.value;
+        value == other.value;
   }
 
   @override
@@ -10217,8 +10212,7 @@ class _$Api1UpdateViewRequestApplicationJson extends Api1UpdateViewRequestApplic
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is Api1UpdateViewRequestApplicationJson && data == _$dynamicOther.data;
+    return other is Api1UpdateViewRequestApplicationJson && data == other.data;
   }
 
   @override
@@ -13572,8 +13566,7 @@ class _$Api1CreateRowInTableRequestApplicationJson extends Api1CreateRowInTableR
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is Api1CreateRowInTableRequestApplicationJson && data == _$dynamicOther.data;
+    return other is Api1CreateRowInTableRequestApplicationJson && data == other.data;
   }
 
   @override
@@ -13665,8 +13658,7 @@ class _$Api1CreateRowInViewRequestApplicationJson extends Api1CreateRowInViewReq
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is Api1CreateRowInViewRequestApplicationJson && data == _$dynamicOther.data;
+    return other is Api1CreateRowInViewRequestApplicationJson && data == other.data;
   }
 
   @override
@@ -13760,8 +13752,7 @@ class _$Api1UpdateRowRequestApplicationJson extends Api1UpdateRowRequestApplicat
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is Api1UpdateRowRequestApplicationJson && viewId == other.viewId && data == _$dynamicOther.data;
+    return other is Api1UpdateRowRequestApplicationJson && viewId == other.viewId && data == other.data;
   }
 
   @override
@@ -23088,8 +23079,7 @@ class _$RowocsCreateRowRequestApplicationJson extends RowocsCreateRowRequestAppl
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is RowocsCreateRowRequestApplicationJson && data == _$dynamicOther.data;
+    return other is RowocsCreateRowRequestApplicationJson && data == other.data;
   }
 
   @override

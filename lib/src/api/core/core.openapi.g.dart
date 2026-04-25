@@ -19304,13 +19304,12 @@ class _$AutocompleteResult extends AutocompleteResult {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is AutocompleteResult &&
         id == other.id &&
         label == other.label &&
         icon == other.icon &&
         source == other.source &&
-        status == _$dynamicOther.status &&
+        status == other.status &&
         subline == other.subline &&
         shareWithDisplayNameUnique == other.shareWithDisplayNameUnique;
   }
@@ -34846,10 +34845,9 @@ class _$OcsGetCapabilitiesResponseApplicationJson_Ocs_Data extends OcsGetCapabil
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is OcsGetCapabilitiesResponseApplicationJson_Ocs_Data &&
         version == other.version &&
-        capabilities == _$dynamicOther.capabilities;
+        capabilities == other.capabilities;
   }
 
   @override
@@ -40642,16 +40640,15 @@ class _$TaskProcessingTaskType extends TaskProcessingTaskType {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is TaskProcessingTaskType &&
         name == other.name &&
         description == other.description &&
         inputShape == other.inputShape &&
         inputShapeEnumValues == other.inputShapeEnumValues &&
-        inputShapeDefaults == _$dynamicOther.inputShapeDefaults &&
+        inputShapeDefaults == other.inputShapeDefaults &&
         optionalInputShape == other.optionalInputShape &&
         optionalInputShapeEnumValues == other.optionalInputShapeEnumValues &&
-        optionalInputShapeDefaults == _$dynamicOther.optionalInputShapeDefaults &&
+        optionalInputShapeDefaults == other.optionalInputShapeDefaults &&
         outputShape == other.outputShape &&
         outputShapeEnumValues == other.outputShapeEnumValues &&
         optionalOutputShape == other.optionalOutputShape &&
@@ -41503,7 +41500,6 @@ class _$TaskProcessingTask extends TaskProcessingTask {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is TaskProcessingTask &&
         id == other.id &&
         lastUpdated == other.lastUpdated &&
@@ -41511,8 +41507,8 @@ class _$TaskProcessingTask extends TaskProcessingTask {
         status == other.status &&
         userId == other.userId &&
         appId == other.appId &&
-        input == _$dynamicOther.input &&
-        output == _$dynamicOther.output &&
+        input == other.input &&
+        output == other.output &&
         customId == other.customId &&
         completionExpectedAt == other.completionExpectedAt &&
         progress == other.progress &&
@@ -53385,12 +53381,11 @@ class _$UnifiedSearchResult extends UnifiedSearchResult {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is UnifiedSearchResult &&
         name == other.name &&
         isPaginated == other.isPaginated &&
         entries == other.entries &&
-        cursor == _$dynamicOther.cursor;
+        cursor == other.cursor;
   }
 
   @override

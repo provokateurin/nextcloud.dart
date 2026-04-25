@@ -28441,7 +28441,6 @@ class _$Room extends Room {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is Room &&
         actorId == other.actorId &&
         invitedActorId == other.invitedActorId &&
@@ -28470,7 +28469,7 @@ class _$Room extends Room {
         isFavorite == other.isFavorite &&
         lastActivity == other.lastActivity &&
         lastCommonReadMessage == other.lastCommonReadMessage &&
-        lastMessage == _$dynamicOther.lastMessage &&
+        lastMessage == other.lastMessage &&
         lastPing == other.lastPing &&
         lastReadMessage == other.lastReadMessage &&
         listable == other.listable &&
@@ -39361,9 +39360,8 @@ class _$ChatMessageWithParent extends ChatMessageWithParent {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is ChatMessageWithParent &&
-        parent == _$dynamicOther.parent &&
+        parent == other.parent &&
         deleted == other.deleted &&
         id == other.id &&
         isReplyable == other.isReplyable &&
@@ -46781,9 +46779,8 @@ class _$SignalingSettings extends SignalingSettings {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is SignalingSettings &&
-        federation == _$dynamicOther.federation &&
+        federation == other.federation &&
         helloAuthParams == other.helloAuthParams &&
         hideWarning == other.hideWarning &&
         server == other.server &&
@@ -50214,10 +50211,7 @@ class _$SignalingPullMessagesResponseApplicationJson_Ocs_Data
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is SignalingPullMessagesResponseApplicationJson_Ocs_Data &&
-        type == other.type &&
-        data == _$dynamicOther.data;
+    return other is SignalingPullMessagesResponseApplicationJson_Ocs_Data && type == other.type && data == other.data;
   }
 
   @override
@@ -70731,10 +70725,7 @@ class _$RoomSetMessageExpirationResponseApplicationJson_Ocs
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is RoomSetMessageExpirationResponseApplicationJson_Ocs &&
-        meta == other.meta &&
-        data == _$dynamicOther.data;
+    return other is RoomSetMessageExpirationResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
   }
 
   @override
@@ -72580,8 +72571,7 @@ class _$RoomGetCapabilitiesResponseApplicationJson_Ocs extends RoomGetCapabiliti
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is RoomGetCapabilitiesResponseApplicationJson_Ocs && meta == other.meta && data == _$dynamicOther.data;
+    return other is RoomGetCapabilitiesResponseApplicationJson_Ocs && meta == other.meta && data == other.data;
   }
 
   @override
@@ -77079,8 +77069,7 @@ class _$SettingsSetUserSettingRequestApplicationJson extends SettingsSetUserSett
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
-    return other is SettingsSetUserSettingRequestApplicationJson && key == other.key && value == _$dynamicOther.value;
+    return other is SettingsSetUserSettingRequestApplicationJson && key == other.key && value == other.value;
   }
 
   @override
@@ -80993,7 +80982,6 @@ class _$RoomWithInvalidInvitations extends RoomWithInvalidInvitations {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is RoomWithInvalidInvitations &&
         invalidParticipants == other.invalidParticipants &&
         actorId == other.actorId &&
@@ -81023,7 +81011,7 @@ class _$RoomWithInvalidInvitations extends RoomWithInvalidInvitations {
         isFavorite == other.isFavorite &&
         lastActivity == other.lastActivity &&
         lastCommonReadMessage == other.lastCommonReadMessage &&
-        lastMessage == _$dynamicOther.lastMessage &&
+        lastMessage == other.lastMessage &&
         lastPing == other.lastPing &&
         lastReadMessage == other.lastReadMessage &&
         listable == other.listable &&

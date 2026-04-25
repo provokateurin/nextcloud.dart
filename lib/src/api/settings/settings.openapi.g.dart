@@ -1426,7 +1426,6 @@ class _$DeclarativeFormField extends DeclarativeFormField {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    final dynamic _$dynamicOther = other;
     return other is DeclarativeFormField &&
         id == other.id &&
         title == other.title &&
@@ -1435,8 +1434,8 @@ class _$DeclarativeFormField extends DeclarativeFormField {
         placeholder == other.placeholder &&
         label == other.label &&
         $default == other.$default &&
-        options == _$dynamicOther.options &&
-        value == _$dynamicOther.value;
+        options == other.options &&
+        value == other.value;
   }
 
   @override
